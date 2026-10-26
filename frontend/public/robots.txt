@@ -1,0 +1,6 @@
+# Robots.txt for VedicPanditji (Pune & PCMC)
+User-agent: *
+Allow: /
+
+# Canonical XML Sitemap
+Sitemap: https://vedicpanditji.com/sitemap.xml
