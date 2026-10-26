@@ -147,7 +147,7 @@ export default function Navbar() {
             <a
               href={`tel:${BRAND_INFO.phoneClean}`}
               className="vp-phone-link"
-              title={`Call Acharya Jitendra Chaubey: ${BRAND_INFO.phone}`}
+              title={`Call Vedic Panditji Helpline: ${BRAND_INFO.phone}`}
             >
               <PhoneCall size={14} />
               <span className="vp-phone-text">{BRAND_INFO.phone}</span>

@@ -213,7 +213,7 @@ export const ALL_POOJA_SERVICES = [
     shortDescription: 'Bestowing a sacred Vedic name upon the newborn baby calculated precisely according to Janma Nakshatra and Pada on the 11th, 12th, or 21st day.',
     longDescription: 'The baby is officially named through whispering the secret Vedic name into the right ear with a betel leaf, honoring Kuldevata and the planetary ruling deity.',
     keyInsights: ['Accurate Janma Nakshatra letter selection', 'Ear whispering ritual (Karna Chedan / Nama Vachan)', 'Blessings for long life.'],
-    ourPromise: ['Panchang calculations verified directly by senior Astrologer Jitendra Chaubey.'],
+    ourPromise: ['Panchang calculations verified directly by senior Vedic Astrologers.'],
     faqs: [{ question: 'When is Namkaran conducted?', answer: 'Usually on the 11th, 12th, or 21st day following birth, or any subsequent auspicious tithi.' }]
   },
   {
@@ -696,7 +696,7 @@ export const ALL_POOJA_SERVICES = [
     shortDescription: 'Specific high-count Vedic Beej Mantra chanting for individual malefic planets (e.g. Shani 23,000, Rahu 18,000, Guru 19,000 chants).',
     longDescription: 'Targets specific planetary afflictions like Rahu Mahadasha, Saturn Sade Sati, or retrograde combust placements in your Janma Kundali.',
     keyInsights: ['Prescribed exactly as per birth chart', 'Specific planet grain and color offerings', 'Neutralizes malefic planetary dasha.'],
-    ourPromise: ['Individual astrological consultation with Pandit Jitendra Chaubey included free.'],
+    ourPromise: ['Individual astrological consultation with senior Vedic Astrologer included free.'],
     faqs: [{ question: 'How do I know which planet jaap is needed?', answer: 'Panditji will examine your date, time, and place of birth to pinpoint the exact afflicted planet.' }]
   },
   {
@@ -953,7 +953,7 @@ export const ALL_POOJA_SERVICES = [
     maxPrice: null,
     image: '/images/category-wedding.jpg',
     shortDescription: 'Complete solemnization of Hindu marriage with classical Vedic Vivah Sanskar including Dwar Puja, Kanyadaan, Saptapadi (7 Pheras), and Sindoor Daan.',
-    longDescription: 'Led by Pandit Jitendra Chaubey and his senior team of Varanasi-trained wedding Acharyas. Explains every sacred vow in fluent Hindi and English so the couple and guests appreciate the eternal significance of the seven vows.',
+    longDescription: 'Led by our senior team of Varanasi and Gurukul-trained wedding Acharyas. Explains every sacred vow in fluent Hindi and English so the couple and guests appreciate the eternal significance of the seven vows.',
     keyInsights: ['Covers all regional customs: UP, Bihar, MP, Rajasthan, Delhi-NCR', 'Includes Jaimala, Kanyadaan, Gathbandhan, Saptapadi, and Laja Homa', 'Punctual, dignified conducting honoring your wedding schedule.'],
     ourPromise: ['Dignified, joyful ceremony with complete auspicious wedding samagri kit.'],
     faqs: [{ question: 'Do you provide pandits for destination weddings outside Pune?', answer: 'Yes! Our wedding Acharyas frequently travel to Bangalore, Mumbai, Goa, and destination venues across India.' }]
@@ -1031,7 +1031,7 @@ export const ALL_POOJA_SERVICES = [
     shortDescription: 'Classical astrological remediation for severe Manglik Dosha in females, where the bride is symbolically married to a consecrated earthen pot (Kumbha).',
     longDescription: 'The earthen pot containing Lord Vishnu absorbs the malefic planetary influence, after which it is immersed, leaving the bride completely free to marry her human partner.',
     keyInsights: ['Neutralizes severe Manglik Dosha', 'Absolute privacy and confidentiality maintained', 'Complete Vedic Vivah Vidhi performed over the Kumbha.'],
-    ourPromise: ['Compassionate, confidential conducting by senior Astrologer Jitendra Chaubey.'],
+    ourPromise: ['Compassionate, confidential conducting by senior Vedic Astrologers.'],
     faqs: [{ question: 'Is Kumbh Vivah strictly confidential?', answer: 'Yes, we maintain 100% discretion and privacy for all remedial matrimonial ceremonies.' }]
   },
   {

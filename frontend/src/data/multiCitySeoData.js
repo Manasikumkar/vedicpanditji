@@ -13,7 +13,7 @@ export const MULTI_CITY_SEO_PAGES = [
     searchIntent: 'Devotees in Pune seeking authentic Hindi-speaking North Indian Purohits for home pujas and ceremonies',
     verificationStatus: 'in-person-confirmed',
     verificationBadge: 'Verified In-Person Doorstep Service in Pune',
-    verificationNote: 'VedicPanditji primary headquarters is located in Pune with verified resident North Indian priests led by Pandit Jitendra Chaubey.',
+    verificationNote: 'VedicPanditji primary headquarters is located in Pune with verified resident North Indian priests and Gurukul scholars.',
     title: 'North Indian Pandit ji in Pune | Hindi Vedic Purohits for Pooja',
     metaDescription: 'Book certified North Indian Pandit ji in Pune. Authentic Hindi-speaking Vedic priests for Griha Pravesh, Satyanarayan, Vastu Shanti & Weddings. 100% pure samagri.',
     h1: 'North Indian Pandit ji in Pune for Authentic Vedic Poojas',
@@ -23,7 +23,7 @@ export const MULTI_CITY_SEO_PAGES = [
     highlights: [
       'Native Hindi-speaking priests with authentic Vedic training',
       'Doorstep service across all Pune localities with pure Vedic Samagri options',
-      'Free Shubh Muhurat guidance by Pandit Jitendra Chaubey',
+      'Free Shubh Muhurat guidance by senior Vedic Acharyas',
       'Punctual arrival aligned precisely to your Muhurat'
     ],
     keyLocalities: [
@@ -33,7 +33,7 @@ export const MULTI_CITY_SEO_PAGES = [
     sections: [
       {
         heading: 'Why Book a North Indian Pandit in Pune with VedicPanditji?',
-        content: 'Pune has grown into Maharashtra’s foremost cosmopolitan education and IT capital, home to hundreds of thousands of North Indian families from Uttar Pradesh, Bihar, Madhya Pradesh, Rajasthan, Delhi-NCR, and Uttarakhand. When solemnizing life milestones—be it stepping into a new home in Hinjewadi or performing a birthday Satyanarayan Katha in Kothrud—families look for an Acharya who recites Sanskrit mantras with accurate Vedic phonetics and translates the sacred Katha in fluent, heartwarming Hindi.\n\nFounded under the spiritual guidance of Pandit Jitendra Chaubey, VedicPanditji maintains an established network of verified, Gurukul-credentialed North Indian Pandits residing in Pune. Our priests honor your regional traditions, arrive punctually, and bring all requisite sacred Samagri.'
+        content: 'Pune has grown into Maharashtra’s foremost cosmopolitan education and IT capital, home to hundreds of thousands of North Indian families from Uttar Pradesh, Bihar, Madhya Pradesh, Rajasthan, Delhi-NCR, and Uttarakhand. When solemnizing life milestones—be it stepping into a new home in Hinjewadi or performing a birthday Satyanarayan Katha in Kothrud—families look for an Acharya who recites Sanskrit mantras with accurate Vedic phonetics and translates the sacred Katha in fluent, heartwarming Hindi.\n\nFounded to uphold authentic Sanatan traditions, VedicPanditji maintains an established network of verified, Gurukul-credentialed North Indian Pandits residing in Pune. Our priests honor your regional traditions, arrive punctually, and bring all requisite sacred Samagri.'
       },
       {
         heading: 'Ceremonies Performed by North Indian Pandits in Pune',
@@ -328,7 +328,7 @@ export const MULTI_CITY_SEO_PAGES = [
     sections: [
       {
         heading: 'Reliable Vedic Pandit Services Across Mumbai Metropolitan Region',
-        content: 'Mumbai is a vibrant melting pot home to millions of North Indian residents from UP, Bihar, MP, Rajasthan, and Delhi. Finding a punctual, knowledgeable Pandit ji in Mumbai who arrives on time despite city traffic, brings genuine unadulterated samagri, and recites mantras with authentic Vedic phonetics can be daunting.\n\nVedicPanditji bridges this gap with verified, experienced North Indian priests stationed across Mumbai, Navi Mumbai, and Thane. Under Acharya Jitendra Chaubey’s leadership, our purohits uphold the sanctity of your sacred home rituals.'
+        content: 'Mumbai is a vibrant melting pot home to millions of North Indian residents from UP, Bihar, MP, Rajasthan, and Delhi. Finding a punctual, knowledgeable Pandit ji in Mumbai who arrives on time despite city traffic, brings genuine unadulterated samagri, and recites mantras with authentic Vedic phonetics can be daunting.\n\nVedicPanditji bridges this gap with verified, experienced North Indian priests stationed across Mumbai, Navi Mumbai, and Thane. Under the guidance of our senior Acharyas, our purohits uphold the sanctity of your sacred home rituals.'
       },
       {
         heading: 'Pooja Services Available in Mumbai',
@@ -370,7 +370,7 @@ export const MULTI_CITY_SEO_PAGES = [
     highlights: [
       'Tailored for Mumbai residential towers with smoke-sensitive alarms',
       'Includes Dwar Puja, Milk Boiling, Vastu Shanti & Navagraha Havan',
-      'Free Shubh Muhurat calculation by Acharya Jitendra Chaubey',
+      'Free Shubh Muhurat calculation by senior Vedic Acharyas',
       'Priests arrive with complete Samagri so you can focus on your guests'
     ],
     keyLocalities: ['Powai', 'Andheri East & West', 'Thane West', 'Kharghar', 'Bandra', 'Goregaon', 'Kandivali', 'Chembur', 'Vashi'],
@@ -837,7 +837,7 @@ export const MULTI_CITY_SEO_PAGES = [
       { category: 'Customer Checklist', items: ['New milk pot, 1L milk, Flowers, Fruits, Coconuts'] }
     ],
     faqs: [
-      { q: 'Can you calculate Shubh Muhurat for Hyderabad time zone?', a: 'Yes, Acharya Jitendra Chaubey provides exact Muhurat times aligned with Hyderabad local sunrise and Hindu Panchang.' }
+      { q: 'Can you calculate Shubh Muhurat for Hyderabad time zone?', a: 'Yes, our senior Vedic Acharyas provide exact Muhurat times aligned with Hyderabad local sunrise and Hindu Panchang.' }
     ],
     relatedSlugs: ['north-indian-pandit-in-hyderabad', 'griha-pravesh-puja-in-bangalore', 'griha-pravesh-puja-in-pune']
   },
@@ -921,7 +921,7 @@ export const MULTI_CITY_SEO_PAGES = [
     ],
     vidhiSteps: [
       { step: '01', title: 'Schedule & Gotra Details', desc: 'Share your birth details and preferred time slot.' },
-      { step: '02', title: 'Join Live Video Stream', desc: 'Interactive two-way session with Acharya Jitendra Chaubey and senior team.' },
+      { step: '02', title: 'Join Live Video Stream', desc: 'Interactive two-way session with our senior Vedic Acharyas and ritual team.' },
       { step: '03', title: 'Personal Sankalp', desc: 'Panditji holds sacred Akshat and Ganga Jal in your family’s name.' },
       { step: '04', title: 'Havan & Consecration', desc: 'Offering ahutis into Agni and energizing your protective yantras.' },
       { step: '05', title: 'Prasad Courier', desc: 'Dry consecrated prasad and holy thread dispatched internationally.' }
@@ -958,7 +958,7 @@ export const MULTI_CITY_SEO_PAGES = [
       'Vedic rituals conducted in Sanskrit with complete Katha & explanations in fluent Hindi',
       'Supported Languages: Hindi and Sanskrit exclusively for all rituals and mantras',
       'Visiting Acharyas for Griha Pravesh, Vivah, and large Havans across Delhi, Noida, and Gurugram',
-      'Panchang Shubh Muhurat calculation by Acharya Jitendra Chaubey and senior scholars'
+      'Panchang Shubh Muhurat calculation by our senior Vedic Acharyas and scholars'
     ],
     keyLocalities: [
       'South Delhi', 'Dwarka', 'Noida', 'Gurugram',
@@ -967,7 +967,7 @@ export const MULTI_CITY_SEO_PAGES = [
     sections: [
       {
         heading: 'Why Book a North Indian Pandit in Delhi NCR with VedicPanditji?',
-        content: 'Delhi-NCR is a cultural heartland where ancient Sanatan traditions merge with modern metropolitan life. Families settling into new high-rise apartments in Noida, villas in Gurugram, or family homes in South Delhi and Dwarka seek Acharyas who maintain the sanctity of Shukla Yajurveda, chant Vedic hymns with accurate phonetics, and recite sacred Kathas in pure, heartfelt Hindi.\n\nUnder the spiritual guidance of Pandit Jitendra Chaubey, VedicPanditji extends all-India service coverage to Delhi-NCR. We assign Gurukul-credentialed Acharyas who understand regional North Indian and Purvanchali sanskars, ensuring your family milestone is blessed with genuine Vedic authenticity.'
+        content: 'Delhi-NCR is a cultural heartland where ancient Sanatan traditions merge with modern metropolitan life. Families settling into new high-rise apartments in Noida, villas in Gurugram, or family homes in South Delhi and Dwarka seek Acharyas who maintain the sanctity of Shukla Yajurveda, chant Vedic hymns with accurate phonetics, and recite sacred Kathas in pure, heartfelt Hindi.\n\nGuided by certified Gurukul Acharyas, VedicPanditji extends all-India service coverage to Delhi-NCR. We assign Gurukul-credentialed Acharyas who understand regional North Indian and Purvanchali sanskars, ensuring your family milestone is blessed with genuine Vedic authenticity.'
       },
       {
         heading: 'Supported Ritual Languages: Authentic Sanskrit & Fluent Hindi',
@@ -979,7 +979,7 @@ export const MULTI_CITY_SEO_PAGES = [
       },
       {
         heading: 'Booking Confirmation & All-India Service Model',
-        content: 'For devotees in Delhi-NCR, VedicPanditji operates a transparent, reliable fulfilment model. Major life ceremonies—such as Griha Pravesh, Weddings, and large Havans—are conducted in-person by visiting senior Acharyas scheduled in advance. Devotees also have the option of private interactive two-way HD Zoom E-Pujas with personalized Gotra Sankalp. Our centralized coordination team led by Pandit Jitendra Chaubey confirms priest availability and Shubh Muhurat upon receiving your enquiry.'
+        content: 'For devotees in Delhi-NCR, VedicPanditji operates a transparent, reliable fulfilment model. Major life ceremonies—such as Griha Pravesh, Weddings, and large Havans—are conducted in-person by visiting senior Acharyas scheduled in advance. Devotees also have the option of private interactive two-way HD Zoom E-Pujas with personalized Gotra Sankalp. Our centralized coordination team confirms priest availability and Shubh Muhurat upon receiving your enquiry.'
       }
     ],
     vidhiSteps: [
@@ -995,7 +995,7 @@ export const MULTI_CITY_SEO_PAGES = [
     ],
     faqs: [
       { q: 'Which languages are supported for pujas in Delhi NCR?', a: 'VedicPanditji supports Hindi and Sanskrit. All mantras are chanted in pristine Vedic Sanskrit, and all explanations, sankalpam, and kathas are conducted in fluent Hindi.' },
-      { q: 'How is priest availability confirmed in Delhi or Gurgaon?', a: 'Once you submit your booking enquiry with preferred dates, Acharya Jitendra Chaubey’s team verifies the Shubh Muhurat and confirms priest travel schedules and assigned Acharyas.' },
+      { q: 'How is priest availability confirmed in Delhi or Gurgaon?', a: 'Once you submit your booking enquiry with preferred dates, our senior Vedic coordination team verifies the Shubh Muhurat and confirms priest travel schedules and assigned Acharyas.' },
       { q: 'Can Panditji provide the complete puja samagri in Delhi?', a: 'Yes, our Acharyas can bring certified, unadulterated Vedic Samagri including pure cow ghee, havan wood, dhoop, and sacred herbs.' },
       { q: 'How early should we book for popular Muhurats in Delhi?', a: 'For high-demand auspicious days (such as Dev Uthani Ekadashi, Akshaya Tritiya, or Navratri), booking 5 to 10 days in advance is highly recommended.' }
     ],
@@ -1033,7 +1033,7 @@ export const MULTI_CITY_SEO_PAGES = [
     sections: [
       {
         heading: 'Preserving North Indian Vedic Traditions in Chennai',
-        content: 'Thousands of North Indian and Purvanchali professionals and business families reside across Chennai—from the IT corridors of OMR and Sholinganallur to established residential areas in Anna Nagar, Kilpauk, and T Nagar. When organizing a milestone Griha Pravesh, Vastu Shanti, or Satyanarayan Katha, finding a priest who recites the classical Sanskrit mantras with precision and narrates the Katha in fluent Hindi is of utmost importance.\n\nVedicPanditji fulfills this need through our all-India service network. Led by Pandit Jitendra Chaubey, we ensure North Indian families in Chennai experience the exact spiritual traditions of their home culture with complete devotion.'
+        content: 'Thousands of North Indian and Purvanchali professionals and business families reside across Chennai—from the IT corridors of OMR and Sholinganallur to established residential areas in Anna Nagar, Kilpauk, and T Nagar. When organizing a milestone Griha Pravesh, Vastu Shanti, or Satyanarayan Katha, finding a priest who recites the classical Sanskrit mantras with precision and narrates the Katha in fluent Hindi is of utmost importance.\n\nVedicPanditji fulfills this need through our all-India service network. Supported by verified Gurukul scholars, we ensure North Indian families in Chennai experience the exact spiritual traditions of their home culture with complete devotion.'
       },
       {
         heading: 'Supported Ritual Languages: Exclusively Hindi & Sanskrit',
@@ -1049,7 +1049,7 @@ export const MULTI_CITY_SEO_PAGES = [
       }
     ],
     vidhiSteps: [
-      { step: '01', title: 'Muhurat & Kundali Verification', desc: 'Acharya Jitendra Chaubey evaluates family Nakshatra and Panchang to fix the auspicious date and hour.' },
+      { step: '01', title: 'Muhurat & Kundali Verification', desc: 'Our senior Vedic Acharyas evaluate family Nakshatra and Panchang to fix the auspicious date and hour.' },
       { step: '02', title: 'Gotra Sankalpam', desc: 'Formal declaration of family Gotra, Nakshatra, and spiritual purpose in sacred Sanskrit and Hindi.' },
       { step: '03', title: 'Kalash & Navagraha Sthapana', desc: 'Establishing the divine energies with sacred Gangajal and unadulterated herbs.' },
       { step: '04', title: 'Havan & Purna Ahuti', desc: 'Sacred Agnihotra offerings with pure cow ghee invoking prosperity and peace.' },

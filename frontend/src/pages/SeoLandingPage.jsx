@@ -194,7 +194,7 @@ export default function SeoLandingPage({ slug: propSlug }) {
 
             {/* Essential Related Summary Explanation */}
             <p className="seo-hero-tagline">
-              {pageData.tagline || `Authentic Vedic rituals performed by certified Gurukul-trained North Indian & Bihari Pandits under the guidance of Pandit Jitendra Chaubey.`}
+              {pageData.tagline || `Authentic Vedic rituals performed by certified Gurukul-trained North Indian & Bihari Pandits with complete scriptural fidelity.`}
             </p>
 
             {/* Primary Action Buttons */}
@@ -442,7 +442,7 @@ export default function SeoLandingPage({ slug: propSlug }) {
                 Ready to Organize an Auspicious Puja in {pageData.city}?
               </h3>
               <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.82)', margin: 0 }}>
-                Speak with Acharya Jitendra Chaubey for free Muhurat guidance or book online in 2 minutes.
+                Speak with our senior Vedic Acharyas for free Muhurat guidance or book online in 2 minutes.
               </p>
             </div>
 

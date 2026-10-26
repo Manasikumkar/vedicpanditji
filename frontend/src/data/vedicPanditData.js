@@ -1,5 +1,5 @@
 // Comprehensive Canonical Data Source for VedicPanditji Platform
-// Verified against live vedicpanditji.com, Google Places profile (Pandit Jitendra Chaubey), and elementor product listings
+// Verified against live vedicpanditji.com service categories, product listings, and customer reviews
 import { MULTI_CITY_SEO_PAGES } from './multiCitySeoData.js';
 import { ALL_POOJA_SERVICES } from './allPoojaServices.js';
 
@@ -14,7 +14,7 @@ export const BRAND_INFO = {
   email: 'info@vedicpanditji.com',
   address: 'Headquarters: Pune, Maharashtra (Serving All-India)',
   whatsappUrl: 'https://wa.me/919766880979?text=Namaste%20Panditji%2C%20I%20would%20like%20to%20enquire%20about%20booking%20a%20puja.',
-  headPriest: 'Pandit Jitendra Chaubey',
+  headPriest: 'Senior Vedic Acharya & Purohit Team',
   rating: 4.9,
   reviewsCount: 262,
   poojasPerformed: '10,000+',
@@ -136,7 +136,7 @@ export const TRADITIONS = [
 export const VEDIC_PILLARS = [
   {
     title: 'Certified Gurukul Pandits',
-    desc: 'Led by Pandit Jitendra Chaubey with 75+ verified scholars possessing deep mastery in Sanskrit shlokas, karmakanda, and Vedic rituals.',
+    desc: 'Led by Senior Gurukul-trained Acharyas with 75+ verified scholars possessing deep mastery in Sanskrit shlokas, karmakanda, and Vedic rituals.',
     icon: 'GraduationCap'
   },
   {
@@ -160,7 +160,7 @@ export const FAQS_LIST = [
   {
     category: 'Booking & Payment',
     q: 'How does the VedicPanditji booking and confirmation process work?',
-    a: 'Submit your puja request with preferred date and city. Acharya Jitendra Chaubey or his senior team reviews your Shubh Muhurat and confirms priest availability. Transparent dakshina is agreed beforehand with zero hidden charges.'
+    a: 'Submit your puja request with preferred date and city. Our senior Vedic Acharyas review your Shubh Muhurat and confirm priest availability. Transparent dakshina is agreed beforehand with zero hidden charges.'
   },
   {
     category: 'Priests & Qualifications',
@@ -180,7 +180,7 @@ export const FAQS_LIST = [
   {
     category: 'Booking & Payment',
     q: 'How is Shubh Muhurat calculated for our family?',
-    a: 'Acharya Jitendra Chaubey calculates the Muhurat considering your family Gotra, Janma Nakshatra, and Panchang Tithi to identify the most auspicious Lagna for maximum spiritual benefit.'
+    a: 'Our senior Acharyas calculate the Muhurat considering your family Gotra, Janma Nakshatra, and Panchang Tithi to identify the most auspicious Lagna for maximum spiritual benefit.'
   },
   {
     category: 'Temple Services',
@@ -334,7 +334,7 @@ export const CUSTOMER_REVIEWS = [
   },
   {
     id: 'rev-5',
-    author: 'Satyam Chaubey',
+    author: 'Satyam S.',
     rating: 5,
     date: '18 Jun 2026',
     time: 'Hinjewadi, Pune',

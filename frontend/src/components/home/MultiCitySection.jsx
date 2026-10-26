@@ -39,7 +39,7 @@ export default function MultiCitySection() {
       state: 'Maharashtra',
       badge: 'Verified Resident In-Person',
       badgeType: 'confirmed',
-      description: 'VedicPanditji primary hub led by Pandit Jitendra Chaubey with 75+ resident Gurukul Acharyas serving Wakad, Baner, Hinjewadi, Kothrud, Kharadi & Hadapsar.',
+      description: 'VedicPanditji primary hub with 75+ resident Gurukul Acharyas serving Wakad, Baner, Hinjewadi, Kothrud, Kharadi & Hadapsar.',
       image: '/images/hero-puja.jpg',
       links: [
         { title: 'North Indian Pandit in Pune', slug: 'north-indian-pandit-in-pune', tag: 'HQ 75+ Priests' },

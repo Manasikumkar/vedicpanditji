@@ -15,7 +15,7 @@ const VEDIC_PROCESS_STEPS = [
     step: '01',
     title: 'Select Ceremony & Consult Shubh Muhurat',
     subtitle: 'Free Muhurat Calculation based on Kundali & Panchang',
-    description: 'Choose your desired puja, hawan, or wedding ritual. Share your preferred dates, Gotra, and Nakshatra. Acharya Jitendra Chaubey assesses your family horoscope to recommend the most auspicious lagna and tithi.'
+    description: 'Choose your desired puja, hawan, or wedding ritual. Share your preferred dates, Gotra, and Nakshatra. Our senior Vedic Acharyas assess your family horoscope to recommend the most auspicious lagna and tithi.'
   },
   {
     step: '02',
@@ -199,7 +199,7 @@ export default function HowWeWorkPage() {
               Have questions regarding Shubh Muhurat or Puja Vidhi in Pune?
             </h3>
             <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
-              Consult directly with Acharya Jitendra Chaubey and senior Vedic coordinators.
+              Consult directly with our senior Vedic Acharyas and coordinators.
             </p>
           </div>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>

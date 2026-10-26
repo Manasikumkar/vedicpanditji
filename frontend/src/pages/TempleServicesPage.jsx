@@ -576,7 +576,7 @@ export default function TempleServicesPage() {
                       Har Har Mahadev! Seva Registered
                     </h3>
                     <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
-                      Your pilgrimage seva request for <strong>{selectedTempleForSeva.title || selectedTempleForSeva.name}</strong> ({selectedRitualName}) has been noted. Pandit Jitendra Chaubey and the local Kshetra Tirtha Purohit will connect with you to confirm the Shubh Muhurat and Sankalpam details.
+                      Your pilgrimage seva request for <strong>{selectedTempleForSeva.title || selectedTempleForSeva.name}</strong> ({selectedRitualName}) has been noted. Our senior Vedic Acharyas and the local Kshetra Tirtha Purohit will connect with you to confirm the Shubh Muhurat and Sankalpam details.
                     </p>
 
                     <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>

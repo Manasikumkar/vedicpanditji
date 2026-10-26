@@ -133,7 +133,7 @@ export default function HeroSection() {
               maxWidth: '680px'
             }}
           >
-            Led by Pandit Jitendra Chaubey with 75+ certified Gurukul Vedic Priests. Dedicated North Indian and Bihari Pandits for Griha Pravesh, Satyanarayan Puja, Vastu Shanti, Havans &amp; Hindu Weddings across India with authentic Hindi &amp; Sanskrit rituals.
+            Powered by an established network of 75+ certified Gurukul Vedic Priests. Dedicated North Indian and Bihari Pandits for Griha Pravesh, Satyanarayan Puja, Vastu Shanti, Havans &amp; Hindu Weddings across India with authentic Hindi &amp; Sanskrit rituals.
           </p>
 
           {/* Quick Call & WhatsApp CTA Group */}

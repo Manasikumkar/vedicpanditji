@@ -11,7 +11,7 @@ export default function ReviewsSection() {
           <span className="section-tag">Devotee Experiences in Pune</span>
           <h2 className="section-title">Verified Google Customer Reviews</h2>
           <p className="section-desc">
-            Rated {BRAND_INFO.rating} / 5.0 on Google based on {BRAND_INFO.reviewsCount}+ verified reviews for Pandit Jitendra Chaubey and the VedicPanditji team.
+            Rated {BRAND_INFO.rating} / 5.0 on Google based on {BRAND_INFO.reviewsCount}+ verified customer reviews for the VedicPanditji team.
           </p>
         </div>
 
@@ -118,7 +118,7 @@ export default function ReviewsSection() {
                     Conducted By
                   </div>
                   <div style={{ fontSize: '11px', fontWeight: 700, color: '#BD4B23' }}>
-                    Pandit Jitendra Chaubey
+                    Senior Vedic Panditji
                   </div>
                 </div>
               </div>

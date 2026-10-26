@@ -39,7 +39,7 @@ export default function AboutUsPage() {
               Preserving Vedic Sanatan Traditions with Devotion &amp; Precision
             </h1>
             <p style={{ color: '#EAE5D9', fontSize: '16px', lineHeight: 1.7, marginBottom: '28px' }}>
-              VedicPanditji was founded under the spiritual guidance of <strong>Pandit Jitendra Chaubey</strong> with a singular mission: to connect families across India with authentic Gurukul-certified North Indian and Bihari Pandits who conduct ceremonies with deep scriptural reverence in Hindi and Sanskrit.
+              VedicPanditji was founded with a singular mission: to connect families across India with authentic Gurukul-certified North Indian and Bihari Pandits who conduct ceremonies with deep scriptural reverence in Hindi and Sanskrit.
             </p>
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
               <button
@@ -111,13 +111,13 @@ export default function AboutUsPage() {
           <div>
             <span className="section-tag">Spiritual Leadership</span>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '28px', fontWeight: 800, marginBottom: '16px' }}>
-              Meet Acharya Jitendra Chaubey
+              Meet Our Senior Vedic Acharyas
             </h2>
             <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.7, marginBottom: '16px' }}>
-              With deep roots in the sacred tradition of Vedic Karmakanda, Pandit Jitendra Chaubey has dedicated over 15 years to guiding families through auspicious life milestones. Renowned across Pune for his mastery in Shubh Muhurat calculations, Griha Pravesh, Satyanarayan Vrat Katha, and grand wedding ceremonies, he ensures that every mantra resonates with profound spiritual vibration.
+              With deep roots in the sacred tradition of Vedic Karmakanda, our senior Gurukul-trained Acharyas have dedicated over 15 years to guiding families through auspicious life milestones. Renowned across Pune and major Indian cities for their mastery in Shubh Muhurat calculations, Griha Pravesh, Satyanarayan Vrat Katha, and grand wedding ceremonies, our team ensures that every mantra resonates with profound spiritual vibration.
             </p>
             <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.7, marginBottom: '24px' }}>
-              Under his tutelage, all 75+ affiliated pandits are vetted not only for their scriptural pronunciation and ritual knowledge, but for their punctuality, warmth, and devotion to explaining the meaning of the rites to modern devotees and younger generations.
+              Under strict scriptural standards, all 75+ affiliated pandits are vetted not only for their scriptural pronunciation and ritual knowledge, but for their punctuality, warmth, and devotion to explaining the meaning of the rites to modern devotees and younger generations.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -153,8 +153,8 @@ export default function AboutUsPage() {
               "Our devotion is to bring the sacred agni of the Vedas to your threshold, cleansing spaces of negative energies and bestowing divine peace (Shanti), wealth, and prosperity."
             </p>
             <div style={{ borderTop: '1px solid var(--border-gold)', paddingTop: '16px' }}>
-              <div style={{ fontWeight: 700, fontSize: '15px' }}>Pandit Jitendra Chaubey</div>
-              <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Founder &amp; Chief Acharya, VedicPanditji</div>
+              <div style={{ fontWeight: 700, fontSize: '15px' }}>Senior Acharya Parishad</div>
+              <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Vedic Gurukul Scholars, VedicPanditji</div>
             </div>
           </div>
         </div>

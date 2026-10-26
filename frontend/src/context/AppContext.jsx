@@ -244,7 +244,7 @@ export function AppProvider({ children }) {
         : 'Enquiry Draft Saved (Local Device Only)',
       isDraftOnly: !isServerSuccess,
       assignedPandit: isServerSuccess 
-        ? 'Pending Review by Pandit Jitendra Chaubey' 
+        ? 'Pending Review by Senior Vedic Acharyas' 
         : 'Not assigned yet (Allocated by Panditji after direct contact)',
       scheduledDate: `${enquiryData.date || 'Date to be calculated'} (${enquiryData.timeSlot || 'Morning Shubh Muhurat'})`,
       customerName: enquiryData.customerName || (user?.name || 'Devotee'),

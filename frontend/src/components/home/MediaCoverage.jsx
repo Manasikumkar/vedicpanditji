@@ -31,7 +31,7 @@ const VEDIC_CREDENTIALS = [
     icon: CheckCircle,
     title: 'Free Muhurat Guidance',
     tag: 'Panchang Precision',
-    detail: 'Pandit Jitendra Chaubey calculates accurate Shubh Muhurats based on your birth Nakshatra, Gotra, and Tithi.'
+    detail: 'Our senior Vedic Acharyas calculate accurate Shubh Muhurats based on your birth Nakshatra, Gotra, and Tithi.'
   }
 ];
 
@@ -45,7 +45,7 @@ export default function MediaCoverage() {
             Why Pune Devotees Revere VedicPanditji
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '14px', maxWidth: '600px', margin: '8px auto 0' }}>
-            Built on Vedic principles, transparent guidance, and dedicated acharyas led by Pandit Jitendra Chaubey.
+            Built on Vedic principles, transparent guidance, and dedicated Gurukul-trained acharyas.
           </p>
         </div>
 

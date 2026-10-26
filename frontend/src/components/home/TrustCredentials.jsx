@@ -25,7 +25,7 @@ export default function TrustCredentials() {
           <span className="section-tag">Authenticity & Shastra Vidhi</span>
           <h2 className="section-title">The VedicPanditji Standard</h2>
           <p className="section-desc">
-            Led by Pandit Jitendra Chaubey, our network of 75+ certified Gurukul North Indian and Bihari Pandits strictly follows Vedic traditions, authentic Sanskrit mantras, and certified ritual procedures with all-India service coverage.
+            Our network of 75+ certified Gurukul North Indian and Bihari Pandits strictly follows Vedic traditions, authentic Sanskrit mantras, and certified ritual procedures with all-India service coverage.
           </p>
         </div>
 

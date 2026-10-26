@@ -77,7 +77,7 @@ export default function Footer() {
             </div>
 
             <p style={{ color: '#A09D94', fontSize: '13px', lineHeight: 1.65, marginBottom: '14px', maxWidth: '380px' }}>
-              VedicPanditji is a dedicated platform for authentic Hindu puja services, Vedic rituals, and havans led by Pandit Jitendra Chaubey with 75+ Gurukul-certified North Indian &amp; Bihari priests.
+              VedicPanditji is a dedicated platform for authentic Hindu puja services, Vedic rituals, and havans with 75+ Gurukul-certified North Indian &amp; Bihari priests.
             </p>
 
             {/* Languages Badge */}
@@ -381,7 +381,7 @@ export default function Footer() {
                     onClick={() => navigateTo('about-us')}
                     className="footer-nav-link"
                   >
-                    About Acharya Jitendra Chaubey
+                    About Us &amp; Vedic Lineage
                   </button>
                 </li>
                 <li>

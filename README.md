@@ -1,6 +1,6 @@
 # VedicPanditji — Authentic Vedic Pujas & Temple Services (Frontend)
 
-> A modern, devotional web application for booking verified Vedic Pandits, Purohits, and Temple Services across major cities in India, guided by Acharya Jitendra Chaubey.
+> A modern, devotional web application for booking verified Vedic Pandits, Purohits, and Temple Services across major cities in India.
 
 ---
 
@@ -61,7 +61,7 @@ Vedicpanditji/
     │   │   └── vedicPanditData.js       # Core ritual data & traditions
     │   ├── pages/
     │   │   ├── HomePage.jsx             # Flagship home experience
-    │   │   ├── AboutUsPage.jsx          # Acharya Jitendra Chaubey & Vedic lineage
+    │   │   ├── AboutUsPage.jsx          # Vedic lineage & Gurukul traditions
     │   │   ├── CataloguePage.jsx        # Complete puja catalog with search & filters
     │   │   ├── TempleServicesPage.jsx   # Pilgrimage & temple rituals
     │   │   ├── ServiceDetailPage.jsx    # Muhurtham, package comparison & vidhi

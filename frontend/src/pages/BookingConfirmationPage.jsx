@@ -30,7 +30,7 @@ export default function BookingConfirmationPage() {
     customerName: 'Rajesh Sharma',
     phone: '+91 97668 80979',
     address: 'Flat 402, Rohan Mithila, Viman Nagar, Pune - 411014',
-    assignedPandit: 'Pandit Jitendra Chaubey & Vedic Purohit Team'
+    assignedPandit: 'Senior Vedic Pandit & Purohit Team'
   };
 
   useEffect(() => {

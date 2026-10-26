@@ -89,7 +89,7 @@ export default function MyAccountPage() {
             </h1>
 
             <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '28px' }}>
-              Sign in to view your ceremony bookings, consult with Pandit Jitendra Chaubey regarding auspicious Shubh Muhurats, and track assigned Gurukul priests.
+              Sign in to view your ceremony bookings, consult regarding auspicious Shubh Muhurats, and track assigned Gurukul priests.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -334,7 +334,7 @@ export default function MyAccountPage() {
                   >
                     <ShieldCheck size={18} color="#D97706" style={{ flexShrink: 0, marginTop: '2px' }} />
                     <div>
-                      <strong>Important Notice:</strong> Enquiries shown below are stored in your local browser history. If you have not yet contacted Panditji, tap <strong>"Send via WhatsApp"</strong> on any enquiry so Pandit Jitendra Chaubey can calculate the auspicious Shubh Muhurat and confirm priest availability.
+                      <strong>Important Notice:</strong> Enquiries shown below are stored in your local browser history. If you have not yet contacted Panditji, tap <strong>"Send via WhatsApp"</strong> on any enquiry so our senior Acharyas can calculate the auspicious Shubh Muhurat and confirm priest availability.
                     </div>
                   </div>
                 )}
@@ -436,7 +436,7 @@ export default function MyAccountPage() {
                         }}
                       >
                         <div style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>
-                          Send this saved request to Pandit Jitendra Chaubey for instant verification:
+                          Send this saved request to VedicPanditji for instant verification:
                         </div>
 
                         <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flexWrap: 'wrap' }}>
@@ -509,7 +509,7 @@ export default function MyAccountPage() {
                   </h3>
                 </div>
                 <p style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '22px' }}>
-                  These details help Acharya Jitendra Chaubey and the assigned Gurukul priest prepare the sacred Sankalpa and Vedic Vidhi for your family.
+                  These details help our senior Acharyas and the assigned Gurukul priest prepare the sacred Sankalpa and Vedic Vidhi for your family.
                 </p>
 
                 <form onSubmit={handleProfileSave}>

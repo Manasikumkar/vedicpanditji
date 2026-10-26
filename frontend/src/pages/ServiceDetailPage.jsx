@@ -150,7 +150,7 @@ export default function ServiceDetailPage() {
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--text-secondary)' }}>
                 <ShieldCheck size={16} color="var(--accent-saffron)" />
-                <span>Certified North Indian &amp; Bihari Pandits under Acharya Jitendra Chaubey</span>
+                <span>Certified North Indian &amp; Bihari Pandits under Senior Vedic Acharyas</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--text-secondary)' }}>
                 <Package size={16} color="var(--accent-saffron)" />
@@ -485,7 +485,7 @@ export default function ServiceDetailPage() {
             </div>
 
             <div style={{ marginTop: '16px', fontSize: '11px', color: 'var(--text-muted)', textAlign: 'center', lineHeight: 1.5 }}>
-              *Indicative dakshina is subject to Shubh Muhurat review, samagri preferences, and travel arrangements. The final quote and priest allocation are confirmed directly with Pandit Jitendra Chaubey.
+              *Indicative dakshina is subject to Shubh Muhurat review, samagri preferences, and travel arrangements. The final quote and priest allocation are confirmed directly with our Vedic coordination team.
             </div>
           </div>
         </section>
@@ -616,7 +616,7 @@ export default function ServiceDetailPage() {
                       Need Shubh Muhurat guidance for this ceremony?
                     </h5>
                     <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
-                      Acharya Jitendra Chaubey provides free astrological Muhurat dates tailored to your family.
+                      Our senior Vedic Acharyas provide free astrological Muhurat dates tailored to your family.
                     </p>
                   </div>
                   <button
@@ -716,7 +716,7 @@ export default function ServiceDetailPage() {
                       required
                       value={newReviewComment}
                       onChange={e => setNewReviewComment(e.target.value)}
-                      placeholder="Share your experience with Pandit Jitendra Chaubey and the Vedic ceremony..."
+                      placeholder="Share your experience with VedicPanditji and the Vedic ceremony..."
                       style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #DDD7C8' }}
                     />
                   </div>
@@ -771,7 +771,7 @@ export default function ServiceDetailPage() {
                     },
                     {
                       q: 'How is Shubh Muhurat determined?',
-                      a: 'Acharya Jitendra Chaubey examines your birth Nakshatra, Gotra, and local Panchang sunrise/sunset timings to advise the most auspicious hour.'
+                      a: 'Our senior Acharyas examine your birth Nakshatra, Gotra, and local Panchang sunrise/sunset timings to advise the most auspicious hour.'
                     }
                   ]).map((faq, i) => (
                     <div

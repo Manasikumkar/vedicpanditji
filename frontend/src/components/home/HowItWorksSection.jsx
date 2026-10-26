@@ -23,7 +23,7 @@ export default function HowItWorksSection() {
       step: '02',
       title: 'Shubh Muhurat Fixing',
       subtitle: 'Panchang & Kundali Calculation',
-      desc: 'Pandit Jitendra Chaubey & senior Acharyas calculate the most auspicious tithi and nakshatra timing for you.',
+      desc: 'Our senior Vedic Acharyas calculate the most auspicious tithi and nakshatra timing for you.',
       icon: CalendarClock
     },
     {

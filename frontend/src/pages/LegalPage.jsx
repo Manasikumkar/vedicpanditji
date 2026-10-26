@@ -124,13 +124,13 @@ export default function LegalPage() {
                 2. Direct Consultation Flexibility
               </h4>
               <p style={{ marginBottom: '14px' }}>
-                Since VedicPanditji operates on direct consultation and transparent dakshina without mandatory advance token lock-ins, clients can easily adjust priest assignments by speaking directly with Pandit Jitendra Chaubey.
+                Since VedicPanditji operates on direct consultation and transparent dakshina without mandatory advance token lock-ins, clients can easily adjust priest assignments by speaking directly with our senior coordination team.
               </p>
               <h4 style={{ fontSize: '15px', color: 'var(--text-main)', fontWeight: 700, margin: '18px 0 8px' }}>
                 3. Pandit Replacement Assurance
               </h4>
               <p>
-                In the rare event that an assigned priest faces an unavoidable medical emergency, Acharya Jitendra Chaubey personally ensures a senior Gurukul-trained substitute is dispatched on time to preserve your Muhurat sanctity.
+                In the rare event that an assigned priest faces an unavoidable medical emergency, our senior Acharyas personally ensure a verified Gurukul-trained substitute is dispatched on time to preserve your Muhurat sanctity.
               </p>
             </div>
           )}
@@ -170,7 +170,7 @@ export default function LegalPage() {
                 Vedic Services &amp; Priests
               </h4>
               <p style={{ marginBottom: '14px' }}>
-                All our priests are certified Gurukul scholars vetted under Acharya Jitendra Chaubey. Rites are conducted strictly according to North Indian, Bihari, or requested regional Shastra Vidhis.
+                All our priests are certified Gurukul scholars vetted under our senior Acharyas. Rites are conducted strictly according to North Indian, Bihari, or requested regional Shastra Vidhis.
               </p>
               <h4 style={{ fontSize: '15px', color: 'var(--text-main)', fontWeight: 700, margin: '18px 0 8px' }}>
                 Dakshina &amp; Samagri Arrangement

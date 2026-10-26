@@ -30,7 +30,7 @@ export default function ContactEnquiryPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
-    showToast('Enquiry received! Pandit Jitendra Chaubey will review your Muhurat request shortly.');
+    showToast('Enquiry received! Our senior Vedic Acharyas will review your Muhurat request shortly.');
   };
 
   const handleWhatsAppSend = () => {
@@ -50,7 +50,7 @@ export default function ContactEnquiryPage() {
           </div>
           <span className="section-tag">Direct Pandit Consultation</span>
           <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '38px', fontWeight: 800, marginBottom: '14px' }}>
-            Contact Acharya Jitendra Chaubey
+            Contact VedicPanditji Acharyas
           </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.6 }}>
             Need Shubh Muhurat calculation, personalized family Gotra vidhi, or booking a verified North Indian Pandit in Pune or anywhere across India? Reach out directly.
@@ -85,7 +85,7 @@ export default function ContactEnquiryPage() {
                 </div>
               </div>
               <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
-                Dedicated direct line to Pandit Jitendra Chaubey for instant Muhurat guidance, dakshina details, and priest assignments in Pune.
+                Dedicated direct helpline for instant Muhurat guidance, dakshina details, and priest assignments in Pune &amp; across India.
               </p>
             </div>
 
@@ -170,7 +170,7 @@ export default function ContactEnquiryPage() {
                   Enquiry Received with Reverence!
                 </h3>
                 <p style={{ fontSize: '14px', color: 'var(--text-secondary)', maxWidth: '440px', margin: '0 auto 20px' }}>
-                  Thank you, <strong>{formData.name}</strong>. Acharya Jitendra Chaubey has received your request for <strong>{formData.serviceNeeded}</strong> at <strong>{formData.locality}</strong>.
+                  Thank you, <strong>{formData.name}</strong>. Our senior Vedic Acharyas have received your request for <strong>{formData.serviceNeeded}</strong> at <strong>{formData.locality}</strong>.
                 </p>
                 <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
                   <button
@@ -200,7 +200,7 @@ export default function ContactEnquiryPage() {
                   Send Puja Enquiry to VedicPanditji
                 </h2>
                 <p style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '24px' }}>
-                  Fill in your details and Acharya Jitendra Chaubey will connect with personalized Muhurat guidance and dakshina breakdown.
+                  Fill in your details and our senior Acharyas will connect with personalized Muhurat guidance and dakshina breakdown.
                 </p>
 
                 <div className="grid-2" style={{ gap: '16px', marginBottom: '16px' }}>
@@ -328,7 +328,7 @@ export default function ContactEnquiryPage() {
                   style={{ width: '100%', padding: '14px', fontSize: '15px', cursor: 'pointer' }}
                 >
                   <Send size={16} />
-                  <span>Submit Enquiry to Acharya Jitendra Chaubey</span>
+                  <span>Submit Enquiry to VedicPanditji Acharyas</span>
                 </button>
               </form>
             )}
