@@ -10,6 +10,10 @@ export function AppProvider({ children }) {
     if (typeof window === 'undefined') return { route: 'home', params: {} };
     const path = window.location.pathname.replace(/\/$/, '') || '/';
     if (path === '/') return { route: 'home', params: {} };
+    if (path === '/admin' || path.startsWith('/admin/')) {
+      const section = path.replace('/admin', '').replace(/^\//, '') || 'overview';
+      return { route: 'admin', params: { section } };
+    }
     if (path === '/sitemap' || path === '/sitemap.html') return { route: 'sitemap', params: {} };
     if (path === '/catalogue' || path === '/services') return { route: 'catalogue', params: {} };
     if (path.startsWith('/services/')) {
@@ -159,6 +163,9 @@ export function AppProvider({ children }) {
       else if (route === 'auth' || route === 'login') targetPath = '/login';
       else if (route === 'account' || route === 'my-account') targetPath = '/my-account';
       else if (route === 'sitemap') targetPath = '/sitemap';
+      else if (route === 'admin') {
+        targetPath = params.section && params.section !== 'overview' ? `/admin/${params.section}` : '/admin';
+      }
       else if (route === 'checkout') {
         targetPath = '/catalogue';
       }

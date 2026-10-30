@@ -4,11 +4,7 @@ import {
   MapPin,
   Sparkles,
   ArrowRight,
-  ShieldCheck,
-  CheckCircle2,
-  Globe,
-  Flame,
-  Building2
+  ShieldCheck
 } from 'lucide-react';
 
 export default function MultiCitySection() {
@@ -59,77 +55,63 @@ export default function MultiCitySection() {
       description: 'Serving Mumbai Western Suburbs, Powai, Thane West, Navi Mumbai & South Mumbai with punctual pandit doorstep transit.',
       image: '/images/mandap-altar.jpg',
       links: [
-        { title: 'North Indian Pandit in Mumbai', slug: 'north-indian-pandit-in-mumbai', tag: 'Suburbs & Thane' },
-        { title: 'Griha Pravesh Puja in Mumbai', slug: 'griha-pravesh-puja-in-mumbai', tag: 'High-Rise Vidhi' },
-        { title: 'Bihari Pandit in Mumbai', slug: 'bihari-pandit-in-mumbai', tag: 'Chhath & Sanskars' },
-        { title: 'Satyanarayan Puja in Mumbai', slug: 'satyanarayan-puja-in-mumbai', tag: 'Evening Pradosh' }
-      ]
-    },
-    {
-      id: 'Hyderabad',
-      name: 'Hyderabad & Cyberabad',
-      state: 'Telangana',
-      badge: 'Live E-Puja & Visiting Acharyas',
-      badgeType: 'hybrid',
-      description: 'Dedicated Hindi Vedic services for North Indian families across Hitec City, Gachibowli, Kondapur, Madhapur & Kukatpally.',
-      image: '/images/samagri-thali.jpg',
-      links: [
-        { title: 'North Indian Pandit in Hyderabad', slug: 'north-indian-pandit-in-hyderabad', tag: 'Live Sankalpam' },
-        { title: 'Griha Pravesh Puja in Hyderabad', slug: 'griha-pravesh-puja-in-hyderabad', tag: 'Gated Communities' }
+        { title: 'North Indian Pandit in Mumbai', slug: 'north-indian-pandit-in-mumbai', tag: 'Express Travel' },
+        { title: 'Bihari Pandit in Mumbai', slug: 'bihari-pandit-in-mumbai', tag: 'Vedic Rituals' },
+        { title: 'Griha Pravesh Puja in Mumbai', slug: 'griha-pravesh-puja-in-mumbai', tag: 'MMR Region' },
+        { title: 'Satyanarayan Puja in Mumbai', slug: 'satyanarayan-puja-in-mumbai', tag: 'Shubh Muhurat' },
+        { title: 'Vastu Shanti Puja in Mumbai', slug: 'vastu-shanti-puja-in-mumbai', tag: 'Flats & Villas' },
+        { title: 'Hindu Wedding Pandit in Mumbai', slug: 'hindu-wedding-pandit-in-mumbai', tag: 'Vedic Wedding' }
       ]
     },
     {
       id: 'Delhi',
-      name: 'Delhi & NCR',
+      name: 'Delhi-NCR (Gurgaon & Noida)',
       state: 'Delhi NCR',
-      badge: 'Live E-Puja & Visiting Acharyas',
+      badge: 'Visiting Acharyas & Live',
       badgeType: 'hybrid',
-      description: 'Serving North Indian families across South Delhi, Dwarka, Noida, Gurugram, Rohini & Ghaziabad with authentic Hindi & Sanskrit rituals.',
-      image: '/images/hero-puja.jpg',
+      description: 'Doorstep Pandit service & Live E-Puja across Gurgaon, Noida, Greater Noida, Ghaziabad & South Delhi.',
+      image: '/images/special-corporate.jpg',
       links: [
-        { title: 'North Indian Pandit in Delhi NCR', slug: 'north-indian-pandit-in-delhi', tag: 'All-India Coverage' },
-        { title: 'Griha Pravesh & Vastu Shanti', slug: 'north-indian-pandit-in-delhi', tag: 'Auspicious Muhurat' },
-        { title: 'Satyanarayan Katha in Hindi', slug: 'north-indian-pandit-in-delhi', tag: 'Complete Vidhi' },
-        { title: 'Rudrabhishek & Hawan', slug: 'north-indian-pandit-in-delhi', tag: 'Vedic Chanting' }
+        { title: 'North Indian Pandit in Delhi', slug: 'north-indian-pandit-in-delhi', tag: 'NCR Wide' },
+        { title: 'Griha Pravesh Puja in Delhi', slug: 'griha-pravesh-puja-in-delhi', tag: 'Popular' },
+        { title: 'Satyanarayan Puja in Delhi', slug: 'satyanarayan-puja-in-delhi', tag: 'Purnima Katha' },
+        { title: 'Bihari Pandit in Delhi', slug: 'bihari-pandit-in-delhi', tag: 'Sanskrit Vidhi' },
+        { title: 'Vastu Shanti Puja in Delhi', slug: 'vastu-shanti-puja-in-delhi', tag: 'Commercial & Home' },
+        { title: 'Hindu Wedding Pandit in Delhi', slug: 'hindu-wedding-pandit-in-delhi', tag: 'Lagna Vidhi' }
+      ]
+    },
+    {
+      id: 'Hyderabad',
+      name: 'Hyderabad & Secunderabad',
+      state: 'Telangana',
+      badge: 'Live E-Puja & Visiting Pandit',
+      badgeType: 'hybrid',
+      description: 'Dedicated North Indian rituals for Gachibowli, Hitec City, Kondapur, Madhapur & Kukatpally devotees.',
+      image: '/images/category-festival.jpg',
+      links: [
+        { title: 'North Indian Pandit in Hyderabad', slug: 'north-indian-pandit-in-hyderabad', tag: 'Hindi Purohit' },
+        { title: 'Griha Pravesh Puja in Hyderabad', slug: 'griha-pravesh-puja-in-hyderabad', tag: 'Apartments' },
+        { title: 'Satyanarayan Puja in Hyderabad', slug: 'satyanarayan-puja-in-hyderabad', tag: 'Katha & Havan' },
+        { title: 'Bihari Pandit in Hyderabad', slug: 'bihari-pandit-in-hyderabad', tag: 'North Traditions' },
+        { title: 'Vastu Shanti Puja in Hyderabad', slug: 'vastu-shanti-puja-in-hyderabad', tag: 'Dosha Nivaran' },
+        { title: 'Hindu Wedding Pandit in Hyderabad', slug: 'hindu-wedding-pandit-in-hyderabad', tag: 'Saptapadi' }
       ]
     },
     {
       id: 'Chennai',
-      name: 'Chennai',
+      name: 'Chennai & Tamil Nadu',
       state: 'Tamil Nadu',
       badge: 'Live E-Puja & Visiting Acharyas',
       badgeType: 'hybrid',
-      description: 'Serving the North Indian community and diaspora along OMR, Velachery, Anna Nagar, T Nagar & Adyar with Hindi & Sanskrit rituals.',
-      image: '/images/bangalore-puja.jpg',
+      description: 'North Indian & Bihari community rituals in OMR, Velachery, Anna Nagar, T. Nagar & ECR.',
+      image: '/images/category-jaap.jpg',
       links: [
-        { title: 'North Indian Pandit in Chennai', slug: 'north-indian-pandit-in-chennai', tag: 'Hindi Speaking' },
-        { title: 'Griha Pravesh in Chennai', slug: 'north-indian-pandit-in-chennai', tag: 'North Indian Vidhi' },
-        { title: 'Satyanarayan Puja in Chennai', slug: 'north-indian-pandit-in-chennai', tag: 'Hindi Katha' },
-        { title: 'Vastu Shanti & Hawan', slug: 'north-indian-pandit-in-chennai', tag: 'Pure Samagri' }
-      ]
-    },
-    {
-      id: 'Nashik',
-      name: 'Nashik & Trimbakeshwar',
-      state: 'Maharashtra',
-      badge: 'Verified Tirtha Coordination',
-      badgeType: 'pilgrimage',
-      description: 'Sacred pilgrimage rituals at Kushavarta Kund and Trimbakeshwar Jyotirlinga with authorized hereditary Purohits.',
-      image: '/images/temple-service.jpg',
-      links: [
-        { title: 'Trimbakeshwar Kalsarp Puja Nashik', slug: 'trimbakeshwar-kalsarp-puja-nashik', tag: 'Jyotirlinga Kshetra' }
-      ]
-    },
-    {
-      id: 'Online',
-      name: 'Online E-Puja (Pan-India & Global)',
-      state: 'Worldwide',
-      badge: '100% Live Interactive Video',
-      badgeType: 'online',
-      description: 'Private 2-way HD Zoom ceremonies with personalized Gotra Sankalp and consecrated Prasad courier across India, USA, UK & UAE.',
-      image: '/images/aesthetic-pooja.jpg',
-      links: [
-        { title: 'Online E-Puja Services', slug: 'online-e-puja-services', tag: 'Global Express Prasad' }
+        { title: 'North Indian Pandit in Chennai', slug: 'north-indian-pandit-in-chennai', tag: 'OMR & City' },
+        { title: 'Griha Pravesh Puja in Chennai', slug: 'griha-pravesh-puja-in-chennai', tag: 'North Rituals' },
+        { title: 'Satyanarayan Puja in Chennai', slug: 'satyanarayan-puja-in-chennai', tag: 'Hindi Vidhi' },
+        { title: 'Bihari Pandit in Chennai', slug: 'bihari-pandit-in-chennai', tag: 'Pure Sankalp' },
+        { title: 'Vastu Shanti Puja in Chennai', slug: 'vastu-shanti-puja-in-chennai', tag: 'Vedic Havan' },
+        { title: 'Hindu Wedding Pandit in Chennai', slug: 'hindu-wedding-pandit-in-chennai', tag: 'North Vivah' }
       ]
     }
   ];
@@ -137,49 +119,19 @@ export default function MultiCitySection() {
   const currentCity = cityDirectory.find(c => c.id === activeTab) || cityDirectory[0];
 
   return (
-    <section style={{ padding: '80px 0', background: '#F8F6F0', borderTop: '1px solid #EAE5D9' }}>
+    <section style={{ padding: '85px 0', background: 'var(--bg-primary)' }}>
       <div className="container">
         
         {/* Section Header */}
-        <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 40px' }}>
-          <div
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              background: '#FFFFFF',
-              border: '1px solid rgba(189, 75, 35, 0.25)',
-              padding: '6px 16px',
-              borderRadius: '9999px',
-              fontSize: '12px',
-              fontWeight: 700,
-              color: '#BD4B23',
-              marginBottom: '14px'
-            }}
-          >
-            <Sparkles size={13} color="#BD4B23" />
-            <span>North Indian Pandit by City • All-India Coverage</span>
-          </div>
-
-          <h2
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '36px',
-              fontWeight: 800,
-              color: 'var(--text-main)',
-              letterSpacing: '-0.02em',
-              marginBottom: '12px'
-            }}
-          >
-            Vedic Pandit Services Across India
-          </h2>
-
-          <p style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-            Explore city-specific landing pages tailored for North Indian and Bihari families in <strong>Pune</strong>, <strong>Mumbai</strong>, <strong>Bangalore</strong>, <strong>Delhi-NCR</strong>, <strong>Hyderabad</strong> &amp; <strong>Chennai</strong>.
+        <div className="section-header">
+          <span className="section-tag">Multi-City Vedic Coverage</span>
+          <h2 className="section-title">Authentic Pujas Across Major Cities</h2>
+          <p className="section-desc">
+            VedicPanditji offers verified doorstep North Indian &amp; Bihari Pandits across Pune, Mumbai, Bangalore, Delhi-NCR, Hyderabad &amp; Chennai with 100% Shastra compliance.
           </p>
         </div>
 
-        {/* City Tab Buttons */}
+        {/* City Filter Pills */}
         <div
           style={{
             display: 'flex',
@@ -189,51 +141,50 @@ export default function MultiCitySection() {
             marginBottom: '36px'
           }}
         >
-          {cityDirectory.map(city => (
-            <button
-              key={city.id}
-              onClick={() => setActiveTab(city.id)}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '10px 20px',
-                borderRadius: '12px',
-                fontSize: '14px',
-                fontWeight: 700,
-                border: activeTab === city.id ? '2px solid #BD4B23' : '1px solid #D8D2C4',
-                background: activeTab === city.id ? '#FFFFFF' : 'rgba(255, 255, 255, 0.7)',
-                color: activeTab === city.id ? '#BD4B23' : 'var(--text-main)',
-                cursor: 'pointer',
-                boxShadow: activeTab === city.id ? '0 4px 16px rgba(189, 75, 35, 0.14)' : 'none',
-                transition: 'all 0.2s ease'
-              }}
-            >
-              <MapPin size={14} color={activeTab === city.id ? '#BD4B23' : '#8A857A'} />
-              <span>{city.id === 'Bangalore' ? 'Bangalore' : city.id === 'Pune' ? 'Pune (HQ)' : city.id === 'Mumbai' ? 'Mumbai' : city.id === 'Hyderabad' ? 'Hyderabad' : city.id === 'Nashik' ? 'Nashik' : 'Online E-Puja'}</span>
-            </button>
-          ))}
+          {cityDirectory.map(city => {
+            const isActive = city.id === activeTab;
+            return (
+              <button
+                key={city.id}
+                onClick={() => setActiveTab(city.id)}
+                style={{
+                  padding: '10px 20px',
+                  borderRadius: 'var(--radius-full)',
+                  border: isActive ? '1px solid var(--accent-saffron)' : '1px solid var(--border-subtle)',
+                  background: isActive ? 'var(--accent-saffron-gradient)' : '#FFFFFF',
+                  color: isActive ? '#FFFFFF' : 'var(--text-main)',
+                  fontWeight: isActive ? 700 : 600,
+                  fontSize: '13.5px',
+                  cursor: 'pointer',
+                  boxShadow: isActive ? '0 4px 14px rgba(217, 79, 30, 0.25)' : 'var(--shadow-sm)',
+                  transition: 'var(--transition-smooth)'
+                }}
+              >
+                <span>{city.name.split(' ')[0]}</span>
+              </button>
+            );
+          })}
         </div>
 
         {/* Active City Showcase Card */}
         <div
           style={{
             background: '#FFFFFF',
-            borderRadius: '24px',
-            border: '1px solid #EAE5D9',
-            boxShadow: '0 12px 36px rgba(44, 39, 36, 0.06)',
+            borderRadius: 'var(--radius-lg)',
+            border: '1px solid var(--border-subtle)',
+            boxShadow: 'var(--shadow-floating)',
             overflow: 'hidden'
           }}
         >
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: '1.2fr 1.8fr',
-              alignItems: 'stretch'
+              gridTemplateColumns: '1fr 1.3fr',
+              gap: 0
             }}
             className="city-showcase-grid"
           >
-            {/* Left: City Visual & Fulfillment Notice */}
+            {/* Left: City Info & Photo */}
             <div
               style={{
                 position: 'relative',
@@ -241,59 +192,36 @@ export default function MultiCitySection() {
                 backgroundImage: `url(${currentCity.image})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                padding: '32px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'flex-end',
-                color: '#FFFFFF'
+                padding: '32px'
               }}
             >
               <div
                 style={{
                   position: 'absolute',
                   inset: 0,
-                  background: 'linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(20,18,16,0.85) 100%)'
+                  background: 'linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(28,26,24,0.88) 100%)'
                 }}
               />
 
-              <div style={{ position: 'relative', zIndex: 2 }}>
-                <div
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    background: currentCity.badgeType === 'confirmed' ? 'rgba(34, 197, 94, 0.9)' : currentCity.badgeType === 'hybrid' ? 'rgba(217, 119, 6, 0.9)' : 'rgba(29, 78, 216, 0.9)',
-                    color: '#FFFFFF',
-                    padding: '4px 12px',
-                    borderRadius: '20px',
-                    fontSize: '11px',
-                    fontWeight: 700,
-                    textTransform: 'uppercase',
-                    marginBottom: '10px'
-                  }}
-                >
+              <div style={{ position: 'relative', zIndex: 2, color: '#FFFFFF' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(217, 79, 30, 0.95)', padding: '4px 12px', borderRadius: 'var(--radius-full)', fontSize: '11.5px', fontWeight: 700, marginBottom: '10px' }}>
                   <ShieldCheck size={13} />
                   <span>{currentCity.badge}</span>
                 </div>
 
-                <h3
-                  style={{
-                    fontFamily: 'var(--font-display)',
-                    fontSize: '28px',
-                    fontWeight: 800,
-                    color: '#FFFFFF',
-                    marginBottom: '8px'
-                  }}
-                >
+                <h3 style={{ fontSize: '24px', fontWeight: 800, color: '#FFFFFF', marginBottom: '8px' }}>
                   {currentCity.name}
                 </h3>
 
-                <p style={{ fontSize: '13px', color: '#E2DFD7', lineHeight: 1.5, marginBottom: '16px' }}>
+                <p style={{ fontSize: '13.5px', color: '#FAF8F4', lineHeight: 1.6, marginBottom: '20px' }}>
                   {currentCity.description}
                 </p>
 
                 <button
-                  onClick={() => navigateTo('seo-landing', { slug: currentCity.links[0].slug })}
+                  onClick={() => navigateTo('catalogue')}
                   className="btn-primary"
                   style={{
                     padding: '9px 18px',
@@ -312,7 +240,7 @@ export default function MultiCitySection() {
             {/* Right: City-Specific SEO Landing Links Grid */}
             <div style={{ padding: '36px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                <h4 style={{ fontSize: '16px', fontWeight: 800, color: 'var(--text-main)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                <h4 style={{ fontSize: '15px', fontWeight: 800, color: 'var(--text-main)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                   City-Specific High Intent Pages ({currentCity.links.length})
                 </h4>
                 <span style={{ fontSize: '12px', color: 'var(--accent-saffron)', fontWeight: 600 }}>
@@ -333,33 +261,24 @@ export default function MultiCitySection() {
                     key={idx}
                     onClick={() => navigateTo('seo-landing', { slug: link.slug })}
                     style={{
-                      background: '#FDFCF9',
-                      border: '1px solid #EAE5D9',
-                      borderRadius: '12px',
+                      background: '#FAF8F5',
+                      border: '1px solid var(--border-subtle)',
+                      borderRadius: 'var(--radius-sm)',
                       padding: '16px',
                       cursor: 'pointer',
                       display: 'flex',
                       flexDirection: 'column',
                       justifyContent: 'space-between',
-                      transition: 'all 0.2s ease'
+                      transition: 'var(--transition-smooth)'
                     }}
-                    onMouseEnter={e => {
-                      e.currentTarget.style.borderColor = 'var(--accent-saffron)';
-                      e.currentTarget.style.boxShadow = '0 6px 18px rgba(189, 75, 35, 0.1)';
-                      e.currentTarget.style.transform = 'translateY(-2px)';
-                    }}
-                    onMouseLeave={e => {
-                      e.currentTarget.style.borderColor = '#EAE5D9';
-                      e.currentTarget.style.boxShadow = 'none';
-                      e.currentTarget.style.transform = 'translateY(0)';
-                    }}
+                    className="city-link-card"
                   >
                     <div>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6px' }}>
                         <span
                           style={{
-                            background: 'rgba(189, 75, 35, 0.08)',
-                            color: '#BD4B23',
+                            background: 'rgba(217, 79, 30, 0.08)',
+                            color: 'var(--accent-saffron)',
                             fontSize: '10px',
                             fontWeight: 700,
                             padding: '2px 8px',
@@ -369,7 +288,7 @@ export default function MultiCitySection() {
                         >
                           {link.tag}
                         </span>
-                        <ArrowRight size={14} color="#BD4B23" />
+                        <ArrowRight size={14} color="var(--accent-saffron)" />
                       </div>
                       <h5 style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-main)', lineHeight: 1.35 }}>
                         {link.title}
@@ -389,6 +308,13 @@ export default function MultiCitySection() {
       </div>
 
       <style>{`
+        .city-link-card:hover {
+          border-color: var(--accent-saffron) !important;
+          box-shadow: 0 6px 18px rgba(217, 79, 30, 0.1) !important;
+          transform: translateY(-2px);
+          background: #FFFFFF !important;
+        }
+
         @media (max-width: 900px) {
           .city-showcase-grid {
             grid-template-columns: 1fr !important;

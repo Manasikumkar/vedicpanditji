@@ -1,28 +1,27 @@
 import React from 'react';
 import { useApp } from '../../context/AppContext';
-import { SERVICES, BRAND_INFO, getServiceImage } from '../../data/vedicPanditData';
+import { SERVICES, getServiceImage } from '../../data/vedicPanditData';
 import {
   Star,
   Clock,
   Sparkles,
   ArrowRight,
   ShieldCheck,
-  CheckCircle2,
   CalendarCheck
 } from 'lucide-react';
 
 export default function FeaturedPujas() {
-  const { navigateTo, openBookingModal, selectedLocality } = useApp();
+  const { navigateTo, openBookingModal } = useApp();
 
   return (
-    <section style={{ padding: '90px 0', background: '#FFFFFF', borderTop: '1px solid #EAE5D9' }}>
+    <section style={{ padding: '85px 0', background: '#FFFFFF', borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)' }}>
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
           <span className="section-tag">Most Requested Vedic Ceremonies</span>
-          <h2 className="section-title">Featured Vedic Pujas & Havans</h2>
+          <h2 className="section-title">Featured Vedic Pujas &amp; Havans</h2>
           <p className="section-desc">
-            Available across Bangalore, Pune, Mumbai, Hyderabad & Online E-Puja with certified Gurukul-trained North Indian & Bihari pandits and pure Samagri kits.
+            Available across Bangalore, Pune, Mumbai, Hyderabad &amp; Online E-Puja with certified Gurukul-trained North Indian &amp; Bihari pandits and pure Samagri kits.
           </p>
         </div>
 
@@ -35,8 +34,8 @@ export default function FeaturedPujas() {
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                borderRadius: '20px',
-                border: '1px solid #EAE5D9',
+                borderRadius: 'var(--radius-md)',
+                border: '1px solid var(--border-subtle)',
                 background: '#FFFFFF',
                 overflow: 'hidden'
               }}
@@ -67,134 +66,179 @@ export default function FeaturedPujas() {
                     left: '14px',
                     background: 'rgba(255, 255, 255, 0.95)',
                     padding: '4px 10px',
-                    borderRadius: '20px',
+                    borderRadius: 'var(--radius-full)',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '4px',
                     fontSize: '12px',
                     fontWeight: 700,
                     color: 'var(--text-main)',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.12)'
                   }}
                 >
                   <Star size={13} fill="#EAB308" color="#EAB308" />
                   <span>{service.rating}</span>
-                  <span style={{ color: 'var(--text-muted)', fontWeight: 500 }}>
-                    ({service.reviewsCount})
-                  </span>
+                  <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>({service.reviewsCount})</span>
                 </div>
 
-                {/* Duration Badge */}
+                {/* Category Pill */}
                 <div
                   style={{
                     position: 'absolute',
-                    bottom: '12px',
-                    left: '14px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
+                    top: '14px',
+                    right: '14px',
+                    background: 'rgba(217, 79, 30, 0.9)',
                     color: '#FFFFFF',
-                    fontSize: '12px',
-                    fontWeight: 600,
-                    textShadow: '0 2px 4px rgba(0,0,0,0.6)'
+                    padding: '4px 10px',
+                    borderRadius: 'var(--radius-full)',
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.04em'
                   }}
                 >
-                  <Clock size={13} />
-                  <span>{service.duration}</span>
+                  {service.category}
+                </div>
+
+                {/* Title on Image overlay for contrast */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: '14px',
+                    left: '16px',
+                    right: '16px',
+                    color: '#FFFFFF'
+                  }}
+                >
+                  <h3
+                    style={{
+                      fontSize: '19px',
+                      fontWeight: 700,
+                      color: '#FFFFFF',
+                      marginBottom: '4px',
+                      textShadow: '0 2px 4px rgba(0,0,0,0.5)'
+                    }}
+                  >
+                    {service.name}
+                  </h3>
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '12px',
+                      fontSize: '12px',
+                      color: '#FAF8F4'
+                    }}
+                  >
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <Clock size={12} color="#FCD34D" />
+                      {service.duration}
+                    </span>
+                    <span>&bull;</span>
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <ShieldCheck size={12} color="#FCD34D" />
+                      {service.tradition?.split('/')[0]?.trim() || 'Vedic Vidhi'}
+                    </span>
+                  </div>
                 </div>
               </div>
 
               {/* Card Body */}
-              <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                
-                {/* Category & Tradition Tag */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                  <span style={{ fontSize: '11px', color: '#BD4B23', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                    {service.tradition}
-                  </span>
-                  <span style={{ fontSize: '12px', color: '#7E7A72' }}>
-                    Pune
-                  </span>
-                </div>
-
-                {/* Puja Name */}
-                <h3
-                  onClick={() => navigateTo('service-detail', { serviceId: service.id })}
+              <div
+                style={{
+                  padding: '20px 22px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  flex: 1
+                }}
+              >
+                <p
                   style={{
-                    fontFamily: 'var(--font-display)',
-                    fontSize: '20px',
-                    fontWeight: 800,
-                    marginBottom: '10px',
-                    color: 'var(--text-main)',
-                    cursor: 'pointer',
-                    lineHeight: 1.3
+                    fontSize: '13.5px',
+                    color: 'var(--text-secondary)',
+                    lineHeight: 1.6,
+                    marginBottom: '16px',
+                    flex: 1
                   }}
                 >
-                  {service.name}
-                </h3>
-
-                {/* Short Description */}
-                <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '16px', flex: 1 }}>
                   {service.shortDescription}
                 </p>
 
-                {/* Key Insights List */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '20px', background: 'var(--bg-primary)', padding: '12px 14px', borderRadius: '10px', border: '1px solid #EAE5D9' }}>
-                  {service.keyInsights.slice(0, 2).map((ins, i) => (
-                    <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '6px', fontSize: '12px', color: 'var(--text-secondary)' }}>
-                      <CheckCircle2 size={13} color="#BD4B23" style={{ flexShrink: 0, marginTop: '2px' }} />
-                      <span>{ins}</span>
-                    </div>
-                  ))}
+                {/* Pricing / Starting Dakshina row */}
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    padding: '12px 0',
+                    borderTop: '1px solid var(--border-subtle)',
+                    marginBottom: '16px'
+                  }}
+                >
+                  <div>
+                    <span style={{ display: 'block', fontSize: '11px', color: 'var(--text-muted)', fontWeight: 600 }}>
+                      STARTING DAKSHINA
+                    </span>
+                    <span style={{ fontSize: '17px', fontWeight: 800, color: 'var(--accent-saffron)' }}>
+                      From ₹{service.minPrice ? service.minPrice.toLocaleString('en-IN') : '2,500'}*
+                    </span>
+                  </div>
+                  <div style={{ textAlign: 'right' }}>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '11px', color: '#047857', fontWeight: 600, background: '#ECFDF5', padding: '3px 8px', borderRadius: 'var(--radius-full)' }}>
+                      <Sparkles size={11} />
+                      Package A &amp; B Available
+                    </span>
+                  </div>
                 </div>
 
-                {/* Price Display */}
-                <div style={{ marginBottom: '16px', background: '#FDFCF9', padding: '10px 14px', borderRadius: '8px', border: '1px solid #EAE5D9' }}>
-                  <div style={{ fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 700 }}>
-                    Dakshina
-                  </div>
-                  <div style={{ fontSize: '15px', fontWeight: 800, color: '#BD4B23' }}>
-                    {service.priceVerified && service.minPrice ? `From ₹${service.minPrice.toLocaleString('en-IN')}*` : 'Custom Quote'}
-                  </div>
-                </div>
-
-                {/* Action CTA Buttons */}
-                <div className="card-action-btns" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                {/* Action Buttons */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '10px' }} className="card-action-btns">
                   <button
                     onClick={() => navigateTo('service-detail', { serviceId: service.id })}
                     className="btn-secondary"
-                    style={{ padding: '10px', fontSize: '13px', textAlign: 'center', cursor: 'pointer' }}
+                    style={{
+                      padding: '10px 14px',
+                      fontSize: '13px',
+                      borderRadius: 'var(--radius-full)'
+                    }}
                   >
-                    <span>View Details</span>
+                    <span>Details</span>
+                    <ArrowRight size={13} />
                   </button>
 
                   <button
                     onClick={() => openBookingModal(service)}
                     className="btn-primary"
-                    style={{ padding: '10px', fontSize: '13px', textAlign: 'center', cursor: 'pointer' }}
+                    style={{
+                      padding: '10px 16px',
+                      fontSize: '13px',
+                      borderRadius: 'var(--radius-full)'
+                    }}
                   >
-                    <Sparkles size={14} />
+                    <CalendarCheck size={14} />
                     <span>Book Puja</span>
                   </button>
                 </div>
-
               </div>
             </div>
           ))}
         </div>
 
-        {/* View All Catalogue CTA */}
+        {/* View All Pujas Bottom Link */}
         <div style={{ textAlign: 'center', marginTop: '48px' }}>
           <button
             onClick={() => navigateTo('catalogue')}
             className="btn-secondary"
-            style={{ padding: '14px 32px', fontSize: '15px', display: 'inline-flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}
+            style={{
+              padding: '13px 32px',
+              fontSize: '14.5px',
+              borderRadius: 'var(--radius-full)'
+            }}
           >
-            <span>View All 200+ Pujas & Havans in Pune</span>
-            <ArrowRight size={16} />
+            <span>Browse Full Catalogue (50+ Pujas &amp; Vidhis)</span>
+            <ArrowRight size={15} />
           </button>
         </div>
-
       </div>
     </section>
   );

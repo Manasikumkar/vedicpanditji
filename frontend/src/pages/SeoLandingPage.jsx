@@ -4,7 +4,6 @@ import { SEO_LANDING_PAGES, BRAND_INFO, CITIES, SERVICES } from '../data/vedicPa
 import {
   Sparkles,
   MapPin,
-  PhoneCall,
   ShieldCheck,
   CheckCircle2,
   CalendarCheck,
@@ -14,7 +13,7 @@ import {
 } from 'lucide-react';
 
 export default function SeoLandingPage({ slug: propSlug }) {
-  const { routeParams, navigateTo, openBookingModal, callHelpline } = useApp();
+  const { routeParams, navigateTo, openBookingModal } = useApp();
   const activeSlug = propSlug || routeParams?.slug || 'north-indian-pandit-in-pune';
 
   // Find matching page specification

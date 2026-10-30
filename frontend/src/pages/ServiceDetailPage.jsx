@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { SERVICES, BRAND_INFO, CUSTOMER_REVIEWS, getServiceImage } from '../data/vedicPanditData';
+import { SERVICES, CUSTOMER_REVIEWS, getServiceImage } from '../data/vedicPanditData';
 import { getPackagesForService, getCityNote } from '../data/pujaPackagesData';
 import {
   Star,
@@ -10,10 +10,7 @@ import {
   ShieldCheck,
   Share2,
   Package,
-  PhoneCall,
-  CheckCircle2,
-  Check,
-  User
+  Check
 } from 'lucide-react';
 
 export default function ServiceDetailPage() {

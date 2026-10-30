@@ -20,39 +20,40 @@ export default function AboutUsPage() {
         <div
           className="about-hero-banner"
           style={{
-            background: 'linear-gradient(135deg, #231815 0%, #451a03 50%, #231815 100%)',
+            background: 'linear-gradient(135deg, rgba(251, 247, 240, 0.95) 0%, rgba(246, 241, 232, 0.92) 100%), url(/images/hero-devotional-bg.jpg) center/cover no-repeat',
             borderRadius: '24px',
-            padding: '50px 40px',
-            color: '#FFFFFF',
+            padding: '52px 44px',
+            color: 'var(--text-main)',
             marginBottom: '60px',
             position: 'relative',
             overflow: 'hidden',
+            border: '1px solid var(--border-subtle)',
             boxShadow: 'var(--shadow-md)'
           }}
         >
           <div style={{ maxWidth: '780px', position: 'relative', zIndex: 2 }}>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 border border-amber-400/30 text-amber-300 text-xs font-semibold uppercase tracking-wider mb-4">
-              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-              Authentic Vedic Heritage &bull; Pune, Maharashtra
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100/80 border border-orange-200/80 text-orange-800 text-xs font-semibold uppercase tracking-wider mb-4">
+              <span className="w-2 h-2 rounded-full bg-orange-600 animate-pulse"></span>
+              Authentic Vedic Heritage &bull; Pune &bull; Pan-India
             </div>
-            <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '38px', fontWeight: 800, color: '#FFFFFF', marginBottom: '16px', lineHeight: 1.2 }}>
+            <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '38px', fontWeight: 800, color: 'var(--text-main)', marginBottom: '16px', lineHeight: 1.25 }}>
               Preserving Vedic Sanatan Traditions with Devotion &amp; Precision
             </h1>
-            <p style={{ color: '#EAE5D9', fontSize: '16px', lineHeight: 1.7, marginBottom: '28px' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.7, marginBottom: '28px' }}>
               VedicPanditji was founded with a singular mission: to connect families across India with authentic Gurukul-certified North Indian and Bihari Pandits who conduct ceremonies with deep scriptural reverence in Hindi and Sanskrit.
             </p>
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
               <button
                 onClick={() => openBookingModal(null, null, 'Pune')}
                 className="btn-primary"
-                style={{ padding: '12px 26px', fontSize: '14px', cursor: 'pointer' }}
+                style={{ padding: '12px 28px', fontSize: '14px', cursor: 'pointer' }}
               >
                 <span>Book a Pandit</span>
               </button>
               <button
                 onClick={() => navigateTo('all-poojas')}
                 className="btn-secondary"
-                style={{ padding: '12px 24px', fontSize: '14px', cursor: 'pointer', background: 'rgba(255,255,255,0.1)', color: '#FFFFFF', borderColor: 'rgba(255,255,255,0.2)' }}
+                style={{ padding: '12px 24px', fontSize: '14px', cursor: 'pointer', background: '#FFFFFF' }}
               >
                 <span>Browse All 200+ Pujas</span>
               </button>

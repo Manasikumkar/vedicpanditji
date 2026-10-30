@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { FAQS_LIST } from '../data/vedicPanditData';
-import { ChevronDown, ChevronUp, Search, PhoneCall, HelpCircle } from 'lucide-react';
+import { ChevronDown, ChevronUp, Search, HelpCircle } from 'lucide-react';
 
 export default function FaqsPage() {
   const { navigateTo } = useApp();

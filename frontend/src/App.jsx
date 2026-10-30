@@ -20,6 +20,7 @@ import LegalPage from './pages/LegalPage';
 import AboutUsPage from './pages/AboutUsPage';
 import SeoLandingPage from './pages/SeoLandingPage';
 import SitemapPage from './pages/SitemapPage';
+import AdminDashboard from './pages/admin/AdminDashboard';
 
 // GSAP
 import gsap from 'gsap';
@@ -29,13 +30,15 @@ import { animatePageEntrance, initScrollReveals } from './utils/gsapAnimations';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
-  const { currentRoute } = useApp();
+  const { currentRoute, routeParams } = useApp();
   const mainRef = useRef(null);
 
   // Trigger smooth GSAP animations on page transition
   useEffect(() => {
     // Reset scroll smoothly on route navigation
     window.scrollTo({ top: 0, behavior: 'instant' });
+
+    if (currentRoute === 'admin') return;
 
     const pageTween = animatePageEntrance(mainRef.current);
     const cleanupScroll = initScrollReveals(mainRef.current);
@@ -51,6 +54,16 @@ export default function App() {
       clearTimeout(timer);
     };
   }, [currentRoute]);
+
+  // Dedicated enterprise shell for Admin Dashboard
+  if (currentRoute === 'admin') {
+    return (
+      <div className="admin-root-container">
+        <AdminDashboard section={routeParams?.section || 'overview'} />
+        <Toast />
+      </div>
+    );
+  }
 
   const renderCurrentPage = () => {
     switch (currentRoute) {

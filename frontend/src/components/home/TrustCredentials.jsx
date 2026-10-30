@@ -18,11 +18,11 @@ const iconMap = {
 
 export default function TrustCredentials() {
   return (
-    <section style={{ padding: '90px 0', background: '#FFFFFF', borderTop: '1px solid #EAE5D9' }}>
+    <section style={{ padding: '85px 0', background: '#FFFFFF', borderTop: '1px solid var(--border-subtle)' }}>
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <span className="section-tag">Authenticity & Shastra Vidhi</span>
+          <span className="section-tag">Authenticity &amp; Shastra Vidhi</span>
           <h2 className="section-title">The VedicPanditji Standard</h2>
           <p className="section-desc">
             Our network of 75+ certified Gurukul North Indian and Bihari Pandits strictly follows Vedic traditions, authentic Sanskrit mantras, and certified ritual procedures with all-India service coverage.
@@ -36,11 +36,12 @@ export default function TrustCredentials() {
             return (
               <div
                 key={i}
+                className="card-premium"
                 style={{
                   background: 'var(--bg-primary)',
-                  borderRadius: '16px',
+                  borderRadius: 'var(--radius-md)',
                   padding: '28px 20px',
-                  border: '1px solid #EAE5D9',
+                  border: '1px solid var(--border-subtle)',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
@@ -53,18 +54,18 @@ export default function TrustCredentials() {
                     height: '56px',
                     borderRadius: '50%',
                     background: '#FFFFFF',
-                    border: '1px solid #EAE5D9',
+                    border: '1px solid var(--border-subtle)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     color: 'var(--accent-saffron)',
                     marginBottom: '18px',
-                    boxShadow: '0 4px 14px rgba(0,0,0,0.04)'
+                    boxShadow: '0 4px 14px rgba(36, 35, 33, 0.04)'
                   }}
                 >
                   <Icon size={26} />
                 </div>
-                <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '8px' }}>
+                <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '8px', color: 'var(--text-main)' }}>
                   {pillar.title}
                 </h3>
                 <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
@@ -81,7 +82,7 @@ export default function TrustCredentials() {
           style={{
             background: 'linear-gradient(135deg, #FAF7F0 0%, #F5EFE0 100%)',
             border: '1px solid var(--border-gold)',
-            borderRadius: '18px',
+            borderRadius: 'var(--radius-md)',
             padding: '30px 40px',
             display: 'flex',
             alignItems: 'center',
@@ -99,14 +100,15 @@ export default function TrustCredentials() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              flexShrink: 0
+              flexShrink: 0,
+              boxShadow: '0 4px 14px rgba(197, 154, 63, 0.35)'
             }}
           >
             <Award size={28} />
           </div>
           <div style={{ flex: 1, minWidth: 'min(280px, 100%)' }}>
-            <h4 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '4px' }}>
-              100% Satisfaction & Shanti Guarantee
+            <h4 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '4px', color: 'var(--text-main)' }}>
+              100% Satisfaction &amp; Shanti Guarantee
             </h4>
             <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
               If your assigned pandit is late or if samagri is deficient in any way, our dedicated temple relationship managers replace or rectify immediately.
@@ -120,11 +122,12 @@ export default function TrustCredentials() {
                 color: 'var(--accent-saffron)',
                 background: '#FFFFFF',
                 padding: '10px 18px',
-                borderRadius: '10px',
-                border: '1px solid #EAE5D9',
+                borderRadius: 'var(--radius-full)',
+                border: '1px solid var(--border-subtle)',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '6px'
+                gap: '6px',
+                boxShadow: 'var(--shadow-sm)'
               }}
             >
               <ShieldCheck size={16} />

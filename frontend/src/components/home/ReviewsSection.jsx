@@ -1,31 +1,31 @@
 import React from 'react';
 import { CUSTOMER_REVIEWS, BRAND_INFO } from '../../data/vedicPanditData';
-import { Star, Quote, CheckCircle2, UserCheck } from 'lucide-react';
+import { Star, Quote, CheckCircle2 } from 'lucide-react';
 
 export default function ReviewsSection() {
   return (
-    <section style={{ padding: '90px 0', background: 'var(--bg-primary)', borderTop: '1px solid #EAE5D9' }}>
+    <section style={{ padding: '85px 0', background: 'var(--bg-primary)', borderTop: '1px solid var(--border-subtle)' }}>
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <span className="section-tag">Devotee Experiences in Pune</span>
+          <span className="section-tag">Devotee Experiences</span>
           <h2 className="section-title">Verified Google Customer Reviews</h2>
           <p className="section-desc">
-            Rated {BRAND_INFO.rating} / 5.0 on Google based on {BRAND_INFO.reviewsCount}+ verified customer reviews for the VedicPanditji team.
+            Rated {BRAND_INFO.rating} / 5.0 on Google based on {BRAND_INFO.reviewsCount}+ verified customer reviews for the VedicPanditji team across Pune, Mumbai, Bangalore &amp; beyond.
           </p>
         </div>
 
         {/* Reviews Grid */}
-        <div className="grid-3" style={{ gap: '24px' }}>
+        <div className="grid-3" style={{ gap: '26px' }}>
           {CUSTOMER_REVIEWS.map(rev => (
             <div
               key={rev.id}
               className="card-premium"
               style={{
-                borderRadius: '18px',
+                borderRadius: 'var(--radius-md)',
                 padding: '26px',
                 background: '#FFFFFF',
-                border: '1px solid #EAE5D9',
+                border: '1px solid var(--border-subtle)',
                 display: 'flex',
                 flexDirection: 'column',
                 position: 'relative'
@@ -37,10 +37,10 @@ export default function ReviewsSection() {
                   position: 'absolute',
                   top: '18px',
                   right: '18px',
-                  color: 'rgba(189, 75, 35, 0.12)'
+                  color: 'rgba(217, 79, 30, 0.12)'
                 }}
               >
-                <Quote size={36} />
+                <Quote size={34} />
               </div>
 
               {/* Star Rating & Google Verified Badge */}
@@ -57,10 +57,10 @@ export default function ReviewsSection() {
                   style={{
                     fontSize: '11px',
                     fontWeight: 600,
-                    color: '#15803D',
-                    background: '#DCFCE7',
+                    color: '#047857',
+                    background: '#ECFDF5',
                     padding: '3px 8px',
-                    borderRadius: '12px',
+                    borderRadius: 'var(--radius-full)',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '4px'
@@ -74,7 +74,7 @@ export default function ReviewsSection() {
               {/* Review Text */}
               <p
                 style={{
-                  fontSize: '13px',
+                  fontSize: '13.5px',
                   color: 'var(--text-secondary)',
                   lineHeight: 1.65,
                   fontStyle: 'italic',
@@ -89,18 +89,18 @@ export default function ReviewsSection() {
               <div
                 style={{
                   paddingTop: '16px',
-                  borderTop: '1px solid #EAE5D9',
+                  borderTop: '1px solid var(--border-subtle)',
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center'
                 }}
               >
                 <div>
-                  <div style={{ fontSize: '14px', fontWeight: 800, color: 'var(--text-main)' }}>
+                  <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-main)' }}>
                     {rev.author}
                   </div>
-                  <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '2px' }}>
-                    {rev.service} • {rev.time}
+                  <div style={{ fontSize: '11.5px', color: 'var(--text-muted)', marginTop: '2px' }}>
+                    {rev.service} &bull; {rev.time}
                   </div>
                 </div>
 
@@ -111,13 +111,13 @@ export default function ReviewsSection() {
                     background: 'var(--bg-primary)',
                     padding: '6px 10px',
                     borderRadius: '8px',
-                    border: '1px solid #EAE5D9'
+                    border: '1px solid var(--border-subtle)'
                   }}
                 >
                   <div style={{ fontSize: '9px', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 700 }}>
                     Conducted By
                   </div>
-                  <div style={{ fontSize: '11px', fontWeight: 700, color: '#BD4B23' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--accent-saffron)' }}>
                     Senior Vedic Panditji
                   </div>
                 </div>

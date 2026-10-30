@@ -468,6 +468,8 @@ export default function Footer() {
             <span className="footer-link-dot">•</span>
             <span onClick={() => navigateTo('sitemap')} className="footer-bottom-link gold">HTML Sitemap</span>
             <span className="footer-link-dot">•</span>
+            <span onClick={() => navigateTo('admin')} className="footer-bottom-link" style={{ cursor: 'pointer' }}>Admin Portal</span>
+            <span className="footer-link-dot">•</span>
             <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="footer-bottom-link">XML Sitemap</a>
           </div>
 

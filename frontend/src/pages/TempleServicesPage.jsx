@@ -2,18 +2,11 @@ import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { TEMPLE_SERVICES } from '../data/vedicPanditData';
 import {
-  Landmark,
   MapPin,
-  Sparkles,
   ArrowRight,
-  ShieldCheck,
   Video,
-  HeartHandshake,
   X,
   CheckCircle2,
-  Calendar,
-  User,
-  Phone,
   MessageCircle
 } from 'lucide-react';
 

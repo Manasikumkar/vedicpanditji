@@ -1,46 +1,69 @@
 /* ==========================================================================
-   VEDICPANDITJI DESIGN SYSTEM — PREMIUM SACRED VEDIC PLATFORM
-   Warm Ivory, Soft White, Deep Charcoal, Muted Saffron & Warm Gold
+   VEDICPANDITJI DESIGN SYSTEM — APPROVED SACRED CREAM & SAFFRON DIRECTION
+   Primary: #D94F1E (Saffron) | Deep Saffron: #BD4B23 | Gold: #C59A3F
+   Backgrounds: #FBF7F0 (Warm Cream) | #F6F1E8 (Soft) | #FFFFFF (Pearl White)
+   Typography: #242321 (Dark Charcoal) | #706C65 (Secondary) | Poppins
    ========================================================================== */
 
 :root {
-  /* Color Tokens */
-  --bg-primary: #FBF9F5;         /* Warm Ivory / Off-white background */
-  --bg-secondary: #F4EFE6;       /* Slightly deeper warm tone for alternating sections */
-  --bg-surface: #FFFFFF;         /* Crisp soft white for cards & surfaces */
+  /* Core Color Tokens */
+  --bg-primary: #FBF7F0;         /* Approved warm cream / ivory primary */
+  --bg-secondary: #F6F1E8;       /* Slightly deeper soft background for alternate sections */
+  --bg-surface: #FFFFFF;         /* Crisp pearl white for cards & elevated panels */
   --bg-surface-elevated: #FFFFFF;
-  --bg-translucent: rgba(251, 249, 245, 0.85);
-  --bg-nav-scrolled: rgba(255, 255, 255, 0.92);
+  --bg-translucent: rgba(251, 247, 240, 0.92);
+  --bg-nav-scrolled: rgba(255, 255, 255, 0.96);
 
   /* Typography Colors */
-  --text-main: #1C1E1B;          /* Deep regal charcoal */
-  --text-secondary: #575D56;     /* Refined neutral body */
-  --text-muted: #838A82;         /* Subtle secondary labels */
-  --text-light: #FBF9F5;         /* Pure light on dark elements */
+  --text-main: #242321;          /* Dark charcoal - High contrast & legibility */
+  --text-secondary: #706C65;     /* Refined neutral body */
+  --text-muted: #8E8A83;         /* Subtle secondary labels */
+  --text-light: #FBF7F0;         /* Light cream on dark elements */
 
   /* Brand Accents */
-  --accent-saffron: #BD4B23;     /* Restrained terracotta / muted sacred saffron */
-  --accent-saffron-hover: #A53E19;
-  --accent-saffron-light: rgba(189, 75, 35, 0.08);
+  --accent-saffron: #D94F1E;     /* Primary vibrant saffron-orange */
+  --accent-saffron-deep: #BD4B23;/* Deep terracotta / rich ritual saffron */
+  --accent-saffron-hover: #C24214;
+  --accent-saffron-gradient: linear-gradient(135deg, #E65100 0%, #D94F1E 100%);
+  --accent-saffron-light: rgba(217, 79, 30, 0.08);
+  --accent-saffron-subtle: rgba(217, 79, 30, 0.04);
+  --accent-saffron-glow: rgba(217, 79, 30, 0.28);
+
   --accent-gold: #C59A3F;        /* Subtle warm temple gold */
   --accent-gold-light: rgba(197, 154, 63, 0.12);
+  --accent-gold-gradient: linear-gradient(135deg, #D4AF37 0%, #C59A3F 100%);
   --accent-sacred-red: #A8282B;  /* Understated ritual vermilion */
 
+  /* Functional Status Tokens */
+  --status-success: #15966B;
+  --status-success-bg: #ECFDF5;
+  --status-success-border: #A7F3D0;
+  --status-warning: #D97706;
+  --status-warning-bg: #FFFBEB;
+  --status-warning-border: #FCD34D;
+  --status-error: #D94343;
+  --status-error-bg: #FEF2F2;
+  --status-error-border: #FECACA;
+
   /* Borders & Dividers */
-  --border-subtle: #EAE5D9;      /* Gentle warm border */
-  --border-medium: #DDD7C8;
+  --border-subtle: #E9DFD1;      /* Gentle warm border */
+  --border-medium: #DDD2C1;      /* Crisp component divider */
   --border-gold: rgba(197, 154, 63, 0.35);
+  --border-saffron: rgba(217, 79, 30, 0.35);
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(28, 30, 27, 0.04);
-  --shadow-md: 0 8px 24px rgba(28, 30, 27, 0.06);
-  --shadow-lg: 0 16px 40px rgba(28, 30, 27, 0.09);
-  --shadow-xl: 0 24px 60px rgba(28, 30, 27, 0.12);
+  --shadow-sm: 0 2px 8px rgba(36, 35, 33, 0.04);
+  --shadow-md: 0 8px 24px rgba(36, 35, 33, 0.06);
+  --shadow-lg: 0 16px 40px rgba(36, 35, 33, 0.08);
+  --shadow-xl: 0 24px 60px rgba(36, 35, 33, 0.12);
+  --shadow-saffron: 0 8px 24px rgba(217, 79, 30, 0.25);
+  --shadow-floating: 0 12px 36px rgba(44, 39, 36, 0.09);
 
   /* Radii */
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
   --radius-xl: 28px;
   --radius-full: 9999px;
 
@@ -53,8 +76,9 @@
   /* Layout */
   --container-max: 1280px;
   --header-height: 84px;
-  --header-height-scrolled: 72px;
-  --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --header-height-scrolled: 74px;
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* Reset & Box Sizing */
@@ -84,26 +108,37 @@ body {
   background-color: var(--bg-primary);
 }
 
-/* Base Headings — Consistent Poppins Typography */
+/* Headings — Consistent Poppins System */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-primary);
   color: var(--text-main);
   line-height: 1.25;
 }
 
-h1, h2 {
-  font-family: var(--font-primary);
-  font-weight: 700;
-  letter-spacing: -0.01em;
+h1 {
+  font-size: clamp(28px, 4.5vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
-h3, h4 {
-  font-family: var(--font-primary);
+h2 {
+  font-size: clamp(22px, 3.2vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 17px;
   font-weight: 600;
 }
 
 h5, h6 {
-  font-family: var(--font-primary);
+  font-size: 15px;
   font-weight: 600;
 }
 
@@ -143,7 +178,7 @@ img {
   display: block;
 }
 
-/* Utility Containers */
+/* Containers */
 .container {
   width: 100%;
   max-width: var(--container-max);
@@ -160,7 +195,47 @@ img {
   }
 }
 
-/* Badge & Tag */
+/* Reusable Section Headers */
+.section-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 48px auto;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #FFFFFF;
+  color: var(--accent-saffron);
+  border: 1px solid var(--border-saffron);
+  padding: 5px 16px;
+  border-radius: var(--radius-full);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(217, 79, 30, 0.06);
+}
+
+.section-title {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.25;
+  margin-bottom: 14px;
+  letter-spacing: -0.015em;
+}
+
+.section-desc {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0 auto;
+}
+
+/* Badges & Tags */
 .badge-gold {
   display: inline-flex;
   align-items: center;
@@ -182,34 +257,36 @@ img {
   gap: 6px;
   background: var(--accent-saffron-light);
   color: var(--accent-saffron);
-  border: 1px solid rgba(189, 75, 35, 0.2);
-  padding: 4px 10px;
+  border: 1px solid var(--border-saffron);
+  padding: 4px 12px;
   border-radius: var(--radius-full);
   font-size: 12px;
   font-weight: 600;
 }
 
-/* Buttons */
+/* Global Button System */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: var(--accent-saffron);
-  color: #FFFFFF;
+  background: var(--accent-saffron-gradient);
+  color: #FFFFFF !important;
   font-weight: 600;
   font-size: 14px;
   padding: 12px 24px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-full);
   border: 1px solid transparent;
-  box-shadow: 0 4px 14px rgba(189, 75, 35, 0.25);
+  box-shadow: 0 4px 16px rgba(217, 79, 30, 0.28);
   transition: var(--transition-smooth);
+  cursor: pointer;
 }
 
 .btn-primary:hover {
-  background: var(--accent-saffron-hover);
+  background: linear-gradient(135deg, #DD4B1A 0%, #C24214 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(189, 75, 35, 0.35);
+  box-shadow: 0 8px 24px rgba(217, 79, 30, 0.38);
+  color: #FFFFFF !important;
 }
 
 .btn-secondary {
@@ -217,21 +294,22 @@ img {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.9);
-  color: var(--text-main);
+  background: #FFFFFF;
+  color: var(--text-main) !important;
   font-weight: 600;
   font-size: 14px;
   padding: 12px 24px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-sm);
   transition: var(--transition-smooth);
+  cursor: pointer;
 }
 
 .btn-secondary:hover {
-  background: #FFFFFF;
-  border-color: var(--accent-gold);
-  color: var(--accent-saffron);
+  background: #FAF8F4;
+  border-color: var(--accent-saffron);
+  color: var(--accent-saffron) !important;
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
@@ -245,93 +323,51 @@ img {
   color: var(--accent-saffron);
   font-weight: 600;
   font-size: 13px;
-  padding: 8px 16px;
-  border-radius: var(--radius-sm);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
   border: 1px solid var(--accent-saffron);
   transition: var(--transition-smooth);
 }
 
 .btn-outline:hover {
-  background: var(--accent-saffron);
-  color: #FFFFFF;
+  background: var(--accent-saffron-light);
+  transform: translateY(-1px);
 }
 
-.btn-primary:active,
-.btn-secondary:active,
-.btn-outline:active {
-  transform: scale(0.975);
-}
-
-/* Section Header Structure */
-.section-header {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto 48px;
-}
-
-.section-tag {
-  color: var(--accent-saffron);
-  font-family: var(--font-primary);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  display: block;
-}
-
-.section-title {
-  font-size: 34px;
-  font-weight: 700;
-  margin-bottom: 14px;
-  color: var(--text-main);
-  line-height: 1.25;
-}
-
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 26px;
-  }
-}
-
-.section-desc {
-  font-size: 16px;
-  color: var(--text-secondary);
-}
-
-/* Card Style */
+/* Card System */
 .card-premium {
-  background: var(--bg-surface);
+  background: #FFFFFF;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   transition: var(--transition-smooth);
-  overflow: hidden;
 }
 
 .card-premium:hover {
-  border-color: var(--border-gold);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
+  border-color: rgba(217, 79, 30, 0.3);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg-primary);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--border-medium);
-  border-radius: var(--radius-full);
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-gold);
+/* Form Controls System */
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 11px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  background: #FFFFFF;
+  color: var(--text-main);
+  font-size: 14px;
+  outline: none;
+  transition: var(--transition-smooth);
 }
 
-/* Responsive Grid helpers */
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--accent-saffron);
+  box-shadow: 0 0 0 3px rgba(217, 79, 30, 0.12);
+}
+
+/* Responsive Grid Helpers */
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -341,166 +377,60 @@ img {
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 28px;
 }
 
 .grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 20px;
 }
 
-@media (max-width: 1024px) {
-  .grid-4 {
+@media (max-width: 992px) {
+  .grid-3, .grid-4 {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .grid-3 {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 }
 
 @media (max-width: 640px) {
-  .grid-4, .grid-3, .grid-2 {
+  .grid-2, .grid-3, .grid-4 {
     grid-template-columns: 1fr;
     gap: 16px;
   }
 }
 
-/* ==========================================================================
-   COMPREHENSIVE MOBILE RESPONSIVENESS & USABILITY OVERRIDES
-   Targets 320px, 360px, 375px, 390px, 430px, 768px viewports
-   ========================================================================== */
-
-/* 1. Fluid Responsive Typography & Container */
-@media (max-width: 768px) {
-  .container {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .section-header {
-    margin-bottom: 32px;
-  }
-
-  .section-title {
-    font-size: clamp(22px, 5.5vw, 28px);
-  }
-
-  .section-desc {
-    font-size: 14px;
-    line-height: 1.55;
-  }
+/* Breadcrumb Styling */
+.vp-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
 }
 
-@media (max-width: 360px) {
-  .container {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
+.vp-breadcrumb a, .vp-breadcrumb span.link {
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition-smooth);
 }
 
-/* 2. Interactive Touch Target Standards */
-button, input, select, textarea {
-  max-width: 100%;
+.vp-breadcrumb a:hover, .vp-breadcrumb span.link:hover {
+  color: var(--accent-saffron);
 }
 
-@media (max-width: 768px) {
-  .btn-primary, .btn-secondary, .btn-outline {
-    min-height: 44px;
-    box-sizing: border-box;
-  }
+.vp-breadcrumb .separator {
+  color: #D8D2C4;
 }
 
-/* 3. Global Card & Grid Mobile Overrides */
-@media (max-width: 900px) {
-  .counter-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 14px !important;
-  }
-
-  .how-it-works-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 16px !important;
-  }
+.vp-breadcrumb .current {
+  color: var(--accent-saffron);
+  font-weight: 600;
 }
 
-@media (max-width: 540px) {
-  .counter-grid {
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-  }
-
-  .how-it-works-grid {
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-  }
-}
-
-/* 4. Hero Section Mobile Optimization */
-@media (max-width: 860px) {
-  .hero-search-form {
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-  }
-
-  .hero-search-action-label {
-    display: none !important;
-  }
-
-  .hero-search-submit-btn {
-    width: 100% !important;
-    justify-content: center !important;
-    min-height: 44px !important;
-  }
-
-  .hero-image-overlay {
-    width: 100% !important;
-    opacity: 0.16 !important;
-    mask-image: none !important;
-    -webkit-mask-image: none !important;
-  }
-}
-
-@media (max-width: 520px) {
-  .hero-main-title {
-    font-size: clamp(26px, 7vw, 36px) !important;
-    line-height: 1.2 !important;
-    margin-bottom: 14px !important;
-  }
-
-  .hero-desc {
-    font-size: 15px !important;
-    line-height: 1.55 !important;
-    margin-bottom: 20px !important;
-  }
-
-  .hero-trust-badge {
-    font-size: 11px !important;
-    padding: 6px 12px !important;
-    white-space: normal !important;
-    line-height: 1.4 !important;
-  }
-
-  .hero-cta-group {
-    flex-direction: column !important;
-    width: 100% !important;
-    gap: 10px !important;
-  }
-
-  .hero-cta-btn {
-    width: 100% !important;
-    justify-content: center !important;
-    min-height: 46px !important;
-    font-size: 14px !important;
-  }
-
-  .hero-search-panel {
-    padding: 18px 16px !important;
-    border-radius: 16px !important;
-  }
-}
-
-/* 5. Service Detail Page Responsive Overrides */
+/* Service Detail Page Responsive Overrides */
 @media (max-width: 900px) {
   .service-detail-top-grid {
     grid-template-columns: 1fr !important;
@@ -533,7 +463,7 @@ button, input, select, textarea {
   }
 }
 
-/* 6. Booking Modal Responsive Viewport Fit */
+/* Booking Modal Responsive Viewport Fit */
 @media (max-width: 640px) {
   .vp-modal-backdrop {
     padding: 8px !important;
@@ -571,7 +501,7 @@ button, input, select, textarea {
   }
 }
 
-/* 7. Devotee Portal & Account Page */
+/* Devotee Portal & Account Page */
 @media (max-width: 860px) {
   .account-grid {
     grid-template-columns: 1fr !important;
@@ -591,7 +521,7 @@ button, input, select, textarea {
   }
 }
 
-/* 8. Contact Page Grid */
+/* Contact Page Grid */
 @media (max-width: 900px) {
   .contact-grid {
     grid-template-columns: 1fr !important;
@@ -606,7 +536,7 @@ button, input, select, textarea {
   }
 }
 
-/* 9. Card Action Buttons on Small Mobile */
+/* Card Action Buttons on Small Mobile */
 @media (max-width: 380px) {
   .card-action-btns {
     grid-template-columns: 1fr !important;

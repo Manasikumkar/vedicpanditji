@@ -2,10 +2,8 @@ import React from 'react';
 import { useApp } from '../../context/AppContext';
 import { SERVICES } from '../../data/vedicPanditData';
 import {
-  Sparkles,
   MapPin,
   ArrowRight,
-  ShieldCheck,
   Video,
   HeartHandshake,
   Building2
@@ -51,7 +49,7 @@ const SPECIAL_OFFERINGS = [
 ];
 
 export default function TempleServicesSection() {
-  const { navigateTo, openBookingModal, openWhatsAppEnquiry } = useApp();
+  const { navigateTo, openBookingModal } = useApp();
 
   const handleCardAction = (item) => {
     if (item.id === 'hindu-wedding') {
@@ -59,35 +57,38 @@ export default function TempleServicesSection() {
       if (match) {
         navigateTo('service-detail', { serviceId: 'vivah-marriage' });
       } else {
-        openBookingModal('Vivah (Marriage) Ceremony');
+        openBookingModal('Hindu Wedding & Vivah Sanskar');
       }
     } else if (item.id === 'online-e-puja') {
-      openBookingModal(null, null, 'Online E-Puja (Pan-India & Global)');
-    } else if (item.id === 'corporate-vastu') {
-      const match = SERVICES.find(s => s.id === 'office-opening-puja');
+      const match = SERVICES.find(s => s.id === 'satyanarayan-puja');
       if (match) {
-        navigateTo('service-detail', { serviceId: 'office-opening-puja' });
+        navigateTo('service-detail', { serviceId: 'satyanarayan-puja', city: 'Online E-Puja' });
       } else {
-        openBookingModal('Office Opening / Business Inauguration Puja');
+        openBookingModal('Online E-Puja Consultation');
       }
-    } else {
-      navigateTo('catalogue');
+    } else if (item.id === 'corporate-vastu') {
+      const match = SERVICES.find(s => s.id === 'vastu-shanti-puja');
+      if (match) {
+        navigateTo('service-detail', { serviceId: 'vastu-shanti-puja' });
+      } else {
+        openBookingModal('Office & Corporate Vastu Shanti');
+      }
     }
   };
 
   return (
-    <section style={{ padding: '90px 0', background: '#FFFFFF', borderTop: '1px solid #EAE5D9' }}>
+    <section style={{ padding: '85px 0', background: '#FFFFFF', borderTop: '1px solid var(--border-subtle)' }}>
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <span className="section-tag">Specialized Ceremonies &amp; E-Pujas</span>
-          <h2 className="section-title">Special Vivah &amp; Dedicated Vedic Offerings</h2>
+          <span className="section-tag">Specialized Vidhis</span>
+          <h2 className="section-title">Grand Vivah, E-Puja &amp; Corporate Ceremonies</h2>
           <p className="section-desc">
-            In addition to domestic household pujas, VedicPanditji provides specialized multi-day wedding ceremony planning, corporate office inaugurations, and worldwide online E-Pujas.
+            From royal Vivah Sanskars across destination venues to Live E-Pujas for NRI devotees worldwide and corporate vastu blessings.
           </p>
         </div>
 
-        {/* Special Services Grid */}
+        {/* 3 Offerings Grid */}
         <div className="grid-3" style={{ gap: '28px' }}>
           {SPECIAL_OFFERINGS.map(item => {
             const Icon = item.icon;
@@ -96,33 +97,29 @@ export default function TempleServicesSection() {
                 key={item.id}
                 className="card-premium"
                 style={{
-                  borderRadius: '18px',
-                  border: '1px solid #EAE5D9',
-                  background: '#FFFFFF',
-                  overflow: 'hidden',
                   display: 'flex',
                   flexDirection: 'column',
-                  transition: 'transform 0.25s ease, box-shadow 0.25s ease'
+                  borderRadius: 'var(--radius-md)',
+                  border: '1px solid var(--border-subtle)',
+                  background: '#FFFFFF',
+                  overflow: 'hidden'
                 }}
               >
-                {/* Image banner */}
+                {/* Image Banner */}
                 <div
-                  onClick={() => handleCardAction(item)}
                   style={{
-                    height: '200px',
                     position: 'relative',
+                    height: '200px',
                     backgroundImage: `url(${item.image})`,
                     backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    cursor: 'pointer'
+                    backgroundPosition: 'center'
                   }}
-                  title={`View details for ${item.title}`}
                 >
                   <div
                     style={{
                       position: 'absolute',
                       inset: 0,
-                      background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.7) 100%)'
+                      background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(28,26,24,0.72) 100%)'
                     }}
                   />
                   <div
@@ -130,14 +127,14 @@ export default function TempleServicesSection() {
                       position: 'absolute',
                       top: '12px',
                       left: '14px',
-                      background: 'rgba(217, 119, 6, 0.9)',
+                      background: 'rgba(217, 79, 30, 0.95)',
                       color: '#FFFFFF',
                       fontSize: '11px',
                       fontWeight: 700,
                       padding: '4px 10px',
-                      borderRadius: '6px',
+                      borderRadius: 'var(--radius-full)',
                       textTransform: 'uppercase',
-                      letterSpacing: '0.5px'
+                      letterSpacing: '0.04em'
                     }}
                   >
                     {item.tag}
@@ -149,7 +146,7 @@ export default function TempleServicesSection() {
                       left: '14px',
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '4px',
+                      gap: '5px',
                       color: '#FFFFFF',
                       fontSize: '12px',
                       fontWeight: 600,
@@ -162,22 +159,22 @@ export default function TempleServicesSection() {
                 </div>
 
                 {/* Body */}
-                <div style={{ padding: '22px', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flex: 1 }}>
                   <h3
                     onClick={() => handleCardAction(item)}
-                    style={{ fontSize: '18px', fontWeight: 700, marginBottom: '8px', cursor: 'pointer' }}
+                    style={{ fontSize: '18px', fontWeight: 700, marginBottom: '8px', cursor: 'pointer', color: 'var(--text-main)' }}
                     className="hover:text-amber-800"
                   >
                     {item.title}
                   </h3>
-                  <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.55, marginBottom: '20px', flex: 1 }}>
+                  <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '20px', flex: 1 }}>
                     {item.description}
                   </p>
 
                   <div
                     style={{
                       paddingTop: '16px',
-                      borderTop: '1px solid #EAE5D9',
+                      borderTop: '1px solid var(--border-subtle)',
                       display: 'flex',
                       justifyContent: 'space-between',
                       alignItems: 'center',
@@ -191,7 +188,7 @@ export default function TempleServicesSection() {
                     <button
                       onClick={() => handleCardAction(item)}
                       className="btn-outline"
-                      style={{ padding: '8px 16px', fontSize: '12px', cursor: 'pointer', whiteSpace: 'nowrap' }}
+                      style={{ padding: '8px 16px', fontSize: '12.5px', cursor: 'pointer', whiteSpace: 'nowrap' }}
                     >
                       <span>{item.actionText}</span>
                       <ArrowRight size={13} />
@@ -204,14 +201,14 @@ export default function TempleServicesSection() {
         </div>
 
         {/* Action CTAs */}
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '48px' }}>
           <button
             onClick={() => navigateTo('temple-services')}
             className="btn-secondary"
-            style={{ padding: '12px 28px', cursor: 'pointer' }}
+            style={{ padding: '13px 28px', cursor: 'pointer', borderRadius: 'var(--radius-full)' }}
           >
             <span>Explore Pilgrimage &amp; Remote Temple Sevas</span>
-            <ArrowRight size={16} />
+            <ArrowRight size={15} />
           </button>
         </div>
       </div>

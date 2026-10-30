@@ -2,9 +2,7 @@ import React from 'react';
 import { useApp } from '../context/AppContext';
 import { PUJA_MATERIALS } from '../data/vedicPanditData';
 import {
-  PackageCheck,
   Star,
-  CheckCircle2,
   Truck,
   ShieldCheck,
   Sparkles,

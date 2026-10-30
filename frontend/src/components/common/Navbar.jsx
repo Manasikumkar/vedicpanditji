@@ -6,7 +6,7 @@ import {
   Menu,
   X,
   PhoneCall,
-  Sparkles,
+  CalendarCheck,
   User
 } from 'lucide-react';
 
@@ -66,6 +66,12 @@ export default function Navbar() {
     if (route === 'temple-services') {
       return currentRoute === 'temple-services';
     }
+    if (route === 'faqs') {
+      return currentRoute === 'faqs';
+    }
+    if (route === 'contact') {
+      return currentRoute === 'contact';
+    }
     return currentRoute === route;
   };
 
@@ -83,7 +89,7 @@ export default function Navbar() {
             className="vp-brand"
             role="button"
             tabIndex={0}
-            title="VedicPanditji - Authentic Vedic Pujas"
+            title="VedicPanditji - Authentic Vedic Pujas Across Major Cities"
           >
             <img
               src="/images/vedicpanditji-logo.png"
@@ -92,7 +98,7 @@ export default function Navbar() {
             />
           </div>
 
-          {/* 2. CENTER — MAIN NAVIGATION (Home, About Us, Pooja Services, Temple Services, Contact) */}
+          {/* 2. CENTER — MAIN NAVIGATION */}
           <nav className="vp-center-nav" aria-label="Main Navigation">
             <button
               type="button"
@@ -149,7 +155,7 @@ export default function Navbar() {
               className="vp-phone-link"
               title={`Call Vedic Panditji Helpline: ${BRAND_INFO.phone}`}
             >
-              <PhoneCall size={14} />
+              <PhoneCall size={13} color="var(--accent-saffron)" />
               <span className="vp-phone-text">{BRAND_INFO.phone}</span>
             </a>
 
@@ -159,23 +165,9 @@ export default function Navbar() {
               onClick={() => handleNavClick(user?.isLoggedIn ? 'account' : 'auth')}
               className="vp-auth-btn"
               title={user?.isLoggedIn ? `Devotee Account (${user.name || 'Profile'})` : 'Devotee Login / Register'}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                background: user?.isLoggedIn ? 'rgba(189, 75, 35, 0.08)' : 'transparent',
-                border: user?.isLoggedIn ? '1px solid rgba(189, 75, 35, 0.3)' : '1px solid #D8D2C4',
-                borderRadius: '20px',
-                padding: '6px 14px',
-                fontSize: '13px',
-                fontWeight: 600,
-                color: user?.isLoggedIn ? '#BD4B23' : '#4A463F',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease'
-              }}
             >
-              <User size={13} color={user?.isLoggedIn ? '#BD4B23' : '#6E6B65'} />
-              <span>{user?.isLoggedIn ? (user.name ? user.name.split(' ')[0] : 'My Account') : 'Login'}</span>
+              <User size={13} color={user?.isLoggedIn ? 'var(--accent-saffron)' : '#6E6B65'} />
+              <span>{user?.isLoggedIn ? (user.name ? user.name.split(' ')[0] : 'Account') : 'Login'}</span>
             </button>
 
             {/* Primary Action CTA — Book a Pandit */}
@@ -184,7 +176,7 @@ export default function Navbar() {
               onClick={() => openBookingModal()}
               className="vp-book-cta"
             >
-              <Sparkles size={14} />
+              <CalendarCheck size={15} />
               <span>Book a Pandit</span>
             </button>
 
@@ -292,60 +284,67 @@ export default function Navbar() {
                 }}
                 className="vp-drawer-book-btn"
               >
-                <Sparkles size={16} />
+                <CalendarCheck size={16} />
                 <span>Book a Pandit</span>
               </button>
 
               <div className="vp-drawer-contact-row">
                 <a
                   href={`tel:${BRAND_INFO.phoneClean}`}
-                  className="vp-drawer-phone-btn"
+                  className="vp-drawer-contact-link"
                 >
-                  <PhoneCall size={14} />
-                  <span>Call Panditji: {BRAND_INFO.phone}</span>
+                  <PhoneCall size={14} color="var(--accent-saffron)" />
+                  <span>Call {BRAND_INFO.phone}</span>
                 </a>
               </div>
             </div>
+
           </div>
         </div>
       )}
 
-      {/* SCOPED CLEAN NAVBAR STYLES */}
+      {/* NAVBAR STYLES */}
       <style>{`
-        /* Root Sticky Header */
         .vp-navbar-root {
           position: fixed;
           top: 0;
           left: 0;
           right: 0;
+          height: var(--header-height, 84px);
           z-index: 1000;
-          transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-          background: rgba(253, 251, 247, 0.96);
-          backdrop-filter: blur(14px);
-          -webkit-backdrop-filter: blur(14px);
-          border-bottom: 1px solid rgba(230, 222, 209, 0.7);
+          transition: background-color 0.3s ease, height 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+          display: flex;
+          align-items: center;
+        }
+
+        .vp-navbar-top {
+          background-color: rgba(251, 247, 240, 0.88);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border-bottom: 1px solid rgba(233, 223, 209, 0.6);
         }
 
         .vp-navbar-scrolled {
-          background: rgba(255, 255, 255, 0.98);
-          box-shadow: 0 4px 20px rgba(44, 39, 36, 0.06);
-          border-bottom: 1px solid rgba(226, 218, 204, 0.9);
+          height: var(--header-height-scrolled, 74px);
+          background-color: rgba(255, 255, 255, 0.96);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          box-shadow: 0 4px 20px rgba(36, 35, 33, 0.05);
+          border-bottom: 1px solid var(--border-subtle);
         }
 
-        /* Layout Container */
         .vp-navbar-container {
           width: 100%;
-          max-width: 1400px;
+          max-width: var(--container-max, 1280px);
           margin: 0 auto;
-          height: 72px;
+          padding: 0 24px;
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 0 28px;
-          gap: 20px;
+          gap: 16px;
         }
 
-        /* 1. BRAND STYLES */
+        /* 1. BRAND */
         .vp-brand {
           display: flex;
           align-items: center;
@@ -355,17 +354,17 @@ export default function Navbar() {
         }
 
         .vp-brand-logo-img {
-          height: 48px;
+          height: 46px;
           width: auto;
-          max-width: 195px;
+          max-width: 190px;
           object-fit: contain;
           display: block;
         }
 
         .vp-brand-logo-img-drawer {
-          height: 42px;
+          height: 40px;
           width: auto;
-          max-width: 175px;
+          max-width: 170px;
           object-fit: contain;
           display: block;
         }
@@ -383,25 +382,25 @@ export default function Navbar() {
           position: relative;
           background: none;
           border: none;
-          padding: 8px 6px;
-          font-size: 14.5px;
-          font-weight: 600;
-          color: #383431;
+          padding: 8px 4px;
+          font-size: 14px;
+          font-weight: 500;
+          color: var(--text-main);
           cursor: pointer;
           white-space: nowrap;
-          transition: color 0.18s ease;
+          transition: color 0.2s ease;
           display: flex;
           flex-direction: column;
           align-items: center;
         }
 
         .vp-nav-link:hover {
-          color: #BD4B23;
+          color: var(--accent-saffron);
         }
 
         .vp-nav-link.active {
-          color: #BD4B23;
-          font-weight: 700;
+          color: var(--accent-saffron);
+          font-weight: 600;
         }
 
         .vp-nav-indicator {
@@ -412,69 +411,91 @@ export default function Navbar() {
           transform: translateX(-50%);
           width: 0;
           height: 2px;
-          background: #BD4B23;
+          background: var(--accent-saffron);
           border-radius: 2px;
-          transition: width 0.2s ease;
+          transition: width 0.25s ease;
         }
 
         .vp-nav-link:hover .vp-nav-indicator,
         .vp-nav-link.active .vp-nav-indicator {
-          width: 80%;
+          width: 75%;
         }
 
         /* 3. RIGHT ACTIONS */
         .vp-right-actions {
           display: flex;
           align-items: center;
-          gap: 12px;
+          gap: 10px;
           flex-shrink: 0;
         }
 
-        /* Direct Helpline Link */
+        /* Helpline Link Pill */
         .vp-phone-link {
           display: flex;
           align-items: center;
-          gap: 7px;
-          padding: 7px 13px;
-          border-radius: 20px;
+          gap: 6px;
+          padding: 7px 14px;
+          border-radius: var(--radius-full);
           background: #FFFFFF;
-          border: 1px solid #E2DCCE;
-          color: #BD4B23;
-          font-size: 13px;
-          font-weight: 700;
+          border: 1px solid var(--border-subtle);
+          color: var(--text-main);
+          font-size: 12.5px;
+          font-weight: 600;
           text-decoration: none;
-          transition: all 0.18s ease;
+          transition: all 0.2s ease;
           white-space: nowrap;
         }
 
         .vp-phone-link:hover {
-          border-color: #BD4B23;
-          background: #FAF6EF;
+          border-color: var(--accent-saffron);
+          background: #FAF8F4;
+          color: var(--accent-saffron);
+        }
+
+        /* Auth Pill */
+        .vp-auth-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          background: #FFFFFF;
+          border: 1px solid var(--border-subtle);
+          border-radius: var(--radius-full);
+          padding: 7px 14px;
+          font-size: 12.5px;
+          font-weight: 600;
+          color: var(--text-main);
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+
+        .vp-auth-btn:hover {
+          border-color: var(--accent-saffron);
+          color: var(--accent-saffron);
         }
 
         /* Book a Pandit CTA Button */
         .vp-book-cta {
-          display: flex;
+          display: inline-flex;
           align-items: center;
-          gap: 8px;
-          padding: 10px 20px;
-          border-radius: 10px;
-          background: linear-gradient(135deg, #BD4B23 0%, #D45728 100%);
+          gap: 7px;
+          padding: 10px 22px;
+          border-radius: var(--radius-full);
+          background: var(--accent-saffron-gradient);
           color: #FFFFFF;
-          font-size: 14px;
+          font-size: 13.5px;
           font-weight: 700;
           border: 1px solid rgba(255, 255, 255, 0.25);
-          box-shadow: 0 3px 12px rgba(189, 75, 35, 0.28);
+          box-shadow: 0 4px 16px rgba(217, 79, 30, 0.32);
           cursor: pointer;
-          transition: all 0.18s ease;
+          transition: all 0.25s ease;
           white-space: nowrap;
           flex-shrink: 0;
         }
 
         .vp-book-cta:hover {
-          background: linear-gradient(135deg, #A83F1C 0%, #BD4B23 100%);
-          box-shadow: 0 5px 16px rgba(189, 75, 35, 0.38);
-          transform: translateY(-1px);
+          background: linear-gradient(135deg, #DD4B1A 0%, #C24214 100%);
+          box-shadow: 0 6px 20px rgba(217, 79, 30, 0.42);
+          transform: translateY(-1.5px);
         }
 
         /* Mobile Hamburger Toggle */
@@ -484,7 +505,7 @@ export default function Navbar() {
           justify-content: center;
           background: none;
           border: none;
-          color: #292524;
+          color: var(--text-main);
           padding: 6px;
           min-width: 44px;
           min-height: 44px;
@@ -495,7 +516,7 @@ export default function Navbar() {
         .vp-drawer-backdrop {
           position: fixed;
           inset: 0;
-          background: rgba(0, 0, 0, 0.45);
+          background: rgba(36, 35, 33, 0.45);
           backdrop-filter: blur(4px);
           -webkit-backdrop-filter: blur(4px);
           z-index: 2000;
@@ -520,13 +541,13 @@ export default function Navbar() {
           align-items: center;
           justify-content: space-between;
           padding: 18px 20px;
-          border-bottom: 1px solid #EAE5D9;
+          border-bottom: 1px solid var(--border-subtle);
         }
 
         .vp-drawer-close {
           background: none;
           border: none;
-          color: #78716C;
+          color: var(--text-muted);
           padding: 6px;
           cursor: pointer;
         }
@@ -544,28 +565,27 @@ export default function Navbar() {
           display: flex;
           align-items: center;
           width: 100%;
-          padding: 13px 16px;
+          padding: 12px 14px;
           border-radius: 10px;
           background: none;
           border: none;
-          font-size: 15px;
+          font-size: 14.5px;
           font-weight: 600;
-          color: #383431;
+          color: var(--text-main);
           text-align: left;
           cursor: pointer;
           transition: background 0.15s ease, color 0.15s ease;
         }
 
-        .vp-drawer-link:hover,
-        .vp-drawer-link.active {
-          background: #FAF6EF;
-          color: #BD4B23;
+        .vp-drawer-link:hover, .vp-drawer-link.active {
+          background: var(--accent-saffron-light);
+          color: var(--accent-saffron);
         }
 
         .vp-drawer-actions {
-          padding: 18px 20px 24px;
-          border-top: 1px solid #EAE5D9;
-          background: #FCFAF7;
+          padding: 18px;
+          border-top: 1px solid var(--border-subtle);
+          background: #FAF8F4;
           display: flex;
           flex-direction: column;
           gap: 12px;
@@ -573,49 +593,34 @@ export default function Navbar() {
 
         .vp-drawer-book-btn {
           width: 100%;
+          padding: 13px;
+          border-radius: var(--radius-full);
+          background: var(--accent-saffron-gradient);
+          color: #FFFFFF;
+          font-size: 14px;
+          font-weight: 700;
           display: flex;
           align-items: center;
           justify-content: center;
           gap: 8px;
-          padding: 13px;
-          border-radius: 10px;
-          background: linear-gradient(135deg, #BD4B23 0%, #D45728 100%);
-          color: #FFFFFF;
-          font-size: 14px;
-          font-weight: 700;
-          border: none;
-          box-shadow: 0 4px 12px rgba(189, 75, 35, 0.25);
-          cursor: pointer;
+          box-shadow: 0 4px 14px rgba(217, 79, 30, 0.3);
         }
 
         .vp-drawer-contact-row {
           display: flex;
-          width: 100%;
-        }
-
-        .vp-drawer-phone-btn {
-          width: 100%;
-          display: flex;
           align-items: center;
           justify-content: center;
-          gap: 8px;
-          background: #FFFFFF;
-          border: 1px solid #E2DCCE;
-          border-radius: 8px;
-          padding: 12px;
+        }
+
+        .vp-drawer-contact-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
           font-size: 13px;
-          font-weight: 700;
-          color: #BD4B23;
-          text-decoration: none;
-          transition: all 0.15s ease;
+          font-weight: 600;
+          color: var(--text-main);
         }
 
-        .vp-drawer-phone-btn:hover {
-          background: #FAF6EF;
-          border-color: #BD4B23;
-        }
-
-        /* Animations */
         @keyframes vpFadeIn {
           from { opacity: 0; }
           to { opacity: 1; }
@@ -626,33 +631,20 @@ export default function Navbar() {
           to { transform: translateX(0); }
         }
 
-        /* RESPONSIVE BREAKPOINTS */
-        @media (max-width: 1200px) {
-          .vp-center-nav {
-            gap: 18px;
-          }
-          .vp-nav-link {
-            font-size: 14px;
-          }
-        }
-
-        @media (max-width: 1024px) {
+        /* Responsive Breakpoints */
+        @media (max-width: 1100px) {
           .vp-center-nav {
             gap: 14px;
-          }
-          .vp-nav-link {
-            font-size: 13.5px;
           }
           .vp-phone-text {
             display: none;
           }
           .vp-phone-link {
-            padding: 8px;
-            border-radius: 50%;
+            padding: 7px 10px;
           }
         }
 
-        @media (max-width: 860px) {
+        @media (max-width: 960px) {
           .vp-center-nav {
             display: none;
           }
@@ -661,39 +653,16 @@ export default function Navbar() {
           }
         }
 
-        @media (max-width: 540px) {
-          .vp-navbar-container {
-            padding: 0 14px;
-            height: 64px;
-          }
-          .vp-brand-logo-img {
-            height: 36px;
-            max-width: 140px;
-          }
+        @media (max-width: 480px) {
           .vp-phone-link {
             display: none;
           }
-          .vp-book-cta {
-            padding: 8px 14px;
-            font-size: 13px;
-            min-height: 40px;
-          }
-        }
-
-        @media (max-width: 360px) {
-          .vp-navbar-container {
-            padding: 0 10px;
-          }
-          .vp-brand-logo-img {
-            height: 32px;
-            max-width: 120px;
-          }
-          .vp-book-cta span {
+          .vp-auth-btn {
             display: none;
           }
           .vp-book-cta {
-            padding: 8px 10px;
-            min-height: 38px;
+            padding: 9px 16px;
+            font-size: 12.5px;
           }
         }
       `}</style>
