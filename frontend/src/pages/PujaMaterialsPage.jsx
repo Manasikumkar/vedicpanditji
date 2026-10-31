@@ -2,7 +2,6 @@ import React from 'react';
 import { useApp } from '../context/AppContext';
 import { PUJA_MATERIALS } from '../data/vedicPanditData';
 import {
-  Star,
   Truck,
   ShieldCheck,
   Sparkles,
@@ -92,26 +91,7 @@ export default function PujaMaterialsPage() {
                   backgroundPosition: 'center',
                   position: 'relative'
                 }}
-              >
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '12px',
-                    left: '12px',
-                    background: 'rgba(255,255,255,0.95)',
-                    padding: '3px 8px',
-                    borderRadius: '12px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '4px',
-                    fontSize: '11px',
-                    fontWeight: 700
-                  }}
-                >
-                  <Star size={12} fill="#EAB308" color="#EAB308" />
-                  <span>{prod.rating}</span>
-                </div>
-              </div>
+              />
 
               <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', flex: 1 }}>
                 <h3 style={{ fontSize: '16px', fontWeight: 700, marginBottom: '6px' }}>

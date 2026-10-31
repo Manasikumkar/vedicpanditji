@@ -12,14 +12,9 @@ export const BRAND_INFO = {
   phoneClean: '919766880979',
   phoneRaw: '9766880979',
   email: 'info@vedicpanditji.com',
-  address: 'Headquarters: Pune, Maharashtra (Serving All-India)',
+  address: 'Pune, Maharashtra (Serving All-India)',
   whatsappUrl: 'https://wa.me/919766880979?text=Namaste%20Panditji%2C%20I%20would%20like%20to%20enquire%20about%20booking%20a%20puja.',
   headPriest: 'Senior Vedic Acharya & Purohit Team',
-  rating: 4.9,
-  reviewsCount: 262,
-  poojasPerformed: '10,000+',
-  priestsCount: '75+',
-  pujaTypes: '200+',
   supportedLanguages: ['Hindi', 'Sanskrit'],
   serviceCoverage: 'All over India'
 };
@@ -51,7 +46,7 @@ export const CITIES = [
     popular: true,
     verificationStatus: 'in-person-confirmed',
     verificationLabel: 'Verified Doorstep In-Person Priests',
-    tagline: 'Primary Headquarters & Resident North Indian & Bihari Pandits',
+    tagline: 'Doorstep North Indian & Bihari Pandits for Homes Across Pune & PCMC',
     localities: ['Kothrud', 'Wakad', 'Baner', 'Hinjewadi', 'Hadapsar', 'Viman Nagar', 'Kharadi', 'Pimpri-Chinchwad', 'Aundh', 'Bavdhan', 'Magarpatta City', 'Kalyani Nagar', 'Pimple Saudagar', 'Ravet']
   },
   {
@@ -105,6 +100,26 @@ export const CITIES = [
     localities: ['OMR', 'Velachery', 'Anna Nagar', 'T Nagar', 'Adyar', 'Sholinganallur', 'Porur', 'Thiruvanmiyur']
   },
   {
+    id: 'Ahmedabad',
+    name: 'Ahmedabad',
+    state: 'Gujarat',
+    popular: true,
+    verificationStatus: 'hybrid-online-travelling',
+    verificationLabel: 'Verified Live E-Puja & Visiting Acharyas',
+    tagline: 'Authentic Hindi & Sanskrit Vedic Pujas for Devotees in Ahmedabad',
+    localities: ['Satellite', 'Bodakdev', 'Bopal', 'Prahlad Nagar', 'Vastrapur', 'SG Highway', 'Chandkheda', 'Navrangpura']
+  },
+  {
+    id: 'Kolkata',
+    name: 'Kolkata',
+    state: 'West Bengal',
+    popular: true,
+    verificationStatus: 'hybrid-online-travelling',
+    verificationLabel: 'Verified Live E-Puja & Visiting Acharyas',
+    tagline: 'Authentic Hindi & Sanskrit Vedic Pujas for Devotees in Kolkata',
+    localities: ['Salt Lake', 'New Town', 'Rajarhat', 'Ballygunge', 'Alipore', 'Howrah', 'Kankurgachi', 'Garia']
+  },
+  {
     id: 'Nashik',
     name: 'Nashik / Trimbakeshwar',
     state: 'Maharashtra',
@@ -135,8 +150,8 @@ export const TRADITIONS = [
 
 export const VEDIC_PILLARS = [
   {
-    title: 'Certified Gurukul Pandits',
-    desc: 'Led by Senior Gurukul-trained Acharyas with 75+ verified scholars possessing deep mastery in Sanskrit shlokas, karmakanda, and Vedic rituals.',
+    title: 'Authentic Vedic Purohits',
+    desc: 'Experienced North Indian and Bihari Acharyas conducting ceremonies with authentic Sanskrit shlokas and fluent Hindi Katha explanations.',
     icon: 'GraduationCap'
   },
   {
@@ -170,7 +185,7 @@ export const FAQS_LIST = [
   {
     category: 'Locations & Coverage',
     q: 'Do you provide pandit services all over India?',
-    a: 'Yes, VedicPanditji provides service all over India. We maintain full resident doorstep priest networks in Pune and Mumbai, and provide verified visiting Acharyas for major family ceremonies and interactive live HD E-Pujas for devotees across Bangalore, Hyderabad, Delhi-NCR, Chennai, and other cities.'
+    a: 'Yes, VedicPanditji provides service all over India. We provide doorstep priest coordination across Pune, PCMC, and Mumbai, and arrange visiting Acharyas for major family ceremonies and interactive live HD E-Pujas for devotees across Bangalore, Hyderabad, Delhi-NCR, Chennai, and other cities.'
   },
   {
     category: 'Samagri & Preparations',
@@ -189,14 +204,14 @@ export const FAQS_LIST = [
   }
 ];
 
-// Verified Service Categories from vedicpanditji.com
+// Verified Service Categories from vedicpanditji.com (Synchronized with 59 live ceremonies)
 export const SERVICE_CATEGORIES = [
   {
     id: 'pujas',
     name: 'Pujas',
     tagline: 'Auspicious home ceremonies, Griha Pravesh & Satyanarayan Katha',
     icon: 'Flame',
-    count: '35+ Pujas',
+    count: '20 Ceremonies',
     image: '/images/hero-puja.jpg'
   },
   {
@@ -204,7 +219,7 @@ export const SERVICE_CATEGORIES = [
     name: 'Havans & Homams',
     tagline: 'Sacred fire Agnihotra rituals with pure samagri and cow ghee',
     icon: 'Sparkles',
-    count: '25+ Havans',
+    count: '11 Havans',
     image: '/images/category-havan.jpg'
   },
   {
@@ -212,7 +227,7 @@ export const SERVICE_CATEGORIES = [
     name: 'Jaaps & Mantras',
     tagline: 'Maha Mrityunjaya, Gayatri and Navagraha dosha mantra chanting',
     icon: 'BookOpen',
-    count: '18+ Jaaps',
+    count: '8 Jaaps',
     image: '/images/category-jaap.jpg'
   },
   {
@@ -220,7 +235,7 @@ export const SERVICE_CATEGORIES = [
     name: 'Paths & Kathas',
     tagline: 'Sundarkand Path, Ramcharitmanas, Durga Saptashati & Bhagwat Katha',
     icon: 'Scroll',
-    count: '12+ Paths',
+    count: '6 Paths',
     image: '/images/category-path.jpg'
   },
   {
@@ -228,23 +243,15 @@ export const SERVICE_CATEGORIES = [
     name: 'Shanti Pujas',
     tagline: 'Vastu Shanti, Gand Mool Nakshatra, Kalsarp and Graha Shanti',
     icon: 'Shield',
-    count: '15+ Shanti Vidhis',
+    count: '2 Shanti Vidhis',
     image: '/images/category-shanti.jpg'
-  },
-  {
-    id: 'festival-pujas',
-    name: 'Festival Pujas',
-    tagline: 'Ganesh Chaturthi, Diwali Lakshmi Puja, Navratri & Chhath Puja',
-    icon: 'Calendar',
-    count: '20+ Festivals',
-    image: '/images/category-festival.jpg'
   },
   {
     id: 'wedding-services',
     name: 'Hindu Wedding Planners',
     tagline: 'Complete Vivah Sanskar, Sagai, Haldi & Saptapadi Vedic Vidhi',
     icon: 'Heart',
-    count: 'Complete Sanskars',
+    count: '7 Sanskars',
     image: '/images/category-wedding.jpg'
   },
   {
@@ -252,7 +259,7 @@ export const SERVICE_CATEGORIES = [
     name: 'Bhajans & Chowki',
     tagline: 'Devotional Mata Ki Chowki, Jagran and Bhajan Sandhya setups',
     icon: 'Music',
-    count: 'Live Chowki',
+    count: '2 Chowki Setups',
     image: '/images/category-bhajan.jpg'
   },
   {
@@ -260,7 +267,7 @@ export const SERVICE_CATEGORIES = [
     name: 'Pitru Pujas',
     tagline: 'Shradh Karma, Tarpan, Pitru Paksha & Narayan Bali rituals',
     icon: 'Sun',
-    count: 'Pitru Karya',
+    count: '3 Pitru Rituals',
     image: '/images/category-pitru.jpg'
   }
 ];
@@ -427,8 +434,6 @@ export const PUJA_SAMAGRI_PRODUCTS = [
     name: 'Vedic Havan Samagri Pack (100% Pure Herbs)',
     category: 'havan-samagri',
     price: 950,
-    originalPrice: 1250,
-    rating: 4.9,
     weight: '1.5 kg',
     inStock: true,
     image: '/images/samagri-thali.jpg',
@@ -439,8 +444,6 @@ export const PUJA_SAMAGRI_PRODUCTS = [
     name: 'Desi Gir Cow A2 Ghee for Yajna',
     category: 'pure-ghee',
     price: 1450,
-    originalPrice: 1800,
-    rating: 5.0,
     weight: '1 Litre',
     inStock: true,
     image: '/images/samagri-thali.jpg',
@@ -451,8 +454,6 @@ export const PUJA_SAMAGRI_PRODUCTS = [
     name: 'Handcrafted Brass Puja Deepam Set (Kamakshi / Diya)',
     category: 'brass-items',
     price: 1850,
-    originalPrice: 2400,
-    rating: 4.95,
     weight: '850 grams',
     inStock: true,
     image: '/images/samagri-thali.jpg',
@@ -463,8 +464,6 @@ export const PUJA_SAMAGRI_PRODUCTS = [
     name: 'Sacred Griha Pravesh Samagri Box (Complete Kit)',
     category: 'kits',
     price: 3200,
-    originalPrice: 4100,
-    rating: 4.98,
     weight: 'Complete Box (35 Items)',
     inStock: true,
     image: '/images/samagri-thali.jpg',
@@ -475,8 +474,6 @@ export const PUJA_SAMAGRI_PRODUCTS = [
     name: 'Satyanarayan Pooja Samagri Kit',
     category: 'kits',
     price: 1650,
-    originalPrice: 2100,
-    rating: 4.88,
     weight: '24 Essential Items',
     inStock: true,
     image: '/images/samagri-thali.jpg',

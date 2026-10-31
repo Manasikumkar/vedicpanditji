@@ -1,34 +1,33 @@
 import React from 'react';
 import { Flame, Users, BookOpenCheck, Star } from 'lucide-react';
-import { BRAND_INFO } from '../../data/vedicPanditData';
 
 export default function CounterSection() {
   const stats = [
     {
-      number: BRAND_INFO.poojasPerformed,
-      label: 'Poojas Performed',
-      subtext: 'Across Pune households & Maharashtra',
-      icon: Flame,
-      color: 'var(--accent-saffron)'
-    },
-    {
-      number: BRAND_INFO.priestsCount,
-      label: 'Vedic Priests',
-      subtext: 'Pathashala certified North Indian & Bihari scholars',
-      icon: Users,
-      color: 'var(--accent-gold)'
-    },
-    {
-      number: BRAND_INFO.pujaTypes,
-      label: 'Types of Authentic Pujas',
-      subtext: 'Griha Pravesh, Havans, Sanskars & Paths',
+      number: 'Hindi & Sanskrit',
+      label: 'Ritual Languages',
+      subtext: 'Sanskrit Vedic chanting with fluent Hindi Katha',
       icon: BookOpenCheck,
       color: 'var(--accent-saffron)'
     },
     {
-      number: `${BRAND_INFO.rating} ★`,
-      label: 'Google Customer Rating',
-      subtext: `Based on ${BRAND_INFO.reviewsCount}+ verified Google reviews`,
+      number: 'Pune & PCMC',
+      label: 'Pune & PCMC Hub',
+      subtext: 'Doorstep visits in Pune & PCMC and E-Pujas nationwide',
+      icon: Users,
+      color: 'var(--accent-gold)'
+    },
+    {
+      number: 'Pure Samagri',
+      label: 'Vedic Havan Materials',
+      subtext: 'Pure cow ghee, mango wood & sacred Ayurvedic herbs',
+      icon: Flame,
+      color: 'var(--accent-saffron)'
+    },
+    {
+      number: 'Panchang Guidance',
+      label: 'Shubh Muhurat',
+      subtext: 'Calculations based on family Gotra, Nakshatra & Tithi',
       icon: Star,
       color: '#EAB308'
     }

@@ -5,9 +5,7 @@ import { animateHeroSection } from '../../utils/gsapAnimations';
 import {
   MapPin,
   Sparkles,
-  CheckCircle2,
   CalendarCheck,
-  Star,
   ArrowRight,
   ShieldCheck,
   Building,
@@ -38,13 +36,13 @@ export default function HeroSection() {
   // Rotating Keyword Animation State
   const [keywordIndex, setKeywordIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [reducedMotion, setReducedMotion] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(() => 
+    typeof window !== 'undefined' && window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false
+  );
 
   useEffect(() => {
-    // Check user preference for reduced motion
+    if (typeof window === 'undefined' || !window.matchMedia) return;
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setReducedMotion(mediaQuery.matches);
-
     const handleMotionChange = (e) => setReducedMotion(e.matches);
     mediaQuery.addEventListener('change', handleMotionChange);
 
@@ -108,9 +106,9 @@ export default function HeroSection() {
           right: 0,
           bottom: 0,
           width: '58%',
-          backgroundImage: 'url("/images/hero-devotional-bg.jpg")',
+          backgroundImage: 'url("/images/aesthetic-pooja.jpg")',
           backgroundSize: 'cover',
-          backgroundPosition: 'right center',
+          backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat',
           opacity: 0.95,
           maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.06) 12%, rgba(0,0,0,0.7) 45%, rgba(0,0,0,1) 85%)',
@@ -166,10 +164,10 @@ export default function HeroSection() {
           </div>
           <div>
             <div style={{ fontSize: '11px', fontWeight: 700, color: '#0369A1', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-              Gurukul Lineage
+              Authentic Tradition
             </div>
             <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-main)' }}>
-              75+ Certified Vedic Priests
+              Experienced Vedic Purohits
             </div>
           </div>
         </div>
@@ -195,26 +193,29 @@ export default function HeroSection() {
             }}
           >
             <Sparkles size={14} color="var(--accent-saffron)" />
-            <span>North Indian &amp; Gujarati Vedic Pandits in Pune, Mumbai, Bangalore, Delhi, Chennai &amp; All-India</span>
+            <span>North Indian Vedic Pandits in Pune, Mumbai, Bangalore, Delhi, Chennai &amp; All-India</span>
           </div>
 
-          {/* MAIN ANIMATED ROTATING HEADLINE */}
+          {/* MAIN ANIMATED ROTATING HEADLINE — EXACTLY THREE INTENTIONAL LINES */}
           <h1
             style={{
               fontFamily: 'var(--font-primary)',
-              fontSize: 'clamp(32px, 5.8vw, 54px)',
+              fontSize: 'clamp(30px, 4.8vw, 50px)',
               fontWeight: 800,
-              lineHeight: 1.15,
+              lineHeight: 1.16,
               color: 'var(--text-main)',
               letterSpacing: '-0.025em',
               marginBottom: '18px'
             }}
             className="hero-main-title"
           >
-            <div>Authentic Vedic</div>
+            {/* Line 1: Authentic Vedic */}
+            <div className="hero-title-line hero-title-line-1">
+              Authentic Vedic
+            </div>
             
-            {/* Middle Row with Rotating Service Keyword */}
-            <div style={{ display: 'flex', alignItems: 'baseline', flexWrap: 'wrap', gap: '10px', minHeight: '1.2em' }}>
+            {/* Line 2: [Animated rotating keyword] and */}
+            <div className="hero-title-line hero-title-line-2">
               <span className="rotating-keyword-wrapper">
                 <span
                   className={`rotating-keyword ${isTransitioning ? 'leaving' : 'entering'}`}
@@ -222,11 +223,12 @@ export default function HeroSection() {
                   {currentKeyword}
                 </span>
               </span>
-              <span>and Ceremonies</span>
+              <span className="hero-heading-and">and</span>
             </div>
 
-            <div>
-              Across <span style={{ color: 'var(--accent-saffron)', fontStyle: 'normal' }}>Major Cities</span>
+            {/* Line 3: Ceremonies Across Major Cities */}
+            <div className="hero-title-line hero-title-line-3">
+              Ceremonies Across <span style={{ color: 'var(--accent-saffron)', fontStyle: 'normal' }}>Major Cities</span>
             </div>
           </h1>
 
@@ -241,7 +243,7 @@ export default function HeroSection() {
               maxWidth: '660px'
             }}
           >
-            Powered by an established network of 75+ certified Gurukul Vedic Priests. Dedicated North Indian and Bihari Pandits for Griha Pravesh, Satyanarayan Puja, Vastu Shanti, Havans &amp; Hindu Weddings across India with authentic Hindi &amp; Sanskrit rituals.
+            Dedicated North Indian and Bihari Pandits for Griha Pravesh, Satyanarayan Puja, Vastu Shanti, Havans &amp; Hindu Weddings across India with authentic Hindi &amp; Sanskrit rituals.
           </p>
 
           {/* Quick Call & Primary CTA Group */}
@@ -289,17 +291,15 @@ export default function HeroSection() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', fontSize: '13px', color: 'var(--text-secondary)' }}>
             <div className="hero-trust-item" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <Building size={16} color="var(--accent-saffron)" />
-              <span><strong>Pune &amp; PCMC</strong> Resident Doorstep Priests</span>
+              <span><strong>Pune &amp; PCMC</strong> Doorstep Priest Services</span>
             </div>
             <div className="hero-trust-item" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <ShieldCheck size={16} color="var(--accent-saffron)" />
               <span><strong>Verified</strong> North Indian Vedic Pandits</span>
             </div>
             <div className="hero-trust-item" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '2px', color: '#EAB308' }}>
-                <Star size={14} fill="#EAB308" />
-              </div>
-              <span><strong>4.9/5</strong> (260+ Devotee Reviews)</span>
+              <Sparkles size={16} color="var(--accent-gold)" />
+              <span><strong>Hindi &amp; Sanskrit</strong> Mantras &amp; Vidhi</span>
             </div>
             <div className="hero-trust-item" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <Flame size={16} color="var(--accent-saffron)" />
@@ -391,7 +391,7 @@ export default function HeroSection() {
                     }}
                   >
                     <option value="Bangalore">Bangalore (Visiting Pandit &amp; Live)</option>
-                    <option value="Pune">Pune &amp; PCMC (Resident Gurukul Pandits • HQ)</option>
+                    <option value="Pune">Pune &amp; PCMC (Doorstep Priest Services)</option>
                     <option value="Mumbai">Mumbai &amp; MMR (Direct Express Travel)</option>
                     <option value="Delhi">Delhi &amp; NCR (Visiting Pandit &amp; Live)</option>
                     <option value="Hyderabad">Hyderabad (Visiting Pandit &amp; Live)</option>
@@ -494,6 +494,30 @@ export default function HeroSection() {
           }
         }
 
+        .hero-title-line-1 {
+          display: block;
+        }
+
+        .hero-title-line-2 {
+          display: flex;
+          align-items: baseline;
+          flex-wrap: nowrap;
+          gap: 10px;
+          min-height: 1.2em;
+          white-space: nowrap;
+        }
+
+        .hero-heading-and {
+          color: var(--text-main);
+          font-weight: 800;
+          display: inline-block;
+        }
+
+        .hero-title-line-3 {
+          display: block;
+          white-space: nowrap;
+        }
+
         /* Top Right Float Card */
         .hero-top-float-card {
           position: absolute;
@@ -555,6 +579,17 @@ export default function HeroSection() {
         }
 
         @media (max-width: 600px) {
+          .hero-main-title {
+            font-size: clamp(26px, 7vw, 34px) !important;
+            line-height: 1.2 !important;
+          }
+          .hero-title-line-2 {
+            flex-wrap: nowrap !important;
+            gap: 8px !important;
+          }
+          .hero-title-line-3 {
+            white-space: normal !important;
+          }
           .hero-search-form {
             grid-template-columns: 1fr !important;
           }

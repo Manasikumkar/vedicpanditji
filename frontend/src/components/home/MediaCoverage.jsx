@@ -4,21 +4,21 @@ import { ShieldCheck, Award, Star, BookOpen, CheckCircle } from 'lucide-react';
 const VEDIC_CREDENTIALS = [
   {
     icon: BookOpen,
-    title: 'Gurukul Trained Acharyas',
+    title: 'Experienced Vedic Acharyas',
     tag: 'Authentic Vidhi',
-    detail: 'Priests certified in Vedic Karmakanda and traditional Shastra rituals from reputed Gurukuls.'
+    detail: 'Priests dedicated to Vedic Karmakanda, sacred mantras, and authentic Shastra rituals.'
   },
   {
     icon: Star,
-    title: '4.9★ Google Rating',
-    tag: '260+ Verified Reviews',
-    detail: 'Highest rated North Indian & Bihari pandit service with genuine reviews from satisfied families.'
+    title: 'Hindi & Sanskrit Mantras',
+    tag: 'Scriptural Fidelity',
+    detail: 'Authentic Sanskrit Vedic recitation paired with clear, heartwarming Hindi Katha explanation.'
   },
   {
     icon: Award,
-    title: '15+ Years Tradition',
-    tag: 'Devotional Trust',
-    detail: 'Extensive track record performing Griha Pravesh, Satyanarayan Katha, Vivah, and Maha Havans across Maharashtra & All-India.'
+    title: 'Pan-India Service',
+    tag: 'Doorstep & E-Puja',
+    detail: 'Doorstep purohits across Pune & PCMC, with visiting Acharyas and live interactive E-Pujas nationwide.'
   },
   {
     icon: ShieldCheck,
@@ -44,7 +44,7 @@ export default function MediaCoverage() {
             Why Families Across India Revere VedicPanditji
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '15px', maxWidth: '620px', margin: '8px auto 0' }}>
-            Built on Vedic principles, transparent guidance, and dedicated Gurukul-trained acharyas.
+            Built on Vedic principles, transparent guidance, and dedicated Acharyas.
           </p>
         </div>
 

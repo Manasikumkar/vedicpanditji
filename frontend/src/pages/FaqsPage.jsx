@@ -33,7 +33,7 @@ export default function FaqsPage() {
             Frequently Asked Questions
           </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.6 }}>
-            Everything you need to know about booking certified North Indian &amp; Bihari Pandits across India, Shubh Muhurat calculations, pure samagri arrangements, and authentic Hindi &amp; Sanskrit Vedic vidhi procedures.
+            Everything you need to know about booking experienced North Indian &amp; Bihari Pandits across India, Shubh Muhurat calculations, pure samagri arrangements, and authentic Hindi &amp; Sanskrit Vedic vidhi procedures.
           </p>
         </div>
 

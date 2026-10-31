@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { SERVICES, SERVICE_CATEGORIES, CITIES, PUNE_LOCALITIES, BRAND_INFO, getServiceImage } from '../data/vedicPanditData';
+import { SERVICES, SERVICE_CATEGORIES, CITIES, BRAND_INFO, getServiceImage } from '../data/vedicPanditData';
+import { getPricingDisplay } from '../data/pujaPricing';
 import {
   Search,
-  Filter,
-  Star,
   Clock,
   Sparkles,
   ArrowRight,
-  MapPin,
-  CheckCircle2
+  CheckCircle2,
+  Package
 } from 'lucide-react';
 
 export default function CataloguePage() {
@@ -29,7 +28,7 @@ export default function CataloguePage() {
 
   const displayCity = typeof targetCity === 'object' && targetCity !== null ? targetCity.name : (targetCity || 'All Cities');
 
-  // Filter & Sort
+  // Filter & Sort with centralized pricing
   const filteredServices = SERVICES.filter(s => {
     const matchesCategory = selectedCategory === 'all' || s.category === selectedCategory;
 
@@ -40,10 +39,11 @@ export default function CataloguePage() {
 
     return matchesCategory && matchesSearch;
   }).sort((a, b) => {
-    if (sortBy === 'price-low') return (a.minPrice || 999999) - (b.minPrice || 999999);
-    if (sortBy === 'price-high') return (b.minPrice || 0) - (a.minPrice || 0);
-    if (sortBy === 'rating') return b.rating - a.rating;
-    return b.reviewsCount - a.reviewsCount;
+    const pricingA = getPricingDisplay(a.id);
+    const pricingB = getPricingDisplay(b.id);
+    if (sortBy === 'price-low') return (pricingA.minPrice || 999999) - (pricingB.minPrice || 999999);
+    if (sortBy === 'price-high') return (pricingB.minPrice || 0) - (pricingA.minPrice || 0);
+    return (a.name || '').localeCompare(b.name || '');
   });
 
   const getCategoryCount = (catId) => {
@@ -72,7 +72,7 @@ export default function CataloguePage() {
             </div>
             <div style={{ display: 'flex', gap: '8px', alignItems: 'center', background: '#FFFFFF', padding: '6px 14px', borderRadius: '30px', border: '1px solid #EAE5D9', fontSize: '12px', fontWeight: 600, color: 'var(--accent-gold)' }}>
               <Sparkles size={14} />
-              <span>50+ Live Verified Ceremonies &bull; {displayCity}</span>
+              <span>59 Vedic Ceremonies &bull; {displayCity}</span>
             </div>
           </div>
         </div>
@@ -108,7 +108,7 @@ export default function CataloguePage() {
                 type="text"
                 value={searchTerm}
                 onChange={e => setSearchTerm(e.target.value)}
-                placeholder="Search pujas (e.g., Satyanarayan, Griha Pravesh, Vastu, Rudrabhishek, Jaaps)..."
+                placeholder="Search pujas (e.g., Satyanarayan, Griha Pravesh, Vastu, Rudrabhishek, Havans)..."
                 style={{
                   width: '100%',
                   padding: '12px 14px 12px 42px',
@@ -128,7 +128,7 @@ export default function CataloguePage() {
                   setTargetCity(val);
                   if (setSelectedCity) {
                     const matched = CITIES.find(c => c.name.toLowerCase() === val.toLowerCase());
-                    setSelectedCity(matched || val);
+                    if (matched) setSelectedCity(matched);
                   }
                 }}
                 style={{
@@ -140,13 +140,13 @@ export default function CataloguePage() {
                   fontWeight: 600
                 }}
               >
-                <option value="All Cities">📍 All Cities &amp; Coverage</option>
-                <option value="Pune">📍 Pune (Doorstep In-Person &amp; HQ)</option>
-                <option value="Mumbai">📍 Mumbai &amp; MMR (Doorstep)</option>
-                <option value="Bangalore">📍 Bangalore (Visiting &amp; E-Puja)</option>
-                <option value="Hyderabad">📍 Hyderabad (Visiting &amp; E-Puja)</option>
-                <option value="Delhi">📍 Delhi &amp; NCR (Visiting &amp; E-Puja)</option>
-                <option value="Chennai">📍 Chennai (Visiting &amp; E-Puja)</option>
+                <option value="All Cities">📍 All Cities (Pan-India)</option>
+                <option value="Pune">📍 Pune &amp; PCMC (HQ)</option>
+                <option value="Mumbai">📍 Mumbai &amp; Thane (MMR)</option>
+                <option value="Bangalore">📍 Bangalore</option>
+                <option value="Delhi">📍 Delhi NCR</option>
+                <option value="Hyderabad">📍 Hyderabad</option>
+                <option value="Chennai">📍 Chennai</option>
                 <option value="Nashik">📍 Nashik / Trimbakeshwar</option>
                 <option value="Online">📍 Online Live E-Puja (Pan-India)</option>
               </select>
@@ -166,8 +166,7 @@ export default function CataloguePage() {
                   fontWeight: 600
                 }}
               >
-                <option value="popularity">Most Popular</option>
-                <option value="rating">Highest Rated</option>
+                <option value="popularity">All Ceremonies (A-Z)</option>
                 <option value="price-low">Indicative Dakshina: Low to High</option>
                 <option value="price-high">Indicative Dakshina: High to Low</option>
               </select>
@@ -246,7 +245,7 @@ export default function CataloguePage() {
         {/* Results Counter */}
         <div style={{ marginBottom: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>
-            Showing <strong>{filteredServices.length}</strong> verified rituals for <strong>{displayCity}</strong>
+            Showing <strong>{filteredServices.length}</strong> ceremonies for <strong>{displayCity}</strong>
           </span>
           {selectedCategory !== 'all' && (
             <button
@@ -268,158 +267,167 @@ export default function CataloguePage() {
 
         {/* Services Grid */}
         <div className="grid-3" style={{ gap: '28px' }}>
-          {filteredServices.map(service => (
-            <div
-              key={service.id}
-              className="card-premium"
-              style={{
-                borderRadius: '18px',
-                border: '1px solid #EAE5D9',
-                background: '#FFFFFF',
-                overflow: 'hidden',
-                display: 'flex',
-                flexDirection: 'column'
-              }}
-            >
-              {/* Image banner */}
+          {filteredServices.map(service => {
+            const pricing = getPricingDisplay(service.id);
+
+            // Determine badge style
+            let badgeBg = 'rgba(4, 120, 87, 0.92)'; // Green for 2-pkg
+            if (pricing.model === 'fixed-price') {
+              badgeBg = 'rgba(189, 75, 35, 0.94)'; // Saffron for fixed
+            } else if (pricing.packageCount === 3) {
+              badgeBg = 'rgba(30, 64, 175, 0.92)'; // Royal blue for 3-pkg options
+            }
+
+            return (
               <div
+                key={service.id}
+                className="card-premium"
                 style={{
-                  position: 'relative',
-                  height: '210px',
-                  backgroundImage: `url(${service.image || getServiceImage(service)})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
+                  borderRadius: '18px',
+                  border: '1px solid #EAE5D9',
+                  background: '#FFFFFF',
+                  overflow: 'hidden',
+                  display: 'flex',
+                  flexDirection: 'column'
                 }}
               >
+                {/* Image banner */}
                 <div
                   style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%)'
-                  }}
-                />
-
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '14px',
-                    left: '14px',
-                    background: 'rgba(255, 255, 255, 0.95)',
-                    padding: '4px 10px',
-                    borderRadius: '20px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '4px',
-                    fontSize: '12px',
-                    fontWeight: 700,
-                    color: 'var(--text-main)'
+                    position: 'relative',
+                    height: '210px',
+                    backgroundImage: `url(${service.image || getServiceImage(service)})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
                   }}
                 >
-                  <Star size={13} fill="#EAB308" color="#EAB308" />
-                  <span>{service.rating}</span>
-                  <span style={{ color: 'var(--text-muted)' }}>({service.reviewsCount})</span>
-                </div>
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%)'
+                    }}
+                  />
 
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: '12px',
-                    left: '14px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    color: '#FFFFFF',
-                    fontSize: '12px',
-                    fontWeight: 600,
-                    textShadow: '0 2px 4px rgba(0,0,0,0.6)'
-                  }}
-                >
-                  <Clock size={13} />
-                  <span>{service.duration}</span>
-                </div>
-              </div>
-
-              {/* Body */}
-              <div style={{ padding: '22px', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                <h3
-                  onClick={() => navigateTo('service-detail', { serviceId: service.id })}
-                  style={{
-                    fontSize: '19px',
-                    fontWeight: 700,
-                    marginBottom: '8px',
-                    cursor: 'pointer'
-                  }}
-                >
-                  {service.name}
-                </h3>
-                <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.55, marginBottom: '16px', flex: 1 }}>
-                  {service.shortDescription}
-                </p>
-
-                <div style={{ marginBottom: '16px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                  {service.keyInsights?.slice(0, 2).map((ins, i) => (
+                  {/* Top package indicator badge */}
+                  {pricing.badgeText && (
                     <div
-                      key={i}
                       style={{
+                        position: 'absolute',
+                        top: '12px',
+                        left: '12px',
+                        background: badgeBg,
+                        color: '#FFFFFF',
+                        padding: '3px 10px',
+                        borderRadius: '20px',
+                        fontSize: '11px',
+                        fontWeight: 700,
                         display: 'flex',
-                        alignItems: 'flex-start',
-                        gap: '6px',
-                        fontSize: '12px',
-                        color: 'var(--text-secondary)'
+                        alignItems: 'center',
+                        gap: '5px',
+                        boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
                       }}
                     >
-                      <CheckCircle2 size={13} color="var(--accent-saffron)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                      <span>{ins}</span>
+                      <Package size={12} />
+                      <span>{pricing.badgeText}</span>
                     </div>
-                  ))}
+                  )}
+
+                  <div
+                    style={{
+                      position: 'absolute',
+                      bottom: '12px',
+                      left: '14px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      color: '#FFFFFF',
+                      fontSize: '12px',
+                      fontWeight: 600,
+                      textShadow: '0 2px 4px rgba(0,0,0,0.6)'
+                    }}
+                  >
+                    <Clock size={13} />
+                    <span>{service.duration}</span>
+                  </div>
                 </div>
 
-                {/* Price and Action */}
-                <div
-                  style={{
-                    paddingTop: '16px',
-                    borderTop: '1px solid #EAE5D9',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center'
-                  }}
-                >
-                  <div>
-                    <div style={{ fontSize: '11px', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600 }}>
-                      Dakshina
-                    </div>
-                    {service.priceVerified && service.minPrice ? (
-                      <div style={{ fontSize: '18px', fontWeight: 800, color: 'var(--accent-saffron)' }}>
-                        From ₹{service.minPrice.toLocaleString('en-IN')}*
+                {/* Body */}
+                <div style={{ padding: '22px', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                  <h3
+                    onClick={() => navigateTo('service-detail', { serviceId: service.id })}
+                    style={{
+                      fontSize: '19px',
+                      fontWeight: 700,
+                      marginBottom: '8px',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    {service.name}
+                  </h3>
+                  <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.55, marginBottom: '16px', flex: 1 }}>
+                    {service.shortDescription}
+                  </p>
+
+                  <div style={{ marginBottom: '16px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                    {service.keyInsights?.slice(0, 2).map((ins, i) => (
+                      <div
+                        key={i}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          gap: '6px',
+                          fontSize: '12px',
+                          color: 'var(--text-secondary)'
+                        }}
+                      >
+                        <CheckCircle2 size={13} color="var(--accent-saffron)" style={{ flexShrink: 0, marginTop: '2px' }} />
+                        <span>{ins}</span>
                       </div>
-                    ) : (
-                      <div style={{ fontSize: '15px', fontWeight: 800, color: 'var(--accent-saffron)' }}>
-                        Custom Quote
-                      </div>
-                    )}
+                    ))}
                   </div>
 
-                  <div style={{ display: 'flex', gap: '8px' }}>
-                    <button
-                      onClick={() => navigateTo('service-detail', { serviceId: service.id })}
-                      className="btn-secondary"
-                      style={{ padding: '8px 14px', fontSize: '12px', cursor: 'pointer' }}
-                    >
-                      Details
-                    </button>
-                    <button
-                      onClick={() => openBookingModal(service.name)}
-                      className="btn-primary"
-                      style={{ padding: '8px 16px', fontSize: '12px', cursor: 'pointer' }}
-                    >
-                      <span>Enquire</span>
-                      <ArrowRight size={13} />
-                    </button>
+                  {/* Price and Action */}
+                  <div
+                    style={{
+                      paddingTop: '16px',
+                      borderTop: '1px solid #EAE5D9',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center'
+                    }}
+                  >
+                    <div>
+                      <div style={{ fontSize: '11px', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600 }}>
+                        {pricing.priceLabel || (pricing.hasPackages ? 'Starting Dakshina' : 'Dakshina')}
+                      </div>
+                      <div style={{ fontSize: '18px', fontWeight: 800, color: 'var(--accent-saffron)', marginTop: '2px' }}>
+                        {pricing.displayPrice}
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'flex', gap: '8px' }}>
+                      <button
+                        onClick={() => navigateTo('service-detail', { serviceId: service.id })}
+                        className="btn-secondary"
+                        style={{ padding: '8px 14px', fontSize: '12px', cursor: 'pointer' }}
+                      >
+                        Details
+                      </button>
+                      <button
+                        onClick={() => openBookingModal(service.name)}
+                        className="btn-primary"
+                        style={{ padding: '8px 16px', fontSize: '12px', cursor: 'pointer' }}
+                      >
+                        <span>Enquire</span>
+                        <ArrowRight size={13} />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 

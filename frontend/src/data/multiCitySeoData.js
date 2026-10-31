@@ -3,7 +3,7 @@
 
 export const MULTI_CITY_SEO_PAGES = [
   // ==========================================
-  // PUNE — HEADQUARTERS & PHYSICAL HUB (CONFIRMED IN-PERSON)
+  // PUNE & PCMC HUB (CONFIRMED IN-PERSON)
   // ==========================================
   {
     slug: 'north-indian-pandit-in-pune',
@@ -13,12 +13,12 @@ export const MULTI_CITY_SEO_PAGES = [
     searchIntent: 'Devotees in Pune seeking authentic Hindi-speaking North Indian Purohits for home pujas and ceremonies',
     verificationStatus: 'in-person-confirmed',
     verificationBadge: 'Verified In-Person Doorstep Service in Pune',
-    verificationNote: 'VedicPanditji primary headquarters is located in Pune with verified resident North Indian priests and Gurukul scholars.',
+    verificationNote: 'VedicPanditji serves families across Pune and PCMC with experienced doorstep North Indian purohits.',
     title: 'North Indian Pandit ji in Pune | Hindi Vedic Purohits for Pooja',
-    metaDescription: 'Book certified North Indian Pandit ji in Pune. Authentic Hindi-speaking Vedic priests for Griha Pravesh, Satyanarayan, Vastu Shanti & Weddings. 100% pure samagri.',
+    metaDescription: 'Book experienced North Indian Pandit ji in Pune. Authentic Hindi-speaking Vedic priests for Griha Pravesh, Satyanarayan, Vastu Shanti & Weddings. 100% pure samagri.',
     h1: 'North Indian Pandit ji in Pune for Authentic Vedic Poojas',
-    tagline: 'Fluent Hindi-Speaking, Certified Vedic Priests Serving Every Neighborhood Across Pune & PCMC',
-    heroBadge: 'Verified Resident Priests • Authentic Vedic Pujas Across Pune & PCMC',
+    tagline: 'Fluent Hindi-Speaking, Experienced Vedic Priests Serving Every Neighborhood Across Pune & PCMC',
+    heroBadge: 'Verified Doorstep Priests • Authentic Vedic Pujas Across Pune & PCMC',
     primaryService: 'North Indian Vedic Rituals',
     highlights: [
       'Native Hindi-speaking priests with authentic Vedic training',
@@ -33,7 +33,7 @@ export const MULTI_CITY_SEO_PAGES = [
     sections: [
       {
         heading: 'Why Book a North Indian Pandit in Pune with VedicPanditji?',
-        content: 'Pune has grown into Maharashtra’s foremost cosmopolitan education and IT capital, home to hundreds of thousands of North Indian families from Uttar Pradesh, Bihar, Madhya Pradesh, Rajasthan, Delhi-NCR, and Uttarakhand. When solemnizing life milestones—be it stepping into a new home in Hinjewadi or performing a birthday Satyanarayan Katha in Kothrud—families look for an Acharya who recites Sanskrit mantras with accurate Vedic phonetics and translates the sacred Katha in fluent, heartwarming Hindi.\n\nFounded to uphold authentic Sanatan traditions, VedicPanditji maintains an established network of verified, Gurukul-credentialed North Indian Pandits residing in Pune. Our priests honor your regional traditions, arrive punctually, and bring all requisite sacred Samagri.'
+        content: 'Pune has grown into Maharashtra’s foremost cosmopolitan education and IT capital, home to hundreds of thousands of North Indian families from Uttar Pradesh, Bihar, Madhya Pradesh, Rajasthan, Delhi-NCR, and Uttarakhand. When solemnizing life milestones—be it stepping into a new home in Hinjewadi or performing a birthday Satyanarayan Katha in Kothrud—families look for an Acharya who recites Sanskrit mantras with accurate Vedic phonetics and translates the sacred Katha in fluent, heartwarming Hindi.\n\nFounded to uphold authentic Sanatan traditions, VedicPanditji maintains an established network of experienced North Indian Pandits serving Pune. Our priests honor your regional traditions, arrive punctually, and bring all requisite sacred Samagri.'
       },
       {
         heading: 'Ceremonies Performed by North Indian Pandits in Pune',
@@ -57,7 +57,7 @@ export const MULTI_CITY_SEO_PAGES = [
     ],
     faqs: [
       { q: 'Do your North Indian Pandits speak Hindi?', a: 'Yes, all our North Indian pandits are native Hindi speakers and explain every ritual, shloka, and sankalpam clearly in Hindi.' },
-      { q: 'Can Panditji bring the full puja samagri?', a: 'Yes, Panditji brings certified, unadulterated Vedic Samagri including pure cow ghee, havan wood, dhoop, dry fruits, and sacred threads.' },
+      { q: 'Can Panditji bring the full puja samagri?', a: 'Yes, Panditji brings authentic, unadulterated Vedic Samagri including pure cow ghee, havan wood, dhoop, dry fruits, and sacred threads.' },
       { q: 'How early should we book a pandit in Pune?', a: 'For popular auspicious Muhurats (such as Devshayani Ekadashi, Purnima, Diwali, or Akshaya Tritiya), booking 3 to 7 days in advance is recommended.' },
       { q: 'What is the dakshina structure?', a: 'Dakshina is transparent and agreed in advance based on the complexity of the puja, number of Brahmins, and whether samagri is included.' }
     ],
@@ -72,7 +72,7 @@ export const MULTI_CITY_SEO_PAGES = [
     searchIntent: 'Bihari and Purvanchali families in Pune searching for Maithil, Bhojpuri, and Magahi speaking priests',
     verificationStatus: 'in-person-confirmed',
     verificationBadge: 'Verified In-Person Doorstep Service in Pune',
-    verificationNote: 'Experienced Bihari priests native to Mithila, Patna, and Varanasi resident in Pune for authentic cultural rites.',
+    verificationNote: 'Experienced Bihari priests native to Mithila, Patna, and Varanasi serving Pune for authentic cultural rites.',
     title: 'Bihari Pandit ji in Pune | Maithil & Bhojpuri Puja Priests',
     metaDescription: 'Book authentic Bihari Pandit ji in Pune for Chhath Puja, Satyanarayan Katha, Griha Pravesh, Vivah & Janeu. Maithil, Magahi & Bhojpuri traditions. Call 9766880979.',
     h1: 'Bihari Pandit ji in Pune for Traditional Bihari & Maithil Pujas',
@@ -89,7 +89,7 @@ export const MULTI_CITY_SEO_PAGES = [
     sections: [
       {
         heading: 'Preserving Sacred Bihari Traditions in Pune',
-        content: 'Bihari religious customs are steeped in ancient Vedic devotion—from the strict penance of Chhath Parva and Jitiya Vrat to the song-filled rituals of Matkor and Vivah Sanskar. For Bihari families living in Pune, finding a purohit who knows the precise dialect, Vidhi, and seasonal requirements is essential for peace of mind.\n\nVedicPanditji provides verified resident Bihari Pandits who bring the authentic customs of North Bihar, Mithilanchal, and Magadh straight to your doorstep.'
+        content: 'Bihari religious customs are steeped in ancient Vedic devotion—from the strict penance of Chhath Parva and Jitiya Vrat to the song-filled rituals of Matkor and Vivah Sanskar. For Bihari families living in Pune, finding a purohit who knows the precise dialect, Vidhi, and seasonal requirements is essential for peace of mind.\n\nVedicPanditji provides verified doorstep Bihari Pandits who bring the authentic customs of North Bihar, Mithilanchal, and Magadh straight to your doorstep.'
       },
       {
         heading: 'Specialized Ceremonies Conducted by Bihari Pandits in Pune',
@@ -121,12 +121,12 @@ export const MULTI_CITY_SEO_PAGES = [
     searchIntent: 'Homeowners in Pune looking for Pandit for new apartment, row house, or villa housewarming',
     verificationStatus: 'in-person-confirmed',
     verificationBadge: 'Verified In-Person Doorstep Service in Pune',
-    verificationNote: 'VedicPanditji has conducted over 10,000+ Griha Pravesh pujas across Pune and Pimpri-Chinchwad.',
+    verificationNote: 'VedicPanditji provides doorstep Griha Pravesh pujas across Pune and Pimpri-Chinchwad.',
     title: 'Griha Pravesh Puja in Pune | Housewarming Pandit & Muhurat',
     metaDescription: 'Book North Indian Pandit ji for Griha Pravesh Puja in Pune. Includes Vastu Shanti, Navagraha Havan, Kalash Sthapana & Samagri. Call 9766880979 for Shubh Muhurat.',
-    h1: 'Griha Pravesh Puja in Pune with Certified Vedic Pandits',
+    h1: 'Griha Pravesh Puja in Pune with Experienced Vedic Pandits',
     tagline: 'Complete Housewarming Ceremony with Vastu Shanti, Navagraha Havan & Auspicious Milk Boiling Vidhi',
-    heroBadge: '10,000+ New Homes Blessed Across Pune & PCMC',
+    heroBadge: 'Traditional Griha Pravesh Across Pune & PCMC',
     primaryService: 'Griha Pravesh Puja',
     highlights: [
       'Comprehensive Vastu Purush Sthapana and Navagraha Havan',
@@ -177,7 +177,7 @@ export const MULTI_CITY_SEO_PAGES = [
     metaDescription: 'Book experienced Pandit ji for Satyanarayan Puja in Pune. Complete 5 chapter Katha in Hindi, Havan, Aarti & Samagri. Best prices & Shubh Muhurat. Call 9766880979.',
     h1: 'Book Satyanarayan Puja & Katha in Pune',
     tagline: 'Devotional 5-Chapter Katha Recitation, Panchamrit, Prasad & Sacred Agni Havan',
-    heroBadge: 'Most Popular Family Puja in Pune • 4.9★ Rated',
+    heroBadge: 'Traditional Family Vrat Katha • Hindi & Sanskrit',
     primaryService: 'Satyanarayan Puja',
     highlights: [
       'Complete recitation of all 5 sacred chapters in melodious Hindi & Sanskrit',
@@ -219,7 +219,7 @@ export const MULTI_CITY_SEO_PAGES = [
     verificationBadge: 'Verified In-Person Doorstep Service in Pune',
     verificationNote: 'Specialist Vastu Purohits for residential, IT office, and factory sanctification in Pune.',
     title: 'Vastu Shanti Puja in Pune | Vastu Dosha Nivaran & Havan',
-    metaDescription: 'Book Pandit ji for Vastu Shanti Puja in Pune. Rectify residential & office Vastu doshas with classical Agnihotra Havan. Certified Vedic priests. Call 9766880979.',
+    metaDescription: 'Book Pandit ji for Vastu Shanti Puja in Pune. Rectify residential & office Vastu doshas with classical Agnihotra Havan. Experienced Vedic priests. Call 9766880979.',
     h1: 'Vastu Shanti Puja & Havan in Pune for Positive Energies',
     tagline: 'Appease Vastu Purush, Remove Architectural Defects & Infuse Positivity into Your Property',
     heroBadge: 'Specialist Vastu Priests in Pune',
@@ -311,11 +311,11 @@ export const MULTI_CITY_SEO_PAGES = [
     searchIntent: 'North Indian devotees in Mumbai, Navi Mumbai, and Thane looking for experienced Hindi-speaking Vedic priests',
     verificationStatus: 'in-person-confirmed',
     verificationBadge: 'Verified In-Person Service across Mumbai & MMR',
-    verificationNote: 'VedicPanditji operates dedicated resident and express-travel Acharyas serving Mumbai, Navi Mumbai, and Thane directly from our Maharashtra hub.',
+    verificationNote: 'VedicPanditji operates doorstep and express-travel Acharyas serving Mumbai, Navi Mumbai, and Thane directly from our Maharashtra hub.',
     title: 'North Indian Pandit in Mumbai | Hindi Purohits in Navi Mumbai & Thane',
     metaDescription: 'Book experienced North Indian Pandit ji in Mumbai, Navi Mumbai & Thane. Authentic Hindi Vedic priests for Griha Pravesh, Satyanarayan, Havans & Vivah. Call 9766880979.',
     h1: 'North Indian Pandit ji in Mumbai, Navi Mumbai & Thane',
-    tagline: 'Experienced Gurukul-Trained Purohits for Authentic Hindi & Sanskrit Vedic Ceremonies',
+    tagline: 'Experienced Vedic Purohits for Authentic Hindi & Sanskrit Vedic Ceremonies',
     heroBadge: 'Verified In-Person Coverage across MMR Corridor',
     primaryService: 'North Indian Vedic Rituals',
     highlights: [
@@ -328,7 +328,7 @@ export const MULTI_CITY_SEO_PAGES = [
     sections: [
       {
         heading: 'Reliable Vedic Pandit Services Across Mumbai Metropolitan Region',
-        content: 'Mumbai is a vibrant melting pot home to millions of North Indian residents from UP, Bihar, MP, Rajasthan, and Delhi. Finding a punctual, knowledgeable Pandit ji in Mumbai who arrives on time despite city traffic, brings genuine unadulterated samagri, and recites mantras with authentic Vedic phonetics can be daunting.\n\nVedicPanditji bridges this gap with verified, experienced North Indian priests stationed across Mumbai, Navi Mumbai, and Thane. Under the guidance of our senior Acharyas, our purohits uphold the sanctity of your sacred home rituals.'
+        content: 'Mumbai is a vibrant melting pot home to millions of North Indian residents from UP, Bihar, MP, Rajasthan, and Delhi. Finding a punctual, knowledgeable Pandit ji in Mumbai who arrives on time despite city traffic, brings genuine unadulterated samagri, and recites mantras with authentic Vedic phonetics can be daunting.\n\nVedicPanditji bridges this gap with verified, experienced North Indian priests serving across Mumbai, Navi Mumbai, and Thane. Under the guidance of our senior Acharyas, our purohits uphold the sanctity of your sacred home rituals.'
       },
       {
         heading: 'Pooja Services Available in Mumbai',
@@ -363,7 +363,7 @@ export const MULTI_CITY_SEO_PAGES = [
     verificationNote: 'VedicPanditji conducts doorstep Griha Pravesh pujas across Mumbai high-rises and townships.',
     title: 'Griha Pravesh Puja in Mumbai | Housewarming Pandit & Vastu Shanti',
     metaDescription: 'Book North Indian Pandit for Griha Pravesh Puja in Mumbai, Thane & Navi Mumbai. Vastu Shanti, Navagraha Havan & 100% pure samagri. Call 9766880979 for Shubh Muhurat.',
-    h1: 'Griha Pravesh Puja in Mumbai with Certified Vedic Priests',
+    h1: 'Griha Pravesh Puja in Mumbai with Experienced Vedic Priests',
     tagline: 'Housewarming & Vastu Shanti Rituals for Mumbai Apartments, High-Rises & Townships',
     heroBadge: 'Specialist Apartment-Friendly Low Smoke Havans in Mumbai',
     primaryService: 'Griha Pravesh Puja',
@@ -371,7 +371,7 @@ export const MULTI_CITY_SEO_PAGES = [
       'Tailored for Mumbai residential towers with smoke-sensitive alarms',
       'Includes Dwar Puja, Milk Boiling, Vastu Shanti & Navagraha Havan',
       'Free Shubh Muhurat calculation by senior Vedic Acharyas',
-      'Priests arrive with complete Samagri so you can focus on your guests'
+      'Samagri checklist is shared in advance or coordinated upon request so your family is prepared'
     ],
     keyLocalities: ['Powai', 'Andheri East & West', 'Thane West', 'Kharghar', 'Bandra', 'Goregaon', 'Kandivali', 'Chembur', 'Vashi'],
     sections: [
@@ -409,7 +409,7 @@ export const MULTI_CITY_SEO_PAGES = [
     title: 'Bihari Pandit in Mumbai | Maithil & Bhojpuri Rituals',
     metaDescription: 'Book authentic Bihari Pandit ji in Mumbai for Chhath Puja, Satyanarayan Katha, Griha Pravesh, Vivah & Janeu. Maithil, Bhojpuri traditions. Call 9766880979.',
     h1: 'Bihari Pandit ji in Mumbai for Traditional Pujas & Katha',
-    tagline: 'Expert Maithil, Bhojpuri & Magahi Rituals Conducted by Gurukul-Trained Priests',
+    tagline: 'Expert Maithil, Bhojpuri & Magahi Rituals Conducted by Experienced Vedic Priests',
     heroBadge: 'Preserving Purvanchal Heritage in Mumbai & MMR',
     primaryService: 'Bihari Vedic Rituals',
     highlights: [
@@ -582,7 +582,7 @@ export const MULTI_CITY_SEO_PAGES = [
       { category: 'Customer Preparation', items: ['New milk vessel & 1L fresh milk', 'Mango leaves & marigold flowers', 'Havan kund or small brass vessel', 'Panchamrit & Coconuts'] }
     ],
     faqs: [
-      { q: 'Can we perform Griha Pravesh via Live E-Puja effectively?', a: 'Yes! Over 1,500 families have completed their Griha Pravesh with us via Live E-Puja. Panditji chants every mantra live and instructs you exactly when to offer flowers, boil milk, and perform aarti.' },
+      { q: 'Can we perform Griha Pravesh via Live E-Puja effectively?', a: 'Yes! Many families across India have completed their Griha Pravesh with us via Live E-Puja. Panditji chants every mantra live and instructs you exactly when to offer flowers, boil milk, and perform aarti.' },
       { q: 'Can an Acharya travel to Bangalore for our villa housewarming?', a: 'Yes, on advance notice (at least 7 to 10 days), our senior priests can travel to Bangalore to conduct the ceremony in person.' }
     ],
     relatedSlugs: ['north-indian-pandit-in-bangalore', 'satyanarayan-puja-in-bangalore', 'griha-pravesh-puja-in-pune', 'griha-pravesh-puja-in-mumbai']
@@ -613,7 +613,7 @@ export const MULTI_CITY_SEO_PAGES = [
     sections: [
       {
         heading: 'Connecting Bangalore’s Bihari Diaspora to Sacred Roots',
-        content: 'From Chhath celebrations in apartments across Bellandur and Whitefield to traditional family Kathas, Bangalore’s vibrant Bihari diaspora cherishes its heritage. VedicPanditji connects families directly with Gurukul-trained Bihari priests who guide you through the exact rituals, songs, and sankalp according to regional scripture.'
+        content: 'From Chhath celebrations in apartments across Bellandur and Whitefield to traditional family Kathas, Bangalore’s vibrant Bihari diaspora cherishes its heritage. VedicPanditji connects families directly with experienced Bihari priests who guide you through the exact rituals, songs, and sankalp according to regional scripture.'
       }
     ],
     vidhiSteps: [
@@ -853,11 +853,11 @@ export const MULTI_CITY_SEO_PAGES = [
     searchIntent: 'Devotees seeking Kalsarp Dosh, Narayan Nagbali, or Pitru Shradh at Trimbakeshwar Jyotirlinga',
     verificationStatus: 'pilgrimage-confirmed',
     verificationBadge: 'Verified Tirtha Purohit Coordination in Trimbakeshwar',
-    verificationNote: 'VedicPanditji coordinates directly with certified local Tirtha Purohits at Trimbakeshwar Kshetra for authentic scriptural rituals.',
+    verificationNote: 'VedicPanditji coordinates directly with verified local Tirtha Purohits at Trimbakeshwar Kshetra for authentic scriptural rituals.',
     title: 'Trimbakeshwar Kalsarp Puja in Nashik | Narayan Nagbali & Shradh',
     metaDescription: 'Book authentic Kalsarp Shanti, Narayan Nagbali & Pitru Tarpan at Trimbakeshwar Jyotirlinga, Nashik. Verified local Tirtha Purohits. Call 9766880979.',
     h1: 'Trimbakeshwar Kalsarp Puja & Narayan Nagbali in Nashik',
-    tagline: 'Sacred Dosha Nivaran & Ancestral Rites at the Holy Godavari Kshetra with Certified Tirtha Purohits',
+    tagline: 'Sacred Dosha Nivaran & Ancestral Rites at the Holy Godavari Kshetra with Verified Tirtha Purohits',
     heroBadge: 'Verified On-Site Tirtha Purohits at Trimbakeshwar Temple',
     primaryService: 'Pilgrimage & Dosha Shanti',
     highlights: [
@@ -901,7 +901,7 @@ export const MULTI_CITY_SEO_PAGES = [
     verificationBadge: '100% Verified Live Interactive E-Puja (Pan-India & Global)',
     verificationNote: 'Authentic Vedic rituals performed live on two-way Zoom / Google Meet with personalized family Gotra Sankalp and consecrated Prasad courier.',
     title: 'Online E-Puja Services | Live Streamed Vedic Pujas by Pandit ji',
-    metaDescription: 'Book authentic online e-puja services with certified Vedic Pandits in Pune. Live Zoom Sankalp, customized Hawan & energized Prasad delivery worldwide. Call 9766880979.',
+    metaDescription: 'Book authentic online e-puja services with experienced Vedic Pandits in Pune. Live Zoom Sankalp, customized Hawan & energized Prasad delivery worldwide. Call 9766880979.',
     h1: 'Online E-Puja Services with Personalized Live Sankalp',
     tagline: 'Connect from Anywhere in the World — Authentic Vedic Rituals Performed in Your Name',
     heroBadge: 'Global E-Puja Network • Live HD Two-Way Video',
@@ -944,14 +944,14 @@ export const MULTI_CITY_SEO_PAGES = [
     city: 'Delhi',
     state: 'Delhi NCR',
     service: 'North Indian Pandit',
-    searchIntent: 'North Indian and Purvanchali families across Delhi, Noida, Gurgaon, and Ghaziabad seeking certified Hindi & Sanskrit Vedic Purohits for home ceremonies',
+    searchIntent: 'North Indian and Purvanchali families across Delhi, Noida, Gurgaon, and Ghaziabad seeking experienced Hindi & Sanskrit Vedic Purohits for home ceremonies',
     verificationStatus: 'hybrid-online-travelling',
     verificationBadge: 'Verified Live E-Puja & Visiting Acharyas for Delhi-NCR',
     verificationNote: 'VedicPanditji provides authentic Hindi & Sanskrit rituals for Delhi-NCR. Major ceremonies are officiated by visiting Acharyas from our Varanasi and Pune pathashala network with advance date confirmation, while household pujas are conducted via interactive two-way Zoom.',
     title: 'North Indian Pandit ji in Delhi NCR | Hindi Vedic Purohits for Pooja',
-    metaDescription: 'Book certified North Indian Pandit ji in Delhi, Noida & Gurgaon. Authentic Hindi-speaking Vedic priests for Griha Pravesh, Satyanarayan, Vastu Shanti & Hawan. Call 9766880979.',
+    metaDescription: 'Book experienced North Indian Pandit ji in Delhi, Noida & Gurgaon. Authentic Hindi-speaking Vedic priests for Griha Pravesh, Satyanarayan, Vastu Shanti & Hawan. Call 9766880979.',
     h1: 'North Indian Pandit ji in Delhi NCR for Authentic Vedic Poojas',
-    tagline: 'Gurukul-Trained Purohits Conducting Ceremonies in Flawless Vedic Sanskrit with Fluent Hindi Katha',
+    tagline: 'Experienced Vedic Purohits Conducting Ceremonies in Flawless Vedic Sanskrit with Fluent Hindi Katha',
     heroBadge: 'All-India Vedic Coverage • Hindi & Sanskrit Rituals',
     primaryService: 'North Indian Vedic Rituals',
     highlights: [
@@ -967,7 +967,7 @@ export const MULTI_CITY_SEO_PAGES = [
     sections: [
       {
         heading: 'Why Book a North Indian Pandit in Delhi NCR with VedicPanditji?',
-        content: 'Delhi-NCR is a cultural heartland where ancient Sanatan traditions merge with modern metropolitan life. Families settling into new high-rise apartments in Noida, villas in Gurugram, or family homes in South Delhi and Dwarka seek Acharyas who maintain the sanctity of Shukla Yajurveda, chant Vedic hymns with accurate phonetics, and recite sacred Kathas in pure, heartfelt Hindi.\n\nGuided by certified Gurukul Acharyas, VedicPanditji extends all-India service coverage to Delhi-NCR. We assign Gurukul-credentialed Acharyas who understand regional North Indian and Purvanchali sanskars, ensuring your family milestone is blessed with genuine Vedic authenticity.'
+        content: 'Delhi-NCR is a cultural heartland where ancient Sanatan traditions merge with modern metropolitan life. Families settling into new high-rise apartments in Noida, villas in Gurugram, or family homes in South Delhi and Dwarka seek Acharyas who maintain the sanctity of Shukla Yajurveda, chant Vedic hymns with accurate phonetics, and recite sacred Kathas in pure, heartfelt Hindi.\n\nGuided by experienced Vedic Acharyas, VedicPanditji extends all-India service coverage to Delhi-NCR. We assign knowledgeable Acharyas who understand regional North Indian and Purvanchali sanskars, ensuring your family milestone is blessed with genuine Vedic authenticity.'
       },
       {
         heading: 'Supported Ritual Languages: Authentic Sanskrit & Fluent Hindi',
@@ -975,7 +975,7 @@ export const MULTI_CITY_SEO_PAGES = [
       },
       {
         heading: 'Ceremonies Conducted Across Delhi, Noida & Gurgaon',
-        content: '• Griha Pravesh Puja & Vastu Shanti Havan for new flats and corporate offices\n• Shri Satyanarayan Vrat Katha with Panchamrit and Prasad Vidhi\n• Maha Mrityunjaya Jaap, Rudrabhishek & Navagraha Shanti Havan\n• Sundarkand Path and Akhand Ramayan recitations\n• Sanskars: Namkaran, Annaprashan, Mundan, and Janeu (Yagnopaveeth)\n• Traditional Hindu Vivah Sanskar (Tilak, Matkor, Saptapadi, Kanyadaan)\n• Shradh Karma, Tarpan, and Pitru Paksha Brahmin Bhojan'
+        content: '• Griha Pravesh Puja & Vastu Shanti Havan for new flats and business spaces\n• Shri Satyanarayan Vrat Katha with Panchamrit and Prasad Vidhi\n• Maha Mrityunjaya Jaap, Rudrabhishek & Navagraha Shanti Havan\n• Sundarkand Path and Akhand Ramayan recitations\n• Sanskars: Namkaran, Annaprashan, Mundan, and Janeu (Yagnopaveeth)\n• Traditional Hindu Vivah Sanskar (Tilak, Matkor, Saptapadi, Kanyadaan)\n• Shradh Karma, Tarpan, and Pitru Paksha Brahmin Bhojan'
       },
       {
         heading: 'Booking Confirmation & All-India Service Model',
@@ -996,7 +996,7 @@ export const MULTI_CITY_SEO_PAGES = [
     faqs: [
       { q: 'Which languages are supported for pujas in Delhi NCR?', a: 'VedicPanditji supports Hindi and Sanskrit. All mantras are chanted in pristine Vedic Sanskrit, and all explanations, sankalpam, and kathas are conducted in fluent Hindi.' },
       { q: 'How is priest availability confirmed in Delhi or Gurgaon?', a: 'Once you submit your booking enquiry with preferred dates, our senior Vedic coordination team verifies the Shubh Muhurat and confirms priest travel schedules and assigned Acharyas.' },
-      { q: 'Can Panditji provide the complete puja samagri in Delhi?', a: 'Yes, our Acharyas can bring certified, unadulterated Vedic Samagri including pure cow ghee, havan wood, dhoop, and sacred herbs.' },
+      { q: 'Can Panditji provide the complete puja samagri in Delhi?', a: 'Yes, our Acharyas can bring authentic, unadulterated Vedic Samagri including pure cow ghee, havan wood, dhoop, and sacred herbs.' },
       { q: 'How early should we book for popular Muhurats in Delhi?', a: 'For high-demand auspicious days (such as Dev Uthani Ekadashi, Akshaya Tritiya, or Navratri), booking 5 to 10 days in advance is highly recommended.' }
     ],
     relatedSlugs: ['north-indian-pandit-in-pune', 'north-indian-pandit-in-mumbai', 'north-indian-pandit-in-bangalore', 'north-indian-pandit-in-chennai', 'online-e-puja-services']
@@ -1033,7 +1033,7 @@ export const MULTI_CITY_SEO_PAGES = [
     sections: [
       {
         heading: 'Preserving North Indian Vedic Traditions in Chennai',
-        content: 'Thousands of North Indian and Purvanchali professionals and business families reside across Chennai—from the IT corridors of OMR and Sholinganallur to established residential areas in Anna Nagar, Kilpauk, and T Nagar. When organizing a milestone Griha Pravesh, Vastu Shanti, or Satyanarayan Katha, finding a priest who recites the classical Sanskrit mantras with precision and narrates the Katha in fluent Hindi is of utmost importance.\n\nVedicPanditji fulfills this need through our all-India service network. Supported by verified Gurukul scholars, we ensure North Indian families in Chennai experience the exact spiritual traditions of their home culture with complete devotion.'
+        content: 'Thousands of North Indian and Purvanchali professionals and business families reside across Chennai—from the IT corridors of OMR and Sholinganallur to established residential areas in Anna Nagar, Kilpauk, and T Nagar. When organizing a milestone Griha Pravesh, Vastu Shanti, or Satyanarayan Katha, finding a priest who recites the classical Sanskrit mantras with precision and narrates the Katha in fluent Hindi is of utmost importance.\n\nVedicPanditji fulfills this need through our all-India service network. Supported by verified Vedic scholars, we ensure North Indian families in Chennai experience the exact spiritual traditions of their home culture with complete devotion.'
       },
       {
         heading: 'Supported Ritual Languages: Exclusively Hindi & Sanskrit',
@@ -1065,5 +1065,135 @@ export const MULTI_CITY_SEO_PAGES = [
       { q: 'Can samagri be arranged in Chennai?', a: 'Yes, our Acharyas either travel with primary sacred samagri or provide a clear shopping checklist of easily available local items.' }
     ],
     relatedSlugs: ['north-indian-pandit-in-bangalore', 'north-indian-pandit-in-hyderabad', 'north-indian-pandit-in-delhi', 'north-indian-pandit-in-pune', 'online-e-puja-services']
+  },
+
+  // ==========================================
+  // AHMEDABAD — ALL-INDIA SERVICE (HINDI & SANSKRIT)
+  // ==========================================
+  {
+    slug: 'north-indian-pandit-in-ahmedabad',
+    city: 'Ahmedabad',
+    state: 'Gujarat',
+    service: 'North Indian Pandit',
+    searchIntent: 'North Indian, Rajasthani, and Hindi speaking families in Ahmedabad searching for authentic Vedic priests for home pujas and rituals',
+    verificationStatus: 'hybrid-online-travelling',
+    verificationBadge: 'Verified Live E-Puja & Visiting Acharyas for Ahmedabad',
+    verificationNote: 'VedicPanditji serves devotees across Ahmedabad. Ceremonies are conducted with sacred Vedic Sanskrit mantras and fluent Hindi Katha through visiting Acharyas for major family ceremonies and interactive live HD E-Puja.',
+    title: 'North Indian Pandit ji in Ahmedabad | Hindi Speaking Vedic Priests',
+    metaDescription: 'Book North Indian Pandit ji in Ahmedabad for Griha Pravesh, Satyanarayan Katha, Vastu Shanti & Hawan. Authentic Hindi and Sanskrit Vedic rituals. Call 9766880979.',
+    h1: 'North Indian Pandit ji in Ahmedabad for Vedic Poojas & Hawan',
+    tagline: 'Authentic Hindi & Sanskrit Vedic Priests Serving Devotees in Ahmedabad',
+    heroBadge: 'All-India Service Coverage • Hindi & Sanskrit Rituals',
+    primaryService: 'North Indian Vedic Rituals',
+    highlights: [
+      'Native Hindi-speaking Acharyas experienced in Vedic Karmakanda and classical Shastras',
+      'Supported Languages: Hindi and Sanskrit (authentic Vedic chanting with Hindi Katha explanation)',
+      'Service for families in Satellite, Bodakdev, Bopal, Prahlad Nagar, Vastrapur, and SG Highway',
+      'Accurate Panchang Shubh Muhurat consultation by senior Vedic Acharyas'
+    ],
+    keyLocalities: [
+      'Satellite', 'Bodakdev', 'Bopal', 'Prahlad Nagar',
+      'Vastrapur', 'SG Highway', 'Chandkheda', 'Navrangpura'
+    ],
+    sections: [
+      {
+        heading: 'Preserving North Indian Vedic Traditions in Ahmedabad',
+        content: 'Ahmedabad is home to a thriving diaspora of North Indian, Marwari, Rajasthani, and Hindi-speaking families. When celebrating an auspicious housewarming, wedding, or ancestral ceremony, families seek an experienced purohit who recites sacred Sanskrit shlokas accurately and explains the vidhi and Katha warmly in Hindi.\n\nVedicPanditji connects devotees in Ahmedabad with verified Vedic priests who conduct rituals with scriptural fidelity, reverence, and devotional integrity.'
+      },
+      {
+        heading: 'Supported Ritual Languages: Hindi & Sanskrit',
+        content: 'All ceremonies honor classical Sanatan traditions: Vedic hymns and Agnihotra mantras are recited in sacred Sanskrit, while the interactive Sankalp, family guidance, and Katha narrations are delivered in clear, fluent Hindi.'
+      },
+      {
+        heading: 'Pooja Services Available for Ahmedabad Families',
+        content: '• Griha Pravesh & Vastu Shanti Puja for new homes and apartments\n• Satyanarayan Puja with complete 5-chapter Hindi Katha and Prasad\n• Rudrabhishek and Maha Mrityunjaya Jaap with Agnihotra Havan\n• Sundarkand Path and Hanuman Chalisa recitations\n• Vedic Marriage Ceremony (Vivah Sanskar) coordination\n• Sanskars: Namkaran, Mundan, Annaprashan, and Janeu'
+      },
+      {
+        heading: 'Service Delivery & Booking Model in Ahmedabad',
+        content: 'VedicPanditji coordinates services across Ahmedabad through scheduled visiting Acharyas for major family ceremonies and interactive live HD E-Pujas for household rituals. We do not claim permanent physical branch offices in Ahmedabad; instead, we provide honest, transparent coordination backed by our Pune operations hub.'
+      }
+    ],
+    vidhiSteps: [
+      { step: '01', title: 'Panchang Muhurat Calculation', desc: 'Evaluating family birth Nakshatras and Hindu Panchang to determine the most auspicious Lagna.' },
+      { step: '02', title: 'Sankalp & Shuddhikaran', desc: 'Purification with sacred Gangajal and formal recitation of your Gotra and ceremony intention.' },
+      { step: '03', title: 'Kalash & Mandala Sthapana', desc: 'Invoking Ganesha, Varuna, and the Navagrahas with traditional Vedic stotras.' },
+      { step: '04', title: 'Main Puja & Agnihotra Havan', desc: 'Sacred fire offerings with pure cow ghee and natural herbal havan samagri.' },
+      { step: '05', title: 'Aarti & Consecration', desc: 'Family Aarti, pushpanjali, Brahmin blessings, and distribution of consecrated Prasad.' }
+    ],
+    samagriList: [
+      { category: 'Provided by Panditji', items: ['Havan Kund & Mango Wood', 'Pure Desi Cow Ghee', 'Navagraha Wood & Samidha', 'Roli, Kumkum, Chandan & Moli', 'Camphor, Dhoop & Sacred Herbs'] },
+      { category: 'Arranged by Devotee', items: ['Fresh Flowers & Garlands', 'Fresh Fruits & Dry Fruits', 'Panchamrit Ingredients (Milk, Curd, Honey, Ghee, Sugar)', 'Fresh Coconut with Water'] }
+    ],
+    faqs: [
+      { q: 'Do your pandits in Ahmedabad speak Hindi?', a: 'Yes, our pandits are native Hindi speakers who chant mantras in classical Sanskrit and deliver the Katha and explanations in fluent Hindi.' },
+      { q: 'How can we book a Griha Pravesh pandit in Ahmedabad?', a: 'Submit your preferred date and locality (such as Bopal, Satellite, or Prahlad Nagar). Our team calculates the Shubh Muhurat and schedules an Acharya.' },
+      { q: 'Is puja samagri provided in Ahmedabad?', a: 'Yes, our priests can arrange complete authentic samagri kits or provide an itemized checklist of household items to prepare.' }
+    ],
+    relatedSlugs: ['north-indian-pandit-in-pune', 'north-indian-pandit-in-mumbai', 'north-indian-pandit-in-delhi', 'online-e-puja-services']
+  },
+
+  // ==========================================
+  // KOLKATA — ALL-INDIA SERVICE (HINDI & SANSKRIT)
+  // ==========================================
+  {
+    slug: 'north-indian-pandit-in-kolkata',
+    city: 'Kolkata',
+    state: 'West Bengal',
+    service: 'North Indian Pandit',
+    searchIntent: 'North Indian, Bihari, and Marwari families in Kolkata searching for Hindi and Sanskrit speaking Vedic priests for home ceremonies',
+    verificationStatus: 'hybrid-online-travelling',
+    verificationBadge: 'Verified Live E-Puja & Visiting Acharyas for Kolkata',
+    verificationNote: 'VedicPanditji serves North Indian and Purvanchali families across Kolkata. Ceremonies are conducted with sacred Vedic Sanskrit mantras and fluent Hindi Katha through visiting Acharyas for major family ceremonies and interactive live HD E-Puja.',
+    title: 'North Indian Pandit ji in Kolkata | Hindi Speaking Vedic Priests',
+    metaDescription: 'Book North Indian Pandit ji in Kolkata for Griha Pravesh, Satyanarayan Katha, Vastu Shanti & Hawan. Authentic Hindi and Sanskrit Vedic rituals. Call 9766880979.',
+    h1: 'North Indian Pandit ji in Kolkata for Vedic Poojas & Hawan',
+    tagline: 'Authentic Hindi & Sanskrit Vedic Priests Serving Devotees in Kolkata',
+    heroBadge: 'All-India Service Coverage • Hindi & Sanskrit Rituals',
+    primaryService: 'North Indian Vedic Rituals',
+    highlights: [
+      'Native Hindi-speaking Acharyas experienced in Vedic Karmakanda and classical Shastras',
+      'Supported Languages: Hindi and Sanskrit (authentic Vedic chanting with Hindi Katha explanation)',
+      'Service for families in Salt Lake, New Town, Rajarhat, Ballygunge, Alipore, and Howrah',
+      'Accurate Panchang Shubh Muhurat consultation by senior Vedic Acharyas'
+    ],
+    keyLocalities: [
+      'Salt Lake', 'New Town', 'Rajarhat', 'Ballygunge',
+      'Alipore', 'Howrah', 'Kankurgachi', 'Garia'
+    ],
+    sections: [
+      {
+        heading: 'Preserving North Indian Vedic Traditions in Kolkata',
+        content: 'Kolkata has long been home to a prominent community of North Indian, Bihari, and Marwari families who maintain traditional Vedic rites for all life milestones. When organizing a Griha Pravesh in New Town, a family Satyanarayan Katha in Salt Lake, or an ancestral Shradh, families seek a purohit who recites classical Sanskrit mantras and narrates the Katha in heartwarming Hindi.\n\nVedicPanditji coordinates experienced North Indian and Bihari priests who conduct rituals with scriptural precision and deep devotion.'
+      },
+      {
+        heading: 'Supported Ritual Languages: Exclusively Hindi & Sanskrit',
+        content: 'All rituals strictly follow confirmed Vedic guidelines: Vedic stotras and Agnihotra mantrocharan are chanted in Sanskrit, while the family Sankalp, vidhi guidance, and Katha explanations are delivered in fluent Hindi.'
+      },
+      {
+        heading: 'Pooja Services Available for Kolkata Families',
+        content: '• Griha Pravesh & Vastu Shanti Puja for new apartments and homes\n• Satyanarayan Puja with full 5-chapter Hindi Katha and Panchamrit\n• Rudrabhishek and Maha Mrityunjaya Jaap with Agnihotra Havan\n• Sundarkand Path and Hanuman Chalisa recitations\n• Traditional Vedic Vivah Sanskar coordination\n• Sanskars: Namkaran, Mundan, Annaprashan, and Janeu'
+      },
+      {
+        heading: 'Service Delivery & Booking Model in Kolkata',
+        content: 'VedicPanditji coordinates services across Kolkata through scheduled visiting Acharyas for major family ceremonies and interactive live HD E-Pujas for household rituals. We do not claim permanent physical branch offices in Kolkata; instead, we provide honest, transparent coordination backed by our Pune operations hub.'
+      }
+    ],
+    vidhiSteps: [
+      { step: '01', title: 'Panchang Muhurat Calculation', desc: 'Evaluating family birth Nakshatras and Hindu Panchang to determine the most auspicious Lagna.' },
+      { step: '02', title: 'Sankalp & Shuddhikaran', desc: 'Purification with sacred Gangajal and formal recitation of your Gotra and ceremony intention.' },
+      { step: '03', title: 'Kalash & Mandala Sthapana', desc: 'Invoking Ganesha, Varuna, and the Navagrahas with traditional Vedic stotras.' },
+      { step: '04', title: 'Main Puja & Agnihotra Havan', desc: 'Sacred fire offerings with pure cow ghee and natural herbal havan samagri.' },
+      { step: '05', title: 'Aarti & Consecration', desc: 'Family Aarti, pushpanjali, Brahmin blessings, and distribution of consecrated Prasad.' }
+    ],
+    samagriList: [
+      { category: 'Provided by Panditji', items: ['Havan Kund & Mango Wood', 'Pure Desi Cow Ghee', 'Navagraha Wood & Samidha', 'Roli, Kumkum, Chandan & Moli', 'Camphor, Dhoop & Sacred Herbs'] },
+      { category: 'Arranged by Devotee', items: ['Fresh Flowers & Garlands', 'Fresh Fruits & Dry Fruits', 'Panchamrit Ingredients (Milk, Curd, Honey, Ghee, Sugar)', 'Fresh Coconut with Water'] }
+    ],
+    faqs: [
+      { q: 'Do your pandits in Kolkata speak Hindi?', a: 'Yes, our pandits are native Hindi speakers who chant mantras in classical Sanskrit and deliver the Katha and explanations in fluent Hindi.' },
+      { q: 'How can we book a Griha Pravesh pandit in Kolkata?', a: 'Submit your preferred date and locality (such as Salt Lake or New Town). Our team calculates the Shubh Muhurat and schedules an Acharya.' },
+      { q: 'Is puja samagri provided in Kolkata?', a: 'Yes, our priests can arrange complete authentic samagri kits or provide an itemized checklist of household items to prepare.' }
+    ],
+    relatedSlugs: ['north-indian-pandit-in-pune', 'north-indian-pandit-in-delhi', 'north-indian-pandit-in-bangalore', 'online-e-puja-services']
   }
 ];

@@ -25,7 +25,7 @@ export default function TrustCredentials() {
           <span className="section-tag">Authenticity &amp; Shastra Vidhi</span>
           <h2 className="section-title">The VedicPanditji Standard</h2>
           <p className="section-desc">
-            Our network of 75+ certified Gurukul North Indian and Bihari Pandits strictly follows Vedic traditions, authentic Sanskrit mantras, and certified ritual procedures with all-India service coverage.
+            Our dedicated North Indian and Bihari Pandits strictly follow Vedic traditions, authentic Sanskrit mantras, and authentic ritual procedures with all-India service coverage.
           </p>
         </div>
 
@@ -108,10 +108,10 @@ export default function TrustCredentials() {
           </div>
           <div style={{ flex: 1, minWidth: 'min(280px, 100%)' }}>
             <h4 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '4px', color: 'var(--text-main)' }}>
-              100% Satisfaction &amp; Shanti Guarantee
+              Vedic Sanatan Service Commitment
             </h4>
             <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
-              If your assigned pandit is late or if samagri is deficient in any way, our dedicated temple relationship managers replace or rectify immediately.
+              Dedicated to authentic Vedic mantrocharan, punctual doorstep arrival, and unadulterated sacred samagri to ensure peace and devotion for your family.
             </p>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>

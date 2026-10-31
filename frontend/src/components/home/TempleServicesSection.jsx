@@ -37,14 +37,14 @@ const SPECIAL_OFFERINGS = [
   {
     id: 'corporate-vastu',
     serviceId: 'office-opening-puja',
-    tag: 'Commercial & Corporate',
-    title: 'Office & Factory Opening Vastu Puja',
+    tag: 'Workplace & Business',
+    title: 'Office, Shop & Factory Opening Puja',
     location: 'Pune, PCMC & Industrial Belts',
     image: '/images/special-corporate.jpg',
-    description: 'Auspicious Muhurat inauguration rituals for corporate offices, IT parks, retail showrooms, and industrial plants. Removes negative energy and invites Mahalakshmi prosperity.',
+    description: 'Auspicious Muhurat inauguration rituals for shops, business establishments, workplaces, and commercial ventures to invoke blessings for prosperity and success.',
     badge: 'Custom Corporate Muhurat',
     icon: Building2,
-    actionText: 'Inquire Corporate Puja'
+    actionText: 'Enquire for Workplace Puja'
   }
 ];
 

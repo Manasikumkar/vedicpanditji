@@ -4,6 +4,32 @@ import { defineConfig } from 'vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: (id) => {
+          if (id.includes('node_modules/react/') || id.includes('node_modules/react-dom/')) {
+            return 'vendor-react';
+          }
+          if (id.includes('node_modules/gsap/')) {
+            return 'vendor-gsap';
+          }
+          if (id.includes('node_modules/lucide-react/')) {
+            return 'vendor-ui';
+          }
+          if (id.includes('src/data/guides/')) {
+            return 'data-guides';
+          }
+          if (id.includes('src/data/locations/')) {
+            return 'data-locations';
+          }
+          if (id.includes('src/data/allPoojaServices') || id.includes('src/data/pujaPricing')) {
+            return 'data-pricing';
+          }
+        }
+      }
+    }
+  },
   server: {
     host: true,
     port: 5173,

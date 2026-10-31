@@ -40,7 +40,7 @@ export default function AboutUsPage() {
               Preserving Vedic Sanatan Traditions with Devotion &amp; Precision
             </h1>
             <p style={{ color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.7, marginBottom: '28px' }}>
-              VedicPanditji was founded with a singular mission: to connect families across India with authentic Gurukul-certified North Indian and Bihari Pandits who conduct ceremonies with deep scriptural reverence in Hindi and Sanskrit.
+              VedicPanditji was founded with a singular mission: to connect families across India with experienced North Indian and Bihari Pandits who conduct ceremonies with deep scriptural reverence in Hindi and Sanskrit.
             </p>
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
               <button
@@ -51,17 +51,17 @@ export default function AboutUsPage() {
                 <span>Book a Pandit</span>
               </button>
               <button
-                onClick={() => navigateTo('all-poojas')}
+                onClick={() => navigateTo('catalogue')}
                 className="btn-secondary"
                 style={{ padding: '12px 24px', fontSize: '14px', cursor: 'pointer', background: '#FFFFFF' }}
               >
-                <span>Browse All 200+ Pujas</span>
+                <span>Browse Ceremonies Catalogue</span>
               </button>
             </div>
           </div>
         </div>
 
-        {/* Stats Row */}
+        {/* Verified Pillars Row */}
         <div
           style={{
             display: 'grid',
@@ -72,23 +72,23 @@ export default function AboutUsPage() {
           className="about-stats-grid"
         >
           <div style={{ background: '#FFFFFF', padding: '30px', borderRadius: '16px', border: '1px solid #EAE5D9', textAlign: 'center' }}>
-            <div style={{ fontSize: '36px', fontWeight: 800, color: 'var(--accent-saffron)', fontFamily: 'var(--font-display)' }}>10,000+</div>
-            <div style={{ fontSize: '14px', fontWeight: 700, marginTop: '4px' }}>Ceremonies Conducted</div>
-            <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '4px' }}>Across Pune &amp; PCMC</div>
+            <div style={{ fontSize: '28px', fontWeight: 800, color: 'var(--accent-saffron)', fontFamily: 'var(--font-display)' }}>Hindi &amp; Sanskrit</div>
+            <div style={{ fontSize: '14px', fontWeight: 700, marginTop: '4px' }}>Ritual Languages</div>
+            <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '4px' }}>Classical Mantras &amp; Hindi Katha</div>
           </div>
           <div style={{ background: '#FFFFFF', padding: '30px', borderRadius: '16px', border: '1px solid #EAE5D9', textAlign: 'center' }}>
-            <div style={{ fontSize: '36px', fontWeight: 800, color: 'var(--accent-saffron)', fontFamily: 'var(--font-display)' }}>75+</div>
-            <div style={{ fontSize: '14px', fontWeight: 700, marginTop: '4px' }}>Gurukul Priests</div>
-            <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '4px' }}>North Indian &amp; Bihari Vidwans</div>
+            <div style={{ fontSize: '28px', fontWeight: 800, color: 'var(--accent-saffron)', fontFamily: 'var(--font-display)' }}>Vedic Vidwans</div>
+            <div style={{ fontSize: '14px', fontWeight: 700, marginTop: '4px' }}>Authentic Traditions</div>
+            <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '4px' }}>North Indian &amp; Bihari Priests</div>
           </div>
           <div style={{ background: '#FFFFFF', padding: '30px', borderRadius: '16px', border: '1px solid #EAE5D9', textAlign: 'center' }}>
-            <div style={{ fontSize: '36px', fontWeight: 800, color: 'var(--accent-saffron)', fontFamily: 'var(--font-display)' }}>4.9 ★</div>
-            <div style={{ fontSize: '14px', fontWeight: 700, marginTop: '4px' }}>Google Rating</div>
-            <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '4px' }}>262+ Verified Reviews</div>
+            <div style={{ fontSize: '28px', fontWeight: 800, color: 'var(--accent-saffron)', fontFamily: 'var(--font-display)' }}>Pune &amp; PCMC</div>
+            <div style={{ fontSize: '14px', fontWeight: 700, marginTop: '4px' }}>Doorstep Conduction</div>
+            <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '4px' }}>Doorstep Locality Network</div>
           </div>
           <div style={{ background: '#FFFFFF', padding: '30px', borderRadius: '16px', border: '1px solid #EAE5D9', textAlign: 'center' }}>
-            <div style={{ fontSize: '36px', fontWeight: 800, color: 'var(--accent-saffron)', fontFamily: 'var(--font-display)' }}>100%</div>
-            <div style={{ fontSize: '14px', fontWeight: 700, marginTop: '4px' }}>Pure Samagri</div>
+            <div style={{ fontSize: '28px', fontWeight: 800, color: 'var(--accent-saffron)', fontFamily: 'var(--font-display)' }}>Pure Samagri</div>
+            <div style={{ fontSize: '14px', fontWeight: 700, marginTop: '4px' }}>Ceremonial Materials</div>
             <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '4px' }}>Hawan Kashtha &amp; Cow Ghee</div>
           </div>
         </div>
@@ -115,10 +115,10 @@ export default function AboutUsPage() {
               Meet Our Senior Vedic Acharyas
             </h2>
             <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.7, marginBottom: '16px' }}>
-              With deep roots in the sacred tradition of Vedic Karmakanda, our senior Gurukul-trained Acharyas have dedicated over 15 years to guiding families through auspicious life milestones. Renowned across Pune and major Indian cities for their mastery in Shubh Muhurat calculations, Griha Pravesh, Satyanarayan Vrat Katha, and grand wedding ceremonies, our team ensures that every mantra resonates with profound spiritual vibration.
+              With deep roots in the sacred tradition of Vedic Karmakanda, our experienced Vedic Acharyas guide families through auspicious life milestones. Renowned across Pune and major Indian cities for their knowledge in Shubh Muhurat calculations, Griha Pravesh, Satyanarayan Vrat Katha, and wedding ceremonies, our team ensures that every mantra resonates with profound spiritual vibration.
             </p>
             <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.7, marginBottom: '24px' }}>
-              Under strict scriptural standards, all 75+ affiliated pandits are vetted not only for their scriptural pronunciation and ritual knowledge, but for their punctuality, warmth, and devotion to explaining the meaning of the rites to modern devotees and younger generations.
+              Under strict scriptural standards, all affiliated Vedic Purohits are vetted not only for their scriptural pronunciation and ritual knowledge, but for their punctuality, warmth, and devotion to explaining the meaning of the rites to modern devotees and younger generations.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -155,7 +155,7 @@ export default function AboutUsPage() {
             </p>
             <div style={{ borderTop: '1px solid var(--border-gold)', paddingTop: '16px' }}>
               <div style={{ fontWeight: 700, fontSize: '15px' }}>Senior Acharya Parishad</div>
-              <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Vedic Gurukul Scholars, VedicPanditji</div>
+              <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Vedic Scholars, VedicPanditji</div>
             </div>
           </div>
         </div>
@@ -170,7 +170,7 @@ export default function AboutUsPage() {
               VedicPanditji serves devotees nationwide. From doorstep in-person priests in Pune &amp; Mumbai to visiting Acharyas and live interactive HD E-Pujas in major hubs:
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-              {['Pune (Headquarters)', 'Mumbai & MMR', 'Bangalore', 'Delhi-NCR', 'Hyderabad', 'Chennai', 'Nashik (Trimbakeshwar)', 'Pan-India & Global E-Puja'].map((cName, idx) => (
+              {['Pune & PCMC Hub', 'Mumbai & MMR', 'Bangalore', 'Delhi-NCR', 'Hyderabad', 'Chennai', 'Nashik (Trimbakeshwar)', 'Pan-India & Global E-Puja'].map((cName, idx) => (
                 <span key={idx} style={{ background: 'var(--bg-primary)', padding: '6px 12px', borderRadius: '8px', fontSize: '12px', color: 'var(--text-main)', border: '1px solid #EAE5D9', fontWeight: 600 }}>
                   🕉️ {cName}
                 </span>
@@ -180,10 +180,10 @@ export default function AboutUsPage() {
 
           <div style={{ background: '#FFFFFF', borderRadius: '20px', padding: '32px', border: '1px solid #EAE5D9' }}>
             <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 800, marginBottom: '10px', color: 'var(--text-main)' }}>
-              Pune &amp; PCMC Localities (HQ Hub)
+              Pune &amp; PCMC Localities
             </h3>
             <p style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '16px', lineHeight: 1.6 }}>
-              75+ resident Gurukul Acharyas travel directly to residential premises and venues across:
+              Experienced Vedic Purohits travel directly to residential premises across:
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {PUNE_LOCALITIES.filter(l => l !== 'All Pune Areas').slice(0, 10).map((loc, idx) => (

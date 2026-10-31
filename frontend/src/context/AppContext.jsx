@@ -1,29 +1,64 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import { BRAND_INFO, CITIES, PUNE_LOCALITIES, TRADITIONS, SERVICES } from '../data/vedicPanditData';
-import { submitEnquiryToServer } from '../services/enquiryApi';
+import { MULTI_CITY_SEO_PAGES } from '../data/multiCitySeoData';
+import { getLocationBySlug } from '../data/locations';
+import { submitEnquiryToWebhook } from '../services/webhookService';
+import { getSeoMetadata, applySeoMetadataToDom } from '../utils/seoMetadata';
+import { Analytics } from '../utils/analytics';
 
 const AppContext = createContext();
 
 export function AppProvider({ children }) {
-  // Helper to parse route from pathname on initial load and refresh
+  // Helper to parse route from pathname on initial load and browser refresh
   const parseRouteFromLocation = () => {
     if (typeof window === 'undefined') return { route: 'home', params: {} };
+    
+    // Normalize path by removing trailing slash except root
     const path = window.location.pathname.replace(/\/$/, '') || '/';
+
+    // 1. Root Homepage
     if (path === '/') return { route: 'home', params: {} };
-    if (path === '/admin' || path.startsWith('/admin/')) {
-      const section = path.replace('/admin', '').replace(/^\//, '') || 'overview';
-      return { route: 'admin', params: { section } };
-    }
-    if (path === '/sitemap' || path === '/sitemap.html') return { route: 'sitemap', params: {} };
+
+    // 2. Services / Catalogue
     if (path === '/catalogue' || path === '/services') return { route: 'catalogue', params: {} };
+    
+    // 3. Individual Service or Multi-City Landing Page
     if (path.startsWith('/services/')) {
       const slug = path.replace('/services/', '');
       const isPoojaService = SERVICES.some(s => s.id === slug);
       if (isPoojaService) {
         return { route: 'service-detail', params: { serviceId: slug } };
       }
+
+      const isMultiCity = MULTI_CITY_SEO_PAGES.some(p => p.slug === slug);
+      if (isMultiCity) {
+        return { route: 'seo-landing', params: { slug } };
+      }
+      
+      // Check if it's a location slug mapped under /services/ (legacy alias)
+      const locMatch = getLocationBySlug(slug);
+      if (locMatch) {
+        return { route: 'location-detail', params: { slug: locMatch.slug } };
+      }
+
+      // Legacy fallback
       return { route: 'seo-landing', params: { slug } };
     }
+
+    // 4. Programmatic Location Pages (/locations/:slug)
+    if (path.startsWith('/locations/')) {
+      const slug = path.replace('/locations/', '');
+      return { route: 'location-detail', params: { slug } };
+    }
+
+    // 5. Puja Guides Content Hub
+    if (path === '/puja-guides') return { route: 'puja-guides-hub', params: {} };
+    if (path.startsWith('/puja-guides/')) {
+      const slug = path.replace('/puja-guides/', '');
+      return { route: 'puja-guide-detail', params: { slug } };
+    }
+
+    // 6. Core Static Pages
     if (path === '/about' || path === '/about-us') return { route: 'about-us', params: {} };
     if (path === '/how-it-works' || path === '/how-we-work') return { route: 'how-it-works', params: {} };
     if (path === '/faqs') return { route: 'faqs', params: {} };
@@ -31,10 +66,11 @@ export function AppProvider({ children }) {
     if (path === '/puja-materials') return { route: 'puja-materials', params: {} };
     if (path === '/temple-services') return { route: 'temple-services', params: {} };
     if (path === '/legal' || path === '/policies') return { route: 'policies', params: {} };
-    if (path === '/checkout') return { route: 'catalogue', params: {} };
-    if (path === '/login' || path === '/auth' || path === '/signin' || path === '/register') return { route: 'auth', params: {} };
-    if (path === '/my-account' || path === '/account' || path === '/profile') return { route: 'account', params: {} };
-    return { route: 'home', params: {} };
+    if (path === '/sitemap' || path === '/sitemap.html') return { route: 'sitemap', params: {} };
+    if (path === '/404' || path === '/404.html') return { route: 'not-found', params: {} };
+
+    // 7. Any other unknown route triggers dedicated 404 page (no soft-404)
+    return { route: 'not-found', params: { missingPath: path } };
   };
 
   const initialRoute = parseRouteFromLocation();
@@ -44,7 +80,7 @@ export function AppProvider({ children }) {
   const [routeParams, setRouteParams] = useState(initialRoute.params);
 
   // Synchronize browser history popstate (Back / Forward buttons)
-  React.useEffect(() => {
+  useEffect(() => {
     const handlePopState = () => {
       const parsed = parseRouteFromLocation();
       setCurrentRoute(parsed.route);
@@ -54,6 +90,13 @@ export function AppProvider({ children }) {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
+  // Update Dynamic SEO Head Tags & Trigger Analytics Pageview on Route Change
+  useEffect(() => {
+    const meta = getSeoMetadata(currentRoute, routeParams);
+    applySeoMetadataToDom(meta);
+    Analytics.trackPageView(meta.title, window.location.pathname);
+  }, [currentRoute, routeParams]);
+
   // Location & Tradition Preferences
   const [selectedCity, setSelectedCity] = useState(CITIES[0]); // Pune
   const [selectedLocality, setSelectedLocality] = useState('All Pune Areas');
@@ -61,77 +104,21 @@ export function AppProvider({ children }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  // Booking & Enquiry Modal & Selected Package
+  // Booking & Enquiry Modal State
   const [bookingModalOpen, setBookingModalOpen] = useState(false);
   const [bookingService, setBookingService] = useState(null);
   const [bookingSelectedPackage, setBookingSelectedPackage] = useState(null);
-  const [cartDrawerOpen, setCartDrawerOpen] = useState(false);
 
-  // Client User Profile with Local Storage Persistence
-  const [user, setUserState] = useState(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        const savedUser = localStorage.getItem('vedic_user');
-        if (savedUser) return JSON.parse(savedUser);
-      } catch (err) {
-        console.error('Error loading user session:', err);
-      }
-    }
-    return {
-      isLoggedIn: false,
-      name: '',
-      email: '',
-      phone: '',
-      city: 'Pune',
-      gotra: '',
-      nakshatra: '',
-      address: ''
-    };
+  // Transient Session User Details (Purely in-memory, no localStorage persistence)
+  const [user, setUser] = useState({
+    isLoggedIn: false,
+    name: '',
+    email: '',
+    phone: '',
+    city: 'Pune',
+    gotra: '',
+    address: ''
   });
-
-  const setUser = (newUser) => {
-    setUserState(newUser);
-    if (typeof window !== 'undefined') {
-      try {
-        if (newUser && newUser.isLoggedIn) {
-          localStorage.setItem('vedic_user', JSON.stringify(newUser));
-        } else {
-          localStorage.removeItem('vedic_user');
-        }
-      } catch (err) {
-        console.error('Error saving user session:', err);
-      }
-    }
-  };
-
-  // Enquiries & Booking Requests with Local Storage Persistence (No mock data)
-  const defaultEnquiries = [];
-
-  const [enquiries, setEnquiriesState] = useState(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        const savedEnquiries = localStorage.getItem('vedic_enquiries');
-        if (savedEnquiries) return JSON.parse(savedEnquiries);
-      } catch (err) {
-        console.error('Error loading enquiries:', err);
-      }
-    }
-    return defaultEnquiries;
-  });
-
-  const setEnquiries = (updater) => {
-    setEnquiriesState(prev => {
-      const nextVal = typeof updater === 'function' ? updater(prev) : updater;
-      if (typeof window !== 'undefined') {
-        try {
-          localStorage.setItem('vedic_enquiries', JSON.stringify(nextVal));
-        } catch (err) {
-          console.error('Error saving enquiries:', err);
-        }
-      }
-      return nextVal;
-    });
-  };
 
   // Toast System
   const [toast, setToast] = useState(null);
@@ -140,7 +127,7 @@ export function AppProvider({ children }) {
     setToast({ message, type });
     setTimeout(() => {
       setToast(null);
-    }, 4000);
+    }, 4500);
   };
 
   // Route Navigation Helper with History PushState
@@ -150,9 +137,11 @@ export function AppProvider({ children }) {
     
     if (typeof window !== 'undefined') {
       let targetPath = '/';
-      if (route === 'catalogue') targetPath = '/catalogue';
-      else if (route === 'seo-landing') targetPath = `/services/${params.slug || 'north-indian-pandit-in-pune'}`;
+      if (route === 'catalogue' || route === 'services') targetPath = '/services';
       else if (route === 'service-detail') targetPath = `/services/${params.serviceId || 'satyanarayan-puja'}`;
+      else if (route === 'location-detail') targetPath = `/locations/${params.slug || 'pandit-in-pune'}`;
+      else if (route === 'puja-guides-hub' || route === 'puja-guides') targetPath = '/puja-guides';
+      else if (route === 'puja-guide-detail') targetPath = `/puja-guides/${params.slug || 'griha-pravesh-puja-vidhi-guide'}`;
       else if (route === 'about' || route === 'about-us') targetPath = '/about-us';
       else if (route === 'how-it-works') targetPath = '/how-it-works';
       else if (route === 'faqs') targetPath = '/faqs';
@@ -160,22 +149,16 @@ export function AppProvider({ children }) {
       else if (route === 'puja-materials') targetPath = '/puja-materials';
       else if (route === 'temple-services') targetPath = '/temple-services';
       else if (route === 'policies') targetPath = '/legal';
-      else if (route === 'auth' || route === 'login') targetPath = '/login';
-      else if (route === 'account' || route === 'my-account') targetPath = '/my-account';
       else if (route === 'sitemap') targetPath = '/sitemap';
-      else if (route === 'admin') {
-        targetPath = params.section && params.section !== 'overview' ? `/admin/${params.section}` : '/admin';
-      }
-      else if (route === 'checkout') {
-        targetPath = '/catalogue';
-      }
+      else if (route === 'not-found') targetPath = '/404';
+      else if (route === 'seo-landing') targetPath = `/services/${params.slug || 'north-indian-pandit-in-pune'}`;
 
       if (window.location.pathname !== targetPath) {
         window.history.pushState({ route, params }, '', targetPath);
       }
     }
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   // Direct WhatsApp & Phone Action Helpers
@@ -183,10 +166,12 @@ export function AppProvider({ children }) {
     const text = customText || `Namaste Panditji, I would like to enquire about booking a puja in Pune.`;
     const cleanPhone = BRAND_INFO.phoneClean.startsWith('91') ? BRAND_INFO.phoneClean : `91${BRAND_INFO.phoneClean}`;
     const url = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(text)}`;
+    Analytics.trackWhatsAppClick('direct_action', { customText });
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   const callHelpline = () => {
+    Analytics.trackPhoneClick(BRAND_INFO.phoneClean, 'direct_action');
     window.location.href = `tel:${BRAND_INFO.phoneClean}`;
   };
 
@@ -198,7 +183,6 @@ export function AppProvider({ children }) {
         matchedService = service;
       } else if (typeof service === 'string') {
         const query = service.toLowerCase().trim();
-        // Match only against authentic Vedic ceremony services in SERVICES
         matchedService = SERVICES.find(s => 
           s.id.toLowerCase() === query || 
           s.name.toLowerCase() === query || 
@@ -213,14 +197,11 @@ export function AppProvider({ children }) {
     }
     if (preselectedCity) {
       const cityObj = CITIES.find(c => c.id.toLowerCase() === preselectedCity.toLowerCase() || c.name.toLowerCase().includes(preselectedCity.toLowerCase()));
-      if (cityObj) {
-        setSelectedCity(cityObj);
-      } else {
-        setSelectedCity(preselectedCity);
-      }
+      setSelectedCity(cityObj || preselectedCity);
     }
     setBookingSelectedPackage(preselectedPackage || null);
     setBookingModalOpen(true);
+    Analytics.trackFormStarted('booking_modal', { serviceName: matchedService?.name, city: preselectedCity });
   };
 
   const closeBookingModal = () => {
@@ -229,61 +210,27 @@ export function AppProvider({ children }) {
     setBookingSelectedPackage(null);
   };
 
-  // Complete an Enquiry / Booking submission (Pure Enquiry Model - NO automatic WhatsApp redirect)
+  // Submit Enquiry through Centralized Webhook
   const completeBooking = async (enquiryData) => {
     const bookingCity = enquiryData.city || (selectedCity ? (typeof selectedCity === 'string' ? selectedCity : selectedCity.name) : 'Pune');
-    
-    // Attempt remote server transmission if an endpoint is configured
-    const apiResult = await submitEnquiryToServer(enquiryData);
-    const isServerSuccess = apiResult && apiResult.success && !apiResult.isDraftOnly;
 
-    const newEnquiry = {
-      id: `VP-2026-${Math.floor(1000 + Math.random() * 9000)}`,
-      date: new Date().toISOString().split('T')[0],
-      serviceName: enquiryData.serviceName || (bookingService ? bookingService.name : 'Vedic Ceremony'),
-      packageName: enquiryData.packageName || (bookingSelectedPackage ? bookingSelectedPackage.name : 'Ritual Vidhi'),
-      packagePrice: enquiryData.packagePrice || (bookingSelectedPackage ? bookingSelectedPackage.priceDisplay : 'Custom Quote'),
-      samagriPolicy: enquiryData.samagriPolicy || (bookingSelectedPackage ? bookingSelectedPackage.samagriPolicy : 'Devotee Arranges Samagri'),
-      city: enquiryData.locality ? `${bookingCity} (${enquiryData.locality})` : bookingCity,
-      tradition: enquiryData.tradition || selectedTradition.name,
-      status: isServerSuccess 
-        ? 'Enquiry Received — Pending Panditji Confirmation' 
-        : 'Enquiry Draft Saved (Local Device Only)',
-      isDraftOnly: !isServerSuccess,
-      assignedPandit: isServerSuccess 
-        ? 'Pending Review by Senior Vedic Acharyas' 
-        : 'Not assigned yet (Allocated by Panditji after direct contact)',
-      scheduledDate: `${enquiryData.date || 'Date to be calculated'} (${enquiryData.timeSlot || 'Morning Shubh Muhurat'})`,
-      customerName: enquiryData.customerName || (user?.name || 'Devotee'),
-      phone: enquiryData.phone || user?.phone || '',
-      address: enquiryData.address || user?.address || '',
-      language: enquiryData.language || 'Hindi & Sanskrit',
-      notes: enquiryData.notes || ''
-    };
+    const result = await submitEnquiryToWebhook({
+      ...enquiryData,
+      city: bookingCity,
+      formType: 'booking_enquiry'
+    });
 
-    setEnquiries(prev => [newEnquiry, ...prev]);
-    
-    if (isServerSuccess) {
-      showToast(`Enquiry #${newEnquiry.id} submitted! Panditji team will confirm availability.`);
+    if (result.success) {
+      Analytics.trackFormSubmitted('booking_enquiry', enquiryData);
+      showToast('Enquiry received! Senior Vedic Acharyas will review your Shubh Muhurat.');
+    } else if (result.status === 'unavailable' || !result.isConfigured) {
+      showToast('Online enquiry could not be sent. Please contact Panditji via WhatsApp or Phone.', 'warning');
     } else {
-      showToast(`Enquiry #${newEnquiry.id} saved on your device. Please send to Panditji via WhatsApp or Call.`);
+      showToast(result.message || 'Could not submit enquiry. Please call or WhatsApp Panditji directly.', 'error');
     }
-    
-    // Note: Do NOT automatically redirect or open WhatsApp here.
-    // The user will review the saved enquiry and can choose to WhatsApp Panditji explicitly.
-    return newEnquiry;
-  };
 
-  const deleteEnquiry = (enquiryId) => {
-    setEnquiries(prev => prev.filter(e => e.id !== enquiryId));
-    showToast(`Enquiry #${enquiryId} removed from local draft history.`);
+    return result;
   };
-
-  // Backward compatibility stubs (no fake payment/cart)
-  const [cart] = useState([]);
-  const addToCart = (service) => openBookingModal(service);
-  const removeFromCart = () => {};
-  const clearCart = () => {};
 
   return (
     <AppContext.Provider
@@ -317,15 +264,6 @@ export function AppProvider({ children }) {
         bookingSelectedPackage,
         setBookingSelectedPackage,
         completeBooking,
-        deleteEnquiry,
-        enquiries,
-        orders: enquiries, // backward compatibility mapping
-        cartDrawerOpen,
-        setCartDrawerOpen,
-        cart,
-        addToCart,
-        removeFromCart,
-        clearCart,
 
         // Quick Communication
         openWhatsAppEnquiry,

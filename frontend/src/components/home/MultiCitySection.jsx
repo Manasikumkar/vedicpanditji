@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import {
-  MapPin,
-  Sparkles,
   ArrowRight,
   ShieldCheck
 } from 'lucide-react';
@@ -31,16 +29,16 @@ export default function MultiCitySection() {
     },
     {
       id: 'Pune',
-      name: 'Pune & PCMC (Headquarters)',
+      name: 'Pune & PCMC Hub',
       state: 'Maharashtra',
-      badge: 'Verified Resident In-Person',
+      badge: 'Verified Doorstep In-Person',
       badgeType: 'confirmed',
-      description: 'VedicPanditji primary hub with 75+ resident Gurukul Acharyas serving Wakad, Baner, Hinjewadi, Kothrud, Kharadi & Hadapsar.',
+      description: 'VedicPanditji primary hub with doorstep Vedic Purohits serving Wakad, Baner, Hinjawadi, Kothrud, Kharadi & Hadapsar.',
       image: '/images/hero-puja.jpg',
       links: [
-        { title: 'North Indian Pandit in Pune', slug: 'north-indian-pandit-in-pune', tag: 'HQ 75+ Priests' },
+        { title: 'North Indian Pandit in Pune', slug: 'north-indian-pandit-in-pune', tag: 'Pune Doorstep' },
         { title: 'Bihari Pandit in Pune', slug: 'bihari-pandit-in-pune', tag: 'Maithil & Bhojpuri' },
-        { title: 'Griha Pravesh Puja in Pune', slug: 'griha-pravesh-puja-in-pune', tag: '10,000+ Blessed' },
+        { title: 'Griha Pravesh Puja in Pune', slug: 'griha-pravesh-puja-in-pune', tag: 'Most Popular' },
         { title: 'Satyanarayan Puja in Pune', slug: 'satyanarayan-puja-in-pune', tag: 'Complete Katha' },
         { title: 'Vastu Shanti Puja in Pune', slug: 'vastu-shanti-puja-in-pune', tag: 'Havan Included' },
         { title: 'Hindu Wedding Pandit in Pune', slug: 'hindu-wedding-pandit-in-pune', tag: 'Full Vivah Sanskar' }

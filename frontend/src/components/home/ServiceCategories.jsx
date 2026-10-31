@@ -42,7 +42,7 @@ export default function ServiceCategories() {
           <span className="section-tag">Authentic Vedic Offerings</span>
           <h2 className="section-title">Explore by Puja Categories</h2>
           <p className="section-desc">
-            Explore 200+ authentic Vedic rituals, Havans, and ceremonies conducted by experienced North Indian & Bihari pandits across Pune.
+            Explore authentic Vedic rituals, Havans, and ceremonies conducted by experienced North Indian &amp; Bihari pandits across Pune.
           </p>
         </div>
 

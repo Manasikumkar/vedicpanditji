@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { SERVICES, CUSTOMER_REVIEWS, getServiceImage } from '../data/vedicPanditData';
-import { getPackagesForService, getCityNote } from '../data/pujaPackagesData';
+import { SERVICES, getServiceImage } from '../data/vedicPanditData';
+import { getPricingDisplay } from '../data/pujaPricing';
+import PricingPackagesSection from '../components/pricing/PricingPackagesSection';
 import {
-  Star,
   Clock,
   MapPin,
   Sparkles,
   ShieldCheck,
   Share2,
   Package,
-  Check
+  Check,
+  CalendarCheck
 } from 'lucide-react';
 
 export default function ServiceDetailPage() {
@@ -20,26 +21,12 @@ export default function ServiceDetailPage() {
   const serviceId = routeParams?.serviceId || 'satyanarayan-puja';
   const service = SERVICES.find(s => s.id === serviceId) || SERVICES[0];
 
-  const [activeTab, setActiveTab] = useState('description'); // 'description', 'reviews', 'faqs'
+  const [activeTab, setActiveTab] = useState('significance'); // 'significance', 'vidhi', 'samagri', 'timing', 'faqs'
   const [selectedCityName, setSelectedCityName] = useState(
     routeParams?.city || (typeof selectedCity === 'string' ? selectedCity : selectedCity?.name || 'Pune')
   );
 
-  const packages = getPackagesForService(service, selectedCityName);
-
-  // Review Form state
-  const [newReviewAuthor, setNewReviewAuthor] = useState('');
-  const [newReviewComment, setNewReviewComment] = useState('');
-  const [newReviewRating, setNewReviewRating] = useState('5');
-  const [reviewSubmitted, setReviewSubmitted] = useState(false);
-
-  const handleReviewSubmit = (e) => {
-    e.preventDefault();
-    setReviewSubmitted(true);
-    showToast('Your review has been submitted for verification!');
-    setNewReviewAuthor('');
-    setNewReviewComment('');
-  };
+  const pricingDisplay = getPricingDisplay(service.id);
 
   const handleShare = () => {
     if (navigator.clipboard) {
@@ -48,19 +35,89 @@ export default function ServiceDetailPage() {
     }
   };
 
+  // Contextual timing suggestions based on category & service
+  const getTimingContext = () => {
+    const sId = service.id || '';
+    if (sId.includes('griha-pravesh')) {
+      return {
+        bestDays: 'Auspicious Shubh Muhurat determined from Panchang (Vrishabha, Mithuna, Kanya, Dhanu Lagna)',
+        timing: 'Morning hours during Shukla Paksha before shifting belongings or staying overnight',
+        notes: 'Both husband and wife participate as Yajamans. Auspicious nakshatras like Rohini, Mrigashira, Uttara Phalguni, Chitra, and Anuradha are preferred.'
+      };
+    }
+    if (sId.includes('satyanarayan')) {
+      return {
+        bestDays: 'Purnima (Full Moon Day), Ekadashi, Sankranti, Thursdays, or Saturdays',
+        timing: 'Predominantly conducted during evening Pradosh time or auspicious morning hours',
+        notes: 'Ideal for celebrating new beginnings, housewarmings, weddings, birthdays, anniversaries, and fulfilling vows (Manokamna).'
+      };
+    }
+    if (sId.includes('vastu-shanti')) {
+      return {
+        bestDays: 'Shubh Tithi prior to moving or during auspicious solar transits',
+        timing: 'Morning hours during favorable planetary Lagna',
+        notes: 'Recommended whenever moving into a new flat/plot, undertaking renovations, or to pacify directional energies.'
+      };
+    }
+    if (sId.includes('rudrabhishek')) {
+      return {
+        bestDays: 'Mondays, Pradosh Vrat days, Masa Shivratri, Maha Shivratri, or any day in Shravan Maas',
+        timing: 'Morning Brahma Muhurat or Pradosh Kaal (evening)',
+        notes: 'Lord Shiva is pleased with Abhishek offerings of raw milk, gangajal, honey, belpatra, and sacred bhasma.'
+      };
+    }
+    if (service.category === 'havans') {
+      return {
+        bestDays: 'Shukla Paksha mornings, Sundays/Tuesdays for Ganapathi/Navagraha, or festival periods',
+        timing: 'Morning hours (Surya Udaya Kaal) for optimal Agnihotra purification',
+        notes: 'Conducted with sacred mango wood and pure herbal hawan samagri to disperse positive spiritual vibrations.'
+      };
+    }
+    if (service.category === 'pitru-pujas') {
+      return {
+        bestDays: 'Pitru Paksha (Mahalaya), Amavasya, or Annual Death Anniversary (Barsi)',
+        timing: 'Aparahna Kaal (afternoon 11:30 AM to 02:30 PM)',
+        notes: 'Performed with black sesame (Kala Til), Kusha grass, and pure water for ancestral peace and pitru tripti.'
+      };
+    }
+    return {
+      bestDays: 'Auspicious days based on family Nakshatra and Gotra',
+      timing: 'Morning or Evening Sandhya Muhurat',
+      notes: 'Our senior Acharyas review your family Janma Kundali to recommend the optimal date and Lagna.'
+    };
+  };
+
+  const timingInfo = getTimingContext();
+
   return (
     <div style={{ paddingTop: '100px', paddingBottom: '90px', background: 'var(--bg-primary)', minHeight: '100vh' }}>
       <div className="container">
         {/* Breadcrumb */}
-        <div style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '24px' }}>
-          <span onClick={() => navigateTo('home')} style={{ cursor: 'pointer' }} className="hover:text-amber-800">Home</span>
+        <nav aria-label="Breadcrumb" style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '24px' }}>
+          <a
+            href="/"
+            onClick={(e) => { e.preventDefault(); navigateTo('home'); }}
+            style={{ color: 'inherit', textDecoration: 'none' }}
+            className="hover:text-amber-800"
+          >
+            Home
+          </a>
           {' / '}
-          <span onClick={() => navigateTo('catalogue')} style={{ cursor: 'pointer' }} className="hover:text-amber-800">Ceremonies</span>
+          <a
+            href="/services"
+            onClick={(e) => { e.preventDefault(); navigateTo('catalogue'); }}
+            style={{ color: 'inherit', textDecoration: 'none' }}
+            className="hover:text-amber-800"
+          >
+            Ceremonies
+          </a>
           {' / '}
           <span style={{ color: 'var(--accent-saffron)', fontWeight: 600 }}>{service.name}</span>
-        </div>
+        </nav>
 
-        {/* Top Product Summary Grid */}
+        {/* ======================================================== */}
+        {/* 1. TOP SUMMARY GRID (Hero, Title, Inclusions & CTAs) */}
+        {/* ======================================================== */}
         <div
           style={{
             display: 'grid',
@@ -127,7 +184,7 @@ export default function ServiceDetailPage() {
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', fontWeight: 600 }}>
                   <MapPin size={15} color="var(--accent-gold)" />
-                  <span>Available Across Pune &amp; PCMC</span>
+                  <span>Doorstep Service across {selectedCityName} &amp; Metro Hubs</span>
                 </div>
               </div>
             </div>
@@ -146,15 +203,15 @@ export default function ServiceDetailPage() {
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--text-secondary)' }}>
-                <ShieldCheck size={16} color="var(--accent-saffron)" />
-                <span>Certified North Indian &amp; Bihari Pandits under Senior Vedic Acharyas</span>
+                <ShieldCheck size={16} color="var(--accent-saffron)" style={{ flexShrink: 0 }} />
+                <span>Experienced North Indian &amp; Bihari Pandits under Senior Vedic Acharyas</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--text-secondary)' }}>
-                <Package size={16} color="var(--accent-saffron)" />
+                <Package size={16} color="var(--accent-saffron)" style={{ flexShrink: 0 }} />
                 <span>100% pure Vedic Hawan Samagri &amp; cow ghee options included</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--text-secondary)' }}>
-                <Clock size={16} color="var(--accent-saffron)" />
+                <Clock size={16} color="var(--accent-saffron)" style={{ flexShrink: 0 }} />
                 <span>Personalized Shubh Muhurat consultation by horoscope &amp; Nakshatra</span>
               </div>
             </div>
@@ -164,34 +221,21 @@ export default function ServiceDetailPage() {
           <div>
             <div className="badge-saffron" style={{ marginBottom: '10px' }}>
               <Sparkles size={12} />
-              <span>Vedic Ritual in Pune &bull; Certified Priests</span>
+              <span>Authentic Vedic Ritual &bull; {service.category?.toUpperCase() || 'CEREMONY'}</span>
             </div>
 
-            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '32px', fontWeight: 800, marginBottom: '10px', color: 'var(--text-main)' }}>
+            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '32px', fontWeight: 800, marginBottom: '14px', color: 'var(--text-main)' }}>
               {service.name}
             </h1>
 
-            {/* Rating and Reviews link */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={15} fill="#EAB308" color="#EAB308" />
-                ))}
-              </div>
-              <span style={{ fontSize: '14px', fontWeight: 700 }}>{service.rating}</span>
-              <span style={{ color: 'var(--text-muted)', fontSize: '13px' }}>
-                ({service.reviewsCount} verified reviews)
-              </span>
-            </div>
-
-            {/* Indicative Dakshina Range */}
+            {/* Dakshina Range / Custom Quote Display */}
             <div
               style={{
                 background: 'var(--bg-primary)',
                 padding: '14px 20px',
                 borderRadius: '12px',
                 border: '1px solid #EAE5D9',
-                marginBottom: '20px',
+                marginBottom: '18px',
                 display: 'flex',
                 alignItems: 'baseline',
                 gap: '8px',
@@ -201,39 +245,28 @@ export default function ServiceDetailPage() {
               <span style={{ fontSize: '13px', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600 }}>
                 Dakshina:
               </span>
-              {service.priceVerified && service.minPrice ? (
-                <>
-                  <span style={{ fontSize: '24px', fontWeight: 800, color: 'var(--accent-saffron)' }}>
-                    From ₹{service.minPrice.toLocaleString('en-IN')}*
-                  </span>
-                  <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-                    (Indicative Starting Dakshina • Final quote confirmed on Muhurat review)
-                  </span>
-                </>
-              ) : (
-                <>
-                  <span style={{ fontSize: '22px', fontWeight: 800, color: 'var(--accent-saffron)' }}>
-                    Custom Quote
-                  </span>
-                  <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-                    (Based on Puja Requirements, Date &amp; Location)
-                  </span>
-                </>
-              )}
+              <span style={{ fontSize: '24px', fontWeight: 800, color: 'var(--accent-saffron)' }}>
+                {pricingDisplay.displayPrice}
+              </span>
+              <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
+                {pricingDisplay.hasPackages
+                  ? '(Indicative starting dakshina • Confirmed on Muhurat review)'
+                  : '(Based on requirements, duration, pandits & location)'}
+              </span>
             </div>
 
             {/* Short Description */}
-            <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+            <p style={{ fontSize: '14.5px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
               {service.shortDescription}
             </p>
 
             {/* Key Insights & Our Promise */}
             <div className="grid-2" style={{ gap: '16px', marginBottom: '24px' }}>
               <div style={{ background: '#FDFCF9', padding: '14px', borderRadius: '10px', border: '1px solid #EAE5D9' }}>
-                <h4 style={{ fontSize: '14px', fontWeight: 700, marginBottom: '8px', color: 'var(--accent-saffron)' }}>
+                <h4 style={{ fontSize: '13.5px', fontWeight: 700, marginBottom: '8px', color: 'var(--accent-saffron)' }}>
                   Key Ritual Insights:
                 </h4>
-                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '12px', color: 'var(--text-secondary)' }}>
+                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '12px', color: 'var(--text-secondary)', padding: 0, margin: 0 }}>
                   {service.keyInsights?.slice(0, 3).map((ins, i) => (
                     <li key={i} style={{ display: 'flex', gap: '6px' }}>
                       <span style={{ color: 'var(--accent-saffron)' }}>•</span>
@@ -244,10 +277,10 @@ export default function ServiceDetailPage() {
               </div>
 
               <div style={{ background: '#FDFCF9', padding: '14px', borderRadius: '10px', border: '1px solid #EAE5D9' }}>
-                <h4 style={{ fontSize: '14px', fontWeight: 700, marginBottom: '8px', color: 'var(--accent-gold)' }}>
+                <h4 style={{ fontSize: '13.5px', fontWeight: 700, marginBottom: '8px', color: 'var(--accent-gold)' }}>
                   Our Vedic Promise:
                 </h4>
-                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '12px', color: 'var(--text-secondary)' }}>
+                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '12px', color: 'var(--text-secondary)', padding: 0, margin: 0 }}>
                   {service.ourPromise?.slice(0, 3).map((prom, i) => (
                     <li key={i} style={{ display: 'flex', gap: '6px' }}>
                       <span style={{ color: 'var(--accent-gold)' }}>✓</span>
@@ -258,10 +291,11 @@ export default function ServiceDetailPage() {
               </div>
             </div>
 
-            {/* Genuine VedicPanditji Booking & Consultation Actions */}
+            {/* Genuine Booking Actions */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                 <button
+                  type="button"
                   onClick={() => openBookingModal(service, null, selectedCityName)}
                   className="btn-primary"
                   style={{ flex: 1, minWidth: '220px', padding: '14px', fontSize: '15px', cursor: 'pointer' }}
@@ -284,7 +318,7 @@ export default function ServiceDetailPage() {
                   }}
                 >
                   <Package size={16} color="#BD4B23" />
-                  <span>View Packages</span>
+                  <span>View Pricing &amp; Packages</span>
                 </a>
               </div>
 
@@ -294,15 +328,15 @@ export default function ServiceDetailPage() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: '8px',
-                  padding: '12px',
+                  padding: '10px',
                   borderRadius: '10px',
                   background: 'var(--bg-primary)',
                   border: '1px solid #DDD7C8',
                   color: 'var(--text-secondary)',
-                  fontSize: '13px'
+                  fontSize: '12.5px'
                 }}
               >
-                <Sparkles size={15} color="var(--accent-saffron)" />
+                <Sparkles size={14} color="var(--accent-saffron)" />
                 <span>Custom Muhurat &amp; Samagri guidance included with every ceremony</span>
               </div>
             </div>
@@ -310,191 +344,28 @@ export default function ServiceDetailPage() {
         </div>
 
         {/* ======================================================== */}
-        {/* RELEVANT PRICING & PACKAGES SECTION (Harivara UX Reference) */}
+        {/* 2. CENTRALIZED PRICING & PACKAGES SECTION */}
         {/* ======================================================== */}
-        <section id="pricing-packages" style={{ marginBottom: '40px' }}>
-          <div
-            className="service-packages-container"
-            style={{
-              background: '#FFFFFF',
-              borderRadius: '24px',
-              padding: '36px',
-              border: '1px solid #EAE5D9',
-              boxShadow: 'var(--shadow-sm)'
-            }}
-          >
-            {/* Section Header with City Selector */}
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'flex-end',
-                marginBottom: '28px',
-                flexWrap: 'wrap',
-                gap: '16px',
-                borderBottom: '1px solid #EAE5D9',
-                paddingBottom: '20px'
-              }}
-            >
-              <div>
-                <div style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.12em', color: '#BD4B23', marginBottom: '6px', display: 'flex', alignItems: 'center', gap: '5px' }}>
-                  <Sparkles size={13} />
-                  <span>Transparent Shastra Packages</span>
-                </div>
-                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '26px', fontWeight: 800, color: 'var(--text-main)', marginBottom: '4px' }}>
-                  {service.name} Pricing &amp; Packages
-                </h2>
-                <p style={{ fontSize: '14px', color: 'var(--text-secondary)', maxWidth: '640px' }}>
-                  Choose from our verified ceremony options. All rituals are performed by certified North Indian Vedic priests in sacred Hindi and Sanskrit.
-                </p>
-              </div>
+        <PricingPackagesSection
+          service={service}
+          selectedCityName={selectedCityName}
+          onCityChange={(newCity) => setSelectedCityName(newCity)}
+          onSelectPackage={(pkg, city) => openBookingModal(service, null, city, pkg)}
+          onEnquireGeneral={(city) => openBookingModal(service, null, city)}
+        />
 
-              {/* City Selector */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', background: '#FBF9F5', padding: '8px 14px', borderRadius: '12px', border: '1px solid #EAE5D9' }}>
-                <MapPin size={16} color="#BD4B23" />
-                <div>
-                  <div style={{ fontSize: '10px', textTransform: 'uppercase', fontWeight: 700, color: 'var(--text-muted)' }}>Select Serving City</div>
-                  <select
-                    value={selectedCityName}
-                    onChange={e => setSelectedCityName(e.target.value)}
-                    style={{
-                      border: 'none',
-                      background: 'transparent',
-                      fontSize: '13px',
-                      fontWeight: 700,
-                      color: '#BD4B23',
-                      outline: 'none',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    <option value="Pune">Pune &amp; PCMC (HQ)</option>
-                    <option value="Mumbai">Mumbai &amp; Thane (MMR)</option>
-                    <option value="Bangalore">Bangalore</option>
-                    <option value="Delhi">Delhi NCR</option>
-                    <option value="Hyderabad">Hyderabad</option>
-                    <option value="Chennai">Chennai</option>
-                    <option value="Nashik">Nashik / Trimbakeshwar</option>
-                    <option value="Online E-Puja">Online E-Puja (Pan-India &amp; Global)</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            {/* City Availability Notice */}
-            <div style={{ fontSize: '12px', color: '#BD4B23', fontWeight: 600, background: '#FBF9F5', padding: '10px 14px', borderRadius: '10px', border: '1px solid #EAE5D9', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '22px' }}>
-              <MapPin size={14} color="#BD4B23" />
-              <span>{getCityNote(selectedCityName)}</span>
-            </div>
-
-            {/* Package Cards Grid */}
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: packages.length > 2 ? 'repeat(3, 1fr)' : 'repeat(2, 1fr)',
-                gap: '24px'
-              }}
-              className="service-packages-grid"
-            >
-              {packages.map(pkg => (
-                <div
-                  key={pkg.id}
-                  className="card-premium service-package-card"
-                  style={{
-                    borderRadius: '20px',
-                    border: pkg.tier === 'popular' ? '2px solid #BD4B23' : '1px solid #EAE5D9',
-                    background: pkg.tier === 'popular' ? '#FFFAF7' : '#FFFFFF',
-                    padding: '28px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    position: 'relative',
-                    boxShadow: pkg.tier === 'popular' ? '0 12px 30px rgba(189, 75, 35, 0.12)' : 'var(--shadow-sm)'
-                  }}
-                >
-                  {/* Tier Badge */}
-                  <div style={{ marginBottom: '12px' }}>
-                    <span
-                      style={{
-                        fontSize: '11px',
-                        fontWeight: 800,
-                        padding: '4px 10px',
-                        borderRadius: '20px',
-                        background: pkg.tier === 'popular' ? '#BD4B23' : '#F1EFEA',
-                        color: pkg.tier === 'popular' ? '#FFFFFF' : '#57534E',
-                        display: 'inline-block'
-                      }}
-                    >
-                      {pkg.badge}
-                    </span>
-                  </div>
-
-                  {/* Package Title */}
-                  <h3 style={{ fontSize: '18px', fontWeight: 800, color: 'var(--text-main)', marginBottom: '10px', lineHeight: 1.3 }}>
-                    {pkg.name}
-                  </h3>
-
-                  {/* Price */}
-                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px', marginBottom: '18px' }}>
-                    <span style={{ fontSize: '28px', fontWeight: 900, color: '#BD4B23' }}>
-                      {pkg.priceDisplay}
-                    </span>
-                    <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-                      {pkg.indicativePrice ? '(Starting Dakshina)*' : '(Custom Quote)'}
-                    </span>
-                  </div>
-
-                  {/* Short 2-3 Inclusions */}
-                  <div style={{ flex: 1, borderTop: '1px solid #EAE5D9', paddingTop: '16px', marginBottom: '22px' }}>
-                    <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--text-muted)', marginBottom: '12px' }}>
-                      Package Inclusions:
-                    </div>
-                    <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', padding: 0, margin: 0 }}>
-                      {(pkg.inclusions || []).map((inc, i) => (
-                        <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.4 }}>
-                          <Check size={15} color="#BD4B23" style={{ flexShrink: 0, marginTop: '2px' }} />
-                          <span>{inc}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Single Clear Package Action */}
-                  <button
-                    type="button"
-                    onClick={() => openBookingModal(service, null, selectedCityName, pkg)}
-                    className={pkg.tier === 'popular' ? 'btn-primary' : 'btn-secondary'}
-                    style={{
-                      width: '100%',
-                      padding: '12px',
-                      fontSize: '14px',
-                      fontWeight: 700,
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '6px'
-                    }}
-                  >
-                    <Sparkles size={15} />
-                    <span>Select {pkg.name.split('—')[0]?.trim() || 'Package'}</span>
-                  </button>
-                </div>
-              ))}
-            </div>
-
-            <div style={{ marginTop: '16px', fontSize: '11px', color: 'var(--text-muted)', textAlign: 'center', lineHeight: 1.5 }}>
-              *Indicative dakshina is subject to Shubh Muhurat review, samagri preferences, and travel arrangements. The final quote and priest allocation are confirmed directly with our Vedic coordination team.
-            </div>
-          </div>
-        </section>
-
-        {/* Detailed Tabs: Description, Reviews, FAQ */}
+        {/* ======================================================== */}
+        {/* 3. STRUCTURED HARIVARA CONTENT HIERARCHY TABS */}
+        {/* (Significance, When to Perform, Vidhi, Samagri, FAQs) */}
+        {/* ======================================================== */}
         <div
           style={{
             background: '#FFFFFF',
             borderRadius: '20px',
             border: '1px solid #EAE5D9',
             overflow: 'hidden',
-            boxShadow: 'var(--shadow-sm)'
+            boxShadow: 'var(--shadow-sm)',
+            marginBottom: '40px'
           }}
         >
           {/* Tab Navigation Headers */}
@@ -503,98 +374,81 @@ export default function ServiceDetailPage() {
               display: 'flex',
               borderBottom: '1px solid #EAE5D9',
               background: 'var(--bg-primary)',
-              fontSize: '15px',
-              fontWeight: 700
+              fontSize: '14px',
+              fontWeight: 700,
+              overflowX: 'auto'
             }}
           >
-            <button
-              onClick={() => setActiveTab('description')}
-              style={{
-                padding: '16px 28px',
-                borderBottom: activeTab === 'description' ? '3px solid var(--accent-saffron)' : '3px solid transparent',
-                color: activeTab === 'description' ? 'var(--accent-saffron)' : 'var(--text-secondary)',
-                background: activeTab === 'description' ? '#FFFFFF' : 'transparent',
-                cursor: 'pointer',
-                border: 'none'
-              }}
-            >
-              Description &amp; Vidhi
-            </button>
-            <button
-              onClick={() => setActiveTab('reviews')}
-              style={{
-                padding: '16px 28px',
-                borderBottom: activeTab === 'reviews' ? '3px solid var(--accent-saffron)' : '3px solid transparent',
-                color: activeTab === 'reviews' ? 'var(--accent-saffron)' : 'var(--text-secondary)',
-                background: activeTab === 'reviews' ? '#FFFFFF' : 'transparent',
-                cursor: 'pointer',
-                border: 'none'
-              }}
-            >
-              Verified Google Reviews ({service.reviewsCount})
-            </button>
-            <button
-              onClick={() => setActiveTab('faqs')}
-              style={{
-                padding: '16px 28px',
-                borderBottom: activeTab === 'faqs' ? '3px solid var(--accent-saffron)' : '3px solid transparent',
-                color: activeTab === 'faqs' ? 'var(--accent-saffron)' : 'var(--text-secondary)',
-                background: activeTab === 'faqs' ? '#FFFFFF' : 'transparent',
-                cursor: 'pointer',
-                border: 'none'
-              }}
-            >
-              FAQ ({service.faqs?.length || 3})
-            </button>
+            {[
+              { id: 'significance', label: 'Significance & Benefits' },
+              { id: 'timing', label: 'When to Perform' },
+              { id: 'vidhi', label: 'Procedure & Vidhi Sequence' },
+              { id: 'samagri', label: 'Samagri Checklist' },
+              { id: 'faqs', label: `FAQs (${service.faqs?.length || 3})` }
+            ].map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => setActiveTab(tab.id)}
+                style={{
+                  padding: '16px 24px',
+                  borderBottom: activeTab === tab.id ? '3px solid var(--accent-saffron)' : '3px solid transparent',
+                  color: activeTab === tab.id ? 'var(--accent-saffron)' : 'var(--text-secondary)',
+                  background: activeTab === tab.id ? '#FFFFFF' : 'transparent',
+                  cursor: 'pointer',
+                  border: 'none',
+                  whiteSpace: 'nowrap',
+                  fontWeight: 700
+                }}
+              >
+                {tab.label}
+              </button>
+            ))}
           </div>
 
-          {/* Tab Content */}
+          {/* Tab Content Area */}
           <div style={{ padding: '36px' }}>
-            {/* Description Tab */}
-            {activeTab === 'description' && (
+            {/* Tab 1: Significance & Benefits */}
+            {activeTab === 'significance' && (
               <div>
-                <h3 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '14px' }}>
-                  About {service.name}
+                <h3 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '14px', color: 'var(--text-main)' }}>
+                  Significance &amp; Spiritual Importance of {service.name}
                 </h3>
                 <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: '24px', whiteSpace: 'pre-line' }}>
-                  {service.fullDescription || service.shortDescription}
+                  {service.longDescription || service.shortDescription}
                 </p>
 
-                <h4 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '12px' }}>
-                  Ceremony Vidhi &amp; Ritual Sequence:
+                <h4 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '12px', color: 'var(--text-main)' }}>
+                  Spiritual Benefits of Conducting This Ceremony:
                 </h4>
-                <div className="grid-2" style={{ gap: '16px', marginBottom: '28px' }}>
-                  {(service.vidhiSteps || [
-                    'Swasti Vachan & Shanti Path',
-                    'Sankalpam with Gotra & Nakshatra',
-                    'Gauri-Ganesh Sthapana & Kalash Pujan',
-                    'Navagraha Aradhana & Dikpal Pujan',
-                    'Main Deity Abhishekam & Archana',
-                    'Katha Pathan & Explanation',
-                    'Hawan / Agnihotra with Shuddha Ghee',
-                    'Maha Mangala Aarti & Prasad Vitaran'
-                  ]).map((step, i) => (
+                <div className="grid-2" style={{ gap: '14px', marginBottom: '24px' }}>
+                  {(service.keyInsights || [
+                    'Brings divine peace, positivity, and harmony to the household',
+                    'Purifies the living environment and eliminates negative energies',
+                    'Blesses the family with health, wealth, and long-term prosperity',
+                    'Fulfills sacred Shastra obligations with authentic Vedic mantras'
+                  ]).map((benefit, i) => (
                     <div
                       key={i}
                       style={{
                         padding: '14px',
                         borderRadius: '10px',
-                        background: 'var(--bg-primary)',
+                        background: '#FDFBF7',
                         border: '1px solid #EAE5D9',
                         display: 'flex',
-                        alignItems: 'center',
+                        alignItems: 'flex-start',
                         gap: '10px',
-                        fontSize: '13px'
+                        fontSize: '13.5px',
+                        color: 'var(--text-secondary)'
                       }}
                     >
-                      <span style={{ width: '22px', height: '22px', borderRadius: '50%', background: 'var(--accent-saffron)', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '11px', fontWeight: 700, flexShrink: 0 }}>
-                        {i + 1}
-                      </span>
-                      <span>{step}</span>
+                      <Sparkles size={16} color="var(--accent-saffron)" style={{ flexShrink: 0, marginTop: '2px' }} />
+                      <span>{benefit}</span>
                     </div>
                   ))}
                 </div>
 
+                {/* Consultation callout */}
                 <div
                   style={{
                     background: 'var(--accent-saffron-light)',
@@ -610,139 +464,163 @@ export default function ServiceDetailPage() {
                 >
                   <div>
                     <h5 style={{ fontSize: '15px', fontWeight: 700, color: 'var(--accent-saffron)' }}>
-                      Need Shubh Muhurat guidance for this ceremony?
+                      Have specific family traditions or Gotra considerations?
                     </h5>
                     <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
-                      Our senior Vedic Acharyas provide free astrological Muhurat dates tailored to your family.
+                      Our senior Acharyas customize rituals according to North Indian (UP, Bihar, MP, Rajasthan) and Vedic traditions.
                     </p>
                   </div>
                   <button
+                    type="button"
                     onClick={() => openBookingModal(service.name)}
                     className="btn-primary"
                     style={{ padding: '10px 20px', fontSize: '13px', cursor: 'pointer' }}
                   >
-                    Check Shubh Muhurat
+                    Speak with Senior Pandit
                   </button>
                 </div>
               </div>
             )}
 
-            {/* Reviews Tab */}
-            {activeTab === 'reviews' && (
+            {/* Tab 2: When to Perform */}
+            {activeTab === 'timing' && (
               <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
-                  <div>
-                    <h3 style={{ fontSize: '20px', fontWeight: 700 }}>
-                      Verified Google Reviews
-                    </h3>
-                    <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-                      Rated 4.9★ across 262+ reviews on Google Places
+                <h3 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '14px', color: 'var(--text-main)' }}>
+                  When to Perform {service.name} (Auspicious Timing &amp; Muhurat)
+                </h3>
+                <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: '24px' }}>
+                  In Vedic tradition, performing ceremonies during favorable planetary Lagnas, Tithis, and Nakshatras amplifies the spiritual blessings for all family members.
+                </p>
+
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                    gap: '16px',
+                    marginBottom: '28px'
+                  }}
+                >
+                  <div style={{ background: '#FDFBF7', padding: '18px', borderRadius: '12px', border: '1px solid #EAE5D9' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: 'var(--accent-saffron)', fontWeight: 700 }}>
+                      <CalendarCheck size={18} />
+                      <span>Recommended Days &amp; Tithis</span>
+                    </div>
+                    <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
+                      {timingInfo.bestDays}
                     </p>
                   </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    <Star size={18} fill="#EAB308" color="#EAB308" />
-                    <span style={{ fontSize: '18px', fontWeight: 800 }}>4.9</span>
-                    <span style={{ color: 'var(--text-muted)', fontSize: '14px' }}>out of 5</span>
+
+                  <div style={{ background: '#FDFBF7', padding: '18px', borderRadius: '12px', border: '1px solid #EAE5D9' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: 'var(--accent-gold)', fontWeight: 700 }}>
+                      <Clock size={18} />
+                      <span>Auspicious Time of Day</span>
+                    </div>
+                    <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
+                      {timingInfo.timing}
+                    </p>
+                  </div>
+
+                  <div style={{ background: '#FDFBF7', padding: '18px', borderRadius: '12px', border: '1px solid #EAE5D9' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: '#047857', fontWeight: 700 }}>
+                      <Check size={18} />
+                      <span>Shastra Guidance</span>
+                    </div>
+                    <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
+                      {timingInfo.notes}
+                    </p>
                   </div>
                 </div>
 
-                {/* Submit New Review Form */}
-                <form
-                  onSubmit={handleReviewSubmit}
+                <div
                   style={{
-                    background: 'var(--bg-primary)',
-                    padding: '24px',
+                    background: '#FFF8F4',
+                    border: '1.5px solid var(--accent-saffron)',
                     borderRadius: '14px',
-                    border: '1px solid #EAE5D9',
-                    marginBottom: '32px'
+                    padding: '22px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    flexWrap: 'wrap',
+                    gap: '16px'
                   }}
                 >
-                  <h4 style={{ fontSize: '16px', fontWeight: 700, marginBottom: '14px' }}>
-                    Share Your Feedback
-                  </h4>
-
-                  <div className="grid-3" style={{ gap: '16px', marginBottom: '16px' }}>
-                    <div>
-                      <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, marginBottom: '4px' }}>
-                        Your Name *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={newReviewAuthor}
-                        onChange={e => setNewReviewAuthor(e.target.value)}
-                        placeholder="e.g. Rahul Sharma"
-                        style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #DDD7C8' }}
-                      />
-                    </div>
-
-                    <div>
-                      <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, marginBottom: '4px' }}>
-                        Your Locality in Pune *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="e.g. Wakad / Baner / Kothrud"
-                        style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #DDD7C8' }}
-                      />
-                    </div>
-
-                    <div>
-                      <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, marginBottom: '4px' }}>
-                        Rating *
-                      </label>
-                      <select
-                        value={newReviewRating}
-                        onChange={e => setNewReviewRating(e.target.value)}
-                        style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #DDD7C8', background: '#FFFFFF' }}
-                      >
-                        <option value="5">5 Stars (Excellent)</option>
-                        <option value="4">4 Stars (Very Good)</option>
-                        <option value="3">3 Stars (Good)</option>
-                      </select>
-                    </div>
+                  <div>
+                    <h4 style={{ fontSize: '16px', fontWeight: 800, color: '#BD4B23', marginBottom: '4px' }}>
+                      Get a Free Muhurat Calculation for Your Family
+                    </h4>
+                    <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
+                      Share your Gotra and birth Nakshatra; our senior Acharyas will calculate the most auspicious Lagna.
+                    </p>
                   </div>
-
-                  <div style={{ marginBottom: '16px' }}>
-                    <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, marginBottom: '4px' }}>
-                      Review Comment *
-                    </label>
-                    <textarea
-                      rows={3}
-                      required
-                      value={newReviewComment}
-                      onChange={e => setNewReviewComment(e.target.value)}
-                      placeholder="Share your experience with VedicPanditji and the Vedic ceremony..."
-                      style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #DDD7C8' }}
-                    />
-                  </div>
-
-                  <button type="submit" className="btn-primary" style={{ padding: '10px 22px', fontSize: '13px', cursor: 'pointer' }}>
-                    Submit Review
+                  <button
+                    type="button"
+                    onClick={() => openBookingModal(service.name)}
+                    className="btn-primary"
+                    style={{ padding: '11px 22px', fontSize: '13.5px', cursor: 'pointer' }}
+                  >
+                    Calculate Shubh Muhurat
                   </button>
-                </form>
+                </div>
+              </div>
+            )}
 
-                {/* Genuine Verified Reviews */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                  {CUSTOMER_REVIEWS.map((rev, i) => (
-                    <div key={i} style={{ padding: '18px', borderRadius: '12px', border: '1px solid #EAE5D9', background: '#FFFFFF' }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                        <div>
-                          <span style={{ fontWeight: 700 }}>{rev.author}</span>
-                          <span style={{ fontSize: '12px', color: 'var(--text-muted)', marginLeft: '8px' }}>({rev.location})</span>
+            {/* Tab 3: Procedure & Vidhi Sequence */}
+            {activeTab === 'vidhi' && (
+              <div>
+                <h3 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '14px', color: 'var(--text-main)' }}>
+                  Scriptural Procedure &amp; Vidhi Sequence
+                </h3>
+                <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: '24px' }}>
+                  Conducted strictly in authentic Sanskrit mantras with clear, step-by-step Hindi explanations by our North Indian and Bihari Purohits:
+                </p>
+
+                <div className="grid-2" style={{ gap: '16px', marginBottom: '28px' }}>
+                  {[
+                    { step: 'Swasti Vachan & Shanti Path', desc: 'Invocation of cosmic peace and purification of the sacred premises.' },
+                    { step: 'Sankalpam with Gotra & Nakshatra', desc: 'Formal vow taken by the Yajaman reciting family lineage, gotra, and spiritual purpose.' },
+                    { step: 'Gauri-Ganesh Sthapana & Kalash Pujan', desc: 'Worship of Vignaharta Lord Ganesha and invocation of sacred Varuna deities into the Kalash.' },
+                    { step: 'Navagraha Aradhana & Dikpal Pujan', desc: 'Pacification of nine celestial grahas and ten directional guardians for complete protection.' },
+                    { step: 'Main Deity Abhishekam & Archana', desc: 'Consecration, mantra chanting, and sacred offerings specific to this ceremony.' },
+                    { step: 'Katha Pathan & Spiritual Explanation', desc: 'Recitation of sacred Shastra stories with meaningful lessons explained clearly in fluent Hindi.' },
+                    { step: 'Hawan / Agnihotra with Pure Ghee', desc: 'Sacred fire offerings with pure cow ghee and herbal samagri for spiritual cleansing.' },
+                    { step: 'Maha Mangala Aarti & Prasad Vitaran', desc: 'Concluding Aarti, Pushpanjali, Panditji blessings, and distribution of sanctified Prasad.' }
+                  ].map((s, i) => (
+                    <div
+                      key={i}
+                      style={{
+                        padding: '16px',
+                        borderRadius: '12px',
+                        background: 'var(--bg-primary)',
+                        border: '1px solid #EAE5D9',
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: '12px'
+                      }}
+                    >
+                      <span
+                        style={{
+                          width: '26px',
+                          height: '26px',
+                          borderRadius: '50%',
+                          background: 'var(--accent-saffron)',
+                          color: '#FFFFFF',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: '12px',
+                          fontWeight: 700,
+                          flexShrink: 0
+                        }}
+                      >
+                        {i + 1}
+                      </span>
+                      <div>
+                        <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-main)', marginBottom: '2px' }}>
+                          {s.step}
                         </div>
-                        <div style={{ display: 'flex', gap: '2px' }}>
-                          {[...Array(rev.rating)].map((_, idx) => (
-                            <Star key={idx} size={13} fill="#EAB308" color="#EAB308" />
-                          ))}
+                        <div style={{ fontSize: '12.5px', color: 'var(--text-secondary)', lineHeight: 1.45 }}>
+                          {s.desc}
                         </div>
-                      </div>
-                      <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                        "{rev.comment}"
-                      </p>
-                      <div style={{ fontSize: '11px', color: 'var(--accent-saffron)', marginTop: '8px', fontWeight: 600 }}>
-                        ✓ {rev.service} &bull; Verified Google Review
                       </div>
                     </div>
                   ))}
@@ -750,7 +628,120 @@ export default function ServiceDetailPage() {
               </div>
             )}
 
-            {/* FAQs Tab */}
+            {/* Tab 4: Samagri Checklist */}
+            {activeTab === 'samagri' && (
+              <div>
+                <h3 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '14px', color: 'var(--text-main)' }}>
+                  Ceremony Samagri Checklist (Pandit vs Devotee)
+                </h3>
+                <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: '24px' }}>
+                  We ensure absolute transparency regarding what is included in our samagri kits versus what the family needs to prepare:
+                </p>
+
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                    gap: '24px',
+                    marginBottom: '28px'
+                  }}
+                >
+                  {/* Column 1: What Panditji Provides */}
+                  <div
+                    style={{
+                      background: '#FDFBF7',
+                      borderRadius: '16px',
+                      border: '1px solid #EAE5D9',
+                      padding: '24px'
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', color: '#047857' }}>
+                      <Package size={20} />
+                      <h4 style={{ fontSize: '16px', fontWeight: 800, margin: 0 }}>
+                        Provided by Panditji (Package B or Kit)
+                      </h4>
+                    </div>
+                    <ul
+                      style={{
+                        listStyle: 'none',
+                        padding: 0,
+                        margin: 0,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '10px',
+                        fontSize: '13px',
+                        color: 'var(--text-secondary)'
+                      }}
+                    >
+                      {[
+                        'Pure Herbal Hawan Samagri with 54 Ayurvedic herbs',
+                        'Sacred Mango Hawan Wood (Kashtha) & Camphor (Kapoor)',
+                        'Pure Desi Cow Ghee for Agnihotra offerings (in Samagri package)',
+                        'Roli, Kumkum, Chandan, Haldi, Akshat & Sacred Moli',
+                        'Navadhanya (9 sacred grains) & Supari',
+                        'Purna Kalash Vastram & Janeu (Yagnopaveetam)',
+                        'Dhoop sticks, Guggul, Loban & Gangajal'
+                      ].map((item, idx) => (
+                        <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                          <Check size={14} color="#047857" style={{ flexShrink: 0 }} />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Column 2: What Devotee Prepares */}
+                  <div
+                    style={{
+                      background: '#FFFFFF',
+                      borderRadius: '16px',
+                      border: '1px solid #EAE5D9',
+                      padding: '24px'
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', color: '#BD4B23' }}>
+                      <Check size={20} />
+                      <h4 style={{ fontSize: '16px', fontWeight: 800, margin: 0 }}>
+                        Arranged by Devotee (Yajaman) at Home
+                      </h4>
+                    </div>
+                    <ul
+                      style={{
+                        listStyle: 'none',
+                        padding: 0,
+                        margin: 0,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '10px',
+                        fontSize: '13px',
+                        color: 'var(--text-secondary)'
+                      }}
+                    >
+                      {[
+                        'Fresh marigold flower garlands and loose puja flowers',
+                        '5 varieties of fresh seasonal fruits (Pancha-Phala)',
+                        'Fresh cow milk, curd, honey & sugar for Panchamrit',
+                        'Water coconuts (Purna Shrifal) with intact husk',
+                        'Household brass/copper thalis, small bowls, and spoons',
+                        'Wooden chowki or bajot for deity sthapana',
+                        'Clean sitting asanas (mats) for family members'
+                      ].map((item, idx) => (
+                        <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                          <span style={{ color: '#BD4B23', fontWeight: 700, fontSize: '13px' }}>•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div style={{ fontSize: '12px', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                  *Our coordination team shares a detailed checklist via WhatsApp immediately upon booking confirmation so your family is fully prepared.
+                </div>
+              </div>
+            )}
+
+            {/* Tab 5: FAQs */}
             {activeTab === 'faqs' && (
               <div>
                 <h3 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '20px' }}>
@@ -794,7 +785,9 @@ export default function ServiceDetailPage() {
           </div>
         </div>
 
-        {/* City-Specific Landing Links */}
+        {/* ======================================================== */}
+        {/* 4. VERIFIED PUNE & PCMC DOORSTEP COVERAGE */}
+        {/* ======================================================== */}
         <div
           style={{
             background: '#FFFFFF',
@@ -807,26 +800,34 @@ export default function ServiceDetailPage() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '14px' }}>
             <MapPin size={18} color="var(--accent-saffron)" />
             <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--text-main)', margin: 0 }}>
-              Available with North Indian Pandits Across India
+              Doorstep {service.name} Coverage across Pune &amp; PCMC
             </h3>
           </div>
           <p style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '18px', lineHeight: 1.6 }}>
-            Looking to book {service.name} in your city? Explore our city-specific North Indian Pandit landing pages:
+            Our verified North Indian and Bihari Pandits provide authentic doorstep ceremonies across Pune and Pimpri-Chinchwad (PCMC), as well as interactive E-Pujas nationwide:
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
             {[
-              { name: 'Pune (HQ In-Person)', slug: 'north-indian-pandit-in-pune' },
-              { name: 'Mumbai & MMR', slug: 'north-indian-pandit-in-mumbai' },
-              { name: 'Bangalore', slug: 'north-indian-pandit-in-bangalore' },
-              { name: 'Delhi NCR', slug: 'north-indian-pandit-in-delhi' },
-              { name: 'Hyderabad', slug: 'north-indian-pandit-in-hyderabad' },
-              { name: 'Chennai', slug: 'north-indian-pandit-in-chennai' },
-              { name: 'Online E-Puja (Pan-India)', slug: 'online-e-puja-services' }
-            ].map((cityItem, idx) => (
-              <button
+              { name: 'Pune (All Pune Areas)', slug: 'pandit-in-pune' },
+              { name: 'Kothrud', slug: 'pandit-in-kothrud' },
+              { name: 'Baner', slug: 'pandit-in-baner' },
+              { name: 'Hinjawadi', slug: 'pandit-in-hinjawadi' },
+              { name: 'Kharadi', slug: 'pandit-in-kharadi' },
+              { name: 'Wakad', slug: 'pandit-in-wakad' },
+              { name: 'Pimple Saudagar', slug: 'pandit-in-pimple-saudagar' },
+              { name: 'Hadapsar', slug: 'pandit-in-hadapsar' },
+              { name: 'Aundh', slug: 'pandit-in-aundh' },
+              { name: 'Viman Nagar', slug: 'pandit-in-viman-nagar' },
+              { name: 'Pimpri-Chinchwad (PCMC)', slug: 'pandit-in-pcmc' },
+              { name: 'Ravet', slug: 'pandit-in-ravet' }
+            ].map((locItem, idx) => (
+              <a
                 key={idx}
-                type="button"
-                onClick={() => navigateTo('seo-landing', { slug: cityItem.slug })}
+                href={`/locations/${locItem.slug}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateTo('location-detail', { slug: locItem.slug });
+                }}
                 style={{
                   background: 'var(--bg-primary)',
                   border: '1px solid #EAE5D9',
@@ -835,7 +836,10 @@ export default function ServiceDetailPage() {
                   fontSize: '13px',
                   fontWeight: 600,
                   color: 'var(--text-main)',
-                  cursor: 'pointer',
+                  textDecoration: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '5px',
                   transition: 'all 0.2s ease'
                 }}
                 onMouseEnter={e => {
@@ -847,9 +851,33 @@ export default function ServiceDetailPage() {
                   e.currentTarget.style.color = 'var(--text-main)';
                 }}
               >
-                📍 {cityItem.name}
-              </button>
+                📍 Pandit in {locItem.name}
+              </a>
             ))}
+          </div>
+
+          <div style={{ marginTop: '24px', paddingTop: '18px', borderTop: '1px solid #F3EFE6', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
+            <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
+              Need in-depth vidhi details, auspicious Muhurat calculations, or samagri checklists?
+            </span>
+            <a
+              href="/puja-guides"
+              onClick={(e) => {
+                e.preventDefault();
+                navigateTo('puja-guides');
+              }}
+              style={{
+                fontSize: '13px',
+                fontWeight: 600,
+                color: 'var(--accent-saffron)',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px'
+              }}
+            >
+              📖 Explore Hindu Puja Educational Guides &rarr;
+            </a>
           </div>
         </div>
       </div>

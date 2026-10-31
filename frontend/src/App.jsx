@@ -1,26 +1,29 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, Suspense, lazy } from 'react';
 import { useApp } from './context/AppContext';
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
 import BookingModal from './components/common/BookingModal';
 import Toast from './components/common/Toast';
 
-// Pages
+// Core Homepage (Synchronous for instant first paint and robust reliability)
 import HomePage from './pages/HomePage';
-import CataloguePage from './pages/CataloguePage';
-import ServiceDetailPage from './pages/ServiceDetailPage';
-import TempleServicesPage from './pages/TempleServicesPage';
-import PujaMaterialsPage from './pages/PujaMaterialsPage';
-import HowWeWorkPage from './pages/HowWeWorkPage';
-import FaqsPage from './pages/FaqsPage';
-import ContactEnquiryPage from './pages/ContactEnquiryPage';
-import AuthPage from './pages/AuthPage';
-import MyAccountPage from './pages/MyAccountPage';
-import LegalPage from './pages/LegalPage';
-import AboutUsPage from './pages/AboutUsPage';
-import SeoLandingPage from './pages/SeoLandingPage';
-import SitemapPage from './pages/SitemapPage';
-import AdminDashboard from './pages/admin/AdminDashboard';
+
+// Route-level Lazy Loaded Pages
+const CataloguePage = lazy(() => import('./pages/CataloguePage'));
+const ServiceDetailPage = lazy(() => import('./pages/ServiceDetailPage'));
+const LocationPage = lazy(() => import('./pages/LocationPage'));
+const SeoLandingPage = lazy(() => import('./pages/SeoLandingPage'));
+const PujaGuidesHubPage = lazy(() => import('./pages/PujaGuidesHubPage'));
+const PujaGuideDetailPage = lazy(() => import('./pages/PujaGuideDetailPage'));
+const TempleServicesPage = lazy(() => import('./pages/TempleServicesPage'));
+const PujaMaterialsPage = lazy(() => import('./pages/PujaMaterialsPage'));
+const HowWeWorkPage = lazy(() => import('./pages/HowWeWorkPage'));
+const FaqsPage = lazy(() => import('./pages/FaqsPage'));
+const ContactEnquiryPage = lazy(() => import('./pages/ContactEnquiryPage'));
+const AboutUsPage = lazy(() => import('./pages/AboutUsPage'));
+const LegalPage = lazy(() => import('./pages/LegalPage'));
+const SitemapPage = lazy(() => import('./pages/SitemapPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 // GSAP
 import gsap from 'gsap';
@@ -29,16 +32,40 @@ import { animatePageEntrance, initScrollReveals } from './utils/gsapAnimations';
 
 gsap.registerPlugin(ScrollTrigger);
 
+function RouteLoadingFallback() {
+  return (
+    <div
+      style={{
+        minHeight: '60vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '60px 20px',
+      }}
+    >
+      <div
+        style={{
+          width: 38,
+          height: 38,
+          border: '3px solid #EAE5D9',
+          borderTopColor: '#BD4B23',
+          borderRadius: '50%',
+          animation: 'vpRouteSpin 0.7s linear infinite',
+        }}
+      />
+      <style>{`@keyframes vpRouteSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`}</style>
+    </div>
+  );
+}
+
 export default function App() {
-  const { currentRoute, routeParams } = useApp();
+  const { currentRoute } = useApp();
   const mainRef = useRef(null);
 
   // Trigger smooth GSAP animations on page transition
   useEffect(() => {
     // Reset scroll smoothly on route navigation
     window.scrollTo({ top: 0, behavior: 'instant' });
-
-    if (currentRoute === 'admin') return;
 
     const pageTween = animatePageEntrance(mainRef.current);
     const cleanupScroll = initScrollReveals(mainRef.current);
@@ -55,24 +82,24 @@ export default function App() {
     };
   }, [currentRoute]);
 
-  // Dedicated enterprise shell for Admin Dashboard
-  if (currentRoute === 'admin') {
-    return (
-      <div className="admin-root-container">
-        <AdminDashboard section={routeParams?.section || 'overview'} />
-        <Toast />
-      </div>
-    );
-  }
-
   const renderCurrentPage = () => {
     switch (currentRoute) {
       case 'home':
         return <HomePage />;
       case 'catalogue':
+      case 'services':
         return <CataloguePage />;
       case 'service-detail':
         return <ServiceDetailPage />;
+      case 'location-detail':
+        return <LocationPage />;
+      case 'seo-landing':
+        return <SeoLandingPage />;
+      case 'puja-guides-hub':
+      case 'puja-guides':
+        return <PujaGuidesHubPage />;
+      case 'puja-guide-detail':
+        return <PujaGuideDetailPage />;
       case 'temple-services':
         return <TempleServicesPage />;
       case 'puja-materials':
@@ -83,26 +110,18 @@ export default function App() {
         return <FaqsPage />;
       case 'contact':
         return <ContactEnquiryPage />;
-      case 'auth':
-      case 'login':
-        return <AuthPage />;
-      case 'account':
-      case 'my-account':
-      case 'booking-confirmation':
-        return <MyAccountPage />;
-      case 'checkout':
-        return <CataloguePage />;
       case 'about':
       case 'about-us':
         return <AboutUsPage />;
-      case 'seo-landing':
-        return <SeoLandingPage />;
       case 'policies':
+      case 'legal':
         return <LegalPage />;
       case 'sitemap':
         return <SitemapPage />;
+      case 'not-found':
+        return <NotFoundPage />;
       default:
-        return <HomePage />;
+        return <NotFoundPage />;
     }
   };
 
@@ -111,7 +130,9 @@ export default function App() {
       <Navbar />
 
       <main ref={mainRef} style={{ flex: 1 }}>
-        {renderCurrentPage()}
+        <Suspense fallback={<RouteLoadingFallback />}>
+          {renderCurrentPage()}
+        </Suspense>
       </main>
 
       <Footer />

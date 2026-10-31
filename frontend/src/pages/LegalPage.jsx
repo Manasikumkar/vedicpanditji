@@ -130,7 +130,7 @@ export default function LegalPage() {
                 3. Pandit Replacement Assurance
               </h4>
               <p>
-                In the rare event that an assigned priest faces an unavoidable medical emergency, our senior Acharyas personally ensure a verified Gurukul-trained substitute is dispatched on time to preserve your Muhurat sanctity.
+                In the rare event that an assigned priest faces an unavoidable medical emergency, our senior Acharyas coordinate a qualified Vedic substitute on time to preserve your Muhurat sanctity.
               </p>
             </div>
           )}
@@ -170,7 +170,7 @@ export default function LegalPage() {
                 Vedic Services &amp; Priests
               </h4>
               <p style={{ marginBottom: '14px' }}>
-                All our priests are certified Gurukul scholars vetted under our senior Acharyas. Rites are conducted strictly according to North Indian, Bihari, or requested regional Shastra Vidhis.
+                All our priests are experienced Vedic scholars vetted under our senior Acharyas. Rites are conducted strictly according to North Indian, Bihari, or requested regional Shastra Vidhis.
               </p>
               <h4 style={{ fontSize: '15px', color: 'var(--text-main)', fontWeight: 700, margin: '18px 0 8px' }}>
                 Dakshina &amp; Samagri Arrangement

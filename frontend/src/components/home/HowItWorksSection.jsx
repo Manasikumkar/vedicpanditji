@@ -11,7 +11,7 @@ export default function HowItWorksSection() {
     {
       step: '01',
       title: 'Select Puja or Enquire',
-      subtitle: 'Browse 200+ Pujas & Ceremonies',
+      subtitle: 'Browse Ceremonies Catalogue',
       desc: 'Pick your desired ceremony or connect with our team to discuss your family ritual requirements.',
       icon: Search
     },
@@ -25,7 +25,7 @@ export default function HowItWorksSection() {
     {
       step: '03',
       title: 'Priest & Samagri Assignment',
-      subtitle: 'Certified Pathashala Scholars',
+      subtitle: 'Experienced Pathashala Scholars',
       desc: 'A verified North Indian or Bihari priest is assigned with a comprehensive kit of 100% pure Vedic Samagri.',
       icon: UserCheck
     },

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { SEO_LANDING_PAGES, BRAND_INFO, CITIES, SERVICES } from '../data/vedicPanditData';
+import { SEO_LANDING_PAGES, CITIES, SERVICES } from '../data/vedicPanditData';
 import {
   Sparkles,
   MapPin,
@@ -34,73 +34,9 @@ export default function SeoLandingPage({ slug: propSlug }) {
 
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
-  // Update SEO Head Tags dynamically
+  // Scroll to top on page change
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
-
-    // Title Tag
-    document.title = `${pageData.title} | VedicPanditji`;
-
-    // Meta Description
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement('meta');
-      metaDesc.name = 'description';
-      document.head.appendChild(metaDesc);
-    }
-    metaDesc.content = pageData.metaDescription || '';
-
-    // Canonical Tag
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.rel = 'canonical';
-      document.head.appendChild(canonical);
-    }
-    canonical.href = `https://vedicpanditji.com/services/${pageData.slug}`;
-
-    // Schema.org Structured Data
-    const scriptId = 'seo-structured-data';
-    let script = document.getElementById(scriptId);
-    if (!script) {
-      script = document.createElement('script');
-      script.id = scriptId;
-      script.type = 'application/ld+json';
-      document.head.appendChild(script);
-    }
-
-    const structuredData = {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Service",
-          "@id": `https://vedicpanditji.com/services/${pageData.slug}#service`,
-          "name": pageData.h1,
-          "serviceType": pageData.primaryService || pageData.service || "Vedic Hindu Rituals",
-          "description": pageData.metaDescription,
-          "provider": {
-            "@type": "LocalBusiness",
-            "name": "VedicPanditji",
-            "telephone": BRAND_INFO.phone,
-            "email": BRAND_INFO.email,
-            "url": `https://${BRAND_INFO.domain}`,
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": pageData.city || "Pune",
-              "addressRegion": pageData.state || "Maharashtra",
-              "addressCountry": "IN"
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": BRAND_INFO.rating || 4.9,
-              "reviewCount": BRAND_INFO.reviewsCount || 262
-            }
-          }
-        }
-      ]
-    };
-
-    script.text = JSON.stringify(structuredData);
   }, [pageData]);
 
   // Verification Badge Configuration
@@ -111,7 +47,7 @@ export default function SeoLandingPage({ slug: propSlug }) {
           badgeClass: 'badge-confirmed',
           icon: <ShieldCheck size={14} color="#15803D" />,
           title: pageData.verificationBadge || `Verified In-Person Service in ${pageData.city}`,
-          note: `VedicPanditji provides verified resident Vedic purohits arriving directly at your doorstep in ${pageData.city} with complete pure Samagri kits.`,
+          note: `VedicPanditji provides verified doorstep Vedic purohits in ${pageData.city} with complete pure Samagri kits.`,
           isFullyInPerson: true
         };
       case 'hybrid-online-travelling':
@@ -154,6 +90,11 @@ export default function SeoLandingPage({ slug: propSlug }) {
   // Take only 3-4 essential FAQs
   const essentialFaqs = pageData.faqs ? pageData.faqs.slice(0, 4) : [];
 
+  // Contextual links to other individual puja services within the same city
+  const relatedCityPages = SEO_LANDING_PAGES.filter(
+    p => p.city === pageData.city && p.slug !== pageData.slug
+  );
+
   return (
     <div className="seo-page-root">
       {/* 1. BREADCRUMBS */}
@@ -193,7 +134,7 @@ export default function SeoLandingPage({ slug: propSlug }) {
 
             {/* Essential Related Summary Explanation */}
             <p className="seo-hero-tagline">
-              {pageData.tagline || `Authentic Vedic rituals performed by certified Gurukul-trained North Indian & Bihari Pandits with complete scriptural fidelity.`}
+              {pageData.tagline || `Authentic Vedic rituals performed by experienced North Indian & Bihari Pandits with complete scriptural fidelity.`}
             </p>
 
             {/* Primary Action Buttons */}
@@ -220,12 +161,12 @@ export default function SeoLandingPage({ slug: propSlug }) {
             {/* Concise Trust Badges */}
             <div className="seo-trust-row">
               <div className="trust-col">
-                <span className="trust-number">4.9 ★</span>
-                <span className="trust-label">260+ Devotee Reviews</span>
+                <span className="trust-number">Hindi &amp; Sanskrit</span>
+                <span className="trust-label">Ritual Languages</span>
               </div>
               <div className="trust-col">
-                <span className="trust-number">75+</span>
-                <span className="trust-label">Vedic Purohits</span>
+                <span className="trust-number">Panchang</span>
+                <span className="trust-label">Shubh Muhurat</span>
               </div>
               <div className="trust-col">
                 <span className="trust-number">Hindi & Sanskrit</span>
@@ -356,7 +297,6 @@ export default function SeoLandingPage({ slug: propSlug }) {
                         background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%)'
                       }}
                     />
-                    <span className="puja-rating-chip">★ {svc.rating}</span>
                   </div>
 
                   <div className="puja-quick-body">
@@ -379,6 +319,44 @@ export default function SeoLandingPage({ slug: propSlug }) {
               ))}
             </div>
           </section>
+
+          {/* Card 2b: Dedicated / Specific Puja Pages in Target City */}
+          {relatedCityPages.length > 0 && (
+            <section className="seo-city-pujas-card">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                <Sparkles size={18} color="var(--accent-saffron)" />
+                <h2 style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text-main)', margin: 0 }}>
+                  Specific Puja Ceremonies &amp; Vidhis in {pageData.city}
+                </h2>
+              </div>
+              <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', marginBottom: '18px', lineHeight: 1.6 }}>
+                Explore dedicated ceremony guidelines, samagri arrangements, and verified North Indian purohit booking for specific rituals in {pageData.city}:
+              </p>
+              <div className="city-pujas-grid">
+                {relatedCityPages.map((cp) => (
+                  <a
+                    key={cp.slug}
+                    href={`/services/${cp.slug}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigateTo('seo-landing', { slug: cp.slug });
+                    }}
+                    className="city-puja-link-card"
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', marginBottom: '6px' }}>
+                      <span className="city-puja-name">
+                        {cp.primaryService || cp.service} in {pageData.city}
+                      </span>
+                      <ArrowRight size={14} color="var(--accent-gold)" style={{ flexShrink: 0 }} />
+                    </div>
+                    <p className="city-puja-desc">
+                      {cp.tagline || (cp.sections && cp.sections[0] ? cp.sections[0].heading : cp.metaDescription)}
+                    </p>
+                  </a>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Card 3: Key Localities in Target City */}
           {pageData.keyLocalities && pageData.keyLocalities.length > 0 && (
@@ -434,48 +412,7 @@ export default function SeoLandingPage({ slug: propSlug }) {
             </section>
           )}
 
-          {/* Card 5: Bottom Booking Prompt */}
-          <section className="seo-bottom-cta">
-            <div>
-              <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#FFFFFF', marginBottom: '6px' }}>
-                Ready to Organize an Auspicious Puja in {pageData.city}?
-              </h3>
-              <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.82)', margin: 0 }}>
-                Speak with our senior Vedic Acharyas for free Muhurat guidance or book online in 2 minutes.
-              </p>
-            </div>
 
-            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <button
-                type="button"
-                onClick={() => openBookingModal(ceremonyService, null, pageData.city)}
-                className="btn-primary"
-                style={{
-                  background: '#FFFFFF',
-                  color: 'var(--accent-saffron)',
-                  fontWeight: 700,
-                  boxShadow: '0 4px 14px rgba(0,0,0,0.15)'
-                }}
-              >
-                <CalendarCheck size={16} />
-                <span>Book a Pandit</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => navigateTo('catalogue')}
-                className="btn-secondary"
-                style={{
-                  background: 'rgba(255, 255, 255, 0.15)',
-                  color: '#FFFFFF',
-                  borderColor: 'rgba(255, 255, 255, 0.3)',
-                  cursor: 'pointer'
-                }}
-              >
-                <span>Explore All Ceremonies</span>
-              </button>
-            </div>
-          </section>
 
         </div>
       </main>
@@ -915,6 +852,52 @@ export default function SeoLandingPage({ slug: propSlug }) {
         }
 
         /* Localities Card */
+        .seo-city-pujas-card {
+          background: #FFFFFF;
+          border: 1px solid var(--border-subtle);
+          border-radius: 18px;
+          padding: 24px 28px;
+          box-shadow: var(--shadow-sm);
+          margin-bottom: 40px;
+        }
+
+        .city-pujas-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 16px;
+        }
+
+        .city-puja-link-card {
+          background: var(--bg-primary);
+          border: 1px solid var(--border-subtle);
+          border-radius: 12px;
+          padding: 16px;
+          text-decoration: none;
+          transition: all 0.2s ease;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        .city-puja-link-card:hover {
+          border-color: var(--accent-gold);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+        }
+
+        .city-puja-name {
+          font-size: 14.5px;
+          font-weight: 700;
+          color: var(--accent-saffron);
+        }
+
+        .city-puja-desc {
+          font-size: 12.5px;
+          color: var(--text-secondary);
+          margin: 0;
+          line-height: 1.5;
+        }
+
         .seo-localities-card {
           background: #FFFFFF;
           border: 1px solid var(--border-subtle);
@@ -997,18 +980,7 @@ export default function SeoLandingPage({ slug: propSlug }) {
           line-height: 1.6;
         }
 
-        /* Bottom CTA */
-        .seo-bottom-cta {
-          background: linear-gradient(135deg, #BD4B23 0%, #A53E19 100%);
-          border-radius: 20px;
-          padding: 32px 36px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 20px;
-          box-shadow: 0 12px 32px rgba(189, 75, 35, 0.25);
-          flex-wrap: wrap;
-        }
+
 
         /* Responsive Breakpoints */
         @media (max-width: 768px) {
@@ -1023,8 +995,7 @@ export default function SeoLandingPage({ slug: propSlug }) {
             grid-template-columns: 1fr;
           }
           .seo-summary-card,
-          .seo-faq-card,
-          .seo-bottom-cta {
+          .seo-faq-card {
             padding: 22px 20px;
           }
         }

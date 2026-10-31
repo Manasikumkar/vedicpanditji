@@ -7,13 +7,13 @@ import {
   OPTIONAL_SAMAGRI_OPTIONS,
   calculateBookingTotal
 } from '../../data/pujaPackagesData';
+import EnquiryConfirmationView from './EnquiryConfirmationView';
+import { generateSubmissionId } from '../../services/webhookService';
 import {
   X,
   CheckCircle2,
   MapPin,
   Sparkles,
-  MessageCircle,
-  PhoneCall,
   ArrowRight,
   ArrowLeft,
   Check,
@@ -29,9 +29,6 @@ export default function BookingModal() {
     selectedLocality,
     selectedCity,
     completeBooking,
-    openWhatsAppEnquiry,
-    callHelpline,
-    navigateTo,
     user
   } = useApp();
 
@@ -63,8 +60,13 @@ export default function BookingModal() {
   // Search filter for Step 1 (Select Puja)
   const [pujaSearch, setPujaSearch] = useState('');
 
+  // Honeypot spam prevention
+  const [websiteHp, setWebsiteHp] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   // Confirmed enquiry state
   const [submittedEnquiry, setSubmittedEnquiry] = useState(null);
+  const [submissionId, setSubmissionId] = useState(null);
 
   // GSAP Animation refs
   const backdropRef = useRef(null);
@@ -164,8 +166,18 @@ export default function BookingModal() {
 
   // Submit Final Enquiry
   const handleSubmitEnquiry = async (e) => {
-    e.preventDefault();
+    if (e && e.preventDefault) e.preventDefault();
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+    setStep('confirmation');
     const pkgToSave = selectedPkg || packages[0];
+
+    // Maintain stable submissionId across retries of the same booking attempt
+    const activeSubId = submissionId || generateSubmissionId();
+    if (!submissionId) {
+      setSubmissionId(activeSubId);
+    }
 
     // Collect names of selected extra samagri items
     const selectedExtraNames = selectedExtras
@@ -173,6 +185,7 @@ export default function BookingModal() {
       .filter(Boolean);
 
     const enquiryRecord = await completeBooking({
+      submissionId: activeSubId,
       serviceName: activeService.name,
       packageName: pkgToSave.name,
       packagePrice: pricingSummary.displayString,
@@ -185,6 +198,7 @@ export default function BookingModal() {
       customerName: customerName || 'Devotee',
       phone,
       address,
+      website_hp: websiteHp,
       notes: [
         notes,
         gotra ? `Gotra: ${gotra}` : '',
@@ -193,8 +207,8 @@ export default function BookingModal() {
       ].filter(Boolean).join(' | ')
     });
 
+    setIsSubmitting(false);
     setSubmittedEnquiry(enquiryRecord);
-    setStep('confirmation');
   };
 
   // Filtered pujas for Step 1
@@ -229,7 +243,9 @@ export default function BookingModal() {
         padding: '12px',
         overflowY: 'auto'
       }}
-      onClick={closeBookingModal}
+      onClick={() => {
+        if (!isSubmitting) closeBookingModal();
+      }}
     >
       <div
         ref={cardRef}
@@ -331,7 +347,9 @@ export default function BookingModal() {
           </div>
 
           <button
-            onClick={closeBookingModal}
+            onClick={() => {
+        if (!isSubmitting) closeBookingModal();
+      }}
             style={{
               background: '#FFFFFF',
               border: '1px solid #EAE5D9',
@@ -632,7 +650,7 @@ export default function BookingModal() {
                         </span>
                       </div>
                       <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
-                        {c.name === 'Pune' ? 'Headquarters • In-Person' : (c.popular ? 'Direct In-Person' : 'Pan-India In-Person / E-Puja')}
+                        {c.name === 'Pune' ? 'Pune Hub • In-Person' : (c.popular ? 'Direct In-Person' : 'Pan-India In-Person / E-Puja')}
                       </div>
                     </div>
                   );
@@ -1033,6 +1051,17 @@ export default function BookingModal() {
           {/* ======================================================== */}
           {step === 'details' && (
             <form onSubmit={handleSubmitEnquiry}>
+              {/* Honeypot anti-spam field */}
+              <input
+                type="text"
+                name="website_hp"
+                value={websiteHp}
+                onChange={e => setWebsiteHp(e.target.value)}
+                style={{ display: 'none' }}
+                tabIndex="-1"
+                autoComplete="off"
+                aria-hidden="true"
+              />
               {/* Summary Bar */}
               <div
                 style={{
@@ -1220,9 +1249,8 @@ export default function BookingModal() {
                       }}
                     >
                       <option value="Hindi & Sanskrit">Hindi &amp; Sanskrit</option>
-                      <option value="Marathi & Sanskrit">Marathi &amp; Sanskrit</option>
-                      <option value="Sanskrit Only">Sanskrit Only</option>
-                      <option value="English Guidance">English Guidance</option>
+                      <option value="Hindi Only">Hindi (Katha &amp; Vidhi)</option>
+                      <option value="Sanskrit Only">Sanskrit (Mantras)</option>
                     </select>
                   </div>
                 </div>
@@ -1272,6 +1300,7 @@ export default function BookingModal() {
 
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   style={{
                     padding: '12px 28px',
                     borderRadius: '10px',
@@ -1280,193 +1309,49 @@ export default function BookingModal() {
                     border: 'none',
                     fontSize: '14px',
                     fontWeight: 800,
-                    cursor: 'pointer',
+                    cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                    opacity: isSubmitting ? 0.75 : 1,
                     boxShadow: '0 4px 14px rgba(189, 75, 35, 0.25)'
                   }}
                 >
-                  Submit Honest Enquiry
+                  {isSubmitting ? 'Submitting Enquiry...' : 'Submit Ceremony Enquiry'}
                 </button>
               </div>
             </form>
           )}
 
           {/* ======================================================== */}
-          {/* STEP 6: ENQUIRY CONFIRMATION (HONEST STATUS) */}
+          {/* STEP 6: ENQUIRY CONFIRMATION (REDESIGNED) */}
           {/* ======================================================== */}
-          {step === 'confirmation' && submittedEnquiry && (
-            <div style={{ textAlign: 'center', padding: '10px 0' }}>
-              <div
-                style={{
-                  width: '56px',
-                  height: '56px',
-                  borderRadius: '50%',
-                  background: '#DCFCE7',
-                  color: '#166534',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  margin: '0 auto 14px auto'
+          {step === 'confirmation' && (
+            <div style={{ padding: '6px 0' }}>
+              <EnquiryConfirmationView
+                state={
+                  isSubmitting
+                    ? 'loading'
+                    : (submittedEnquiry?.success
+                        ? 'success'
+                        : (submittedEnquiry?.status === 'unavailable' || submittedEnquiry?.isUnavailable
+                            ? 'unavailable'
+                            : 'error'))
+                }
+                enquiryType="booking_enquiry"
+                enquiryData={{
+                  customerName: customerName || 'Devotee',
+                  phone,
+                  serviceName: activeService?.name,
+                  city,
+                  locality,
+                  selectedPackage: selectedPkg?.name || 'Vedic Vidhi',
+                  packagePrice: pricingSummary.displayString,
+                  preferredDate: needMuhuratConsult ? 'Auspicious Muhurat Consultation' : (date || 'Date to be confirmed'),
+                  preferredTimeSlot: timeSlot
                 }}
-              >
-                <CheckCircle2 size={32} />
-              </div>
-
-              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '22px', fontWeight: 800, color: 'var(--text-main)', marginBottom: '6px' }}>
-                Puja Enquiry Registered
-              </h3>
-
-              <div
-                style={{
-                  display: 'inline-block',
-                  background: '#FDFBF7',
-                  border: '1px solid #EAE5D9',
-                  borderRadius: '8px',
-                  padding: '4px 12px',
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  color: '#BD4B23',
-                  marginBottom: '16px'
-                }}
-              >
-                Ref #{submittedEnquiry.id}
-              </div>
-
-              {/* Honest Notice */}
-              <div
-                style={{
-                  background: '#FEF3C7',
-                  border: '1px solid #FDE68A',
-                  borderRadius: '12px',
-                  padding: '12px 16px',
-                  textAlign: 'left',
-                  fontSize: '12px',
-                  color: '#92400E',
-                  marginBottom: '20px',
-                  lineHeight: 1.45
-                }}
-              >
-                <strong>Transparent Booking Policy:</strong> No automatic deduction or fake payment has occurred. Your enquiry is recorded on your device. Our Acharya team will review the Muhurat, verify Panditji availability in {city}, and provide a confirmed quote before final confirmation.
-              </div>
-
-              {/* Summary Card */}
-              <div
-                style={{
-                  background: '#FFFFFF',
-                  border: '1px solid #EAE5D9',
-                  borderRadius: '14px',
-                  padding: '16px',
-                  textAlign: 'left',
-                  fontSize: '13px',
-                  marginBottom: '20px'
-                }}
-              >
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-                  <div>
-                    <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Ceremony &amp; City:</span>
-                    <strong>{submittedEnquiry.serviceName} ({submittedEnquiry.city})</strong>
-                  </div>
-                  <div>
-                    <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Package Selected:</span>
-                    <strong>{submittedEnquiry.packageName}</strong>
-                  </div>
-                  <div>
-                    <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Devotee Name:</span>
-                    <span>{submittedEnquiry.customerName} ({submittedEnquiry.phone})</span>
-                  </div>
-                  <div>
-                    <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Estimated Dakshina:</span>
-                    <strong style={{ color: '#BD4B23' }}>{submittedEnquiry.packagePrice}</strong>
-                  </div>
-                </div>
-              </div>
-
-              {/* Optional Contact Actions */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <button
-                  type="button"
-                  onClick={() => openWhatsAppEnquiry(`Namaste Panditji, I have submitted an enquiry for ${submittedEnquiry.serviceName} in ${city} (Ref: ${submittedEnquiry.id}). Please confirm availability.`)}
-                  style={{
-                    width: '100%',
-                    padding: '12px',
-                    borderRadius: '10px',
-                    background: '#25D366',
-                    color: '#FFFFFF',
-                    border: 'none',
-                    fontWeight: 700,
-                    fontSize: '13px',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '8px'
-                  }}
-                >
-                  <MessageCircle size={16} />
-                  <span>Share Enquiry on WhatsApp with Panditji</span>
-                </button>
-
-                <div style={{ display: 'flex', gap: '10px' }}>
-                  <button
-                    type="button"
-                    onClick={callHelpline}
-                    style={{
-                      flex: 1,
-                      padding: '10px',
-                      borderRadius: '10px',
-                      background: '#FFFFFF',
-                      border: '1px solid #D8D2C4',
-                      color: 'var(--text-main)',
-                      fontWeight: 600,
-                      fontSize: '12px',
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '6px'
-                    }}
-                  >
-                    <PhoneCall size={14} color="#BD4B23" />
-                    <span>Call Helpline</span>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => {
-                      closeBookingModal();
-                      navigateTo('my-account');
-                    }}
-                    style={{
-                      flex: 1,
-                      padding: '10px',
-                      borderRadius: '10px',
-                      background: '#FFFFFF',
-                      border: '1px solid #D8D2C4',
-                      color: 'var(--text-main)',
-                      fontWeight: 600,
-                      fontSize: '12px',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    View My Enquiries
-                  </button>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={closeBookingModal}
-                  style={{
-                    marginTop: '4px',
-                    background: 'none',
-                    border: 'none',
-                    color: 'var(--text-muted)',
-                    fontSize: '12px',
-                    cursor: 'pointer',
-                    textDecoration: 'underline'
-                  }}
-                >
-                  Close &amp; Return to Website
-                </button>
-              </div>
+                result={submittedEnquiry}
+                onRetry={handleSubmitEnquiry}
+                onClose={closeBookingModal}
+                onEdit={() => setStep('details')}
+              />
             </div>
           )}
 

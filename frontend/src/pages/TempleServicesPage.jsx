@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { TEMPLE_SERVICES } from '../data/vedicPanditData';
+import { submitEnquiryToWebhook, generateSubmissionId } from '../services/webhookService';
+import EnquiryConfirmationView from '../components/common/EnquiryConfirmationView';
 import {
   MapPin,
   ArrowRight,
   Video,
-  X,
-  CheckCircle2,
-  MessageCircle
+  X
 } from 'lucide-react';
 
 export default function TempleServicesPage() {
-  const { navigateTo, openBookingModal, openWhatsAppEnquiry, setEnquiries, showToast, user } = useApp();
+  const { navigateTo, openBookingModal, showToast, user } = useApp();
 
   const [selectedTempleForSeva, setSelectedTempleForSeva] = useState(null);
   const [selectedRitualName, setSelectedRitualName] = useState('');
@@ -22,7 +22,10 @@ export default function TempleServicesPage() {
   const [preferredDate, setPreferredDate] = useState('');
   const [ancestorNotes, setAncestorNotes] = useState('');
   const [sevaSubmitted, setSevaSubmitted] = useState(false);
-  const [submittedRef, setSubmittedRef] = useState('');
+  const [websiteHp, setWebsiteHp] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionResult, setSubmissionResult] = useState(null);
+  const [submissionId, setSubmissionId] = useState(null);
 
   const handleOpenSevaModal = (temple) => {
     setSelectedTempleForSeva(temple);
@@ -34,48 +37,74 @@ export default function TempleServicesPage() {
     setPreferredDate('');
     setAncestorNotes('');
     setSevaSubmitted(false);
+    setSubmissionResult(null);
+    setSubmissionId(null);
   };
 
   const handleCloseSevaModal = () => {
+    if (isSubmitting) return; // Prevent accidental close mid-flight
     setSelectedTempleForSeva(null);
     setSevaSubmitted(false);
+    setSubmissionResult(null);
+    setSubmissionId(null);
   };
 
-  const handleSevaSubmit = (e) => {
-    e.preventDefault();
+  const handleSevaSubmit = async (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    if (isSubmitting) return;
+
     if (!devoteeName.trim() || !devoteePhone.trim()) {
       showToast('Please enter your name and contact phone number', 'error');
       return;
     }
 
-    const refId = `SEVA-2026-${Math.floor(1000 + Math.random() * 9000)}`;
-    setSubmittedRef(refId);
+    setIsSubmitting(true);
+    setSevaSubmitted(true);
+
+    const activeSubId = submissionId || generateSubmissionId();
+    if (!submissionId) {
+      setSubmissionId(activeSubId);
+    }
 
     const activeRitual = selectedTempleForSeva?.rituals?.find(r => r.name === selectedRitualName) || {
       name: selectedRitualName,
       price: selectedTempleForSeva?.startingPrice || 4200
     };
 
-    const newEnquiry = {
-      id: refId,
-      date: new Date().toISOString().split('T')[0],
-      service: `Temple Seva: ${selectedTempleForSeva?.title || selectedTempleForSeva?.name} - ${activeRitual.name}`,
-      category: 'Temple Pilgrimage',
-      package: sevaMode,
-      price: activeRitual.price,
-      customerName: devoteeName,
-      phone: devoteePhone,
-      city: selectedTempleForSeva?.location || selectedTempleForSeva?.state,
-      dateSlot: preferredDate || 'As per Shubh Muhurat / Tithi',
-      gotra: gotra || 'Kashyap / Devotee Gotra',
-      address: sevaMode === 'Remote Sankalpam & Courier Prasad' ? 'Remote (Prasadam Courier)' : 'In-Person Kshetra Visit',
-      status: 'Enquiry Received',
-      notes: ancestorNotes || `Ritual: ${activeRitual.name}. Mode: ${sevaMode}`
-    };
+    const result = await submitEnquiryToWebhook({
+      submissionId: activeSubId,
+      formType: 'temple_seva_enquiry',
+      customerName: devoteeName.trim(),
+      phone: devoteePhone.trim(),
+      serviceName: `Temple Seva: ${selectedTempleForSeva?.title || selectedTempleForSeva?.name} - ${activeRitual.name}`,
+      selectedPuja: `Temple Seva: ${selectedTempleForSeva?.title || selectedTempleForSeva?.name}`,
+      packageName: `${activeRitual.name} (${sevaMode})`,
+      packagePrice: activeRitual.price ? `₹${activeRitual.price.toLocaleString('en-IN')}` : null,
+      city: selectedTempleForSeva?.location || selectedTempleForSeva?.state || 'Sacred Tirtha Kshetra',
+      date: preferredDate || null,
+      templeName: selectedTempleForSeva?.title || selectedTempleForSeva?.name,
+      ritualName: activeRitual.name,
+      sevaMode: sevaMode,
+      gotra: gotra.trim() || null,
+      ancestorNotes: ancestorNotes.trim() || null,
+      notes: [
+        gotra ? `Gotra: ${gotra.trim()}` : '',
+        `Mode: ${sevaMode}`,
+        ancestorNotes ? `Notes: ${ancestorNotes.trim()}` : ''
+      ].filter(Boolean).join(' | '),
+      website_hp: websiteHp
+    });
 
-    setEnquiries(prev => [newEnquiry, ...(prev || [])]);
-    setSevaSubmitted(true);
-    showToast('Temple Seva enquiry submitted successfully!');
+    setIsSubmitting(false);
+    setSubmissionResult(result);
+
+    if (result.success) {
+      showToast('Temple Seva enquiry submitted successfully!');
+    } else if (result.status === 'unavailable' || !result.isConfigured) {
+      showToast('Online enquiry could not be sent. Please contact Panditji via WhatsApp or Phone.', 'warning');
+    } else {
+      showToast(result.message || 'Could not submit enquiry. Please call or WhatsApp Panditji directly.', 'error');
+    }
   };
 
   return (
@@ -329,6 +358,17 @@ export default function TempleServicesPage() {
               <div style={{ padding: '24px' }}>
                 {!sevaSubmitted ? (
                   <form onSubmit={handleSevaSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                    {/* Honeypot anti-spam field */}
+                    <input
+                      type="text"
+                      name="website_hp"
+                      value={websiteHp}
+                      onChange={e => setWebsiteHp(e.target.value)}
+                      style={{ display: 'none' }}
+                      tabIndex="-1"
+                      autoComplete="off"
+                      aria-hidden="true"
+                    />
                     {/* Ritual Select */}
                     <div>
                       <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, marginBottom: '6px', color: 'var(--text-main)' }}>
@@ -546,63 +586,35 @@ export default function TempleServicesPage() {
                     </div>
                   </form>
                 ) : (
-                  <div style={{ textAlign: 'center', padding: '20px 10px' }}>
-                    <div
-                      style={{
-                        width: '60px',
-                        height: '60px',
-                        borderRadius: '50%',
-                        background: '#E8F5E9',
-                        color: '#2E7D32',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        margin: '0 auto 16px'
-                      }}
-                    >
-                      <CheckCircle2 size={32} />
-                    </div>
-                    <div style={{ fontSize: '12px', fontWeight: 700, color: '#BD4B23', textTransform: 'uppercase', marginBottom: '4px' }}>
-                      Reference ID: {submittedRef}
-                    </div>
-                    <h3 style={{ fontSize: '20px', fontWeight: 800, marginBottom: '8px', color: 'var(--text-main)' }}>
-                      Har Har Mahadev! Seva Registered
-                    </h3>
-                    <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
-                      Your pilgrimage seva request for <strong>{selectedTempleForSeva.title || selectedTempleForSeva.name}</strong> ({selectedRitualName}) has been noted. Our senior Vedic Acharyas and the local Kshetra Tirtha Purohit will connect with you to confirm the Shubh Muhurat and Sankalpam details.
-                    </p>
-
-                    <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                      <button
-                        type="button"
-                        onClick={() => openWhatsAppEnquiry(`Namaste Panditji, I have submitted a pilgrimage seva request for ${selectedTempleForSeva.title || selectedTempleForSeva.name} (${selectedRitualName}), Reference: ${submittedRef}. Devotee: ${devoteeName}, Gotra: ${gotra || 'Not specified'}.`)}
-                        style={{
-                          background: '#25D366',
-                          color: '#FFFFFF',
-                          border: 'none',
-                          padding: '12px 22px',
-                          borderRadius: '12px',
-                          fontSize: '13px',
-                          fontWeight: 700,
-                          cursor: 'pointer',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '6px'
-                        }}
-                      >
-                        <MessageCircle size={16} />
-                        <span>Send Details on WhatsApp</span>
-                      </button>
-                      <button
-                        type="button"
-                        onClick={handleCloseSevaModal}
-                        className="btn-secondary"
-                        style={{ padding: '12px 20px', fontSize: '13px', cursor: 'pointer' }}
-                      >
-                        Close
-                      </button>
-                    </div>
-                  </div>
+                  <EnquiryConfirmationView
+                    state={
+                      isSubmitting
+                        ? 'loading'
+                        : (submissionResult?.success
+                            ? 'success'
+                            : (submissionResult?.status === 'unavailable' || submissionResult?.isUnavailable
+                                ? 'unavailable'
+                                : 'error'))
+                    }
+                    enquiryType="temple_seva_enquiry"
+                    enquiryData={{
+                      customerName: devoteeName,
+                      phone: devoteePhone,
+                      templeName: selectedTempleForSeva.title || selectedTempleForSeva.name,
+                      ritualName: selectedRitualName,
+                      sevaMode: sevaMode,
+                      gotra: gotra,
+                      preferredDate: preferredDate,
+                      ancestorNotes: ancestorNotes
+                    }}
+                    result={submissionResult}
+                    onRetry={handleSevaSubmit}
+                    onClose={handleCloseSevaModal}
+                    onEdit={() => {
+                      setSevaSubmitted(false);
+                      setSubmissionResult(null);
+                    }}
+                  />
                 )}
               </div>
             </div>

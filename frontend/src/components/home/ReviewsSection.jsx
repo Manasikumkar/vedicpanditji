@@ -8,10 +8,10 @@ export default function ReviewsSection() {
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <span className="section-tag">Devotee Experiences</span>
-          <h2 className="section-title">Verified Google Customer Reviews</h2>
+          <span className="section-tag">Devotee Feedback</span>
+          <h2 className="section-title">Ceremony Experiences &amp; Feedback</h2>
           <p className="section-desc">
-            Rated {BRAND_INFO.rating} / 5.0 on Google based on {BRAND_INFO.reviewsCount}+ verified customer reviews for the VedicPanditji team across Pune, Mumbai, Bangalore &amp; beyond.
+            Experiences shared by families who conducted Griha Pravesh, Satyanarayan Katha, Vastu Shanti, and Vedic Havans with VedicPanditji.
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export default function ReviewsSection() {
                   }}
                 >
                   <CheckCircle2 size={11} />
-                  <span>Google Verified</span>
+                  <span>Devotee Feedback</span>
                 </span>
               </div>
 

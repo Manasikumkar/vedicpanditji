@@ -6,8 +6,7 @@ import {
   Menu,
   X,
   PhoneCall,
-  CalendarCheck,
-  User
+  CalendarCheck
 } from 'lucide-react';
 
 export default function Navbar() {
@@ -15,7 +14,6 @@ export default function Navbar() {
     currentRoute,
     navigateTo,
     openBookingModal,
-    user
   } = useApp();
 
   const [scrolled, setScrolled] = useState(false);
@@ -59,6 +57,12 @@ export default function Navbar() {
   const isNavActive = (route) => {
     if (route === 'catalogue') {
       return currentRoute === 'catalogue' || currentRoute === 'service-detail';
+    }
+    if (route === 'locations') {
+      return currentRoute === 'location-detail';
+    }
+    if (route === 'puja-guides') {
+      return currentRoute === 'puja-guides-hub' || currentRoute === 'puja-guide-detail';
     }
     if (route === 'about-us') {
       return currentRoute === 'about-us' || currentRoute === 'about';
@@ -123,16 +127,16 @@ export default function Navbar() {
               onClick={() => handleNavClick('catalogue')}
               className={`vp-nav-link ${isNavActive('catalogue') ? 'active' : ''}`}
             >
-              <span>Pooja Services</span>
+              <span>Ceremonies</span>
               <span className="vp-nav-indicator" />
             </button>
 
             <button
               type="button"
-              onClick={() => handleNavClick('temple-services')}
-              className={`vp-nav-link ${isNavActive('temple-services') ? 'active' : ''}`}
+              onClick={() => handleNavClick('location-detail', { slug: 'pandit-in-pune' })}
+              className={`vp-nav-link ${isNavActive('locations') ? 'active' : ''}`}
             >
-              <span>Temple Services</span>
+              <span>Locations</span>
               <span className="vp-nav-indicator" />
             </button>
 
@@ -158,17 +162,6 @@ export default function Navbar() {
               <PhoneCall size={13} color="var(--accent-saffron)" />
               <span className="vp-phone-text">{BRAND_INFO.phone}</span>
             </a>
-
-            {/* Devotee Account / Login Link */}
-            <button
-              type="button"
-              onClick={() => handleNavClick(user?.isLoggedIn ? 'account' : 'auth')}
-              className="vp-auth-btn"
-              title={user?.isLoggedIn ? `Devotee Account (${user.name || 'Profile'})` : 'Devotee Login / Register'}
-            >
-              <User size={13} color={user?.isLoggedIn ? 'var(--accent-saffron)' : '#6E6B65'} />
-              <span>{user?.isLoggedIn ? (user.name ? user.name.split(' ')[0] : 'Account') : 'Login'}</span>
-            </button>
 
             {/* Primary Action CTA — Book a Pandit */}
             <button
@@ -238,7 +231,7 @@ export default function Navbar() {
                 onClick={() => handleNavClick('about-us')}
                 className={`vp-drawer-link ${isNavActive('about-us') ? 'active' : ''}`}
               >
-                <span>📖 About Us</span>
+                <span>✨ About Us</span>
               </button>
 
               <button
@@ -246,15 +239,23 @@ export default function Navbar() {
                 onClick={() => handleNavClick('catalogue')}
                 className={`vp-drawer-link ${isNavActive('catalogue') ? 'active' : ''}`}
               >
-                <span>🪔 Pooja Services</span>
+                <span>🪔 Ceremonies</span>
               </button>
 
               <button
                 type="button"
-                onClick={() => handleNavClick('temple-services')}
-                className={`vp-drawer-link ${isNavActive('temple-services') ? 'active' : ''}`}
+                onClick={() => handleNavClick('location-detail', { slug: 'pandit-in-pune' })}
+                className={`vp-drawer-link ${isNavActive('locations') ? 'active' : ''}`}
               >
-                <span>🛕 Temple Services</span>
+                <span>📍 Pune &amp; PCMC Locations</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => handleNavClick('faqs')}
+                className={`vp-drawer-link ${isNavActive('faqs') ? 'active' : ''}`}
+              >
+                <span>❓ FAQs</span>
               </button>
 
               <button
@@ -263,14 +264,6 @@ export default function Navbar() {
                 className={`vp-drawer-link ${isNavActive('contact') ? 'active' : ''}`}
               >
                 <span>📞 Contact</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => handleNavClick(user?.isLoggedIn ? 'account' : 'auth')}
-                className={`vp-drawer-link ${isNavActive('account') || isNavActive('auth') ? 'active' : ''}`}
-              >
-                <span>👤 {user?.isLoggedIn ? 'My Account & Enquiries' : 'Devotee Login / Register'}</span>
               </button>
             </nav>
 

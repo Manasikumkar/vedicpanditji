@@ -20,7 +20,7 @@ export default function HomePage() {
       <MultiCitySection />
       <HowItWorksSection />
       <TempleServicesSection />
-      <ReviewsSection />
+      {/* Devotee feedback hidden from public display pending business authenticity verification */}
       <TrustCredentials />
       <MediaCoverage />
     </div>

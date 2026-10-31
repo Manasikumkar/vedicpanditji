@@ -25,9 +25,9 @@ const VEDIC_PROCESS_STEPS = [
   },
   {
     step: '03',
-    title: 'Certified Gurukul Pandit Assigned to Your Home',
+    title: 'Experienced Vedic Pandit Assigned to Your Home',
     subtitle: 'North Indian & Bihari Priests with Hindi & Sanskrit Vidhi',
-    description: 'A verified Gurukul-trained pandit conducts your ceremony with pristine Sanskrit shlokas and fluent Hindi Katha, arriving punctually with all requisite sacred paraphernalia and hawan kund.'
+    description: 'A verified Vedic pandit conducts your ceremony with pristine Sanskrit shlokas and fluent Hindi Katha, arriving punctually with all requisite sacred paraphernalia and hawan kund.'
   },
   {
     step: '04',
@@ -37,10 +37,10 @@ const VEDIC_PROCESS_STEPS = [
   }
 ];
 
-const VEDIC_GUARANTEES = [
+const VEDIC_STANDARDS = [
   {
-    title: 'Gurukul-Certified Acharyas',
-    desc: 'Trained in authentic Vedic pathashalas and Karmakanda with flawless Sanskrit pronunciation and scriptural mastery.'
+    title: 'Experienced Vedic Acharyas',
+    desc: 'Trained in Vedic Karmakanda with accurate Sanskrit pronunciation and scriptural devotion.'
   },
   {
     title: '100% Shuddha Hawan Samagri',
@@ -52,7 +52,7 @@ const VEDIC_GUARANTEES = [
   },
   {
     title: 'Doorstep & All-India Service Coverage',
-    desc: 'Punctual resident doorstep service across Pune & MMR, with visiting Acharyas and live interactive HD E-Pujas nationwide.'
+    desc: 'Punctual doorstep service across Pune & MMR, with visiting Acharyas and live interactive HD E-Pujas nationwide.'
   }
 ];
 
@@ -149,12 +149,12 @@ export default function HowWeWorkPage() {
           <div style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto 36px' }}>
             <span className="section-tag">Quality Assurance</span>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '26px', fontWeight: 700 }}>
-              The 4 Core VedicPanditji Guarantees
+              The 4 Core Vedic Service Standards
             </h2>
           </div>
 
           <div className="grid-2" style={{ gap: '24px' }}>
-            {VEDIC_GUARANTEES.map((p, i) => (
+            {VEDIC_STANDARDS.map((p, i) => (
               <div
                 key={i}
                 style={{
