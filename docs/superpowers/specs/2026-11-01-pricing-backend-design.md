@@ -22,6 +22,16 @@ Add a small backend, with no database, that lets the owner manage all pricing sh
 | Editing | Password-protected admin page served by the backend |
 | Editable scope | Full rate-card editing: prices, status, notes, package names, inclusions, exclusions, badges, samagri add-ons |
 | Backend deploy | Action publishes `backend/` and a seed file to a `deploy-api` branch |
+| Languages | Pricing data is language-ready: English, Hindi and Marathi text per field. The site-wide multilingual work (switcher, routing, prerender per language, `hreflang`) is a separate later spec |
+
+## Language-ready data model
+
+- Every customer-facing text field is stored as an object `{ "en": "...", "hi": "...", "mr": "..." }`. This covers service name, package name, badge, price note, pricing note, pricing rationale, each inclusion and exclusion, and samagri add-on names and descriptions.
+- `en` is required. `hi` and `mr` are optional. A missing or empty translation falls back to `en`, so the site never shows a blank.
+- Internal fields (`researchBasis`, `missingBusinessInfo`, approval flags) are English-only plain strings and are never shown to customers.
+- Numbers (prices, min and max, quantities) are shared across languages. Display strings such as `₹3,500*` are generated from the numbers using `en-IN` formatting. Per-language numerals and wording are decided in the multilingual spec.
+- Lookup functions in `pujaPricing.js` take an optional `lang` argument (default `'en'`) and resolve each text field with the fallback. Until the multilingual project ships, every caller passes nothing and behaves exactly as today.
+- IDs and slugs stay language-neutral.
 
 ## Architecture
 
@@ -59,6 +69,7 @@ The server file is canonical. Hand edits to `pricing.json` in the repo are overw
 - A single static HTML page with plain JS. No build step, no framework.
 - Left: searchable list of the 59 services. Right: form for the selected service, with add, remove and reorder lists for packages, inclusions and exclusions. A separate tab edits samagri add-ons.
 - Money fields accept numbers. Display strings such as `₹3,500*` are generated from them.
+- Each text field has EN, HI and MR tabs. A badge on the service list and on each tab shows which translations are still empty, so missing Hindi or Marathi is visible but never blocks saving.
 - Buttons: Save, Revert to previous.
 
 ## Auth and safety
@@ -79,14 +90,17 @@ The server file is canonical. Hand edits to `pricing.json` in the repo are overw
 
 ## Migration
 
-A one-time script reads the 59 rate cards, the 4 preserved local packages and the samagri options out of `pujaPricing.js` and writes `pricing.json` (also used as `pricing.seed.json`). `pujaPricing.js` is then trimmed to load that JSON and keep its functions. The script verifies that `getPricingDisplay` and `getPackagesForService` return identical output before and after for every service.
+A one-time script reads the 59 rate cards, the 4 preserved local packages and the samagri options out of `pujaPricing.js` and writes `pricing.json` (also used as `pricing.seed.json`). Existing text becomes the `en` value of each text field, with `hi` and `mr` left empty. `pujaPricing.js` is then trimmed to load that JSON and keep its functions. The script verifies that `getPricingDisplay` and `getPackagesForService` return identical output before and after for every service.
 
 ## Testing
 
-- Backend: Node's built-in test runner covers auth, validation, atomic write and backup, seed on first start, and revert. The GitHub call is mocked.
+- Backend: Node's built-in test runner covers auth, validation (including the per-language text shape), atomic write and backup, seed on first start, and revert.
+- Language fallback: a test confirms that an empty `hi` or `mr` value resolves to `en`. The GitHub call is mocked.
 - Frontend: the before/after equivalence check, plus a full build to confirm prerender and schema output are unchanged.
 - Manual: log in, edit one price, confirm the live site updates at once and the rebuild finishes later.
 
 ## Out of scope
 
 Per-user accounts, change-history UI, and any content beyond pricing (enquiries, guides, locations).
+
+The site-wide multilingual work is a separate spec and build, to follow this one: language switcher with English as default, Hindi and Marathi UI strings, translated routes, per-language prerender, `hreflang` tags and sitemap entries, and translating the rest of the site content.
