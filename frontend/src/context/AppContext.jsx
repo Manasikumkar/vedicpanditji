@@ -68,6 +68,7 @@ export function AppProvider({ children }) {
     if (path === '/temple-services') return { route: 'temple-services', params: {} };
     if (path === '/legal' || path === '/policies') return { route: 'policies', params: {} };
     if (path === '/sitemap' || path === '/sitemap.html') return { route: 'sitemap', params: {} };
+    if (path === '/admin') return { route: 'admin', params: {} };
     if (path === '/404' || path === '/404.html') return { route: 'not-found', params: {} };
 
     // 7. Any other unknown route triggers dedicated 404 page (no soft-404)
