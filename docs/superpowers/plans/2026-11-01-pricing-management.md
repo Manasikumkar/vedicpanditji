@@ -1227,7 +1227,7 @@ node scripts/check-pricing-equivalence.mjs
 npm run lint
 ```
 
-Expected: `OK: 357 comparisons identical` (59 services plus one unknown, 2 plus 6 comparisons each, plus 2 more) and a clean lint. Any mismatch names the function and service; fix the data layer, not the check.
+Expected: `OK: 482 comparisons identical` (60 ids, 8 comparisons each, plus 2 more) and a clean lint. Any mismatch names the function and service; fix the data layer, not the check.
 
 - [ ] **Step 10: Commit**
 
@@ -1403,7 +1403,7 @@ Expected: build completes (prerender writes the pages). Then:
 npm run dev
 ```
 
-Open a service page, then in the Supabase SQL editor run `update public.pricing set data = jsonb_set(data, '{rateCards,griha-pravesh,minPrice}', '3600');` is blocked for the postgres role? It is not: the SQL editor bypasses RLS, so it works. Reload the page: the starting price shows `From ₹3,600*` with no rebuild. Revert with `... '3500'`.
+Open the Griha Pravesh service page, then in the Supabase SQL editor run `update public.pricing set data = jsonb_set(data, '{rateCards,griha-pravesh,minPrice}', '3600');`. The SQL editor runs as the table owner, so row-level security does not block it. Reload the page: the starting price shows `From ₹3,600*` with no rebuild. Revert with the same statement using `'3500'`.
 
 - [ ] **Step 6: Commit**
 
