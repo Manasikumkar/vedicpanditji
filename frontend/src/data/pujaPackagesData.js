@@ -4,9 +4,7 @@
 export {
   PRICING_MODELS,
   VERIFICATION_STATUS,
-  LOCAL_PROJECT_PACKAGES,
-  VERIFIED_PUJA_PACKAGES,
-  OPTIONAL_SAMAGRI_OPTIONS,
+  getOptionalSamagriOptions,
   getServiceId,
   getPujaPricing,
   getPackagesForService,

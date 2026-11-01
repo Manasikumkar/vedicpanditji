@@ -4,7 +4,7 @@ import { SERVICES, CITIES } from '../../data/vedicPanditData';
 import { animateModalOpen } from '../../utils/gsapAnimations';
 import {
   getPackagesForService,
-  OPTIONAL_SAMAGRI_OPTIONS,
+  getOptionalSamagriOptions,
   calculateBookingTotal
 } from '../../data/pujaPackagesData';
 import EnquiryConfirmationView from './EnquiryConfirmationView';
@@ -31,6 +31,7 @@ export default function BookingModal() {
     completeBooking,
     user
   } = useApp();
+  const samagriOptions = getOptionalSamagriOptions();
 
   // Step names: 'puja' (1) | 'city' (2) | 'packages' (3) | 'samagri' (4) | 'details' (5) | 'confirmation' (6)
   const [step, setStep] = useState('puja');
@@ -181,7 +182,7 @@ export default function BookingModal() {
 
     // Collect names of selected extra samagri items
     const selectedExtraNames = selectedExtras
-      .map(id => OPTIONAL_SAMAGRI_OPTIONS.find(o => o.id === id)?.name)
+      .map(id => samagriOptions.find(o => o.id === id)?.name)
       .filter(Boolean);
 
     const enquiryRecord = await completeBooking({
@@ -911,7 +912,7 @@ export default function BookingModal() {
 
               {/* Samagri Checklist Grid */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
-                {OPTIONAL_SAMAGRI_OPTIONS.map(opt => {
+                {samagriOptions.map(opt => {
                   const isIncludedInBase = (selectedPkg?.includedSamagriIds || (selectedPkg?.tier === 'popular' ? ['opt-havan-samagri', 'opt-cow-ghee', 'opt-complete-kit'] : [])).includes(opt.id);
                   const isChecked = isIncludedInBase || selectedExtras.includes(opt.id);
 

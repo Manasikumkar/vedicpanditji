@@ -11,7 +11,7 @@ import {
 import {
   getPujaPricing,
   PRICING_MODELS,
-  OPTIONAL_SAMAGRI_OPTIONS,
+  getOptionalSamagriOptions,
   getCityNote
 } from '../../data/pujaPricing';
 
@@ -32,6 +32,7 @@ export default function PricingPackagesSection({
 
   const pricing = getPujaPricing(service, city);
   const { model, packages, hasPackages } = pricing;
+  const samagriOptions = getOptionalSamagriOptions();
 
   return (
     <section id="pricing-packages" style={{ marginBottom: '40px' }}>
@@ -611,7 +612,7 @@ export default function PricingPackagesSection({
                 gap: '14px'
               }}
             >
-              {OPTIONAL_SAMAGRI_OPTIONS.map((item) => (
+              {samagriOptions.map((item) => (
                 <div
                   key={item.id}
                   style={{

@@ -23,7 +23,7 @@ export default defineConfig({
           if (id.includes('src/data/locations/')) {
             return 'data-locations';
           }
-          if (id.includes('src/data/allPoojaServices') || id.includes('src/data/pujaPricing')) {
+          if (id.includes('src/data/allPoojaServices') || id.includes('src/data/pujaPricing') || id.includes('src/data/pricing.json')) {
             return 'data-pricing';
           }
         }
