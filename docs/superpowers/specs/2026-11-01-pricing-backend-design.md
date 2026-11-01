@@ -60,14 +60,14 @@ All 59 legacy cards reproduce their existing strings under this rule.
 
 - Row-level security is on for both tables.
 - Anyone can read `pricing` with the public anon key.
-- Only the admin user, identified by user ID in the policy, can update `pricing`. Nobody can insert or delete rows through the API.
+- Only an admin can update `pricing`. Admins are the user IDs listed in an `admin_users` table that clients cannot read or write; the policies call a `security definer` function `is_pricing_admin()`. Column-level grants let an admin change only the `data` column. Nobody can insert or delete rows through the API.
 - `pricing_history` is readable by the admin only.
 - Public signups are disabled in Supabase Auth. The admin user is created manually.
 - The anon key is public by design, so row-level security is the only protection. Tests must prove an anonymous user cannot write.
 
 ## Validation (Postgres)
 
-A function `validate_pricing(data jsonb)` raises an error that names the failing path. A `BEFORE UPDATE` trigger on `pricing` calls it and also recomputes the display strings. It rejects:
+A function `validate_pricing(data jsonb)` raises an error that names the failing path. A `BEFORE INSERT OR UPDATE` trigger on `pricing` calls it, so the seed is validated too, and also recomputes the display strings. Prices must be whole numbers. It rejects:
 
 - Models outside `fixed-price`, `package-pricing`, `custom-quote`, and statuses outside `approved`, `local-project-data`, `proposed`, `needs-business-confirmation`.
 - Prices that are not non-negative numbers (or null where allowed), and `minPrice` greater than `maxPrice`.
@@ -92,7 +92,7 @@ A function `validate_pricing(data jsonb)` raises an error that names the failing
 - Each text field shows EN, HI and MR inputs. A global EN, HI, MR or All switch picks which are visible, and a counter shows missing translations. A missing translation never blocks saving.
 - Packages and inclusion or exclusion lists can be added, removed and reordered. Services and samagri items cannot be added or removed.
 - Buttons: Save, Revert to previous (restores the newest `pricing_history` row), Logout.
-- Postgres validation errors are shown against the failing field.
+- Postgres validation errors appear in a banner that names the failing path, and the editor jumps to the service or tab that contains it.
 - Built with plain React and no new UI library.
 
 ## Deployment
