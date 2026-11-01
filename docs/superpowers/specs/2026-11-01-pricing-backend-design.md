@@ -78,7 +78,7 @@ The server file is canonical. Hand edits to `pricing.json` in the repo are overw
 - Login sets an HttpOnly, Secure, SameSite=Strict session cookie scoped to the API host. Sessions are held in memory, so a restart logs the admin out.
 - Failed logins are rate-limited per IP. Every write endpoint requires a valid session.
 - `GET /api/pricing` is the only public route. The backend sends CORS headers allowing only `https://vedicpanditji.com`.
-- The save endpoint rejects: duplicate IDs, prices that are not non-negative numbers, missing required fields, and payloads over a size limit.
+- The save endpoint rejects: duplicate IDs, prices that are not non-negative numbers, missing required fields (including an empty `en` value on any text field), text fields that are not an object with string values for the keys `en`, `hi` and `mr` only, and payloads over a size limit.
 - `GITHUB_TOKEN` is a fine-grained token limited to this repository's contents.
 - Known limitation: one shared password and no audit trail of who changed what.
 
