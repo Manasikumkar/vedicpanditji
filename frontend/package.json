@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/fetch-pricing.mjs",
     "build": "vite build && node scripts/prerender.js",
     "lint": "oxlint",
     "test": "node --test \"src/**/*.test.js\"",

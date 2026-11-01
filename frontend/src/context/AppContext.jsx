@@ -5,6 +5,7 @@ import { getLocationBySlug } from '../data/locations';
 import { submitEnquiryToWebhook } from '../services/webhookService';
 import { getSeoMetadata, applySeoMetadataToDom } from '../utils/seoMetadata';
 import { Analytics } from '../utils/analytics';
+import { loadLivePricing } from '../services/pricingService';
 
 const AppContext = createContext();
 
@@ -119,6 +120,14 @@ export function AppProvider({ children }) {
     gotra: '',
     address: ''
   });
+
+  // Live pricing: bumping the version re-renders every useApp consumer with the new prices
+  const [pricingVersion, setPricingVersion] = useState(0);
+  useEffect(() => {
+    loadLivePricing().then((applied) => {
+      if (applied) setPricingVersion((v) => v + 1);
+    });
+  }, []);
 
   // Toast System
   const [toast, setToast] = useState(null);
@@ -235,6 +244,7 @@ export function AppProvider({ children }) {
   return (
     <AppContext.Provider
       value={{
+        pricingVersion,
         BRAND_INFO,
         currentRoute,
         setCurrentRoute,
