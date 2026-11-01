@@ -1,106 +1,118 @@
-# Pricing Backend Design
+# Pricing Management Design (Supabase + Vercel)
 
-Date: 2026-11-01
+Date: 2026-11-01. Supersedes the earlier no-database Node design.
 
 ## Goal
 
-Add a small backend, with no database, that lets the owner manage all pricing shown on the VedicPanditji website through a password-protected admin page. Price changes appear on the live site immediately and are baked into the prerendered HTML and schema.org markup by a background rebuild.
+Let the owner manage all pricing shown on the VedicPanditji website through a login-protected admin editor inside the site. Price changes appear on the live site immediately, and a background rebuild refreshes the prerendered HTML and schema.org markup.
 
 ## Background and constraints
 
-- The site is a static Vite build, prerendered for SEO (`npm run build` runs `vite build && node scripts/prerender.js`), deployed to Enhance hosting from a `deploy` branch that a GitHub Action fills with `frontend/dist`.
-- Pricing data lives in `frontend/src/data/pujaPricing.js` (about 3,200 lines): 59 rate cards, 4 preserved local packages, and optional samagri add-ons, plus lookup and calculation functions.
-- Hosting check done: Enhance can run a Node worker (Node 26.13 verified) and the app directory is writable. The probe at `backend/probe/server.js` has served its purpose and is deleted as part of this work.
-- No database. Storage is a JSON file on the server disk.
+- The site is a static Vite build, prerendered for SEO (`npm run build` runs `vite build && node scripts/prerender.js`).
+- Pricing data lives in `frontend/src/data/pujaPricing.js` (about 3,200 lines): 59 rate cards, 4 preserved local packages, optional samagri add-ons, and lookup and calculation functions.
+- The site moves from Enhance to Vercel. Supabase provides the database and login. There is no custom server code.
+- Hindi and Marathi support is planned. This spec makes the pricing data language-ready. The site-wide multilingual work is a separate later spec.
 
 ## Decisions
 
 | Topic | Decision |
 |---|---|
-| Runtime | Node (LTS), separate Enhance site (for example `api.vedicpanditji.com`) with its own Git deploy |
-| Price delivery | Hybrid: runtime fetch for instant display, plus background rebuild to refresh prerendered HTML and schema |
-| Editing | Password-protected admin page served by the backend |
-| Editable scope | Full rate-card editing: prices, status, notes, package names, inclusions, exclusions, badges, samagri add-ons |
-| Backend deploy | Action publishes `backend/` and a seed file to a `deploy-api` branch |
-| Languages | Pricing data is language-ready: English, Hindi and Marathi text per field. The site-wide multilingual work (switcher, routing, prerender per language, `hreflang`) is a separate later spec |
+| Hosting | Vercel (project root `frontend`) |
+| Backend | Supabase only: Postgres, Auth and row-level security. No custom server |
+| Storage | One JSONB document in a `pricing` table, with a `pricing_history` table filled by a trigger |
+| Admin | Lazy-loaded `/admin` route inside the React site, Supabase Auth login |
+| Price delivery | Hybrid: runtime fetch for instant display, plus rebuild on every change |
+| Rebuild trigger | Supabase database webhook calls a Vercel deploy hook |
+| Validation | Postgres function and trigger, so a bad document cannot be stored |
+| Editable scope | Full rate-card editing, including packages, inclusions, exclusions and samagri add-ons |
+| Languages | Text fields stored as `{en, hi, mr}`. English required, Hindi and Marathi fall back to English |
 
-## Language-ready data model
+## Data model
 
-- Every customer-facing text field is stored as an object `{ "en": "...", "hi": "...", "mr": "..." }`. This covers service name, package name, badge, price note, pricing note, pricing rationale, each inclusion and exclusion, and samagri add-on names and descriptions.
-- `en` is required. `hi` and `mr` are optional. A missing or empty translation falls back to `en`, so the site never shows a blank.
-- Internal fields (`researchBasis`, `missingBusinessInfo`, approval flags) are English-only plain strings and are never shown to customers.
-- Numbers (prices, min and max, quantities) are shared across languages. Display strings such as `₹3,500*` are generated from the numbers using `en-IN` formatting. Per-language numerals and wording are decided in the multilingual spec.
-- Lookup functions in `pujaPricing.js` take an optional `lang` argument (default `'en'`) and resolve each text field with the fallback. Until the multilingual project ships, every caller passes nothing and behaves exactly as today.
-- IDs and slugs stay language-neutral.
+### Tables
 
-## Architecture
+- `pricing`: a single row (`id` fixed to 1) with `data jsonb not null`, `updated_at timestamptz`, `updated_by uuid`.
+- `pricing_history`: `id bigserial`, `data jsonb`, `saved_at timestamptz`, `saved_by uuid`. A trigger on `pricing` inserts the old row into it on every update.
 
-### Source of truth
+### Document shape
 
-`data/pricing.json` on the server disk, outside the git-deployed code folder (`DATA_DIR` environment variable) so a deploy never overwrites it. If the file is missing on first start, the backend copies the shipped `pricing.seed.json` into place.
+`{ "rateCards": { "<serviceId>": {...} }, "samagriOptions": [...] }`, exactly what the legacy `COMPLETE_59_PUJA_RATE_CARDS` and `OPTIONAL_SAMAGRI_OPTIONS` hold today. The `PUBLISH_PROPOSED_PRICES_TO_CUSTOMER` flag stays in code and is not editable.
 
-### Backend routes
+### Language-ready text
 
-- `GET /api/pricing`: public, read-only, returns the pricing JSON.
-- `GET /admin`: static admin page (login plus editor).
-- `POST /api/admin/login`, `POST /api/admin/logout`.
-- `PUT /api/admin/pricing`: validate and save.
-- `POST /api/admin/revert`: restore the previous backup.
-- `POST /api/admin/retry-publish`: retry the GitHub commit.
+- Every customer-facing text field is `{ "en": "...", "hi": "...", "mr": "..." }`. This covers service name, pricing note, pricing rationale, package name, badge, price note, each inclusion and exclusion, and samagri name and description.
+- `en` is required. `hi` and `mr` are optional, and an empty value falls back to `en`.
+- Internal fields (`researchBasis`, `missingBusinessInfo`, approval flags) are English-only strings and are never shown to customers.
+- Prices and other numbers are shared across languages. IDs and slugs are language-neutral.
+- Lookup functions take an optional `lang` argument (default `'en'`). Until the multilingual project ships, callers pass nothing and behave as today.
 
-### Save flow
+### Generated display strings
 
-1. Validate the submitted JSON. Reject with the exact failing field on any error.
-2. Back up the current file to `data/backups/` with a timestamp, keeping the last 20.
-3. Write the new file atomically (temp file plus rename).
-4. Commit the same JSON to `frontend/src/data/pricing.json` through the GitHub API. The push triggers the existing Action, which rebuilds and prerenders the site.
-5. Report the rebuild status in the admin UI. If the commit fails, the live API still serves the new prices, and the UI shows "not yet in site build" with a retry button.
+`startingPriceDisplay`, package `priceDisplay` and samagri `priceDisplay` are computed from the numbers:
 
-The server file is canonical. Hand edits to `pricing.json` in the repo are overwritten by the next admin save.
+- Fixed-price services: `₹1,100`.
+- Other services: `From ₹3,500*` for the starting price and `₹3,500*` for packages.
+- Null price: `Custom Quote` for services and packages, `Price to be confirmed` for samagri.
 
-### Frontend changes
+All 59 legacy cards reproduce their existing strings under this rule.
 
-- `pujaPricing.js` keeps its functions (`getPricingDisplay`, `getPackagesForService`, `calculateBookingTotal`, and the rest) but loads data from `pricing.json`.
-- Prerender and `schemaGenerator.js` use the baked-in `pricing.json` at build time.
-- In the browser, the app fetches `/api/pricing` once and replaces the baked-in data with the live data. If the fetch fails, it keeps the baked-in copy.
+## Access and security
 
-## Admin page
+- Row-level security is on for both tables.
+- Anyone can read `pricing` with the public anon key.
+- Only the admin user, identified by user ID in the policy, can update `pricing`. Nobody can insert or delete rows through the API.
+- `pricing_history` is readable by the admin only.
+- Public signups are disabled in Supabase Auth. The admin user is created manually.
+- The anon key is public by design, so row-level security is the only protection. Tests must prove an anonymous user cannot write.
 
-- A single static HTML page with plain JS. No build step, no framework.
-- Left: searchable list of the 59 services. Right: form for the selected service, with add, remove and reorder lists for packages, inclusions and exclusions. A separate tab edits samagri add-ons.
-- Money fields accept numbers. Display strings such as `₹3,500*` are generated from them.
-- Each text field has EN, HI and MR tabs. A badge on the service list and on each tab shows which translations are still empty, so missing Hindi or Marathi is visible but never blocks saving.
-- Buttons: Save, Revert to previous.
+## Validation (Postgres)
 
-## Auth and safety
+A function `validate_pricing(data jsonb)` raises an error that names the failing path. A `BEFORE UPDATE` trigger on `pricing` calls it and also recomputes the display strings. It rejects:
 
-- One admin password in the `ADMIN_PASSWORD` environment variable.
-- Login sets an HttpOnly, Secure, SameSite=Strict session cookie scoped to the API host. Sessions are held in memory, so a restart logs the admin out.
-- Failed logins are rate-limited per IP. Every write endpoint requires a valid session.
-- `GET /api/pricing` is the only public route. The backend sends CORS headers allowing only `https://vedicpanditji.com`.
-- The save endpoint rejects: duplicate IDs, prices that are not non-negative numbers, missing required fields (including an empty `en` value on any text field), text fields that are not an object with string values for the keys `en`, `hi` and `mr` only, and payloads over a size limit.
-- `GITHUB_TOKEN` is a fine-grained token limited to this repository's contents.
-- Known limitation: one shared password and no audit trail of who changed what.
+- Models outside `fixed-price`, `package-pricing`, `custom-quote`, and statuses outside `approved`, `local-project-data`, `proposed`, `needs-business-confirmation`.
+- Prices that are not non-negative numbers (or null where allowed), and `minPrice` greater than `maxPrice`.
+- Text fields that are not an object with string values for `en`, `hi` and `mr` only, and an empty `en` on any text field.
+- Duplicate samagri IDs, and any `includedSamagriIds` entry that does not exist in `samagriOptions`.
+- A rate card whose `serviceId` differs from its key.
+- Duplicate package IDs within one rate card. Uniqueness is per rate card, not global, because the legacy data reuses `gy-basic` and `gy-standard` in two services.
+
+## Frontend
+
+- `pujaPricing.js` loads data from `src/data/pricing.json` and keeps its functions. It adds `setPricingData()`, a localize step with English fallback, and the `lang` argument.
+- `src/services/pricingService.js` fetches the live document from Supabase on app start and calls `setPricingData()`. If the fetch fails, the bundled copy stays in use. `AppContext` bumps a version so pages re-render.
+- `OPTIONAL_SAMAGRI_OPTIONS` becomes `getOptionalSamagriOptions()`. `BookingModal` and `PricingPackagesSection` change accordingly.
+- The unused `LOCAL_PROJECT_PACKAGES` and `VERIFIED_PUJA_PACKAGES` exports are dropped.
+- A `prebuild` script fetches the latest document from Supabase into `src/data/pricing.json`. If the fetch fails it keeps the committed copy and the build continues. Prerender and `schemaGenerator.js` then bake in those prices.
+
+## Admin editor
+
+- A lazy-loaded `/admin` route, marked `noindex`, excluded from prerender and from the sitemap. Visitors never download it.
+- Login form using Supabase Auth.
+- Searchable list of the 59 services, plus a samagri tab.
+- Each text field shows EN, HI and MR inputs. A global EN, HI, MR or All switch picks which are visible, and a counter shows missing translations. A missing translation never blocks saving.
+- Packages and inclusion or exclusion lists can be added, removed and reordered. Services and samagri items cannot be added or removed.
+- Buttons: Save, Revert to previous (restores the newest `pricing_history` row), Logout.
+- Postgres validation errors are shown against the failing field.
+- Built with plain React and no new UI library.
 
 ## Deployment
 
-- Extend `.github/workflows` so a push to `main` also publishes `backend/` plus `pricing.seed.json` to a `deploy-api` branch.
-- In Enhance: add a second site for the API, connect it to `deploy-api`, run the worker as Node LTS with `node server.js`, and set `ADMIN_PASSWORD`, `GITHUB_TOKEN` and `DATA_DIR`.
-- The separate site means the browser fetches from the API host, so the CORS rule above applies.
+- Vercel project root is `frontend`. A `vercel.json` handles route rewrites to the prerendered pages and the SPA fallback.
+- Environment variables: `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`.
+- A Vercel deploy hook URL is configured in a Supabase database webhook on `pricing` updates. Several quick saves can queue several builds.
+- The Enhance setup, the GitHub Action that publishes the `deploy` branch, and `backend/probe` are retired once Vercel is live. The domain DNS then moves to Vercel.
 
 ## Migration
 
-A one-time script reads the 59 rate cards, the 4 preserved local packages and the samagri options out of `pujaPricing.js` and writes `pricing.json` (also used as `pricing.seed.json`). Existing text becomes the `en` value of each text field, with `hi` and `mr` left empty. `pujaPricing.js` is then trimmed to load that JSON and keep its functions. The script verifies that `getPricingDisplay` and `getPackagesForService` return identical output before and after for every service.
+A one-time script reads the 59 rate cards, the 4 preserved local packages and the samagri options out of the legacy `pujaPricing.js`, wraps text fields as `{en, hi:"", mr:""}`, and writes `src/data/pricing.json`. The same JSON seeds the `pricing` row through a SQL migration. An equivalence check confirms that `getPricingDisplay` and `getPackagesForService` return identical output before and after, in English, for every service.
 
 ## Testing
 
-- Backend: Node's built-in test runner covers auth, validation (including the per-language text shape), atomic write and backup, seed on first start, and revert.
-- Language fallback: a test confirms that an empty `hi` or `mr` value resolves to `en`. The GitHub call is mocked.
-- Frontend: the before/after equivalence check, plus a full build to confirm prerender and schema output are unchanged.
+- SQL tests for `validate_pricing`, the display-string recompute, the history trigger, and row-level security, including that an anonymous user cannot write.
+- A Node test for the localize step and the English fallback.
+- The equivalence check above, plus a full build confirming prerender and schema output are unchanged.
 - Manual: log in, edit one price, confirm the live site updates at once and the rebuild finishes later.
 
 ## Out of scope
 
-Per-user accounts, change-history UI, and any content beyond pricing (enquiries, guides, locations).
-
-The site-wide multilingual work is a separate spec and build, to follow this one: language switcher with English as default, Hindi and Marathi UI strings, translated routes, per-language prerender, `hreflang` tags and sitemap entries, and translating the rest of the site content.
+Per-user admin accounts beyond one admin, a change-history UI beyond revert, adding or removing services or samagri items, and the site-wide multilingual work: language switcher with English as default, Hindi and Marathi UI strings, translated routes, per-language prerender, `hreflang` tags and translating the rest of the site content.
