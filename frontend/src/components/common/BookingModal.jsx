@@ -29,6 +29,7 @@ export default function BookingModal() {
     selectedLocality,
     selectedCity,
     completeBooking,
+    pricingVersion,
     user
   } = useApp();
   const samagriOptions = getOptionalSamagriOptions();
@@ -88,12 +89,18 @@ export default function BookingModal() {
   // Available packages for current service & city
   const packages = useMemo(() => {
     return getPackagesForService(activeService, city);
-  }, [activeService, city]);
+  }, [activeService, city, pricingVersion]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Re-resolve the chosen package by id so a live pricing swap updates its price
+  const livePkg = useMemo(
+    () => (selectedPkg ? packages.find(p => p.id === selectedPkg.id) || selectedPkg : null),
+    [selectedPkg, packages]
+  );
 
   // Pricing calculation
   const pricingSummary = useMemo(() => {
-    return calculateBookingTotal(selectedPkg, selectedExtras);
-  }, [selectedPkg, selectedExtras]);
+    return calculateBookingTotal(livePkg, selectedExtras);
+  }, [livePkg, selectedExtras]);
 
   // Determine initial step when modal opens
   useEffect(() => {
@@ -172,7 +179,7 @@ export default function BookingModal() {
 
     setIsSubmitting(true);
     setStep('confirmation');
-    const pkgToSave = selectedPkg || packages[0];
+    const pkgToSave = livePkg || packages[0];
 
     // Maintain stable submissionId across retries of the same booking attempt
     const activeSubId = submissionId || generateSubmissionId();
@@ -895,7 +902,7 @@ export default function BookingModal() {
                 }}
               >
                 <div>
-                  Selected: <strong style={{ color: '#BD4B23' }}>{selectedPkg?.name || 'Ritual Package'}</strong> ({selectedPkg?.priceDisplay || 'Custom Quote'})
+                  Selected: <strong style={{ color: '#BD4B23' }}>{selectedPkg?.name || 'Ritual Package'}</strong> ({livePkg?.priceDisplay || 'Custom Quote'})
                 </div>
                 <button
                   type="button"

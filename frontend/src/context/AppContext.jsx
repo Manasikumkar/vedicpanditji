@@ -96,7 +96,7 @@ export function AppProvider({ children }) {
   useEffect(() => {
     const meta = getSeoMetadata(currentRoute, routeParams);
     applySeoMetadataToDom(meta);
-    Analytics.trackPageView(meta.title, window.location.pathname);
+    if (currentRoute !== 'admin') Analytics.trackPageView(meta.title, window.location.pathname);
   }, [currentRoute, routeParams]);
 
   // Location & Tradition Preferences

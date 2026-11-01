@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { supabase } from '../admin/supabaseClient';
 import LoginForm from '../admin/LoginForm';
 import ServiceEditor from '../admin/ServiceEditor';
@@ -42,9 +42,13 @@ export default function AdminPage() {
     setSelectedId((id) => id || Object.keys(data.data.rateCards)[0]);
   }, []);
 
+  const userId = session?.user?.id;
   useEffect(() => {
-    if (session) load();
-  }, [session, load]);
+    if (userId) load();
+  }, [userId, load]);
+
+  const dirty = useMemo(() => (doc && saved ? JSON.stringify(doc) !== JSON.stringify(saved) : false), [doc, saved]);
+  const missing = useMemo(() => (doc ? countMissingTranslations(doc) : { hi: 0, mr: 0 }), [doc]);
 
   const login = async (email, password) => {
     const { error } = await supabase.auth.signInWithPassword({ email, password });
@@ -73,6 +77,7 @@ export default function AdminPage() {
   };
 
   const revert = async () => {
+    if (dirty && !window.confirm('Discard your unsaved changes and load the previous saved version?')) return;
     const { data, error } = await supabase
       .from('pricing_history')
       .select('data')
@@ -87,13 +92,16 @@ export default function AdminPage() {
     setMessage({ type: 'ok', text: 'Previous version loaded. Review it, then click Save to apply.' });
   };
 
+  const edit = (next) => {
+    setDoc(next);
+    setMessage(null);
+  };
+
   if (!ready) return <p className="admin-note">Loading…</p>;
   if (!supabase) return <p className="admin-note">Supabase is not configured (VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY).</p>;
   if (!session) return <LoginForm onLogin={login} />;
   if (!doc) return <p className="admin-note">{message ? message.text : 'Loading pricing…'}</p>;
 
-  const dirty = JSON.stringify(doc) !== JSON.stringify(saved);
-  const missing = countMissingTranslations(doc);
   const q = query.trim().toLowerCase();
   const ids = Object.keys(doc.rateCards).filter(
     (id) => !q || id.includes(q) || doc.rateCards[id].serviceName.en.toLowerCase().includes(q)
@@ -116,7 +124,7 @@ export default function AdminPage() {
         </label>
         <span className="muted">Missing: HI {missing.hi}, MR {missing.mr}</span>
         <span className="spacer" />
-        <button type="button" onClick={revert} disabled={busy}>Load previous version</button>
+        <button type="button" onClick={revert} disabled={busy}>Load previous saved version</button>
         <button type="button" className="primary" onClick={save} disabled={busy || !dirty}>
           {busy ? 'Saving…' : dirty ? 'Save changes' : 'Saved'}
         </button>
@@ -146,14 +154,14 @@ export default function AdminPage() {
                 card={card}
                 samagri={doc.samagriOptions}
                 lang={lang}
-                onChange={(next) => setDoc(setIn(doc, ['rateCards', selectedId], next))}
+                onChange={(next) => edit(setIn(doc, ['rateCards', selectedId], next))}
               />
             )}
           </section>
         </div>
       ) : (
         <section className="admin-form">
-          <SamagriEditor items={doc.samagriOptions} lang={lang} onChange={(items) => setDoc({ ...doc, samagriOptions: items })} />
+          <SamagriEditor items={doc.samagriOptions} lang={lang} onChange={(items) => edit({ ...doc, samagriOptions: items })} />
         </section>
       )}
     </div>
