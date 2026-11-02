@@ -289,7 +289,7 @@ test('returns the text for the language', () => {
 test('falls back to English when the key or text is missing', () => {
   assert.equal(translate('hi', 'a.only-en'), 'Only English');
   assert.equal(translate('mr', 'a.hello'), 'Hello');
-  assert.equal(translate('hi', 'a.empty'), undefined === 1 ? '' : translate('en', 'a.empty'));
+  assert.equal(translate('hi', 'a.empty'), 'Fallback text');
 });
 
 test('returns the key itself when no language has it', () => {
