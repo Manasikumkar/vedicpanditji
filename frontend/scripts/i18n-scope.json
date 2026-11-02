@@ -1,0 +1,22 @@
+[
+  "src/components/common/Navbar.jsx",
+  "src/components/common/Footer.jsx",
+  "src/components/common/Toast.jsx",
+  "src/components/common/LanguageSwitcher.jsx",
+  "src/components/common/BookingModal.jsx",
+  "src/components/common/EnquiryConfirmationView.jsx",
+  "src/components/home/CounterSection.jsx",
+  "src/components/home/FeaturedPujas.jsx",
+  "src/components/home/HeroSection.jsx",
+  "src/components/home/HowItWorksSection.jsx",
+  "src/components/home/MediaCoverage.jsx",
+  "src/components/home/MultiCitySection.jsx",
+  "src/components/home/ReviewsSection.jsx",
+  "src/components/home/ServiceCategories.jsx",
+  "src/components/home/TempleServicesSection.jsx",
+  "src/components/home/TrustCredentials.jsx",
+  "src/components/pricing/PricingPackagesSection.jsx",
+  "src/pages/HomePage.jsx",
+  "src/pages/CataloguePage.jsx",
+  "src/pages/ServiceDetailPage.jsx"
+]
