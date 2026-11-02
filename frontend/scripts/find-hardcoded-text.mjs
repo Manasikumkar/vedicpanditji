@@ -10,7 +10,8 @@ const TEXT_KEYS = new Set(['label', 'title', 'subtitle', 'description', 'text', 
 const ALLOWED = new Set([
   'VedicPanditji', // brand name
   'Vedic', 'Panditji', // brand name split across spans
-  'WhatsApp' // third-party brand name
+  'WhatsApp', // third-party brand name
+  '/services/' // URL path shown as text
 ]);
 const HAS_LETTERS = /[A-Za-zऀ-ॿ]/;
 

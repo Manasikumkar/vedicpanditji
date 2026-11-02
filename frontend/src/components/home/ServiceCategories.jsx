@@ -13,6 +13,7 @@ import {
   Sun,
   ArrowRight
 } from 'lucide-react';
+import { useI18n } from '../../i18n/useI18n';
 
 const iconMap = {
   Flame,
@@ -28,6 +29,7 @@ const iconMap = {
 
 export default function ServiceCategories() {
   const { navigateTo, setSelectedCategory } = useApp();
+  const { t } = useI18n();
 
   const handleCategoryClick = (catId) => {
     setSelectedCategory(catId);
@@ -39,10 +41,10 @@ export default function ServiceCategories() {
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <span className="section-tag">Authentic Vedic Offerings</span>
-          <h2 className="section-title">Explore by Puja Categories</h2>
+          <span className="section-tag">{t('home.categories.tag')}</span>
+          <h2 className="section-title">{t('home.categories.title')}</h2>
           <p className="section-desc">
-            Explore authentic Vedic rituals, Havans, and ceremonies conducted by experienced North Indian &amp; Bihari pandits across Pune.
+            {t('home.categories.desc')}
           </p>
         </div>
 
@@ -161,7 +163,7 @@ export default function ServiceCategories() {
                       marginTop: 'auto'
                     }}
                   >
-                    <span>View All {cat.name}</span>
+                    <span>{`${t('home.categories.view-all')} `}{cat.name}</span>
                     <ArrowRight size={14} />
                   </div>
                 </div>

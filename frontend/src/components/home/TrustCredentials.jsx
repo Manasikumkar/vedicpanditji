@@ -8,6 +8,7 @@ import {
   ShieldCheck,
   Award
 } from 'lucide-react';
+import { useI18n } from '../../i18n/useI18n';
 
 const iconMap = {
   GraduationCap,
@@ -17,15 +18,16 @@ const iconMap = {
 };
 
 export default function TrustCredentials() {
+  const { t } = useI18n();
   return (
     <section style={{ padding: '85px 0', background: '#FFFFFF', borderTop: '1px solid var(--border-subtle)' }}>
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <span className="section-tag">Authenticity &amp; Shastra Vidhi</span>
-          <h2 className="section-title">The VedicPanditji Standard</h2>
+          <span className="section-tag">{t('home.trust.tag')}</span>
+          <h2 className="section-title">{t('home.trust.title')}</h2>
           <p className="section-desc">
-            Our dedicated North Indian and Bihari Pandits strictly follow Vedic traditions, authentic Sanskrit mantras, and authentic ritual procedures with all-India service coverage.
+            {t('home.trust.desc')}
           </p>
         </div>
 
@@ -108,10 +110,10 @@ export default function TrustCredentials() {
           </div>
           <div style={{ flex: 1, minWidth: 'min(280px, 100%)' }}>
             <h4 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '4px', color: 'var(--text-main)' }}>
-              Vedic Sanatan Service Commitment
+              {t('home.trust.commitment-title')}
             </h4>
             <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
-              Dedicated to authentic Vedic mantrocharan, punctual doorstep arrival, and unadulterated sacred samagri to ensure peace and devotion for your family.
+              {t('home.trust.commitment-desc')}
             </p>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -131,7 +133,7 @@ export default function TrustCredentials() {
               }}
             >
               <ShieldCheck size={16} />
-              <span>Verified Shastra Standards</span>
+              <span>{t('home.trust.verified-shastra-standards')}</span>
             </div>
           </div>
         </div>
