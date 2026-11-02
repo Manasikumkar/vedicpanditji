@@ -10,6 +10,7 @@
     "lint": "oxlint",
     "i18n:find": "node scripts/find-hardcoded-text.mjs $(node -p \"require('./scripts/i18n-scope.json').join(' ')\")",
     "i18n:snapshot": "node scripts/snapshot-pages.mjs",
+    "i18n:check": "node scripts/check-i18n.mjs",
     "test": "node --test \"src/**/*.test.js\"",
     "preview": "vite preview"
   },

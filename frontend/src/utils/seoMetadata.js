@@ -18,14 +18,17 @@ import {
   buildSchemaGraph
 } from './schemaGenerator';
 import { generateBreadcrumbs } from './internalLinks';
+import { translate } from '../i18n/index.js';
+import { LANGUAGES, DEFAULT_LANG, isTranslatedRoute } from '../i18n/languages.js';
+import { localizePath } from '../i18n/paths.js';
 
 const DOMAIN = 'https://vedicpanditji.com';
 const DEFAULT_IMAGE = `${DOMAIN}/images/vedicpanditji-logo.png`;
 
 /**
- * Returns complete SEO metadata object for a given route and parameters
+ * Returns complete English SEO metadata object for a given route and parameters
  */
-export function getSeoMetadata(route, params = {}) {
+function getEnglishSeoMetadata(route, params = {}) {
   // 1. Homepage
   if (route === 'home' || route === '/') {
     const title = 'VedicPanditji | North Indian Pandit Booking & Vedic Puja Services Across India';
@@ -438,6 +441,47 @@ export function getSeoMetadata(route, params = {}) {
     ogType: 'website',
     robots: 'noindex, nofollow',
     schema: null
+  };
+}
+
+const IN_LANGUAGE = { en: 'en-IN', hi: 'hi-IN', mr: 'mr-IN' };
+
+const serviceNameFor = (serviceId) => ALL_POOJA_SERVICES.find((s) => s.id === serviceId)?.name || '';
+
+function withInLanguage(schema, lang) {
+  if (!schema?.['@graph']) return schema;
+  return {
+    ...schema,
+    '@graph': schema['@graph'].map((node) =>
+      ['WebPage', 'WebSite', 'Service', 'CollectionPage'].includes(node['@type']) ? { ...node, inLanguage: IN_LANGUAGE[lang] } : node
+    )
+  };
+}
+
+// Metadata for a route in a language. English is unchanged; translated route types get text from the
+// dictionaries and a language-prefixed canonical; every other route keeps its English canonical and is noindex.
+export function getSeoMetadata(route, params = {}, lang = DEFAULT_LANG) {
+  const meta = getEnglishSeoMetadata(route, params);
+  if (lang === DEFAULT_LANG) return meta;
+  if (!isTranslatedRoute(route)) return { ...meta, robots: 'noindex, follow' };
+
+  const key = route === 'home' ? 'home' : route === 'service-detail' ? 'service' : 'catalogue';
+  const vars = { name: params.serviceId ? serviceNameFor(params.serviceId) : '' };
+  const title = translate(lang, `meta.${key}.title`, vars);
+  const description = translate(lang, `meta.${key}.description`, vars);
+  // translate() returns the key itself when no dictionary has it; use the English page text then
+  const finalTitle = title !== `meta.${key}.title` ? title : meta.title;
+  const finalDescription = description !== `meta.${key}.description` ? description : meta.description;
+
+  return {
+    ...meta,
+    title: finalTitle,
+    description: finalDescription,
+    ogTitle: finalTitle,
+    ogDescription: finalDescription,
+    canonical: `${DOMAIN}${localizePath(new URL(meta.canonical).pathname, lang)}`,
+    robots: LANGUAGES[lang].indexable ? meta.robots : 'noindex, follow',
+    schema: withInLanguage(meta.schema, lang)
   };
 }
 
