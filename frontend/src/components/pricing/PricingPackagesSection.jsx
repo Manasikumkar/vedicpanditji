@@ -14,6 +14,19 @@ import {
   getOptionalSamagriOptions,
   getCityNote
 } from '../../data/pujaPricing';
+import { useI18n } from '../../i18n/useI18n';
+
+// Serving city options: value is the pricing city; labelKey is translated, name is a location name kept as data.
+const CITY_OPTIONS = [
+  { value: 'Pune', labelKey: 'pricing.city.pune' },
+  { value: 'Mumbai', labelKey: 'pricing.city.mumbai' },
+  { value: 'Bangalore', name: 'Bangalore' },
+  { value: 'Delhi', name: 'Delhi NCR' },
+  { value: 'Hyderabad', name: 'Hyderabad' },
+  { value: 'Chennai', name: 'Chennai' },
+  { value: 'Nashik', name: 'Nashik / Trimbakeshwar' },
+  { value: 'Online E-Puja', labelKey: 'pricing.city.online' }
+];
 
 export default function PricingPackagesSection({
   service,
@@ -22,6 +35,7 @@ export default function PricingPackagesSection({
   onSelectPackage,
   onEnquireGeneral
 }) {
+  const { t, lang } = useI18n();
   const [city, setCity] = useState(selectedCityName || 'Pune');
   const [showSamagriDrawer, setShowSamagriDrawer] = useState(false);
 
@@ -30,9 +44,9 @@ export default function PricingPackagesSection({
     if (onCityChange) onCityChange(newCity);
   };
 
-  const pricing = getPujaPricing(service, city);
+  const pricing = getPujaPricing(service, city, lang);
   const { model, packages, hasPackages } = pricing;
-  const samagriOptions = getOptionalSamagriOptions();
+  const samagriOptions = getOptionalSamagriOptions(lang);
 
   return (
     <section id="pricing-packages" style={{ marginBottom: '40px' }}>
@@ -76,10 +90,10 @@ export default function PricingPackagesSection({
               <Sparkles size={13} />
               <span>
                 {model === PRICING_MODELS.MODEL_A_FIXED
-                  ? 'Standard Fixed Dakshina'
+                  ? t('pricing.eyebrow.fixed')
                   : (hasPackages
-                      ? 'Transparent Ceremony Packages'
-                      : 'Shastra Vidhi Pricing & Dakshina')}
+                      ? t('pricing.eyebrow.packages')
+                      : t('pricing.eyebrow.custom'))}
               </span>
             </div>
             <h2
@@ -91,14 +105,14 @@ export default function PricingPackagesSection({
                 marginBottom: '4px'
               }}
             >
-              {service?.name} Pricing &amp; Packages
+              {service?.name}{t('pricing.title-suffix')}
             </h2>
             <p style={{ fontSize: '14px', color: 'var(--text-secondary, #6B6355)', maxWidth: '640px' }}>
               {model === PRICING_MODELS.MODEL_A_FIXED
-                ? 'Standard fixed dakshina with no hidden costs. Performed at your doorstep or location by verified North Indian and Bihari Vedic priests.'
+                ? t('pricing.intro.fixed')
                 : (hasPackages
-                    ? 'Compare our clear ritual options. All ceremonies are performed by experienced North Indian and Bihari Vedic priests in sacred Hindi and Sanskrit.'
-                    : 'Ceremonies are tailored to your family Gotra, Panchang Muhurat, and ritual duration with zero hidden charges.')}
+                    ? t('pricing.intro.packages')
+                    : t('pricing.intro.custom'))}
             </p>
           </div>
 
@@ -117,7 +131,7 @@ export default function PricingPackagesSection({
             <MapPin size={16} color="#BD4B23" />
             <div>
               <div style={{ fontSize: '10px', textTransform: 'uppercase', fontWeight: 700, color: 'var(--text-muted, #8C8270)' }}>
-                Serving City
+                {t('pricing.serving-city')}
               </div>
               <select
                 value={city}
@@ -132,14 +146,9 @@ export default function PricingPackagesSection({
                   cursor: 'pointer'
                 }}
               >
-                <option value="Pune">Pune &amp; PCMC (HQ)</option>
-                <option value="Mumbai">Mumbai &amp; Thane (MMR)</option>
-                <option value="Bangalore">Bangalore</option>
-                <option value="Delhi">Delhi NCR</option>
-                <option value="Hyderabad">Hyderabad</option>
-                <option value="Chennai">Chennai</option>
-                <option value="Nashik">Nashik / Trimbakeshwar</option>
-                <option value="Online E-Puja">Online E-Puja (Pan-India &amp; Global)</option>
+                {CITY_OPTIONS.map((o) => (
+                  <option key={o.value} value={o.value}>{o.labelKey ? t(o.labelKey) : o.name}</option>
+                ))}
               </select>
             </div>
           </div>
@@ -239,7 +248,7 @@ export default function PricingPackagesSection({
                         {pkg.priceDisplay}
                       </span>
                       <span style={{ fontSize: '12px', color: 'var(--text-muted, #8C8270)' }}>
-                        {model === PRICING_MODELS.MODEL_A_FIXED ? '(Fixed Dakshina)*' : '(Starting Dakshina)*'}
+                        {model === PRICING_MODELS.MODEL_A_FIXED ? t('pricing.price-note.fixed') : t('pricing.price-note.starting')}
                       </span>
                     </div>
 
@@ -265,7 +274,7 @@ export default function PricingPackagesSection({
                         }}
                       >
                         <Check size={14} color="#047857" />
-                        <span>What Is Included:</span>
+                        <span>{t('pricing.included')}</span>
                       </div>
                       <ul
                         style={{
@@ -319,7 +328,7 @@ export default function PricingPackagesSection({
                         }}
                       >
                         <Info size={13} color="var(--text-muted, #8C8270)" />
-                        <span>Devotee (Yajaman) Arranges:</span>
+                        <span>{t('pricing.devotee-arranges')}</span>
                       </div>
                       <ul
                         style={{
@@ -370,7 +379,7 @@ export default function PricingPackagesSection({
                       }}
                     >
                       <Sparkles size={15} />
-                      <span>Select {pkg.name.split('—')[0]?.trim() || 'Package'}</span>
+                      <span>{t('pricing.select')}{pkg.name.split('—')[0]?.trim() || t('pricing.package')}</span>
                     </button>
                   </div>
                 );
@@ -415,7 +424,7 @@ export default function PricingPackagesSection({
                   }}
                 >
                   <Sparkles size={13} />
-                  <span>Custom Quote Ceremony</span>
+                  <span>{t('pricing.custom.badge')}</span>
                 </div>
 
                 <h3
@@ -427,7 +436,7 @@ export default function PricingPackagesSection({
                     marginBottom: '10px'
                   }}
                 >
-                  Bespoke Shastra Vidhi Quotation
+                  {t('pricing.custom.title')}
                 </h3>
 
                 <p
@@ -438,7 +447,7 @@ export default function PricingPackagesSection({
                     marginBottom: '20px'
                   }}
                 >
-                  Because this ceremony varies according to Shastra traditions, family gotra, duration, and required purohit count, our senior Acharyas provide a personalized quotation after reviewing your family requirements and preferred date.
+                  {t('pricing.custom.text')}
                 </p>
 
                 <div
@@ -463,7 +472,7 @@ export default function PricingPackagesSection({
                     }}
                   >
                     <Check size={14} color="#047857" />
-                    <span>Every Quote Always Includes:</span>
+                    <span>{t('pricing.custom.includes-title')}</span>
                   </div>
                   <ul
                     style={{
@@ -479,15 +488,15 @@ export default function PricingPackagesSection({
                   >
                     <li style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                       <Check size={14} color="#047857" />
-                      <span>Experienced North Indian / Bihari Vedic Purohit(s)</span>
+                      <span>{t('pricing.custom.include-purohits')}</span>
                     </li>
                     <li style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                       <Check size={14} color="#047857" />
-                      <span>Complimentary Shubh Muhurat calculation tailored to Janma Kundali</span>
+                      <span>{t('pricing.custom.include-muhurat')}</span>
                     </li>
                     <li style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                       <Check size={14} color="#047857" />
-                      <span>Itemized Samagri checklist and guidance</span>
+                      <span>{t('pricing.custom.include-checklist')}</span>
                     </li>
                   </ul>
                 </div>
@@ -505,13 +514,13 @@ export default function PricingPackagesSection({
                 }}
               >
                 <div style={{ fontSize: '11px', textTransform: 'uppercase', fontWeight: 700, color: 'var(--text-muted, #8C8270)', marginBottom: '4px' }}>
-                  Dakshina Structure
+                  {t('pricing.custom.structure')}
                 </div>
                 <div style={{ fontSize: '26px', fontWeight: 900, color: '#BD4B23', marginBottom: '8px' }}>
-                  Custom Quote
+                  {t('pricing.custom.quote')}
                 </div>
                 <div style={{ fontSize: '12px', color: 'var(--text-muted, #8C8270)', marginBottom: '20px', lineHeight: 1.5 }}>
-                  Zero fabricated rates. Honest pricing determined directly with senior Acharyas based on your vidhi.
+                  {t('pricing.custom.honest')}
                 </div>
 
                 <button
@@ -534,12 +543,12 @@ export default function PricingPackagesSection({
                   }}
                 >
                   <Sparkles size={15} />
-                  <span>Enquire for Custom Quote</span>
+                  <span>{t('pricing.custom.enquire')}</span>
                 </button>
 
                 <a
                   href={`https://wa.me/919766880979?text=${encodeURIComponent(
-                    `Namaste Panditji, I would like to inquire about a custom quote for ${service?.name} in ${city}.`
+                    t('pricing.custom.whatsapp-message', { service: service?.name, city })
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -555,7 +564,7 @@ export default function PricingPackagesSection({
                     padding: '8px'
                   }}
                 >
-                  <span>💬 Instant WhatsApp Enquiry</span>
+                  <span>{`💬 ${t('pricing.custom.whatsapp')}`}</span>
                 </a>
               </div>
             </div>
@@ -573,7 +582,7 @@ export default function PricingPackagesSection({
             padding: '0 12px'
           }}
         >
-          *Indicative dakshina is subject to Shubh Muhurat review, samagri preferences, and travel arrangements. The final quote and priest allocation are confirmed directly with our Vedic coordination team with zero hidden charges.
+          {t('pricing.disclaimer')}
         </div>
 
         {/* Optional Samagri & Add-ons Collapsible Drawer */}
@@ -595,10 +604,10 @@ export default function PricingPackagesSection({
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', fontWeight: 700 }}>
               <Package size={17} color="#BD4B23" />
-              <span>Optional Samagri &amp; Sacred Add-ons (Transparent Pricing)</span>
+              <span>{t('pricing.addons.title')}</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '13px', color: '#BD4B23', fontWeight: 600 }}>
-              <span>{showSamagriDrawer ? 'Hide Add-ons' : 'View Add-ons'}</span>
+              <span>{showSamagriDrawer ? t('pricing.addons.hide') : t('pricing.addons.view')}</span>
               {showSamagriDrawer ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
             </div>
           </button>
@@ -635,7 +644,7 @@ export default function PricingPackagesSection({
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '8px', borderTop: '1px dashed #EAE5D9' }}>
                     <span style={{ fontSize: '11px', color: 'var(--text-muted, #8C8270)', textTransform: 'uppercase', fontWeight: 600 }}>
-                      Rate:
+                      {t('pricing.addons.rate')}
                     </span>
                     <span style={{ fontSize: '13px', fontWeight: 800, color: item.isPriceVerified ? '#BD4B23' : '#6B6355' }}>
                       {item.priceDisplay}
