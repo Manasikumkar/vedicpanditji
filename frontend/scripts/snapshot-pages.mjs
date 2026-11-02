@@ -46,7 +46,7 @@ const vite = await createServer({
 let failed = false;
 try {
   const { SERVICES } = await vite.ssrLoadModule('./src/data/vedicPanditData.js');
-  const urls = ['/', '/services', `/services/${SERVICES[0].id}`, '/services/ganapathi-havan'];
+  const urls = ['/', '/services', `/services/${SERVICES[0].id}`, '/services/ganapathi-havan', '/hi/services'];
   fs.mkdirSync(snapDir, { recursive: true });
 
   for (const url of urls) {

@@ -6,6 +6,8 @@ import { submitEnquiryToWebhook } from '../services/webhookService';
 import { getSeoMetadata, applySeoMetadataToDom } from '../utils/seoMetadata';
 import { Analytics } from '../utils/analytics';
 import { loadLivePricing } from '../services/pricingService';
+import { splitLangPrefix, localizePath } from '../i18n/paths';
+import { DEFAULT_LANG } from '../i18n/languages';
 
 const AppContext = createContext();
 
@@ -15,7 +17,7 @@ export function AppProvider({ children }) {
     if (typeof window === 'undefined') return { route: 'home', params: {} };
     
     // Normalize path by removing trailing slash except root
-    const path = window.location.pathname.replace(/\/$/, '') || '/';
+    const path = splitLangPrefix(window.location.pathname).path.replace(/\/$/, '') || '/';
 
     // 1. Root Homepage
     if (path === '/') return { route: 'home', params: {} };
@@ -76,10 +78,12 @@ export function AppProvider({ children }) {
   };
 
   const initialRoute = parseRouteFromLocation();
+  const parseLang = () => (typeof window === 'undefined' ? DEFAULT_LANG : splitLangPrefix(window.location.pathname).lang);
 
   // Navigation State
   const [currentRoute, setCurrentRoute] = useState(initialRoute.route);
   const [routeParams, setRouteParams] = useState(initialRoute.params);
+  const [lang, setLang] = useState(parseLang);
 
   // Synchronize browser history popstate (Back / Forward buttons)
   useEffect(() => {
@@ -87,17 +91,23 @@ export function AppProvider({ children }) {
       const parsed = parseRouteFromLocation();
       setCurrentRoute(parsed.route);
       setRouteParams(parsed.params);
+      setLang(parseLang());
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
+  // Keep <html lang> in step with the URL language
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
+
   // Update Dynamic SEO Head Tags & Trigger Analytics Pageview on Route Change
   useEffect(() => {
-    const meta = getSeoMetadata(currentRoute, routeParams);
+    const meta = getSeoMetadata(currentRoute, routeParams, lang);
     applySeoMetadataToDom(meta);
     if (currentRoute !== 'admin') Analytics.trackPageView(meta.title, window.location.pathname);
-  }, [currentRoute, routeParams]);
+  }, [currentRoute, routeParams, lang]);
 
   // Location & Tradition Preferences
   const [selectedCity, setSelectedCity] = useState(CITIES[0]); // Pune
@@ -163,8 +173,9 @@ export function AppProvider({ children }) {
       else if (route === 'not-found') targetPath = '/404';
       else if (route === 'seo-landing') targetPath = `/services/${params.slug || 'north-indian-pandit-in-pune'}`;
 
-      if (window.location.pathname !== targetPath) {
-        window.history.pushState({ route, params }, '', targetPath);
+      const localizedPath = localizePath(targetPath, lang);
+      if (window.location.pathname !== localizedPath) {
+        window.history.pushState({ route, params }, '', localizedPath);
       }
     }
 
@@ -246,6 +257,7 @@ export function AppProvider({ children }) {
     <AppContext.Provider
       value={{
         pricingVersion,
+        lang,
         BRAND_INFO,
         currentRoute,
         setCurrentRoute,
