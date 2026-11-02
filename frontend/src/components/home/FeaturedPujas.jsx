@@ -13,7 +13,7 @@ import {
 
 export default function FeaturedPujas() {
   const { navigateTo, openBookingModal } = useApp();
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
 
   return (
     <section style={{ padding: '85px 0', background: '#FFFFFF', borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)' }}>
@@ -30,7 +30,7 @@ export default function FeaturedPujas() {
         {/* Featured Service Cards Grid */}
         <div className="grid-3" style={{ gap: '28px' }}>
           {SERVICES.slice(0, 6).map(service => {
-            const pricing = getPricingDisplay(service.id);
+            const pricing = getPricingDisplay(service.id, lang);
 
             return (
               <div
