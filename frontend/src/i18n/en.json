@@ -1,4 +1,23 @@
 {
+  "nav.about-us": "About Us",
+  "nav.book-a-pandit": "Book a Pandit",
+  "nav.brand-title": "VedicPanditji - Authentic Vedic Pujas Across Major Cities",
+  "nav.call-phone": "Call {phone}",
+  "nav.ceremonies": "Ceremonies",
+  "nav.close-menu": "Close menu",
+  "nav.contact": "Contact",
+  "nav.faqs": "FAQs",
+  "nav.helpline-title": "Call Vedic Panditji Helpline: {phone}",
+  "nav.home": "Home",
+  "nav.locations": "Locations",
+  "nav.logo-alt": "VedicPanditji logo",
+  "nav.main-navigation": "Main Navigation",
+  "nav.mobile-drawer": "Mobile Navigation Drawer",
+  "nav.open-menu": "Open Navigation Menu",
+  "nav.pune-pcmc-locations": "Pune & PCMC Locations",
   "switcher.english-only": "This page is English only for now",
-  "switcher.label": "Language"
+  "switcher.label": "Language",
+  "toast.enquiry-failed": "Could not submit enquiry. Please call or WhatsApp Panditji directly.",
+  "toast.enquiry-not-sent": "Online enquiry could not be sent. Please contact Panditji via WhatsApp or Phone.",
+  "toast.enquiry-received": "Enquiry received! Senior Vedic Acharyas will review your Shubh Muhurat."
 }

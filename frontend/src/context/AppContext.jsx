@@ -8,6 +8,7 @@ import { Analytics } from '../utils/analytics';
 import { loadLivePricing } from '../services/pricingService';
 import { splitLangPrefix, localizePath } from '../i18n/paths';
 import { DEFAULT_LANG } from '../i18n/languages';
+import { translate } from '../i18n';
 
 const AppContext = createContext();
 
@@ -243,11 +244,11 @@ export function AppProvider({ children }) {
 
     if (result.success) {
       Analytics.trackFormSubmitted('booking_enquiry', enquiryData);
-      showToast('Enquiry received! Senior Vedic Acharyas will review your Shubh Muhurat.');
+      showToast(translate(lang, 'toast.enquiry-received'));
     } else if (result.status === 'unavailable' || !result.isConfigured) {
-      showToast('Online enquiry could not be sent. Please contact Panditji via WhatsApp or Phone.', 'warning');
+      showToast(translate(lang, 'toast.enquiry-not-sent'), 'warning');
     } else {
-      showToast(result.message || 'Could not submit enquiry. Please call or WhatsApp Panditji directly.', 'error');
+      showToast(result.message || translate(lang, 'toast.enquiry-failed'), 'error');
     }
 
     return result;
