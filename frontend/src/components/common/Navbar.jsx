@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useApp } from '../../context/AppContext';
 import { BRAND_INFO } from '../../data/vedicPanditData';
 import { animateNavbarEntrance } from '../../utils/gsapAnimations';
+import LanguageSwitcher from './LanguageSwitcher';
 import {
   Menu,
   X,
@@ -163,6 +164,8 @@ export default function Navbar() {
               <span className="vp-phone-text">{BRAND_INFO.phone}</span>
             </a>
 
+            <LanguageSwitcher />
+
             {/* Primary Action CTA — Book a Pandit */}
             <button
               type="button"
@@ -215,6 +218,8 @@ export default function Navbar() {
                 <X size={20} />
               </button>
             </div>
+
+            <LanguageSwitcher />
 
             {/* Navigation Links */}
             <nav className="vp-drawer-nav">
