@@ -5,6 +5,7 @@ import { getLocationBySlug } from '../data/locations';
 import { submitEnquiryToWebhook } from '../services/webhookService';
 import { getSeoMetadata, applySeoMetadataToDom } from '../utils/seoMetadata';
 import { Analytics } from '../utils/analytics';
+import { loadLivePricing } from '../services/pricingService';
 
 const AppContext = createContext();
 
@@ -67,6 +68,7 @@ export function AppProvider({ children }) {
     if (path === '/temple-services') return { route: 'temple-services', params: {} };
     if (path === '/legal' || path === '/policies') return { route: 'policies', params: {} };
     if (path === '/sitemap' || path === '/sitemap.html') return { route: 'sitemap', params: {} };
+    if (path === '/admin') return { route: 'admin', params: {} };
     if (path === '/404' || path === '/404.html') return { route: 'not-found', params: {} };
 
     // 7. Any other unknown route triggers dedicated 404 page (no soft-404)
@@ -94,7 +96,7 @@ export function AppProvider({ children }) {
   useEffect(() => {
     const meta = getSeoMetadata(currentRoute, routeParams);
     applySeoMetadataToDom(meta);
-    Analytics.trackPageView(meta.title, window.location.pathname);
+    if (currentRoute !== 'admin') Analytics.trackPageView(meta.title, window.location.pathname);
   }, [currentRoute, routeParams]);
 
   // Location & Tradition Preferences
@@ -119,6 +121,14 @@ export function AppProvider({ children }) {
     gotra: '',
     address: ''
   });
+
+  // Live pricing: bumping the version re-renders every useApp consumer with the new prices
+  const [pricingVersion, setPricingVersion] = useState(0);
+  useEffect(() => {
+    loadLivePricing().then((applied) => {
+      if (applied) setPricingVersion((v) => v + 1);
+    });
+  }, []);
 
   // Toast System
   const [toast, setToast] = useState(null);
@@ -235,6 +245,7 @@ export function AppProvider({ children }) {
   return (
     <AppContext.Provider
       value={{
+        pricingVersion,
         BRAND_INFO,
         currentRoute,
         setCurrentRoute,

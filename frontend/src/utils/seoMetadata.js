@@ -413,6 +413,20 @@ export function getSeoMetadata(route, params = {}) {
     };
   }
 
+  if (route === 'admin') {
+    return {
+      title: 'Admin | VedicPanditji',
+      description: 'Pricing administration.',
+      canonical: `${DOMAIN}/admin`,
+      ogTitle: 'Admin',
+      ogDescription: 'Pricing administration.',
+      ogImage: DEFAULT_IMAGE,
+      ogType: 'website',
+      robots: 'noindex, nofollow',
+      schema: null
+    };
+  }
+
   // 8. 404 Not Found Page
   return {
     title: 'Page Not Found (404) | VedicPanditji',

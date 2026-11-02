@@ -1,0 +1,29 @@
+.admin { max-width: 1200px; margin: 0 auto; padding: 16px; font-family: system-ui, sans-serif; }
+.admin-bar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 12px 0; border-bottom: 1px solid #eae5d9; }
+.admin-bar .spacer { flex: 1; }
+.admin button { padding: 6px 12px; border: 1px solid #c9c2b0; border-radius: 6px; background: #fff; cursor: pointer; }
+.admin button:disabled { opacity: 0.5; cursor: default; }
+.admin button.primary { background: #bd4b23; border-color: #bd4b23; color: #fff; }
+.admin-tabs { display: flex; gap: 8px; margin: 12px 0; }
+.admin-tabs .active, .admin-list .active { background: #fdf3e7; border-color: #bd4b23; }
+.admin-body { display: grid; grid-template-columns: 260px 1fr; gap: 16px; align-items: start; }
+.admin-list { display: flex; flex-direction: column; gap: 4px; max-height: 80vh; overflow: auto; }
+.admin-list button { text-align: left; }
+.admin-list input, .admin-login input, .admin .field input, .admin .field textarea, .admin .field select { padding: 6px 8px; border: 1px solid #c9c2b0; border-radius: 6px; font: inherit; }
+.admin .field { display: flex; flex-direction: column; gap: 4px; margin: 10px 0; }
+.admin .field label { font-weight: 600; font-size: 13px; }
+.admin .lang-row { display: flex; gap: 6px; align-items: flex-start; }
+.admin .lang-row input, .admin .lang-row textarea { flex: 1; }
+.admin .lang-tag { min-width: 28px; font-size: 11px; font-weight: 700; padding-top: 8px; color: #6b6558; }
+.admin .lang-tag.missing { color: #bd4b23; }
+.admin .check { display: flex; gap: 6px; align-items: center; margin: 4px 0; }
+.admin .list-item { border-left: 3px solid #eae5d9; padding-left: 8px; margin: 6px 0; }
+.admin .row-actions { display: flex; gap: 6px; margin: 4px 0; }
+.admin .package { border: 1px solid #eae5d9; border-radius: 8px; margin: 12px 0; padding: 8px 12px; }
+.admin .muted { color: #6b6558; font-size: 13px; }
+.admin-error { background: #fdecea; color: #8a1c10; padding: 8px 12px; border-radius: 6px; }
+.admin-ok { background: #eaf6ea; color: #1d5c1d; padding: 8px 12px; border-radius: 6px; }
+.admin-note { padding: 40px 16px; text-align: center; }
+.admin-login { display: flex; flex-direction: column; gap: 10px; max-width: 320px; margin: 80px auto; padding: 0 16px; }
+.admin-login button { padding: 8px 12px; }
+@media (max-width: 800px) { .admin-body { grid-template-columns: 1fr; } .admin-list { max-height: 200px; } }

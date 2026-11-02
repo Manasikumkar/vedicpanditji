@@ -4,7 +4,7 @@ import { SERVICES, CITIES } from '../../data/vedicPanditData';
 import { animateModalOpen } from '../../utils/gsapAnimations';
 import {
   getPackagesForService,
-  OPTIONAL_SAMAGRI_OPTIONS,
+  getOptionalSamagriOptions,
   calculateBookingTotal
 } from '../../data/pujaPackagesData';
 import EnquiryConfirmationView from './EnquiryConfirmationView';
@@ -29,8 +29,10 @@ export default function BookingModal() {
     selectedLocality,
     selectedCity,
     completeBooking,
+    pricingVersion,
     user
   } = useApp();
+  const samagriOptions = getOptionalSamagriOptions();
 
   // Step names: 'puja' (1) | 'city' (2) | 'packages' (3) | 'samagri' (4) | 'details' (5) | 'confirmation' (6)
   const [step, setStep] = useState('puja');
@@ -87,12 +89,18 @@ export default function BookingModal() {
   // Available packages for current service & city
   const packages = useMemo(() => {
     return getPackagesForService(activeService, city);
-  }, [activeService, city]);
+  }, [activeService, city, pricingVersion]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Re-resolve the chosen package by id so a live pricing swap updates its price
+  const livePkg = useMemo(
+    () => (selectedPkg ? packages.find(p => p.id === selectedPkg.id) || selectedPkg : null),
+    [selectedPkg, packages]
+  );
 
   // Pricing calculation
   const pricingSummary = useMemo(() => {
-    return calculateBookingTotal(selectedPkg, selectedExtras);
-  }, [selectedPkg, selectedExtras]);
+    return calculateBookingTotal(livePkg, selectedExtras);
+  }, [livePkg, selectedExtras]);
 
   // Determine initial step when modal opens
   useEffect(() => {
@@ -171,7 +179,7 @@ export default function BookingModal() {
 
     setIsSubmitting(true);
     setStep('confirmation');
-    const pkgToSave = selectedPkg || packages[0];
+    const pkgToSave = livePkg || packages[0];
 
     // Maintain stable submissionId across retries of the same booking attempt
     const activeSubId = submissionId || generateSubmissionId();
@@ -181,7 +189,7 @@ export default function BookingModal() {
 
     // Collect names of selected extra samagri items
     const selectedExtraNames = selectedExtras
-      .map(id => OPTIONAL_SAMAGRI_OPTIONS.find(o => o.id === id)?.name)
+      .map(id => samagriOptions.find(o => o.id === id)?.name)
       .filter(Boolean);
 
     const enquiryRecord = await completeBooking({
@@ -894,7 +902,7 @@ export default function BookingModal() {
                 }}
               >
                 <div>
-                  Selected: <strong style={{ color: '#BD4B23' }}>{selectedPkg?.name || 'Ritual Package'}</strong> ({selectedPkg?.priceDisplay || 'Custom Quote'})
+                  Selected: <strong style={{ color: '#BD4B23' }}>{selectedPkg?.name || 'Ritual Package'}</strong> ({livePkg?.priceDisplay || 'Custom Quote'})
                 </div>
                 <button
                   type="button"
@@ -911,7 +919,7 @@ export default function BookingModal() {
 
               {/* Samagri Checklist Grid */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
-                {OPTIONAL_SAMAGRI_OPTIONS.map(opt => {
+                {samagriOptions.map(opt => {
                   const isIncludedInBase = (selectedPkg?.includedSamagriIds || (selectedPkg?.tier === 'popular' ? ['opt-havan-samagri', 'opt-cow-ghee', 'opt-complete-kit'] : [])).includes(opt.id);
                   const isChecked = isIncludedInBase || selectedExtras.includes(opt.id);
 
