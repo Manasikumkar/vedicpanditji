@@ -17,6 +17,7 @@
 - Do not stage `frontend/package-lock.json` except in Task 3 (it adds dev dependencies).
 - Run `git checkout frontend/public/sitemap.xml` after any `npm run build` (the build rewrites it).
 - Node 22 or later is required (the test script uses a glob).
+- **Execution order:** Tasks 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, then 5, then 15 to 21. Task 5 sweeps the links the component tasks did not cover, so it runs after them.
 
 ## File structure
 
@@ -275,7 +276,7 @@ import assert from 'node:assert/strict';
 import { createTranslator } from './translate.js';
 
 const translate = createTranslator({
-  en: { 'a.hello': 'Hello', 'a.greet': 'Hi {name}, you have {count} items', 'a.only-en': 'Only English' },
+  en: { 'a.hello': 'Hello', 'a.greet': 'Hi {name}, you have {count} items', 'a.only-en': 'Only English', 'a.empty': 'Fallback text' },
   hi: { 'a.hello': 'नमस्ते', 'a.greet': 'नमस्ते {name}, आपके {count} आइटम हैं', 'a.empty': '' },
   mr: {}
 });
@@ -376,18 +377,6 @@ export function createTranslator(dicts, defaultLang = 'en') {
     return text.replace(/\{(\w+)\}/g, (match, name) => (name in vars ? String(vars[name]) : match));
   };
 }
-```
-
-Fix the third assertion of the "falls back" test to what it should say. Replace
-
-```js
-  assert.equal(translate('hi', 'a.empty'), undefined === 1 ? '' : translate('en', 'a.empty'));
-```
-
-with a case that has an English value to fall back to. Change the fixture `en` line to add `'a.empty': 'Fallback text'` and the assertion to:
-
-```js
-  assert.equal(translate('hi', 'a.empty'), 'Fallback text');
 ```
 
 `frontend/src/i18n/en.json`:
@@ -770,17 +759,13 @@ In the context `value={{` object add `lang,` after `pricingVersion,`.
 
 - [ ] **Step 6: Verify**
 
-Temporarily check the routing with the snapshot script by rendering a prefixed URL. Run:
-
 ```bash
-cat > /tmp/vp-lang-check.mjs <<'EOF'
-EOF
-node scripts/snapshot-pages.mjs
+cd frontend && node scripts/snapshot-pages.mjs
 npm test
-npm run lint 2>&1 | grep -c "error" 
+npm run lint 2>&1 | grep -c " error"
 ```
 
-Expected: `OK` for all four pages (English output unchanged), tests pass, no lint errors. Then verify a prefixed URL by adding a fifth URL to the `urls` array in `snapshot-pages.mjs`: `'/hi/services'`, run `node scripts/snapshot-pages.mjs --update`, and check that the new `hi__services.html` file has the same body as `services.html` (`diff scripts/__snapshots__/en/services.html scripts/__snapshots__/en/hi__services.html && echo same`). Keep `'/hi/services'` in the list as a routing regression check, and rename its snapshot folder logic only if needed (it is stored beside the English files; that is fine).
+Expected: `OK` for all four pages (English output unchanged), tests pass, 0 lint errors. Then verify a prefixed URL: add `'/hi/services'` to the `urls` array in `scripts/snapshot-pages.mjs`, run `node scripts/snapshot-pages.mjs --update`, and check that the new `hi__services.html` renders the catalogue like English (`diff scripts/__snapshots__/en/services.html scripts/__snapshots__/en/hi__services.html && echo same` prints `same`, because the links are not localized yet and the text is still English). Keep `'/hi/services'` in the list as a routing regression check. Later tasks that change links (Task 5) will legitimately change that one snapshot: when they do, refresh it with `--update` and review the diff, which must contain only `/hi` link prefixes.
 
 - [ ] **Step 7: Commit**
 
@@ -793,7 +778,7 @@ cd .. && git add frontend/src/context/AppContext.jsx frontend/scripts && git com
 ### Task 5: Localize every internal link outside the in-scope files
 
 **Files:**
-- Modify: every file under `frontend/src` that still has `href="/..."` or `` href={`/...`} `` internal links after Tasks 8 to 15 (run this task last among the component tasks, or run it now for files not covered by Tasks 8 to 15 and rerun the grep at the end)
+- Modify: every file under `frontend/src` that still has `href="/..."` or `` href={`/...`} `` internal links. Run this task after Tasks 7 to 14, which already localize the links in their own files; it sweeps the rest.
 
 Language must survive navigation: a visitor on `/hi/services` who clicks a link in any page, including English-only pages, stays under `/hi`.
 
@@ -1198,11 +1183,9 @@ export function getSeoMetadata(route, params = {}, lang = DEFAULT_LANG) {
   const vars = { name: params.serviceId ? serviceNameFor(params.serviceId) : '' };
   const title = translate(lang, `meta.${key}.title`, vars);
   const description = translate(lang, `meta.${key}.description`, vars);
-  const english = { title: translate(DEFAULT_LANG, `meta.${key}.title`, vars), description: translate(DEFAULT_LANG, `meta.${key}.description`, vars) };
-  // Until a dictionary has the entry, fall back to the English page text (never to the raw key)
-  const useDict = title !== `meta.${key}.title`;
-  const finalTitle = useDict ? title : meta.title;
-  const finalDescription = useDict && description !== `meta.${key}.description` ? description : meta.description;
+  // translate() returns the key itself when no dictionary has it; use the English page text then
+  const finalTitle = title !== `meta.${key}.title` ? title : meta.title;
+  const finalDescription = description !== `meta.${key}.description` ? description : meta.description;
 
   return {
     ...meta,
