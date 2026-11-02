@@ -9,7 +9,8 @@ const TEXT_KEYS = new Set(['label', 'title', 'subtitle', 'description', 'text', 
 // Exact strings that stay untranslated on purpose. Add a comment for each entry.
 const ALLOWED = new Set([
   'VedicPanditji', // brand name
-  'Vedic', 'Panditji' // brand name split across spans
+  'Vedic', 'Panditji', // brand name split across spans
+  'WhatsApp' // third-party brand name
 ]);
 const HAS_LETTERS = /[A-Za-zऀ-ॿ]/;
 
