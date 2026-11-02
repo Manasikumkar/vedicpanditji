@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useApp } from '../../context/AppContext';
 import { SERVICES } from '../../data/vedicPanditData';
 import { animateHeroSection } from '../../utils/gsapAnimations';
+import { useI18n } from '../../i18n/useI18n';
 import {
   MapPin,
   Sparkles,
@@ -13,14 +14,15 @@ import {
   Award
 } from 'lucide-react';
 
+// Keys, translated at render time
 const ROTATING_KEYWORDS = [
-  'Pooja',
-  'Havan',
-  'Japa',
-  'Griha Pravesh',
-  'Satyanarayan Pooja',
-  'Vastu Shanti',
-  'Hindu Wedding'
+  'home.hero.keyword-pooja',
+  'home.hero.keyword-havan',
+  'home.hero.keyword-japa',
+  'home.hero.keyword-griha-pravesh',
+  'home.hero.keyword-satyanarayan-pooja',
+  'home.hero.keyword-vastu-shanti',
+  'home.hero.keyword-hindu-wedding'
 ];
 
 export default function HeroSection() {
@@ -28,6 +30,7 @@ export default function HeroSection() {
     openBookingModal,
     navigateTo
   } = useApp();
+  const { t } = useI18n();
 
   const [selectedPujaId, setSelectedPujaId] = useState(SERVICES[0].id);
   const [selectedCity, setSelectedCity] = useState('Bangalore');
@@ -80,7 +83,7 @@ export default function HeroSection() {
     navigateTo('service-detail', { serviceId: selectedPujaId, city: selectedCity });
   };
 
-  const currentKeyword = ROTATING_KEYWORDS[keywordIndex];
+  const currentKeyword = t(ROTATING_KEYWORDS[keywordIndex]);
 
   return (
     <section
@@ -164,10 +167,10 @@ export default function HeroSection() {
           </div>
           <div>
             <div style={{ fontSize: '11px', fontWeight: 700, color: '#0369A1', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-              Authentic Tradition
+              {t('home.hero.float-authentic-tradition')}
             </div>
             <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-main)' }}>
-              Experienced Vedic Purohits
+              {t('home.hero.float-experienced-purohits')}
             </div>
           </div>
         </div>
@@ -193,7 +196,7 @@ export default function HeroSection() {
             }}
           >
             <Sparkles size={14} color="var(--accent-saffron)" />
-            <span>North Indian Vedic Pandits in Pune, Mumbai, Bangalore, Delhi, Chennai &amp; All-India</span>
+            <span>{t('home.hero.trust-badge')}</span>
           </div>
 
           {/* MAIN ANIMATED ROTATING HEADLINE — EXACTLY THREE INTENTIONAL LINES */}
@@ -211,7 +214,7 @@ export default function HeroSection() {
           >
             {/* Line 1: Authentic Vedic */}
             <div className="hero-title-line hero-title-line-1">
-              Authentic Vedic
+              {t('home.hero.title-authentic-vedic')}
             </div>
             
             {/* Line 2: [Animated rotating keyword] and */}
@@ -223,12 +226,12 @@ export default function HeroSection() {
                   {currentKeyword}
                 </span>
               </span>
-              <span className="hero-heading-and">and</span>
+              <span className="hero-heading-and">{t('home.hero.title-and')}</span>
             </div>
 
             {/* Line 3: Ceremonies Across Major Cities */}
             <div className="hero-title-line hero-title-line-3">
-              Ceremonies Across <span style={{ color: 'var(--accent-saffron)', fontStyle: 'normal' }}>Major Cities</span>
+              {`${t('home.hero.title-ceremonies-across')} `}<span style={{ color: 'var(--accent-saffron)', fontStyle: 'normal' }}>{t('home.hero.title-major-cities')}</span>
             </div>
           </h1>
 
@@ -243,7 +246,7 @@ export default function HeroSection() {
               maxWidth: '660px'
             }}
           >
-            Dedicated North Indian and Bihari Pandits for Griha Pravesh, Satyanarayan Puja, Vastu Shanti, Havans &amp; Hindu Weddings across India with authentic Hindi &amp; Sanskrit rituals.
+            {t('home.hero.subtitle')}
           </p>
 
           {/* Quick Call & Primary CTA Group */}
@@ -263,7 +266,7 @@ export default function HeroSection() {
               }}
             >
               <CalendarCheck size={18} />
-              <span>Book a Pandit</span>
+              <span>{t('home.hero.book-a-pandit')}</span>
               <ArrowRight size={16} />
             </button>
 
@@ -282,7 +285,7 @@ export default function HeroSection() {
                 background: '#FFFFFF'
               }}
             >
-              <span>Explore All Pujas</span>
+              <span>{t('home.hero.explore-all-pujas')}</span>
               <ArrowRight size={16} />
             </button>
           </div>
@@ -291,19 +294,19 @@ export default function HeroSection() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', fontSize: '13px', color: 'var(--text-secondary)' }}>
             <div className="hero-trust-item" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <Building size={16} color="var(--accent-saffron)" />
-              <span><strong>Pune &amp; PCMC</strong> Doorstep Priest Services</span>
+              <span><strong>{t('home.hero.pillar-pune-pcmc')}</strong>{` ${t('home.hero.pillar-doorstep-priest-services')}`}</span>
             </div>
             <div className="hero-trust-item" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <ShieldCheck size={16} color="var(--accent-saffron)" />
-              <span><strong>Verified</strong> North Indian Vedic Pandits</span>
+              <span><strong>{t('home.hero.pillar-verified')}</strong>{` ${t('home.hero.pillar-north-indian-vedic-pandits')}`}</span>
             </div>
             <div className="hero-trust-item" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <Sparkles size={16} color="var(--accent-gold)" />
-              <span><strong>Hindi &amp; Sanskrit</strong> Mantras &amp; Vidhi</span>
+              <span><strong>{t('home.hero.hindi-sanskrit')}</strong>{` ${t('home.hero.pillar-mantras-vidhi')}`}</span>
             </div>
             <div className="hero-trust-item" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <Flame size={16} color="var(--accent-saffron)" />
-              <span>Pure Vedic Samagri Kits Available</span>
+              <span>{t('home.hero.pillar-samagri-kits')}</span>
             </div>
           </div>
         </div>
@@ -326,7 +329,7 @@ export default function HeroSection() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
               <Flame size={17} color="var(--accent-saffron)" />
               <span style={{ fontSize: '13.5px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--text-main)' }}>
-                Select Puja &amp; City to View Verified Packages
+                {t('home.hero.search-heading')}
               </span>
             </div>
 
@@ -343,7 +346,7 @@ export default function HeroSection() {
               {/* Puja Select */}
               <div>
                 <label style={{ display: 'block', fontSize: '11px', fontWeight: 700, color: 'var(--text-muted)', marginBottom: '5px', letterSpacing: '0.04em' }}>
-                  SELECT POOJA OR HAVAN
+                  {t('home.hero.label-pooja')}
                 </label>
                 <select
                   value={selectedPujaId}
@@ -370,7 +373,7 @@ export default function HeroSection() {
               {/* City Select */}
               <div>
                 <label style={{ display: 'block', fontSize: '11px', fontWeight: 700, color: 'var(--text-muted)', marginBottom: '5px', letterSpacing: '0.04em' }}>
-                  SELECT CITY
+                  {t('home.hero.label-city')}
                 </label>
                 <div style={{ position: 'relative' }}>
                   <MapPin size={15} style={{ position: 'absolute', left: '12px', top: '15px', color: 'var(--accent-saffron)' }} />
@@ -390,14 +393,14 @@ export default function HeroSection() {
                       cursor: 'pointer'
                     }}
                   >
-                    <option value="Bangalore">Bangalore (Visiting Pandit &amp; Live)</option>
-                    <option value="Pune">Pune &amp; PCMC (Doorstep Priest Services)</option>
-                    <option value="Mumbai">Mumbai &amp; MMR (Direct Express Travel)</option>
-                    <option value="Delhi">Delhi &amp; NCR (Visiting Pandit &amp; Live)</option>
-                    <option value="Hyderabad">Hyderabad (Visiting Pandit &amp; Live)</option>
-                    <option value="Chennai">Chennai (Visiting Pandit &amp; Live)</option>
-                    <option value="Nashik">Nashik / Trimbakeshwar (Kshetra)</option>
-                    <option value="Online E-Puja">Online E-Puja (Pan-India &amp; Global)</option>
+                    <option value="Bangalore">{t('home.hero.city-bangalore')}</option>
+                    <option value="Pune">{t('home.hero.city-pune')}</option>
+                    <option value="Mumbai">{t('home.hero.city-mumbai')}</option>
+                    <option value="Delhi">{t('home.hero.city-delhi')}</option>
+                    <option value="Hyderabad">{t('home.hero.city-hyderabad')}</option>
+                    <option value="Chennai">{t('home.hero.city-chennai')}</option>
+                    <option value="Nashik">{t('home.hero.city-nashik')}</option>
+                    <option value="Online E-Puja">{t('home.hero.city-online-e-puja')}</option>
                   </select>
                 </div>
               </div>
@@ -405,7 +408,7 @@ export default function HeroSection() {
               {/* Tradition / Language */}
               <div>
                 <label style={{ display: 'block', fontSize: '11px', fontWeight: 700, color: 'var(--text-muted)', marginBottom: '5px', letterSpacing: '0.04em' }}>
-                  RITUAL LANGUAGES
+                  {t('home.hero.label-ritual-languages')}
                 </label>
                 <div
                   style={{
@@ -418,14 +421,14 @@ export default function HeroSection() {
                     color: 'var(--accent-saffron)'
                   }}
                 >
-                  Hindi &amp; Sanskrit
+                  {t('home.hero.hindi-sanskrit')}
                 </div>
               </div>
 
               {/* Submit Button */}
               <div>
                 <label className="hero-search-action-label" style={{ display: 'block', fontSize: '11px', color: 'transparent', marginBottom: '5px' }}>
-                  ACTION
+                  {t('home.hero.label-action')}
                 </label>
                 <button
                   type="submit"
@@ -439,7 +442,7 @@ export default function HeroSection() {
                     cursor: 'pointer'
                   }}
                 >
-                  <span>View Packages</span>
+                  <span>{t('home.hero.view-packages')}</span>
                   <ArrowRight size={15} />
                 </button>
               </div>
