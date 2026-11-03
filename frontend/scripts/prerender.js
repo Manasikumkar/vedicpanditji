@@ -858,7 +858,7 @@ async function run() {
     written += 1;
 
     // Add to sitemap if indexable (exclude 404, legal)
-    if (meta.robots && meta.robots.includes('index') && page.path !== '404' && page.path !== 'legal') {
+    if (meta.robots && !meta.robots.includes('noindex') && page.path !== '404' && page.path !== 'legal') {
       let priority = '0.8';
       let changefreq = 'weekly';
 
