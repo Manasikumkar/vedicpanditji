@@ -98,9 +98,16 @@ export function AppProvider({ children }) {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  // Keep <html lang> in step with the URL language
+  // Keep <html lang> in step with the URL language and load Devanagari glyphs for hi and mr
   useEffect(() => {
     document.documentElement.lang = lang;
+    if (lang !== DEFAULT_LANG && !document.getElementById('vp-devanagari-font')) {
+      const link = document.createElement('link');
+      link.id = 'vp-devanagari-font';
+      link.rel = 'stylesheet';
+      link.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600&display=swap';
+      document.head.appendChild(link);
+    }
   }, [lang]);
 
   // Update Dynamic SEO Head Tags & Trigger Analytics Pageview on Route Change
