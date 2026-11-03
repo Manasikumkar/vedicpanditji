@@ -2,10 +2,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "cleanUrls": true,
-  "rewrites": [
-    { "source": "/admin", "destination": "/" },
-    { "source": "/:lang(hi|mr)/:path+", "destination": "/:path" }
-  ],
+  "rewrites": [{ "source": "/admin", "destination": "/" }],
   "headers": [
     { "source": "/admin", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }] }
   ]

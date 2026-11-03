@@ -22,7 +22,7 @@ function sourceFiles(dir) {
 
 test('every key used in the code exists in en.json', () => {
   const used = new Set();
-  const re = /\b(?:t|translate)\(\s*(?:[a-zA-Z_]+\s*,\s*)?['"]([\w.-]+)['"]/g;
+  const re = /\b(?:t|translate)\(\s*(?:(?:[a-zA-Z_]+|'[a-z]{2}')\s*,\s*)?['"]([\w.-]+)['"]/g;
   for (const file of sourceFiles(srcDir)) {
     for (const match of fs.readFileSync(file, 'utf8').matchAll(re)) used.add(match[1]);
   }

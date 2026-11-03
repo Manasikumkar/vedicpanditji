@@ -780,7 +780,7 @@ async function run() {
 
   const sitemapUrls = [];
   const renderLangs = Object.values(LANGUAGES).filter((l) => l.enabled).map((l) => l.code);
-  const indexableLangs = Object.values(LANGUAGES).filter((l) => l.indexable).map((l) => l.code);
+  const indexableLangs = Object.values(LANGUAGES).filter((l) => l.enabled && l.indexable).map((l) => l.code);
   let written = 0;
 
   // One pass per (language, page); a flat loop keeps the template literals below at their original indentation.

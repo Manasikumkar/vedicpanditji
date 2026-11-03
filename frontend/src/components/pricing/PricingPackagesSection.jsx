@@ -15,6 +15,7 @@ import {
   getCityNote
 } from '../../data/pujaPricing';
 import { useI18n } from '../../i18n/useI18n';
+import { translate } from '../../i18n';
 
 // Serving city options: value is the pricing city; labelKey is translated, name is a location name kept as data.
 const CITY_OPTIONS = [
@@ -548,7 +549,8 @@ export default function PricingPackagesSection({
 
                 <a
                   href={`https://wa.me/919766880979?text=${encodeURIComponent(
-                    t('pricing.custom.whatsapp-message', { service: service?.name, city })
+                    // Goes to the business, so it stays English whatever the page language
+                    translate('en', 'pricing.custom.whatsapp-message', { service: service?.name, city })
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
