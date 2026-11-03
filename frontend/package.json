@@ -7,6 +7,7 @@
     "dev": "vite",
     "prebuild": "node scripts/fetch-pricing.mjs",
     "build": "vite build && node scripts/prerender.js",
+    "i18n:check-build": "node scripts/check-i18n-build.mjs",
     "lint": "oxlint",
     "i18n:find": "node scripts/find-hardcoded-text.mjs $(node -p \"require('./scripts/i18n-scope.json').join(' ')\")",
     "i18n:snapshot": "node scripts/snapshot-pages.mjs",
