@@ -575,6 +575,33 @@ Set the status to `reviewed` for rows you have checked.
 | `service.when.time-of-day` | Auspicious Time of Day | दिन का शुभ समय | needs review |
 | `service.when.title-after` |  (Auspicious Timing & Muhurat) |  (शुभ समय और मुहूर्त) | needs review |
 | `service.when.title-before` | When to Perform  | कब करें:  | needs review |
+| `ssr.book-pandit-for` | Book Pandit for {name} | {name} के लिए पंडित बुक करें | needs review |
+| `ssr.call-senior-acharya` | Call Senior Acharya ({phone}) | वरिष्ठ आचार्य को कॉल करें ({phone}) | needs review |
+| `ssr.catalogue-intro` | Explore our complete directory of authentic Hindu ceremonies, Griha Pravesh, Satyanarayan Katha, Vastu Shanti, Havans, and Sanskars conducted by experienced North Indian Pandits. | अनुभवी उत्तर भारतीय पंडितों द्वारा संपन्न प्रामाणिक हिंदू अनुष्ठानों, गृह प्रवेश, सत्यनारायण कथा, वास्तु शांति, हवन और संस्कारों की हमारी पूरी सूची देखें। | needs review |
+| `ssr.catalogue-title` | Vedic Puja & Havan Services Catalogue | वैदिक पूजा और हवन सेवाओं की सूची | needs review |
+| `ssr.ceremonies-catalogue` | Ceremonies Catalogue | अनुष्ठान सूची | needs review |
+| `ssr.connect-acharya` | Connect directly with our senior Acharya for Shubh Muhurat consultation and pure Vedic samagri arrangement. | शुभ मुहूर्त परामर्श और शुद्ध वैदिक सामग्री की व्यवस्था के लिए हमारे वरिष्ठ आचार्य से सीधे संपर्क करें। | needs review |
+| `ssr.default-duration` | 2-3 Hours | 2-3 घंटे | needs review |
+| `ssr.doorstep-availability` | Doorstep Availability Across Pune & PCMC Localities | पुणे और PCMC के इलाकों में घर पर उपलब्ध | needs review |
+| `ssr.explore-all-ceremonies` | Explore All 50+ Puja Ceremonies | सभी 50+ पूजा अनुष्ठान देखें | needs review |
+| `ssr.helpline` | Helpline: | हेल्पलाइन: | needs review |
+| `ssr.hindi-sanskrit` | Hindi & Sanskrit | हिंदी और संस्कृत | needs review |
+| `ssr.home-badge-purohits` | EXPERIENCED PUROHITS | अनुभवी पुरोहित | needs review |
+| `ssr.home-badge-traditions` | PURE VEDIC TRADITIONS | शुद्ध वैदिक परंपराएँ | needs review |
+| `ssr.home-intro` | Book experienced North Indian and Bihari Pandits for Griha Pravesh, Satyanarayan Katha, Vastu Shanti, Vivah Sanskar, and Havans. Serving families with in-person doorstep purohits across Pune and PCMC, visiting Acharyas for major ceremonies, and live interactive E-Pujas nationwide. | गृह प्रवेश, सत्यनारायण कथा, वास्तु शांति, विवाह संस्कार और हवन के लिए अनुभवी उत्तर भारतीय और बिहारी पंडित बुक करें। पुणे और PCMC में घर आकर पूजा कराने वाले पुरोहित, बड़े अनुष्ठानों के लिए आने वाले आचार्य और देशभर में लाइव इंटरैक्टिव ई-पूजा के साथ परिवारों की सेवा। | needs review |
+| `ssr.home-title` | North Indian Pandit Booking & Vedic Puja Services Across India | पूरे भारत में उत्तर भारतीय पंडित बुकिंग और वैदिक पूजा सेवाएँ | needs review |
+| `ssr.key-puja-services` | Key Vedic Puja Services | प्रमुख वैदिक पूजा सेवाएँ | needs review |
+| `ssr.locality-network` | Pune & PCMC Dedicated Locality Network | पुणे और PCMC का समर्पित इलाका नेटवर्क | needs review |
+| `ssr.locality-network-intro` | We coordinate punctual doorstep ceremony conduction across all major Pune and Pimpri-Chinchwad neighborhoods: | हम पुणे और पिंपरी-चिंचवड के सभी प्रमुख इलाकों में घर पर समय से अनुष्ठान संपन्न कराने की व्यवस्था करते हैं: | needs review |
+| `ssr.pandit-in` | Pandit in {name} | {name} में पंडित | needs review |
+| `ssr.service-description-fallback` | Conducted with authentic Vedic mantras chanted in Sanskrit, accompanied by step-by-step Hindi explanations and Shubh Muhurat calculations. | संस्कृत में प्रामाणिक वैदिक मंत्रों के उच्चारण के साथ, हिंदी में चरण-दर-चरण व्याख्या और शुभ मुहूर्त गणना सहित संपन्न। | needs review |
+| `ssr.vedic` | VEDIC | वैदिक | needs review |
+| `ssr.vedic-ceremony` | VEDIC CEREMONY | वैदिक अनुष्ठान | needs review |
+| `ssr.vidhi-ritual-procedure` | Scriptural Vidhi & Ritual Procedure | शास्त्रीय विधि और अनुष्ठान प्रक्रिया | needs review |
+| `ssr.vidhi-samagri` | Vidhi & Samagri | विधि और सामग्री | needs review |
+| `ssr.view-pune-pcmc-localities` | View Pune & PCMC Localities | पुणे और PCMC के इलाके देखें | needs review |
+| `ssr.view-vidhi-samagri` | View Vidhi & Samagri | विधि और सामग्री देखें | needs review |
+| `ssr.whatsapp-enquiry` | WhatsApp Enquiry | WhatsApp पूछताछ | needs review |
 | `switcher.english-only` | This page is English only for now | यह पेज अभी केवल अंग्रेज़ी में उपलब्ध है | needs review |
 | `switcher.label` | Language | भाषा | needs review |
 | `toast.ceremony-link-copied` | Ceremony link copied to clipboard! | अनुष्ठान का लिंक क्लिपबोर्ड पर कॉपी हो गया! | needs review |

@@ -43,21 +43,23 @@ function sanitizeForMeta(str) {
 /**
  * Builds the static pre-rendered HTML for search engine crawlers and instant first paint
  */
-function buildSemanticBody(route, params, data, meta) {
+function buildSemanticBody(route, params, data, meta, lang = 'en') {
   const { BRAND_INFO, SERVICES, ALL_LOCATIONS, PUJA_GUIDES_DATA, getPricingDisplay } = data;
+  const t = (key, vars) => data.translate(lang, key, vars);
+  const lp = (p) => data.localizePath(p, lang);
 
   const headerHtml = `
     <header class="navbar" style="background:#FFFFFF;border-bottom:1px solid #EAE5D9;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;">
-      <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#1A1613;">
+      <a href="${lp('/')}" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#1A1613;">
         <span style="font-size:24px;">🕉️</span>
         <span style="font-weight:700;font-size:20px;color:#BD4B23;">Vedic<span style="color:#C98A2C;">Panditji</span></span>
       </a>
       <nav style="display:flex;gap:20px;font-size:14px;font-weight:500;">
-        <a href="/" style="text-decoration:none;color:#1A1613;">Home</a>
-        <a href="/about-us" style="text-decoration:none;color:#1A1613;">About Us</a>
-        <a href="/services" style="text-decoration:none;color:#1A1613;">Ceremonies</a>
-        <a href="/locations/pandit-in-pune" style="text-decoration:none;color:#1A1613;">Locations</a>
-        <a href="/contact" style="text-decoration:none;color:#1A1613;">Contact</a>
+        <a href="${lp('/')}" style="text-decoration:none;color:#1A1613;">${escapeHtml(t('nav.home'))}</a>
+        <a href="${lp('/about-us')}" style="text-decoration:none;color:#1A1613;">${escapeHtml(t('nav.about-us'))}</a>
+        <a href="${lp('/services')}" style="text-decoration:none;color:#1A1613;">${escapeHtml(t('nav.ceremonies'))}</a>
+        <a href="${lp('/locations/pandit-in-pune')}" style="text-decoration:none;color:#1A1613;">${escapeHtml(t('nav.locations'))}</a>
+        <a href="${lp('/contact')}" style="text-decoration:none;color:#1A1613;">${escapeHtml(t('nav.contact'))}</a>
       </nav>
       <div>
         <a href="tel:+919766880979" style="background:#BD4B23;color:#FFFFFF;padding:8px 16px;border-radius:20px;text-decoration:none;font-size:13px;font-weight:600;">📞 +91 97668 80979</a>
@@ -72,74 +74,74 @@ function buildSemanticBody(route, params, data, meta) {
           <div style="background:#FFFFFF;padding:6px 14px;border-radius:10px;display:inline-block;margin-bottom:14px;">
             <span style="font-weight:700;font-size:18px;color:#BD4B23;">Vedic<span style="color:#C98A2C;">Panditji</span></span>
           </div>
-          <p style="font-size:13px;color:#A09D94;line-height:1.65;margin-bottom:14px;">VedicPanditji is a dedicated platform for authentic Hindu puja services, Vedic rituals, and havans conducted by experienced North Indian and Bihari purohits.</p>
-          <p style="font-size:12px;color:#E5C06E;font-weight:700;margin-bottom:12px;">Languages: Hindi &amp; Sanskrit</p>
-          <p style="font-size:13px;color:#A09D94;margin:4px 0;"><strong>Helpline:</strong> <a href="tel:+919766880979" style="color:#FFFFFF;text-decoration:none;font-weight:600;">+91 97668 80979</a></p>
-          <p style="font-size:13px;color:#A09D94;margin:4px 0;"><strong>Email:</strong> <a href="mailto:info@vedicpanditji.com" style="color:#A09D94;text-decoration:none;">info@vedicpanditji.com</a></p>
-          <p style="font-size:13px;color:#A09D94;margin:4px 0;">Serving Families Across India</p>
+          <p style="font-size:13px;color:#A09D94;line-height:1.65;margin-bottom:14px;">${escapeHtml(t('footer.about-blurb'))}</p>
+          <p style="font-size:12px;color:#E5C06E;font-weight:700;margin-bottom:12px;">${escapeHtml(t('footer.languages'))}</p>
+          <p style="font-size:13px;color:#A09D94;margin:4px 0;"><strong>${escapeHtml(t('ssr.helpline'))}</strong> <a href="tel:+919766880979" style="color:#FFFFFF;text-decoration:none;font-weight:600;">+91 97668 80979</a></p>
+          <p style="font-size:13px;color:#A09D94;margin:4px 0;"><strong>${escapeHtml(t('enquiry.email'))}</strong> <a href="mailto:info@vedicpanditji.com" style="color:#A09D94;text-decoration:none;">info@vedicpanditji.com</a></p>
+          <p style="font-size:13px;color:#A09D94;margin:4px 0;">${escapeHtml(t('footer.serving-families-across-india'))}</p>
         </div>
         <div>
-          <h4 style="color:#FFFFFF;font-size:15px;font-weight:700;margin-bottom:16px;letter-spacing:0.04em;">Pooja Services</h4>
+          <h4 style="color:#FFFFFF;font-size:15px;font-weight:700;margin-bottom:16px;letter-spacing:0.04em;">${escapeHtml(t('footer.pooja-services'))}</h4>
           <ul style="list-style:none;padding:0;margin:0;font-size:13px;line-height:2.2;">
-            <li><a href="/services/griha-pravesh" style="color:#A09D94;text-decoration:none;">Griha Pravesh Puja</a></li>
-            <li><a href="/services/satyanarayan-puja" style="color:#A09D94;text-decoration:none;">Satyanarayan Puja &amp; Katha</a></li>
-            <li><a href="/services/vastu-shanti-puja" style="color:#A09D94;text-decoration:none;">Vastu Shanti Puja</a></li>
-            <li><a href="/services/rudrabhishek-puja" style="color:#A09D94;text-decoration:none;">Rudrabhishek Puja</a></li>
-            <li><a href="/services/navagraha-havan" style="color:#A09D94;text-decoration:none;">Navgraha Shanti Havan</a></li>
-            <li><a href="/services/vivah-marriage" style="color:#A09D94;text-decoration:none;">Hindu Wedding</a></li>
-            <li><a href="/services" style="color:var(--accent-gold, #C98A2C);text-decoration:none;font-weight:700;">Browse All Ceremonies &rarr;</a></li>
+            <li><a href="${lp('/services/griha-pravesh')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.griha-pravesh-puja'))}</a></li>
+            <li><a href="${lp('/services/satyanarayan-puja')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.satyanarayan-puja-katha'))}</a></li>
+            <li><a href="${lp('/services/vastu-shanti-puja')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.vastu-shanti-puja'))}</a></li>
+            <li><a href="${lp('/services/rudrabhishek-puja')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.rudrabhishek-puja'))}</a></li>
+            <li><a href="${lp('/services/navagraha-havan')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.navgraha-shanti-havan'))}</a></li>
+            <li><a href="${lp('/services/vivah-marriage')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.hindu-wedding'))}</a></li>
+            <li><a href="${lp('/services')}" style="color:var(--accent-gold, #C98A2C);text-decoration:none;font-weight:700;">${escapeHtml(t('footer.browse-all-ceremonies'))} &rarr;</a></li>
           </ul>
         </div>
         <div>
-          <h4 style="color:#FFFFFF;font-size:15px;font-weight:700;margin-bottom:16px;letter-spacing:0.04em;">Pune &amp; PCMC Locations</h4>
+          <h4 style="color:#FFFFFF;font-size:15px;font-weight:700;margin-bottom:16px;letter-spacing:0.04em;">${escapeHtml(t('footer.pune-pcmc-locations'))}</h4>
           <ul style="list-style:none;padding:0;margin:0;font-size:13px;line-height:2.2;">
-            <li><a href="/locations/pandit-in-pune" style="color:#FFFFFF;text-decoration:none;font-weight:600;">Pandit in Pune &rarr;</a></li>
-            <li><a href="/locations/pandit-in-pcmc" style="color:#FFFFFF;text-decoration:none;font-weight:600;">Pandit in PCMC &rarr;</a></li>
-            <li><a href="/locations/pandit-in-kothrud" style="color:#A09D94;text-decoration:none;">Pandit in Kothrud</a></li>
-            <li><a href="/locations/pandit-in-baner" style="color:#A09D94;text-decoration:none;">Pandit in Baner</a></li>
-            <li><a href="/locations/pandit-in-hinjawadi" style="color:#A09D94;text-decoration:none;">Pandit in Hinjawadi</a></li>
-            <li><a href="/locations/pandit-in-kharadi" style="color:#A09D94;text-decoration:none;">Pandit in Kharadi</a></li>
-            <li><a href="/locations/pandit-in-wakad" style="color:#A09D94;text-decoration:none;">Pandit in Wakad</a></li>
-            <li><a href="/locations/pandit-in-pimple-saudagar" style="color:#A09D94;text-decoration:none;">Pandit in Pimple Saudagar</a></li>
-            <li><a href="/locations/pandit-in-ravet" style="color:#A09D94;text-decoration:none;">Pandit in Ravet</a></li>
+            <li><a href="${lp('/locations/pandit-in-pune')}" style="color:#FFFFFF;text-decoration:none;font-weight:600;">${escapeHtml(t('footer.pandit-in-pune'))} &rarr;</a></li>
+            <li><a href="${lp('/locations/pandit-in-pcmc')}" style="color:#FFFFFF;text-decoration:none;font-weight:600;">${escapeHtml(t('footer.pandit-in-pcmc'))} &rarr;</a></li>
+            <li><a href="${lp('/locations/pandit-in-kothrud')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.pandit-in-kothrud'))}</a></li>
+            <li><a href="${lp('/locations/pandit-in-baner')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.pandit-in-baner'))}</a></li>
+            <li><a href="${lp('/locations/pandit-in-hinjawadi')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.pandit-in-hinjawadi'))}</a></li>
+            <li><a href="${lp('/locations/pandit-in-kharadi')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.pandit-in-kharadi'))}</a></li>
+            <li><a href="${lp('/locations/pandit-in-wakad')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.pandit-in-wakad'))}</a></li>
+            <li><a href="${lp('/locations/pandit-in-pimple-saudagar')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.pandit-in-pimple-saudagar'))}</a></li>
+            <li><a href="${lp('/locations/pandit-in-ravet')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.pandit-in-ravet'))}</a></li>
           </ul>
         </div>
         <div>
-          <h4 style="color:#FFFFFF;font-size:15px;font-weight:700;margin-bottom:16px;letter-spacing:0.04em;">City-Specific Services</h4>
+          <h4 style="color:#FFFFFF;font-size:15px;font-weight:700;margin-bottom:16px;letter-spacing:0.04em;">${escapeHtml(t('footer.city-specific-services'))}</h4>
           <ul style="list-style:none;padding:0;margin:0;font-size:13px;line-height:2.2;">
-            <li><a href="/services/north-indian-pandit-in-pune" style="color:#A09D94;text-decoration:none;">North Indian Pandit in Pune</a></li>
-            <li><a href="/services/north-indian-pandit-in-mumbai" style="color:#A09D94;text-decoration:none;">North Indian Pandit in Mumbai</a></li>
-            <li><a href="/services/north-indian-pandit-in-bangalore" style="color:#A09D94;text-decoration:none;">North Indian Pandit in Bangalore</a></li>
-            <li><a href="/services/north-indian-pandit-in-hyderabad" style="color:#A09D94;text-decoration:none;">North Indian Pandit in Hyderabad</a></li>
-            <li><a href="/services/north-indian-pandit-in-delhi" style="color:#A09D94;text-decoration:none;">North Indian Pandit in Delhi-NCR</a></li>
-            <li><a href="/services/north-indian-pandit-in-chennai" style="color:#A09D94;text-decoration:none;">North Indian Pandit in Chennai</a></li>
-            <li><a href="/services/north-indian-pandit-in-ahmedabad" style="color:#A09D94;text-decoration:none;">North Indian Pandit in Ahmedabad</a></li>
-            <li><a href="/services/north-indian-pandit-in-kolkata" style="color:#A09D94;text-decoration:none;">North Indian Pandit in Kolkata</a></li>
-            <li><a href="/services/trimbakeshwar-kalsarp-puja-nashik" style="color:#A09D94;text-decoration:none;">Trimbakeshwar Nashik</a></li>
-            <li><a href="/services/online-e-puja-services" style="color:#A09D94;text-decoration:none;">Live E-Puja Worldwide</a></li>
+            <li><a href="${lp('/services/north-indian-pandit-in-pune')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.north-indian-pandit-pune'))}</a></li>
+            <li><a href="${lp('/services/north-indian-pandit-in-mumbai')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.north-indian-pandit-mumbai'))}</a></li>
+            <li><a href="${lp('/services/north-indian-pandit-in-bangalore')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.north-indian-pandit-bangalore'))}</a></li>
+            <li><a href="${lp('/services/north-indian-pandit-in-hyderabad')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.north-indian-pandit-hyderabad'))}</a></li>
+            <li><a href="${lp('/services/north-indian-pandit-in-delhi')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.north-indian-pandit-delhi-ncr'))}</a></li>
+            <li><a href="${lp('/services/north-indian-pandit-in-chennai')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.north-indian-pandit-chennai'))}</a></li>
+            <li><a href="${lp('/services/north-indian-pandit-in-ahmedabad')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.north-indian-pandit-ahmedabad'))}</a></li>
+            <li><a href="${lp('/services/north-indian-pandit-in-kolkata')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.north-indian-pandit-kolkata'))}</a></li>
+            <li><a href="${lp('/services/trimbakeshwar-kalsarp-puja-nashik')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.trimbakeshwar-nashik'))}</a></li>
+            <li><a href="${lp('/services/online-e-puja-services')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.live-e-puja-worldwide'))}</a></li>
           </ul>
         </div>
       </div>
 
       <!-- Bottom Horizontal Navigation & Copyright -->
       <div style="max-width:1200px;margin:28px auto 0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:12px;color:#7E7A72;gap:12px;">
-        <nav aria-label="Footer Navigation" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center;text-align:center;">
-          <a href="/about-us" style="color:#A09D94;text-decoration:none;">About Us</a>
+        <nav aria-label="${escapeHtml(t('footer.navigation'))}" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center;text-align:center;">
+          <a href="${lp('/about-us')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.about-us'))}</a>
           <span>•</span>
-          <a href="/how-it-works" style="color:#A09D94;text-decoration:none;">How We Work</a>
+          <a href="${lp('/how-it-works')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.how-we-work'))}</a>
           <span>•</span>
-          <a href="/faqs" style="color:#A09D94;text-decoration:none;">FAQs</a>
+          <a href="${lp('/faqs')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.faqs'))}</a>
           <span>•</span>
-          <a href="/contact" style="color:#A09D94;text-decoration:none;">Contact Us</a>
+          <a href="${lp('/contact')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.contact-us'))}</a>
           <span>•</span>
-          <a href="/legal" style="color:#A09D94;text-decoration:none;">Privacy Policy</a>
+          <a href="${lp('/legal')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.privacy-policy'))}</a>
           <span>•</span>
-          <a href="/legal" style="color:#A09D94;text-decoration:none;">Terms</a>
+          <a href="${lp('/legal')}" style="color:#A09D94;text-decoration:none;">${escapeHtml(t('footer.terms'))}</a>
           <span>•</span>
-          <a href="/sitemap" style="color:var(--accent-gold, #C98A2C);text-decoration:none;font-weight:600;">HTML Sitemap</a>
+          <a href="${lp('/sitemap')}" style="color:var(--accent-gold, #C98A2C);text-decoration:none;font-weight:600;">${escapeHtml(t('footer.html-sitemap'))}</a>
         </nav>
         <div style="text-align:center;color:#7E7A72;">
-          &copy; ${new Date().getFullYear()} VedicPanditji (vedicpanditji.com). All Rights Reserved. North Indian &amp; Bihari Vedic Pandit Services across India.
+          &copy; ${new Date().getFullYear()} ${escapeHtml(t('footer.copyright'))}
         </div>
       </div>
     </footer>
@@ -497,16 +499,16 @@ function buildSemanticBody(route, params, data, meta) {
     return `
       ${headerHtml}
       <main style="max-width:1200px;margin:0 auto;padding:40px 24px;">
-        <nav aria-label="Breadcrumb" style="font-size:13px;color:#6B6355;margin-bottom:24px;">
-          <a href="/" style="color:#6B6355;text-decoration:none;">Home</a> &gt;
-          <a href="/services" style="color:#6B6355;text-decoration:none;">Ceremonies</a> &gt;
+        <nav aria-label="${escapeHtml(t('service.breadcrumb.label'))}" style="font-size:13px;color:#6B6355;margin-bottom:24px;">
+          <a href="${lp('/')}" style="color:#6B6355;text-decoration:none;">${escapeHtml(t('service.breadcrumb.home'))}</a> &gt;
+          <a href="${lp('/services')}" style="color:#6B6355;text-decoration:none;">${escapeHtml(t('service.breadcrumb.ceremonies'))}</a> &gt;
           <span style="color:#BD4B23;font-weight:600;">${service.name}</span>
         </nav>
 
         <section style="display:grid;grid-template-columns:1fr 340px;gap:36px;margin-bottom:48px;">
           <div>
             <span style="background:#FFF3E0;color:#BD4B23;padding:4px 12px;border-radius:12px;font-size:12px;font-weight:600;display:inline-block;margin-bottom:12px;">
-              ${escapeHtml(service.category?.toUpperCase() || 'VEDIC CEREMONY')} &bull; ${escapeHtml(service.duration || '2-3 Hours')}
+              ${escapeHtml(service.category?.toUpperCase() || t('ssr.vedic-ceremony'))} &bull; ${escapeHtml(service.duration || t('ssr.default-duration'))}
             </span>
             <h1 style="font-size:32px;font-weight:700;color:#1A1613;margin-bottom:16px;">
               ${escapeHtml(service.name)}
@@ -516,39 +518,39 @@ function buildSemanticBody(route, params, data, meta) {
             </p>
 
             <div style="background:#FBF9F5;border:1px solid #EAE5D9;border-radius:12px;padding:24px;margin-bottom:32px;">
-              <h2 style="font-size:18px;font-weight:700;color:#1A1613;margin-bottom:12px;">Scriptural Vidhi &amp; Ritual Procedure</h2>
+              <h2 style="font-size:18px;font-weight:700;color:#1A1613;margin-bottom:12px;">${escapeHtml(t('ssr.vidhi-ritual-procedure'))}</h2>
               <p style="font-size:14px;color:#4A4438;line-height:1.7;">
-                ${escapeHtml(service.description || 'Conducted with authentic Vedic mantras chanted in Sanskrit, accompanied by step-by-step Hindi explanations and Shubh Muhurat calculations.')}
+                ${escapeHtml(service.description || t('ssr.service-description-fallback'))}
               </p>
             </div>
 
-            <h2 style="font-size:20px;font-weight:700;color:#1A1613;margin-bottom:16px;">Doorstep Availability Across Pune &amp; PCMC Localities</h2>
+            <h2 style="font-size:20px;font-weight:700;color:#1A1613;margin-bottom:16px;">${escapeHtml(t('ssr.doorstep-availability'))}</h2>
             <div style="display:flex;flex-wrap:wrap;gap:8px;">
               ${ALL_LOCATIONS.slice(0, 12).map(l => `
-                <a href="/locations/${l.slug}" style="background:#FFFFFF;border:1px solid #EAE5D9;border-radius:8px;padding:6px 12px;font-size:12px;font-weight:600;color:#1A1613;text-decoration:none;">📍 Pandit in ${escapeHtml(l.name)}</a>
+                <a href="${lp(`/locations/${l.slug}`)}" style="background:#FFFFFF;border:1px solid #EAE5D9;border-radius:8px;padding:6px 12px;font-size:12px;font-weight:600;color:#1A1613;text-decoration:none;">📍 ${escapeHtml(t('ssr.pandit-in', { name: l.name }))}</a>
               `).join('')}
             </div>
           </div>
 
           <aside style="background:#FFFFFF;border:1px solid #EAE5D9;border-radius:16px;padding:24px;height:fit-content;">
-            <h3 style="font-size:18px;font-weight:700;margin-bottom:12px;">Book Pandit for ${escapeHtml(service.name)}</h3>
+            <h3 style="font-size:18px;font-weight:700;margin-bottom:12px;">${escapeHtml(t('ssr.book-pandit-for', { name: service.name }))}</h3>
             <p style="font-size:13px;color:#6B6355;margin-bottom:18px;line-height:1.6;">
-              Connect directly with our senior Acharya for Shubh Muhurat consultation and pure Vedic samagri arrangement.
+              ${escapeHtml(t('ssr.connect-acharya'))}
             </p>
             <div style="background:#FFF3E0;border-radius:10px;padding:14px;margin-bottom:18px;">
-              <div style="font-size:12px;color:#6B6355;">Dakshina</div>
-              <div style="font-size:16px;font-weight:700;color:#BD4B23;">${escapeHtml(pricing?.displayPrice || 'Custom Quote')}</div>
+              <div style="font-size:12px;color:#6B6355;">${escapeHtml(t('catalogue.dakshina'))}</div>
+              <div style="font-size:16px;font-weight:700;color:#BD4B23;">${escapeHtml(pricing?.displayPrice || t('pricing.custom.quote'))}</div>
               ${pricing?.badgeText ? `<div style="font-size:11px;color:#047857;margin-top:4px;">✓ ${escapeHtml(pricing.badgeText)}</div>` : ''}
             </div>
             <div style="background:#FFF3E0;border-radius:10px;padding:14px;margin-bottom:18px;">
-              <div style="font-size:12px;color:#6B6355;">Ritual Languages</div>
-              <div style="font-size:14px;font-weight:700;color:#BD4B23;">Hindi &amp; Sanskrit</div>
+              <div style="font-size:12px;color:#6B6355;">${escapeHtml(t('home.counter.languages-label'))}</div>
+              <div style="font-size:14px;font-weight:700;color:#BD4B23;">${escapeHtml(t('ssr.hindi-sanskrit'))}</div>
             </div>
             <a href="tel:+919766880979" style="background:#BD4B23;color:#FFFFFF;display:block;text-align:center;padding:12px;border-radius:10px;text-decoration:none;font-weight:600;margin-bottom:10px;">
-              📞 Call +91 97668 80979
+              📞 ${escapeHtml(t('nav.call-phone', { phone: '+91 97668 80979' }))}
             </a>
             <a href="https://wa.me/919766880979?text=Namaste%2C+I+would+like+to+inquire+about+${encodeURIComponent(service.name)}" target="_blank" rel="noopener noreferrer" style="background:#25D366;color:#FFFFFF;display:block;text-align:center;padding:12px;border-radius:10px;text-decoration:none;font-weight:600;">
-              💬 WhatsApp Enquiry
+              💬 ${escapeHtml(t('ssr.whatsapp-enquiry'))}
             </a>
           </aside>
         </section>
@@ -562,17 +564,17 @@ function buildSemanticBody(route, params, data, meta) {
     return `
       ${headerHtml}
       <main style="max-width:1200px;margin:0 auto;padding:40px 24px;">
-        <nav aria-label="Breadcrumb" style="font-size:13px;color:#6B6355;margin-bottom:24px;">
-          <a href="/" style="color:#6B6355;text-decoration:none;">Home</a> &gt;
-          <span style="color:#BD4B23;font-weight:600;">Ceremonies Catalogue</span>
+        <nav aria-label="${escapeHtml(t('service.breadcrumb.label'))}" style="font-size:13px;color:#6B6355;margin-bottom:24px;">
+          <a href="${lp('/')}" style="color:#6B6355;text-decoration:none;">${escapeHtml(t('catalogue.breadcrumb.home'))}</a> &gt;
+          <span style="color:#BD4B23;font-weight:600;">${escapeHtml(t('ssr.ceremonies-catalogue'))}</span>
         </nav>
 
         <section style="margin-bottom:40px;">
           <h1 style="font-size:32px;font-weight:700;color:#1A1613;margin-bottom:14px;">
-            Vedic Puja &amp; Havan Services Catalogue
+            ${escapeHtml(t('ssr.catalogue-title'))}
           </h1>
           <p style="font-size:16px;color:#4A4438;line-height:1.7;max-width:850px;">
-            Explore our complete directory of authentic Hindu ceremonies, Griha Pravesh, Satyanarayan Katha, Vastu Shanti, Havans, and Sanskars conducted by experienced North Indian Pandits.
+            ${escapeHtml(t('ssr.catalogue-intro'))}
           </p>
         </section>
 
@@ -583,17 +585,17 @@ function buildSemanticBody(route, params, data, meta) {
             <div style="background:#FFFFFF;border:1px solid #EAE5D9;border-radius:16px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;">
               <div>
                 <span style="background:#FFF3E0;color:#BD4B23;padding:3px 10px;border-radius:10px;font-size:11px;font-weight:600;display:inline-block;margin-bottom:10px;">
-                  ${escapeHtml(s.category?.toUpperCase() || 'VEDIC')} &bull; ${escapeHtml(s.duration || '2-3 Hours')}
+                  ${escapeHtml(s.category?.toUpperCase() || t('ssr.vedic'))} &bull; ${escapeHtml(s.duration || t('ssr.default-duration'))}
                 </span>
                 <h2 style="font-size:18px;font-weight:700;margin-bottom:10px;">
-                  <a href="/services/${s.id}" style="color:#1A1613;text-decoration:none;">${escapeHtml(s.name)}</a>
+                  <a href="${lp(`/services/${s.id}`)}" style="color:#1A1613;text-decoration:none;">${escapeHtml(s.name)}</a>
                 </h2>
                 <p style="font-size:13px;color:#6B6355;line-height:1.6;margin-bottom:12px;">
                   ${escapeHtml(s.shortDescription || '')}
                 </p>
-                ${pricing ? `<div style="font-size:13px;font-weight:700;color:#BD4B23;margin-bottom:14px;">Dakshina: ${escapeHtml(pricing.displayPrice)}</div>` : ''}
+                ${pricing ? `<div style="font-size:13px;font-weight:700;color:#BD4B23;margin-bottom:14px;">${escapeHtml(t('service.dakshina.label'))} ${escapeHtml(pricing.displayPrice)}</div>` : ''}
               </div>
-              <a href="/services/${s.id}" style="font-size:13px;font-weight:600;color:#BD4B23;text-decoration:none;">View Vidhi &amp; Samagri &rarr;</a>
+              <a href="${lp(`/services/${s.id}`)}" style="font-size:13px;font-weight:600;color:#BD4B23;text-decoration:none;">${escapeHtml(t('ssr.view-vidhi-samagri'))} &rarr;</a>
             </div>
           `;}).join('')}
         </section>
@@ -609,50 +611,50 @@ function buildSemanticBody(route, params, data, meta) {
       <main style="max-width:1200px;margin:0 auto;padding:40px 24px;">
         <section style="text-align:center;padding:40px 0 60px;">
           <span style="background:#FFF3E0;color:#BD4B23;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:600;display:inline-block;margin-bottom:16px;">
-            🕉️ PURE VEDIC TRADITIONS &bull; EXPERIENCED PUROHITS
+            🕉️ ${escapeHtml(t('ssr.home-badge-traditions'))} &bull; ${escapeHtml(t('ssr.home-badge-purohits'))}
           </span>
           <h1 style="font-size:38px;font-weight:700;color:#1A1613;margin-bottom:20px;line-height:1.2;">
-            North Indian Pandit Booking &amp; Vedic Puja Services Across India
+            ${escapeHtml(t('ssr.home-title'))}
           </h1>
           <p style="font-size:17px;color:#4A4438;line-height:1.7;max-width:800px;margin:0 auto 32px;">
-            Book experienced North Indian and Bihari Pandits for Griha Pravesh, Satyanarayan Katha, Vastu Shanti, Vivah Sanskar, and Havans. Serving families with in-person doorstep purohits across Pune and PCMC, visiting Acharyas for major ceremonies, and live interactive E-Pujas nationwide.
+            ${escapeHtml(t('ssr.home-intro'))}
           </p>
           <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
             <a href="tel:+919766880979" style="background:#BD4B23;color:#FFFFFF;padding:14px 28px;border-radius:30px;font-size:15px;font-weight:600;text-decoration:none;">
-              📞 Call Senior Acharya (+91 97668 80979)
+              📞 ${escapeHtml(t('ssr.call-senior-acharya', { phone: '+91 97668 80979' }))}
             </a>
-            <a href="/locations/pandit-in-pune" style="background:#FFFFFF;border:1px solid #BD4B23;color:#BD4B23;padding:14px 28px;border-radius:30px;font-size:15px;font-weight:600;text-decoration:none;">
-              📍 View Pune &amp; PCMC Localities
+            <a href="${lp('/locations/pandit-in-pune')}" style="background:#FFFFFF;border:1px solid #BD4B23;color:#BD4B23;padding:14px 28px;border-radius:30px;font-size:15px;font-weight:600;text-decoration:none;">
+              📍 ${escapeHtml(t('ssr.view-pune-pcmc-localities'))}
             </a>
           </div>
         </section>
 
         <section style="margin-bottom:60px;">
-          <h2 style="font-size:26px;font-weight:700;text-align:center;margin-bottom:32px;">Key Vedic Puja Services</h2>
+          <h2 style="font-size:26px;font-weight:700;text-align:center;margin-bottom:32px;">${escapeHtml(t('ssr.key-puja-services'))}</h2>
           <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:20px;">
             ${SERVICES.slice(0, 8).map(s => `
               <div style="background:#FFFFFF;border:1px solid #EAE5D9;border-radius:12px;padding:20px;">
                 <h3 style="font-size:16px;font-weight:700;color:#BD4B23;margin-bottom:8px;">
-                  <a href="/services/${s.id}" style="color:#BD4B23;text-decoration:none;">${escapeHtml(s.name)}</a>
+                  <a href="${lp(`/services/${s.id}`)}" style="color:#BD4B23;text-decoration:none;">${escapeHtml(s.name)}</a>
                 </h3>
                 <p style="font-size:13px;color:#6B6355;line-height:1.6;margin-bottom:12px;">${escapeHtml(s.shortDescription || '')}</p>
-                <a href="/services/${s.id}" style="font-size:13px;font-weight:600;color:#C98A2C;text-decoration:none;">Vidhi &amp; Samagri &rarr;</a>
+                <a href="${lp(`/services/${s.id}`)}" style="font-size:13px;font-weight:600;color:#C98A2C;text-decoration:none;">${escapeHtml(t('ssr.vidhi-samagri'))} &rarr;</a>
               </div>
             `).join('')}
           </div>
           <div style="text-align:center;margin-top:24px;">
-            <a href="/services" style="font-size:14px;font-weight:600;color:#BD4B23;text-decoration:none;">Explore All 50+ Puja Ceremonies &rarr;</a>
+            <a href="${lp('/services')}" style="font-size:14px;font-weight:600;color:#BD4B23;text-decoration:none;">${escapeHtml(t('ssr.explore-all-ceremonies'))} &rarr;</a>
           </div>
         </section>
 
         <section style="background:#FDFBF7;border:1px solid #EAE5D9;border-radius:16px;padding:36px;margin-bottom:60px;">
-          <h2 style="font-size:24px;font-weight:700;margin-bottom:16px;">Pune &amp; PCMC Dedicated Locality Network</h2>
+          <h2 style="font-size:24px;font-weight:700;margin-bottom:16px;">${escapeHtml(t('ssr.locality-network'))}</h2>
           <p style="font-size:14px;color:#4A4438;line-height:1.7;margin-bottom:20px;">
-            We coordinate punctual doorstep ceremony conduction across all major Pune and Pimpri-Chinchwad neighborhoods:
+            ${escapeHtml(t('ssr.locality-network-intro'))}
           </p>
           <div style="display:flex;flex-wrap:wrap;gap:10px;">
             ${ALL_LOCATIONS.map(l => `
-              <a href="/locations/${l.slug}" style="background:#FFFFFF;border:1px solid #EAE5D9;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;color:#1A1613;text-decoration:none;">📍 Pandit in ${escapeHtml(l.name)}</a>
+              <a href="${lp(`/locations/${l.slug}`)}" style="background:#FFFFFF;border:1px solid #EAE5D9;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;color:#1A1613;text-decoration:none;">📍 ${escapeHtml(t('ssr.pandit-in', { name: l.name }))}</a>
             `).join('')}
           </div>
         </section>
@@ -717,8 +719,9 @@ async function run() {
   const { PUJA_GUIDES_DATA } = await vite.ssrLoadModule('./src/data/guides/pujaGuidesData.js');
   const { getSeoMetadata } = await vite.ssrLoadModule('./src/utils/seoMetadata.js');
   const { getPricingDisplay } = await vite.ssrLoadModule('./src/data/pujaPricing.js');
+  const { translate, LANGUAGES, localizePath, isTranslatedRoute } = await vite.ssrLoadModule('./src/i18n/index.js');
 
-  const sharedData = { BRAND_INFO, SERVICES, MULTI_CITY_SEO_PAGES, ALL_LOCATIONS, PUJA_GUIDES_DATA, getPricingDisplay };
+  const sharedData = { BRAND_INFO, SERVICES, MULTI_CITY_SEO_PAGES, ALL_LOCATIONS, PUJA_GUIDES_DATA, getPricingDisplay, translate, localizePath };
 
   // Define full public route inventory
   const pages = [
@@ -776,15 +779,32 @@ async function run() {
   console.log(`📦 Generating pre-rendered HTML for ${pages.length} public static routes...`);
 
   const sitemapUrls = [];
+  const renderLangs = Object.values(LANGUAGES).filter((l) => l.enabled).map((l) => l.code);
+  const indexableLangs = Object.values(LANGUAGES).filter((l) => l.indexable).map((l) => l.code);
+  let written = 0;
 
-  for (const page of pages) {
-    const meta = getSeoMetadata(page.route, page.params);
+  // One pass per (language, page); a flat loop keeps the template literals below at their original indentation.
+  for (const { lang, page } of renderLangs.flatMap((lang) => pages.map((page) => ({ lang, page })))) {
+    if (lang !== 'en' && !isTranslatedRoute(page.route)) continue;
+    const meta = getSeoMetadata(page.route, page.params, lang);
+
+    const enPath = `/${page.path}`.replace(/\/$/, '') || '/';
+    const alternates = indexableLangs.length > 1 && isTranslatedRoute(page.route)
+      ? [
+          ...indexableLangs.map((l) => ({ hreflang: l, href: `${DOMAIN}${localizePath(enPath, l)}` })),
+          { hreflang: 'x-default', href: `${DOMAIN}${enPath}` }
+        ]
+      : [];
+    const alternateTags = alternates.map((a) => `<link rel="alternate" hreflang="${a.hreflang}" href="${a.href}" />`).join('\n    ');
+    const fontLink = lang !== 'en'
+      ? '<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet" />\n'
+      : '';
 
     // Build complete Head tags
     const titleTag = `<title>${escapeHtml(meta.title)}</title>`;
     const metaTags = `
     <meta name="description" content="${sanitizeForMeta(meta.description)}" />
-    <link rel="canonical" href="${meta.canonical}" />
+    <link rel="canonical" href="${meta.canonical}" />${alternateTags ? `\n    ${alternateTags}` : ''}
     <meta property="og:title" content="${sanitizeForMeta(meta.ogTitle || meta.title)}" />
     <meta property="og:description" content="${sanitizeForMeta(meta.ogDescription || meta.description)}" />
     <meta property="og:url" content="${meta.canonical}" />
@@ -799,10 +819,11 @@ async function run() {
     `;
 
     // Generate crawlable semantic body
-    const bodyHtml = buildSemanticBody(page.route, page.params, sharedData, meta);
+    const bodyHtml = buildSemanticBody(page.route, page.params, sharedData, meta, lang);
 
     // Inject into template
     let html = baseTemplate;
+    html = html.replace('<html lang="en">', `<html lang="${lang}">`);
     
     // Replace <title>
     html = html.replace(/<title>.*?<\/title>/is, titleTag);
@@ -814,24 +835,27 @@ async function run() {
     html = html.replace(/<meta\s+name="twitter:[^>]*>/gi, '');
 
     // Inject head tags before </head>
-    html = html.replace('</head>', `${metaTags}\n  </head>`);
+    html = html.replace('</head>', `${metaTags}${fontLink}\n  </head>`);
 
     // Inject semantic body into <div id="root"></div>
     html = html.replace('<div id="root"></div>', `<div id="root">${bodyHtml}</div>`);
 
     // Target file path
+    const langDir = lang === 'en' ? distDir : path.resolve(distDir, lang);
     let targetFilePath;
     if (page.path === '') {
-      targetFilePath = path.resolve(distDir, 'index.html');
+      fs.mkdirSync(langDir, { recursive: true });
+      targetFilePath = path.resolve(langDir, 'index.html');
     } else if (page.path === '404') {
       targetFilePath = path.resolve(distDir, '404.html');
     } else {
-      const pageDir = path.resolve(distDir, page.path);
+      const pageDir = path.resolve(langDir, page.path);
       fs.mkdirSync(pageDir, { recursive: true });
       targetFilePath = path.resolve(pageDir, 'index.html');
     }
 
     fs.writeFileSync(targetFilePath, html, 'utf8');
+    written += 1;
 
     // Add to sitemap if indexable (exclude 404, legal)
     if (meta.robots && meta.robots.includes('index') && page.path !== '404' && page.path !== 'legal') {
@@ -856,23 +880,24 @@ async function run() {
         loc: meta.canonical,
         lastmod: TODAY,
         changefreq,
-        priority
+        priority,
+        alternates
       });
     }
   }
 
   await vite.close();
-  console.log(`✅ Pre-rendered ${pages.length} HTML static files successfully.`);
+  console.log(`✅ Pre-rendered ${written} HTML static files successfully.`);
 
   // 2. Generate XML Sitemap
   console.log(`🗺️ Generating sitemap.xml with ${sitemapUrls.length} sitemap URLs...`);
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"${sitemapUrls.some(u => u.alternates.length) ? ' xmlns:xhtml="http://www.w3.org/1999/xhtml"' : ''}>
 ${sitemapUrls.map(u => `  <url>
     <loc>${u.loc}</loc>
     <lastmod>${u.lastmod}</lastmod>
     <changefreq>${u.changefreq}</changefreq>
-    <priority>${u.priority}</priority>
+    <priority>${u.priority}</priority>${u.alternates.length ? `\n${u.alternates.map((a) => `    <xhtml:link rel="alternate" hreflang="${a.hreflang}" href="${a.href}" />`).join('\n')}` : ''}
   </url>`).join('\n')}
 </urlset>
 `;
