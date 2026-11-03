@@ -9,6 +9,7 @@ import {
 } from '../../data/pujaPackagesData';
 import EnquiryConfirmationView from './EnquiryConfirmationView';
 import { generateSubmissionId } from '../../services/webhookService';
+import { useI18n } from '../../i18n/useI18n';
 import {
   X,
   CheckCircle2,
@@ -32,7 +33,8 @@ export default function BookingModal() {
     pricingVersion,
     user
   } = useApp();
-  const samagriOptions = getOptionalSamagriOptions();
+  const { t, lang } = useI18n();
+  const samagriOptions = getOptionalSamagriOptions(lang);
 
   // Step names: 'puja' (1) | 'city' (2) | 'packages' (3) | 'samagri' (4) | 'details' (5) | 'confirmation' (6)
   const [step, setStep] = useState('puja');
@@ -88,7 +90,12 @@ export default function BookingModal() {
 
   // Available packages for current service & city
   const packages = useMemo(() => {
-    return getPackagesForService(activeService, city);
+    return getPackagesForService(activeService, city, lang);
+  }, [activeService, city, lang, pricingVersion]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // English copies: the booking record and totals sent downstream stay in English whatever the page language
+  const packagesEn = useMemo(() => {
+    return getPackagesForService(activeService, city, 'en');
   }, [activeService, city, pricingVersion]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Re-resolve the chosen package by id so a live pricing swap updates its price
@@ -96,11 +103,15 @@ export default function BookingModal() {
     () => (selectedPkg ? packages.find(p => p.id === selectedPkg.id) || selectedPkg : null),
     [selectedPkg, packages]
   );
+  const livePkgEn = useMemo(
+    () => (selectedPkg ? packagesEn.find(p => p.id === selectedPkg.id) || selectedPkg : null),
+    [selectedPkg, packagesEn]
+  );
 
   // Pricing calculation
   const pricingSummary = useMemo(() => {
-    return calculateBookingTotal(livePkg, selectedExtras);
-  }, [livePkg, selectedExtras]);
+    return calculateBookingTotal(livePkgEn, selectedExtras);
+  }, [livePkgEn, selectedExtras]);
 
   // Determine initial step when modal opens
   useEffect(() => {
@@ -111,7 +122,7 @@ export default function BookingModal() {
 
       if (bookingService) {
         setCurrentService(bookingService);
-        const availablePkgs = getPackagesForService(bookingService, initialCity);
+        const availablePkgs = getPackagesForService(bookingService, initialCity, lang);
 
         if (bookingSelectedPackage) {
           setSelectedPkg(bookingSelectedPackage);
@@ -133,14 +144,14 @@ export default function BookingModal() {
 
       setSubmittedEnquiry(null);
     }
-  }, [bookingModalOpen, bookingService, bookingSelectedPackage, selectedCity, selectedLocality]);
+  }, [bookingModalOpen, bookingService, bookingSelectedPackage, selectedCity, selectedLocality, lang]);
 
   if (!bookingModalOpen) return null;
 
   // Handle Puja Selection in Step 1
   const handleSelectPuja = (svc) => {
     setCurrentService(svc);
-    const availablePkgs = getPackagesForService(svc, city);
+    const availablePkgs = getPackagesForService(svc, city, lang);
     const defaultPkg = availablePkgs.find(p => p.tier === 'popular') || availablePkgs[0];
     setSelectedPkg(defaultPkg);
     // Proceed directly to Step 3 (Choose Package) for this ceremony and city
@@ -179,7 +190,7 @@ export default function BookingModal() {
 
     setIsSubmitting(true);
     setStep('confirmation');
-    const pkgToSave = livePkg || packages[0];
+    const pkgToSave = livePkgEn || packagesEn[0];
 
     // Maintain stable submissionId across retries of the same booking attempt
     const activeSubId = submissionId || generateSubmissionId();
@@ -187,9 +198,10 @@ export default function BookingModal() {
       setSubmissionId(activeSubId);
     }
 
-    // Collect names of selected extra samagri items
+    // Collect names of selected extra samagri items (English for the booking record)
+    const samagriOptionsEn = getOptionalSamagriOptions('en');
     const selectedExtraNames = selectedExtras
-      .map(id => samagriOptions.find(o => o.id === id)?.name)
+      .map(id => samagriOptionsEn.find(o => o.id === id)?.name)
       .filter(Boolean);
 
     const enquiryRecord = await completeBooking({
@@ -227,12 +239,20 @@ export default function BookingModal() {
 
   // Stepper labels
   const stepsMeta = [
-    { key: 'puja', label: '1. Puja' },
-    { key: 'city', label: '2. City' },
-    { key: 'packages', label: '3. Package' },
-    { key: 'samagri', label: '4. Samagri' },
-    { key: 'details', label: '5. Details' },
-    { key: 'confirmation', label: '6. Status' }
+    { key: 'puja', labelKey: 'booking.step.puja' },
+    { key: 'city', labelKey: 'booking.step.city' },
+    { key: 'packages', labelKey: 'booking.step.packages' },
+    { key: 'samagri', labelKey: 'booking.step.samagri' },
+    { key: 'details', labelKey: 'booking.step.details' },
+    { key: 'confirmation', labelKey: 'booking.step.status' }
+  ];
+
+  // Time slot values are sent in the booking record, so they stay English; only the labels translate
+  const timeSlotOptions = [
+    { value: 'Morning Shubh Muhurat (07:30 AM - 10:00 AM)', labelKey: 'booking.time-slot.morning' },
+    { value: 'Mid-day Auspicious (10:30 AM - 01:00 PM)', labelKey: 'booking.time-slot.midday' },
+    { value: 'Evening Pradosh (05:00 PM - 07:30 PM)', labelKey: 'booking.time-slot.evening' },
+    { value: 'Time to be decided with Panditji', labelKey: 'booking.time-slot.to-be-decided' }
   ];
 
   return (
@@ -311,8 +331,8 @@ export default function BookingModal() {
                   cursor: 'pointer',
                   color: '#BD4B23'
                 }}
-                title="Go back to previous step"
-                aria-label="Previous step"
+                title={t('booking.back-title')}
+                aria-label={t('booking.back-label')}
               >
                 <ArrowLeft size={16} />
               </button>
@@ -332,7 +352,7 @@ export default function BookingModal() {
                 }}
               >
                 <Sparkles size={12} />
-                <span>VedicPanditji • Transparent Booking Flow</span>
+                <span>{t('booking.header-tagline')}</span>
               </div>
               <h2
                 style={{
@@ -344,12 +364,12 @@ export default function BookingModal() {
                   marginTop: '2px'
                 }}
               >
-                {step === 'puja' && (city ? `Select Ceremony for ${city}` : 'Select Ceremony')}
-                {step === 'city' && (currentService ? `Select City for ${currentService.name}` : 'Select Service Location')}
-                {step === 'packages' && `Select Package — ${activeService.name}`}
-                {step === 'samagri' && `Customise Samagri — ${activeService.name}`}
-                {step === 'details' && 'Enter Devotee & Ceremony Details'}
-                {step === 'confirmation' && 'Enquiry Status & Reference'}
+                {step === 'puja' && (city ? t('booking.title.puja-for-city', { city }) : t('booking.title.puja'))}
+                {step === 'city' && (currentService ? t('booking.title.city-for-service', { name: currentService.name }) : t('booking.title.city'))}
+                {step === 'packages' && t('booking.title.packages', { name: activeService.name })}
+                {step === 'samagri' && t('booking.title.samagri', { name: activeService.name })}
+                {step === 'details' && t('booking.title.details')}
+                {step === 'confirmation' && t('booking.title.confirmation')}
               </h2>
             </div>
           </div>
@@ -372,7 +392,7 @@ export default function BookingModal() {
               boxShadow: 'var(--shadow-sm)',
               flexShrink: 0
             }}
-            aria-label="Close modal"
+            aria-label={t('booking.close')}
           >
             <X size={18} />
           </button>
@@ -440,7 +460,7 @@ export default function BookingModal() {
                   >
                     {isPassed ? <Check size={11} /> : idx + 1}
                   </span>
-                  <span>{s.label}</span>
+                  <span>{t(s.labelKey)}</span>
                   {idx < stepsMeta.length - 1 && (
                     <span style={{ color: '#D8D2C4', margin: '0 2px' }}>›</span>
                   )}
@@ -477,7 +497,7 @@ export default function BookingModal() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <MapPin size={14} color="#BD4B23" />
                   <span>
-                    Service Location: <strong style={{ color: '#BD4B23' }}>{city}</strong>
+                    {t('booking.service-location')}<strong style={{ color: '#BD4B23' }}>{city}</strong>
                   </span>
                 </div>
                 <button
@@ -493,12 +513,12 @@ export default function BookingModal() {
                     fontWeight: 600
                   }}
                 >
-                  Change City
+                  {t('booking.change-city')}
                 </button>
               </div>
 
               <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '14px' }}>
-                Select the ceremony you would like Panditji to perform in <strong>{city}</strong>.
+                {t('booking.puja-intro.before')}<strong>{city}</strong>{t('booking.puja-intro.after')}
               </p>
 
               {/* Search Bar */}
@@ -520,7 +540,7 @@ export default function BookingModal() {
                 />
                 <input
                   type="text"
-                  placeholder="Search ceremony (e.g., Griha Pravesh, Satyanarayan, Vastu, Rudrabhishek)..."
+                  placeholder={t('booking.search-placeholder')}
                   value={pujaSearch}
                   onChange={e => setPujaSearch(e.target.value)}
                   style={{
@@ -576,7 +596,7 @@ export default function BookingModal() {
                         {svc.name}
                       </div>
                       <div style={{ fontSize: '11px', color: 'var(--text-muted)', lineHeight: 1.4 }}>
-                        {svc.indicativePrice || 'Transparent Starting Quote'}
+                        {svc.indicativePrice || t('booking.starting-quote')}
                       </div>
                     </div>
 
@@ -591,7 +611,7 @@ export default function BookingModal() {
                         color: '#BD4B23'
                       }}
                     >
-                      <span>Select</span>
+                      <span>{t('booking.select')}</span>
                       <ArrowRight size={14} />
                     </div>
                   </div>
@@ -619,12 +639,12 @@ export default function BookingModal() {
               >
                 <Sparkles size={14} color="#BD4B23" />
                 <span style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
-                  Selected Ceremony: <strong style={{ color: '#BD4B23' }}>{activeService.name}</strong>
+                  {t('booking.selected-ceremony')}<strong style={{ color: '#BD4B23' }}>{activeService.name}</strong>
                 </span>
               </div>
 
               <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '14px' }}>
-                Select the service location where Panditji will perform the puja.
+                {t('booking.city-intro')}
               </p>
 
               <div
@@ -658,7 +678,7 @@ export default function BookingModal() {
                         </span>
                       </div>
                       <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
-                        {c.name === 'Pune' ? 'Pune Hub • In-Person' : (c.popular ? 'Direct In-Person' : 'Pan-India In-Person / E-Puja')}
+                        {c.name === 'Pune' ? t('booking.city-mode.pune-hub') : (c.popular ? t('booking.city-mode.direct') : t('booking.city-mode.pan-india'))}
                       </div>
                     </div>
                   );
@@ -668,20 +688,20 @@ export default function BookingModal() {
               {/* Optional Locality Specification */}
               <div style={{ marginTop: '14px' }}>
                 <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, color: 'var(--text-secondary)', marginBottom: '6px' }}>
-                  Specific Locality / Area in {city} (Optional)
+                  {t('booking.locality-label.before')}{city}{t('booking.locality-label.after')}
                 </label>
                 <input
                   type="text"
                   placeholder={
-                    {
-                      Chennai: 'e.g. T. Nagar, Anna Nagar, Velachery, OMR, Adyar, Mylapore...',
-                      Mumbai: 'e.g. Andheri, Borivali, Thane, Powai, Navi Mumbai, Dadar...',
-                      Bangalore: 'e.g. Whitefield, Koramangala, Indiranagar, HSR Layout...',
-                      Pune: 'e.g. Wakad, Baner, Kothrud, Hinjewadi, Kharadi, Hadapsar...',
-                      Delhi: 'e.g. Noida, Gurgaon, Dwarka, Rohini, South Delhi...',
-                      Hyderabad: 'e.g. Gachibowli, Madhapur, Hitec City, Kukatpally...',
-                      Nashik: 'e.g. Trimbak Road, Panchavati, Gangapur Road...'
-                    }[city] || `e.g. Central area or neighbourhood in ${city}...`
+                    ({
+                      Chennai: t('booking.locality-placeholder.chennai'),
+                      Mumbai: t('booking.locality-placeholder.mumbai'),
+                      Bangalore: t('booking.locality-placeholder.bangalore'),
+                      Pune: t('booking.locality-placeholder.pune'),
+                      Delhi: t('booking.locality-placeholder.delhi'),
+                      Hyderabad: t('booking.locality-placeholder.hyderabad'),
+                      Nashik: t('booking.locality-placeholder.nashik')
+                    })[city] || t('booking.locality-placeholder.default', { city })
                   }
                   value={locality}
                   onChange={e => setLocality(e.target.value)}
@@ -714,7 +734,7 @@ export default function BookingModal() {
                     gap: '6px'
                   }}
                 >
-                  <span>Continue to Packages</span>
+                  <span>{t('booking.continue-to-packages')}</span>
                   <ArrowRight size={14} />
                 </button>
               </div>
@@ -743,7 +763,7 @@ export default function BookingModal() {
                 }}
               >
                 <div>
-                  <strong style={{ color: '#BD4B23' }}>{activeService.name}</strong> • Location: <strong>{city} {locality ? `(${locality})` : ''}</strong>
+                  <strong style={{ color: '#BD4B23' }}>{activeService.name}</strong>{t('booking.location-sep')}<strong>{city} {locality ? `(${locality})` : ''}</strong>
                 </div>
                 <div style={{ display: 'flex', gap: '10px' }}>
                   <button
@@ -751,14 +771,14 @@ export default function BookingModal() {
                     onClick={() => setStep('puja')}
                     style={{ background: 'none', border: 'none', color: '#BD4B23', textDecoration: 'underline', cursor: 'pointer', fontSize: '11px', fontWeight: 600 }}
                   >
-                    Change Puja
+                    {t('booking.change-puja')}
                   </button>
                   <button
                     type="button"
                     onClick={() => setStep('city')}
                     style={{ background: 'none', border: 'none', color: '#BD4B23', textDecoration: 'underline', cursor: 'pointer', fontSize: '11px', fontWeight: 600 }}
                   >
-                    Change City
+                    {t('booking.change-city')}
                   </button>
                 </div>
               </div>
@@ -829,14 +849,14 @@ export default function BookingModal() {
                           {pkg.priceDisplay}
                         </div>
                         <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
-                          {pkg.priceNote || 'Honest quote confirmed before ceremony'}
+                          {pkg.priceNote || t('booking.price-note-default')}
                         </div>
                       </div>
 
                       {/* Short 2-3 Inclusions Only */}
                       <div style={{ marginBottom: '20px', borderTop: '1px solid #F0EDE6', paddingTop: '14px' }}>
                         <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '8px' }}>
-                          Key Inclusions:
+                          {t('booking.key-inclusions')}
                         </div>
                         <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
                           {pkg.inclusions.slice(0, 3).map((inc, i) => (
@@ -868,7 +888,7 @@ export default function BookingModal() {
                           gap: '6px'
                         }}
                       >
-                        <span>{isSelected ? 'Selected — Customise Samagri' : 'Select Package'}</span>
+                        <span>{isSelected ? t('booking.package-selected') : t('booking.select-package')}</span>
                         <ArrowRight size={14} />
                       </button>
                     </div>
@@ -878,7 +898,7 @@ export default function BookingModal() {
 
               {/* Notice */}
               <div style={{ fontSize: '11px', color: 'var(--text-muted)', textAlign: 'center', lineHeight: 1.4 }}>
-                *Indicative starting dakshina based on standard Vedic vidhi. Final quotation confirmed transparently with Panditji.
+                {t('booking.packages-footnote')}
               </div>
             </div>
           )}
@@ -902,19 +922,19 @@ export default function BookingModal() {
                 }}
               >
                 <div>
-                  Selected: <strong style={{ color: '#BD4B23' }}>{selectedPkg?.name || 'Ritual Package'}</strong> ({livePkg?.priceDisplay || 'Custom Quote'})
+                  {t('booking.selected')}<strong style={{ color: '#BD4B23' }}>{livePkg?.name || t('booking.ritual-package')}</strong> ({livePkg?.priceDisplay || t('booking.custom-quote')})
                 </div>
                 <button
                   type="button"
                   onClick={() => setStep('packages')}
                   style={{ background: 'none', border: 'none', color: '#BD4B23', textDecoration: 'underline', cursor: 'pointer', fontSize: '11px', fontWeight: 600 }}
                 >
-                  Change Package
+                  {t('booking.change-package')}
                 </button>
               </div>
 
               <p style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '14px', lineHeight: 1.4 }}>
-                Customise optional puja materials. If an item is already included in your package, no duplicate charge is applied. Prices are verified or confirmed honestly.
+                {t('booking.samagri-intro')}
               </p>
 
               {/* Samagri Checklist Grid */}
@@ -957,7 +977,7 @@ export default function BookingModal() {
                             <span>{opt.name}</span>
                             {isIncludedInBase && (
                               <span style={{ fontSize: '10px', fontWeight: 700, color: '#166534', background: '#DCFCE7', padding: '2px 6px', borderRadius: '4px' }}>
-                                Included in {selectedPkg?.name?.split('—')[0] || 'Package B'}
+                                {t('booking.included-in')}{livePkg?.name?.split('—')[0] || t('booking.package-b')}
                               </span>
                             )}
                           </div>
@@ -970,11 +990,11 @@ export default function BookingModal() {
                       {/* Price Tag */}
                       <div style={{ textAlign: 'right', flexShrink: 0, marginLeft: '12px' }}>
                         {isIncludedInBase ? (
-                          <span style={{ fontSize: '12px', fontWeight: 700, color: '#166534' }}>₹0 (Included)</span>
+                          <span style={{ fontSize: '12px', fontWeight: 700, color: '#166534' }}>{t('booking.included-zero')}</span>
                         ) : opt.price !== null ? (
                           <span style={{ fontSize: '13px', fontWeight: 800, color: '#BD4B23' }}>+{opt.priceDisplay}</span>
                         ) : (
-                          <span style={{ fontSize: '11px', fontWeight: 600, color: '#78716C' }}>Price to be confirmed</span>
+                          <span style={{ fontSize: '11px', fontWeight: 600, color: '#78716C' }}>{t('booking.price-tbc')}</span>
                         )}
                       </div>
                     </div>
@@ -994,7 +1014,7 @@ export default function BookingModal() {
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '6px' }}>
                   <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-secondary)' }}>
-                    Estimated Transparent Total:
+                    {t('booking.estimated-total')}
                   </span>
                   <span style={{ fontSize: '18px', fontWeight: 900, color: '#BD4B23' }}>
                     {pricingSummary.displayString}
@@ -1003,9 +1023,9 @@ export default function BookingModal() {
 
                 <div style={{ fontSize: '11px', color: 'var(--text-muted)', lineHeight: 1.4 }}>
                   {pricingSummary.hasUnconfirmedPrices ? (
-                    <span>Note: Final quote confirmed prior to booking once fresh material rates and Muhurat are verified with Panditji.</span>
+                    <span>{t('booking.total-note.unconfirmed')}</span>
                   ) : (
-                    <span>All selected items have verified pricing. No hidden fees.</span>
+                    <span>{t('booking.total-note.verified')}</span>
                   )}
                 </div>
               </div>
@@ -1027,7 +1047,7 @@ export default function BookingModal() {
                     textDecoration: 'underline'
                   }}
                 >
-                  Continue without extra samagri
+                  {t('booking.continue-without-extras')}
                 </button>
 
                 <button
@@ -1047,7 +1067,7 @@ export default function BookingModal() {
                     gap: '6px'
                   }}
                 >
-                  <span>Continue to Details</span>
+                  <span>{t('booking.continue-to-details')}</span>
                   <ArrowRight size={14} />
                 </button>
               </div>
@@ -1087,7 +1107,7 @@ export default function BookingModal() {
                 }}
               >
                 <div>
-                  <strong style={{ color: '#BD4B23' }}>{activeService.name}</strong> • {city} • {selectedPkg?.name || 'Selected Package'}
+                  <strong style={{ color: '#BD4B23' }}>{activeService.name}</strong> • {city} • {livePkg?.name || t('booking.selected-package')}
                 </div>
                 <div style={{ fontWeight: 800, color: '#BD4B23' }}>
                   {pricingSummary.displayString}
@@ -1099,7 +1119,7 @@ export default function BookingModal() {
                 <div className="vp-modal-form-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                   <div>
                     <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, color: 'var(--text-secondary)', marginBottom: '4px' }}>
-                      Ceremony Date {needMuhuratConsult ? '(Consulting Panditji)' : '*'}
+                      {t('booking.ceremony-date')}{needMuhuratConsult ? t('booking.consulting-panditji') : '*'}
                     </label>
                     <input
                       type="date"
@@ -1123,13 +1143,13 @@ export default function BookingModal() {
                         onChange={e => setNeedMuhuratConsult(e.target.checked)}
                         style={{ accentColor: '#BD4B23' }}
                       />
-                      <span>Calculate Shubh Muhurat with Panditji</span>
+                      <span>{t('booking.calculate-muhurat')}</span>
                     </label>
                   </div>
 
                   <div>
                     <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, color: 'var(--text-secondary)', marginBottom: '4px' }}>
-                      Preferred Time Slot *
+                      {t('booking.time-slot-label')}
                     </label>
                     <select
                       value={timeSlot}
@@ -1143,10 +1163,9 @@ export default function BookingModal() {
                         background: '#FFFFFF'
                       }}
                     >
-                      <option value="Morning Shubh Muhurat (07:30 AM - 10:00 AM)">Morning Shubh Muhurat (07:30 AM - 10:00 AM)</option>
-                      <option value="Mid-day Auspicious (10:30 AM - 01:00 PM)">Mid-day Auspicious (10:30 AM - 01:00 PM)</option>
-                      <option value="Evening Pradosh (05:00 PM - 07:30 PM)">Evening Pradosh (05:00 PM - 07:30 PM)</option>
-                      <option value="Time to be decided with Panditji">Time to be decided with Panditji</option>
+                      {timeSlotOptions.map(o => (
+                        <option key={o.value} value={o.value}>{t(o.labelKey)}</option>
+                      ))}
                     </select>
                   </div>
                 </div>
@@ -1155,11 +1174,11 @@ export default function BookingModal() {
                 <div className="vp-modal-form-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                   <div>
                     <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, color: 'var(--text-secondary)', marginBottom: '4px' }}>
-                      Devotee Full Name *
+                      {t('booking.name-label')}
                     </label>
                     <input
                       type="text"
-                      placeholder="e.g. Ramesh Sharma"
+                      placeholder={t('booking.name-placeholder')}
                       value={customerName}
                       onChange={e => setCustomerName(e.target.value)}
                       required
@@ -1176,11 +1195,11 @@ export default function BookingModal() {
 
                   <div>
                     <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, color: 'var(--text-secondary)', marginBottom: '4px' }}>
-                      Contact Number *
+                      {t('booking.phone-label')}
                     </label>
                     <input
                       type="tel"
-                      placeholder="e.g. 98220 12345"
+                      placeholder={t('booking.phone-placeholder')}
                       value={phone}
                       onChange={e => setPhone(e.target.value)}
                       required
@@ -1199,11 +1218,11 @@ export default function BookingModal() {
                 {/* Address */}
                 <div>
                   <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, color: 'var(--text-secondary)', marginBottom: '4px' }}>
-                    Puja Location / Address in {city} *
+                    {t('booking.address-label')}{city} *
                   </label>
                   <input
                     type="text"
-                    placeholder="House/Flat No, Society, Landmark, Area"
+                    placeholder={t('booking.address-placeholder')}
                     value={address}
                     onChange={e => setAddress(e.target.value)}
                     required
@@ -1222,11 +1241,11 @@ export default function BookingModal() {
                 <div className="vp-modal-form-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                   <div>
                     <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, color: 'var(--text-secondary)', marginBottom: '4px' }}>
-                      Family Gotra (Optional)
+                      {t('booking.gotra-label')}
                     </label>
                     <input
                       type="text"
-                      placeholder="e.g. Kashyap, Bhardwaj, Vatsa"
+                      placeholder={t('booking.gotra-placeholder')}
                       value={gotra}
                       onChange={e => setGotra(e.target.value)}
                       style={{
@@ -1242,7 +1261,7 @@ export default function BookingModal() {
 
                   <div>
                     <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, color: 'var(--text-secondary)', marginBottom: '4px' }}>
-                      Preferred Ritual Language
+                      {t('booking.language-label')}
                     </label>
                     <select
                       value={preferredLanguage}
@@ -1256,9 +1275,9 @@ export default function BookingModal() {
                         background: '#FFFFFF'
                       }}
                     >
-                      <option value="Hindi & Sanskrit">Hindi &amp; Sanskrit</option>
-                      <option value="Hindi Only">Hindi (Katha &amp; Vidhi)</option>
-                      <option value="Sanskrit Only">Sanskrit (Mantras)</option>
+                      <option value="Hindi & Sanskrit">{t('booking.language.hindi-sanskrit')}</option>
+                      <option value="Hindi Only">{t('booking.language.hindi')}</option>
+                      <option value="Sanskrit Only">{t('booking.language.sanskrit')}</option>
                     </select>
                   </div>
                 </div>
@@ -1266,11 +1285,11 @@ export default function BookingModal() {
                 {/* Additional Devotee Notes */}
                 <div>
                   <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, color: 'var(--text-secondary)', marginBottom: '4px' }}>
-                    Specific Ritual Requests / Family Notes (Optional)
+                    {t('booking.notes-label')}
                   </label>
                   <input
                     type="text"
-                    placeholder="e.g. Specific Samagri preferences, family elders attending, flat floor number"
+                    placeholder={t('booking.notes-placeholder')}
                     value={notes}
                     onChange={e => setNotes(e.target.value)}
                     style={{
@@ -1303,7 +1322,7 @@ export default function BookingModal() {
                   }}
                 >
                   <ArrowLeft size={14} />
-                  <span>Back to Samagri</span>
+                  <span>{t('booking.back-to-samagri')}</span>
                 </button>
 
                 <button
@@ -1322,7 +1341,7 @@ export default function BookingModal() {
                     boxShadow: '0 4px 14px rgba(189, 75, 35, 0.25)'
                   }}
                 >
-                  {isSubmitting ? 'Submitting Enquiry...' : 'Submit Ceremony Enquiry'}
+                  {isSubmitting ? t('booking.submitting') : t('booking.submit')}
                 </button>
               </div>
             </form>
@@ -1344,13 +1363,14 @@ export default function BookingModal() {
                             : 'error'))
                 }
                 enquiryType="booking_enquiry"
+                // Builds the WhatsApp fallback message to the business, so it stays English
                 enquiryData={{
                   customerName: customerName || 'Devotee',
                   phone,
                   serviceName: activeService?.name,
                   city,
                   locality,
-                  selectedPackage: selectedPkg?.name || 'Vedic Vidhi',
+                  selectedPackage: livePkgEn?.name || 'Vedic Vidhi',
                   packagePrice: pricingSummary.displayString,
                   preferredDate: needMuhuratConsult ? 'Auspicious Muhurat Consultation' : (date || 'Date to be confirmed'),
                   preferredTimeSlot: timeSlot

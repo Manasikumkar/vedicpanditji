@@ -4,9 +4,11 @@ import {
   ArrowRight,
   ShieldCheck
 } from 'lucide-react';
+import { useI18n } from '../../i18n/useI18n';
 
 export default function MultiCitySection() {
   const { navigateTo } = useApp();
+  const { t } = useI18n();
   const [activeTab, setActiveTab] = useState('Bangalore');
 
   const cityDirectory = [
@@ -14,102 +16,102 @@ export default function MultiCitySection() {
       id: 'Bangalore',
       name: 'Bangalore (Bengaluru)',
       state: 'Karnataka',
-      badge: 'Live E-Puja & Visiting Acharyas',
+      badge: t('home.cities.badge-live-visiting-acharyas'),
       badgeType: 'hybrid',
-      description: 'Serving North Indian & Bihari tech professionals and families in Whitefield, Bellandur, Sarjapur, HSR Layout, Electronic City & Indiranagar.',
+      description: t('home.cities.bangalore-description'),
       image: '/images/bangalore-puja.jpg',
       links: [
-        { title: 'North Indian Pandit in Bangalore', slug: 'north-indian-pandit-in-bangalore', tag: 'High Demand' },
-        { title: 'Griha Pravesh Puja in Bangalore', slug: 'griha-pravesh-puja-in-bangalore', tag: 'Most Popular' },
-        { title: 'Satyanarayan Puja in Bangalore', slug: 'satyanarayan-puja-in-bangalore', tag: 'Hindi Katha' },
-        { title: 'Bihari Pandit in Bangalore', slug: 'bihari-pandit-in-bangalore', tag: 'Chhath & Vivah' },
-        { title: 'Vastu Shanti Puja in Bangalore', slug: 'vastu-shanti-puja-in-bangalore', tag: 'Apartment Vastu' },
-        { title: 'Hindu Wedding Pandit in Bangalore', slug: 'hindu-wedding-pandit-in-bangalore', tag: 'Destination Vivah' }
+        { title: t('home.cities.link-north-indian-pandit', { city: 'Bangalore' }), slug: 'north-indian-pandit-in-bangalore', tag: t('home.cities.tag-high-demand') },
+        { title: t('home.cities.link-griha-pravesh-puja', { city: 'Bangalore' }), slug: 'griha-pravesh-puja-in-bangalore', tag: t('home.cities.tag-most-popular') },
+        { title: t('home.cities.link-satyanarayan-puja', { city: 'Bangalore' }), slug: 'satyanarayan-puja-in-bangalore', tag: t('home.cities.tag-hindi-katha') },
+        { title: t('home.cities.link-bihari-pandit', { city: 'Bangalore' }), slug: 'bihari-pandit-in-bangalore', tag: t('home.cities.tag-chhath-vivah') },
+        { title: t('home.cities.link-vastu-shanti-puja', { city: 'Bangalore' }), slug: 'vastu-shanti-puja-in-bangalore', tag: t('home.cities.tag-apartment-vastu') },
+        { title: t('home.cities.link-hindu-wedding-pandit', { city: 'Bangalore' }), slug: 'hindu-wedding-pandit-in-bangalore', tag: t('home.cities.tag-destination-vivah') }
       ]
     },
     {
       id: 'Pune',
       name: 'Pune & PCMC Hub',
       state: 'Maharashtra',
-      badge: 'Verified Doorstep In-Person',
+      badge: t('home.cities.badge-verified-doorstep-in-person'),
       badgeType: 'confirmed',
-      description: 'VedicPanditji primary hub with doorstep Vedic Purohits serving Wakad, Baner, Hinjawadi, Kothrud, Kharadi & Hadapsar.',
+      description: t('home.cities.pune-description'),
       image: '/images/hero-puja.jpg',
       links: [
-        { title: 'North Indian Pandit in Pune', slug: 'north-indian-pandit-in-pune', tag: 'Pune Doorstep' },
-        { title: 'Bihari Pandit in Pune', slug: 'bihari-pandit-in-pune', tag: 'Maithil & Bhojpuri' },
-        { title: 'Griha Pravesh Puja in Pune', slug: 'griha-pravesh-puja-in-pune', tag: 'Most Popular' },
-        { title: 'Satyanarayan Puja in Pune', slug: 'satyanarayan-puja-in-pune', tag: 'Complete Katha' },
-        { title: 'Vastu Shanti Puja in Pune', slug: 'vastu-shanti-puja-in-pune', tag: 'Havan Included' },
-        { title: 'Hindu Wedding Pandit in Pune', slug: 'hindu-wedding-pandit-in-pune', tag: 'Full Vivah Sanskar' }
+        { title: t('home.cities.link-north-indian-pandit', { city: 'Pune' }), slug: 'north-indian-pandit-in-pune', tag: t('home.cities.tag-pune-doorstep') },
+        { title: t('home.cities.link-bihari-pandit', { city: 'Pune' }), slug: 'bihari-pandit-in-pune', tag: t('home.cities.tag-maithil-bhojpuri') },
+        { title: t('home.cities.link-griha-pravesh-puja', { city: 'Pune' }), slug: 'griha-pravesh-puja-in-pune', tag: t('home.cities.tag-most-popular') },
+        { title: t('home.cities.link-satyanarayan-puja', { city: 'Pune' }), slug: 'satyanarayan-puja-in-pune', tag: t('home.cities.tag-complete-katha') },
+        { title: t('home.cities.link-vastu-shanti-puja', { city: 'Pune' }), slug: 'vastu-shanti-puja-in-pune', tag: t('home.cities.tag-havan-included') },
+        { title: t('home.cities.link-hindu-wedding-pandit', { city: 'Pune' }), slug: 'hindu-wedding-pandit-in-pune', tag: t('home.cities.tag-full-vivah-sanskar') }
       ]
     },
     {
       id: 'Mumbai',
       name: 'Mumbai, Thane & Navi Mumbai',
       state: 'Maharashtra',
-      badge: 'Verified In-Person Service',
+      badge: t('home.cities.badge-verified-in-person-service'),
       badgeType: 'confirmed',
-      description: 'Serving Mumbai Western Suburbs, Powai, Thane West, Navi Mumbai & South Mumbai with punctual pandit doorstep transit.',
+      description: t('home.cities.mumbai-description'),
       image: '/images/mandap-altar.jpg',
       links: [
-        { title: 'North Indian Pandit in Mumbai', slug: 'north-indian-pandit-in-mumbai', tag: 'Express Travel' },
-        { title: 'Bihari Pandit in Mumbai', slug: 'bihari-pandit-in-mumbai', tag: 'Vedic Rituals' },
-        { title: 'Griha Pravesh Puja in Mumbai', slug: 'griha-pravesh-puja-in-mumbai', tag: 'MMR Region' },
-        { title: 'Satyanarayan Puja in Mumbai', slug: 'satyanarayan-puja-in-mumbai', tag: 'Shubh Muhurat' },
-        { title: 'Vastu Shanti Puja in Mumbai', slug: 'vastu-shanti-puja-in-mumbai', tag: 'Flats & Villas' },
-        { title: 'Hindu Wedding Pandit in Mumbai', slug: 'hindu-wedding-pandit-in-mumbai', tag: 'Vedic Wedding' }
+        { title: t('home.cities.link-north-indian-pandit', { city: 'Mumbai' }), slug: 'north-indian-pandit-in-mumbai', tag: t('home.cities.tag-express-travel') },
+        { title: t('home.cities.link-bihari-pandit', { city: 'Mumbai' }), slug: 'bihari-pandit-in-mumbai', tag: t('home.cities.tag-vedic-rituals') },
+        { title: t('home.cities.link-griha-pravesh-puja', { city: 'Mumbai' }), slug: 'griha-pravesh-puja-in-mumbai', tag: t('home.cities.tag-mmr-region') },
+        { title: t('home.cities.link-satyanarayan-puja', { city: 'Mumbai' }), slug: 'satyanarayan-puja-in-mumbai', tag: t('home.cities.tag-shubh-muhurat') },
+        { title: t('home.cities.link-vastu-shanti-puja', { city: 'Mumbai' }), slug: 'vastu-shanti-puja-in-mumbai', tag: t('home.cities.tag-flats-villas') },
+        { title: t('home.cities.link-hindu-wedding-pandit', { city: 'Mumbai' }), slug: 'hindu-wedding-pandit-in-mumbai', tag: t('home.cities.tag-vedic-wedding') }
       ]
     },
     {
       id: 'Delhi',
       name: 'Delhi-NCR (Gurgaon & Noida)',
       state: 'Delhi NCR',
-      badge: 'Visiting Acharyas & Live',
+      badge: t('home.cities.badge-visiting-acharyas-live'),
       badgeType: 'hybrid',
-      description: 'Doorstep Pandit service & Live E-Puja across Gurgaon, Noida, Greater Noida, Ghaziabad & South Delhi.',
+      description: t('home.cities.delhi-description'),
       image: '/images/special-corporate.jpg',
       links: [
-        { title: 'North Indian Pandit in Delhi', slug: 'north-indian-pandit-in-delhi', tag: 'NCR Wide' },
-        { title: 'Griha Pravesh Puja in Delhi', slug: 'griha-pravesh-puja-in-delhi', tag: 'Popular' },
-        { title: 'Satyanarayan Puja in Delhi', slug: 'satyanarayan-puja-in-delhi', tag: 'Purnima Katha' },
-        { title: 'Bihari Pandit in Delhi', slug: 'bihari-pandit-in-delhi', tag: 'Sanskrit Vidhi' },
-        { title: 'Vastu Shanti Puja in Delhi', slug: 'vastu-shanti-puja-in-delhi', tag: 'Commercial & Home' },
-        { title: 'Hindu Wedding Pandit in Delhi', slug: 'hindu-wedding-pandit-in-delhi', tag: 'Lagna Vidhi' }
+        { title: t('home.cities.link-north-indian-pandit', { city: 'Delhi' }), slug: 'north-indian-pandit-in-delhi', tag: t('home.cities.tag-ncr-wide') },
+        { title: t('home.cities.link-griha-pravesh-puja', { city: 'Delhi' }), slug: 'griha-pravesh-puja-in-delhi', tag: t('home.cities.tag-popular') },
+        { title: t('home.cities.link-satyanarayan-puja', { city: 'Delhi' }), slug: 'satyanarayan-puja-in-delhi', tag: t('home.cities.tag-purnima-katha') },
+        { title: t('home.cities.link-bihari-pandit', { city: 'Delhi' }), slug: 'bihari-pandit-in-delhi', tag: t('home.cities.tag-sanskrit-vidhi') },
+        { title: t('home.cities.link-vastu-shanti-puja', { city: 'Delhi' }), slug: 'vastu-shanti-puja-in-delhi', tag: t('home.cities.tag-commercial-home') },
+        { title: t('home.cities.link-hindu-wedding-pandit', { city: 'Delhi' }), slug: 'hindu-wedding-pandit-in-delhi', tag: t('home.cities.tag-lagna-vidhi') }
       ]
     },
     {
       id: 'Hyderabad',
       name: 'Hyderabad & Secunderabad',
       state: 'Telangana',
-      badge: 'Live E-Puja & Visiting Pandit',
+      badge: t('home.cities.badge-live-visiting-pandit'),
       badgeType: 'hybrid',
-      description: 'Dedicated North Indian rituals for Gachibowli, Hitec City, Kondapur, Madhapur & Kukatpally devotees.',
+      description: t('home.cities.hyderabad-description'),
       image: '/images/category-festival.jpg',
       links: [
-        { title: 'North Indian Pandit in Hyderabad', slug: 'north-indian-pandit-in-hyderabad', tag: 'Hindi Purohit' },
-        { title: 'Griha Pravesh Puja in Hyderabad', slug: 'griha-pravesh-puja-in-hyderabad', tag: 'Apartments' },
-        { title: 'Satyanarayan Puja in Hyderabad', slug: 'satyanarayan-puja-in-hyderabad', tag: 'Katha & Havan' },
-        { title: 'Bihari Pandit in Hyderabad', slug: 'bihari-pandit-in-hyderabad', tag: 'North Traditions' },
-        { title: 'Vastu Shanti Puja in Hyderabad', slug: 'vastu-shanti-puja-in-hyderabad', tag: 'Dosha Nivaran' },
-        { title: 'Hindu Wedding Pandit in Hyderabad', slug: 'hindu-wedding-pandit-in-hyderabad', tag: 'Saptapadi' }
+        { title: t('home.cities.link-north-indian-pandit', { city: 'Hyderabad' }), slug: 'north-indian-pandit-in-hyderabad', tag: t('home.cities.tag-hindi-purohit') },
+        { title: t('home.cities.link-griha-pravesh-puja', { city: 'Hyderabad' }), slug: 'griha-pravesh-puja-in-hyderabad', tag: t('home.cities.tag-apartments') },
+        { title: t('home.cities.link-satyanarayan-puja', { city: 'Hyderabad' }), slug: 'satyanarayan-puja-in-hyderabad', tag: t('home.cities.tag-katha-havan') },
+        { title: t('home.cities.link-bihari-pandit', { city: 'Hyderabad' }), slug: 'bihari-pandit-in-hyderabad', tag: t('home.cities.tag-north-traditions') },
+        { title: t('home.cities.link-vastu-shanti-puja', { city: 'Hyderabad' }), slug: 'vastu-shanti-puja-in-hyderabad', tag: t('home.cities.tag-dosha-nivaran') },
+        { title: t('home.cities.link-hindu-wedding-pandit', { city: 'Hyderabad' }), slug: 'hindu-wedding-pandit-in-hyderabad', tag: t('home.cities.tag-saptapadi') }
       ]
     },
     {
       id: 'Chennai',
       name: 'Chennai & Tamil Nadu',
       state: 'Tamil Nadu',
-      badge: 'Live E-Puja & Visiting Acharyas',
+      badge: t('home.cities.badge-live-visiting-acharyas'),
       badgeType: 'hybrid',
-      description: 'North Indian & Bihari community rituals in OMR, Velachery, Anna Nagar, T. Nagar & ECR.',
+      description: t('home.cities.chennai-description'),
       image: '/images/category-jaap.jpg',
       links: [
-        { title: 'North Indian Pandit in Chennai', slug: 'north-indian-pandit-in-chennai', tag: 'OMR & City' },
-        { title: 'Griha Pravesh Puja in Chennai', slug: 'griha-pravesh-puja-in-chennai', tag: 'North Rituals' },
-        { title: 'Satyanarayan Puja in Chennai', slug: 'satyanarayan-puja-in-chennai', tag: 'Hindi Vidhi' },
-        { title: 'Bihari Pandit in Chennai', slug: 'bihari-pandit-in-chennai', tag: 'Pure Sankalp' },
-        { title: 'Vastu Shanti Puja in Chennai', slug: 'vastu-shanti-puja-in-chennai', tag: 'Vedic Havan' },
-        { title: 'Hindu Wedding Pandit in Chennai', slug: 'hindu-wedding-pandit-in-chennai', tag: 'North Vivah' }
+        { title: t('home.cities.link-north-indian-pandit', { city: 'Chennai' }), slug: 'north-indian-pandit-in-chennai', tag: t('home.cities.tag-omr-city') },
+        { title: t('home.cities.link-griha-pravesh-puja', { city: 'Chennai' }), slug: 'griha-pravesh-puja-in-chennai', tag: t('home.cities.tag-north-rituals') },
+        { title: t('home.cities.link-satyanarayan-puja', { city: 'Chennai' }), slug: 'satyanarayan-puja-in-chennai', tag: t('home.cities.tag-hindi-vidhi') },
+        { title: t('home.cities.link-bihari-pandit', { city: 'Chennai' }), slug: 'bihari-pandit-in-chennai', tag: t('home.cities.tag-pure-sankalp') },
+        { title: t('home.cities.link-vastu-shanti-puja', { city: 'Chennai' }), slug: 'vastu-shanti-puja-in-chennai', tag: t('home.cities.tag-vedic-havan') },
+        { title: t('home.cities.link-hindu-wedding-pandit', { city: 'Chennai' }), slug: 'hindu-wedding-pandit-in-chennai', tag: t('home.cities.tag-north-vivah') }
       ]
     }
   ];
@@ -122,10 +124,10 @@ export default function MultiCitySection() {
         
         {/* Section Header */}
         <div className="section-header">
-          <span className="section-tag">Multi-City Vedic Coverage</span>
-          <h2 className="section-title">Authentic Pujas Across Major Cities</h2>
+          <span className="section-tag">{t('home.cities.tag')}</span>
+          <h2 className="section-title">{t('home.cities.title')}</h2>
           <p className="section-desc">
-            VedicPanditji offers verified doorstep North Indian &amp; Bihari Pandits across Pune, Mumbai, Bangalore, Delhi-NCR, Hyderabad &amp; Chennai with 100% Shastra compliance.
+            {t('home.cities.desc')}
           </p>
         </div>
 
@@ -229,7 +231,7 @@ export default function MultiCitySection() {
                     gap: '6px'
                   }}
                 >
-                  <span>Explore {currentCity.id} Services</span>
+                  <span>{`${t('home.cities.explore')} `}{currentCity.id}{` ${t('home.cities.services')}`}</span>
                   <ArrowRight size={14} />
                 </button>
               </div>
@@ -239,10 +241,10 @@ export default function MultiCitySection() {
             <div style={{ padding: '36px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
                 <h4 style={{ fontSize: '15px', fontWeight: 800, color: 'var(--text-main)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-                  City-Specific High Intent Pages ({currentCity.links.length})
+                  {`${t('home.cities.high-intent-pages')} (`}{currentCity.links.length})
                 </h4>
                 <span style={{ fontSize: '12px', color: 'var(--accent-saffron)', fontWeight: 600 }}>
-                  SEO Verified URLs
+                  {t('home.cities.seo-verified-urls')}
                 </span>
               </div>
 

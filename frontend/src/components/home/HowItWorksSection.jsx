@@ -5,35 +5,37 @@ import {
   UserCheck,
   Sparkles
 } from 'lucide-react';
+import { useI18n } from '../../i18n/useI18n';
 
 export default function HowItWorksSection() {
+  const { t } = useI18n();
   const steps = [
     {
       step: '01',
-      title: 'Select Puja or Enquire',
-      subtitle: 'Browse Ceremonies Catalogue',
-      desc: 'Pick your desired ceremony or connect with our team to discuss your family ritual requirements.',
+      title: t('home.how.step1-title'),
+      subtitle: t('home.how.step1-subtitle'),
+      desc: t('home.how.step1-desc'),
       icon: Search
     },
     {
       step: '02',
-      title: 'Shubh Muhurat Fixing',
-      subtitle: 'Panchang & Kundali Calculation',
-      desc: 'Our senior Vedic Acharyas calculate the most auspicious tithi and nakshatra timing for you.',
+      title: t('home.how.step2-title'),
+      subtitle: t('home.how.step2-subtitle'),
+      desc: t('home.how.step2-desc'),
       icon: CalendarClock
     },
     {
       step: '03',
-      title: 'Priest & Samagri Assignment',
-      subtitle: 'Experienced Pathashala Scholars',
-      desc: 'A verified North Indian or Bihari priest is assigned with a comprehensive kit of 100% pure Vedic Samagri.',
+      title: t('home.how.step3-title'),
+      subtitle: t('home.how.step3-subtitle'),
+      desc: t('home.how.step3-desc'),
       icon: UserCheck
     },
     {
       step: '04',
-      title: 'Authentic Vidhi & Blessings',
-      subtitle: 'Punctual & Devotional Conduction',
-      desc: 'Panditji arrives on time, guides your family through every sacred mantra, and performs Agnihotra Havan.',
+      title: t('home.how.step4-title'),
+      subtitle: t('home.how.step4-subtitle'),
+      desc: t('home.how.step4-desc'),
       icon: Sparkles
     }
   ];
@@ -43,10 +45,10 @@ export default function HowItWorksSection() {
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <span className="section-tag">Simple &amp; Transparent Process</span>
-          <h2 className="section-title">How VedicPanditji Works</h2>
+          <span className="section-tag">{t('home.how.tag')}</span>
+          <h2 className="section-title">{t('home.how.title')}</h2>
           <p className="section-desc">
-            Organizing an authentic Vedic ritual at your home in Pune or across major cities is effortless, reverent, and completely reliable.
+            {t('home.how.desc')}
           </p>
         </div>
 

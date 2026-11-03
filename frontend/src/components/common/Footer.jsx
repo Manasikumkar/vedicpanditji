@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { BRAND_INFO } from '../../data/vedicPanditData';
+import { useI18n } from '../../i18n/useI18n';
 import {
   Sparkles,
   PhoneCall,
@@ -14,6 +15,7 @@ import {
 
 export default function Footer() {
   const { navigateTo, openWhatsAppEnquiry } = useApp();
+  const { t, lp } = useI18n();
 
   // Accordion state for mobile view (default Pooja services expanded)
   const [openSections, setOpenSections] = useState({
@@ -61,11 +63,11 @@ export default function Footer() {
                 border: '1px solid rgba(197, 154, 63, 0.4)',
                 boxShadow: '0 4px 18px rgba(0,0,0,0.3)'
               }}
-              title="VedicPanditji - Authentic Vedic Pujas"
+              title={t('footer.brand-title')}
             >
               <img
                 src="/images/vedicpanditji-logo.png"
-                alt="VedicPanditji logo"
+                alt={t('footer.logo-alt')}
                 style={{
                   height: '38px',
                   width: 'auto',
@@ -77,14 +79,14 @@ export default function Footer() {
             </div>
 
             <p style={{ color: '#A09D94', fontSize: '13px', lineHeight: 1.65, marginBottom: '14px', maxWidth: '380px' }}>
-              VedicPanditji is a dedicated platform for authentic Hindu puja services, Vedic rituals, and havans conducted by experienced North Indian and Bihari purohits.
+              {t('footer.about-blurb')}
             </p>
 
             {/* Languages Badge */}
             <div style={{ marginBottom: '16px', padding: '5px 12px', background: 'rgba(197, 154, 63, 0.1)', border: '1px solid rgba(197, 154, 63, 0.28)', borderRadius: '20px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
               <Sparkles size={12} color="#D4AF37" />
               <span style={{ fontSize: '11px', color: '#E5C06E', fontWeight: 700, letterSpacing: '0.02em' }}>
-                Languages: Hindi &amp; Sanskrit
+                {t('footer.languages')}
               </span>
             </div>
 
@@ -95,7 +97,7 @@ export default function Footer() {
                 className="footer-mobile-call-btn"
               >
                 <PhoneCall size={14} color="var(--accent-gold)" />
-                <span>Call Helpline</span>
+                <span>{t('footer.call-helpline')}</span>
               </a>
 
               <button
@@ -116,7 +118,7 @@ export default function Footer() {
                 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#FFFFFF', fontWeight: 600, textDecoration: 'none' }}
               >
                 <PhoneCall size={14} color="var(--accent-gold)" />
-                <span>{BRAND_INFO.phone} (Helpline)</span>
+                <span>{BRAND_INFO.phone}{` ${t('footer.helpline')}`}</span>
               </a>
               <a
                 href={`mailto:${BRAND_INFO.email}`}
@@ -127,7 +129,7 @@ export default function Footer() {
               </a>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#A09D94' }}>
                 <MapPin size={14} color="var(--accent-gold)" />
-                <span>Serving Families Across India</span>
+                <span>{t('footer.serving-families-across-india')}</span>
               </div>
             </div>
 
@@ -151,7 +153,7 @@ export default function Footer() {
                 }}
               >
                 <MessageCircle size={14} />
-                <span>Instant WhatsApp Enquiry</span>
+                <span>{t('footer.instant-whatsapp-enquiry')}</span>
               </button>
             </div>
           </div>
@@ -163,7 +165,7 @@ export default function Footer() {
               onClick={() => toggleSection('poojas')}
             >
               <h4 className="footer-heading">
-                Pooja Services
+                {t('footer.pooja-services')}
               </h4>
               <span className="footer-accordion-icon">
                 {openSections.poojas ? <ChevronUp size={16} color="var(--accent-gold)" /> : <ChevronDown size={16} color="#7E7A72" />}
@@ -174,66 +176,66 @@ export default function Footer() {
               <ul className="footer-nav-list">
                 <li>
                   <a
-                    href="/services/griha-pravesh"
+                    href={lp('/services/griha-pravesh')}
                     onClick={(e) => { e.preventDefault(); navigateTo('service-detail', { serviceId: 'griha-pravesh' }); }}
                     className="footer-nav-link"
                   >
-                    Griha Pravesh Puja
+                    {t('footer.griha-pravesh-puja')}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/services/satyanarayan-puja"
+                    href={lp('/services/satyanarayan-puja')}
                     onClick={(e) => { e.preventDefault(); navigateTo('service-detail', { serviceId: 'satyanarayan-puja' }); }}
                     className="footer-nav-link"
                   >
-                    Satyanarayan Puja &amp; Katha
+                    {t('footer.satyanarayan-puja-katha')}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/services/vastu-shanti-puja"
+                    href={lp('/services/vastu-shanti-puja')}
                     onClick={(e) => { e.preventDefault(); navigateTo('service-detail', { serviceId: 'vastu-shanti-puja' }); }}
                     className="footer-nav-link"
                   >
-                    Vastu Shanti Puja
+                    {t('footer.vastu-shanti-puja')}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/services/rudrabhishek-puja"
+                    href={lp('/services/rudrabhishek-puja')}
                     onClick={(e) => { e.preventDefault(); navigateTo('service-detail', { serviceId: 'rudrabhishek-puja' }); }}
                     className="footer-nav-link"
                   >
-                    Rudrabhishek Puja
+                    {t('footer.rudrabhishek-puja')}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/services/navagraha-havan"
+                    href={lp('/services/navagraha-havan')}
                     onClick={(e) => { e.preventDefault(); navigateTo('service-detail', { serviceId: 'navagraha-havan' }); }}
                     className="footer-nav-link"
                   >
-                    Navgraha Shanti Havan
+                    {t('footer.navgraha-shanti-havan')}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/services/vivah-marriage"
+                    href={lp('/services/vivah-marriage')}
                     onClick={(e) => { e.preventDefault(); navigateTo('service-detail', { serviceId: 'vivah-marriage' }); }}
                     className="footer-nav-link"
                   >
-                    Hindu Wedding
+                    {t('footer.hindu-wedding')}
                   </a>
                 </li>
                 <li style={{ marginTop: '4px' }}>
                   <a
-                    href="/services"
+                    href={lp('/services')}
                     onClick={(e) => { e.preventDefault(); navigateTo('catalogue'); }}
                     className="footer-nav-link"
                     style={{ color: 'var(--accent-gold)', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '4px' }}
                   >
-                    <span>Browse All Ceremonies</span>
+                    <span>{t('footer.browse-all-ceremonies')}</span>
                     <ArrowUpRight size={13} />
                   </a>
                 </li>
@@ -249,7 +251,7 @@ export default function Footer() {
               onClick={() => toggleSection('locations')}
             >
               <h4 className="footer-heading">
-                Pune &amp; PCMC Locations
+                {t('footer.pune-pcmc-locations')}
               </h4>
               <span className="footer-accordion-icon">
                 {openSections.locations ? <ChevronUp size={16} color="var(--accent-gold)" /> : <ChevronDown size={16} color="#7E7A72" />}
@@ -260,87 +262,87 @@ export default function Footer() {
               <ul className="footer-nav-list">
                 <li>
                   <a
-                    href="/locations/pandit-in-pune"
+                    href={lp('/locations/pandit-in-pune')}
                     onClick={(e) => { e.preventDefault(); navigateTo('location-detail', { slug: 'pandit-in-pune' }); }}
                     className="footer-nav-link"
                     style={{ display: 'flex', alignItems: 'center', gap: '4px', fontWeight: 600, color: '#FFFFFF' }}
                   >
-                    <span>Pandit in Pune</span>
+                    <span>{t('footer.pandit-in-pune')}</span>
                     <ArrowUpRight size={12} color="var(--accent-gold)" />
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/locations/pandit-in-pcmc"
+                    href={lp('/locations/pandit-in-pcmc')}
                     onClick={(e) => { e.preventDefault(); navigateTo('location-detail', { slug: 'pandit-in-pcmc' }); }}
                     className="footer-nav-link"
                     style={{ display: 'flex', alignItems: 'center', gap: '4px', fontWeight: 600, color: '#FFFFFF' }}
                   >
-                    <span>Pandit in PCMC</span>
+                    <span>{t('footer.pandit-in-pcmc')}</span>
                     <ArrowUpRight size={12} color="var(--accent-gold)" />
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/locations/pandit-in-kothrud"
+                    href={lp('/locations/pandit-in-kothrud')}
                     onClick={(e) => { e.preventDefault(); navigateTo('location-detail', { slug: 'pandit-in-kothrud' }); }}
                     className="footer-nav-link"
                   >
-                    Pandit in Kothrud
+                    {t('footer.pandit-in-kothrud')}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/locations/pandit-in-baner"
+                    href={lp('/locations/pandit-in-baner')}
                     onClick={(e) => { e.preventDefault(); navigateTo('location-detail', { slug: 'pandit-in-baner' }); }}
                     className="footer-nav-link"
                   >
-                    Pandit in Baner
+                    {t('footer.pandit-in-baner')}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/locations/pandit-in-hinjawadi"
+                    href={lp('/locations/pandit-in-hinjawadi')}
                     onClick={(e) => { e.preventDefault(); navigateTo('location-detail', { slug: 'pandit-in-hinjawadi' }); }}
                     className="footer-nav-link"
                   >
-                    Pandit in Hinjawadi
+                    {t('footer.pandit-in-hinjawadi')}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/locations/pandit-in-kharadi"
+                    href={lp('/locations/pandit-in-kharadi')}
                     onClick={(e) => { e.preventDefault(); navigateTo('location-detail', { slug: 'pandit-in-kharadi' }); }}
                     className="footer-nav-link"
                   >
-                    Pandit in Kharadi
+                    {t('footer.pandit-in-kharadi')}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/locations/pandit-in-wakad"
+                    href={lp('/locations/pandit-in-wakad')}
                     onClick={(e) => { e.preventDefault(); navigateTo('location-detail', { slug: 'pandit-in-wakad' }); }}
                     className="footer-nav-link"
                   >
-                    Pandit in Wakad
+                    {t('footer.pandit-in-wakad')}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/locations/pandit-in-pimple-saudagar"
+                    href={lp('/locations/pandit-in-pimple-saudagar')}
                     onClick={(e) => { e.preventDefault(); navigateTo('location-detail', { slug: 'pandit-in-pimple-saudagar' }); }}
                     className="footer-nav-link"
                   >
-                    Pandit in Pimple Saudagar
+                    {t('footer.pandit-in-pimple-saudagar')}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/locations/pandit-in-ravet"
+                    href={lp('/locations/pandit-in-ravet')}
                     onClick={(e) => { e.preventDefault(); navigateTo('location-detail', { slug: 'pandit-in-ravet' }); }}
                     className="footer-nav-link"
                   >
-                    Pandit in Ravet
+                    {t('footer.pandit-in-ravet')}
                   </a>
                 </li>
               </ul>
@@ -354,7 +356,7 @@ export default function Footer() {
               onClick={() => toggleSection('cityServices')}
             >
               <h4 className="footer-heading">
-                City-Specific Services
+                {t('footer.city-specific-services')}
               </h4>
               <span className="footer-accordion-icon">
                 {openSections.cityServices ? <ChevronUp size={16} color="var(--accent-gold)" /> : <ChevronDown size={16} color="#7E7A72" />}
@@ -365,92 +367,92 @@ export default function Footer() {
               <ul className="footer-nav-list">
                 <li>
                   <a
-                    href="/services/north-indian-pandit-in-pune"
+                    href={lp('/services/north-indian-pandit-in-pune')}
                     onClick={(e) => { e.preventDefault(); navigateTo('seo-landing', { slug: 'north-indian-pandit-in-pune' }); }}
                     className="footer-nav-link"
                   >
-                    North Indian Pandit in Pune
+                    {t('footer.north-indian-pandit-pune')}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/services/north-indian-pandit-in-mumbai"
+                    href={lp('/services/north-indian-pandit-in-mumbai')}
                     onClick={(e) => { e.preventDefault(); navigateTo('seo-landing', { slug: 'north-indian-pandit-in-mumbai' }); }}
                     className="footer-nav-link"
                   >
-                    North Indian Pandit in Mumbai
+                    {t('footer.north-indian-pandit-mumbai')}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/services/north-indian-pandit-in-bangalore"
+                    href={lp('/services/north-indian-pandit-in-bangalore')}
                     onClick={(e) => { e.preventDefault(); navigateTo('seo-landing', { slug: 'north-indian-pandit-in-bangalore' }); }}
                     className="footer-nav-link"
                   >
-                    North Indian Pandit in Bangalore
+                    {t('footer.north-indian-pandit-bangalore')}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/services/north-indian-pandit-in-hyderabad"
+                    href={lp('/services/north-indian-pandit-in-hyderabad')}
                     onClick={(e) => { e.preventDefault(); navigateTo('seo-landing', { slug: 'north-indian-pandit-in-hyderabad' }); }}
                     className="footer-nav-link"
                   >
-                    North Indian Pandit in Hyderabad
+                    {t('footer.north-indian-pandit-hyderabad')}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/services/north-indian-pandit-in-delhi"
+                    href={lp('/services/north-indian-pandit-in-delhi')}
                     onClick={(e) => { e.preventDefault(); navigateTo('seo-landing', { slug: 'north-indian-pandit-in-delhi' }); }}
                     className="footer-nav-link"
                   >
-                    North Indian Pandit in Delhi-NCR
+                    {t('footer.north-indian-pandit-delhi-ncr')}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/services/north-indian-pandit-in-chennai"
+                    href={lp('/services/north-indian-pandit-in-chennai')}
                     onClick={(e) => { e.preventDefault(); navigateTo('seo-landing', { slug: 'north-indian-pandit-in-chennai' }); }}
                     className="footer-nav-link"
                   >
-                    North Indian Pandit in Chennai
+                    {t('footer.north-indian-pandit-chennai')}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/services/north-indian-pandit-in-ahmedabad"
+                    href={lp('/services/north-indian-pandit-in-ahmedabad')}
                     onClick={(e) => { e.preventDefault(); navigateTo('seo-landing', { slug: 'north-indian-pandit-in-ahmedabad' }); }}
                     className="footer-nav-link"
                   >
-                    North Indian Pandit in Ahmedabad
+                    {t('footer.north-indian-pandit-ahmedabad')}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/services/north-indian-pandit-in-kolkata"
+                    href={lp('/services/north-indian-pandit-in-kolkata')}
                     onClick={(e) => { e.preventDefault(); navigateTo('seo-landing', { slug: 'north-indian-pandit-in-kolkata' }); }}
                     className="footer-nav-link"
                   >
-                    North Indian Pandit in Kolkata
+                    {t('footer.north-indian-pandit-kolkata')}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/services/trimbakeshwar-kalsarp-puja-nashik"
+                    href={lp('/services/trimbakeshwar-kalsarp-puja-nashik')}
                     onClick={(e) => { e.preventDefault(); navigateTo('seo-landing', { slug: 'trimbakeshwar-kalsarp-puja-nashik' }); }}
                     className="footer-nav-link"
                   >
-                    Trimbakeshwar Nashik
+                    {t('footer.trimbakeshwar-nashik')}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/services/online-e-puja-services"
+                    href={lp('/services/online-e-puja-services')}
                     onClick={(e) => { e.preventDefault(); navigateTo('seo-landing', { slug: 'online-e-puja-services' }); }}
                     className="footer-nav-link"
                   >
-                    Live E-Puja Worldwide
+                    {t('footer.live-e-puja-worldwide')}
                   </a>
                 </li>
               </ul>
@@ -461,66 +463,66 @@ export default function Footer() {
 
         {/* Bottom Horizontal Navigation & Copyright */}
         <div className="footer-bottom-bar">
-          <nav aria-label="Footer Navigation" className="footer-bottom-links">
+          <nav aria-label={t('footer.navigation')} className="footer-bottom-links">
             <a
-              href="/about-us"
+              href={lp('/about-us')}
               onClick={(e) => { e.preventDefault(); navigateTo('about-us'); }}
               className="footer-bottom-link"
             >
-              About Us
+              {t('footer.about-us')}
             </a>
             <span className="footer-link-dot">•</span>
             <a
-              href="/how-it-works"
+              href={lp('/how-it-works')}
               onClick={(e) => { e.preventDefault(); navigateTo('how-it-works'); }}
               className="footer-bottom-link"
             >
-              How We Work
+              {t('footer.how-we-work')}
             </a>
             <span className="footer-link-dot">•</span>
             <a
-              href="/faqs"
+              href={lp('/faqs')}
               onClick={(e) => { e.preventDefault(); navigateTo('faqs'); }}
               className="footer-bottom-link"
             >
-              FAQs
+              {t('footer.faqs')}
             </a>
             <span className="footer-link-dot">•</span>
             <a
-              href="/contact"
+              href={lp('/contact')}
               onClick={(e) => { e.preventDefault(); navigateTo('contact'); }}
               className="footer-bottom-link"
             >
-              Contact Us
+              {t('footer.contact-us')}
             </a>
             <span className="footer-link-dot">•</span>
             <a
-              href="/legal"
+              href={lp('/legal')}
               onClick={(e) => { e.preventDefault(); navigateTo('policies'); }}
               className="footer-bottom-link"
             >
-              Privacy Policy
+              {t('footer.privacy-policy')}
             </a>
             <span className="footer-link-dot">•</span>
             <a
-              href="/legal"
+              href={lp('/legal')}
               onClick={(e) => { e.preventDefault(); navigateTo('policies'); }}
               className="footer-bottom-link"
             >
-              Terms
+              {t('footer.terms')}
             </a>
             <span className="footer-link-dot">•</span>
             <a
-              href="/sitemap"
+              href={lp('/sitemap')}
               onClick={(e) => { e.preventDefault(); navigateTo('sitemap'); }}
               className="footer-bottom-link gold"
             >
-              HTML Sitemap
+              {t('footer.html-sitemap')}
             </a>
           </nav>
 
           <div className="footer-copyright-text">
-            © {new Date().getFullYear()} VedicPanditji (vedicpanditji.com). All Rights Reserved. North Indian &amp; Bihari Vedic Pandit Services across India.
+            © {new Date().getFullYear()}{` ${t('footer.copyright')}`}
           </div>
         </div>
       </div>

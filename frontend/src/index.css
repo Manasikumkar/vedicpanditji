@@ -552,3 +552,12 @@ img {
     scroll-behavior: auto !important;
   }
 }
+
+/* Hindi and Marathi: Poppins has no Devanagari glyphs, so list Noto Sans Devanagari after it.
+   !important is needed because many components set fontFamily inline. */
+:lang(hi) *, :lang(mr) * {
+  font-family: 'Poppins', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+:lang(hi) body, :lang(mr) body {
+  line-height: 1.75;
+}

@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useApp } from '../../context/AppContext';
 import { BRAND_INFO } from '../../data/vedicPanditData';
 import { animateNavbarEntrance } from '../../utils/gsapAnimations';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useI18n } from '../../i18n/useI18n';
 import {
   Menu,
   X,
@@ -15,6 +17,7 @@ export default function Navbar() {
     navigateTo,
     openBookingModal,
   } = useApp();
+  const { t } = useI18n();
 
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -93,23 +96,23 @@ export default function Navbar() {
             className="vp-brand"
             role="button"
             tabIndex={0}
-            title="VedicPanditji - Authentic Vedic Pujas Across Major Cities"
+            title={t('nav.brand-title')}
           >
             <img
               src="/images/vedicpanditji-logo.png"
-              alt="VedicPanditji logo"
+              alt={t('nav.logo-alt')}
               className="vp-brand-logo-img"
             />
           </div>
 
           {/* 2. CENTER — MAIN NAVIGATION */}
-          <nav className="vp-center-nav" aria-label="Main Navigation">
+          <nav className="vp-center-nav" aria-label={t('nav.main-navigation')}>
             <button
               type="button"
               onClick={() => handleNavClick('home')}
               className={`vp-nav-link ${isNavActive('home') ? 'active' : ''}`}
             >
-              <span>Home</span>
+              <span>{t('nav.home')}</span>
               <span className="vp-nav-indicator" />
             </button>
 
@@ -118,7 +121,7 @@ export default function Navbar() {
               onClick={() => handleNavClick('about-us')}
               className={`vp-nav-link ${isNavActive('about-us') ? 'active' : ''}`}
             >
-              <span>About Us</span>
+              <span>{t('nav.about-us')}</span>
               <span className="vp-nav-indicator" />
             </button>
 
@@ -127,7 +130,7 @@ export default function Navbar() {
               onClick={() => handleNavClick('catalogue')}
               className={`vp-nav-link ${isNavActive('catalogue') ? 'active' : ''}`}
             >
-              <span>Ceremonies</span>
+              <span>{t('nav.ceremonies')}</span>
               <span className="vp-nav-indicator" />
             </button>
 
@@ -136,7 +139,7 @@ export default function Navbar() {
               onClick={() => handleNavClick('location-detail', { slug: 'pandit-in-pune' })}
               className={`vp-nav-link ${isNavActive('locations') ? 'active' : ''}`}
             >
-              <span>Locations</span>
+              <span>{t('nav.locations')}</span>
               <span className="vp-nav-indicator" />
             </button>
 
@@ -145,7 +148,7 @@ export default function Navbar() {
               onClick={() => handleNavClick('contact')}
               className={`vp-nav-link ${isNavActive('contact') ? 'active' : ''}`}
             >
-              <span>Contact</span>
+              <span>{t('nav.contact')}</span>
               <span className="vp-nav-indicator" />
             </button>
           </nav>
@@ -157,11 +160,13 @@ export default function Navbar() {
             <a
               href={`tel:${BRAND_INFO.phoneClean}`}
               className="vp-phone-link"
-              title={`Call Vedic Panditji Helpline: ${BRAND_INFO.phone}`}
+              title={t('nav.helpline-title', { phone: BRAND_INFO.phone })}
             >
               <PhoneCall size={13} color="var(--accent-saffron)" />
               <span className="vp-phone-text">{BRAND_INFO.phone}</span>
             </a>
+
+            <LanguageSwitcher />
 
             {/* Primary Action CTA — Book a Pandit */}
             <button
@@ -170,7 +175,7 @@ export default function Navbar() {
               className="vp-book-cta"
             >
               <CalendarCheck size={15} />
-              <span>Book a Pandit</span>
+              <span>{t('nav.book-a-pandit')}</span>
             </button>
 
             {/* Mobile Hamburger Toggle */}
@@ -178,7 +183,7 @@ export default function Navbar() {
               type="button"
               onClick={() => setMobileMenuOpen(true)}
               className="vp-mobile-toggle"
-              aria-label="Open Navigation Menu"
+              aria-label={t('nav.open-menu')}
             >
               <Menu size={22} />
             </button>
@@ -195,14 +200,14 @@ export default function Navbar() {
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
-            aria-label="Mobile Navigation Drawer"
+            aria-label={t('nav.mobile-drawer')}
           >
             {/* Drawer Header */}
             <div className="vp-drawer-header">
               <div className="vp-brand" onClick={() => handleNavClick('home')}>
                 <img
                   src="/images/vedicpanditji-logo.png"
-                  alt="VedicPanditji logo"
+                  alt={t('nav.logo-alt')}
                   className="vp-brand-logo-img-drawer"
                 />
               </div>
@@ -210,11 +215,13 @@ export default function Navbar() {
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
                 className="vp-drawer-close"
-                aria-label="Close menu"
+                aria-label={t('nav.close-menu')}
               >
                 <X size={20} />
               </button>
             </div>
+
+            <LanguageSwitcher />
 
             {/* Navigation Links */}
             <nav className="vp-drawer-nav">
@@ -223,7 +230,7 @@ export default function Navbar() {
                 onClick={() => handleNavClick('home')}
                 className={`vp-drawer-link ${isNavActive('home') ? 'active' : ''}`}
               >
-                <span>🏠 Home</span>
+                <span>🏠 {t('nav.home')}</span>
               </button>
 
               <button
@@ -231,7 +238,7 @@ export default function Navbar() {
                 onClick={() => handleNavClick('about-us')}
                 className={`vp-drawer-link ${isNavActive('about-us') ? 'active' : ''}`}
               >
-                <span>✨ About Us</span>
+                <span>✨ {t('nav.about-us')}</span>
               </button>
 
               <button
@@ -239,7 +246,7 @@ export default function Navbar() {
                 onClick={() => handleNavClick('catalogue')}
                 className={`vp-drawer-link ${isNavActive('catalogue') ? 'active' : ''}`}
               >
-                <span>🪔 Ceremonies</span>
+                <span>🪔 {t('nav.ceremonies')}</span>
               </button>
 
               <button
@@ -247,7 +254,7 @@ export default function Navbar() {
                 onClick={() => handleNavClick('location-detail', { slug: 'pandit-in-pune' })}
                 className={`vp-drawer-link ${isNavActive('locations') ? 'active' : ''}`}
               >
-                <span>📍 Pune &amp; PCMC Locations</span>
+                <span>📍 {t('nav.pune-pcmc-locations')}</span>
               </button>
 
               <button
@@ -255,7 +262,7 @@ export default function Navbar() {
                 onClick={() => handleNavClick('faqs')}
                 className={`vp-drawer-link ${isNavActive('faqs') ? 'active' : ''}`}
               >
-                <span>❓ FAQs</span>
+                <span>❓ {t('nav.faqs')}</span>
               </button>
 
               <button
@@ -263,7 +270,7 @@ export default function Navbar() {
                 onClick={() => handleNavClick('contact')}
                 className={`vp-drawer-link ${isNavActive('contact') ? 'active' : ''}`}
               >
-                <span>📞 Contact</span>
+                <span>📞 {t('nav.contact')}</span>
               </button>
             </nav>
 
@@ -278,7 +285,7 @@ export default function Navbar() {
                 className="vp-drawer-book-btn"
               >
                 <CalendarCheck size={16} />
-                <span>Book a Pandit</span>
+                <span>{t('nav.book-a-pandit')}</span>
               </button>
 
               <div className="vp-drawer-contact-row">
@@ -287,7 +294,7 @@ export default function Navbar() {
                   className="vp-drawer-contact-link"
                 >
                   <PhoneCall size={14} color="var(--accent-saffron)" />
-                  <span>Call {BRAND_INFO.phone}</span>
+                  <span>{t('nav.call-phone', { phone: BRAND_INFO.phone })}</span>
                 </a>
               </div>
             </div>

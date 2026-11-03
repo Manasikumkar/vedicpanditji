@@ -1,0 +1,675 @@
+<link rel="preload" as="image" href="/images/vedicpanditji-logo.png"/><div class="app-container" style="min-height:100vh;display:flex;flex-direction:column"><header class="vp-navbar-root vp-navbar-top"><div class="vp-navbar-container"><div class="vp-brand" role="button" tabindex="0" title="VedicPanditji - Authentic Vedic Pujas Across Major Cities"><img src="/images/vedicpanditji-logo.png" alt="VedicPanditji logo" class="vp-brand-logo-img"/></div><nav class="vp-center-nav" aria-label="Main Navigation"><button type="button" class="vp-nav-link "><span>Home</span><span class="vp-nav-indicator"></span></button><button type="button" class="vp-nav-link "><span>About Us</span><span class="vp-nav-indicator"></span></button><button type="button" class="vp-nav-link active"><span>Ceremonies</span><span class="vp-nav-indicator"></span></button><button type="button" class="vp-nav-link "><span>Locations</span><span class="vp-nav-indicator"></span></button><button type="button" class="vp-nav-link "><span>Contact</span><span class="vp-nav-indicator"></span></button></nav><div class="vp-right-actions"><a href="tel:919766880979" class="vp-phone-link" title="Call Vedic Panditji Helpline: +91 97668 80979"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-saffron)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call" aria-hidden="true"><path d="M13 2a9 9 0 0 1 9 9"></path><path d="M13 6a5 5 0 0 1 5 5"></path><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg><span class="vp-phone-text">+91 97668 80979</span></a><button type="button" class="vp-book-cta"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-check" aria-hidden="true"><path d="M8 2v3"></path><path d="M16 2v3"></path><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18"></path><path d="m9 15 2 2 4-4"></path></svg><span>Book a Pandit</span></button><button type="button" class="vp-mobile-toggle" aria-label="Open Navigation Menu"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button></div></div></header><style>
+        .vp-navbar-root {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: var(--header-height, 84px);
+          z-index: 1000;
+          transition: background-color 0.3s ease, height 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+          display: flex;
+          align-items: center;
+        }
+
+        .vp-navbar-top {
+          background-color: rgba(251, 247, 240, 0.88);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border-bottom: 1px solid rgba(233, 223, 209, 0.6);
+        }
+
+        .vp-navbar-scrolled {
+          height: var(--header-height-scrolled, 74px);
+          background-color: rgba(255, 255, 255, 0.96);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          box-shadow: 0 4px 20px rgba(36, 35, 33, 0.05);
+          border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .vp-navbar-container {
+          width: 100%;
+          max-width: var(--container-max, 1280px);
+          margin: 0 auto;
+          padding: 0 24px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 16px;
+        }
+
+        /* 1. BRAND */
+        .vp-brand {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          user-select: none;
+          flex-shrink: 0;
+        }
+
+        .vp-brand-logo-img {
+          height: 46px;
+          width: auto;
+          max-width: 190px;
+          object-fit: contain;
+          display: block;
+        }
+
+        .vp-brand-logo-img-drawer {
+          height: 40px;
+          width: auto;
+          max-width: 170px;
+          object-fit: contain;
+          display: block;
+        }
+
+        /* 2. CENTER NAVIGATION */
+        .vp-center-nav {
+          display: flex;
+          align-items: center;
+          gap: 28px;
+          margin: 0 auto;
+          white-space: nowrap;
+        }
+
+        .vp-nav-link {
+          position: relative;
+          background: none;
+          border: none;
+          padding: 8px 4px;
+          font-size: 14px;
+          font-weight: 500;
+          color: var(--text-main);
+          cursor: pointer;
+          white-space: nowrap;
+          transition: color 0.2s ease;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .vp-nav-link:hover {
+          color: var(--accent-saffron);
+        }
+
+        .vp-nav-link.active {
+          color: var(--accent-saffron);
+          font-weight: 600;
+        }
+
+        .vp-nav-indicator {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 2px;
+          background: var(--accent-saffron);
+          border-radius: 2px;
+          transition: width 0.25s ease;
+        }
+
+        .vp-nav-link:hover .vp-nav-indicator,
+        .vp-nav-link.active .vp-nav-indicator {
+          width: 75%;
+        }
+
+        /* 3. RIGHT ACTIONS */
+        .vp-right-actions {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          flex-shrink: 0;
+        }
+
+        /* Helpline Link Pill */
+        .vp-phone-link {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          padding: 7px 14px;
+          border-radius: var(--radius-full);
+          background: #FFFFFF;
+          border: 1px solid var(--border-subtle);
+          color: var(--text-main);
+          font-size: 12.5px;
+          font-weight: 600;
+          text-decoration: none;
+          transition: all 0.2s ease;
+          white-space: nowrap;
+        }
+
+        .vp-phone-link:hover {
+          border-color: var(--accent-saffron);
+          background: #FAF8F4;
+          color: var(--accent-saffron);
+        }
+
+        /* Auth Pill */
+        .vp-auth-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          background: #FFFFFF;
+          border: 1px solid var(--border-subtle);
+          border-radius: var(--radius-full);
+          padding: 7px 14px;
+          font-size: 12.5px;
+          font-weight: 600;
+          color: var(--text-main);
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+
+        .vp-auth-btn:hover {
+          border-color: var(--accent-saffron);
+          color: var(--accent-saffron);
+        }
+
+        /* Book a Pandit CTA Button */
+        .vp-book-cta {
+          display: inline-flex;
+          align-items: center;
+          gap: 7px;
+          padding: 10px 22px;
+          border-radius: var(--radius-full);
+          background: var(--accent-saffron-gradient);
+          color: #FFFFFF;
+          font-size: 13.5px;
+          font-weight: 700;
+          border: 1px solid rgba(255, 255, 255, 0.25);
+          box-shadow: 0 4px 16px rgba(217, 79, 30, 0.32);
+          cursor: pointer;
+          transition: all 0.25s ease;
+          white-space: nowrap;
+          flex-shrink: 0;
+        }
+
+        .vp-book-cta:hover {
+          background: linear-gradient(135deg, #DD4B1A 0%, #C24214 100%);
+          box-shadow: 0 6px 20px rgba(217, 79, 30, 0.42);
+          transform: translateY(-1.5px);
+        }
+
+        /* Mobile Hamburger Toggle */
+        .vp-mobile-toggle {
+          display: none;
+          align-items: center;
+          justify-content: center;
+          background: none;
+          border: none;
+          color: var(--text-main);
+          padding: 6px;
+          min-width: 44px;
+          min-height: 44px;
+          cursor: pointer;
+        }
+
+        /* Drawer Overlay */
+        .vp-drawer-backdrop {
+          position: fixed;
+          inset: 0;
+          background: rgba(36, 35, 33, 0.45);
+          backdrop-filter: blur(4px);
+          -webkit-backdrop-filter: blur(4px);
+          z-index: 2000;
+          display: flex;
+          justify-content: flex-end;
+          animation: vpFadeIn 0.2s ease-out;
+        }
+
+        .vp-drawer-panel {
+          width: 100%;
+          max-width: min(320px, 88vw);
+          background: #FFFFFF;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          box-shadow: -6px 0 25px rgba(0, 0, 0, 0.15);
+          animation: vpSlideLeft 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .vp-drawer-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 18px 20px;
+          border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .vp-drawer-close {
+          background: none;
+          border: none;
+          color: var(--text-muted);
+          padding: 6px;
+          cursor: pointer;
+        }
+
+        .vp-drawer-nav {
+          flex: 1;
+          overflow-y: auto;
+          padding: 20px 16px;
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+        }
+
+        .vp-drawer-link {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          padding: 12px 14px;
+          border-radius: 10px;
+          background: none;
+          border: none;
+          font-size: 14.5px;
+          font-weight: 600;
+          color: var(--text-main);
+          text-align: left;
+          cursor: pointer;
+          transition: background 0.15s ease, color 0.15s ease;
+        }
+
+        .vp-drawer-link:hover, .vp-drawer-link.active {
+          background: var(--accent-saffron-light);
+          color: var(--accent-saffron);
+        }
+
+        .vp-drawer-actions {
+          padding: 18px;
+          border-top: 1px solid var(--border-subtle);
+          background: #FAF8F4;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .vp-drawer-book-btn {
+          width: 100%;
+          padding: 13px;
+          border-radius: var(--radius-full);
+          background: var(--accent-saffron-gradient);
+          color: #FFFFFF;
+          font-size: 14px;
+          font-weight: 700;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          box-shadow: 0 4px 14px rgba(217, 79, 30, 0.3);
+        }
+
+        .vp-drawer-contact-row {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .vp-drawer-contact-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 13px;
+          font-weight: 600;
+          color: var(--text-main);
+        }
+
+        @keyframes vpFadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+
+        @keyframes vpSlideLeft {
+          from { transform: translateX(100%); }
+          to { transform: translateX(0); }
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1100px) {
+          .vp-center-nav {
+            gap: 14px;
+          }
+          .vp-phone-text {
+            display: none;
+          }
+          .vp-phone-link {
+            padding: 7px 10px;
+          }
+        }
+
+        @media (max-width: 960px) {
+          .vp-center-nav {
+            display: none;
+          }
+          .vp-mobile-toggle {
+            display: flex;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .vp-phone-link {
+            display: none;
+          }
+          .vp-auth-btn {
+            display: none;
+          }
+          .vp-book-cta {
+            padding: 9px 16px;
+            font-size: 12.5px;
+          }
+        }
+      </style><main style="flex:1"><!--$--><div style="padding-top:100px;padding-bottom:90px;background:var(--bg-primary);min-height:100vh"><div class="container"><nav aria-label="Breadcrumb" style="font-size:13px;color:var(--text-muted);margin-bottom:24px"><a href="/" style="color:inherit;text-decoration:none" class="hover:text-amber-800">Home</a> / <a href="/services" style="color:inherit;text-decoration:none" class="hover:text-amber-800">Ceremonies</a> / <span style="color:var(--accent-saffron);font-weight:600">Griha Pravesh Puja</span></nav><div style="display:grid;grid-template-columns:1fr 1.25fr;gap:40px;background:#FFFFFF;border-radius:20px;padding:36px;border:1px solid #EAE5D9;box-shadow:var(--shadow-sm);margin-bottom:40px" class="service-detail-top-grid"><div><div class="service-detail-img-box" style="width:100%;height:380px;border-radius:16px;background-image:url(/images/bangalore-puja.jpg);background-size:cover;background-position:center;box-shadow:var(--shadow-md);position:relative;overflow:hidden"><div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%)"></div><div style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.9);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer" title="Share this service"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-share-2" aria-hidden="true"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line></svg></div><div style="position:absolute;bottom:16px;left:16px;color:#FFFFFF"><div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg><span>Doorstep Service across <!-- -->Pune<!-- --> &amp; Metro Hubs</span></div></div></div><div style="margin-top:20px;background:var(--bg-primary);padding:16px;border-radius:12px;border:1px solid #EAE5D9;display:flex;flex-direction:column;gap:10px"><div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-saffron)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check" aria-hidden="true" style="flex-shrink:0"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg><span>Experienced North Indian &amp; Bihari Pandits under Senior Vedic Acharyas</span></div><div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-saffron)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package" aria-hidden="true" style="flex-shrink:0"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path><path d="M12 22V12"></path><polyline points="3.29 7 12 12 20.71 7"></polyline><path d="m7.5 4.27 9 5.15"></path></svg><span>100% pure Vedic Hawan Samagri &amp; cow ghee options included</span></div><div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-saffron)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock" aria-hidden="true" style="flex-shrink:0"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg><span>Personalized Shubh Muhurat consultation by horoscope &amp; Nakshatra</span></div></div></div><div><div class="badge-saffron" style="margin-bottom:10px"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles lucide-stars" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg><span>Authentic Vedic Ritual • <!-- -->PUJAS</span></div><h1 style="font-family:var(--font-serif);font-size:32px;font-weight:800;margin-bottom:14px;color:var(--text-main)">Griha Pravesh Puja</h1><div style="background:var(--bg-primary);padding:14px 20px;border-radius:12px;border:1px solid #EAE5D9;margin-bottom:18px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap"><span style="font-size:13px;color:var(--text-muted);text-transform:uppercase;font-weight:600">Dakshina:</span><span style="font-size:24px;font-weight:800;color:var(--accent-saffron)">From ₹3,500*</span><span style="font-size:12px;color:var(--text-muted)">(Indicative starting dakshina • Confirmed on Muhurat review)</span></div><p style="font-size:14.5px;color:var(--text-secondary);line-height:1.6;margin-bottom:20px">The series of Pujas and Vedic rituals carried out prior to moving into a new home. Cleanses negative energies, attracts divine blessings, and shields the family.</p><div class="grid-2" style="gap:16px;margin-bottom:24px"><div style="background:#FDFCF9;padding:14px;border-radius:10px;border:1px solid #EAE5D9"><h4 style="font-size:13.5px;font-weight:700;margin-bottom:8px;color:var(--accent-saffron)">Key Ritual Insights:</h4><ul style="list-style:none;display:flex;flex-direction:column;gap:6px;font-size:12px;color:var(--text-secondary);padding:0;margin:0"><li style="display:flex;gap:6px"><span style="color:var(--accent-saffron)">•</span><span>Executed before relocating into a home, whether owned or rented.</span></li><li style="display:flex;gap:6px"><span style="color:var(--accent-saffron)">•</span><span>Conducted by experienced North Indian / Bihari pandit who speaks Hindi fluently.</span></li><li style="display:flex;gap:6px"><span style="color:var(--accent-saffron)">•</span><span>Shubh Muhurat calculated based on the Janma Nakshatra of the owners.</span></li></ul></div><div style="background:#FDFCF9;padding:14px;border-radius:10px;border:1px solid #EAE5D9"><h4 style="font-size:13.5px;font-weight:700;margin-bottom:8px;color:var(--accent-gold)">Our Vedic Promise:</h4><ul style="list-style:none;display:flex;flex-direction:column;gap:6px;font-size:12px;color:var(--text-secondary);padding:0;margin:0"><li style="display:flex;gap:6px"><span style="color:var(--accent-gold)">✓</span><span>Experienced North Indian Vedic Pandit fluent in Hindi and Sanskrit.</span></li><li style="display:flex;gap:6px"><span style="color:var(--accent-gold)">✓</span><span>Complete unadulterated pure Vedic Samagri brought by Panditji.</span></li><li style="display:flex;gap:6px"><span style="color:var(--accent-gold)">✓</span><span>Punctual arrival aligned precisely to your calculated Muhurat.</span></li></ul></div></div><div style="display:flex;flex-direction:column;gap:12px"><div style="display:flex;gap:12px;flex-wrap:wrap"><button type="button" class="btn-primary" style="flex:1;min-width:220px;padding:14px;font-size:15px;cursor:pointer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles lucide-stars" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg><span>Book Pandit &amp; Check Muhurat</span></button><a href="#pricing-packages" class="btn-secondary" style="padding:14px 22px;font-size:14px;cursor:pointer;display:flex;align-items:center;gap:6px;text-decoration:none"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#BD4B23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path><path d="M12 22V12"></path><polyline points="3.29 7 12 12 20.71 7"></polyline><path d="m7.5 4.27 9 5.15"></path></svg><span>View Pricing &amp; Packages</span></a></div><div style="display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;border-radius:10px;background:var(--bg-primary);border:1px solid #DDD7C8;color:var(--text-secondary);font-size:12.5px"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-saffron)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles lucide-stars" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg><span>Custom Muhurat &amp; Samagri guidance included with every ceremony</span></div></div></div></div><section id="pricing-packages" style="margin-bottom:40px"><div class="service-packages-container" style="background:#FFFFFF;border-radius:24px;padding:36px;border:1px solid #EAE5D9;box-shadow:var(--shadow-sm)"><div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;flex-wrap:wrap;gap:16px;border-bottom:1px solid #EAE5D9;padding-bottom:20px"><div><div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-saffron, #BD4B23);margin-bottom:6px;display:flex;align-items:center;gap:5px"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles lucide-stars" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg><span>Transparent Ceremony Packages</span></div><h2 style="font-family:var(--font-serif);font-size:26px;font-weight:800;color:var(--text-main, #1A1613);margin-bottom:4px">Griha Pravesh Puja<!-- --> Pricing &amp; Packages</h2><p style="font-size:14px;color:var(--text-secondary, #6B6355);max-width:640px">Compare our clear ritual options. All ceremonies are performed by experienced North Indian and Bihari Vedic priests in sacred Hindi and Sanskrit.</p></div><div style="display:flex;align-items:center;gap:10px;background:#FBF9F5;padding:8px 14px;border-radius:12px;border:1px solid #EAE5D9"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#BD4B23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg><div><div style="font-size:10px;text-transform:uppercase;font-weight:700;color:var(--text-muted, #8C8270)">Serving City</div><select style="border:none;background:transparent;font-size:13px;font-weight:700;color:#BD4B23;outline:none;cursor:pointer"><option value="Pune" selected="">Pune &amp; PCMC (HQ)</option><option value="Mumbai">Mumbai &amp; Thane (MMR)</option><option value="Bangalore">Bangalore</option><option value="Delhi">Delhi NCR</option><option value="Hyderabad">Hyderabad</option><option value="Chennai">Chennai</option><option value="Nashik">Nashik / Trimbakeshwar</option><option value="Online E-Puja">Online E-Puja (Pan-India &amp; Global)</option></select></div></div></div><div style="font-size:12px;color:#BD4B23;font-weight:600;background:#FBF9F5;padding:10px 14px;border-radius:10px;border:1px solid #EAE5D9;display:flex;align-items:center;gap:8px;margin-bottom:24px"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#BD4B23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin" aria-hidden="true" style="flex-shrink:0"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg><span>Pune &amp; PCMC (Verified Doorstep Service • Experienced Vedic Priests)</span></div><div><div style="display:grid;grid-template-columns:repeat(2, 1fr);justify-content:stretch;gap:24px;margin-bottom:20px" class="service-packages-grid"><div class="card-premium service-package-card" style="border-radius:20px;border:1px solid #EAE5D9;background:#FFFFFF;padding:28px;display:flex;flex-direction:column;position:relative;box-shadow:var(--shadow-sm)"><div style="margin-bottom:12px"><span style="font-size:11px;font-weight:800;padding:4px 10px;border-radius:20px;background:#F1EFEA;color:#57534E;display:inline-block">Devotee Arranges Samagri</span></div><h3 style="font-size:19px;font-weight:800;color:var(--text-main, #1A1613);margin-bottom:8px;line-height:1.3">Package A — Ritual Only</h3><div style="display:flex;align-items:baseline;gap:6px;margin-bottom:18px"><span style="font-size:30px;font-weight:900;color:#BD4B23">₹3,500*</span><span style="font-size:12px;color:var(--text-muted, #8C8270)">(Starting Dakshina)*</span></div><div style="border-top:1px solid #EAE5D9;padding-top:16px;margin-bottom:16px"><div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:#047857;margin-bottom:10px;display:flex;align-items:center;gap:4px"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>What Is Included:</span></div><ul style="list-style:none;display:flex;flex-direction:column;gap:8px;padding:0;margin:0"><li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text-secondary, #4A4438);line-height:1.45"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>Pandit Dakshina for complete ceremony</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text-secondary, #4A4438);line-height:1.45"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>Puja performed as per agreed Shastra vidhi</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text-secondary, #4A4438);line-height:1.45"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>Samagri checklist provided in advance (devotee arranges materials)</span></li></ul></div><div style="flex:1;border-top:1px dashed #E5DFD3;padding-top:14px;margin-bottom:22px"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted, #8C8270);margin-bottom:8px;display:flex;align-items:center;gap:4px"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted, #8C8270)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg><span>Devotee (Yajaman) Arranges:</span></div><ul style="list-style:none;display:flex;flex-direction:column;gap:6px;padding:0;margin:0"><li style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:var(--text-muted, #8C8270);line-height:1.4"><span style="color:#BD4B23;flex-shrink:0">•</span><span>Devotee arranges hawan samagri and cow ghee</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:var(--text-muted, #8C8270);line-height:1.4"><span style="color:#BD4B23;flex-shrink:0">•</span><span>Devotee arranges fresh flowers, fruits, milk &amp; prasad</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:var(--text-muted, #8C8270);line-height:1.4"><span style="color:#BD4B23;flex-shrink:0">•</span><span>Devotee provides household puja thali &amp; vessels</span></li></ul></div><button type="button" class="btn-secondary" style="width:100%;padding:13px;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles lucide-stars" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg><span>Select <!-- -->Package A</span></button></div><div class="card-premium service-package-card" style="border-radius:20px;border:2px solid #BD4B23;background:#FFFAF7;padding:28px;display:flex;flex-direction:column;position:relative;box-shadow:0 12px 30px rgba(189, 75, 35, 0.12)"><div style="margin-bottom:12px"><span style="font-size:11px;font-weight:800;padding:4px 10px;border-radius:20px;background:#BD4B23;color:#FFFFFF;display:inline-block">Most Popular</span></div><h3 style="font-size:19px;font-weight:800;color:var(--text-main, #1A1613);margin-bottom:8px;line-height:1.3">Package B — Ritual + Samagri</h3><div style="display:flex;align-items:baseline;gap:6px;margin-bottom:18px"><span style="font-size:30px;font-weight:900;color:#BD4B23">₹5,500*</span><span style="font-size:12px;color:var(--text-muted, #8C8270)">(Starting Dakshina)*</span></div><div style="border-top:1px solid #EAE5D9;padding-top:16px;margin-bottom:16px"><div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:#047857;margin-bottom:10px;display:flex;align-items:center;gap:4px"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>What Is Included:</span></div><ul style="list-style:none;display:flex;flex-direction:column;gap:8px;padding:0;margin:0"><li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text-secondary, #4A4438);line-height:1.45"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>Pandit Dakshina for complete ceremony</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text-secondary, #4A4438);line-height:1.45"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>Essential pure Hawan Samagri kit included</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text-secondary, #4A4438);line-height:1.45"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>Pure desi cow ghee &amp; sacred hawan wood included</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text-secondary, #4A4438);line-height:1.45"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>Puja performed as per agreed Shastra vidhi</span></li></ul></div><div style="flex:1;border-top:1px dashed #E5DFD3;padding-top:14px;margin-bottom:22px"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted, #8C8270);margin-bottom:8px;display:flex;align-items:center;gap:4px"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted, #8C8270)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg><span>Devotee (Yajaman) Arranges:</span></div><ul style="list-style:none;display:flex;flex-direction:column;gap:6px;padding:0;margin:0"><li style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:var(--text-muted, #8C8270);line-height:1.4"><span style="color:#BD4B23;flex-shrink:0">•</span><span>Devotee only prepares fresh flowers &amp; seasonal fruits</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:var(--text-muted, #8C8270);line-height:1.4"><span style="color:#BD4B23;flex-shrink:0">•</span><span>Devotee arranges fresh milk, curd &amp; household utensils</span></li></ul></div><button type="button" class="btn-primary" style="width:100%;padding:13px;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles lucide-stars" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg><span>Select <!-- -->Package B</span></button></div></div></div><div style="margin-top:16px;font-size:11.5px;color:var(--text-muted, #8C8270);text-align:center;line-height:1.55;padding:0 12px">*Indicative dakshina is subject to Shubh Muhurat review, samagri preferences, and travel arrangements. The final quote and priest allocation are confirmed directly with our Vedic coordination team with zero hidden charges.</div><div style="margin-top:24px;border-top:1px solid #EAE5D9;padding-top:18px"><button type="button" style="background:none;border:none;width:100%;display:flex;align-items:center;justify-content:space-between;padding:6px 0;cursor:pointer;color:var(--text-main, #1A1613)"><div style="display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#BD4B23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path><path d="M12 22V12"></path><polyline points="3.29 7 12 12 20.71 7"></polyline><path d="m7.5 4.27 9 5.15"></path></svg><span>Optional Samagri &amp; Sacred Add-ons (Transparent Pricing)</span></div><div style="display:flex;align-items:center;gap:4px;font-size:13px;color:#BD4B23;font-weight:600"><span>View Add-ons</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></div></button></div></div><style>
+        @media (max-width: 860px) {
+          .service-packages-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .custom-quote-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      </style></section><div style="background:#FFFFFF;border-radius:20px;border:1px solid #EAE5D9;overflow:hidden;box-shadow:var(--shadow-sm);margin-bottom:40px"><div style="display:flex;border-bottom:1px solid #EAE5D9;background:var(--bg-primary);font-size:14px;font-weight:700;overflow-x:auto"><button type="button" style="padding:16px 24px;border-bottom:3px solid var(--accent-saffron);color:var(--accent-saffron);background:#FFFFFF;cursor:pointer;border:none;white-space:nowrap;font-weight:700">Significance &amp; Benefits</button><button type="button" style="padding:16px 24px;border-bottom:3px solid transparent;color:var(--text-secondary);background:transparent;cursor:pointer;border:none;white-space:nowrap;font-weight:700">When to Perform</button><button type="button" style="padding:16px 24px;border-bottom:3px solid transparent;color:var(--text-secondary);background:transparent;cursor:pointer;border:none;white-space:nowrap;font-weight:700">Procedure &amp; Vidhi Sequence</button><button type="button" style="padding:16px 24px;border-bottom:3px solid transparent;color:var(--text-secondary);background:transparent;cursor:pointer;border:none;white-space:nowrap;font-weight:700">Samagri Checklist</button><button type="button" style="padding:16px 24px;border-bottom:3px solid transparent;color:var(--text-secondary);background:transparent;cursor:pointer;border:none;white-space:nowrap;font-weight:700">FAQs (1)</button></div><div style="padding:36px"><div><h3 style="font-size:22px;font-weight:700;margin-bottom:14px;color:var(--text-main)">Significance &amp; Spiritual Importance of <!-- -->Griha Pravesh Puja</h3><p style="font-size:15px;line-height:1.7;color:var(--text-secondary);margin-bottom:24px;white-space:pre-line">Before moving into a new home, Griha Pravesh Puja is performed according to North Indian Shastra. It removes negative energy, fosters positive cosmic vibrations, and shields the home from unforeseen difficulties. Steps include Dwar Puja, Toran Bandhan, Cow Puja, Milk Boiling ritual, Gauri Ganesh Puja, Kalash Sthapana, Navgraha Puja, Vastu Purush Sthapana, and detailed Agnihotra Havan.</p><h4 style="font-size:17px;font-weight:700;margin-bottom:12px;color:var(--text-main)">Spiritual Benefits of Conducting This Ceremony:</h4><div class="grid-2" style="gap:14px;margin-bottom:24px"><div style="padding:14px;border-radius:10px;background:#FDFBF7;border:1px solid #EAE5D9;display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--text-secondary)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-saffron)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles lucide-stars" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg><span>Executed before relocating into a home, whether owned or rented.</span></div><div style="padding:14px;border-radius:10px;background:#FDFBF7;border:1px solid #EAE5D9;display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--text-secondary)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-saffron)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles lucide-stars" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg><span>Conducted by experienced North Indian / Bihari pandit who speaks Hindi fluently.</span></div><div style="padding:14px;border-radius:10px;background:#FDFBF7;border:1px solid #EAE5D9;display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--text-secondary)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-saffron)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles lucide-stars" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg><span>Shubh Muhurat calculated based on the Janma Nakshatra of the owners.</span></div><div style="padding:14px;border-radius:10px;background:#FDFBF7;border:1px solid #EAE5D9;display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--text-secondary)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-saffron)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles lucide-stars" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg><span>Includes Vastu Shanti, Navagraha Havan, and Lakshmi Kubera blessings.</span></div></div><div style="background:var(--accent-saffron-light);border-radius:12px;padding:20px;border:1px solid rgba(189, 75, 35, 0.2);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px"><div><h5 style="font-size:15px;font-weight:700;color:var(--accent-saffron)">Have specific family traditions or Gotra considerations?</h5><p style="font-size:13px;color:var(--text-secondary)">Our senior Acharyas customize rituals according to North Indian (UP, Bihar, MP, Rajasthan) and Vedic traditions.</p></div><button type="button" class="btn-primary" style="padding:10px 20px;font-size:13px;cursor:pointer">Speak with Senior Pandit</button></div></div></div></div><div style="background:#FFFFFF;border-radius:20px;padding:30px 36px;border:1px solid #EAE5D9;margin-top:32px"><div style="display:flex;align-items:center;gap:8px;margin-bottom:14px"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-saffron)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg><h3 style="font-size:18px;font-weight:700;color:var(--text-main);margin:0">Doorstep <!-- -->Griha Pravesh Puja<!-- --> Coverage across Pune &amp; PCMC</h3></div><p style="font-size:13px;color:var(--text-secondary);margin-bottom:18px;line-height:1.6">Our verified North Indian and Bihari Pandits provide authentic doorstep ceremonies across Pune and Pimpri-Chinchwad (PCMC), as well as interactive E-Pujas nationwide:</p><div style="display:flex;flex-wrap:wrap;gap:10px"><a href="/locations/pandit-in-pune" style="background:var(--bg-primary);border:1px solid #EAE5D9;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--text-main);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:all 0.2s ease">📍 Pandit in <!-- -->Pune (All Pune Areas)</a><a href="/locations/pandit-in-kothrud" style="background:var(--bg-primary);border:1px solid #EAE5D9;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--text-main);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:all 0.2s ease">📍 Pandit in <!-- -->Kothrud</a><a href="/locations/pandit-in-baner" style="background:var(--bg-primary);border:1px solid #EAE5D9;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--text-main);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:all 0.2s ease">📍 Pandit in <!-- -->Baner</a><a href="/locations/pandit-in-hinjawadi" style="background:var(--bg-primary);border:1px solid #EAE5D9;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--text-main);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:all 0.2s ease">📍 Pandit in <!-- -->Hinjawadi</a><a href="/locations/pandit-in-kharadi" style="background:var(--bg-primary);border:1px solid #EAE5D9;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--text-main);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:all 0.2s ease">📍 Pandit in <!-- -->Kharadi</a><a href="/locations/pandit-in-wakad" style="background:var(--bg-primary);border:1px solid #EAE5D9;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--text-main);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:all 0.2s ease">📍 Pandit in <!-- -->Wakad</a><a href="/locations/pandit-in-pimple-saudagar" style="background:var(--bg-primary);border:1px solid #EAE5D9;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--text-main);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:all 0.2s ease">📍 Pandit in <!-- -->Pimple Saudagar</a><a href="/locations/pandit-in-hadapsar" style="background:var(--bg-primary);border:1px solid #EAE5D9;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--text-main);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:all 0.2s ease">📍 Pandit in <!-- -->Hadapsar</a><a href="/locations/pandit-in-aundh" style="background:var(--bg-primary);border:1px solid #EAE5D9;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--text-main);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:all 0.2s ease">📍 Pandit in <!-- -->Aundh</a><a href="/locations/pandit-in-viman-nagar" style="background:var(--bg-primary);border:1px solid #EAE5D9;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--text-main);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:all 0.2s ease">📍 Pandit in <!-- -->Viman Nagar</a><a href="/locations/pandit-in-pcmc" style="background:var(--bg-primary);border:1px solid #EAE5D9;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--text-main);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:all 0.2s ease">📍 Pandit in <!-- -->Pimpri-Chinchwad (PCMC)</a><a href="/locations/pandit-in-ravet" style="background:var(--bg-primary);border:1px solid #EAE5D9;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--text-main);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:all 0.2s ease">📍 Pandit in <!-- -->Ravet</a></div><div style="margin-top:24px;padding-top:18px;border-top:1px solid #F3EFE6;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px"><span style="font-size:13px;color:var(--text-muted)">Need in-depth vidhi details, auspicious Muhurat calculations, or samagri checklists?</span><a href="/puja-guides" style="font-size:13px;font-weight:600;color:var(--accent-saffron);text-decoration:none;display:inline-flex;align-items:center;gap:6px">📖 Explore Hindu Puja Educational Guides →</a></div></div></div><style>
+        @media (max-width: 900px) {
+          .service-detail-top-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      </style></div><!--/$--></main><footer style="background:#181A17;color:#E0DDD5;padding-top:60px;border-top:1px solid #2D302C;font-size:14px" class="vp-footer-root"><div class="container"><div class="footer-main-grid"><div class="footer-brand-col"><div class="footer-logo-box" style="display:inline-flex;align-items:center;margin-bottom:16px;cursor:pointer;background:#FFFFFF;padding:8px 16px;border-radius:12px;border:1px solid rgba(197, 154, 63, 0.4);box-shadow:0 4px 18px rgba(0,0,0,0.3)" title="VedicPanditji - Authentic Vedic Pujas"><img src="/images/vedicpanditji-logo.png" alt="VedicPanditji logo" style="height:38px;width:auto;max-width:165px;object-fit:contain;display:block"/></div><p style="color:#A09D94;font-size:13px;line-height:1.65;margin-bottom:14px;max-width:380px">VedicPanditji is a dedicated platform for authentic Hindu puja services, Vedic rituals, and havans conducted by experienced North Indian and Bihari purohits.</p><div style="margin-bottom:16px;padding:5px 12px;background:rgba(197, 154, 63, 0.1);border:1px solid rgba(197, 154, 63, 0.28);border-radius:20px;display:inline-flex;align-items:center;gap:6px"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles lucide-stars" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg><span style="font-size:11px;color:#E5C06E;font-weight:700;letter-spacing:0.02em">Languages: Hindi &amp; Sanskrit</span></div><div class="footer-mobile-cta-row"><a href="tel:919766880979" class="footer-mobile-call-btn"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call" aria-hidden="true"><path d="M13 2a9 9 0 0 1 9 9"></path><path d="M13 6a5 5 0 0 1 5 5"></path><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg><span>Call Helpline</span></a><button type="button" class="footer-mobile-wa-btn"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path></svg><span>WhatsApp</span></button></div><div class="footer-contact-details"><a href="tel:919766880979" class="footer-desktop-phone-link" style="display:flex;align-items:center;gap:8px;color:#FFFFFF;font-weight:600;text-decoration:none"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call" aria-hidden="true"><path d="M13 2a9 9 0 0 1 9 9"></path><path d="M13 6a5 5 0 0 1 5 5"></path><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg><span>+91 97668 80979<!-- --> (Helpline)</span></a><a href="mailto:info@vedicpanditji.com" style="display:flex;align-items:center;gap:8px;color:#A09D94;text-decoration:none"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg><span>info@vedicpanditji.com</span></a><div style="display:flex;align-items:center;gap:8px;color:#A09D94"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg><span>Serving Families Across India</span></div></div><div class="footer-desktop-wa-container"><button style="margin-top:16px;display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#FFFFFF;border:none;padding:9px 18px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path></svg><span>Instant WhatsApp Enquiry</span></button></div></div><div class="footer-nav-col"><div class="footer-accordion-header"><h4 class="footer-heading">Pooja Services</h4><span class="footer-accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up" aria-hidden="true"><path d="m18 15-6-6-6 6"></path></svg></span></div><div class="footer-accordion-content open"><ul class="footer-nav-list"><li><a href="/services/griha-pravesh" class="footer-nav-link">Griha Pravesh Puja</a></li><li><a href="/services/satyanarayan-puja" class="footer-nav-link">Satyanarayan Puja &amp; Katha</a></li><li><a href="/services/vastu-shanti-puja" class="footer-nav-link">Vastu Shanti Puja</a></li><li><a href="/services/rudrabhishek-puja" class="footer-nav-link">Rudrabhishek Puja</a></li><li><a href="/services/navagraha-havan" class="footer-nav-link">Navgraha Shanti Havan</a></li><li><a href="/services/vivah-marriage" class="footer-nav-link">Hindu Wedding</a></li><li style="margin-top:4px"><a href="/services" class="footer-nav-link" style="color:var(--accent-gold);font-weight:700;display:flex;align-items:center;gap:4px"><span>Browse All Ceremonies</span><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></li></ul></div></div><div class="footer-nav-col"><div class="footer-accordion-header"><h4 class="footer-heading">Pune &amp; PCMC Locations</h4><span class="footer-accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7E7A72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></span></div><div class="footer-accordion-content "><ul class="footer-nav-list"><li><a href="/locations/pandit-in-pune" class="footer-nav-link" style="display:flex;align-items:center;gap:4px;font-weight:600;color:#FFFFFF"><span>Pandit in Pune</span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></li><li><a href="/locations/pandit-in-pcmc" class="footer-nav-link" style="display:flex;align-items:center;gap:4px;font-weight:600;color:#FFFFFF"><span>Pandit in PCMC</span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></li><li><a href="/locations/pandit-in-kothrud" class="footer-nav-link">Pandit in Kothrud</a></li><li><a href="/locations/pandit-in-baner" class="footer-nav-link">Pandit in Baner</a></li><li><a href="/locations/pandit-in-hinjawadi" class="footer-nav-link">Pandit in Hinjawadi</a></li><li><a href="/locations/pandit-in-kharadi" class="footer-nav-link">Pandit in Kharadi</a></li><li><a href="/locations/pandit-in-wakad" class="footer-nav-link">Pandit in Wakad</a></li><li><a href="/locations/pandit-in-pimple-saudagar" class="footer-nav-link">Pandit in Pimple Saudagar</a></li><li><a href="/locations/pandit-in-ravet" class="footer-nav-link">Pandit in Ravet</a></li></ul></div></div><div class="footer-nav-col"><div class="footer-accordion-header"><h4 class="footer-heading">City-Specific Services</h4><span class="footer-accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7E7A72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></span></div><div class="footer-accordion-content "><ul class="footer-nav-list"><li><a href="/services/north-indian-pandit-in-pune" class="footer-nav-link">North Indian Pandit in Pune</a></li><li><a href="/services/north-indian-pandit-in-mumbai" class="footer-nav-link">North Indian Pandit in Mumbai</a></li><li><a href="/services/north-indian-pandit-in-bangalore" class="footer-nav-link">North Indian Pandit in Bangalore</a></li><li><a href="/services/north-indian-pandit-in-hyderabad" class="footer-nav-link">North Indian Pandit in Hyderabad</a></li><li><a href="/services/north-indian-pandit-in-delhi" class="footer-nav-link">North Indian Pandit in Delhi-NCR</a></li><li><a href="/services/north-indian-pandit-in-chennai" class="footer-nav-link">North Indian Pandit in Chennai</a></li><li><a href="/services/north-indian-pandit-in-ahmedabad" class="footer-nav-link">North Indian Pandit in Ahmedabad</a></li><li><a href="/services/north-indian-pandit-in-kolkata" class="footer-nav-link">North Indian Pandit in Kolkata</a></li><li><a href="/services/trimbakeshwar-kalsarp-puja-nashik" class="footer-nav-link">Trimbakeshwar Nashik</a></li><li><a href="/services/online-e-puja-services" class="footer-nav-link">Live E-Puja Worldwide</a></li></ul></div></div></div><div class="footer-bottom-bar"><nav aria-label="Footer Navigation" class="footer-bottom-links"><a href="/about-us" class="footer-bottom-link">About Us</a><span class="footer-link-dot">•</span><a href="/how-it-works" class="footer-bottom-link">How We Work</a><span class="footer-link-dot">•</span><a href="/faqs" class="footer-bottom-link">FAQs</a><span class="footer-link-dot">•</span><a href="/contact" class="footer-bottom-link">Contact Us</a><span class="footer-link-dot">•</span><a href="/legal" class="footer-bottom-link">Privacy Policy</a><span class="footer-link-dot">•</span><a href="/legal" class="footer-bottom-link">Terms</a><span class="footer-link-dot">•</span><a href="/sitemap" class="footer-bottom-link gold">HTML Sitemap</a></nav><div class="footer-copyright-text">© <!-- -->YEAR<!-- --> VedicPanditji (vedicpanditji.com). All Rights Reserved. North Indian &amp; Bihari Vedic Pandit Services across India.</div></div></div><style>
+        /* Desktop Default */
+        .footer-heading {
+          font-family: var(--font-display);
+          color: #FFFFFF;
+          font-size: 15px;
+          font-weight: 700;
+          letter-spacing: 0.04em;
+          margin: 0;
+        }
+
+        .footer-nav-list {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          padding: 0;
+          margin: 0;
+        }
+
+        .footer-nav-link {
+          background: none;
+          border: none;
+          color: #A09D94;
+          padding: 3px 0;
+          font-size: 13px;
+          cursor: pointer;
+          text-align: left;
+          text-decoration: none;
+          transition: color 0.18s ease;
+          display: block;
+          width: 100%;
+        }
+
+        .footer-nav-link:hover {
+          color: #FFFFFF;
+        }
+
+        .footer-bottom-bar {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          padding: 24px 0 28px;
+          font-size: 12.5px;
+          color: #7E7A72;
+          gap: 12px;
+        }
+
+        .footer-bottom-links {
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          font-size: 12.5px;
+        }
+
+        .footer-copyright-text {
+          text-align: center;
+          color: #7E7A72;
+          font-size: 12px;
+          line-height: 1.6;
+        }
+
+        .footer-bottom-link {
+          cursor: pointer;
+          color: #A09D94;
+          text-decoration: none;
+          transition: color 0.18s ease;
+        }
+
+        .footer-bottom-link:hover {
+          color: #FFFFFF;
+        }
+
+        .footer-bottom-link.gold {
+          color: var(--accent-gold);
+          font-weight: 600;
+        }
+
+        .footer-link-dot {
+          color: #4D504B;
+          font-size: 11px;
+        }
+
+        .footer-contact-details {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          font-size: 13px;
+        }
+
+        .footer-mobile-cta-row {
+          display: none;
+        }
+
+        /* Desktop Layout (Width > 768px) */
+        @media (min-width: 769px) {
+          .footer-main-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 1fr 1fr 1fr;
+            gap: 36px;
+            padding-bottom: 36px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          }
+
+          .footer-accordion-icon {
+            display: none !important;
+          }
+
+          .footer-accordion-header {
+            cursor: default !important;
+            padding: 0 !important;
+            border-top: none !important;
+            margin-bottom: 18px !important;
+          }
+
+          .footer-accordion-content {
+            display: flex !important;
+            flex-direction: column;
+          }
+
+          .footer-bottom-bar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 24px 0 28px;
+            font-size: 12.5px;
+            color: #7E7A72;
+            gap: 12px;
+          }
+
+          .footer-desktop-wa-container {
+            display: block;
+          }
+        }
+
+        /* Mobile Layout (Width <= 768px) */
+        @media (max-width: 768px) {
+          .vp-footer-root {
+            padding-top: 40px !important;
+          }
+
+          .footer-main-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0 !important;
+            padding-bottom: 16px !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          }
+
+          .footer-brand-col {
+            padding-bottom: 22px !important;
+          }
+
+          .footer-desktop-phone-link {
+            display: none !important;
+          }
+
+          .footer-desktop-wa-container {
+            display: none !important;
+          }
+
+          .footer-mobile-cta-row {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 18px;
+          }
+
+          .footer-mobile-call-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #FFFFFF;
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            min-height: 44px;
+            box-sizing: border-box;
+          }
+
+          .footer-mobile-call-btn:active {
+            background: rgba(255, 255, 255, 0.12);
+          }
+
+          .footer-mobile-wa-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: #25D366;
+            border: none;
+            color: #FFFFFF;
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            min-height: 44px;
+            box-sizing: border-box;
+          }
+
+          .footer-mobile-wa-btn:active {
+            background: #1EBE5D;
+          }
+
+          .footer-accordion-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 2px !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+            cursor: pointer !important;
+            user-select: none;
+          }
+
+          .footer-accordion-header:active {
+            background: rgba(255, 255, 255, 0.02);
+          }
+
+          .footer-accordion-content {
+            display: none;
+            padding: 4px 2px 18px 2px;
+            animation: footerFade 0.2s ease-out;
+          }
+
+          .footer-accordion-content.open {
+            display: block !important;
+          }
+
+          .footer-nav-list {
+            gap: 8px !important;
+          }
+
+          .footer-nav-link {
+            padding: 6px 0 !important;
+            font-size: 13.5px !important;
+            min-height: 36px;
+            display: flex;
+            align-items: center;
+          }
+
+          .footer-bottom-bar {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            gap: 12px !important;
+            padding: 20px 0 32px !important;
+            font-size: 12px;
+          }
+
+          .footer-bottom-links {
+            gap: 8px 12px !important;
+            line-height: 1.8 !important;
+            justify-content: center !important;
+            text-align: center !important;
+          }
+
+          .footer-copyright-text {
+            text-align: center !important;
+          }
+
+          .footer-link-dot {
+            display: none !important;
+          }
+
+          .footer-bottom-link {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 5px 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 12px;
+          }
+
+          .footer-copyright-text {
+            color: #7E7A72;
+            font-size: 11.5px;
+            line-height: 1.6;
+          }
+        }
+
+        @keyframes footerFade {
+          from { opacity: 0; transform: translateY(-4px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      </style></footer></div>

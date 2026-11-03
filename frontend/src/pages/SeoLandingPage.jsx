@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useApp } from '../context/AppContext';
+import { useI18n } from '../i18n/useI18n';
 import { SEO_LANDING_PAGES, CITIES, SERVICES } from '../data/vedicPanditData';
 import {
   Sparkles,
@@ -14,6 +15,7 @@ import {
 
 export default function SeoLandingPage({ slug: propSlug }) {
   const { routeParams, navigateTo, openBookingModal } = useApp();
+  const { lp } = useI18n();
   const activeSlug = propSlug || routeParams?.slug || 'north-indian-pandit-in-pune';
 
   // Find matching page specification
@@ -336,7 +338,7 @@ export default function SeoLandingPage({ slug: propSlug }) {
                 {relatedCityPages.map((cp) => (
                   <a
                     key={cp.slug}
-                    href={`/services/${cp.slug}`}
+                    href={lp(`/services/${cp.slug}`)}
                     onClick={(e) => {
                       e.preventDefault();
                       navigateTo('seo-landing', { slug: cp.slug });

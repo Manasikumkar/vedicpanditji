@@ -2,6 +2,7 @@ import React from 'react';
 import { useApp } from '../../context/AppContext';
 import { SERVICES, getServiceImage } from '../../data/vedicPanditData';
 import { getPricingDisplay } from '../../data/pujaPricing';
+import { useI18n } from '../../i18n/useI18n';
 import {
   Clock,
   Sparkles,
@@ -12,23 +13,24 @@ import {
 
 export default function FeaturedPujas() {
   const { navigateTo, openBookingModal } = useApp();
+  const { t, lang } = useI18n();
 
   return (
     <section style={{ padding: '85px 0', background: '#FFFFFF', borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)' }}>
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <span className="section-tag">Most Requested Vedic Ceremonies</span>
-          <h2 className="section-title">Featured Vedic Pujas &amp; Havans</h2>
+          <span className="section-tag">{t('home.featured.tag')}</span>
+          <h2 className="section-title">{t('home.featured.title')}</h2>
           <p className="section-desc">
-            Available across Bangalore, Pune, Mumbai, Hyderabad &amp; Online E-Puja with experienced North Indian &amp; Bihari pandits and pure Samagri kits.
+            {t('home.featured.desc')}
           </p>
         </div>
 
         {/* Featured Service Cards Grid */}
         <div className="grid-3" style={{ gap: '28px' }}>
           {SERVICES.slice(0, 6).map(service => {
-            const pricing = getPricingDisplay(service.id);
+            const pricing = getPricingDisplay(service.id, lang);
 
             return (
               <div
@@ -126,7 +128,7 @@ export default function FeaturedPujas() {
                       <span>&bull;</span>
                       <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                         <ShieldCheck size={12} color="#FCD34D" />
-                        {service.tradition?.split('/')[0]?.trim() || 'Vedic Vidhi'}
+                        {service.tradition?.split('/')[0]?.trim() || t('home.featured.vedic-vidhi')}
                       </span>
                     </div>
                   </div>
@@ -166,7 +168,7 @@ export default function FeaturedPujas() {
                   >
                     <div>
                       <span style={{ display: 'block', fontSize: '11px', color: 'var(--text-muted)', fontWeight: 600 }}>
-                        {pricing.priceLabel ? pricing.priceLabel.toUpperCase() : (pricing.hasPackages ? 'STARTING DAKSHINA' : 'DAKSHINA')}
+                        {pricing.priceLabel ? pricing.priceLabel.toUpperCase() : (pricing.hasPackages ? t('home.featured.starting-dakshina') : t('home.featured.dakshina'))}
                       </span>
                       <div style={{ fontSize: '17px', fontWeight: 800, color: 'var(--accent-saffron)', marginTop: '2px' }}>
                         {pricing.displayPrice}
@@ -195,7 +197,7 @@ export default function FeaturedPujas() {
                       ) : (
                         <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '11px', color: 'var(--accent-saffron)', fontWeight: 600, background: 'var(--accent-saffron-light)', padding: '3px 8px', borderRadius: 'var(--radius-full)' }}>
                           <Sparkles size={11} />
-                          Custom Shastra Vidhi
+                          {t('home.featured.custom-shastra-vidhi')}
                         </span>
                       )}
                     </div>
@@ -212,7 +214,7 @@ export default function FeaturedPujas() {
                         borderRadius: 'var(--radius-full)'
                       }}
                     >
-                      <span>Details</span>
+                      <span>{t('home.featured.details')}</span>
                       <ArrowRight size={13} />
                     </button>
 
@@ -226,7 +228,7 @@ export default function FeaturedPujas() {
                       }}
                     >
                       <CalendarCheck size={14} />
-                      <span>Book Puja</span>
+                      <span>{t('home.featured.book-puja')}</span>
                     </button>
                   </div>
                 </div>
@@ -246,7 +248,7 @@ export default function FeaturedPujas() {
               borderRadius: 'var(--radius-full)'
             }}
           >
-            <span>Browse Full Catalogue (59 Vedic Ceremonies)</span>
+            <span>{t('home.featured.browse-full-catalogue')}</span>
             <ArrowRight size={15} />
           </button>
         </div>
