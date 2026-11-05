@@ -800,6 +800,7 @@ export default function BookingModal() {
                   return (
                     <div
                       key={pkg.id}
+                      onClick={() => setSelectedPkg(pkg)}
                       style={{
                         borderRadius: '18px',
                         border: isSelected ? '2px solid #BD4B23' : '1px solid #EAE5D9',
@@ -809,7 +810,9 @@ export default function BookingModal() {
                         flexDirection: 'column',
                         justifyContent: 'space-between',
                         boxShadow: isSelected ? '0 10px 24px rgba(189, 75, 35, 0.12)' : 'var(--shadow-sm)',
-                        position: 'relative'
+                        position: 'relative',
+                        cursor: 'pointer',
+                        transition: 'all 0.18s ease'
                       }}
                     >
                       {/* Badge */}
@@ -828,13 +831,33 @@ export default function BookingModal() {
                         </span>
 
                         <div
+                          role="radio"
+                          aria-checked={isSelected}
+                          tabIndex={0}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedPkg(pkg);
+                          }}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                              e.preventDefault();
+                              setSelectedPkg(pkg);
+                            }
+                          }}
                           style={{
-                            width: '20px',
-                            height: '20px',
+                            width: '22px',
+                            height: '22px',
                             borderRadius: '50%',
                             border: isSelected ? '6px solid #BD4B23' : '2px solid #D8D2C4',
-                            background: '#FFFFFF'
+                            background: '#FFFFFF',
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            transition: 'all 0.15s ease',
+                            flexShrink: 0
                           }}
+                          title={isSelected ? 'Package Selected' : `Select ${pkg.name}`}
                         />
                       </div>
 
@@ -871,7 +894,10 @@ export default function BookingModal() {
                       {/* Clear Select Button */}
                       <button
                         type="button"
-                        onClick={() => handleSelectPackage(pkg)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleSelectPackage(pkg);
+                        }}
                         style={{
                           width: '100%',
                           padding: '11px 16px',

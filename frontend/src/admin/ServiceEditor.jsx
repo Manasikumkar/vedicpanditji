@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   FileText,
-  DollarSign,
+  IndianRupee,
   Package,
   Bookmark,
   Eye,
@@ -9,7 +9,6 @@ import {
   ArrowUp,
   ArrowDown,
   Trash2,
-  CheckCircle2,
   Flame,
   ArrowRight,
   ArrowLeft,
@@ -113,19 +112,6 @@ export default function ServiceEditor({
             <Flame size={24} color="#BD4B23" />
           </div>
           <div>
-            <div className="header-meta">
-              <code className="id-code">{card.serviceId}</code>
-              <span className={`badge-pill model-${card.model}`}>{card.model}</span>
-              <span className={`badge-pill status-${card.approvalStatus}`}>{card.approvalStatus}</span>
-              {card.isBusinessApproved ? (
-                <span className="badge-pill approved-tag">
-                  <CheckCircle2 size={11} />
-                  <span>Published</span>
-                </span>
-              ) : (
-                <span className="badge-pill review-tag">Needs Confirmation</span>
-              )}
-            </div>
             <h2 className="service-heading">{card.serviceName.en}</h2>
           </div>
         </div>
@@ -154,7 +140,7 @@ export default function ServiceEditor({
           className={`w-tab-btn ${currentTab === 'pricing' ? 'active' : ''}`}
           onClick={() => setTab('pricing')}
         >
-          <DollarSign size={15} />
+          <IndianRupee size={15} />
           <span>Rates &amp; Range</span>
         </button>
 

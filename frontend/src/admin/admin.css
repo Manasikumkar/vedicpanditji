@@ -32,18 +32,35 @@
   --adm-shadow-sm: 0 1px 2px rgba(28, 25, 23, 0.03);
   --adm-shadow: 0 4px 12px -2px rgba(28, 25, 23, 0.04), 0 2px 4px -1px rgba(28, 25, 23, 0.02);
   --adm-shadow-lg: 0 12px 24px -4px rgba(28, 25, 23, 0.06), 0 4px 8px -2px rgba(28, 25, 23, 0.03);
+  --adm-font: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 /* ==========================================================================
    1. App Shell (Full-Width Column Layout)
    ========================================================================== */
+
+/* Universal Admin Poppins Typography Standard */
+.admin-app-root,
+.admin-app-root button,
+.admin-app-root input,
+.admin-app-root textarea,
+.admin-app-root select,
+.admin-app-root h1,
+.admin-app-root h2,
+.admin-app-root h3,
+.admin-app-root h4,
+.admin-app-root h5,
+.admin-app-root h6 {
+  font-family: var(--adm-font, 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+}
+
 .admin-app-root.no-sidebar {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   background-color: var(--adm-bg);
   color: var(--adm-text-main);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--adm-font, 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
   font-size: 13.5px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -53,7 +70,7 @@
    2. Full-Width Top Navbar
    ========================================================================== */
 .admin-navbar-full {
-  height: 60px;
+  height: 64px;
   background: var(--adm-header-bg);
   border-bottom: 1px solid var(--adm-border);
   padding: 0 20px;
@@ -82,7 +99,7 @@
 }
 
 .navbar-brand-logo {
-  height: 32px;
+  height: 44px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -106,7 +123,7 @@
 }
 
 .brand-main {
-  font-family: Georgia, serif;
+  font-family: var(--adm-font, 'Poppins', sans-serif);
   font-size: 17px;
   font-weight: 800;
   color: var(--adm-text-main);
@@ -424,8 +441,8 @@
   padding: 8px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  justify-content: center;
+  position: relative;
   width: 100%;
   box-sizing: border-box;
   box-shadow: 0 1px 2px rgba(28, 25, 23, 0.02);
@@ -434,14 +451,15 @@
 .sections-tabs-cluster {
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 10px;
 }
 
 .section-tab-item {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 7px 14px;
+  padding: 7px 16px;
   border-radius: var(--adm-radius-sm);
   border: 1px solid transparent;
   background: transparent;
@@ -482,6 +500,8 @@
 }
 
 .sections-strip-status {
+  position: absolute;
+  right: 20px;
   display: flex;
   align-items: center;
   gap: 7px;
@@ -496,6 +516,12 @@
   border-radius: 50%;
   background: var(--adm-success);
   box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.15);
+}
+
+@media (max-width: 860px) {
+  .sections-strip-status {
+    display: none;
+  }
 }
 
 /* Global Alert */
@@ -799,7 +825,7 @@
 .badge-pill.model-custom-quote { background: #FFF7ED; color: #C2410C; }
 
 .service-heading {
-  font-family: Georgia, serif;
+  font-family: var(--adm-font, 'Poppins', sans-serif);
   font-size: 21px;
   font-weight: 800;
   color: var(--adm-text-main);
@@ -2015,7 +2041,7 @@
 }
 
 .mock-icon-title h4 {
-  font-family: Georgia, serif;
+  font-family: var(--adm-font, 'Poppins', sans-serif);
   font-size: 20px;
   font-weight: 800;
   color: #1C1917;
@@ -2111,7 +2137,7 @@
 }
 
 /* ==========================================================================
-   9. Samagri Catalogue Tab & Grid
+   9. Standard Samagri Catalogue Tab & Grid
    ========================================================================== */
 .single-section-pane {
   max-width: 1280px;
@@ -2121,35 +2147,167 @@
 
 .samagri-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+  gap: 22px;
 }
 
 .samagri-item-card {
   border: 1px solid var(--adm-border);
   background: #FFFFFF;
   border-radius: var(--adm-radius-lg);
-  box-shadow: var(--adm-shadow-sm);
+  box-shadow: 0 1px 3px rgba(28, 25, 23, 0.04);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  transition: all 0.2s ease;
 }
 
 .samagri-item-card:hover {
-  border-color: #E2D9CC;
-  box-shadow: 0 4px 12px -2px rgba(28, 25, 23, 0.06);
+  border-color: #D6CEBE;
+  box-shadow: 0 6px 16px -2px rgba(28, 25, 23, 0.08);
 }
 
-.samagri-item-card .package-card-header {
-  cursor: default;
+/* Structured Standard Header */
+.samagri-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 18px;
+  background: #FAF8F5;
+  border-bottom: 1px solid var(--adm-border);
+}
+
+.samagri-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1;
+}
+
+.samagri-idx {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--adm-primary);
+  background: var(--adm-primary-light);
+  border: 1px solid rgba(189, 75, 35, 0.15);
+  padding: 2px 7px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  line-height: 1.3;
+}
+
+.samagri-title-text {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--adm-text-main);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.samagri-id-code {
+  font-family: monospace;
+  font-size: 11px;
+  background: #EFECE6;
+  border: 1px solid #E2DDD5;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--adm-text-muted);
+  flex-shrink: 0;
+}
+
+.samagri-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Status Pills */
+.samagri-status-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.samagri-status-pill.verified {
+  background: #ECFDF5;
+  color: #065F46;
+  border: 1px solid #A7F3D0;
+}
+
+.samagri-status-pill.pending {
+  background: #FEF3C7;
+  color: #92400E;
+  border: 1px solid #FDE68A;
+}
+
+.samagri-status-pill.active {
+  background: #F0FDF4;
+  color: #15803D;
+  border: 1px solid #BBF7D0;
+}
+
+.samagri-status-pill.inactive {
+  background: #F3F4F6;
+  color: #6B7280;
+  border: 1px solid #E5E7EB;
+}
+
+.samagri-live-price {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #BD4B23;
+  background: #FFFFFF;
+  border: 1.5px solid #F4D9CF;
+  padding: 3px 10px;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(189, 75, 35, 0.05);
+  white-space: nowrap;
+}
+
+/* Card Body */
+.samagri-card-body {
+  padding: 16px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Specifications Box */
+.samagri-specs-box {
+  background: #FAF9F6;
+  border: 1px solid #ECE7DF;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.samagri-box-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--adm-text-muted);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .samagri-card-specs-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin-bottom: 14px;
+  gap: 10px;
 }
 
 @media (max-width: 700px) {
@@ -2158,10 +2316,151 @@
   }
 }
 
-.tier-checkboxes-row {
+/* Standard Toggle Cards Row */
+.samagri-toggles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .samagri-toggles-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.samagri-toggle-card {
   display: flex;
-  gap: 16px;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  border: 1px solid var(--adm-border);
+  background: #FAFAF9;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+}
+
+.samagri-toggle-card:hover {
+  background: #F5F4F0;
+  border-color: #D6CEBE;
+}
+
+.samagri-toggle-card.is-active.verified {
+  background: #F0FDF4;
+  border-color: #86EFAC;
+}
+
+.samagri-toggle-card.is-active.active {
+  background: #FFF7ED;
+  border-color: #FDBA74;
+}
+
+.samagri-toggle-switch {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 1.5px solid #D1D5DB;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+  transition: all 0.15s ease;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.samagri-toggle-card.is-active.verified .samagri-toggle-switch {
+  background: #16A34A;
+  border-color: #16A34A;
+  color: #FFFFFF;
+}
+
+.samagri-toggle-card.is-active.active .samagri-toggle-switch {
+  background: #BD4B23;
+  border-color: #BD4B23;
+  color: #FFFFFF;
+}
+
+.samagri-toggle-texts {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.samagri-toggle-title {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--adm-text-main);
+  line-height: 1.25;
+}
+
+.samagri-toggle-desc {
+  font-size: 11px;
+  color: var(--adm-text-muted);
+  line-height: 1.3;
+}
+
+/* Tier Selection Box */
+.samagri-tiers-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.samagri-tier-chips {
+  display: flex;
+  gap: 8px;
   flex-wrap: wrap;
+}
+
+.samagri-tier-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+  border: 1.5px solid var(--adm-border);
+  background: #FAFAF9;
+  color: var(--adm-text-muted);
+}
+
+.samagri-tier-chip:hover {
+  background: #F5F3EF;
+  border-color: #D6CEBE;
+  color: var(--adm-text-main);
+}
+
+.samagri-tier-chip.is-selected {
+  background: #FFF5F2;
+  border-color: var(--adm-primary);
+  color: var(--adm-primary);
+  box-shadow: 0 1px 3px rgba(189, 75, 35, 0.08);
+}
+
+.samagri-tier-chip.is-selected.popular {
+  background: #FEF3C7;
+  border-color: #F59E0B;
+  color: #B45309;
+}
+
+.samagri-tier-chip.is-selected.premium {
+  background: #FDF4E3;
+  border-color: #D97706;
+  color: #92400E;
+}
+
+.samagri-tier-chip-icon {
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .capitalize {
