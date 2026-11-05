@@ -4,6 +4,7 @@ import { BRAND_INFO } from '../../data/vedicPanditData';
 import { animateNavbarEntrance } from '../../utils/gsapAnimations';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useI18n } from '../../i18n/useI18n';
+import { prefetchRoute } from '../../utils/prefetch';
 import {
   Menu,
   X,
@@ -119,6 +120,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => handleNavClick('about-us')}
+              onMouseEnter={() => prefetchRoute('about-us')}
               className={`vp-nav-link ${isNavActive('about-us') ? 'active' : ''}`}
             >
               <span>{t('nav.about-us')}</span>
@@ -128,6 +130,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => handleNavClick('catalogue')}
+              onMouseEnter={() => prefetchRoute('catalogue')}
               className={`vp-nav-link ${isNavActive('catalogue') ? 'active' : ''}`}
             >
               <span>{t('nav.ceremonies')}</span>
@@ -137,6 +140,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => handleNavClick('location-detail', { slug: 'pandit-in-pune' })}
+              onMouseEnter={() => prefetchRoute('location-detail')}
               className={`vp-nav-link ${isNavActive('locations') ? 'active' : ''}`}
             >
               <span>{t('nav.locations')}</span>
@@ -146,6 +150,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => handleNavClick('contact')}
+              onMouseEnter={() => prefetchRoute('contact')}
               className={`vp-nav-link ${isNavActive('contact') ? 'active' : ''}`}
             >
               <span>{t('nav.contact')}</span>

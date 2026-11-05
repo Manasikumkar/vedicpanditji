@@ -305,11 +305,23 @@ export default function CataloguePage() {
                   style={{
                     position: 'relative',
                     height: '210px',
-                    backgroundImage: `url(${service.image || getServiceImage(service)})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center'
+                    overflow: 'hidden',
+                    backgroundColor: '#FAF8F5'
                   }}
                 >
+                  <img
+                    src={service.image || getServiceImage(service)}
+                    alt={service.name}
+                    loading="lazy"
+                    decoding="async"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center',
+                      display: 'block'
+                    }}
+                  />
                   <div
                     style={{
                       position: 'absolute',

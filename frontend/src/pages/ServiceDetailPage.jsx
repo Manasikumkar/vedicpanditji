@@ -142,14 +142,26 @@ export default function ServiceDetailPage() {
                 width: '100%',
                 height: '380px',
                 borderRadius: '16px',
-                backgroundImage: `url(${service.image || getServiceImage(service)})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
                 boxShadow: 'var(--shadow-md)',
                 position: 'relative',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                backgroundColor: '#FAF8F5'
               }}
             >
+              <img
+                src={service.image || getServiceImage(service)}
+                alt={service.name}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center',
+                  display: 'block'
+                }}
+              />
               <div
                 style={{
                   position: 'absolute',
@@ -357,7 +369,7 @@ export default function ServiceDetailPage() {
         />
 
         {/* ======================================================== */}
-        {/* 3. STRUCTURED HARIVARA CONTENT HIERARCHY TABS */}
+        {/* 3. STRUCTURED CEREMONY CONTENT HIERARCHY TABS */}
         {/* (Significance, When to Perform, Vidhi, Samagri, FAQs) */}
         {/* ======================================================== */}
         <div

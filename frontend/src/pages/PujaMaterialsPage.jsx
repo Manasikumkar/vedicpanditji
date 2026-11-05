@@ -86,12 +86,25 @@ export default function PujaMaterialsPage() {
               <div
                 style={{
                   height: '180px',
-                  backgroundImage: `url(${prod.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  position: 'relative'
+                  position: 'relative',
+                  overflow: 'hidden',
+                  backgroundColor: '#FAF8F5'
                 }}
-              />
+              >
+                <img
+                  src={prod.image}
+                  alt={prod.name}
+                  loading="lazy"
+                  decoding="async"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center',
+                    display: 'block'
+                  }}
+                />
+              </div>
 
               <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', flex: 1 }}>
                 <h3 style={{ fontSize: '16px', fontWeight: 700, marginBottom: '6px' }}>

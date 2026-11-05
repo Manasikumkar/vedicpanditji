@@ -32,7 +32,7 @@ export function newPackage(card) {
     name: emptyText(),
     tier: 'standard',
     badge: emptyText(),
-    indicativePrice: null,
+    indicativePrice: card?.minPrice || null,
     priceDisplay: '',
     priceNote: emptyText(),
     inclusions: [],

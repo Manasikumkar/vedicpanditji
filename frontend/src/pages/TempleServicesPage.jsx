@@ -194,11 +194,23 @@ export default function TempleServicesPage() {
                 style={{
                   height: '220px',
                   position: 'relative',
-                  backgroundImage: `url(${temple.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
+                  overflow: 'hidden',
+                  backgroundColor: '#FAF8F5'
                 }}
               >
+                <img
+                  src={temple.image}
+                  alt={temple.name}
+                  loading="lazy"
+                  decoding="async"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center',
+                    display: 'block'
+                  }}
+                />
                 <div
                   style={{
                     position: 'absolute',

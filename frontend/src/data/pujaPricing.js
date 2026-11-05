@@ -1,7 +1,7 @@
 // Puja pricing lookups for VedicPanditji.
 // Rate cards and samagri add-ons live in pricing.json (managed in Supabase through /admin);
 // this file only adds lookup, localization and booking-total logic on top.
-import pricingSeed from './pricing.json';
+import pricingSeed from './pricing.json' with { type: 'json' };
 import { localize } from '../utils/localize.js';
 //
 // APPROVAL STATUSES:
@@ -24,7 +24,7 @@ export const VERIFICATION_STATUS = {
 };
 
 // Flag to control customer-facing publication of proposed rates upon business approval
-export const PUBLISH_PROPOSED_PRICES_TO_CUSTOMER = true;
+export const PUBLISH_PROPOSED_PRICES_TO_CUSTOMER = false;
 
 // ============================================================================
 // DATA LAYER

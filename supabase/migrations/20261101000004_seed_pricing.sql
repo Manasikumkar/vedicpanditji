@@ -1,83 +1,53 @@
 -- Generated from frontend/src/data/pricing.json. Validated by the pricing_before_write trigger.
-insert into public.pricing (id, data) values (1, $seed${
+insert into public.pricing (id, data) values (1, $
+{
   "rateCards": {
-    "griha-pravesh": {
-      "serviceId": "griha-pravesh",
-      "serviceName": {
-        "en": "Griha Pravesh Puja",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "pujas",
+    "ayush-havan": {
       "model": "package-pricing",
-      "approvalStatus": "local-project-data",
-      "isBusinessApproved": false,
-      "minPrice": 3500,
-      "maxPrice": 5500,
-      "startingPriceDisplay": "From ₹3,500*",
-      "pricingNote": {
-        "en": "Indicative starting dakshina (Preserved local project data)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "2.5 to 3.5 hrs foundational home entry ritual. High demand across Pune & metro hubs.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara packages range from ₹3,600 to ₹12,800. ₹3,500/₹5,500 is standard for North Indian home ritual in Pune.",
-      "missingBusinessInfo": "Commercial sign-off on ₹3,500 (Dakshina only) vs ₹5,500 (with Hawan Samagri kit).",
+      "category": "havans",
+      "maxPrice": 5100,
+      "minPrice": 5100,
       "packages": [
         {
-          "id": "gp-dakshina",
+          "id": "ay-basic",
           "name": {
             "en": "Package A — Ritual Only",
-            "hi": "",
-            "mr": ""
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
           },
           "tier": "standard",
           "badge": {
             "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
-          "indicativePrice": 3500,
-          "priceDisplay": "₹3,500*",
+          "indicativePrice": 5100,
+          "priceDisplay": "₹5,100*",
           "priceNote": {
-            "en": "Indicative starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
-              "en": "Pandit Dakshina for complete ceremony",
+              "en": "Pandit Dakshina for Ayush Homa & Markandeya invocation",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Puja performed as per agreed Shastra vidhi",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Samagri checklist provided in advance (devotee arranges materials)",
+              "en": "Checklist provided",
               "hi": "",
               "mr": ""
             }
           ],
           "exclusions": [
             {
-              "en": "Devotee arranges hawan samagri and cow ghee",
+              "en": "Samagri kit",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Devotee arranges fresh flowers, fruits, milk & prasad",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Devotee provides household puja thali & vessels",
+              "en": "Ghee, payasam, flowers",
               "hi": "",
               "mr": ""
             }
@@ -85,55 +55,45 @@ insert into public.pricing (id, data) values (1, $seed${
           "includedSamagriIds": []
         },
         {
-          "id": "gp-samagri",
+          "id": "ay-standard",
           "name": {
             "en": "Package B — Ritual + Samagri",
-            "hi": "",
-            "mr": ""
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
           },
           "tier": "popular",
           "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
           },
-          "indicativePrice": 5500,
-          "priceDisplay": "₹5,500*",
+          "indicativePrice": 8100,
+          "priceDisplay": "₹8,100*",
           "priceNote": {
-            "en": "Indicative starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina ₹5,100* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
           },
           "inclusions": [
             {
-              "en": "Pandit Dakshina for complete ceremony",
+              "en": "Pandit Dakshina for ceremony",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Essential pure Hawan Samagri kit included",
+              "en": "Pure Hawan Samagri kit & cow ghee included",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Pure desi cow ghee & sacred hawan wood included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Puja performed as per agreed Shastra vidhi",
+              "en": "Mango wood, camphor, roli, moli",
               "hi": "",
               "mr": ""
             }
           ],
           "exclusions": [
             {
-              "en": "Devotee only prepares fresh flowers & seasonal fruits",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Devotee arranges fresh milk, curd & household utensils",
+              "en": "Fresh fruits & birthday payasam/kheer",
               "hi": "",
               "mr": ""
             }
@@ -144,489 +104,54 @@ insert into public.pricing (id, data) values (1, $seed${
             "opt-complete-kit"
           ]
         }
-      ]
-    },
-    "satyanarayan-puja": {
-      "serviceId": "satyanarayan-puja",
-      "serviceName": {
-        "en": "Satyanarayan Puja & Katha",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "pujas",
-      "model": "package-pricing",
-      "approvalStatus": "local-project-data",
-      "isBusinessApproved": false,
-      "minPrice": 2500,
-      "maxPrice": 3800,
-      "startingPriceDisplay": "From ₹2,500*",
-      "pricingNote": {
-        "en": "Indicative starting dakshina (Preserved local project data)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "2 to 2.5 hrs devotional monthly/milestone ceremony. Most frequent home puja.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Satyanarayan ranges from ₹3,000 to ₹6,500. VedicPanditji local rate ₹2,500/₹3,800 is highly competitive.",
-      "missingBusinessInfo": "Confirmation whether Katha with Hawan includes standard cow ghee in Package B.",
-      "packages": [
-        {
-          "id": "sn-dakshina",
-          "name": {
-            "en": "Package A — Ritual Only",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 2500,
-          "priceDisplay": "₹2,500*",
-          "priceNote": {
-            "en": "Indicative starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for 5-chapter Katha & Havan",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Puja performed as per agreed Shastra vidhi",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Samagri checklist provided in advance (devotee arranges materials)",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Devotee arranges hawan samagri, cow ghee & dry fruits",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Devotee prepares Panchamrit, bananas, fresh flowers & prasad",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Devotee provides household chowki & thalis",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "sn-samagri",
-          "name": {
-            "en": "Package B — Ritual + Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3800,
-          "priceDisplay": "₹3,800*",
-          "priceNote": {
-            "en": "Indicative starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for 5-chapter Katha & Havan",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Essential pure Hawan Samagri kit included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Pure cow ghee & dry ritual samagri included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Puja performed as per agreed Shastra vidhi",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Devotee prepares fresh flowers, bananas & Sheera (Prasad)",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Devotee prepares fresh Panchamrit (milk, curd, honey, sugar, tulsi)",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "vastu-shanti-puja": {
-      "serviceId": "vastu-shanti-puja",
-      "serviceName": {
-        "en": "Vastu Shanti Puja & Havan",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "shanti-pujas",
-      "model": "package-pricing",
-      "approvalStatus": "local-project-data",
-      "isBusinessApproved": false,
-      "minPrice": 3500,
-      "maxPrice": 5500,
-      "startingPriceDisplay": "From ₹3,500*",
-      "pricingNote": {
-        "en": "Indicative starting dakshina (Preserved local project data)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "3 to 4 hrs architectural pacification and Agnihotra hawan for flats/plots.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Vastu Homam packages range from ₹4,500 to ₹14,000.",
-      "missingBusinessInfo": "Whether copper Vastu Yantra is provided by VedicPanditji or devotee.",
-      "packages": [
-        {
-          "id": "vs-dakshina",
-          "name": {
-            "en": "Package A — Ritual Only",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3500,
-          "priceDisplay": "₹3,500*",
-          "priceNote": {
-            "en": "Indicative starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Vastu Shanti Vidhi & Havan",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Puja performed as per agreed Shastra vidhi",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Samagri checklist provided in advance (devotee arranges materials)",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Devotee arranges hawan samagri and cow ghee",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Devotee arranges fresh flowers, fruits & prasad",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Devotee provides copper kalash & household utensils",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "vs-samagri",
-          "name": {
-            "en": "Package B — Ritual + Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 5500,
-          "priceDisplay": "₹5,500*",
-          "priceNote": {
-            "en": "Indicative starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Vastu Shanti Vidhi & Havan",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Essential pure Hawan Samagri kit included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Pure desi cow ghee & hawan kashtha included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Puja performed as per agreed Shastra vidhi",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Devotee prepares fresh flowers, water coconut & seasonal fruits",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Devotee arranges fresh milk & curd",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "rudrabhishek-puja": {
-      "serviceId": "rudrabhishek-puja",
-      "serviceName": {
-        "en": "Rudrabhishek Puja & Shivling Abhishek",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "pujas",
-      "model": "package-pricing",
-      "approvalStatus": "local-project-data",
-      "isBusinessApproved": false,
-      "minPrice": 3500,
-      "maxPrice": 5500,
-      "startingPriceDisplay": "From ₹3,500*",
-      "pricingNote": {
-        "en": "Indicative starting dakshina (Preserved local project data)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "2 to 3 hrs Namakam/Chamakam chanting with 11-substance abhishek.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Rudra Abhishek ranges from ₹3,500 to ₹8,500 in Maharashtra.",
-      "missingBusinessInfo": "Whether Panditji brings a Narmadeshwar Shivling for households lacking one.",
-      "packages": [
-        {
-          "id": "rb-dakshina",
-          "name": {
-            "en": "Package A — Ritual Only",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3500,
-          "priceDisplay": "₹3,500*",
-          "priceNote": {
-            "en": "Indicative starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Rudri Path & Abhishek",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Puja performed as per agreed Shastra vidhi",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Samagri checklist provided in advance (devotee arranges materials)",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Devotee arranges fresh raw milk, gangajal, honey, curd & sugarcane juice",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Devotee arranges fresh Belpatra, Dhatura, flowers & prasad",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Devotee arranges Shivling & abhishek patra",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "rb-samagri",
-          "name": {
-            "en": "Package B — Ritual + Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 5500,
-          "priceDisplay": "₹5,500*",
-          "priceNote": {
-            "en": "Indicative starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Rudri Path & Abhishek",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Essential pure Hawan & Abhishek dry samagri kit included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Sacred Bhasma, Chandan, Janeu & Havan wood included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Puja performed as per agreed Shastra vidhi",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Devotee arranges fresh milk, curd, honey & panchamrit liquids",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Devotee arranges fresh Belpatra, Dhatura & flowers",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "bhoomi-puja": {
-      "serviceId": "bhoomi-puja",
-      "serviceName": {
-        "en": "Bhoomi Puja (Plot Groundbreaking)",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "pujas",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 3100,
-      "maxPrice": 4800,
-      "startingPriceDisplay": "From ₹3,100*",
+      ],
+      "serviceId": "ayush-havan",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
         "hi": "",
         "mr": ""
       },
+      "serviceName": {
+        "en": "Ayush Havan (Birthday & Long Life)",
+        "hi": "जन्मदिन पूजा ",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
       "pricingRationale": {
-        "en": "2 to 3 hrs plot foundation ritual with Ashta Dikpala and Kurma sthapana.",
+        "en": "2 hrs vitality and birthday fire ceremony for children or seniors.",
         "hi": "",
         "mr": ""
       },
-      "researchBasis": "Harivara Bhoomi Puja ranges from ₹3,600 to ₹12,800. ₹3,100/₹4,800 is an honest starting structure.",
-      "missingBusinessInfo": "Whether copper Kurma/Naga or foundation bricks are arranged by Panditji.",
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Payasam preparation instructions.",
+      "startingPriceDisplay": "From ₹5,100*"
+    },
+    "bhoomi-puja": {
+      "model": "package-pricing",
+      "category": "pujas",
+      "maxPrice": 5000,
+      "minPrice": 5000,
       "packages": [
         {
           "id": "bp-basic",
           "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
           },
           "tier": "standard",
           "badge": {
             "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
-          "indicativePrice": 3100,
-          "priceDisplay": "₹3,100*",
+          "indicativePrice": 5000,
+          "priceDisplay": "₹5,000*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
@@ -667,22 +192,22 @@ insert into public.pricing (id, data) values (1, $seed${
         {
           "id": "bp-standard",
           "name": {
-            "en": "Standard — Ritual + Essential Samagri",
-            "hi": "",
-            "mr": ""
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
           },
           "tier": "popular",
           "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
           },
-          "indicativePrice": 4800,
-          "priceDisplay": "₹4,800*",
+          "indicativePrice": 8000,
+          "priceDisplay": "₹8,000*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina ₹5,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
           },
           "inclusions": [
             {
@@ -724,85 +249,80 @@ insert into public.pricing (id, data) values (1, $seed${
             "opt-complete-kit"
           ]
         }
-      ]
-    },
-    "office-opening-puja": {
-      "serviceId": "office-opening-puja",
-      "serviceName": {
-        "en": "Office Opening & Vyapar Vriddhi Puja",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "pujas",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 3100,
-      "maxPrice": 4800,
-      "startingPriceDisplay": "From ₹3,100*",
+      ],
+      "serviceId": "bhoomi-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
         "hi": "",
         "mr": ""
       },
-      "pricingRationale": {
-        "en": "2 hrs commercial sanctification, Gauri-Ganesh, Navagraha and Kuber-Laxmi sthapana.",
+      "serviceName": {
+        "en": "Bhoomi Puja (Plot Groundbreaking)",
         "hi": "",
         "mr": ""
       },
-      "researchBasis": "Harivara Office Opening ranges from ₹4,300 to ₹9,800. ₹3,100/₹4,800 is competitive for commercial units.",
-      "missingBusinessInfo": "Whether smoke-free Agnihotra kund is provided for air-conditioned office spaces.",
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2 to 3 hrs plot foundation ritual with Ashta Dikpala and Kurma sthapana.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Whether copper Kurma/Naga or foundation bricks are arranged by Panditji.",
+      "startingPriceDisplay": "From ₹5,000*"
+    },
+    "jagran-puja": {
+      "model": "package-pricing",
+      "category": "bhajans-chowki",
+      "maxPrice": 45000,
+      "minPrice": 31000,
       "packages": [
         {
-          "id": "oo-basic",
+          "id": "jg-standard",
           "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
           },
           "tier": "standard",
           "badge": {
             "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
-          "indicativePrice": 3100,
-          "priceDisplay": "₹3,100*",
+          "indicativePrice": 31000,
+          "priceDisplay": "₹31,000*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
-              "en": "Experienced Pandit for Office Opening Vidhi",
+              "en": "5-Member All-Night Devotional Troupe (9 PM to 5 AM)",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Gauri-Ganesh, Navagraha & Vyapar Vriddhi Pujan",
+              "en": "High-power sound system and stage microphones",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Office samagri checklist provided in advance",
+              "en": "Akhand Jyot, Ganesh Pujan, Tara Rani Katha & morning Aarti",
               "hi": "",
               "mr": ""
             }
           ],
           "exclusions": [
             {
-              "en": "Hawan samagri kit",
+              "en": "Jhanki stage actors",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Cash counter toran & fresh flowers",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Puja utensils",
+              "en": "Midnight tea/snacks for devotees",
               "hi": "",
               "mr": ""
             }
@@ -810,117 +330,105 @@ insert into public.pricing (id, data) values (1, $seed${
           "includedSamagriIds": []
         },
         {
-          "id": "oo-standard",
+          "id": "jg-grand",
           "name": {
-            "en": "Standard — Ritual + Business Samagri Kit",
-            "hi": "",
-            "mr": ""
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
           },
           "tier": "popular",
           "badge": {
-            "en": "Recommended for Workspaces",
-            "hi": "",
-            "mr": ""
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
           },
-          "indicativePrice": 4800,
-          "priceDisplay": "₹4,800*",
+          "indicativePrice": 32500,
+          "priceDisplay": "₹32,500*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina ₹31,000* + Complete Dry Puja Samagri Kit included",
+            "hi": "पंडित दक्षिणा + सम्पूर्ण पूजा सामग्री किट शामिल",
+            "mr": "पंडित दक्षिणा + संपूर्ण पूजा साहित्य किट समाविष्ट"
           },
           "inclusions": [
             {
-              "en": "Experienced Pandit for complete ceremony",
+              "en": "Full 7-Artist Orchestra with dynamic sound system",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Essential Hawan Samagri kit & pure cow ghee included",
+              "en": "Live mythological Jhanki performances (Radha Krishna, Shiva Tandav)",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Toran, Roli, Akshat, Janeu, Dhoop & Camphor included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Smoke-conscious Agnihotra vidhi for commercial premises",
+              "en": "Akhand Jyot setup, Hawan Samagri & morning Aarti with conch",
               "hi": "",
               "mr": ""
             }
           ],
           "exclusions": [
             {
-              "en": "Fresh flowers, coconut, sweets (Mithai) for staff",
+              "en": "Large public tent setup",
               "hi": "",
               "mr": ""
             }
           ],
           "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
             "opt-complete-kit"
           ]
         }
-      ]
-    },
-    "mahalaxmi-puja": {
-      "serviceId": "mahalaxmi-puja",
-      "serviceName": {
-        "en": "Mahalaxmi Puja & Kanakdhara Vidhi",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "pujas",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2500,
-      "maxPrice": 3800,
-      "startingPriceDisplay": "From ₹2,500*",
+      ],
+      "serviceId": "jagran-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
         "hi": "",
         "mr": ""
       },
-      "pricingRationale": {
-        "en": "2 hrs home wealth worship with Kanakdhara Stotra and Sri Sukta ahutis.",
+      "serviceName": {
+        "en": "Raat Ka Jagran & Bhajan Sandhya",
         "hi": "",
         "mr": ""
       },
-      "researchBasis": "Harivara Mahalaxmi Puja ranges from ₹3,800 to ₹7,500.",
-      "missingBusinessInfo": "Whether silver Lakshmi coin consecration is included in standard package.",
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "All-night (9 PM to 5 AM) devotional vigil with orchestra, sound, and Tara Rani katha.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Jhanki artists availability in Pune/PCMC.",
+      "startingPriceDisplay": "From ₹31,000*"
+    },
+    "rudra-havan": {
+      "model": "package-pricing",
+      "category": "havans",
+      "maxPrice": 11000,
+      "minPrice": 11000,
       "packages": [
         {
-          "id": "mlx-basic",
+          "id": "rh-basic",
           "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
           },
           "tier": "standard",
           "badge": {
             "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
-          "indicativePrice": 2500,
-          "priceDisplay": "₹2,500*",
+          "indicativePrice": 11000,
+          "priceDisplay": "₹11,000*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
-              "en": "Pandit Dakshina for Mahalaxmi Pujan & Kanakdhara Path",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Ashtalakshmi invocation",
+              "en": "Senior Acharya Dakshina for Rudra Path & Havan",
               "hi": "",
               "mr": ""
             },
@@ -937,12 +445,7 @@ insert into public.pricing (id, data) values (1, $seed${
               "mr": ""
             },
             {
-              "en": "Lotus flowers & fresh sweets",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Utensils",
+              "en": "Belpatra, ghee, dravyas",
               "hi": "",
               "mr": ""
             }
@@ -950,24 +453,274 @@ insert into public.pricing (id, data) values (1, $seed${
           "includedSamagriIds": []
         },
         {
-          "id": "mlx-standard",
+          "id": "rh-standard",
           "name": {
-            "en": "Standard — Ritual + Hawan Kit",
-            "hi": "",
-            "mr": ""
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
           },
           "tier": "popular",
           "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
           },
-          "indicativePrice": 3800,
-          "priceDisplay": "₹3,800*",
+          "indicativePrice": 14000,
+          "priceDisplay": "₹14,000*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina ₹11,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Senior Acharya for complete ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential Hawan kit & pure cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Sacred Bhasma, Chandan, Janeu, Bilva ahutis",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh milk, curd, honey & belpatra",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "rudra-havan",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Rudra Havan (Shiva Fire Ceremony)",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "3 hrs intense Shiva fire ceremony with Namakam/Chamakam chanting.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Whether coupled with Shivling Abhishek.",
+      "startingPriceDisplay": "From ₹11,000*"
+    },
+    "chandi-havan": {
+      "model": "package-pricing",
+      "category": "havans",
+      "maxPrice": 21000,
+      "minPrice": 15000,
+      "packages": [
+        {
+          "id": "ch-nav-chandi",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 15000,
+          "priceDisplay": "₹15,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Senior Vedic Acharyas for complete Durga Saptashati recitation & concluding Homa",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Detailed checklist provided",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh flowers, Kanya pujan dakshina",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Brahmin feast",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "ch-maha-chandi",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 18000,
+          "priceDisplay": "₹18,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹15,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "3 Senior Vedic Acharyas for synchronized recitation & grand Maha Havan",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Complete Chandi Hawan Samagri kit with pure cow ghee & sacred herbs",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Full Kanya Puja coordination",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Brahmin bhojan feast",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "chandi-havan",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Maha Chandi Havan & Durga Saptashati",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "4 to 5 hrs intensive ceremony requiring multiple senior reciters for 700 verses & vast ahutis.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Number of Brahmins (2 or 3) and Kanya Puja gifts.",
+      "startingPriceDisplay": "From ₹15,000*"
+    },
+    "gayatri-havan": {
+      "model": "package-pricing",
+      "category": "havans",
+      "maxPrice": 5100,
+      "minPrice": 5100,
+      "packages": [
+        {
+          "id": "gy-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 5100,
+          "priceDisplay": "₹5,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Gayatri Japa & Havan",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Surya Aradhana & Checklist",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Ghee & wood",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "gy-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 8100,
+          "priceDisplay": "₹8,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹5,100* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
           },
           "inclusions": [
             {
@@ -976,19 +729,19 @@ insert into public.pricing (id, data) values (1, $seed${
               "mr": ""
             },
             {
-              "en": "Pure cow ghee & Hawan Samagri kit included",
+              "en": "Pure Hawan Samagri kit & cow ghee included",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Kamalgatta (lotus seeds) & sacred herbs included",
+              "en": "Sacred wood, camphor, roli, moli",
               "hi": "",
               "mr": ""
             }
           ],
           "exclusions": [
             {
-              "en": "Fresh lotus flowers & sweets",
+              "en": "Fresh flowers & prasad",
               "hi": "",
               "mr": ""
             }
@@ -999,105 +752,54 @@ insert into public.pricing (id, data) values (1, $seed${
             "opt-complete-kit"
           ]
         }
-      ]
-    },
-    "saraswati-puja": {
-      "serviceId": "saraswati-puja",
-      "serviceName": {
-        "en": "Saraswati Puja for Education & Wisdom",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "pujas",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2100,
-      "maxPrice": 3500,
-      "startingPriceDisplay": "From ₹2,100*",
+      ],
+      "serviceId": "gayatri-havan",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
         "hi": "",
         "mr": ""
       },
-      "pricingRationale": {
-        "en": "1.5 to 2 hrs ceremony for students, intellect, and books/instrument blessing.",
+      "serviceName": {
+        "en": "Gayatri Havan (Solar Vedic Purification)",
         "hi": "",
         "mr": ""
       },
-      "researchBasis": "Harivara Saraswati Puja ranges from ₹3,500 to ₹6,500.",
-      "missingBusinessInfo": "Book and pen blessing guidance.",
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2 hrs universal purification with 108 or 1008 Savitur Gayatri ahutis.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Ahuti count confirmation.",
+      "startingPriceDisplay": "From ₹5,100*"
+    },
+    "griha-pravesh": {
+      "model": "package-pricing",
+      "category": "pujas",
+      "maxPrice": 11000,
+      "minPrice": 11000,
       "packages": [
         {
-          "id": "srs-basic",
+          "id": "gp-dakshina",
           "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
           },
           "tier": "standard",
           "badge": {
             "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
-          "indicativePrice": 2100,
-          "priceDisplay": "₹2,100*",
+          "indicativePrice": 11000,
+          "priceDisplay": "₹11,000*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Saraswati Aradhana & Medha Sukta",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Vidya Aarambh blessing",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Samagri checklist",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "White flowers & sweets",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "srs-standard",
-          "name": {
-            "en": "Standard — Ritual + Hawan Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3500,
-          "priceDisplay": "₹3,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
@@ -1106,108 +808,29 @@ insert into public.pricing (id, data) values (1, $seed${
               "mr": ""
             },
             {
-              "en": "Essential Saraswati hawan kit & cow ghee included",
+              "en": "Puja performed as per agreed Shastra vidhi",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Chandan & yellow akshat",
+              "en": "Detailed Samagri checklist provided in advance",
               "hi": "",
               "mr": ""
             }
           ],
           "exclusions": [
             {
-              "en": "Fresh white flowers, pens, notebooks",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "ganesh-sthapana-visarjan": {
-      "serviceId": "ganesh-sthapana-visarjan",
-      "serviceName": {
-        "en": "Ganesh Sthapana & Visarjan Puja",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "pujas",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2100,
-      "maxPrice": 3800,
-      "startingPriceDisplay": "From ₹2,100*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "1.5 hrs single session (Sthapana) or two-session package (Sthapana + Visarjan).",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Ganesh festival packages range from ₹2,500 to ₹6,500.",
-      "missingBusinessInfo": "Single session vs two-visit bundle pricing.",
-      "packages": [
-        {
-          "id": "gs-single",
-          "name": {
-            "en": "Basic — Sthapana Session Only",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Single Session",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 2100,
-          "priceDisplay": "₹2,100*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Praan Pratishtha & Ganesh Sthapana",
+              "en": "Devotee arranges pure Hawan Samagri and cow ghee",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "108 Durva Archana",
+              "en": "Devotee arranges fresh flowers, fruits, milk & prasad",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Samagri checklist",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Fresh Modaks & flowers",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Visarjan visit",
+              "en": "Devotee provides household puja thali & vessels",
               "hi": "",
               "mr": ""
             }
@@ -1215,294 +838,24 @@ insert into public.pricing (id, data) values (1, $seed${
           "includedSamagriIds": []
         },
         {
-          "id": "gs-bundle",
+          "id": "gp-samagri",
           "name": {
-            "en": "Standard — Sthapana + Hawan Kit",
-            "hi": "",
-            "mr": ""
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
           },
           "tier": "popular",
           "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
           },
-          "indicativePrice": 3800,
-          "priceDisplay": "₹3,800*",
+          "indicativePrice": 14000,
+          "priceDisplay": "₹14,000*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Sthapana & Hawan",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Essential pure Hawan Samagri kit & ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Roli, Moli, Janeu, Kalash vastram included",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh modaks and red hibiscus flowers",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "annaprashan-puja": {
-      "serviceId": "annaprashan-puja",
-      "serviceName": {
-        "en": "Annaprashan Puja (First Rice Feeding)",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "pujas",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2500,
-      "maxPrice": 3800,
-      "startingPriceDisplay": "From ₹2,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "2 hrs child sanskar with Ayush homam and first solid food tasting.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Annaprashan packages range from ₹4,500 to ₹8,500.",
-      "missingBusinessInfo": "Whether silver spoon / katori is devotee-supplied.",
-      "packages": [
-        {
-          "id": "ap-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 2500,
-          "priceDisplay": "₹2,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Annaprashan Vidhi & Ayush blessings",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Tray-testing ritual guidance",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Cooked Kheer/Payasam",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Utensils",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "ap-standard",
-          "name": {
-            "en": "Standard — Ritual + Hawan Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3800,
-          "priceDisplay": "₹3,800*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Essential pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Kalash, gangajal, roli, moli",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh fruits, kheer, baby silver katori",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "mundan-or-chudakarana-ceremony": {
-      "serviceId": "mundan-or-chudakarana-ceremony",
-      "serviceName": {
-        "en": "Mundan (Chudakarana) Sanskar",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "pujas",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2500,
-      "maxPrice": 3800,
-      "startingPriceDisplay": "From ₹2,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "2 hrs child head-shaving ritual, Gauri-Ganesh pujan and Ayush hawan.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Chudakarana ranges from ₹4,500 to ₹9,500.",
-      "missingBusinessInfo": "Barber service coordination (typically arranged by family).",
-      "packages": [
-        {
-          "id": "mn-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 2500,
-          "priceDisplay": "₹2,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Chudakarana Vidhi",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Kusha grass cutting ritual",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Ayush hawan vidhi & checklist",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Barber services",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Fresh items",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "mn-standard",
-          "name": {
-            "en": "Standard — Ritual + Hawan Samagri Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3800,
-          "priceDisplay": "₹3,800*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina ₹11,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
           },
           "inclusions": [
             {
@@ -1511,24 +864,29 @@ insert into public.pricing (id, data) values (1, $seed${
               "mr": ""
             },
             {
-              "en": "Essential Hawan Samagri kit & cow ghee included",
+              "en": "Essential pure Hawan Samagri kit included",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Kusha grass, chandan, haldi paste for baby scalp",
+              "en": "Pure desi cow ghee & sacred hawan wood included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Puja performed as per agreed Shastra vidhi",
               "hi": "",
               "mr": ""
             }
           ],
           "exclusions": [
             {
-              "en": "Barber / Nai fees",
+              "en": "Devotee only prepares fresh flowers & seasonal fruits",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Fresh flowers & sweets",
+              "en": "Devotee arranges fresh milk, curd & household utensils",
               "hi": "",
               "mr": ""
             }
@@ -1539,54 +897,54 @@ insert into public.pricing (id, data) values (1, $seed${
             "opt-complete-kit"
           ]
         }
-      ]
+      ],
+      "serviceId": "griha-pravesh",
+      "pricingNote": {
+        "en": "Indicative starting dakshina (Preserved local project data)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Griha Pravesh Puja",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2.5 to 3.5 hrs foundational home entry ritual. High demand across Pune & metro hubs.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Commercial sign-off on ₹3,500 (Dakshina only) vs ₹5,500 (with Hawan Samagri kit).",
+      "startingPriceDisplay": "From ₹11,000*"
     },
     "namkaran-puja": {
-      "serviceId": "namkaran-puja",
-      "serviceName": {
-        "en": "Namkaran Puja (Vedic Naming Ceremony)",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "pujas",
       "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2500,
-      "maxPrice": 3800,
-      "startingPriceDisplay": "From ₹2,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "1.5 to 2 hrs ceremony; birth nakshatra letter calculation and formal whisper.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Namkaran ranges from ₹4,800 to ₹15,800.",
-      "missingBusinessInfo": "Whether horoscope chart generation is bundled.",
+      "category": "pujas",
+      "maxPrice": 5100,
+      "minPrice": 5100,
       "packages": [
         {
           "id": "nk-basic",
           "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
           },
           "tier": "standard",
           "badge": {
             "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
-          "indicativePrice": 2500,
-          "priceDisplay": "₹2,500*",
+          "indicativePrice": 5100,
+          "priceDisplay": "₹5,100*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
@@ -1627,22 +985,22 @@ insert into public.pricing (id, data) values (1, $seed${
         {
           "id": "nk-standard",
           "name": {
-            "en": "Standard — Ritual + Hawan Kit",
-            "hi": "",
-            "mr": ""
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
           },
           "tier": "popular",
           "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
           },
-          "indicativePrice": 3800,
-          "priceDisplay": "₹3,800*",
+          "indicativePrice": 8100,
+          "priceDisplay": "₹8,100*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina ₹5,100* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
           },
           "inclusions": [
             {
@@ -1674,63 +1032,181 @@ insert into public.pricing (id, data) values (1, $seed${
             "opt-complete-kit"
           ]
         }
-      ]
-    },
-    "godh-bharai-puja-baby-shower": {
-      "serviceId": "godh-bharai-puja-baby-shower",
-      "serviceName": {
-        "en": "Godh Bharai & Punsavan Sanskar",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "pujas",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2500,
-      "maxPrice": 3800,
-      "startingPriceDisplay": "From ₹2,500*",
+      ],
+      "serviceId": "namkaran-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
         "hi": "",
         "mr": ""
       },
-      "pricingRationale": {
-        "en": "2 hrs motherhood blessing, Simantonayana Vedic rites, and lap-filling blessing.",
+      "serviceName": {
+        "en": "Namkaran Puja (Vedic Naming Ceremony)",
         "hi": "",
         "mr": ""
       },
-      "researchBasis": "Harivara Godh Bharai / Seemantham ranges from ₹4,500 to ₹8,500.",
-      "missingBusinessInfo": "Green bangles and lap fruit basket arrangements.",
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "1.5 to 2 hrs ceremony; birth nakshatra letter calculation and formal whisper.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Whether horoscope chart generation is bundled.",
+      "startingPriceDisplay": "From ₹5,100*"
+    },
+    "roka-ceremony": {
+      "model": "package-pricing",
+      "category": "wedding-services",
+      "maxPrice": 5100,
+      "minPrice": 5100,
       "packages": [
         {
-          "id": "gb-basic",
+          "id": "rk-basic",
           "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
           },
           "tier": "standard",
           "badge": {
             "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
-          "indicativePrice": 2500,
-          "priceDisplay": "₹2,500*",
+          "indicativePrice": 5100,
+          "priceDisplay": "₹5,100*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
-              "en": "Pandit Dakshina for Punsavan / Simantonayana Vidhi",
+              "en": "Pandit Dakshina for Gauri-Ganesh Pujan & Tilak",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Gauri Pujan & Mother Blessing",
+              "en": "Roka Sankalp & Checklist",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Dry fruits, sweets, shagun",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "rk-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 6600,
+          "priceDisplay": "₹6,600*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹5,100* + Complete Dry Puja Samagri Kit included",
+            "hi": "पंडित दक्षिणा + सम्पूर्ण पूजा सामग्री किट शामिल",
+            "mr": "पंडित दक्षिणा + संपूर्ण पूजा साहित्य किट समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential Puja Samagri kit included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Roli, Akshat, Chandan, Moli & Dhoop",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh fruits, mithai & shagun gifts",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "roka-ceremony",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Roka Ceremony & Pre-Vivah Sankalp",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "1.5 hrs initial commitment blessing and Tilak ceremony.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Venue differential (home vs banquet).",
+      "startingPriceDisplay": "From ₹5,100*"
+    },
+    "barsi-ceremony": {
+      "model": "package-pricing",
+      "category": "pitru-pujas",
+      "maxPrice": 5100,
+      "minPrice": 5100,
+      "packages": [
+        {
+          "id": "br-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 5100,
+          "priceDisplay": "₹5,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Senior Purohit Dakshina for Barsi Shradh & Pinda Daan",
               "hi": "",
               "mr": ""
             },
@@ -1747,12 +1223,12 @@ insert into public.pricing (id, data) values (1, $seed${
               "mr": ""
             },
             {
-              "en": "Lap-filling dry fruits & sari",
+              "en": "Pinda flour, sesame, milk",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Utensils",
+              "en": "Brahmin bhojan",
               "hi": "",
               "mr": ""
             }
@@ -1760,134 +1236,122 @@ insert into public.pricing (id, data) values (1, $seed${
           "includedSamagriIds": []
         },
         {
-          "id": "gb-standard",
+          "id": "br-standard",
           "name": {
-            "en": "Standard — Ritual + Hawan Kit",
-            "hi": "",
-            "mr": ""
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
           },
           "tier": "popular",
           "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
           },
-          "indicativePrice": 3800,
-          "priceDisplay": "₹3,800*",
+          "indicativePrice": 6600,
+          "priceDisplay": "₹6,600*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina ₹5,100* + Complete Dry Puja Samagri Kit included",
+            "hi": "पंडित दक्षिणा + सम्पूर्ण पूजा सामग्री किट शामिल",
+            "mr": "पंडित दक्षिणा + संपूर्ण पूजा साहित्य किट समाविष्ट"
           },
           "inclusions": [
             {
-              "en": "Pandit Dakshina for ceremony",
+              "en": "Senior Purohit for complete ceremony",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Essential Hawan Samagri kit & cow ghee included",
+              "en": "Black sesame (Kala Til), Kusha grass, Pinda flour & Gangajal included",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Roli, Chandan, Kalash vastram & sacred thread",
+              "en": "Vastram token for Brahmin & incense included",
               "hi": "",
               "mr": ""
             }
           ],
           "exclusions": [
             {
-              "en": "Fresh green bangles, fruits, coconuts",
+              "en": "Cooked pinda kheer & family feast",
               "hi": "",
               "mr": ""
             }
           ],
           "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
             "opt-complete-kit"
           ]
         }
-      ]
-    },
-    "yagnopavit-sanskar": {
-      "serviceId": "yagnopavit-sanskar",
-      "serviceName": {
-        "en": "Yagnopavit Sanskar (Upanayan / Janeu)",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "pujas",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 4500,
-      "maxPrice": 8500,
-      "startingPriceDisplay": "From ₹4,500*",
+      ],
+      "serviceId": "barsi-ceremony",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
         "hi": "",
         "mr": ""
       },
-      "pricingRationale": {
-        "en": "3 to 4 hrs sacred thread investiture, Brahmacharya sankalp, Gayatri Diksha, and Bhiksha vidhi.",
+      "serviceName": {
+        "en": "Barsi Ceremony (Annual Shradh)",
         "hi": "",
         "mr": ""
       },
-      "researchBasis": "Harivara Upanayanam ranges from ₹8,500 to ₹35,000.",
-      "missingBusinessInfo": "Whether 1 or 2 Pandits are standard for North Indian Upanayan.",
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2.5 hrs annual death anniversary ceremony with formal Pinda Daan.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Vastram donation for presiding Brahmin.",
+      "startingPriceDisplay": "From ₹5,100*"
+    },
+    "haldi-ceremony": {
+      "model": "package-pricing",
+      "category": "wedding-services",
+      "maxPrice": 5000,
+      "minPrice": 5000,
       "packages": [
         {
-          "id": "yp-basic",
+          "id": "hl-basic",
           "name": {
-            "en": "Basic — Single Acharya Dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
           },
           "tier": "standard",
           "badge": {
             "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
-          "indicativePrice": 4500,
-          "priceDisplay": "₹4,500*",
+          "indicativePrice": 5000,
+          "priceDisplay": "₹5,000*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
-              "en": "Senior Vedic Acharya for complete Upanayan & Gayatri Diksha",
+              "en": "Pandit Dakshina for Gauri-Ganesh & Haldi sanctification",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Bhiksha ceremony guidance",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Detailed Janeu checklist",
+              "en": "Raksha Sutra & Checklist",
               "hi": "",
               "mr": ""
             }
           ],
           "exclusions": [
             {
-              "en": "Samagri kit",
+              "en": "Turmeric roots / paste",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Yagnopaveetam thread sets",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Brahmachari danda & vastram",
+              "en": "Fresh yellow marigolds",
               "hi": "",
               "mr": ""
             }
@@ -1895,219 +1359,24 @@ insert into public.pricing (id, data) values (1, $seed${
           "includedSamagriIds": []
         },
         {
-          "id": "yp-standard",
+          "id": "hl-standard",
           "name": {
-            "en": "Standard — Acharya + Full Samagri Kit",
-            "hi": "",
-            "mr": ""
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
           },
           "tier": "popular",
           "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
           },
           "indicativePrice": 6500,
           "priceDisplay": "₹6,500*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Senior Vedic Acharya for ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Complete Upanayan Hawan kit & pure cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Consecrated Yagnopaveetam (Janeu) sets & sacred thread included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Munj grass belt (Mekhala) & Palash danda blessing",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh fruits, dhoti for boy, maternal uncle gifts",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        },
-        {
-          "id": "yp-premium",
-          "name": {
-            "en": "Premium — 2 Acharyas + Extended Setup",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "premium",
-          "badge": {
-            "en": "Complete Family Sanskar",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 8500,
-          "priceDisplay": "₹8,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "2 Senior Vedic Acharyas conducting simultaneous Veda chanting and Homa",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Complete pure Samagri box with A2 Gir cow ghee",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Consecrated Janeu sets for boy and family male members",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Full Gayatri Anushthan sankalp",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh fruits, Brahmin bhojan dakshina",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "shuddhikaran-puja": {
-      "serviceId": "shuddhikaran-puja",
-      "serviceName": {
-        "en": "Shuddhikaran Puja (House Purification)",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "pujas",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2100,
-      "maxPrice": 3200,
-      "startingPriceDisplay": "From ₹2,100*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "1.5 hrs purification after birth/death/renovations with Panchagavya and hawan.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Shuddhikaran ranges from ₹3,200 to ₹5,500.",
-      "missingBusinessInfo": "Sourcing of Panchagavya elements.",
-      "packages": [
-        {
-          "id": "sk-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 2100,
-          "priceDisplay": "₹2,100*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Shuddhi Sankalp & Chanting",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Panchagavya purification sprinklings",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Fresh cow milk, curd, gangajal",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Utensils",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "sk-standard",
-          "name": {
-            "en": "Standard — Ritual + Purification Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3200,
-          "priceDisplay": "₹3,200*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina ₹5,000* + Complete Dry Puja Samagri Kit included",
+            "hi": "पंडित दक्षिणा + सम्पूर्ण पूजा सामग्री किट शामिल",
+            "mr": "पंडित दक्षिणा + संपूर्ण पूजा साहित्य किट समाविष्ट"
           },
           "inclusions": [
             {
@@ -2116,86 +1385,84 @@ insert into public.pricing (id, data) values (1, $seed${
               "mr": ""
             },
             {
-              "en": "Essential herbal purification hawan kit & cow ghee included",
+              "en": "Essential Puja Samagri kit & pure Kasturi turmeric powder included",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Gomutra & Gangajal included",
+              "en": "Roli, Chandan, sacred thread",
               "hi": "",
               "mr": ""
             }
           ],
           "exclusions": [
             {
-              "en": "Fresh flowers & prasad",
+              "en": "Fresh yellow flowers & sweets",
               "hi": "",
               "mr": ""
             }
           ],
           "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
             "opt-complete-kit"
           ]
         }
-      ]
-    },
-    "brihaspati-vrat-udyapan-puja": {
-      "serviceId": "brihaspati-vrat-udyapan-puja",
-      "serviceName": {
-        "en": "Brihaspati Vrat Udyapan Puja",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "pujas",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2500,
-      "maxPrice": 3800,
-      "startingPriceDisplay": "From ₹2,500*",
+      ],
+      "serviceId": "haldi-ceremony",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
         "hi": "",
         "mr": ""
       },
-      "pricingRationale": {
-        "en": "2 hrs conclusion of 16 Thursday fasts for Lord Brihaspati / Vishnu.",
+      "serviceName": {
+        "en": "Traditional Haldi Ceremony Vidhi",
         "hi": "",
         "mr": ""
       },
-      "researchBasis": "Harivara Udyapan packages range from ₹3,500 to ₹6,500.",
-      "missingBusinessInfo": "Yellow gram dal and banana plant arrangement.",
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "1.5 hrs pre-wedding Vedic purification and turmeric sanctification.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Organic turmeric paste provision.",
+      "startingPriceDisplay": "From ₹5,000*"
+    },
+    "mahalaxmi-puja": {
+      "model": "package-pricing",
+      "category": "pujas",
+      "maxPrice": 5100,
+      "minPrice": 5100,
       "packages": [
         {
-          "id": "bv-basic",
+          "id": "mlx-basic",
           "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
           },
           "tier": "standard",
           "badge": {
             "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
-          "indicativePrice": 2500,
-          "priceDisplay": "₹2,500*",
+          "indicativePrice": 5100,
+          "priceDisplay": "₹5,100*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
-              "en": "Pandit Dakshina for Udyapan Katha & Pujan",
+              "en": "Pandit Dakshina for Mahalaxmi Pujan & Kanakdhara Path",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Guru Yantra invocation",
+              "en": "Ashtalakshmi invocation",
               "hi": "",
               "mr": ""
             },
@@ -2212,7 +1479,7 @@ insert into public.pricing (id, data) values (1, $seed${
               "mr": ""
             },
             {
-              "en": "Yellow cloth, chana dal, bananas",
+              "en": "Lotus flowers & fresh sweets",
               "hi": "",
               "mr": ""
             },
@@ -2225,159 +1492,24 @@ insert into public.pricing (id, data) values (1, $seed${
           "includedSamagriIds": []
         },
         {
-          "id": "bv-standard",
+          "id": "mlx-standard",
           "name": {
-            "en": "Standard — Ritual + Hawan Kit",
-            "hi": "",
-            "mr": ""
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
           },
           "tier": "popular",
           "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
           },
-          "indicativePrice": 3800,
-          "priceDisplay": "₹3,800*",
+          "indicativePrice": 8100,
+          "priceDisplay": "₹8,100*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for complete ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Essential pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Yellow cloth, turmeric root & sacred threads",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh bananas and yellow gram sweets",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "solah-somvar-udyapan-puja": {
-      "serviceId": "solah-somvar-udyapan-puja",
-      "serviceName": {
-        "en": "Solah Somvar Udyapan Puja",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "pujas",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2500,
-      "maxPrice": 3800,
-      "startingPriceDisplay": "From ₹2,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "2.5 hrs conclusion of 16 Monday fasts for Lord Shiva with abhishek & hawan.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Somvar Udyapan ranges from ₹3,500 to ₹6,500.",
-      "missingBusinessInfo": "Prasad (Baati / Churma) devotee preparation.",
-      "packages": [
-        {
-          "id": "ss-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 2500,
-          "priceDisplay": "₹2,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Somvar Katha & Abhishek",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Lord Shiva archana",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Belpatra, raw milk, prasad",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Utensils",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "ss-standard",
-          "name": {
-            "en": "Standard — Ritual + Hawan Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3800,
-          "priceDisplay": "₹3,800*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina ₹5,100* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
           },
           "inclusions": [
             {
@@ -2386,19 +1518,19 @@ insert into public.pricing (id, data) values (1, $seed${
               "mr": ""
             },
             {
-              "en": "Essential pure Hawan Samagri kit & cow ghee included",
+              "en": "Pure cow ghee & Hawan Samagri kit included",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Bhasma, Chandan, Janeu, Dhoop & Camphor",
+              "en": "Kamalgatta (lotus seeds) & sacred herbs included",
               "hi": "",
               "mr": ""
             }
           ],
           "exclusions": [
             {
-              "en": "Fresh milk, curd, honey & Churma prasad",
+              "en": "Fresh lotus flowers & sweets",
               "hi": "",
               "mr": ""
             }
@@ -2409,63 +1541,63 @@ insert into public.pricing (id, data) values (1, $seed${
             "opt-complete-kit"
           ]
         }
-      ]
-    },
-    "ekadashi-vrat-udyapan-puja": {
-      "serviceId": "ekadashi-vrat-udyapan-puja",
-      "serviceName": {
-        "en": "Ekadashi Vrat Udyapan Puja",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "pujas",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2500,
-      "maxPrice": 3800,
-      "startingPriceDisplay": "From ₹2,500*",
+      ],
+      "serviceId": "mahalaxmi-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
         "hi": "",
         "mr": ""
       },
-      "pricingRationale": {
-        "en": "2.5 hrs conclusion of Ekadashi fasts dedicated to Lord Vishnu with Hawan.",
+      "serviceName": {
+        "en": "Mahalaxmi Puja & Kanakdhara Vidhi",
         "hi": "",
         "mr": ""
       },
-      "researchBasis": "Harivara Ekadashi Udyapan ranges from ₹3,500 to ₹6,500.",
-      "missingBusinessInfo": "Number of Brahmins for Bhojan / Dakshina.",
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2 hrs home wealth worship with Kanakdhara Stotra and Sri Sukta ahutis.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Whether silver Lakshmi coin consecration is included in standard package.",
+      "startingPriceDisplay": "From ₹5,100*"
+    },
+    "mata-ki-chowki": {
+      "model": "package-pricing",
+      "category": "bhajans-chowki",
+      "maxPrice": 28000,
+      "minPrice": 15000,
       "packages": [
         {
-          "id": "ek-basic",
+          "id": "mkc-basic",
           "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
           },
           "tier": "standard",
           "badge": {
             "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
-          "indicativePrice": 2500,
-          "priceDisplay": "₹2,500*",
+          "indicativePrice": 15000,
+          "priceDisplay": "₹15,000*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
-              "en": "Pandit Dakshina for Ekadashi Mahatmya Katha",
+              "en": "Lead Bhajan Singer + Harmonium + Dholak Player",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Vishnu Sahasranam Path & Havan",
+              "en": "Chowki Sthapana & Akhand Jyot blessing",
               "hi": "",
               "mr": ""
             },
@@ -2477,17 +1609,12 @@ insert into public.pricing (id, data) values (1, $seed${
           ],
           "exclusions": [
             {
-              "en": "Samagri kit",
+              "en": "External sound system",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Tulsi dal, fresh fruits, prasad",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Utensils",
+              "en": "Bhog & dry fruit distribution",
               "hi": "",
               "mr": ""
             }
@@ -2495,315 +1622,178 @@ insert into public.pricing (id, data) values (1, $seed${
           "includedSamagriIds": []
         },
         {
-          "id": "ek-standard",
+          "id": "mkc-standard",
           "name": {
-            "en": "Standard — Ritual + Hawan Kit",
-            "hi": "",
-            "mr": ""
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
           },
           "tier": "popular",
           "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
           },
-          "indicativePrice": 3800,
-          "priceDisplay": "₹3,800*",
+          "indicativePrice": 16500,
+          "priceDisplay": "₹16,500*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina ₹15,000* + Complete Dry Puja Samagri Kit included",
+            "hi": "पंडित दक्षिणा + सम्पूर्ण पूजा सामग्री किट शामिल",
+            "mr": "पंडित दक्षिणा + संपूर्ण पूजा साहित्य किट समाविष्ट"
           },
           "inclusions": [
             {
-              "en": "Pandit Dakshina for ceremony",
+              "en": "Lead Singer + Female Co-Singer + Dholak + Octapad + Harmonium",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Essential pure Hawan Samagri kit & cow ghee included",
+              "en": "Apartment/Hall Sound System & Microphones included",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Purna Kalash items, Roli, Akshat, Janeu",
+              "en": "Chowki Pujan Samagri, Chunri & Akhand Jyot setup included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Tara Rani Katha & Maha Aarti",
               "hi": "",
               "mr": ""
             }
           ],
           "exclusions": [
             {
-              "en": "Fresh fruits, Tulsi leaves, prasad",
+              "en": "Prasad & 56 Bhog catering",
               "hi": "",
               "mr": ""
             }
           ],
           "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
             "opt-complete-kit"
           ]
         }
-      ]
-    },
-    "kuber-upasana-puja": {
-      "serviceId": "kuber-upasana-puja",
-      "serviceName": {
-        "en": "Kuber Upasana Puja for Wealth & Trade",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "pujas",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2500,
-      "maxPrice": 3800,
-      "startingPriceDisplay": "From ₹2,500*",
+      ],
+      "serviceId": "mata-ki-chowki",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
         "hi": "",
         "mr": ""
       },
-      "pricingRationale": {
-        "en": "2 hrs ritual for trade growth, treasury abundance, and business recovery.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Kuber Puja ranges from ₹3,800 to ₹7,500.",
-      "missingBusinessInfo": "Whether copper Kuber Yantra is gifted to customer.",
-      "packages": [
-        {
-          "id": "ku-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 2500,
-          "priceDisplay": "₹2,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Kuber Pujan & Dhana Akarshana Mantras",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Locker & Cashbox blessing",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Dry fruits, sweets, coins",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Utensils",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "ku-standard",
-          "name": {
-            "en": "Standard — Ritual + Hawan Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3800,
-          "priceDisplay": "₹3,800*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for complete ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Essential pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Lotus seeds (Kamalgatta) & sacred herbs included",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh flowers and sweets",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "vishwakarma-puja": {
-      "serviceId": "vishwakarma-puja",
       "serviceName": {
-        "en": "Vishwakarma Puja (Machinery & Tools)",
+        "en": "Mata Ki Chowki & Akhand Jyot",
         "hi": "",
         "mr": ""
       },
-      "category": "pujas",
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "4 to 6 hrs devotional program with lead singer, musicians, and Akhand Jyot.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Sound system capacity & artist count per package.",
+      "startingPriceDisplay": "From ₹15,000*"
+    },
+    "saraswati-puja": {
       "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2100,
+      "category": "pujas",
       "maxPrice": 3500,
-      "startingPriceDisplay": "From ₹2,100*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "1.5 to 2 hrs ceremony for workshops, factories, IT servers, and tools.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Vishwakarma Puja ranges from ₹3,500 to ₹7,000.",
-      "missingBusinessInfo": "Large industrial scale surcharge, if applicable.",
+      "minPrice": 3500,
       "packages": [
         {
-          "id": "vk-basic",
+          "id": "srs-basic",
           "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
           },
           "tier": "standard",
           "badge": {
             "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 2100,
-          "priceDisplay": "₹2,100*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Vishwakarma Pujan",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Machinery & tool blessing",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Red cloths, sweets for workers",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Utensils",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "vk-standard",
-          "name": {
-            "en": "Standard — Ritual + Hawan Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
           "indicativePrice": 3500,
           "priceDisplay": "₹3,500*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
-              "en": "Pandit Dakshina for ceremony",
+              "en": "Pandit Dakshina for Saraswati Aradhana & Medha Sukta",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Essential Hawan Samagri kit & cow ghee included",
+              "en": "Vidya Aarambh blessing",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Roli, Moli, Janeu, Kalash items",
+              "en": "Samagri checklist",
               "hi": "",
               "mr": ""
             }
           ],
           "exclusions": [
             {
-              "en": "Fresh marigold garlands & sweets",
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "White flowers & sweets",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "srs-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 6500,
+          "priceDisplay": "₹6,500*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹3,500* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for complete ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential Saraswati hawan kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Chandan & yellow akshat",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh white flowers, pens, notebooks",
               "hi": "",
               "mr": ""
             }
@@ -2814,180 +1804,317 @@ insert into public.pricing (id, data) values (1, $seed${
             "opt-complete-kit"
           ]
         }
-      ]
-    },
-    "new-vehicle-puja": {
-      "serviceId": "new-vehicle-puja",
-      "serviceName": {
-        "en": "New Vehicle Puja (Vahan Puja)",
+      ],
+      "serviceId": "saraswati-puja",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
         "hi": "",
         "mr": ""
       },
-      "category": "pujas",
+      "serviceName": {
+        "en": "Saraswati Puja for Education & Wisdom",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "1.5 to 2 hrs ceremony for students, intellect, and books/instrument blessing.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Book and pen blessing guidance.",
+      "startingPriceDisplay": "From ₹3,500*"
+    },
+    "vivah-marriage": {
+      "model": "package-pricing",
+      "category": "wedding-services",
+      "maxPrice": 21000,
+      "minPrice": 21000,
+      "packages": [
+        {
+          "id": "vm-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 21000,
+          "priceDisplay": "₹21,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Senior North Indian Acharya conducting complete Vivah Sanskar & Saptapadi",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Muhurat coordination & Vivah checklist provided",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Dry fruits, puffed rice (Laja)",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Mandap setup",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "vm-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 24000,
+          "priceDisplay": "₹24,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹21,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Senior North Indian Acharya conducting complete ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Complete Vivah Hawan Samagri kit, Laja (kheel) & pure cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Sindoor, Roli, Akshat, Janeu, Kalash vastram & sacred Gathbandhan cloth",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh garlands (Jaimala), fruits, sweets, mandap brassware",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "vivah-marriage",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Vivah (Complete Hindu Wedding Sanskar)",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "4 to 6 hrs complete Vedic wedding with Kanyadaan, Panigrahana, Laja Homa, Saptapadi & Sindoor Daan.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Outstation wedding travel allowance & late night muhurat surcharge.",
+      "startingPriceDisplay": "From ₹21,000*"
+    },
+    "amavasya-tarpan": {
       "model": "fixed-price",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 1100,
-      "maxPrice": 1800,
-      "startingPriceDisplay": "₹1,100",
+      "category": "pitru-pujas",
+      "maxPrice": 2200,
+      "minPrice": 2100,
+      "packages": [
+        {
+          "id": "at-standard",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 2100,
+          "priceDisplay": "₹2,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Purohit Dakshina for 3-generation Pitru Tarpan",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Gotra & Nakshatra sankalp",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Sacred Kusha grass & Black sesame included",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Devotee arranges pure Hawan Samagri and cow ghee",
+              "hi": "यजमान हवन सामग्री एवं देसी गाय के घी की व्यवस्था करते हैं",
+              "mr": "यजमान हवन साहित्य आणि देशी गायीच्या तुपाची व्यवस्था करतात"
+            },
+            {
+              "en": "Devotee arranges fresh flowers, fruits, milk & prasad",
+              "hi": "यजमान ताजे फूल, फल, दूध और प्रसाद की व्यवस्था करते हैं",
+              "mr": "यजमान ताजी फुले, फळे, दूध आणि प्रसादाची व्यवस्था करतात"
+            },
+            {
+              "en": "Devotee provides household puja thali & vessels",
+              "hi": "यजमान घर की पूजा थाली एवं तांबे/पीतल के पात्र उपलब्ध कराते हैं",
+              "mr": "यजमान घरातील पूजा ताट व भांडी उपलब्ध करतात"
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "at-with-gaudaan",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 3600,
+          "priceDisplay": "₹3,600*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹2,100* + Complete Dry Puja Samagri Kit included",
+            "hi": "पंडित दक्षिणा + सम्पूर्ण पूजा सामग्री किट शामिल",
+            "mr": "पंडित दक्षिणा + संपूर्ण पूजा साहित्य किट समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Purohit Dakshina for complete Tarpan",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Kusha grass, Til & Gangajal included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Token grass donation consecrated in ancestor name for cow feed",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Household vessels",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "amavasya-tarpan",
       "pricingNote": {
         "en": "Proposed fixed dakshina (Awaiting business confirmation)",
         "hi": "",
         "mr": ""
       },
-      "pricingRationale": {
-        "en": "45 mins to 1 hr focused vehicle blessing and obstacle warding.",
+      "serviceName": {
+        "en": "Amavasya Tarpan & Gau Daan",
         "hi": "",
         "mr": ""
       },
-      "researchBasis": "Harivara Vehicle Puja ranges from ₹1,500 to ₹3,500. ₹1,100 is an honest doorstep dakshina.",
-      "missingBusinessInfo": "Whether 2-wheelers and 4-wheelers have different rates.",
-      "packages": [
-        {
-          "id": "vp-standard",
-          "name": {
-            "en": "Standard Vehicle Blessing",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Standard Service",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 1100,
-          "priceDisplay": "₹1,100",
-          "priceNote": {
-            "en": "Fixed standard dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Experienced Pandit arriving at your doorstep or apartment parking",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Complete Gauri-Ganesh Pujan & Swastika consecration",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Coconut breaking (Balidana) & 4-tyre lemon crushing vidhi",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Sacred protective thread (Moli) tied to steering wheel",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Devotee provides 4 fresh lemons, 1 coconut, small sweets, and agarbatti",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "vp-with-samagri",
-          "name": {
-            "en": "Doorstep All-Inclusive Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "All Materials Included",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 1800,
-          "priceDisplay": "₹1,800",
-          "priceNote": {
-            "en": "Complete kit included",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for complete vehicle blessing",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Fresh lemons, sacred coconut, camphor, roli, and moli provided by Panditji",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Auspicious copper Kalash water sanctification",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Sweets / Prasad distribution",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        }
-      ]
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "1 hr monthly water and sesame oblation to ancestors.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Gaushala Gau-grass coordination in Pune.",
+      "startingPriceDisplay": "₹2,100"
     },
     "ganapathi-havan": {
-      "serviceId": "ganapathi-havan",
-      "serviceName": {
-        "en": "Maha Ganapathi Havan",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "havans",
       "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2500,
-      "maxPrice": 4200,
-      "startingPriceDisplay": "From ₹2,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "2 hrs primary obstacle-removal Agnihotra fire ritual.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Ganapathi Homam starts at ₹5,000 for standard tier.",
-      "missingBusinessInfo": "108 Modak ahuti requirements.",
+      "category": "havans",
+      "maxPrice": 5000,
+      "minPrice": 5000,
       "packages": [
         {
           "id": "gh-basic",
           "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
           },
           "tier": "standard",
           "badge": {
             "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
-          "indicativePrice": 2500,
-          "priceDisplay": "₹2,500*",
+          "indicativePrice": 5000,
+          "priceDisplay": "₹5,000*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
@@ -3028,22 +2155,22 @@ insert into public.pricing (id, data) values (1, $seed${
         {
           "id": "gh-standard",
           "name": {
-            "en": "Standard — Ritual + Hawan Kit",
-            "hi": "",
-            "mr": ""
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
           },
           "tier": "popular",
           "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
           },
-          "indicativePrice": 4200,
-          "priceDisplay": "₹4,200*",
+          "indicativePrice": 8000,
+          "priceDisplay": "₹8,000*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina ₹5,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
           },
           "inclusions": [
             {
@@ -3075,54 +2202,54 @@ insert into public.pricing (id, data) values (1, $seed${
             "opt-complete-kit"
           ]
         }
-      ]
-    },
-    "navagraha-havan": {
-      "serviceId": "navagraha-havan",
-      "serviceName": {
-        "en": "Navagraha Shanti Havan",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "havans",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 3500,
-      "maxPrice": 5500,
-      "startingPriceDisplay": "From ₹3,500*",
+      ],
+      "serviceId": "ganapathi-havan",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
         "hi": "",
         "mr": ""
       },
-      "pricingRationale": {
-        "en": "2.5 to 3 hrs fire ceremony pacifying all 9 planetary grahas with 9 specific sacred woods.",
+      "serviceName": {
+        "en": "Maha Ganapathi Havan",
         "hi": "",
         "mr": ""
       },
-      "researchBasis": "Harivara Navagraha Homam ranges from ₹5,000 to ₹35,000.",
-      "missingBusinessInfo": "Procurement of all 9 specialized Navagraha samidhas.",
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2 hrs primary obstacle-removal Agnihotra fire ritual.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "108 Modak ahuti requirements.",
+      "startingPriceDisplay": "From ₹5,000*"
+    },
+    "navagraha-havan": {
+      "model": "package-pricing",
+      "category": "havans",
+      "maxPrice": 11000,
+      "minPrice": 11000,
       "packages": [
         {
           "id": "nh-basic",
           "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
           },
           "tier": "standard",
           "badge": {
             "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
-          "indicativePrice": 3500,
-          "priceDisplay": "₹3,500*",
+          "indicativePrice": 11000,
+          "priceDisplay": "₹11,000*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
@@ -3163,22 +2290,22 @@ insert into public.pricing (id, data) values (1, $seed${
         {
           "id": "nh-standard",
           "name": {
-            "en": "Standard — Ritual + Full Navagraha Kit",
-            "hi": "",
-            "mr": ""
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
           },
           "tier": "popular",
           "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
           },
-          "indicativePrice": 5500,
-          "priceDisplay": "₹5,500*",
+          "indicativePrice": 14000,
+          "priceDisplay": "₹14,000*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina ₹11,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
           },
           "inclusions": [
             {
@@ -3215,1119 +2342,54 @@ insert into public.pricing (id, data) values (1, $seed${
             "opt-complete-kit"
           ]
         }
-      ]
-    },
-    "chandi-havan": {
-      "serviceId": "chandi-havan",
-      "serviceName": {
-        "en": "Maha Chandi Havan & Durga Saptashati",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "havans",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 7500,
-      "maxPrice": 18500,
-      "startingPriceDisplay": "From ₹7,500*",
+      ],
+      "serviceId": "navagraha-havan",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
         "hi": "",
         "mr": ""
       },
-      "pricingRationale": {
-        "en": "4 to 5 hrs intensive ceremony requiring multiple senior reciters for 700 verses & vast ahutis.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Chandi Homam ranges from ₹32,400 to ₹106,500.",
-      "missingBusinessInfo": "Number of Brahmins (2 or 3) and Kanya Puja gifts.",
-      "packages": [
-        {
-          "id": "ch-basic",
-          "name": {
-            "en": "Basic — 2 Acharyas Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "2 Vedic Acharyas",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 7500,
-          "priceDisplay": "₹7,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "2 Senior Vedic Acharyas for complete 700 Saptashati verses & Homa",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Kanya Puja items",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Ghee & fruits",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "ch-standard",
-          "name": {
-            "en": "Standard — 2 Acharyas + Complete Chandi Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 12500,
-          "priceDisplay": "₹12,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "2 Senior Vedic Acharyas for full ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Complete Chandi Hawan Samagri box with pure cow ghee & sacred herbs",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Red silk cloth for Devi, Kamal gatta, dry fruits & Navarna ahutis",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh flowers, red saree for Devi, Kanya pujan dakshina",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        },
-        {
-          "id": "ch-premium",
-          "name": {
-            "en": "Premium — 3 Acharyas + Full Navachandi Setup",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "premium",
-          "badge": {
-            "en": "Grand Ceremony",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 18500,
-          "priceDisplay": "₹18,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "3 Senior Vedic Acharyas conducting synchronized recitation & Maha Havan",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Full Navachandi Samagri setup with A2 Gir cow ghee & rare herbs",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Complete Kanya Puja coordination & gifts",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Brahmin bhojan feast",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "mrityunjaya-havan": {
-      "serviceId": "mrityunjaya-havan",
       "serviceName": {
-        "en": "Maha Mrityunjaya Havan for Longevity",
+        "en": "Navagraha Shanti Havan",
         "hi": "",
         "mr": ""
       },
-      "category": "havans",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 3500,
-      "maxPrice": 5500,
-      "startingPriceDisplay": "From ₹3,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
       "pricingRationale": {
-        "en": "2.5 to 3.5 hrs fire ceremony with Amrita herbs for health recovery and vitality.",
+        "en": "2.5 to 3 hrs fire ceremony pacifying all 9 planetary grahas with 9 specific sacred woods.",
         "hi": "",
         "mr": ""
       },
-      "researchBasis": "Harivara Mrityunjaya Homam ranges from ₹6,500 to ₹28,000.",
-      "missingBusinessInfo": "Sourcing of fresh Giloy / Amrita sticks.",
-      "packages": [
-        {
-          "id": "mj-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3500,
-          "priceDisplay": "₹3,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Senior Acharya Dakshina for Mrityunjaya Havan & 1008 Ahutis",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Giloy / Amrita herbs",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Ghee",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "mj-standard",
-          "name": {
-            "en": "Standard — Ritual + Amrita Hawan Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 5500,
-          "priceDisplay": "₹5,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Senior Acharya for ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Essential pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Medicinal herbs (Giloy, Durva, Guggul) & wood",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh fruits, milk & flowers",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "ayush-havan": {
-      "serviceId": "ayush-havan",
-      "serviceName": {
-        "en": "Ayush Havan (Birthday & Long Life)",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "havans",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2500,
-      "maxPrice": 4200,
-      "startingPriceDisplay": "From ₹2,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "2 hrs vitality and birthday fire ceremony for children or seniors.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Ayush Homam ranges from ₹4,500 to ₹12,500.",
-      "missingBusinessInfo": "Payasam preparation instructions.",
-      "packages": [
-        {
-          "id": "ay-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 2500,
-          "priceDisplay": "₹2,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Ayush Homa & Markandeya invocation",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Ghee, payasam, flowers",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "ay-standard",
-          "name": {
-            "en": "Standard — Ritual + Hawan Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 4200,
-          "priceDisplay": "₹4,200*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Mango wood, camphor, roli, moli",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh fruits & birthday payasam/kheer",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "dhanvantri-havan": {
-      "serviceId": "dhanvantri-havan",
-      "serviceName": {
-        "en": "Dhanvantri Havan for Chronic Healing",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "havans",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2500,
-      "maxPrice": 4200,
-      "startingPriceDisplay": "From ₹2,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "2 hrs medicinal fire ceremony for physical ailments and surgery recovery.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Dhanvantri Homam ranges from ₹5,000 to ₹15,000.",
-      "missingBusinessInfo": "Ayurvedic herb packet sourcing.",
-      "packages": [
-        {
-          "id": "dh-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 2500,
-          "priceDisplay": "₹2,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Dhanvantri invocation & Arogya Sankalp",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Medicinal herbs",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Ghee",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "dh-standard",
-          "name": {
-            "en": "Standard — Ritual + Healing Herbs Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 4200,
-          "priceDisplay": "₹4,200*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Essential Hawan Samagri kit with 54 Ayurvedic herbs included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Pure cow ghee & sacred wood",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh fruits, milk, flowers",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "rudra-havan": {
-      "serviceId": "rudra-havan",
-      "serviceName": {
-        "en": "Rudra Havan (Shiva Fire Ceremony)",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "havans",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 3500,
-      "maxPrice": 5500,
-      "startingPriceDisplay": "From ₹3,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "3 hrs intense Shiva fire ceremony with Namakam/Chamakam chanting.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Rudra Homam ranges from ₹6,000 to ₹22,000.",
-      "missingBusinessInfo": "Whether coupled with Shivling Abhishek.",
-      "packages": [
-        {
-          "id": "rh-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3500,
-          "priceDisplay": "₹3,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Senior Acharya Dakshina for Rudra Path & Havan",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Belpatra, ghee, dravyas",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "rh-standard",
-          "name": {
-            "en": "Standard — Ritual + Shiva Hawan Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 5500,
-          "priceDisplay": "₹5,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Senior Acharya for complete ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Essential Hawan kit & pure cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Sacred Bhasma, Chandan, Janeu, Bilva ahutis",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh milk, curd, honey & belpatra",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "gayatri-havan": {
-      "serviceId": "gayatri-havan",
-      "serviceName": {
-        "en": "Gayatri Havan (Solar Vedic Purification)",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "havans",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2500,
-      "maxPrice": 4200,
-      "startingPriceDisplay": "From ₹2,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "2 hrs universal purification with 108 or 1008 Savitur Gayatri ahutis.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Gayatri Homam ranges from ₹4,500 to ₹14,000.",
-      "missingBusinessInfo": "Ahuti count confirmation.",
-      "packages": [
-        {
-          "id": "gy-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 2500,
-          "priceDisplay": "₹2,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Gayatri Japa & Havan",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Surya Aradhana & Checklist",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Ghee & wood",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "gy-standard",
-          "name": {
-            "en": "Standard — Ritual + Hawan Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 4200,
-          "priceDisplay": "₹4,200*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Sacred wood, camphor, roli, moli",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh flowers & prasad",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "laxmi-kubera-havan": {
-      "serviceId": "laxmi-kubera-havan",
-      "serviceName": {
-        "en": "Laxmi Kubera Havan for Prosperity",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "havans",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 3100,
-      "maxPrice": 4800,
-      "startingPriceDisplay": "From ₹3,100*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "2.5 hrs wealth fire ritual with lotus seeds and Sri Sukta.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Lakshmi Kubera Homam ranges from ₹5,500 to ₹18,000.",
-      "missingBusinessInfo": "Lotus seed count.",
-      "packages": [
-        {
-          "id": "lk-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3100,
-          "priceDisplay": "₹3,100*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Laxmi Kubera Havan",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Ashtalakshmi Pujan & Checklist",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Kamalgatta, ghee, flowers",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "lk-standard",
-          "name": {
-            "en": "Standard — Ritual + Wealth Hawan Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 4800,
-          "priceDisplay": "₹4,800*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Kamalgatta, Bilva fruits & sacred wood",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh lotus flowers & sweets",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "sudarshan-havan": {
-      "serviceId": "sudarshan-havan",
-      "serviceName": {
-        "en": "Sudarshan Havan for Supreme Protection",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "havans",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 3100,
-      "maxPrice": 4800,
-      "startingPriceDisplay": "From ₹3,100*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "2.5 hrs Vaishnava protection ritual against evil eye and negative energies.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Sudarshana Homam ranges from ₹5,500 to ₹20,000.",
-      "missingBusinessInfo": "Vaishnava priest preference.",
-      "packages": [
-        {
-          "id": "sd-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3100,
-          "priceDisplay": "₹3,100*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Sudarshan Chakra invocation",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Raksha Kavach chanting & Checklist",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Ghee, wood, flowers",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "sd-standard",
-          "name": {
-            "en": "Standard — Ritual + Protection Hawan Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 4800,
-          "priceDisplay": "₹4,800*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Consecrated Sudarshan Yantra, sacred wood, camphor",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh flowers & prasad",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Procurement of all 9 specialized Navagraha samidhas.",
+      "startingPriceDisplay": "From ₹11,000*"
     },
     "sri-sukta-havan": {
-      "serviceId": "sri-sukta-havan",
-      "serviceName": {
-        "en": "Sri Sukta Havan (Rigvedic Devi Invocation)",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "havans",
       "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2500,
-      "maxPrice": 4200,
-      "startingPriceDisplay": "From ₹2,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "2 hrs Rigvedic recitation of 16 Sri Suktam verses with ahutis.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Sri Suktam ranges from ₹4,500 to ₹15,000.",
-      "missingBusinessInfo": "Kheer ahuti instructions.",
+      "category": "havans",
+      "maxPrice": 5100,
+      "minPrice": 5100,
       "packages": [
         {
           "id": "sks-basic",
           "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
           },
           "tier": "standard",
           "badge": {
             "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
-          "indicativePrice": 2500,
-          "priceDisplay": "₹2,500*",
+          "indicativePrice": 5100,
+          "priceDisplay": "₹5,100*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
@@ -4358,22 +2420,22 @@ insert into public.pricing (id, data) values (1, $seed${
         {
           "id": "sks-standard",
           "name": {
-            "en": "Standard — Ritual + Hawan Kit",
-            "hi": "",
-            "mr": ""
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
           },
           "tier": "popular",
           "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
           },
-          "indicativePrice": 4200,
-          "priceDisplay": "₹4,200*",
+          "indicativePrice": 8100,
+          "priceDisplay": "₹8,100*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina ₹5,100* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
           },
           "inclusions": [
             {
@@ -4405,68 +2467,63 @@ insert into public.pricing (id, data) values (1, $seed${
             "opt-complete-kit"
           ]
         }
-      ]
-    },
-    "maha-mrityunjaya-jaap": {
-      "serviceId": "maha-mrityunjaya-jaap",
-      "serviceName": {
-        "en": "Maha Mrityunjaya Jaap",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "jaaps",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 8500,
-      "maxPrice": 45000,
-      "startingPriceDisplay": "From ₹8,500*",
+      ],
+      "serviceId": "sri-sukta-havan",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
         "hi": "",
         "mr": ""
       },
-      "pricingRationale": {
-        "en": "Multi-Brahmin japa anushthan with counter malas and concluding hawan.",
+      "serviceName": {
+        "en": "Sri Sukta Havan (Rigvedic Devi Invocation)",
         "hi": "",
         "mr": ""
       },
-      "researchBasis": "Harivara Mrityunjaya Jaap ranges from ₹12,000 to ₹85,000+ depending on chant count.",
-      "missingBusinessInfo": "Number of Pandits and chant count selection in booking flow.",
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2 hrs Rigvedic recitation of 16 Sri Suktam verses with ahutis.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Kheer ahuti instructions.",
+      "startingPriceDisplay": "From ₹5,100*"
+    },
+    "sudarshan-havan": {
+      "model": "package-pricing",
+      "category": "havans",
+      "maxPrice": 7100,
+      "minPrice": 7100,
       "packages": [
         {
-          "id": "mmj-11k",
+          "id": "sd-basic",
           "name": {
-            "en": "11,000 Chants — 1 Day Anushthan",
-            "hi": "",
-            "mr": ""
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
           },
           "tier": "standard",
           "badge": {
-            "en": "3 Vedic Pandits",
-            "hi": "",
-            "mr": ""
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
-          "indicativePrice": 8500,
-          "priceDisplay": "₹8,500*",
+          "indicativePrice": 7100,
+          "priceDisplay": "₹7,100*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
-              "en": "3 Vedic Pandits for 11,000 counts + Havan",
+              "en": "Pandit Dakshina for Sudarshan Chakra invocation",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Sankalp with Gotra",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Checklist provided",
+              "en": "Raksha Kavach chanting & Checklist",
               "hi": "",
               "mr": ""
             }
@@ -4478,7 +2535,7 @@ insert into public.pricing (id, data) values (1, $seed${
               "mr": ""
             },
             {
-              "en": "Brahmin bhojan feast",
+              "en": "Ghee, wood, flowers",
               "hi": "",
               "mr": ""
             }
@@ -4486,574 +2543,24 @@ insert into public.pricing (id, data) values (1, $seed${
           "includedSamagriIds": []
         },
         {
-          "id": "mmj-21k",
+          "id": "sd-standard",
           "name": {
-            "en": "21,000 Chants — 2 Days / 5 Pandits",
-            "hi": "",
-            "mr": ""
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
           },
           "tier": "popular",
           "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
           },
-          "indicativePrice": 15500,
-          "priceDisplay": "₹15,500*",
+          "indicativePrice": 10100,
+          "priceDisplay": "₹10,100*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "5 Vedic Pandits completing 21,000 chants",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Concluding Hawan kit & pure cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Complete daily Sankalp",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Brahmin bhojan feast",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        },
-        {
-          "id": "mmj-125k",
-          "name": {
-            "en": "1,25,000 Chants — Maha Anushthan",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "premium",
-          "badge": {
-            "en": "Complete Maha Anushthan",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 45000,
-          "priceDisplay": "₹45,000*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Team of 5-7 Acharyas across multiple days",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Dashansh Havan, Tarpan, Marjan & Brahmin Bhojan coordination",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Devotee accommodation for pandits if outstation",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "gayatri-mantra-jaap": {
-      "serviceId": "gayatri-mantra-jaap",
-      "serviceName": {
-        "en": "Gayatri Mantra Anushthan & Jaap",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "jaaps",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 9500,
-      "maxPrice": 18500,
-      "startingPriceDisplay": "From ₹9,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "24,000 chants over 3 to 5 days with concluding hawan.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Gayatri Jaap ranges from ₹15,000 to ₹50,000.",
-      "missingBusinessInfo": "Devotee participation requirements.",
-      "packages": [
-        {
-          "id": "gmj-24k",
-          "name": {
-            "en": "24,000 Chants — 3 Days Anushthan",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "2 Vedic Pandits",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 9500,
-          "priceDisplay": "₹9,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "2 Pandits for 24,000 Gayatri counts + concluding Homa",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Brahmin bhojan",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "gmj-51k",
-          "name": {
-            "en": "51,000 Chants — 5 Days Anushthan",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 18500,
-          "priceDisplay": "₹18,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "3 Pandits for 51,000 counts",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Concluding Hawan kit & pure cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Surya Yantra blessing",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Brahmin bhojan",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "santan-gopal-mantra-jaap": {
-      "serviceId": "santan-gopal-mantra-jaap",
-      "serviceName": {
-        "en": "Santan Gopal Mantra Jaap for Child Blessings",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "jaaps",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 7500,
-      "maxPrice": 14500,
-      "startingPriceDisplay": "From ₹7,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "11,000 chants dedicated to Lord Krishna for fertility and progeny blessing.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Santan Gopal ranges from ₹11,000 to ₹35,000.",
-      "missingBusinessInfo": "Bal Gopal silver idol provision.",
-      "packages": [
-        {
-          "id": "sg-11k",
-          "name": {
-            "en": "11,000 Chants — Dedicated Anushthan",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "2 Vedic Pandits",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 7500,
-          "priceDisplay": "₹7,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "2 Pandits for 11,000 chants + concluding Homa",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Bal Gopal Pujan & Checklist",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Butter/Misri & fruits",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "sg-21k",
-          "name": {
-            "en": "21,000 Chants — Extended Anushthan",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 14500,
-          "priceDisplay": "₹14,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "3 Pandits for 21,000 chants over 3 days",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Hawan kit & cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Maha Abhishek & Gopal Yantra",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh fruits & sweets",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "navagraha-graha-shanti-jaap": {
-      "serviceId": "navagraha-graha-shanti-jaap",
-      "serviceName": {
-        "en": "Navagraha Graha Shanti Jaap (Surya to Ketu)",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "jaaps",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 6500,
-      "maxPrice": 12500,
-      "startingPriceDisplay": "From ₹6,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "Targeted japa across malefic planets with concluding Navagraha homa.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Graha Japa ranges from ₹9,000 to ₹35,000.",
-      "missingBusinessInfo": "Kundali review prior to japa allocation.",
-      "packages": [
-        {
-          "id": "ngj-basic",
-          "name": {
-            "en": "Basic — Targeted Dosha Jaap",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Targeted Grahas",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 6500,
-          "priceDisplay": "₹6,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "2 Pandits chanting 7,000 to 10,000 counts on afflicted planets + Homa",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "9 graha cloths & grains",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "ngj-full",
-          "name": {
-            "en": "Standard — Complete 9 Grahas Japa + Homa Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Full Navagraha Shanti",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 12500,
-          "priceDisplay": "₹12,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "3 Pandits completing 19,000+ chants across all 9 grahas",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Complete Hawan kit & 9 samidhas included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Graha Daan guidance",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Brahmin bhojan",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "kaal-sarp-dosh-puja": {
-      "serviceId": "kaal-sarp-dosh-puja",
-      "serviceName": {
-        "en": "Kaal Sarp Dosh Nivaran Puja",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "jaaps",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 3500,
-      "maxPrice": 5500,
-      "startingPriceDisplay": "From ₹3,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "3 hrs Rahu-Ketu pacification with silver Nag-Nagin pair and Rudra pujan.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Kaal Sarp ranges from ₹5,500 to ₹18,500 (Trimbakeshwar).",
-      "missingBusinessInfo": "Home doorstep vidhi vs Trimbakeshwar kshetra booking.",
-      "packages": [
-        {
-          "id": "ks-doorstep",
-          "name": {
-            "en": "Basic — Doorstep Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "At Devotee Home",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3500,
-          "priceDisplay": "₹3,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Kaal Sarp Shanti & Rahu-Ketu Japa",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Rudra Abhishek & Checklist",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Silver Nag-Nagin pair",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Black/Blue cloth",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "ks-complete",
-          "name": {
-            "en": "Standard — Doorstep + Full Kit with Silver Naga",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 5500,
-          "priceDisplay": "₹5,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina ₹7,100* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
           },
           "inclusions": [
             {
@@ -5067,14 +2574,14 @@ insert into public.pricing (id, data) values (1, $seed${
               "mr": ""
             },
             {
-              "en": "Consecrated Silver Nag-Nagin pair & Rahu-Ketu samidhas included",
+              "en": "Consecrated Sudarshan Yantra, sacred wood, camphor",
               "hi": "",
               "mr": ""
             }
           ],
           "exclusions": [
             {
-              "en": "Fresh flowers, milk, lead/urad daal for donation",
+              "en": "Fresh flowers & prasad",
               "hi": "",
               "mr": ""
             }
@@ -5085,449 +2592,54 @@ insert into public.pricing (id, data) values (1, $seed${
             "opt-complete-kit"
           ]
         }
-      ]
-    },
-    "gand-mool-nakshatra-shanti-puja": {
-      "serviceId": "gand-mool-nakshatra-shanti-puja",
-      "serviceName": {
-        "en": "Gand Mool Nakshatra Shanti Puja",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "jaaps",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 3500,
-      "maxPrice": 5500,
-      "startingPriceDisplay": "From ₹3,500*",
+      ],
+      "serviceId": "sudarshan-havan",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
         "hi": "",
         "mr": ""
       },
-      "pricingRationale": {
-        "en": "3 hrs ritual on 27th day after birth for child born in Gand Mool nakshatra.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Gand Mool ranges from ₹5,000 to ₹12,000.",
-      "missingBusinessInfo": "Sourcing 27 tree leaves & 27 water samples in Pune.",
-      "packages": [
-        {
-          "id": "gm-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3500,
-          "priceDisplay": "₹3,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Gand Mool Shanti & Nakshatra Homa",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Father-Child shadow-seeing guidance",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "27 leaves, 27 waters",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Bronze thali",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "gm-standard",
-          "name": {
-            "en": "Standard — Ritual + Hawan Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 5500,
-          "priceDisplay": "₹5,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Mool Nakshatra herbs & sacred wood included",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh leaves, water samples, bronze thali with ghee for reflection",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "guru-chandal-yoga-shanti": {
-      "serviceId": "guru-chandal-yoga-shanti",
       "serviceName": {
-        "en": "Guru Chandal Yoga Shanti Puja",
+        "en": "Sudarshan Havan for Supreme Protection",
         "hi": "",
         "mr": ""
       },
-      "category": "jaaps",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 3100,
-      "maxPrice": 4800,
-      "startingPriceDisplay": "From ₹3,100*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
       "pricingRationale": {
-        "en": "2.5 hrs remedy for Jupiter-Rahu conjunction in birth chart.",
+        "en": "2.5 hrs Vaishnava protection ritual against evil eye and negative energies.",
         "hi": "",
         "mr": ""
       },
-      "researchBasis": "Harivara Chandal Yoga Shanti ranges from ₹4,500 to ₹9,500.",
-      "missingBusinessInfo": "Horoscope verification before puja.",
-      "packages": [
-        {
-          "id": "gc-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3100,
-          "priceDisplay": "₹3,100*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Brihaspati & Rahu Japa + Havan",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Yellow cloth, chana dal, urad dal",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Utensils",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "gc-standard",
-          "name": {
-            "en": "Standard — Ritual + Hawan Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 4800,
-          "priceDisplay": "₹4,800*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Essential Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Guru-Rahu specific samidhas & cloths",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh fruits & sweets",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "grahan-yog-shanti-puja": {
-      "serviceId": "grahan-yog-shanti-puja",
-      "serviceName": {
-        "en": "Grahan Yog Shanti Puja (Surya/Chandra Rahu)",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "jaaps",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 3100,
-      "maxPrice": 4800,
-      "startingPriceDisplay": "From ₹3,100*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "2.5 hrs remedy for Sun-Rahu / Moon-Rahu eclipse dosha.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Grahan Dosh ranges from ₹4,500 to ₹9,500.",
-      "missingBusinessInfo": "Silver plate shadow vision requirements.",
-      "packages": [
-        {
-          "id": "gy-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3100,
-          "priceDisplay": "₹3,100*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Surya/Chandra & Rahu Japa + Havan",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Silver shadow-vision plate",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Ghee",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "gy-standard",
-          "name": {
-            "en": "Standard — Ritual + Hawan Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 4800,
-          "priceDisplay": "₹4,800*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Essential Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Grahan Shanti samidhas & cloths",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh flowers & milk",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Vaishnava priest preference.",
+      "startingPriceDisplay": "From ₹7,100*"
     },
     "sunderkand-path": {
-      "serviceId": "sunderkand-path",
-      "serviceName": {
-        "en": "Sunderkand Path Recitation with Music",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "paths",
       "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2500,
-      "maxPrice": 7500,
-      "startingPriceDisplay": "From ₹2,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "2.5 to 3.5 hrs musical or solo recitation of 5th book of Ramcharitmanas.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Sunderkand Path is listed around ₹5,800 for musical format.",
-      "missingBusinessInfo": "Solo reciter vs 2-3 artist musical troupe tier.",
+      "category": "paths",
+      "maxPrice": 21000,
+      "minPrice": 21000,
       "packages": [
         {
           "id": "skp-solo",
           "name": {
-            "en": "Solo Reciter — Classical Recitation",
-            "hi": "",
-            "mr": ""
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
           },
           "tier": "standard",
           "badge": {
-            "en": "Single Pandit",
-            "hi": "",
-            "mr": ""
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
-          "indicativePrice": 2500,
-          "priceDisplay": "₹2,500*",
+          "indicativePrice": 21000,
+          "priceDisplay": "₹21,000*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
@@ -5568,22 +2680,22 @@ insert into public.pricing (id, data) values (1, $seed${
         {
           "id": "skp-musical",
           "name": {
-            "en": "Musical Recitation — Pandit + Musician",
-            "hi": "",
-            "mr": ""
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
           },
           "tier": "popular",
           "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
           },
-          "indicativePrice": 5100,
-          "priceDisplay": "₹5,100*",
+          "indicativePrice": 22500,
+          "priceDisplay": "₹22,500*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina ₹21,000* + Complete Dry Puja Samagri Kit included",
+            "hi": "पंडित दक्षिणा + सम्पूर्ण पूजा सामग्री किट शामिल",
+            "mr": "पंडित दक्षिणा + संपूर्ण पूजा साहित्य किट समाविष्ट"
           },
           "inclusions": [
             {
@@ -5610,50 +2722,134 @@ insert into public.pricing (id, data) values (1, $seed${
             }
           ],
           "includedSamagriIds": [
-            "opt-havan-samagri",
             "opt-complete-kit"
           ]
-        },
+        }
+      ],
+      "serviceId": "sunderkand-path",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Sunderkand Path Recitation with Music",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2.5 to 3.5 hrs musical or solo recitation of 5th book of Ramcharitmanas.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Solo reciter vs 2-3 artist musical troupe tier.",
+      "startingPriceDisplay": "From ₹21,000*"
+    },
+    "annaprashan-puja": {
+      "model": "package-pricing",
+      "category": "pujas",
+      "maxPrice": 3800,
+      "minPrice": 3500,
+      "packages": [
         {
-          "id": "skp-troupe",
+          "id": "ap-basic",
           "name": {
-            "en": "Grand Sangeet Path — 3 Devotional Reciters",
-            "hi": "",
-            "mr": ""
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
           },
-          "tier": "premium",
+          "tier": "standard",
           "badge": {
-            "en": "Devotional Reciters",
-            "hi": "",
-            "mr": ""
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
-          "indicativePrice": 7500,
-          "priceDisplay": "₹7,500*",
+          "indicativePrice": 3500,
+          "priceDisplay": "₹3,500*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
-              "en": "3-Member Devotional Recital Group (Lead Reciter, Harmonium, Dholak accompaniment)",
+              "en": "Pandit Dakshina for Annaprashan Vidhi & Ayush blessings",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Complete Hawan & Pujan Samagri included",
+              "en": "Tray-testing ritual guidance",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Extended devotional Bhajans & Grand Hanuman Aarti",
+              "en": "Checklist provided",
               "hi": "",
               "mr": ""
             }
           ],
           "exclusions": [
             {
-              "en": "Large sound system if beyond apartment size",
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Cooked Kheer/Payasam",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Utensils",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "ap-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 6500,
+          "priceDisplay": "₹6,500*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹3,500* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential pure Hawan Samagri kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Kalash, gangajal, roli, moli",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh fruits, kheer, baby silver katori",
               "hi": "",
               "mr": ""
             }
@@ -5664,54 +2860,2077 @@ insert into public.pricing (id, data) values (1, $seed${
             "opt-complete-kit"
           ]
         }
-      ]
-    },
-    "akhand-ramayan-path": {
-      "serviceId": "akhand-ramayan-path",
-      "serviceName": {
-        "en": "Akhand Ramayan Path (24-Hour Continuous)",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "paths",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 21000,
-      "maxPrice": 35000,
-      "startingPriceDisplay": "From ₹21,000*",
+      ],
+      "serviceId": "annaprashan-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
         "hi": "",
         "mr": ""
       },
-      "pricingRationale": {
-        "en": "24 hours continuous non-stop recital requiring team of 4-5 rotating Pandits.",
+      "serviceName": {
+        "en": "Annaprashan Puja (First Rice Feeding)",
         "hi": "",
         "mr": ""
       },
-      "researchBasis": "Harivara Akhand Ramayan ranges from ₹26,300 to ₹48,800.",
-      "missingBusinessInfo": "Overnight rest accommodation for rotating priests at customer venue.",
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2 hrs child sanskar with Ayush homam and first solid food tasting.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Whether silver spoon / katori is devotee-supplied.",
+      "startingPriceDisplay": "From ₹3,500*"
+    },
+    "dhanvantri-havan": {
+      "model": "package-pricing",
+      "category": "havans",
+      "maxPrice": 5000,
+      "minPrice": 5000,
       "packages": [
         {
-          "id": "arp-basic",
+          "id": "dh-basic",
           "name": {
-            "en": "Basic — 4 Pandits Dakshina Only",
-            "hi": "",
-            "mr": ""
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
           },
           "tier": "standard",
           "badge": {
-            "en": "4 Rotating Pandits",
-            "hi": "",
-            "mr": ""
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 5000,
+          "priceDisplay": "₹5,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Dhanvantri invocation & Arogya Sankalp",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Checklist provided",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Medicinal herbs",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Ghee",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "dh-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 8000,
+          "priceDisplay": "₹8,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹5,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential Hawan Samagri kit with 54 Ayurvedic herbs included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Pure cow ghee & sacred wood",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh fruits, milk, flowers",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "dhanvantri-havan",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Dhanvantri Havan for Chronic Healing",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2 hrs medicinal fire ceremony for physical ailments and surgery recovery.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Ayurvedic herb packet sourcing.",
+      "startingPriceDisplay": "From ₹5,000*"
+    },
+    "garud-puran-path": {
+      "model": "package-pricing",
+      "category": "paths",
+      "maxPrice": 15000,
+      "minPrice": 15000,
+      "packages": [
+        {
+          "id": "gp-condensed",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 15000,
+          "priceDisplay": "₹15,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Senior Acharya for condensed 3-day Saroddhara recitation",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Daily Pitru Tarpan & Shanti prayer",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Checklist provided",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Daily oil lamps & sesame seeds",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Brahmin bhojan",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "gp-traditional",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 18000,
+          "priceDisplay": "₹18,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹15,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Senior Acharya visiting daily for full Garud Puran chapters",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Complete Pitru Shanti hawan on concluding day with Hawan Samagri kit included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Gau Daan & Pinda Daan guidance",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Daily household oil, sesame, and Brahmin bhojan",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "garud-puran-path",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Garud Puran Path (For Departed Souls)",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "Recited during 11 days of mourning for departed soul journey.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Condensed 3-day vs traditional 11-day path selection.",
+      "startingPriceDisplay": "From ₹15,000*"
+    },
+    "new-vehicle-puja": {
+      "model": "fixed-price",
+      "category": "pujas",
+      "maxPrice": 1800,
+      "minPrice": 1100,
+      "packages": [
+        {
+          "id": "vp-standard",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 1100,
+          "priceDisplay": "₹1,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Experienced Pandit arriving at your doorstep or apartment parking",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Complete Gauri-Ganesh Pujan & Swastika consecration",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Coconut breaking (Balidana) & 4-tyre lemon crushing vidhi",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Sacred protective thread (Moli) tied to steering wheel",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Devotee arranges pure Hawan Samagri and cow ghee",
+              "hi": "यजमान हवन सामग्री एवं देसी गाय के घी की व्यवस्था करते हैं",
+              "mr": "यजमान हवन साहित्य आणि देशी गायीच्या तुपाची व्यवस्था करतात"
+            },
+            {
+              "en": "Devotee arranges fresh flowers, fruits, milk & prasad",
+              "hi": "यजमान ताजे फूल, फल, दूध और प्रसाद की व्यवस्था करते हैं",
+              "mr": "यजमान ताजी फुले, फळे, दूध आणि प्रसादाची व्यवस्था करतात"
+            },
+            {
+              "en": "Devotee provides household puja thali & vessels",
+              "hi": "यजमान घर की पूजा थाली एवं तांबे/पीतल के पात्र उपलब्ध कराते हैं",
+              "mr": "यजमान घरातील पूजा ताट व भांडी उपलब्ध करतात"
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "vp-with-samagri",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 2600,
+          "priceDisplay": "₹2,600*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹1,100* + Complete Dry Puja Samagri Kit included",
+            "hi": "पंडित दक्षिणा + सम्पूर्ण पूजा सामग्री किट शामिल",
+            "mr": "पंडित दक्षिणा + संपूर्ण पूजा साहित्य किट समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for complete vehicle blessing",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Fresh lemons, sacred coconut, camphor, roli, and moli provided by Panditji",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Auspicious copper Kalash water sanctification",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Sweets / Prasad distribution",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "new-vehicle-puja",
+      "pricingNote": {
+        "en": "Proposed fixed dakshina (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "New Vehicle Puja (Vahan Puja)",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "45 mins to 1 hr focused vehicle blessing and obstacle warding.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Whether 2-wheelers and 4-wheelers have different rates.",
+      "startingPriceDisplay": "₹1,100"
+    },
+    "tulsi-vivah-puja": {
+      "model": "package-pricing",
+      "category": "wedding-services",
+      "maxPrice": 4500,
+      "minPrice": 3500,
+      "packages": [
+        {
+          "id": "tv-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 3500,
+          "priceDisplay": "₹3,500*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Tulsi-Shaligram Vivah Vidhi & Katha",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Checklist provided",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Red chunri & sugarcane stalks",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Prasad",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "tv-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 6500,
+          "priceDisplay": "₹6,500*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹3,500* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Pure Hawan Samagri kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Tulsi Red Chunri, Shaligram vastram, Roli, Akshat",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Sugarcane stalks (for mandap), fresh sweets, fruits",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "tulsi-vivah-puja",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Tulsi Vivah Puja & Dev Uthani Ekadashi",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2.5 hrs ceremonial marriage of Tulsi with Lord Shaligram.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Sugarcane mandap stalks arrangement.",
+      "startingPriceDisplay": "From ₹3,500*"
+    },
+    "vishwakarma-puja": {
+      "model": "package-pricing",
+      "category": "pujas",
+      "maxPrice": 4100,
+      "minPrice": 4100,
+      "packages": [
+        {
+          "id": "vk-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 4100,
+          "priceDisplay": "₹4,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Vishwakarma Pujan",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Machinery & tool blessing",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Checklist provided",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Red cloths, sweets for workers",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Utensils",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "vk-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 7100,
+          "priceDisplay": "₹7,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹4,100* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential Hawan Samagri kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Roli, Moli, Janeu, Kalash items",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh marigold garlands & sweets",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "vishwakarma-puja",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Vishwakarma Puja (Machinery & Tools)",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "1.5 to 2 hrs ceremony for workshops, factories, IT servers, and tools.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Large industrial scale surcharge, if applicable.",
+      "startingPriceDisplay": "From ₹4,100*"
+    },
+    "graha-shanti-puja": {
+      "model": "package-pricing",
+      "category": "shanti-pujas",
+      "maxPrice": 11000,
+      "minPrice": 11000,
+      "packages": [
+        {
+          "id": "grs-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 11000,
+          "priceDisplay": "₹11,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Graha Shanti Vidhi & Homa",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "9-graha pujan & Checklist",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "9 grains & cloths",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Ghee",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "grs-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 14000,
+          "priceDisplay": "₹14,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹11,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential pure Hawan Samagri kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "9 Navadhanya grains, 9 cloths & sacred wood",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh fruits, milk, flowers",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "graha-shanti-puja",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Graha Shanti Puja & Navagraha Homa",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2.5 hrs general planetary pacification before major life events.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Difference vs Navagraha Havan (graha-shanti focuses on dosha pacification).",
+      "startingPriceDisplay": "From ₹11,000*"
+    },
+    "mrityunjaya-havan": {
+      "model": "package-pricing",
+      "category": "havans",
+      "maxPrice": 5500,
+      "minPrice": 3500,
+      "packages": [
+        {
+          "id": "mj-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 3500,
+          "priceDisplay": "₹3,500*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Senior Acharya Dakshina for Mrityunjaya Havan & 1008 Ahutis",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Checklist provided",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Giloy / Amrita herbs",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Ghee",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "mj-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 6500,
+          "priceDisplay": "₹6,500*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹3,500* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Senior Acharya for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential pure Hawan Samagri kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Medicinal herbs (Giloy, Durva, Guggul) & wood",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh fruits, milk & flowers",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "mrityunjaya-havan",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Maha Mrityunjaya Havan for Longevity",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "needs-business-confirmation",
+      "pricingRationale": {
+        "en": "2.5 to 3.5 hrs fire ceremony with Amrita herbs for health recovery and vitality.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": false,
+      "missingBusinessInfo": "Confirmation required for Maha Mrityunjaya Havan base price.",
+      "startingPriceDisplay": "From ₹3,500*"
+    },
+    "rudrabhishek-puja": {
+      "model": "package-pricing",
+      "category": "pujas",
+      "maxPrice": 5500,
+      "minPrice": 5100,
+      "packages": [
+        {
+          "id": "rb-dakshina",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 5100,
+          "priceDisplay": "₹5,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Rudri Path & Abhishek",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Puja performed as per agreed Shastra vidhi",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Samagri checklist provided in advance (devotee arranges materials)",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Devotee arranges fresh raw milk, gangajal, honey, curd & sugarcane juice",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Devotee arranges fresh Belpatra, Dhatura, flowers & prasad",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Devotee arranges Shivling & abhishek patra",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "rb-samagri",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 8100,
+          "priceDisplay": "₹8,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹5,100* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Rudri Path & Abhishek",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential pure Hawan & Abhishek dry samagri kit included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Sacred Bhasma, Chandan, Janeu & Havan wood included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Puja performed as per agreed Shastra vidhi",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Devotee arranges fresh milk, curd, honey & panchamrit liquids",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Devotee arranges fresh Belpatra, Dhatura & flowers",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "rudrabhishek-puja",
+      "pricingNote": {
+        "en": "Indicative starting dakshina (Preserved local project data)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Rudrabhishek Puja & Shivling Abhishek",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2 to 3 hrs Namakam/Chamakam chanting with 11-substance abhishek.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Whether Panditji brings a Narmadeshwar Shivling for households lacking one.",
+      "startingPriceDisplay": "From ₹5,100*"
+    },
+    "satyanarayan-puja": {
+      "model": "package-pricing",
+      "category": "pujas",
+      "maxPrice": 4100,
+      "minPrice": 4100,
+      "packages": [
+        {
+          "id": "sn-dakshina",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 4100,
+          "priceDisplay": "₹4,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for 5-chapter Katha & Havan",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Puja performed as per agreed Shastra vidhi",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Samagri checklist provided in advance (devotee arranges materials)",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Devotee arranges hawan samagri, cow ghee & dry fruits",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Devotee prepares Panchamrit, bananas, fresh flowers & prasad",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Devotee provides household chowki & thalis",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "sn-samagri",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 7100,
+          "priceDisplay": "₹7,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹4,100* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for 5-chapter Katha & Havan",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential pure Hawan Samagri kit included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Pure cow ghee & dry ritual samagri included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Puja performed as per agreed Shastra vidhi",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Devotee prepares fresh flowers, bananas & Sheera (Prasad)",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Devotee prepares fresh Panchamrit (milk, curd, honey, sugar, tulsi)",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "satyanarayan-puja",
+      "pricingNote": {
+        "en": "Indicative starting dakshina (Preserved local project data)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Satyanarayan Puja & Katha",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2 to 2.5 hrs devotional monthly/milestone ceremony. Most frequent home puja.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Confirmation whether Katha with Hawan includes standard cow ghee in Package B.",
+      "startingPriceDisplay": "From ₹4,100*"
+    },
+    "shuddhikaran-puja": {
+      "model": "package-pricing",
+      "category": "pujas",
+      "maxPrice": 3500,
+      "minPrice": 3500,
+      "packages": [
+        {
+          "id": "sk-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 3500,
+          "priceDisplay": "₹3,500*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Shuddhi Sankalp & Chanting",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Panchagavya purification sprinklings",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Checklist provided",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Fresh cow milk, curd, gangajal",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Utensils",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "sk-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 6500,
+          "priceDisplay": "₹6,500*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹3,500* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential herbal purification hawan kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Gomutra & Gangajal included",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh flowers & prasad",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "shuddhikaran-puja",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Shuddhikaran Puja (House Purification)",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "1.5 hrs purification after birth/death/renovations with Panchagavya and hawan.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Sourcing of Panchagavya elements.",
+      "startingPriceDisplay": "From ₹3,500*"
+    },
+    "vastu-shanti-puja": {
+      "model": "package-pricing",
+      "category": "shanti-pujas",
+      "maxPrice": 21000,
+      "minPrice": 21000,
+      "packages": [
+        {
+          "id": "vs-dakshina",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
           "indicativePrice": 21000,
           "priceDisplay": "₹21,000*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Vastu Shanti Vidhi & Havan",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Puja performed as per agreed Shastra vidhi",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Samagri checklist provided in advance (devotee arranges materials)",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Devotee arranges hawan samagri and cow ghee",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Devotee arranges fresh flowers, fruits & prasad",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Devotee provides copper kalash & household utensils",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "vs-samagri",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 24000,
+          "priceDisplay": "₹24,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹21,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Vastu Shanti Vidhi & Havan",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential pure Hawan Samagri kit included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Pure desi cow ghee & hawan kashtha included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Puja performed as per agreed Shastra vidhi",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Devotee prepares fresh flowers, water coconut & seasonal fruits",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Devotee arranges fresh milk & curd",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "vastu-shanti-puja",
+      "pricingNote": {
+        "en": "Indicative starting dakshina (Preserved local project data)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Vastu Shanti Puja & Havan",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "3 to 4 hrs architectural pacification and Agnihotra hawan for flats/plots.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Whether copper Vastu Yantra is provided by VedicPanditji or devotee.",
+      "startingPriceDisplay": "From ₹21,000*"
+    },
+    "ark-vivah-for-male": {
+      "model": "package-pricing",
+      "category": "wedding-services",
+      "maxPrice": 7000,
+      "minPrice": 7000,
+      "packages": [
+        {
+          "id": "av-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 7000,
+          "priceDisplay": "₹7,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Senior Pandit Dakshina for Ark Vivah Vidhi & Manglik Shanti",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Surya Pujan & Checklist",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Ark plant",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Ghee",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "av-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 10000,
+          "priceDisplay": "₹10,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹7,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Senior Pandit Dakshina for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Pure Hawan Samagri kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Ark Vivah cloths, sacred thread & Mangal samidha included",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Live Ark / Madar plant (arranged at venue), fresh flowers",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "ark-vivah-for-male",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Ark Vivah (Manglik Shanti for Groom)",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2.5 hrs Manglik remedy where groom is symbolically married to an Ark (Madar) plant.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Procurement of flowering Ark plant.",
+      "startingPriceDisplay": "From ₹7,000*"
+    },
+    "kuber-upasana-puja": {
+      "model": "package-pricing",
+      "category": "pujas",
+      "maxPrice": null,
+      "minPrice": null,
+      "packages": [
+        {
+          "id": "ku-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": null,
+          "priceDisplay": "Custom Quote",
+          "priceNote": {
+            "en": "Custom Quote based on ceremony requirements",
+            "hi": "पूजा की आवश्यकतानुसार कस्टम कोट",
+            "mr": "पूजेच्या गरजेनुसार कोट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Kuber Pujan & Dhana Akarshana Mantras",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Locker & Cashbox blessing",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Checklist provided",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Dry fruits, sweets, coins",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Utensils",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "ku-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": null,
+          "priceDisplay": "Custom Quote",
+          "priceNote": {
+            "en": "Pandit Dakshina + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for complete ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential pure Hawan Samagri kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Lotus seeds (Kamalgatta) & sacred herbs included",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh flowers and sweets",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "kuber-upasana-puja",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Kuber Upasana Puja for Wealth & Trade",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "needs-business-confirmation",
+      "pricingRationale": {
+        "en": "2 hrs ritual for trade growth, treasury abundance, and business recovery.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": false,
+      "missingBusinessInfo": "Business clarification required for ₹350p base price.",
+      "startingPriceDisplay": "Custom Quote"
+    },
+    "laxmi-kubera-havan": {
+      "model": "package-pricing",
+      "category": "havans",
+      "maxPrice": 5100,
+      "minPrice": 5100,
+      "packages": [
+        {
+          "id": "lk-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 5100,
+          "priceDisplay": "₹5,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Laxmi Kubera Havan",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Ashtalakshmi Pujan & Checklist",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Kamalgatta, ghee, flowers",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "lk-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 8100,
+          "priceDisplay": "₹8,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹5,100* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Pure Hawan Samagri kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Kamalgatta, Bilva fruits & sacred wood",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh lotus flowers & sweets",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "laxmi-kubera-havan",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Laxmi Kubera Havan for Prosperity",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2.5 hrs wealth fire ritual with lotus seeds and Sri Sukta.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Lotus seed count.",
+      "startingPriceDisplay": "From ₹5,100*"
+    },
+    "yagnopavit-sanskar": {
+      "model": "package-pricing",
+      "category": "pujas",
+      "maxPrice": 11000,
+      "minPrice": 11000,
+      "packages": [
+        {
+          "id": "yp-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 11000,
+          "priceDisplay": "₹11,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Senior Vedic Acharya for complete Upanayan & Gayatri Diksha",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Bhiksha ceremony guidance",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Detailed Janeu checklist",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Yagnopaveetam thread sets",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Brahmachari danda & vastram",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "yp-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 14000,
+          "priceDisplay": "₹14,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹11,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Senior Vedic Acharya for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Complete Upanayan Hawan kit & pure cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Consecrated Yagnopaveetam (Janeu) sets & sacred thread included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Munj grass belt (Mekhala) & Palash danda blessing",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh fruits, dhoti for boy, maternal uncle gifts",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "yagnopavit-sanskar",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Yagnopavit Sanskar (Upanayan / Janeu)",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "3 to 4 hrs sacred thread investiture, Brahmacharya sankalp, Gayatri Diksha, and Bhiksha vidhi.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Whether 1 or 2 Pandits are standard for North Indian Upanayan.",
+      "startingPriceDisplay": "From ₹11,000*"
+    },
+    "akhand-ramayan-path": {
+      "model": "package-pricing",
+      "category": "paths",
+      "maxPrice": 35000,
+      "minPrice": 35000,
+      "packages": [
+        {
+          "id": "arp-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 35000,
+          "priceDisplay": "₹35,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
@@ -5752,22 +4971,22 @@ insert into public.pricing (id, data) values (1, $seed${
         {
           "id": "arp-standard",
           "name": {
-            "en": "Standard — 4 Pandits + Coordinated Samagri",
-            "hi": "",
-            "mr": ""
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
           },
           "tier": "popular",
           "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
           },
-          "indicativePrice": 26500,
-          "priceDisplay": "₹26,500*",
+          "indicativePrice": 36500,
+          "priceDisplay": "₹36,500*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina ₹35,000* + Complete Dry Puja Samagri Kit included",
+            "hi": "पंडित दक्षिणा + सम्पूर्ण पूजा सामग्री किट शामिल",
+            "mr": "पंडित दक्षिणा + संपूर्ण पूजा साहित्य किट समाविष्ट"
           },
           "inclusions": [
             {
@@ -5794,51 +5013,124 @@ insert into public.pricing (id, data) values (1, $seed${
             }
           ],
           "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
             "opt-complete-kit"
           ]
-        },
+        }
+      ],
+      "serviceId": "akhand-ramayan-path",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Akhand Ramayan Path (24-Hour Continuous)",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "24 hours continuous non-stop recital requiring team of 4-5 rotating Pandits.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Overnight rest accommodation for rotating priests at customer venue.",
+      "startingPriceDisplay": "From ₹35,000*"
+    },
+    "gayatri-mantra-jaap": {
+      "model": "package-pricing",
+      "category": "jaaps",
+      "maxPrice": 18500,
+      "minPrice": 1500,
+      "packages": [
         {
-          "id": "arp-musical",
+          "id": "gmj-24k",
           "name": {
-            "en": "Premium — 5 Pandits + Musical Recitation",
-            "hi": "",
-            "mr": ""
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
           },
-          "tier": "premium",
+          "tier": "standard",
           "badge": {
-            "en": "Musical Format",
-            "hi": "",
-            "mr": ""
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
-          "indicativePrice": 35000,
-          "priceDisplay": "₹35,000*",
+          "indicativePrice": 1500,
+          "priceDisplay": "₹1,500*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
-              "en": "5 Pandits with continuous Harmonium & Dholak accompaniment",
+              "en": "2 Pandits for 24,000 Gayatri counts + concluding Homa",
               "hi": "",
               "mr": ""
             },
             {
-              "en": "Full 24-hr Akhand Jyot & Hawan Samagri kit included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Ram Janma, Sita Vivah & Rajyabhishek special celebration Bhajans",
+              "en": "Checklist provided",
               "hi": "",
               "mr": ""
             }
           ],
           "exclusions": [
             {
-              "en": "Venue catering",
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Brahmin bhojan",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "gmj-51k",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 4500,
+          "priceDisplay": "₹4,500*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹1,500* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "3 Pandits for 51,000 counts",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Concluding Hawan kit & pure cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Surya Yantra blessing",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Brahmin bhojan",
               "hi": "",
               "mr": ""
             }
@@ -5849,54 +5141,2448 @@ insert into public.pricing (id, data) values (1, $seed${
             "opt-complete-kit"
           ]
         }
-      ]
-    },
-    "chandi-path-durga-saptashati-path": {
-      "serviceId": "chandi-path-durga-saptashati-path",
-      "serviceName": {
-        "en": "Chandi Path (Durga Saptashati 700 Verses)",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "paths",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 3500,
-      "maxPrice": 5500,
-      "startingPriceDisplay": "From ₹3,500*",
+      ],
+      "serviceId": "gayatri-mantra-jaap",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
         "hi": "",
         "mr": ""
       },
-      "pricingRationale": {
-        "en": "3.5 hrs complete Durga Saptashati recitation with Kavach, Argala, and Kilak.",
+      "serviceName": {
+        "en": "Gayatri Mantra Anushthan & Jaap",
         "hi": "",
         "mr": ""
       },
-      "researchBasis": "Harivara Chandi Path ranges from ₹5,500 to ₹16,000.",
-      "missingBusinessInfo": "Recitation with or without concluding hawan.",
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "24,000 chants over 3 to 5 days with concluding hawan.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Devotee participation requirements.",
+      "startingPriceDisplay": "From ₹1,500*"
+    },
+    "kaal-sarp-dosh-puja": {
+      "model": "package-pricing",
+      "category": "jaaps",
+      "maxPrice": 15000,
+      "minPrice": 15000,
       "packages": [
         {
-          "id": "cp-basic",
+          "id": "ks-doorstep",
           "name": {
-            "en": "Basic — Path Recitation Only",
-            "hi": "",
-            "mr": ""
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
           },
           "tier": "standard",
           "badge": {
-            "en": "Single Senior Pandit",
-            "hi": "",
-            "mr": ""
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 15000,
+          "priceDisplay": "₹15,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Kaal Sarp Shanti & Rahu-Ketu Japa",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Rudra Abhishek & Checklist",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Silver Nag-Nagin pair",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Black/Blue cloth",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "ks-complete",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 18000,
+          "priceDisplay": "₹18,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹15,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Pure Hawan Samagri kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Consecrated Silver Nag-Nagin pair & Rahu-Ketu samidhas included",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh flowers, milk, lead/urad daal for donation",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "kaal-sarp-dosh-puja",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Kaal Sarp Dosh Nivaran Puja",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "3 hrs Rahu-Ketu pacification with silver Nag-Nagin pair and Rudra pujan.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Home doorstep vidhi vs Trimbakeshwar kshetra booking.",
+      "startingPriceDisplay": "From ₹15,000*"
+    },
+    "office-opening-puja": {
+      "model": "package-pricing",
+      "category": "pujas",
+      "maxPrice": 4800,
+      "minPrice": 4100,
+      "packages": [
+        {
+          "id": "oo-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 4100,
+          "priceDisplay": "₹4,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Experienced Pandit for Office Opening Vidhi",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Gauri-Ganesh, Navagraha & Vyapar Vriddhi Pujan",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Office samagri checklist provided in advance",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Hawan samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Cash counter toran & fresh flowers",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Puja utensils",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "oo-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 7100,
+          "priceDisplay": "₹7,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹4,100* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Experienced Pandit for complete ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential Hawan Samagri kit & pure cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Toran, Roli, Akshat, Janeu, Dhoop & Camphor included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Smoke-conscious Agnihotra vidhi for commercial premises",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh flowers, coconut, sweets (Mithai) for staff",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "office-opening-puja",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Office Opening & Vyapar Vriddhi Puja",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2 hrs commercial sanctification, Gauri-Ganesh, Navagraha and Kuber-Laxmi sthapana.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Whether smoke-free Agnihotra kund is provided for air-conditioned office spaces.",
+      "startingPriceDisplay": "From ₹4,100*"
+    },
+    "engagement-puja-sagai": {
+      "model": "package-pricing",
+      "category": "wedding-services",
+      "maxPrice": 5000,
+      "minPrice": 5000,
+      "packages": [
+        {
+          "id": "eng-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 5000,
+          "priceDisplay": "₹5,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Gauri-Ganesh Pujan & Ring blessing",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Vagdan Sankalp between families & Checklist",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Shagun thali items",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Sweets",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "eng-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 8000,
+          "priceDisplay": "₹8,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹5,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential Hawan Samagri kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Roli, Chandan, Janeu, Kalash items & sacred thread",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh flowers, dry fruits & sweets",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "engagement-puja-sagai",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Engagement Puja (Sagai & Ring Ceremony)",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2 hrs formal mutual commitment blessing and ring sanctification.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Shagun thali layout guidance.",
+      "startingPriceDisplay": "From ₹5,000*"
+    },
+    "maha-mrityunjaya-jaap": {
+      "model": "package-pricing",
+      "category": "jaaps",
+      "maxPrice": 111000,
+      "minPrice": 111000,
+      "packages": [
+        {
+          "id": "mmj-125k",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 111000,
+          "priceDisplay": "₹1,11,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Team of 5-7 Senior Vedic Acharyas conducting 1,25,000 synchronized recitations across multiple days",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Daily Sankalp with devotee Gotra, Kavach & Mahamrityunjay Stotra",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Concluding Dashansh Maha Havan with Amrita herbs, pure cow ghee, Tarpan & Marjan",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Brahmin Bhojan coordination & consecrated prasad",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Devotee arranges pure Hawan Samagri and cow ghee",
+              "hi": "यजमान हवन सामग्री एवं देसी गाय के घी की व्यवस्था करते हैं",
+              "mr": "यजमान हवन साहित्य आणि देशी गायीच्या तुपाची व्यवस्था करतात"
+            },
+            {
+              "en": "Devotee arranges fresh flowers, fruits, milk & prasad",
+              "hi": "यजमान ताजे फूल, फल, दूध और प्रसाद की व्यवस्था करते हैं",
+              "mr": "यजमान ताजी फुले, फळे, दूध आणि प्रसादाची व्यवस्था करतात"
+            },
+            {
+              "en": "Devotee provides household puja thali & vessels",
+              "hi": "यजमान घर की पूजा थाली एवं तांबे/पीतल के पात्र उपलब्ध कराते हैं",
+              "mr": "यजमान घरातील पूजा ताट व भांडी उपलब्ध करतात"
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "mmj-with-samagri",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 114000,
+          "priceDisplay": "₹1,14,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹1,11,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for complete ceremony",
+              "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा"
+            },
+            {
+              "en": "Essential pure Hawan Samagri kit included",
+              "hi": "आवश्यक शुद्ध हवन सामग्री किट शामिल",
+              "mr": "आवश्यक शुद्ध हवन साहित्य किट समाविष्ट"
+            },
+            {
+              "en": "Pure desi cow ghee & sacred hawan wood included",
+              "hi": "शुद्ध देशी गाय का घी एवं पवित्र हवन समिधा शामिल",
+              "mr": "शुद्ध देशी गाईचे तूप आणि पवित्र समिधा समाविष्ट"
+            },
+            {
+              "en": "Puja performed as per agreed Shastra vidhi",
+              "hi": "शास्त्रोक्त विधि-विधान अनुसार पूजा",
+              "mr": "शास्त्रोक्त विधीनुसार पूजा"
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Devotee only prepares fresh flowers & seasonal fruits",
+              "hi": "यजमान केवल ताजे फूल एवं मौसमी फल तैयार करते हैं",
+              "mr": "यजमान फक्त ताजी फुले आणि हंगामी फळे तयार करतात"
+            },
+            {
+              "en": "Devotee arranges fresh milk, curd & household utensils",
+              "hi": "यजमान ताजा दूध, दही एवं घर के बर्तन तैयार करते हैं",
+              "mr": "यजमान ताजे दूध, दही आणि घरची भांडी तयार करतात"
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "maha-mrityunjaya-jaap",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Maha Mrityunjaya Jaap",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "Multi-Brahmin japa anushthan with counter malas and concluding hawan.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Number of Pandits and chant count selection in booking flow.",
+      "startingPriceDisplay": "From ₹1,11,000*"
+    },
+    "grahan-yog-shanti-puja": {
+      "model": "package-pricing",
+      "category": "jaaps",
+      "maxPrice": 21000,
+      "minPrice": 21000,
+      "packages": [
+        {
+          "id": "gy-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 21000,
+          "priceDisplay": "₹21,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Surya/Chandra & Rahu Japa + Havan",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Checklist provided",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Silver shadow-vision plate",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Ghee",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "gy-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 24000,
+          "priceDisplay": "₹24,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹21,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential Hawan Samagri kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Grahan Shanti samidhas & cloths",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh flowers & milk",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "grahan-yog-shanti-puja",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Grahan Yog Shanti Puja (Surya/Chandra Rahu)",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2.5 hrs remedy for Sun-Rahu / Moon-Rahu eclipse dosha.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Silver plate shadow vision requirements.",
+      "startingPriceDisplay": "From ₹21,000*"
+    },
+    "kumbh-vivah-for-female": {
+      "model": "package-pricing",
+      "category": "wedding-services",
+      "maxPrice": 7100,
+      "minPrice": 7100,
+      "packages": [
+        {
+          "id": "kv-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 7100,
+          "priceDisplay": "₹7,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Senior Pandit Dakshina for complete Kumbh Vivah Vidhi",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Manglik dosha nivaran chanting & Checklist",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Clay Kumbh pot & Vishnu idol",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Ghee",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "kv-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 10100,
+          "priceDisplay": "₹10,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹7,100* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Senior Pandit Dakshina for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Pure Hawan Samagri kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Consecrated earthen Kumbh pot, yellow cloth, Janeu, Mangal samidha included",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh flowers, coconuts & milk",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "kumbh-vivah-for-female",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Kumbh Vivah (Manglik Shanti for Bride)",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2.5 hrs Mangal dosha remedy where bride is first married to a consecrated Vishnu Kumbh.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Clay Kumbh pot immersion instructions.",
+      "startingPriceDisplay": "From ₹7,100*"
+    },
+    "vishnu-sahasranam-path": {
+      "model": "package-pricing",
+      "category": "paths",
+      "maxPrice": 3500,
+      "minPrice": 3500,
+      "packages": [
+        {
+          "id": "vsp-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
           "indicativePrice": 3500,
           "priceDisplay": "₹3,500*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for 1000 Holy Names Recitation",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Purusha Suktam chanting & Checklist",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Tulsi leaves & dry fruits",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "vsp-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 5950,
+          "priceDisplay": "₹5,950*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹3,500* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential Puja Samagri kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Chandan, Roli, Akshat, Janeu & Dhoop",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh Tulsi leaves & fruits",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "vishnu-sahasranam-path",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Vishnu Sahasranam Path (1000 Holy Names)",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "1.5 hrs recitation of 1000 divine names with Tulsi archana.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Tulsi leaf procurement.",
+      "startingPriceDisplay": "From ₹3,500*"
+    },
+    "lalitha-sahasranam-puja": {
+      "model": "package-pricing",
+      "category": "paths",
+      "maxPrice": 7100,
+      "minPrice": 7100,
+      "packages": [
+        {
+          "id": "lsp-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 7100,
+          "priceDisplay": "₹7,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Lalitha Sahasranam & Kumkumarchana",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Checklist provided",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Pure Kumkum box & Sri Yantra",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Flowers",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "lsp-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 10100,
+          "priceDisplay": "₹10,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹7,100* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Pure natural Kumkum for 1,000 name archana included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Hawan samagri kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh red hibiscus flowers & sweets",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "lalitha-sahasranam-puja",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Lalitha Sahasranam Puja & Kumkumarchana",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2 hrs recitation of 1000 names with red vermilion Kumkumarchana to Sri Yantra.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Sri Yantra availability.",
+      "startingPriceDisplay": "From ₹7,100*"
+    },
+    "ganesh-sthapana-visarjan": {
+      "model": "package-pricing",
+      "category": "pujas",
+      "maxPrice": 5000,
+      "minPrice": 5000,
+      "packages": [
+        {
+          "id": "gs-single",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 5000,
+          "priceDisplay": "₹5,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Praan Pratishtha & Ganesh Sthapana",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "108 Durva Archana",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Samagri checklist",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Fresh Modaks & flowers",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Visarjan visit",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "gs-bundle",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 8000,
+          "priceDisplay": "₹8,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹5,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Sthapana & Hawan",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential pure Hawan Samagri kit & ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Roli, Moli, Janeu, Kalash vastram included",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh modaks and red hibiscus flowers",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "ganesh-sthapana-visarjan",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Ganesh Sthapana & Visarjan Puja",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "1.5 hrs single session (Sthapana) or two-session package (Sthapana + Visarjan).",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Single session vs two-visit bundle pricing.",
+      "startingPriceDisplay": "From ₹5,000*"
+    },
+    "guru-chandal-yoga-shanti": {
+      "model": "package-pricing",
+      "category": "jaaps",
+      "maxPrice": 11000,
+      "minPrice": 11000,
+      "packages": [
+        {
+          "id": "gc-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 11000,
+          "priceDisplay": "₹11,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Brihaspati & Rahu Japa + Havan",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Checklist provided",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Yellow cloth, chana dal, urad dal",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Utensils",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "gc-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 14000,
+          "priceDisplay": "₹14,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹11,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential Hawan Samagri kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Guru-Rahu specific samidhas & cloths",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh fruits & sweets",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "guru-chandal-yoga-shanti",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Guru Chandal Yoga Shanti Puja",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2.5 hrs remedy for Jupiter-Rahu conjunction in birth chart.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Horoscope verification before puja.",
+      "startingPriceDisplay": "From ₹11,000*"
+    },
+    "santan-gopal-mantra-jaap": {
+      "model": "package-pricing",
+      "category": "jaaps",
+      "maxPrice": 51000,
+      "minPrice": 51000,
+      "packages": [
+        {
+          "id": "sg-11k",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 51000,
+          "priceDisplay": "₹51,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "2 Pandits for 11,000 chants + concluding Homa",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Bal Gopal Pujan & Checklist",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Butter/Misri & fruits",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "sg-21k",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 54000,
+          "priceDisplay": "₹54,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹51,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "3 Pandits for 21,000 chants over 3 days",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Hawan kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Maha Abhishek & Gopal Yantra",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh fruits & sweets",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "santan-gopal-mantra-jaap",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Santan Gopal Mantra Jaap for Child Blessings",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "11,000 chants dedicated to Lord Krishna for fertility and progeny blessing.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Bal Gopal silver idol provision.",
+      "startingPriceDisplay": "From ₹51,000*"
+    },
+    "solah-somvar-udyapan-puja": {
+      "model": "package-pricing",
+      "category": "pujas",
+      "maxPrice": 5000,
+      "minPrice": 5000,
+      "packages": [
+        {
+          "id": "ss-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 5000,
+          "priceDisplay": "₹5,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Somvar Katha & Abhishek",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Lord Shiva archana",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Checklist provided",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Belpatra, raw milk, prasad",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Utensils",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "ss-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 8000,
+          "priceDisplay": "₹8,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹5,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential pure Hawan Samagri kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Bhasma, Chandan, Janeu, Dhoop & Camphor",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh milk, curd, honey & Churma prasad",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "solah-somvar-udyapan-puja",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Solah Somvar Udyapan Puja",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2.5 hrs conclusion of 16 Monday fasts for Lord Shiva with abhishek & hawan.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Prasad (Baati / Churma) devotee preparation.",
+      "startingPriceDisplay": "From ₹5,000*"
+    },
+    "ekadashi-vrat-udyapan-puja": {
+      "model": "package-pricing",
+      "category": "pujas",
+      "maxPrice": 21000,
+      "minPrice": 21000,
+      "packages": [
+        {
+          "id": "ek-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 21000,
+          "priceDisplay": "₹21,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Ekadashi Mahatmya Katha",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Vishnu Sahasranam Path & Havan",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Checklist provided",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Tulsi dal, fresh fruits, prasad",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Utensils",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "ek-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 24000,
+          "priceDisplay": "₹24,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹21,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential pure Hawan Samagri kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Purna Kalash items, Roli, Akshat, Janeu",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh fruits, Tulsi leaves, prasad",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "ekadashi-vrat-udyapan-puja",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Ekadashi Vrat Udyapan Puja",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2.5 hrs conclusion of Ekadashi fasts dedicated to Lord Vishnu with Hawan.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Number of Brahmins for Bhojan / Dakshina.",
+      "startingPriceDisplay": "From ₹21,000*"
+    },
+    "navagraha-graha-shanti-jaap": {
+      "model": "package-pricing",
+      "category": "jaaps",
+      "maxPrice": 11000,
+      "minPrice": 11000,
+      "packages": [
+        {
+          "id": "ngj-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 11000,
+          "priceDisplay": "₹11,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "2 Pandits chanting 7,000 to 10,000 counts on afflicted planets + Homa",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Checklist provided",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "9 graha cloths & grains",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "ngj-full",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 14000,
+          "priceDisplay": "₹14,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹11,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "3 Pandits completing 19,000+ chants across all 9 grahas",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Complete Hawan kit & 9 samidhas included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Graha Daan guidance",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Brahmin bhojan",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "navagraha-graha-shanti-jaap",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Navagraha Shanti",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "Targeted japa across malefic planets with concluding Navagraha homa.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Kundali review prior to japa allocation.",
+      "startingPriceDisplay": "From ₹11,000*"
+    },
+    "brihaspati-vrat-udyapan-puja": {
+      "model": "package-pricing",
+      "category": "pujas",
+      "maxPrice": 3800,
+      "minPrice": 3100,
+      "packages": [
+        {
+          "id": "bv-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 3100,
+          "priceDisplay": "₹3,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Udyapan Katha & Pujan",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Guru Yantra invocation",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Checklist provided",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Yellow cloth, chana dal, bananas",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Utensils",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "bv-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 6100,
+          "priceDisplay": "₹6,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹3,100* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for complete ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential pure Hawan Samagri kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Yellow cloth, turmeric root & sacred threads",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh bananas and yellow gram sweets",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "brihaspati-vrat-udyapan-puja",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Brihaspati Vrat Udyapan Puja",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2 hrs conclusion of 16 Thursday fasts for Lord Brihaspati / Vishnu.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Yellow gram dal and banana plant arrangement.",
+      "startingPriceDisplay": "From ₹3,100*"
+    },
+    "godh-bharai-puja-baby-shower": {
+      "model": "package-pricing",
+      "category": "pujas",
+      "maxPrice": 3800,
+      "minPrice": 3500,
+      "packages": [
+        {
+          "id": "gb-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 3500,
+          "priceDisplay": "₹3,500*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Punsavan / Simantonayana Vidhi",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Gauri Pujan & Mother Blessing",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Checklist provided",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Lap-filling dry fruits & sari",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Utensils",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "gb-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 6500,
+          "priceDisplay": "₹6,500*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹3,500* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential Hawan Samagri kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Roli, Chandan, Kalash vastram & sacred thread",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh green bangles, fruits, coconuts",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "godh-bharai-puja-baby-shower",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Godh Bharai & Punsavan Sanskar",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2 hrs motherhood blessing, Simantonayana Vedic rites, and lap-filling blessing.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Green bangles and lap fruit basket arrangements.",
+      "startingPriceDisplay": "From ₹3,500*"
+    },
+    "mundan-or-chudakarana-ceremony": {
+      "model": "package-pricing",
+      "category": "pujas",
+      "maxPrice": 4100,
+      "minPrice": 4100,
+      "packages": [
+        {
+          "id": "mn-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 4100,
+          "priceDisplay": "₹4,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Chudakarana Vidhi",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Kusha grass cutting ritual",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Ayush hawan vidhi & checklist",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Barber services",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Fresh items",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "mn-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 7100,
+          "priceDisplay": "₹7,100*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹4,100* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for complete ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Essential Hawan Samagri kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Kusha grass, chandan, haldi paste for baby scalp",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Barber / Nai fees",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Fresh flowers & sweets",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "mundan-or-chudakarana-ceremony",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Mundan (Chudakarana) Sanskar",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "2 hrs child head-shaving ritual, Gauri-Ganesh pujan and Ayush hawan.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Barber service coordination (typically arranged by family).",
+      "startingPriceDisplay": "From ₹4,100*"
+    },
+    "gand-mool-nakshatra-shanti-puja": {
+      "model": "package-pricing",
+      "category": "jaaps",
+      "maxPrice": 11000,
+      "minPrice": 11000,
+      "packages": [
+        {
+          "id": "gm-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 11000,
+          "priceDisplay": "₹11,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for Gand Mool Shanti & Nakshatra Homa",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Father-Child shadow-seeing guidance",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Checklist provided",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Samagri kit",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "27 leaves, 27 waters",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Bronze thali",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": []
+        },
+        {
+          "id": "gm-standard",
+          "name": {
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
+          },
+          "tier": "popular",
+          "badge": {
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
+          },
+          "indicativePrice": 14000,
+          "priceDisplay": "₹14,000*",
+          "priceNote": {
+            "en": "Pandit Dakshina ₹11,000* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
+          },
+          "inclusions": [
+            {
+              "en": "Pandit Dakshina for ceremony",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Pure Hawan Samagri kit & cow ghee included",
+              "hi": "",
+              "mr": ""
+            },
+            {
+              "en": "Mool Nakshatra herbs & sacred wood included",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "en": "Fresh leaves, water samples, bronze thali with ghee for reflection",
+              "hi": "",
+              "mr": ""
+            }
+          ],
+          "includedSamagriIds": [
+            "opt-havan-samagri",
+            "opt-cow-ghee",
+            "opt-complete-kit"
+          ]
+        }
+      ],
+      "serviceId": "gand-mool-nakshatra-shanti-puja",
+      "pricingNote": {
+        "en": "Proposed rate card (Awaiting business confirmation)",
+        "hi": "",
+        "mr": ""
+      },
+      "serviceName": {
+        "en": "Gand Mool Nakshatra Shanti Puja",
+        "hi": "",
+        "mr": ""
+      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
+      "pricingRationale": {
+        "en": "3 hrs ritual on 27th day after birth for child born in Gand Mool nakshatra.",
+        "hi": "",
+        "mr": ""
+      },
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Sourcing 27 tree leaves & 27 water samples in Pune.",
+      "startingPriceDisplay": "From ₹11,000*"
+    },
+    "chandi-path-durga-saptashati-path": {
+      "model": "package-pricing",
+      "category": "paths",
+      "maxPrice": 5500,
+      "minPrice": 3500,
+      "packages": [
+        {
+          "id": "cp-basic",
+          "name": {
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
+          },
+          "tier": "standard",
+          "badge": {
+            "en": "Devotee Arranges Samagri",
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
+          },
+          "indicativePrice": 3500,
+          "priceDisplay": "₹3,500*",
+          "priceNote": {
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
@@ -5937,22 +7623,22 @@ insert into public.pricing (id, data) values (1, $seed${
         {
           "id": "cp-standard",
           "name": {
-            "en": "Standard — Path + Hawan Samagri Kit",
-            "hi": "",
-            "mr": ""
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
           },
           "tier": "popular",
           "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
           },
-          "indicativePrice": 5500,
-          "priceDisplay": "₹5,500*",
+          "indicativePrice": 6500,
+          "priceDisplay": "₹6,500*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina ₹3,500* + Pure Hawan Samagri & Desi Ghee included",
+            "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
+            "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
           },
           "inclusions": [
             {
@@ -5984,1514 +7670,54 @@ insert into public.pricing (id, data) values (1, $seed${
             "opt-complete-kit"
           ]
         }
-      ]
-    },
-    "vishnu-sahasranam-path": {
-      "serviceId": "vishnu-sahasranam-path",
-      "serviceName": {
-        "en": "Vishnu Sahasranam Path (1000 Holy Names)",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "paths",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2100,
-      "maxPrice": 3200,
-      "startingPriceDisplay": "From ₹2,100*",
+      ],
+      "serviceId": "chandi-path-durga-saptashati-path",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
         "hi": "",
         "mr": ""
       },
-      "pricingRationale": {
-        "en": "1.5 hrs recitation of 1000 divine names with Tulsi archana.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Vishnu Sahasranam ranges from ₹2,800 to ₹6,500.",
-      "missingBusinessInfo": "Tulsi leaf procurement.",
-      "packages": [
-        {
-          "id": "vsp-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 2100,
-          "priceDisplay": "₹2,100*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for 1000 Holy Names Recitation",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Purusha Suktam chanting & Checklist",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Tulsi leaves & dry fruits",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "vsp-standard",
-          "name": {
-            "en": "Standard — Ritual + Puja Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3200,
-          "priceDisplay": "₹3,200*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Essential Puja Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Chandan, Roli, Akshat, Janeu & Dhoop",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh Tulsi leaves & fruits",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "lalitha-sahasranam-puja": {
-      "serviceId": "lalitha-sahasranam-puja",
       "serviceName": {
-        "en": "Lalitha Sahasranam Puja & Kumkumarchana",
+        "en": "Chandi Path (Durga Saptashati 700 Verses)",
         "hi": "",
         "mr": ""
       },
-      "category": "paths",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2500,
-      "maxPrice": 3800,
-      "startingPriceDisplay": "From ₹2,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
       "pricingRationale": {
-        "en": "2 hrs recitation of 1000 names with red vermilion Kumkumarchana to Sri Yantra.",
+        "en": "3.5 hrs complete Durga Saptashati recitation with Kavach, Argala, and Kilak.",
         "hi": "",
         "mr": ""
       },
-      "researchBasis": "Harivara Lalitha Sahasranamam ranges from ₹3,500 to ₹8,500.",
-      "missingBusinessInfo": "Sri Yantra availability.",
-      "packages": [
-        {
-          "id": "lsp-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 2500,
-          "priceDisplay": "₹2,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Lalitha Sahasranam & Kumkumarchana",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Pure Kumkum box & Sri Yantra",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Flowers",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "lsp-standard",
-          "name": {
-            "en": "Standard — Ritual + Kumkumarchana Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3800,
-          "priceDisplay": "₹3,800*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Pure natural Kumkum for 1,000 name archana included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Hawan samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh red hibiscus flowers & sweets",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "garud-puran-path": {
-      "serviceId": "garud-puran-path",
-      "serviceName": {
-        "en": "Garud Puran Path (For Departed Souls)",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "paths",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 5500,
-      "maxPrice": 11000,
-      "startingPriceDisplay": "From ₹5,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "Recited during 11 days of mourning for departed soul journey.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Garud Puran ranges from ₹8,500 to ₹25,000.",
-      "missingBusinessInfo": "Condensed 3-day vs traditional 11-day path selection.",
-      "packages": [
-        {
-          "id": "gp-condensed",
-          "name": {
-            "en": "Condensed 3-Day Path",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "3-Day Recitation",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 5500,
-          "priceDisplay": "₹5,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Senior Acharya for condensed 3-day Saroddhara recitation",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Daily Pitru Tarpan & Shanti prayer",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Daily oil lamps & sesame seeds",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Brahmin bhojan",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "gp-traditional",
-          "name": {
-            "en": "Traditional 10-Day Complete Path",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Complete 10-Day Vidhi",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 11000,
-          "priceDisplay": "₹11,000*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Senior Acharya visiting daily for full Garud Puran chapters",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Complete Pitru Shanti hawan on concluding day with Hawan Samagri kit included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Gau Daan & Pinda Daan guidance",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Daily household oil, sesame, and Brahmin bhojan",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "graha-shanti-puja": {
-      "serviceId": "graha-shanti-puja",
-      "serviceName": {
-        "en": "Graha Shanti Puja & Navagraha Homa",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "shanti-pujas",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 3100,
-      "maxPrice": 4800,
-      "startingPriceDisplay": "From ₹3,100*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "2.5 hrs general planetary pacification before major life events.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Graha Shanti ranges from ₹4,800 to ₹12,000.",
-      "missingBusinessInfo": "Difference vs Navagraha Havan (graha-shanti focuses on dosha pacification).",
-      "packages": [
-        {
-          "id": "grs-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3100,
-          "priceDisplay": "₹3,100*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Graha Shanti Vidhi & Homa",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "9-graha pujan & Checklist",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "9 grains & cloths",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Ghee",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "grs-standard",
-          "name": {
-            "en": "Standard — Ritual + Navagraha Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 4800,
-          "priceDisplay": "₹4,800*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Essential pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "9 Navadhanya grains, 9 cloths & sacred wood",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh fruits, milk, flowers",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "vivah-marriage": {
-      "serviceId": "vivah-marriage",
-      "serviceName": {
-        "en": "Vivah (Complete Hindu Wedding Sanskar)",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "wedding-services",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 7500,
-      "maxPrice": 16500,
-      "startingPriceDisplay": "From ₹7,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "4 to 6 hrs complete Vedic wedding with Kanyadaan, Panigrahana, Laja Homa, Saptapadi & Sindoor Daan.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Vivah ranges from ₹21,500 to ₹76,500.",
-      "missingBusinessInfo": "Outstation wedding travel allowance & late night muhurat surcharge.",
-      "packages": [
-        {
-          "id": "vm-basic",
-          "name": {
-            "en": "Basic — Senior Acharya Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Single Senior Acharya",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 7500,
-          "priceDisplay": "₹7,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Senior North Indian Acharya conducting complete Vivah Sanskar & Saptapadi",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Muhurat coordination & Vivah checklist provided",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Dry fruits, puffed rice (Laja)",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Mandap setup",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "vm-standard",
-          "name": {
-            "en": "Standard — Senior Acharya + Complete Vivah Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 11500,
-          "priceDisplay": "₹11,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Senior North Indian Acharya conducting complete ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Complete Vivah Hawan Samagri kit, Laja (kheel) & pure cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Sindoor, Roli, Akshat, Janeu, Kalash vastram & sacred Gathbandhan cloth",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh garlands (Jaimala), fruits, sweets, mandap brassware",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        },
-        {
-          "id": "vm-premium",
-          "name": {
-            "en": "Premium — 2 Acharyas + Full Vedic Chanting",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "premium",
-          "badge": {
-            "en": "Grand Wedding Setup",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 16500,
-          "priceDisplay": "₹16,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "2 Senior Acharyas (Purohit + Assistant Priest) for flawless Vedic chanting",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Complete premium Hawan Samagri box with pure cow ghee & dry fruits",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Pre-wedding Lagna Patrika writing & Gotra pravara coordination",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Mandap physical decoration",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "engagement-puja-sagai": {
-      "serviceId": "engagement-puja-sagai",
-      "serviceName": {
-        "en": "Engagement Puja (Sagai & Ring Ceremony)",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "wedding-services",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2500,
-      "maxPrice": 3800,
-      "startingPriceDisplay": "From ₹2,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "2 hrs formal mutual commitment blessing and ring sanctification.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Engagement ranges from ₹4,500 to ₹10,500.",
-      "missingBusinessInfo": "Shagun thali layout guidance.",
-      "packages": [
-        {
-          "id": "eng-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 2500,
-          "priceDisplay": "₹2,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Gauri-Ganesh Pujan & Ring blessing",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Vagdan Sankalp between families & Checklist",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Shagun thali items",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Sweets",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "eng-standard",
-          "name": {
-            "en": "Standard — Ritual + Hawan Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3800,
-          "priceDisplay": "₹3,800*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Essential Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Roli, Chandan, Janeu, Kalash items & sacred thread",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh flowers, dry fruits & sweets",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "roka-ceremony": {
-      "serviceId": "roka-ceremony",
-      "serviceName": {
-        "en": "Roka Ceremony & Pre-Vivah Sankalp",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "wedding-services",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2100,
-      "maxPrice": 3200,
-      "startingPriceDisplay": "From ₹2,100*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "1.5 hrs initial commitment blessing and Tilak ceremony.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Roka ranges from ₹3,500 to ₹7,500.",
-      "missingBusinessInfo": "Venue differential (home vs banquet).",
-      "packages": [
-        {
-          "id": "rk-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 2100,
-          "priceDisplay": "₹2,100*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Gauri-Ganesh Pujan & Tilak",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Roka Sankalp & Checklist",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Dry fruits, sweets, shagun",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "rk-standard",
-          "name": {
-            "en": "Standard — Ritual + Puja Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3200,
-          "priceDisplay": "₹3,200*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Essential Puja Samagri kit included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Roli, Akshat, Chandan, Moli & Dhoop",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh fruits, mithai & shagun gifts",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "haldi-ceremony": {
-      "serviceId": "haldi-ceremony",
-      "serviceName": {
-        "en": "Traditional Haldi Ceremony Vidhi",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "wedding-services",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2100,
-      "maxPrice": 3200,
-      "startingPriceDisplay": "From ₹2,100*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "1.5 hrs pre-wedding Vedic purification and turmeric sanctification.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Haldi ceremony ranges from ₹3,500 to ₹7,500.",
-      "missingBusinessInfo": "Organic turmeric paste provision.",
-      "packages": [
-        {
-          "id": "hl-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 2100,
-          "priceDisplay": "₹2,100*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Gauri-Ganesh & Haldi sanctification",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Raksha Sutra & Checklist",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Turmeric roots / paste",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Fresh yellow marigolds",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "hl-standard",
-          "name": {
-            "en": "Standard — Ritual + Haldi Pujan Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3200,
-          "priceDisplay": "₹3,200*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Essential Puja Samagri kit & pure Kasturi turmeric powder included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Roli, Chandan, sacred thread",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh yellow flowers & sweets",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "kumbh-vivah-for-female": {
-      "serviceId": "kumbh-vivah-for-female",
-      "serviceName": {
-        "en": "Kumbh Vivah (Manglik Shanti for Bride)",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "wedding-services",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 4500,
-      "maxPrice": 6500,
-      "startingPriceDisplay": "From ₹4,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "2.5 hrs Mangal dosha remedy where bride is first married to a consecrated Vishnu Kumbh.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Kumbha Vivaha ranges from ₹6,500 to ₹18,000.",
-      "missingBusinessInfo": "Clay Kumbh pot immersion instructions.",
-      "packages": [
-        {
-          "id": "kv-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 4500,
-          "priceDisplay": "₹4,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Senior Pandit Dakshina for complete Kumbh Vivah Vidhi",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Manglik dosha nivaran chanting & Checklist",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Clay Kumbh pot & Vishnu idol",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Ghee",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "kv-standard",
-          "name": {
-            "en": "Standard — Ritual + Full Kumbh Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 6500,
-          "priceDisplay": "₹6,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Senior Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Consecrated earthen Kumbh pot, yellow cloth, Janeu, Mangal samidha included",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Fresh flowers, coconuts & milk",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "ark-vivah-for-male": {
-      "serviceId": "ark-vivah-for-male",
-      "serviceName": {
-        "en": "Ark Vivah (Manglik Shanti for Groom)",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "wedding-services",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 4500,
-      "maxPrice": 6500,
-      "startingPriceDisplay": "From ₹4,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "2.5 hrs Manglik remedy where groom is symbolically married to an Ark (Madar) plant.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Arka Vivaha ranges from ₹6,500 to ₹18,000.",
-      "missingBusinessInfo": "Procurement of flowering Ark plant.",
-      "packages": [
-        {
-          "id": "av-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 4500,
-          "priceDisplay": "₹4,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Senior Pandit Dakshina for Ark Vivah Vidhi & Manglik Shanti",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Surya Pujan & Checklist",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Ark plant",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Ghee",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "av-standard",
-          "name": {
-            "en": "Standard — Ritual + Full Ark Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 6500,
-          "priceDisplay": "₹6,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Senior Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Ark Vivah cloths, sacred thread & Mangal samidha included",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Live Ark / Madar plant (arranged at venue), fresh flowers",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "tulsi-vivah-puja": {
-      "serviceId": "tulsi-vivah-puja",
-      "serviceName": {
-        "en": "Tulsi Vivah Puja & Dev Uthani Ekadashi",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "wedding-services",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 3100,
-      "maxPrice": 4500,
-      "startingPriceDisplay": "From ₹3,100*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "2.5 hrs ceremonial marriage of Tulsi with Lord Shaligram.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Tulsi Vivaha ranges from ₹4,500 to ₹11,000.",
-      "missingBusinessInfo": "Sugarcane mandap stalks arrangement.",
-      "packages": [
-        {
-          "id": "tv-basic",
-          "name": {
-            "en": "Basic — Ritual Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3100,
-          "priceDisplay": "₹3,100*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for Tulsi-Shaligram Vivah Vidhi & Katha",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Red chunri & sugarcane stalks",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Prasad",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "tv-standard",
-          "name": {
-            "en": "Standard — Ritual + Hawan Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 4500,
-          "priceDisplay": "₹4,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Tulsi Red Chunri, Shaligram vastram, Roli, Akshat",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Sugarcane stalks (for mandap), fresh sweets, fruits",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-havan-samagri",
-            "opt-cow-ghee",
-            "opt-complete-kit"
-          ]
-        }
-      ]
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Recitation with or without concluding hawan.",
+      "startingPriceDisplay": "From ₹3,500*"
     },
     "pitru-paksha-mahalaya-shradh-puja": {
-      "serviceId": "pitru-paksha-mahalaya-shradh-puja",
-      "serviceName": {
-        "en": "Pitru Paksha Mahalaya Shradh Puja",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "pitru-pujas",
       "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 2500,
+      "category": "pitru-pujas",
       "maxPrice": 3800,
-      "startingPriceDisplay": "From ₹2,500*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "2 hrs annual ancestral remembrance during Mahalaya with Pinda Daan.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Shradh packages range from ₹3,500 to ₹10,800.",
-      "missingBusinessInfo": "Pinda kheer preparation guidance.",
+      "minPrice": 1100,
       "packages": [
         {
           "id": "pp-basic",
           "name": {
-            "en": "Basic — Purohit Dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Package A — Ritual Only",
+            "hi": "पैकेज A — केवल पूजा दक्षिणा",
+            "mr": "पॅकेज A — फक्त पूजा दक्षिणा"
           },
           "tier": "standard",
           "badge": {
             "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
+            "hi": "यजमान सामग्री की व्यवस्था करते हैं",
+            "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
-          "indicativePrice": 2500,
-          "priceDisplay": "₹2,500*",
+          "indicativePrice": 1100,
+          "priceDisplay": "₹1,100*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
@@ -7532,22 +7758,22 @@ insert into public.pricing (id, data) values (1, $seed${
         {
           "id": "pp-standard",
           "name": {
-            "en": "Standard — Purohit + Shradh Kit",
-            "hi": "",
-            "mr": ""
+            "en": "Package B — Ritual + Samagri",
+            "hi": "पैकेज B — दक्षिणा + सम्पूर्ण सामग्री",
+            "mr": "पॅकेज B — दक्षिणा + संपूर्ण साहित्य"
           },
           "tier": "popular",
           "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
+            "en": "Most Popular (Complete Kit Included)",
+            "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
+            "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
           },
-          "indicativePrice": 3800,
-          "priceDisplay": "₹3,800*",
+          "indicativePrice": 2600,
+          "priceDisplay": "₹2,600*",
           "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
+            "en": "Pandit Dakshina ₹1,100* + Complete Dry Puja Samagri Kit included",
+            "hi": "पंडित दक्षिणा + सम्पूर्ण पूजा सामग्री किट शामिल",
+            "mr": "पंडित दक्षिणा + संपूर्ण पूजा साहित्य किट समाविष्ट"
           },
           "inclusions": [
             {
@@ -7577,567 +7803,28 @@ insert into public.pricing (id, data) values (1, $seed${
             "opt-complete-kit"
           ]
         }
-      ]
-    },
-    "amavasya-tarpan": {
-      "serviceId": "amavasya-tarpan",
-      "serviceName": {
-        "en": "Amavasya Tarpan & Gau Daan",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "pitru-pujas",
-      "model": "fixed-price",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 1500,
-      "maxPrice": 2200,
-      "startingPriceDisplay": "₹1,500",
-      "pricingNote": {
-        "en": "Proposed fixed dakshina (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "1 hr monthly water and sesame oblation to ancestors.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Tarpan ranges from ₹1,500 to ₹4,500.",
-      "missingBusinessInfo": "Gaushala Gau-grass coordination in Pune.",
-      "packages": [
-        {
-          "id": "at-standard",
-          "name": {
-            "en": "Monthly Tarpan Vidhi",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Doorstep Service",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 1500,
-          "priceDisplay": "₹1,500",
-          "priceNote": {
-            "en": "Fixed standard dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Purohit Dakshina for 3-generation Pitru Tarpan",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Gotra & Nakshatra sankalp",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Sacred Kusha grass & Black sesame included",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Devotee provides clean water, milk, and white flowers",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "at-with-gaudaan",
-          "name": {
-            "en": "Tarpan + Gau Daan Token",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 2200,
-          "priceDisplay": "₹2,200",
-          "priceNote": {
-            "en": "Includes Gaushala grass token",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Purohit Dakshina for complete Tarpan",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Kusha grass, Til & Gangajal included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Token grass donation consecrated in ancestor name for cow feed",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Household vessels",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        }
-      ]
-    },
-    "barsi-ceremony": {
-      "serviceId": "barsi-ceremony",
-      "serviceName": {
-        "en": "Barsi Ceremony (Annual Shradh)",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "pitru-pujas",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 3100,
-      "maxPrice": 4500,
-      "startingPriceDisplay": "From ₹3,100*",
+      ],
+      "serviceId": "pitru-paksha-mahalaya-shradh-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
         "hi": "",
         "mr": ""
       },
-      "pricingRationale": {
-        "en": "2.5 hrs annual death anniversary ceremony with formal Pinda Daan.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Barsi ranges from ₹4,500 to ₹12,500.",
-      "missingBusinessInfo": "Vastram donation for presiding Brahmin.",
-      "packages": [
-        {
-          "id": "br-basic",
-          "name": {
-            "en": "Basic — Purohit Dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "Devotee Arranges Samagri",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 3100,
-          "priceDisplay": "₹3,100*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Senior Purohit Dakshina for Barsi Shradh & Pinda Daan",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Pinda flour, sesame, milk",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Brahmin bhojan",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "br-standard",
-          "name": {
-            "en": "Standard — Purohit + Complete Shradh Kit",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 4500,
-          "priceDisplay": "₹4,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Senior Purohit for complete ceremony",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Black sesame (Kala Til), Kusha grass, Pinda flour & Gangajal included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Vastram token for Brahmin & incense included",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Cooked pinda kheer & family feast",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "mata-ki-chowki": {
-      "serviceId": "mata-ki-chowki",
       "serviceName": {
-        "en": "Mata Ki Chowki & Akhand Jyot",
+        "en": "Pitru Paksha Mahalaya Shradh Puja",
         "hi": "",
         "mr": ""
       },
-      "category": "bhajans-chowki",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 11000,
-      "maxPrice": 28000,
-      "startingPriceDisplay": "From ₹11,000*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
+      "researchBasis": "",
+      "approvalStatus": "approved",
       "pricingRationale": {
-        "en": "4 to 6 hrs devotional program with lead singer, musicians, and Akhand Jyot.",
+        "en": "2 hrs annual ancestral remembrance during Mahalaya with Pinda Daan.",
         "hi": "",
         "mr": ""
       },
-      "researchBasis": "Harivara Chowki ranges from ₹18,000 to ₹55,000.",
-      "missingBusinessInfo": "Sound system capacity & artist count per package.",
-      "packages": [
-        {
-          "id": "mkc-basic",
-          "name": {
-            "en": "Devotional Recital — 3 Performing Artists",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "3 Artists",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 11000,
-          "priceDisplay": "₹11,000*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Lead Bhajan Singer + Harmonium + Dholak Player",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Chowki Sthapana & Akhand Jyot blessing",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "External sound system",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Bhog & dry fruit distribution",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": []
-        },
-        {
-          "id": "mkc-standard",
-          "name": {
-            "en": "Devotional Recital — 5 Artists + Audio Setup",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 18500,
-          "priceDisplay": "₹18,500*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Lead Singer + Female Co-Singer + Dholak + Octapad + Harmonium",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Apartment/Hall Sound System & Microphones included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Chowki Pujan Samagri, Chunri & Akhand Jyot setup included",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Tara Rani Katha & Maha Aarti",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Prasad & 56 Bhog catering",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-complete-kit"
-          ]
-        },
-        {
-          "id": "mkc-premium",
-          "name": {
-            "en": "Premium Troupe — 7 Artists + Grand Bhawan",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "premium",
-          "badge": {
-            "en": "Grand Setup",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 28000,
-          "priceDisplay": "₹28,000*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Complete 7-artist Troupe (Lead Singers, Full Percussion, Flute/Synthesizer)",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "High-fidelity Sound setup with stage mics",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Grand Bhawan decorative floral backdrop support & Chhappan Bhog aarti",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Hall rental and catering",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-complete-kit"
-          ]
-        }
-      ]
-    },
-    "jagran-puja": {
-      "serviceId": "jagran-puja",
-      "serviceName": {
-        "en": "Raat Ka Jagran & Bhajan Sandhya",
-        "hi": "",
-        "mr": ""
-      },
-      "category": "bhajans-chowki",
-      "model": "package-pricing",
-      "approvalStatus": "proposed",
-      "isBusinessApproved": false,
-      "minPrice": 31000,
-      "maxPrice": 45000,
-      "startingPriceDisplay": "From ₹31,000*",
-      "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
-      },
-      "pricingRationale": {
-        "en": "All-night (9 PM to 5 AM) devotional vigil with orchestra, sound, and Tara Rani katha.",
-        "hi": "",
-        "mr": ""
-      },
-      "researchBasis": "Harivara Jagran ranges from ₹35,000 to ₹85,000+.",
-      "missingBusinessInfo": "Jhanki artists availability in Pune/PCMC.",
-      "packages": [
-        {
-          "id": "jg-standard",
-          "name": {
-            "en": "Standard Jagran — 5-Artist Orchestra",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "standard",
-          "badge": {
-            "en": "All-Night Vigil",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 31000,
-          "priceDisplay": "₹31,000*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "5-Member All-Night Devotional Troupe (9 PM to 5 AM)",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "High-power sound system and stage microphones",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Akhand Jyot, Ganesh Pujan, Tara Rani Katha & morning Aarti",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Jhanki stage actors",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Midnight tea/snacks for devotees",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-complete-kit"
-          ]
-        },
-        {
-          "id": "jg-grand",
-          "name": {
-            "en": "Grand Jagran — 7 Artists + Jhanki Presentations",
-            "hi": "",
-            "mr": ""
-          },
-          "tier": "popular",
-          "badge": {
-            "en": "Most Popular",
-            "hi": "",
-            "mr": ""
-          },
-          "indicativePrice": 45000,
-          "priceDisplay": "₹45,000*",
-          "priceNote": {
-            "en": "Proposed starting dakshina",
-            "hi": "",
-            "mr": ""
-          },
-          "inclusions": [
-            {
-              "en": "Full 7-Artist Orchestra with dynamic sound system",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Live mythological Jhanki performances (Radha Krishna, Shiva Tandav)",
-              "hi": "",
-              "mr": ""
-            },
-            {
-              "en": "Akhand Jyot setup, Hawan Samagri & morning Aarti with conch",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "exclusions": [
-            {
-              "en": "Large public tent setup",
-              "hi": "",
-              "mr": ""
-            }
-          ],
-          "includedSamagriIds": [
-            "opt-complete-kit"
-          ]
-        }
-      ]
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "Pinda kheer preparation guidance.",
+      "startingPriceDisplay": "From ₹1,100*"
     }
   },
   "samagriOptions": [
@@ -8145,117 +7832,135 @@ insert into public.pricing (id, data) values (1, $seed${
       "id": "opt-havan-samagri",
       "name": {
         "en": "Pure Herbal Hawan Samagri Pack (1.5 kg)",
-        "hi": "",
-        "mr": ""
+        "hi": "शुद्ध हर्बल हवन सामग्री पैक (1.5 किग्रा)",
+        "mr": "शुद्ध हर्बल हवन साहित्य पॅक (1.5 किलो)"
       },
+      "quantity": 1.5,
+      "unit": "kg",
+      "price": 950,
+      "category": "havan",
       "description": {
         "en": "Herbal mixture with 54 Ayurvedic herbs, guggul, loban, black sesame & sacred wood",
-        "hi": "",
-        "mr": ""
+        "hi": "54 आयुर्वेदिक जड़ी-बूटियों, गुग्गल, लोबान, काले तिल और पवित्र लकड़ी का मिश्रण",
+        "mr": "54 आयुर्वेदिक औषधी वनस्पती, गुग्गुळ, लोबान, काळे तीळ आणि समिधा यांचे मिश्रण"
       },
-      "price": 950,
       "priceDisplay": "₹950",
-      "category": "havan",
-      "isPriceVerified": true,
       "includedInTiers": [
         "popular"
-      ]
+      ],
+      "isPriceVerified": true,
+      "isActive": true
     },
     {
       "id": "opt-cow-ghee",
       "name": {
         "en": "Pure Desi Cow Ghee for Homa (500g)",
-        "hi": "",
-        "mr": ""
+        "hi": "हवन हेतु शुद्ध देसी गाय का घी (500 ग्राम)",
+        "mr": "हवनासाठी शुद्ध देशी गाईचे तूप (500 ग्रॅम)"
       },
+      "quantity": 500,
+      "unit": "g",
+      "price": 550,
+      "category": "ghee",
       "description": {
         "en": "Consecrated pure cow ghee for sacred Agnihotra fire offerings",
-        "hi": "",
-        "mr": ""
+        "hi": "पवित्र अग्निहोत्र आहुति हेतु शुद्ध देसी गाय का घी",
+        "mr": "पवित्र अग्निहोत्र आहुतीसाठी शुद्ध देशी गाईचे तूप"
       },
-      "price": null,
-      "priceDisplay": "Price to be confirmed",
-      "category": "ghee",
-      "isPriceVerified": false,
+      "priceDisplay": "₹550",
       "includedInTiers": [
         "popular"
-      ]
+      ],
+      "isPriceVerified": true,
+      "isActive": true
     },
     {
       "id": "opt-complete-kit",
       "name": {
-        "en": "Complete Dry Puja & Hawan Samagri Box",
-        "hi": "",
-        "mr": ""
+        "en": "Complete Dry Puja & Hawan Samagri Box (1 Box)",
+        "hi": "सम्पूर्ण सूखी पूजा एवं हवन सामग्री बॉक्स (1 बॉक्स)",
+        "mr": "संपूर्ण कोरडी पूजा आणि हवन साहित्य बॉक्स (1 बॉक्स)"
       },
+      "quantity": 1,
+      "unit": "box",
+      "price": 1500,
+      "category": "kits",
       "description": {
         "en": "Full box: Gangajal, Roli, Akshat, Janeu, Kalash vastram & Dry Fruits",
-        "hi": "",
-        "mr": ""
+        "hi": "सम्पूर्ण बॉक्स: गंगाजल, रोली, अक्षत, जनेऊ, कलश वस्त्र एवं सूखे मेवे",
+        "mr": "संपूर्ण बॉक्स: गंगाजल, रोळी, अक्षता, जानवे, कलश वस्त्र आणि सुका मेवा"
       },
-      "price": null,
-      "priceDisplay": "Price to be confirmed",
-      "category": "kits",
-      "isPriceVerified": false,
+      "priceDisplay": "₹1,500",
       "includedInTiers": [
         "popular"
-      ]
+      ],
+      "isPriceVerified": true,
+      "isActive": true
     },
     {
       "id": "opt-flowers",
       "name": {
-        "en": "Fresh Flowers & Toran Garland",
-        "hi": "",
-        "mr": ""
+        "en": "Fresh Flowers & Toran Garland (1 Set)",
+        "hi": "ताजे फूल एवं तोरण माला (1 सेट)",
+        "mr": "ताजी फुले आणि तोरण माळ (1 संच)"
       },
+      "quantity": 1,
+      "unit": "set",
+      "price": 450,
+      "category": "fresh",
       "description": {
         "en": "Fresh marigold garlands, loose puja flowers & sacred tulsi",
-        "hi": "",
-        "mr": ""
+        "hi": "ताजे गेंदे के फूलों की माला, खुले पूजा फूल एवं पवित्र तुलसी",
+        "mr": "ताज्या झेंडूच्या फुलांच्या माळा, सुटी पूजा फुले आणि पवित्र तुळस"
       },
-      "price": null,
-      "priceDisplay": "Price to be confirmed",
-      "category": "fresh",
-      "isPriceVerified": false,
-      "includedInTiers": []
+      "priceDisplay": "₹450",
+      "includedInTiers": [],
+      "isPriceVerified": true,
+      "isActive": true
     },
     {
       "id": "opt-fruits",
       "name": {
         "en": "Pancha-Phala (5 Fresh Seasonal Fruits)",
-        "hi": "",
-        "mr": ""
+        "hi": "पंच-फल (5 ताजे मौसमी फल)",
+        "mr": "पंच-फळे (5 ताजी हंगामी फळे)"
       },
+      "quantity": 5,
+      "unit": "types",
+      "price": 350,
+      "category": "fresh",
       "description": {
         "en": "5 varieties of fresh fruits for sacred Naivedya offering",
-        "hi": "",
-        "mr": ""
+        "hi": "पवित्र नैवेद्य भोग हेतु 5 प्रकार के ताजे फल",
+        "mr": "पवित्र नैवेद्य अर्पणासाठी 5 प्रकारची ताजी फळे"
       },
-      "price": null,
-      "priceDisplay": "Price to be confirmed",
-      "category": "fresh",
-      "isPriceVerified": false,
-      "includedInTiers": []
+      "priceDisplay": "₹350",
+      "includedInTiers": [],
+      "isPriceVerified": true,
+      "isActive": true
     },
     {
       "id": "opt-coconut",
       "name": {
-        "en": "Purna Shrifal (Sacred Coconuts with Water)",
-        "hi": "",
-        "mr": ""
+        "en": "Purna Shrifal (2 Sacred Coconuts with Water)",
+        "hi": "पूर्ण श्रीफल (जल से भरे 2 पवित्र नारियल)",
+        "mr": "पूर्ण श्रीफळ (पाण्याने भरलेले 2 पवित्र नारळ)"
       },
+      "quantity": 2,
+      "unit": "pcs",
+      "price": 200,
+      "category": "fresh",
       "description": {
         "en": "2 auspicious water coconuts for Kalash Sthapana & Balidana",
-        "hi": "",
-        "mr": ""
+        "hi": "कलश स्थापना एवं बलिदान हेतु 2 शुभ पानी वाले नारियल",
+        "mr": "कलश स्थापना आणि बलिदानासाठी 2 शुभ पाण्याचे नारळ"
       },
-      "price": null,
-      "priceDisplay": "Price to be confirmed",
-      "category": "fresh",
-      "isPriceVerified": false,
-      "includedInTiers": []
+      "priceDisplay": "₹200",
+      "includedInTiers": [],
+      "isPriceVerified": true,
+      "isActive": true
     }
   ]
 }
-$seed$::jsonb)
-on conflict (id) do nothing;
+)
+on conflict (id) do update set data = excluded.data;

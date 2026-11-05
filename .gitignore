@@ -47,3 +47,7 @@ Thumbs.db
 
 # Git worktrees
 .worktrees/
+
+# Local Scratch and Backups
+frontend/scratch/
+frontend/public/images-backup/

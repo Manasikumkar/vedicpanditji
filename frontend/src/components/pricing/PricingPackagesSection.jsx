@@ -196,6 +196,7 @@ export default function PricingPackagesSection({
             >
               {packages.map((pkg) => {
                 const isPopular = pkg.tier === 'popular';
+                const bundledItems = (pkg.includedSamagriIds || []).map((id) => samagriOptions.find((s) => s.id === id)).filter(Boolean);
                 return (
                   <div
                     key={pkg.id}
@@ -244,13 +245,22 @@ export default function PricingPackagesSection({
                     </h3>
 
                     {/* Price */}
-                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px', marginBottom: '18px' }}>
-                      <span style={{ fontSize: '30px', fontWeight: 900, color: '#BD4B23' }}>
-                        {pkg.priceDisplay}
-                      </span>
-                      <span style={{ fontSize: '12px', color: 'var(--text-muted, #8C8270)' }}>
-                        {model === PRICING_MODELS.MODEL_A_FIXED ? t('pricing.price-note.fixed') : t('pricing.price-note.starting')}
-                      </span>
+                    <div style={{ marginBottom: '18px' }}>
+                      <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
+                        <span style={{ fontSize: '30px', fontWeight: 900, color: '#BD4B23' }}>
+                          {pkg.priceDisplay}
+                        </span>
+                        <span style={{ fontSize: '12px', color: 'var(--text-muted, #8C8270)' }}>
+                          {pkg.indicativePrice === null
+                            ? '(Quote on Request)'
+                            : (model === PRICING_MODELS.MODEL_A_FIXED ? t('pricing.price-note.fixed') : t('pricing.price-note.starting'))}
+                        </span>
+                      </div>
+                      {pkg.priceNote && (
+                        <div style={{ fontSize: '12px', color: 'var(--text-secondary, #6B6355)', marginTop: '4px', lineHeight: 1.35 }}>
+                          {typeof pkg.priceNote === 'string' ? pkg.priceNote : pkg.priceNote[lang] || pkg.priceNote.en}
+                        </div>
+                      )}
                     </div>
 
                     {/* Inclusions Block */}
@@ -307,6 +317,65 @@ export default function PricingPackagesSection({
                     </div>
 
                     {/* Exclusions / Devotee Preparations Block */}
+                    {bundledItems.length > 0 && (
+                      <div
+                        style={{
+                          background: '#FFF8F5',
+                          borderRadius: '12px',
+                          padding: '12px 14px',
+                          marginBottom: '16px',
+                          border: '1px solid #FED7AA'
+                        }}
+                      >
+                        <div
+                          style={{
+                            fontSize: '11px',
+                            fontWeight: 800,
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.06em',
+                            color: '#C2410C',
+                            marginBottom: '8px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '5px'
+                          }}
+                        >
+                          <Package size={13} color="#C2410C" />
+                          <span>Included Samagri Items ({bundledItems.length})</span>
+                        </div>
+                        <ul
+                          style={{
+                            listStyle: 'none',
+                            padding: 0,
+                            margin: 0,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '6px'
+                          }}
+                        >
+                          {bundledItems.map((item) => (
+                            <li
+                              key={item.id}
+                              style={{
+                                fontSize: '12.5px',
+                                color: '#7C2D12',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '6px'
+                              }}
+                            >
+                              <span style={{ color: '#EA580C', fontWeight: 'bold' }}>✓</span>
+                              <span style={{ fontWeight: 600 }}>{item.name}</span>
+                              {item.quantity && item.unit && (
+                                <span style={{ fontSize: '11.5px', color: '#9A3412', opacity: 0.9 }}>
+                                  ({item.quantity} {item.unit})
+                                </span>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                     <div
                       style={{
                         flex: 1,

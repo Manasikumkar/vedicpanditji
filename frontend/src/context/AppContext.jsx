@@ -6,6 +6,7 @@ import { submitEnquiryToWebhook } from '../services/webhookService';
 import { getSeoMetadata, applySeoMetadataToDom } from '../utils/seoMetadata';
 import { Analytics } from '../utils/analytics';
 import { loadLivePricing } from '../services/pricingService';
+import { prefetchRoute } from '../utils/prefetch';
 import { splitLangPrefix, localizePath } from '../i18n/paths';
 import { DEFAULT_LANG } from '../i18n/languages';
 import { translate } from '../i18n';
@@ -160,6 +161,7 @@ export function AppProvider({ children }) {
 
   // Route Navigation Helper with History PushState
   const navigateTo = (route, params = {}) => {
+    try { prefetchRoute(route); } catch {}
     setCurrentRoute(route);
     setRouteParams(params);
     

@@ -152,10 +152,15 @@ export default function SeoLandingPage({ slug: propSlug }) {
 
               <a
                 href="#pricing-packages"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const target = document.getElementById('pricing-packages');
+                  if (target) target.scrollIntoView({ behavior: 'smooth' });
+                }}
                 className="btn-secondary seo-cta-call"
                 style={{ textDecoration: 'none' }}
               >
-                <Sparkles size={16} />
+                <Sparkles size={16} color="#BD4B23" />
                 <span>View Puja Packages</span>
               </a>
             </div>
@@ -268,7 +273,7 @@ export default function SeoLandingPage({ slug: propSlug }) {
           </section>
 
           {/* Card 2: Popular Ceremonies Available in This City */}
-          <section className="popular-ceremonies-section">
+          <section id="pricing-packages" className="popular-ceremonies-section">
             <div className="section-header" style={{ marginBottom: '32px' }}>
               <span className="section-tag">Most Requested in {pageData.city}</span>
               <h2 className="section-title" style={{ fontSize: '28px' }}>
@@ -285,13 +290,25 @@ export default function SeoLandingPage({ slug: propSlug }) {
                   <div
                     className="puja-quick-img"
                     style={{
-                      backgroundImage: `url(${svc.image || '/images/hero-puja.jpg'})`,
                       height: '140px',
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      position: 'relative'
+                      position: 'relative',
+                      overflow: 'hidden',
+                      backgroundColor: '#FAF8F5'
                     }}
                   >
+                    <img
+                      src={svc.image || '/images/hero-puja.jpg'}
+                      alt={svc.name}
+                      loading="lazy"
+                      decoding="async"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: 'center',
+                        display: 'block'
+                      }}
+                    />
                     <div
                       style={{
                         position: 'absolute',
@@ -580,16 +597,26 @@ export default function SeoLandingPage({ slug: propSlug }) {
         }
 
         .seo-cta-call {
-          padding: 13px 22px;
+          padding: 13px 24px;
           font-size: 14px;
-          background: rgba(255, 255, 255, 0.1);
-          color: #FFFFFF;
-          border-color: rgba(255, 255, 255, 0.25);
+          font-weight: 700;
+          background: #FFFFFF !important;
+          color: #BD4B23 !important;
+          border: 1px solid rgba(255, 255, 255, 0.95) !important;
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          border-radius: var(--radius-full);
+          transition: all 0.2s ease;
         }
 
         .seo-cta-call:hover {
-          background: #FFFFFF;
-          color: var(--accent-saffron);
+          background: #FFF7ED !important;
+          color: #9A3412 !important;
+          border-color: #FED7AA !important;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
         }
 
         .seo-trust-row {
