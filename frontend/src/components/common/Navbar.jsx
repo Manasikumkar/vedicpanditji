@@ -226,7 +226,7 @@ export default function Navbar() {
               </button>
             </div>
 
-            <LanguageSwitcher />
+            <LanguageSwitcher inDrawer />
 
             {/* Navigation Links */}
             <nav className="vp-drawer-nav">

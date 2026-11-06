@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://vedicpanditji.com/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/about-us</loc>
@@ -17,6 +21,10 @@
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/contact</loc>
@@ -551,353 +559,1809 @@
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/griha-pravesh" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/griha-pravesh" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/griha-pravesh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/griha-pravesh" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/satyanarayan-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/satyanarayan-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/satyanarayan-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/satyanarayan-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/satyanarayan-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/bhoomi-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/bhoomi-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/bhoomi-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/bhoomi-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/bhoomi-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/office-opening-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/office-opening-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/office-opening-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/office-opening-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/office-opening-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/mahalaxmi-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/mahalaxmi-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/mahalaxmi-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/mahalaxmi-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/mahalaxmi-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/saraswati-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/saraswati-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/saraswati-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/saraswati-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/saraswati-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/ganesh-sthapana-visarjan</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/ganesh-sthapana-visarjan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/ganesh-sthapana-visarjan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/ganesh-sthapana-visarjan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/ganesh-sthapana-visarjan" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/annaprashan-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/annaprashan-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/annaprashan-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/annaprashan-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/annaprashan-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/mundan-or-chudakarana-ceremony</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/mundan-or-chudakarana-ceremony" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/mundan-or-chudakarana-ceremony" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/mundan-or-chudakarana-ceremony" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/mundan-or-chudakarana-ceremony" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/namkaran-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/namkaran-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/namkaran-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/namkaran-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/namkaran-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/godh-bharai-puja-baby-shower</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/godh-bharai-puja-baby-shower" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/godh-bharai-puja-baby-shower" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/godh-bharai-puja-baby-shower" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/godh-bharai-puja-baby-shower" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/yagnopavit-sanskar</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/yagnopavit-sanskar" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/yagnopavit-sanskar" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/yagnopavit-sanskar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/yagnopavit-sanskar" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/shuddhikaran-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/shuddhikaran-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/shuddhikaran-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/shuddhikaran-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/shuddhikaran-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/brihaspati-vrat-udyapan-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/brihaspati-vrat-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/brihaspati-vrat-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/brihaspati-vrat-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/brihaspati-vrat-udyapan-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/solah-somvar-udyapan-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/solah-somvar-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/solah-somvar-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/solah-somvar-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/solah-somvar-udyapan-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/ekadashi-vrat-udyapan-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/ekadashi-vrat-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/ekadashi-vrat-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/ekadashi-vrat-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/ekadashi-vrat-udyapan-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/kuber-upasana-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/kuber-upasana-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/kuber-upasana-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/kuber-upasana-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/kuber-upasana-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/vishwakarma-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/vishwakarma-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/vishwakarma-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/vishwakarma-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/vishwakarma-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/new-vehicle-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/new-vehicle-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/new-vehicle-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/new-vehicle-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/new-vehicle-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/rudrabhishek-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/rudrabhishek-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/rudrabhishek-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/rudrabhishek-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/rudrabhishek-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/ganapathi-havan</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/ganapathi-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/ganapathi-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/ganapathi-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/ganapathi-havan" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/navagraha-havan</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/navagraha-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/navagraha-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/navagraha-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/navagraha-havan" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/chandi-havan</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/chandi-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/chandi-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/chandi-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/chandi-havan" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/mrityunjaya-havan</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/mrityunjaya-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/mrityunjaya-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/mrityunjaya-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/mrityunjaya-havan" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/ayush-havan</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/ayush-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/ayush-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/ayush-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/ayush-havan" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/dhanvantri-havan</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/dhanvantri-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/dhanvantri-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/dhanvantri-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/dhanvantri-havan" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/rudra-havan</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/rudra-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/rudra-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/rudra-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/rudra-havan" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/gayatri-havan</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/gayatri-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/gayatri-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/gayatri-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/gayatri-havan" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/laxmi-kubera-havan</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/laxmi-kubera-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/laxmi-kubera-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/laxmi-kubera-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/laxmi-kubera-havan" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/sudarshan-havan</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/sudarshan-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/sudarshan-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/sudarshan-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/sudarshan-havan" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/sri-sukta-havan</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/sri-sukta-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/sri-sukta-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/sri-sukta-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/sri-sukta-havan" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/maha-mrityunjaya-jaap</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/maha-mrityunjaya-jaap" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/maha-mrityunjaya-jaap" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/maha-mrityunjaya-jaap" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/maha-mrityunjaya-jaap" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/gayatri-mantra-jaap</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/gayatri-mantra-jaap" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/gayatri-mantra-jaap" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/gayatri-mantra-jaap" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/gayatri-mantra-jaap" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/santan-gopal-mantra-jaap</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/santan-gopal-mantra-jaap" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/santan-gopal-mantra-jaap" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/santan-gopal-mantra-jaap" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/santan-gopal-mantra-jaap" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/navagraha-graha-shanti-jaap</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/navagraha-graha-shanti-jaap" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/navagraha-graha-shanti-jaap" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/navagraha-graha-shanti-jaap" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/navagraha-graha-shanti-jaap" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/kaal-sarp-dosh-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/kaal-sarp-dosh-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/kaal-sarp-dosh-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/kaal-sarp-dosh-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/kaal-sarp-dosh-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/gand-mool-nakshatra-shanti-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/gand-mool-nakshatra-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/gand-mool-nakshatra-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/gand-mool-nakshatra-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/gand-mool-nakshatra-shanti-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/guru-chandal-yoga-shanti</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/guru-chandal-yoga-shanti" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/guru-chandal-yoga-shanti" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/guru-chandal-yoga-shanti" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/guru-chandal-yoga-shanti" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/grahan-yog-shanti-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/grahan-yog-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/grahan-yog-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/grahan-yog-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/grahan-yog-shanti-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/sunderkand-path</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/sunderkand-path" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/sunderkand-path" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/sunderkand-path" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/sunderkand-path" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/akhand-ramayan-path</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/akhand-ramayan-path" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/akhand-ramayan-path" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/akhand-ramayan-path" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/akhand-ramayan-path" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/chandi-path-durga-saptashati-path</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/chandi-path-durga-saptashati-path" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/chandi-path-durga-saptashati-path" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/chandi-path-durga-saptashati-path" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/chandi-path-durga-saptashati-path" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/vishnu-sahasranam-path</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/vishnu-sahasranam-path" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/vishnu-sahasranam-path" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/vishnu-sahasranam-path" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/vishnu-sahasranam-path" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/lalitha-sahasranam-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/lalitha-sahasranam-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/lalitha-sahasranam-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/lalitha-sahasranam-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/lalitha-sahasranam-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/garud-puran-path</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/garud-puran-path" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/garud-puran-path" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/garud-puran-path" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/garud-puran-path" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/vastu-shanti-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/vastu-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/vastu-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/vastu-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/vastu-shanti-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/graha-shanti-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/graha-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/graha-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/graha-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/graha-shanti-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/vivah-marriage</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/vivah-marriage" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/vivah-marriage" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/vivah-marriage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/vivah-marriage" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/engagement-puja-sagai</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/engagement-puja-sagai" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/engagement-puja-sagai" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/engagement-puja-sagai" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/engagement-puja-sagai" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/roka-ceremony</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/roka-ceremony" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/roka-ceremony" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/roka-ceremony" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/roka-ceremony" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/haldi-ceremony</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/haldi-ceremony" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/haldi-ceremony" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/haldi-ceremony" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/haldi-ceremony" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/kumbh-vivah-for-female</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/kumbh-vivah-for-female" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/kumbh-vivah-for-female" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/kumbh-vivah-for-female" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/kumbh-vivah-for-female" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/ark-vivah-for-male</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/ark-vivah-for-male" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/ark-vivah-for-male" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/ark-vivah-for-male" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/ark-vivah-for-male" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/tulsi-vivah-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/tulsi-vivah-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/tulsi-vivah-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/tulsi-vivah-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/tulsi-vivah-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/pitru-paksha-mahalaya-shradh-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/pitru-paksha-mahalaya-shradh-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/pitru-paksha-mahalaya-shradh-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/pitru-paksha-mahalaya-shradh-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/pitru-paksha-mahalaya-shradh-puja" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/amavasya-tarpan</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/amavasya-tarpan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/amavasya-tarpan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/amavasya-tarpan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/amavasya-tarpan" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/barsi-ceremony</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/barsi-ceremony" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/barsi-ceremony" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/barsi-ceremony" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/barsi-ceremony" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/mata-ki-chowki</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/mata-ki-chowki" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/mata-ki-chowki" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/mata-ki-chowki" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/mata-ki-chowki" />
   </url>
   <url>
     <loc>https://vedicpanditji.com/services/jagran-puja</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/jagran-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/jagran-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/jagran-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/jagran-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/griha-pravesh</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/griha-pravesh" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/griha-pravesh" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/griha-pravesh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/griha-pravesh" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/satyanarayan-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/satyanarayan-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/satyanarayan-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/satyanarayan-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/satyanarayan-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/bhoomi-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/bhoomi-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/bhoomi-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/bhoomi-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/bhoomi-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/office-opening-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/office-opening-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/office-opening-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/office-opening-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/office-opening-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/mahalaxmi-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/mahalaxmi-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/mahalaxmi-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/mahalaxmi-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/mahalaxmi-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/saraswati-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/saraswati-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/saraswati-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/saraswati-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/saraswati-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/ganesh-sthapana-visarjan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/ganesh-sthapana-visarjan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/ganesh-sthapana-visarjan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/ganesh-sthapana-visarjan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/ganesh-sthapana-visarjan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/annaprashan-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/annaprashan-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/annaprashan-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/annaprashan-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/annaprashan-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/mundan-or-chudakarana-ceremony</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/mundan-or-chudakarana-ceremony" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/mundan-or-chudakarana-ceremony" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/mundan-or-chudakarana-ceremony" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/mundan-or-chudakarana-ceremony" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/namkaran-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/namkaran-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/namkaran-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/namkaran-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/namkaran-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/godh-bharai-puja-baby-shower</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/godh-bharai-puja-baby-shower" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/godh-bharai-puja-baby-shower" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/godh-bharai-puja-baby-shower" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/godh-bharai-puja-baby-shower" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/yagnopavit-sanskar</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/yagnopavit-sanskar" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/yagnopavit-sanskar" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/yagnopavit-sanskar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/yagnopavit-sanskar" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/shuddhikaran-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/shuddhikaran-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/shuddhikaran-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/shuddhikaran-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/shuddhikaran-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/brihaspati-vrat-udyapan-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/brihaspati-vrat-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/brihaspati-vrat-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/brihaspati-vrat-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/brihaspati-vrat-udyapan-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/solah-somvar-udyapan-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/solah-somvar-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/solah-somvar-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/solah-somvar-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/solah-somvar-udyapan-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/ekadashi-vrat-udyapan-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/ekadashi-vrat-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/ekadashi-vrat-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/ekadashi-vrat-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/ekadashi-vrat-udyapan-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/kuber-upasana-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/kuber-upasana-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/kuber-upasana-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/kuber-upasana-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/kuber-upasana-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/vishwakarma-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/vishwakarma-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/vishwakarma-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/vishwakarma-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/vishwakarma-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/new-vehicle-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/new-vehicle-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/new-vehicle-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/new-vehicle-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/new-vehicle-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/rudrabhishek-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/rudrabhishek-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/rudrabhishek-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/rudrabhishek-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/rudrabhishek-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/ganapathi-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/ganapathi-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/ganapathi-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/ganapathi-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/ganapathi-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/navagraha-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/navagraha-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/navagraha-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/navagraha-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/navagraha-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/chandi-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/chandi-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/chandi-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/chandi-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/chandi-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/mrityunjaya-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/mrityunjaya-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/mrityunjaya-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/mrityunjaya-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/mrityunjaya-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/ayush-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/ayush-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/ayush-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/ayush-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/ayush-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/dhanvantri-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/dhanvantri-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/dhanvantri-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/dhanvantri-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/dhanvantri-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/rudra-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/rudra-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/rudra-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/rudra-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/rudra-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/gayatri-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/gayatri-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/gayatri-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/gayatri-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/gayatri-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/laxmi-kubera-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/laxmi-kubera-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/laxmi-kubera-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/laxmi-kubera-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/laxmi-kubera-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/sudarshan-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/sudarshan-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/sudarshan-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/sudarshan-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/sudarshan-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/sri-sukta-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/sri-sukta-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/sri-sukta-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/sri-sukta-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/sri-sukta-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/maha-mrityunjaya-jaap</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/maha-mrityunjaya-jaap" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/maha-mrityunjaya-jaap" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/maha-mrityunjaya-jaap" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/maha-mrityunjaya-jaap" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/gayatri-mantra-jaap</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/gayatri-mantra-jaap" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/gayatri-mantra-jaap" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/gayatri-mantra-jaap" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/gayatri-mantra-jaap" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/santan-gopal-mantra-jaap</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/santan-gopal-mantra-jaap" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/santan-gopal-mantra-jaap" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/santan-gopal-mantra-jaap" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/santan-gopal-mantra-jaap" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/navagraha-graha-shanti-jaap</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/navagraha-graha-shanti-jaap" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/navagraha-graha-shanti-jaap" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/navagraha-graha-shanti-jaap" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/navagraha-graha-shanti-jaap" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/kaal-sarp-dosh-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/kaal-sarp-dosh-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/kaal-sarp-dosh-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/kaal-sarp-dosh-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/kaal-sarp-dosh-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/gand-mool-nakshatra-shanti-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/gand-mool-nakshatra-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/gand-mool-nakshatra-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/gand-mool-nakshatra-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/gand-mool-nakshatra-shanti-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/guru-chandal-yoga-shanti</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/guru-chandal-yoga-shanti" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/guru-chandal-yoga-shanti" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/guru-chandal-yoga-shanti" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/guru-chandal-yoga-shanti" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/grahan-yog-shanti-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/grahan-yog-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/grahan-yog-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/grahan-yog-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/grahan-yog-shanti-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/sunderkand-path</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/sunderkand-path" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/sunderkand-path" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/sunderkand-path" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/sunderkand-path" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/akhand-ramayan-path</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/akhand-ramayan-path" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/akhand-ramayan-path" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/akhand-ramayan-path" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/akhand-ramayan-path" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/chandi-path-durga-saptashati-path</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/chandi-path-durga-saptashati-path" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/chandi-path-durga-saptashati-path" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/chandi-path-durga-saptashati-path" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/chandi-path-durga-saptashati-path" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/vishnu-sahasranam-path</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/vishnu-sahasranam-path" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/vishnu-sahasranam-path" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/vishnu-sahasranam-path" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/vishnu-sahasranam-path" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/lalitha-sahasranam-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/lalitha-sahasranam-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/lalitha-sahasranam-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/lalitha-sahasranam-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/lalitha-sahasranam-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/garud-puran-path</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/garud-puran-path" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/garud-puran-path" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/garud-puran-path" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/garud-puran-path" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/vastu-shanti-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/vastu-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/vastu-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/vastu-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/vastu-shanti-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/graha-shanti-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/graha-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/graha-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/graha-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/graha-shanti-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/vivah-marriage</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/vivah-marriage" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/vivah-marriage" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/vivah-marriage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/vivah-marriage" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/engagement-puja-sagai</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/engagement-puja-sagai" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/engagement-puja-sagai" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/engagement-puja-sagai" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/engagement-puja-sagai" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/roka-ceremony</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/roka-ceremony" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/roka-ceremony" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/roka-ceremony" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/roka-ceremony" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/haldi-ceremony</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/haldi-ceremony" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/haldi-ceremony" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/haldi-ceremony" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/haldi-ceremony" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/kumbh-vivah-for-female</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/kumbh-vivah-for-female" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/kumbh-vivah-for-female" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/kumbh-vivah-for-female" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/kumbh-vivah-for-female" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/ark-vivah-for-male</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/ark-vivah-for-male" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/ark-vivah-for-male" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/ark-vivah-for-male" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/ark-vivah-for-male" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/tulsi-vivah-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/tulsi-vivah-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/tulsi-vivah-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/tulsi-vivah-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/tulsi-vivah-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/pitru-paksha-mahalaya-shradh-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/pitru-paksha-mahalaya-shradh-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/pitru-paksha-mahalaya-shradh-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/pitru-paksha-mahalaya-shradh-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/pitru-paksha-mahalaya-shradh-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/amavasya-tarpan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/amavasya-tarpan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/amavasya-tarpan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/amavasya-tarpan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/amavasya-tarpan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/barsi-ceremony</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/barsi-ceremony" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/barsi-ceremony" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/barsi-ceremony" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/barsi-ceremony" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/mata-ki-chowki</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/mata-ki-chowki" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/mata-ki-chowki" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/mata-ki-chowki" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/mata-ki-chowki" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/hi/services/jagran-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/jagran-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/jagran-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/jagran-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/jagran-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/griha-pravesh</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/griha-pravesh" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/griha-pravesh" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/griha-pravesh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/griha-pravesh" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/satyanarayan-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/satyanarayan-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/satyanarayan-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/satyanarayan-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/satyanarayan-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/bhoomi-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/bhoomi-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/bhoomi-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/bhoomi-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/bhoomi-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/office-opening-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/office-opening-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/office-opening-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/office-opening-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/office-opening-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/mahalaxmi-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/mahalaxmi-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/mahalaxmi-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/mahalaxmi-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/mahalaxmi-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/saraswati-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/saraswati-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/saraswati-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/saraswati-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/saraswati-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/ganesh-sthapana-visarjan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/ganesh-sthapana-visarjan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/ganesh-sthapana-visarjan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/ganesh-sthapana-visarjan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/ganesh-sthapana-visarjan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/annaprashan-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/annaprashan-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/annaprashan-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/annaprashan-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/annaprashan-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/mundan-or-chudakarana-ceremony</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/mundan-or-chudakarana-ceremony" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/mundan-or-chudakarana-ceremony" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/mundan-or-chudakarana-ceremony" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/mundan-or-chudakarana-ceremony" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/namkaran-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/namkaran-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/namkaran-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/namkaran-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/namkaran-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/godh-bharai-puja-baby-shower</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/godh-bharai-puja-baby-shower" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/godh-bharai-puja-baby-shower" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/godh-bharai-puja-baby-shower" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/godh-bharai-puja-baby-shower" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/yagnopavit-sanskar</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/yagnopavit-sanskar" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/yagnopavit-sanskar" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/yagnopavit-sanskar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/yagnopavit-sanskar" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/shuddhikaran-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/shuddhikaran-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/shuddhikaran-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/shuddhikaran-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/shuddhikaran-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/brihaspati-vrat-udyapan-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/brihaspati-vrat-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/brihaspati-vrat-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/brihaspati-vrat-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/brihaspati-vrat-udyapan-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/solah-somvar-udyapan-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/solah-somvar-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/solah-somvar-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/solah-somvar-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/solah-somvar-udyapan-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/ekadashi-vrat-udyapan-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/ekadashi-vrat-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/ekadashi-vrat-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/ekadashi-vrat-udyapan-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/ekadashi-vrat-udyapan-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/kuber-upasana-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/kuber-upasana-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/kuber-upasana-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/kuber-upasana-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/kuber-upasana-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/vishwakarma-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/vishwakarma-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/vishwakarma-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/vishwakarma-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/vishwakarma-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/new-vehicle-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/new-vehicle-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/new-vehicle-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/new-vehicle-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/new-vehicle-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/rudrabhishek-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/rudrabhishek-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/rudrabhishek-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/rudrabhishek-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/rudrabhishek-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/ganapathi-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/ganapathi-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/ganapathi-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/ganapathi-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/ganapathi-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/navagraha-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/navagraha-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/navagraha-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/navagraha-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/navagraha-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/chandi-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/chandi-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/chandi-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/chandi-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/chandi-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/mrityunjaya-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/mrityunjaya-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/mrityunjaya-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/mrityunjaya-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/mrityunjaya-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/ayush-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/ayush-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/ayush-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/ayush-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/ayush-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/dhanvantri-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/dhanvantri-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/dhanvantri-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/dhanvantri-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/dhanvantri-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/rudra-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/rudra-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/rudra-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/rudra-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/rudra-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/gayatri-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/gayatri-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/gayatri-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/gayatri-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/gayatri-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/laxmi-kubera-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/laxmi-kubera-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/laxmi-kubera-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/laxmi-kubera-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/laxmi-kubera-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/sudarshan-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/sudarshan-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/sudarshan-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/sudarshan-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/sudarshan-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/sri-sukta-havan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/sri-sukta-havan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/sri-sukta-havan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/sri-sukta-havan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/sri-sukta-havan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/maha-mrityunjaya-jaap</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/maha-mrityunjaya-jaap" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/maha-mrityunjaya-jaap" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/maha-mrityunjaya-jaap" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/maha-mrityunjaya-jaap" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/gayatri-mantra-jaap</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/gayatri-mantra-jaap" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/gayatri-mantra-jaap" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/gayatri-mantra-jaap" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/gayatri-mantra-jaap" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/santan-gopal-mantra-jaap</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/santan-gopal-mantra-jaap" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/santan-gopal-mantra-jaap" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/santan-gopal-mantra-jaap" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/santan-gopal-mantra-jaap" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/navagraha-graha-shanti-jaap</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/navagraha-graha-shanti-jaap" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/navagraha-graha-shanti-jaap" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/navagraha-graha-shanti-jaap" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/navagraha-graha-shanti-jaap" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/kaal-sarp-dosh-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/kaal-sarp-dosh-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/kaal-sarp-dosh-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/kaal-sarp-dosh-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/kaal-sarp-dosh-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/gand-mool-nakshatra-shanti-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/gand-mool-nakshatra-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/gand-mool-nakshatra-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/gand-mool-nakshatra-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/gand-mool-nakshatra-shanti-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/guru-chandal-yoga-shanti</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/guru-chandal-yoga-shanti" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/guru-chandal-yoga-shanti" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/guru-chandal-yoga-shanti" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/guru-chandal-yoga-shanti" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/grahan-yog-shanti-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/grahan-yog-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/grahan-yog-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/grahan-yog-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/grahan-yog-shanti-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/sunderkand-path</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/sunderkand-path" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/sunderkand-path" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/sunderkand-path" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/sunderkand-path" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/akhand-ramayan-path</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/akhand-ramayan-path" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/akhand-ramayan-path" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/akhand-ramayan-path" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/akhand-ramayan-path" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/chandi-path-durga-saptashati-path</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/chandi-path-durga-saptashati-path" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/chandi-path-durga-saptashati-path" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/chandi-path-durga-saptashati-path" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/chandi-path-durga-saptashati-path" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/vishnu-sahasranam-path</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/vishnu-sahasranam-path" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/vishnu-sahasranam-path" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/vishnu-sahasranam-path" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/vishnu-sahasranam-path" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/lalitha-sahasranam-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/lalitha-sahasranam-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/lalitha-sahasranam-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/lalitha-sahasranam-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/lalitha-sahasranam-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/garud-puran-path</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/garud-puran-path" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/garud-puran-path" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/garud-puran-path" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/garud-puran-path" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/vastu-shanti-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/vastu-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/vastu-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/vastu-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/vastu-shanti-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/graha-shanti-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/graha-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/graha-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/graha-shanti-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/graha-shanti-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/vivah-marriage</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/vivah-marriage" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/vivah-marriage" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/vivah-marriage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/vivah-marriage" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/engagement-puja-sagai</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/engagement-puja-sagai" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/engagement-puja-sagai" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/engagement-puja-sagai" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/engagement-puja-sagai" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/roka-ceremony</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/roka-ceremony" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/roka-ceremony" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/roka-ceremony" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/roka-ceremony" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/haldi-ceremony</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/haldi-ceremony" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/haldi-ceremony" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/haldi-ceremony" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/haldi-ceremony" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/kumbh-vivah-for-female</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/kumbh-vivah-for-female" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/kumbh-vivah-for-female" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/kumbh-vivah-for-female" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/kumbh-vivah-for-female" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/ark-vivah-for-male</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/ark-vivah-for-male" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/ark-vivah-for-male" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/ark-vivah-for-male" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/ark-vivah-for-male" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/tulsi-vivah-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/tulsi-vivah-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/tulsi-vivah-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/tulsi-vivah-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/tulsi-vivah-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/pitru-paksha-mahalaya-shradh-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/pitru-paksha-mahalaya-shradh-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/pitru-paksha-mahalaya-shradh-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/pitru-paksha-mahalaya-shradh-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/pitru-paksha-mahalaya-shradh-puja" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/amavasya-tarpan</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/amavasya-tarpan" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/amavasya-tarpan" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/amavasya-tarpan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/amavasya-tarpan" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/barsi-ceremony</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/barsi-ceremony" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/barsi-ceremony" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/barsi-ceremony" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/barsi-ceremony" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/mata-ki-chowki</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/mata-ki-chowki" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/mata-ki-chowki" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/mata-ki-chowki" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/mata-ki-chowki" />
+  </url>
+  <url>
+    <loc>https://vedicpanditji.com/mr/services/jagran-puja</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vedicpanditji.com/services/jagran-puja" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vedicpanditji.com/hi/services/jagran-puja" />
+    <xhtml:link rel="alternate" hreflang="mr" href="https://vedicpanditji.com/mr/services/jagran-puja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vedicpanditji.com/services/jagran-puja" />
   </url>
 </urlset>

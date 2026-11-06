@@ -2,11 +2,10 @@ export const DEFAULT_LANG = 'en';
 
 // enabled: shown in the switcher and prerendered into dist.
 // indexable: indexed by search engines, listed in hreflang and the sitemap.
-// Hindi and Marathi stay off in production until their translations are reviewed.
 export const LANGUAGES = {
   en: { code: 'en', label: 'EN', name: 'English', enabled: true, indexable: true },
-  hi: { code: 'hi', label: 'हिन्दी', name: 'Hindi', enabled: false, indexable: false },
-  mr: { code: 'mr', label: 'मराठी', name: 'Marathi', enabled: false, indexable: false }
+  hi: { code: 'hi', label: 'हिन्दी', name: 'Hindi', enabled: true, indexable: true },
+  mr: { code: 'mr', label: 'मराठी', name: 'Marathi', enabled: true, indexable: true }
 };
 
 export const LANG_CODES = Object.keys(LANGUAGES);
