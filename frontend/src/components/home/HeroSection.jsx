@@ -476,18 +476,20 @@ export default function HeroSection() {
           color: var(--accent-saffron);
           font-weight: 800;
           white-space: nowrap;
-          transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
-          will-change: transform, opacity;
+          transition: opacity 0.4s ease, filter 0.4s ease, transform 0.4s ease;
+          will-change: opacity, filter, transform;
         }
 
         .rotating-keyword.entering {
           opacity: 1;
-          transform: translateY(0);
+          filter: blur(0px);
+          transform: scale(1);
         }
 
         .rotating-keyword.leaving {
           opacity: 0;
-          transform: translateY(-16px);
+          filter: blur(4px);
+          transform: scale(0.97);
         }
 
         @media (prefers-reduced-motion: reduce) {
