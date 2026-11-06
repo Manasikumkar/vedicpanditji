@@ -970,9 +970,9 @@ export default function BookingModal() {
                   const isChecked = isIncludedInBase || selectedExtras.includes(opt.id);
 
                   return (
-                    <div
+                    <label
                       key={opt.id}
-                      onClick={() => !isIncludedInBase && handleToggleExtra(opt.id)}
+                      htmlFor={`samagri-opt-${opt.id}`}
                       style={{
                         padding: '12px 16px',
                         borderRadius: '12px',
@@ -982,11 +982,13 @@ export default function BookingModal() {
                         alignItems: 'center',
                         justifyContent: 'space-between',
                         cursor: isIncludedInBase ? 'default' : 'pointer',
-                        transition: 'all 0.15s ease'
+                        transition: 'all 0.15s ease',
+                        userSelect: 'none'
                       }}
                     >
                       <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                         <input
+                          id={`samagri-opt-${opt.id}`}
                           type="checkbox"
                           checked={isChecked}
                           disabled={isIncludedInBase}
@@ -995,7 +997,8 @@ export default function BookingModal() {
                             width: '18px',
                             height: '18px',
                             accentColor: '#BD4B23',
-                            cursor: isIncludedInBase ? 'default' : 'pointer'
+                            cursor: isIncludedInBase ? 'default' : 'pointer',
+                            flexShrink: 0
                           }}
                         />
                         <div>
@@ -1023,7 +1026,7 @@ export default function BookingModal() {
                           <span style={{ fontSize: '11px', fontWeight: 600, color: '#78716C' }}>{t('booking.price-tbc')}</span>
                         )}
                       </div>
-                    </div>
+                    </label>
                   );
                 })}
               </div>
