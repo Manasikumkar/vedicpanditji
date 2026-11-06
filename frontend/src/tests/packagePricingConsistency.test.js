@@ -67,9 +67,13 @@ test('4. Package B price equals Base Dakshina + sum of bundled Samagri items', (
       const expectedTotal = card.minPrice + samagriTotal;
       assert.equal(pkgB.indicativePrice, expectedTotal, `${serviceId} Package B price must equal minPrice + samagriTotal`);
       assert.ok(pkgB.priceDisplay.includes(expectedTotal.toLocaleString('en-IN')), `${serviceId} priceDisplay must reflect total`);
+      // Option 1 validation: maxPrice is auto-tied to Package B (Ritual + Samagri)
+      assert.equal(card.maxPrice, expectedTotal, `${serviceId} maxPrice must equal Package B indicativePrice`);
+      assert.ok(card.maxPrice > card.minPrice, `${serviceId} maxPrice must exceed minPrice`);
     } else {
       assert.equal(pkgB.indicativePrice, null, `${serviceId} Package B price must be null for custom quote`);
       assert.equal(pkgB.priceDisplay, 'Custom Quote');
+      assert.equal(card.maxPrice, null, `${serviceId} maxPrice must be null for custom quote`);
     }
   });
 });

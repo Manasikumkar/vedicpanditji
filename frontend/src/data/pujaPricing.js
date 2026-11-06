@@ -104,9 +104,11 @@ export function getPujaPricing(serviceOrId, city = 'Pune', lang = 'en') {
     };
   }
 
-  // Check if price is published (either via preserved local data or explicit flag)
-  const isPricePublished = rateCard.approvalStatus === VERIFICATION_STATUS.LOCAL_PROJECT_DATA ||
+  // Check if price is published (either via business approval, defined price, or explicit flag)
+  const isPricePublished = Boolean(rateCard.isBusinessApproved) ||
                            rateCard.approvalStatus === VERIFICATION_STATUS.BUSINESS_APPROVED ||
+                           rateCard.approvalStatus === VERIFICATION_STATUS.LOCAL_PROJECT_DATA ||
+                           (typeof rateCard.minPrice === 'number' && rateCard.minPrice > 0) ||
                            PUBLISH_PROPOSED_PRICES_TO_CUSTOMER;
 
   if (isPricePublished) {
@@ -233,8 +235,10 @@ export function getPricingDisplay(serviceOrId, lang = 'en') {
     };
   }
 
-  const isPricePublished = rateCard.approvalStatus === VERIFICATION_STATUS.LOCAL_PROJECT_DATA ||
+  const isPricePublished = Boolean(rateCard.isBusinessApproved) ||
                            rateCard.approvalStatus === VERIFICATION_STATUS.BUSINESS_APPROVED ||
+                           rateCard.approvalStatus === VERIFICATION_STATUS.LOCAL_PROJECT_DATA ||
+                           (typeof rateCard.minPrice === 'number' && rateCard.minPrice > 0) ||
                            PUBLISH_PROPOSED_PRICES_TO_CUSTOMER;
 
   if (isPricePublished) {

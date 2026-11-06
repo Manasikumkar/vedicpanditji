@@ -3,7 +3,7 @@
     "ayush-havan": {
       "model": "package-pricing",
       "category": "havans",
-      "maxPrice": 5100,
+      "maxPrice": 8100,
       "minPrice": 5100,
       "packages": [
         {
@@ -128,7 +128,7 @@
     "bhoomi-puja": {
       "model": "package-pricing",
       "category": "pujas",
-      "maxPrice": 5000,
+      "maxPrice": 8000,
       "minPrice": 5000,
       "packages": [
         {
@@ -273,7 +273,7 @@
     "jagran-puja": {
       "model": "package-pricing",
       "category": "bhajans-chowki",
-      "maxPrice": 45000,
+      "maxPrice": 32500,
       "minPrice": 31000,
       "packages": [
         {
@@ -401,7 +401,7 @@
     "rudra-havan": {
       "model": "package-pricing",
       "category": "havans",
-      "maxPrice": 11000,
+      "maxPrice": 14000,
       "minPrice": 11000,
       "packages": [
         {
@@ -526,7 +526,7 @@
     "chandi-havan": {
       "model": "package-pricing",
       "category": "havans",
-      "maxPrice": 21000,
+      "maxPrice": 18000,
       "minPrice": 15000,
       "packages": [
         {
@@ -651,7 +651,7 @@
     "gayatri-havan": {
       "model": "package-pricing",
       "category": "havans",
-      "maxPrice": 5100,
+      "maxPrice": 8100,
       "minPrice": 5100,
       "packages": [
         {
@@ -776,7 +776,7 @@
     "griha-pravesh": {
       "model": "package-pricing",
       "category": "pujas",
-      "maxPrice": 11000,
+      "maxPrice": 14000,
       "minPrice": 11000,
       "packages": [
         {
@@ -921,7 +921,7 @@
     "namkaran-puja": {
       "model": "package-pricing",
       "category": "pujas",
-      "maxPrice": 5100,
+      "maxPrice": 8100,
       "minPrice": 5100,
       "packages": [
         {
@@ -1056,7 +1056,7 @@
     "roka-ceremony": {
       "model": "package-pricing",
       "category": "wedding-services",
-      "maxPrice": 5100,
+      "maxPrice": 6600,
       "minPrice": 5100,
       "packages": [
         {
@@ -1179,7 +1179,7 @@
     "barsi-ceremony": {
       "model": "package-pricing",
       "category": "pitru-pujas",
-      "maxPrice": 5100,
+      "maxPrice": 6600,
       "minPrice": 5100,
       "packages": [
         {
@@ -1307,7 +1307,7 @@
     "haldi-ceremony": {
       "model": "package-pricing",
       "category": "wedding-services",
-      "maxPrice": 5000,
+      "maxPrice": 6500,
       "minPrice": 5000,
       "packages": [
         {
@@ -1430,7 +1430,7 @@
     "mahalaxmi-puja": {
       "model": "package-pricing",
       "category": "pujas",
-      "maxPrice": 5100,
+      "maxPrice": 8100,
       "minPrice": 5100,
       "packages": [
         {
@@ -1565,7 +1565,7 @@
     "mata-ki-chowki": {
       "model": "package-pricing",
       "category": "bhajans-chowki",
-      "maxPrice": 28000,
+      "maxPrice": 16500,
       "minPrice": 15000,
       "packages": [
         {
@@ -1698,7 +1698,7 @@
     "saraswati-puja": {
       "model": "package-pricing",
       "category": "pujas",
-      "maxPrice": 3500,
+      "maxPrice": 6500,
       "minPrice": 3500,
       "packages": [
         {
@@ -1828,7 +1828,7 @@
     "vivah-marriage": {
       "model": "package-pricing",
       "category": "wedding-services",
-      "maxPrice": 21000,
+      "maxPrice": 24000,
       "minPrice": 21000,
       "packages": [
         {
@@ -1958,7 +1958,7 @@
     "amavasya-tarpan": {
       "model": "fixed-price",
       "category": "pitru-pujas",
-      "maxPrice": 2200,
+      "maxPrice": 3600,
       "minPrice": 2100,
       "packages": [
         {
@@ -2091,7 +2091,7 @@
     "ganapathi-havan": {
       "model": "package-pricing",
       "category": "havans",
-      "maxPrice": 5000,
+      "maxPrice": 8000,
       "minPrice": 5000,
       "packages": [
         {
@@ -2226,7 +2226,7 @@
     "navagraha-havan": {
       "model": "package-pricing",
       "category": "havans",
-      "maxPrice": 11000,
+      "maxPrice": 14000,
       "minPrice": 11000,
       "packages": [
         {
@@ -2366,7 +2366,7 @@
     "sri-sukta-havan": {
       "model": "package-pricing",
       "category": "havans",
-      "maxPrice": 5100,
+      "maxPrice": 8100,
       "minPrice": 5100,
       "packages": [
         {
@@ -2491,7 +2491,7 @@
     "sudarshan-havan": {
       "model": "package-pricing",
       "category": "havans",
-      "maxPrice": 7100,
+      "maxPrice": 10100,
       "minPrice": 7100,
       "packages": [
         {
@@ -2616,7 +2616,7 @@
     "sunderkand-path": {
       "model": "package-pricing",
       "category": "paths",
-      "maxPrice": 21000,
+      "maxPrice": 22500,
       "minPrice": 21000,
       "packages": [
         {
@@ -2749,7 +2749,7 @@
     "annaprashan-puja": {
       "model": "package-pricing",
       "category": "pujas",
-      "maxPrice": 3800,
+      "maxPrice": 6500,
       "minPrice": 3500,
       "packages": [
         {
@@ -2884,7 +2884,7 @@
     "dhanvantri-havan": {
       "model": "package-pricing",
       "category": "havans",
-      "maxPrice": 5000,
+      "maxPrice": 8000,
       "minPrice": 5000,
       "packages": [
         {
@@ -3014,7 +3014,7 @@
     "garud-puran-path": {
       "model": "package-pricing",
       "category": "paths",
-      "maxPrice": 15000,
+      "maxPrice": 18000,
       "minPrice": 15000,
       "packages": [
         {
@@ -3144,7 +3144,7 @@
     "new-vehicle-puja": {
       "model": "fixed-price",
       "category": "pujas",
-      "maxPrice": 1800,
+      "maxPrice": 2600,
       "minPrice": 1100,
       "packages": [
         {
@@ -3282,7 +3282,7 @@
     "tulsi-vivah-puja": {
       "model": "package-pricing",
       "category": "wedding-services",
-      "maxPrice": 4500,
+      "maxPrice": 6500,
       "minPrice": 3500,
       "packages": [
         {
@@ -3412,7 +3412,7 @@
     "vishwakarma-puja": {
       "model": "package-pricing",
       "category": "pujas",
-      "maxPrice": 4100,
+      "maxPrice": 7100,
       "minPrice": 4100,
       "packages": [
         {
@@ -3547,7 +3547,7 @@
     "graha-shanti-puja": {
       "model": "package-pricing",
       "category": "shanti-pujas",
-      "maxPrice": 11000,
+      "maxPrice": 14000,
       "minPrice": 11000,
       "packages": [
         {
@@ -3677,7 +3677,7 @@
     "mrityunjaya-havan": {
       "model": "package-pricing",
       "category": "havans",
-      "maxPrice": 5500,
+      "maxPrice": 6500,
       "minPrice": 3500,
       "packages": [
         {
@@ -3784,9 +3784,9 @@
       ],
       "serviceId": "mrityunjaya-havan",
       "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "en": "Approved ceremony rate card",
+        "hi": "स्वीकृत पूजा दर सूची",
+        "mr": "मंजूर पूजा दर पत्रक"
       },
       "serviceName": {
         "en": "Maha Mrityunjaya Havan for Longevity",
@@ -3794,20 +3794,20 @@
         "mr": ""
       },
       "researchBasis": "",
-      "approvalStatus": "needs-business-confirmation",
+      "approvalStatus": "approved",
       "pricingRationale": {
         "en": "2.5 to 3.5 hrs fire ceremony with Amrita herbs for health recovery and vitality.",
         "hi": "",
         "mr": ""
       },
-      "isBusinessApproved": false,
-      "missingBusinessInfo": "Confirmation required for Maha Mrityunjaya Havan base price.",
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "",
       "startingPriceDisplay": "From ₹3,500*"
     },
     "rudrabhishek-puja": {
       "model": "package-pricing",
       "category": "pujas",
-      "maxPrice": 5500,
+      "maxPrice": 8100,
       "minPrice": 5100,
       "packages": [
         {
@@ -3952,7 +3952,7 @@
     "satyanarayan-puja": {
       "model": "package-pricing",
       "category": "pujas",
-      "maxPrice": 4100,
+      "maxPrice": 7100,
       "minPrice": 4100,
       "packages": [
         {
@@ -4097,7 +4097,7 @@
     "shuddhikaran-puja": {
       "model": "package-pricing",
       "category": "pujas",
-      "maxPrice": 3500,
+      "maxPrice": 6500,
       "minPrice": 3500,
       "packages": [
         {
@@ -4232,7 +4232,7 @@
     "vastu-shanti-puja": {
       "model": "package-pricing",
       "category": "shanti-pujas",
-      "maxPrice": 21000,
+      "maxPrice": 24000,
       "minPrice": 21000,
       "packages": [
         {
@@ -4377,7 +4377,7 @@
     "ark-vivah-for-male": {
       "model": "package-pricing",
       "category": "wedding-services",
-      "maxPrice": 7000,
+      "maxPrice": 10000,
       "minPrice": 7000,
       "packages": [
         {
@@ -4507,8 +4507,8 @@
     "kuber-upasana-puja": {
       "model": "package-pricing",
       "category": "pujas",
-      "maxPrice": null,
-      "minPrice": null,
+      "maxPrice": 6500,
+      "minPrice": 3500,
       "packages": [
         {
           "id": "ku-basic",
@@ -4523,12 +4523,12 @@
             "hi": "यजमान सामग्री की व्यवस्था करते हैं",
             "mr": "यजमान सामग्रीची व्यवस्था करतात"
           },
-          "indicativePrice": null,
-          "priceDisplay": "Custom Quote",
+          "indicativePrice": 3500,
+          "priceDisplay": "₹3,500*",
           "priceNote": {
-            "en": "Custom Quote based on ceremony requirements",
-            "hi": "पूजा की आवश्यकतानुसार कस्टम कोट",
-            "mr": "पूजेच्या गरजेनुसार कोट"
+            "en": "Pandit Dakshina for complete ceremony (Devotee prepares samagri)",
+            "hi": "सम्पूर्ण पूजा हेतु पंडित दक्षिणा (यजमान सामग्री लाते हैं)",
+            "mr": "संपूर्ण पूजेसाठी पंडित दक्षिणा (यजमान साहित्य आणतात)"
           },
           "inclusions": [
             {
@@ -4579,10 +4579,10 @@
             "hi": "सर्वाधिक लोकप्रिय (सामग्री किट शामिल)",
             "mr": "सर्वाधिक लोकप्रिय (साहित्य किट समाविष्ट)"
           },
-          "indicativePrice": null,
-          "priceDisplay": "Custom Quote",
+          "indicativePrice": 6500,
+          "priceDisplay": "₹6,500*",
           "priceNote": {
-            "en": "Pandit Dakshina + Pure Hawan Samagri & Desi Ghee included",
+            "en": "Pandit Dakshina ₹3,500* + Pure Hawan Samagri & Desi Ghee included",
             "hi": "पंडित दक्षिणा + शुद्ध वैदिक हवन सामग्री एवं देशी घी शामिल",
             "mr": "पंडित दक्षिणा + शुद्ध वैदिक हवन साहित्य आणि देशी तूप समाविष्ट"
           },
@@ -4619,9 +4619,9 @@
       ],
       "serviceId": "kuber-upasana-puja",
       "pricingNote": {
-        "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "en": "Approved ceremony rate card",
+        "hi": "स्वीकृत पूजा दर सूची",
+        "mr": "मंजूर पूजा दर पत्रक"
       },
       "serviceName": {
         "en": "Kuber Upasana Puja for Wealth & Trade",
@@ -4629,20 +4629,20 @@
         "mr": ""
       },
       "researchBasis": "",
-      "approvalStatus": "needs-business-confirmation",
+      "approvalStatus": "approved",
       "pricingRationale": {
         "en": "2 hrs ritual for trade growth, treasury abundance, and business recovery.",
         "hi": "",
         "mr": ""
       },
-      "isBusinessApproved": false,
-      "missingBusinessInfo": "Business clarification required for ₹350p base price.",
-      "startingPriceDisplay": "Custom Quote"
+      "isBusinessApproved": true,
+      "missingBusinessInfo": "",
+      "startingPriceDisplay": "From ₹3,500*"
     },
     "laxmi-kubera-havan": {
       "model": "package-pricing",
       "category": "havans",
-      "maxPrice": 5100,
+      "maxPrice": 8100,
       "minPrice": 5100,
       "packages": [
         {
@@ -4767,7 +4767,7 @@
     "yagnopavit-sanskar": {
       "model": "package-pricing",
       "category": "pujas",
-      "maxPrice": 11000,
+      "maxPrice": 14000,
       "minPrice": 11000,
       "packages": [
         {
@@ -4907,7 +4907,7 @@
     "akhand-ramayan-path": {
       "model": "package-pricing",
       "category": "paths",
-      "maxPrice": 35000,
+      "maxPrice": 36500,
       "minPrice": 35000,
       "packages": [
         {
@@ -5040,7 +5040,7 @@
     "gayatri-mantra-jaap": {
       "model": "package-pricing",
       "category": "jaaps",
-      "maxPrice": 18500,
+      "maxPrice": 4500,
       "minPrice": 1500,
       "packages": [
         {
@@ -5165,7 +5165,7 @@
     "kaal-sarp-dosh-puja": {
       "model": "package-pricing",
       "category": "jaaps",
-      "maxPrice": 15000,
+      "maxPrice": 18000,
       "minPrice": 15000,
       "packages": [
         {
@@ -5295,7 +5295,7 @@
     "office-opening-puja": {
       "model": "package-pricing",
       "category": "pujas",
-      "maxPrice": 4800,
+      "maxPrice": 7100,
       "minPrice": 4100,
       "packages": [
         {
@@ -5435,7 +5435,7 @@
     "engagement-puja-sagai": {
       "model": "package-pricing",
       "category": "wedding-services",
-      "maxPrice": 5000,
+      "maxPrice": 8000,
       "minPrice": 5000,
       "packages": [
         {
@@ -5565,7 +5565,7 @@
     "maha-mrityunjaya-jaap": {
       "model": "package-pricing",
       "category": "jaaps",
-      "maxPrice": 111000,
+      "maxPrice": 114000,
       "minPrice": 111000,
       "packages": [
         {
@@ -5715,7 +5715,7 @@
     "grahan-yog-shanti-puja": {
       "model": "package-pricing",
       "category": "jaaps",
-      "maxPrice": 21000,
+      "maxPrice": 24000,
       "minPrice": 21000,
       "packages": [
         {
@@ -5845,7 +5845,7 @@
     "kumbh-vivah-for-female": {
       "model": "package-pricing",
       "category": "wedding-services",
-      "maxPrice": 7100,
+      "maxPrice": 10100,
       "minPrice": 7100,
       "packages": [
         {
@@ -5975,7 +5975,7 @@
     "vishnu-sahasranam-path": {
       "model": "package-pricing",
       "category": "paths",
-      "maxPrice": 3500,
+      "maxPrice": 5950,
       "minPrice": 3500,
       "packages": [
         {
@@ -6099,7 +6099,7 @@
     "lalitha-sahasranam-puja": {
       "model": "package-pricing",
       "category": "paths",
-      "maxPrice": 7100,
+      "maxPrice": 10100,
       "minPrice": 7100,
       "packages": [
         {
@@ -6229,7 +6229,7 @@
     "ganesh-sthapana-visarjan": {
       "model": "package-pricing",
       "category": "pujas",
-      "maxPrice": 5000,
+      "maxPrice": 8000,
       "minPrice": 5000,
       "packages": [
         {
@@ -6364,7 +6364,7 @@
     "guru-chandal-yoga-shanti": {
       "model": "package-pricing",
       "category": "jaaps",
-      "maxPrice": 11000,
+      "maxPrice": 14000,
       "minPrice": 11000,
       "packages": [
         {
@@ -6494,7 +6494,7 @@
     "santan-gopal-mantra-jaap": {
       "model": "package-pricing",
       "category": "jaaps",
-      "maxPrice": 51000,
+      "maxPrice": 54000,
       "minPrice": 51000,
       "packages": [
         {
@@ -6619,7 +6619,7 @@
     "solah-somvar-udyapan-puja": {
       "model": "package-pricing",
       "category": "pujas",
-      "maxPrice": 5000,
+      "maxPrice": 8000,
       "minPrice": 5000,
       "packages": [
         {
@@ -6754,7 +6754,7 @@
     "ekadashi-vrat-udyapan-puja": {
       "model": "package-pricing",
       "category": "pujas",
-      "maxPrice": 21000,
+      "maxPrice": 24000,
       "minPrice": 21000,
       "packages": [
         {
@@ -6889,7 +6889,7 @@
     "navagraha-graha-shanti-jaap": {
       "model": "package-pricing",
       "category": "jaaps",
-      "maxPrice": 11000,
+      "maxPrice": 14000,
       "minPrice": 11000,
       "packages": [
         {
@@ -7014,7 +7014,7 @@
     "brihaspati-vrat-udyapan-puja": {
       "model": "package-pricing",
       "category": "pujas",
-      "maxPrice": 3800,
+      "maxPrice": 6100,
       "minPrice": 3100,
       "packages": [
         {
@@ -7149,7 +7149,7 @@
     "godh-bharai-puja-baby-shower": {
       "model": "package-pricing",
       "category": "pujas",
-      "maxPrice": 3800,
+      "maxPrice": 6500,
       "minPrice": 3500,
       "packages": [
         {
@@ -7284,7 +7284,7 @@
     "mundan-or-chudakarana-ceremony": {
       "model": "package-pricing",
       "category": "pujas",
-      "maxPrice": 4100,
+      "maxPrice": 7100,
       "minPrice": 4100,
       "packages": [
         {
@@ -7424,7 +7424,7 @@
     "gand-mool-nakshatra-shanti-puja": {
       "model": "package-pricing",
       "category": "jaaps",
-      "maxPrice": 11000,
+      "maxPrice": 14000,
       "minPrice": 11000,
       "packages": [
         {
@@ -7559,7 +7559,7 @@
     "chandi-path-durga-saptashati-path": {
       "model": "package-pricing",
       "category": "paths",
-      "maxPrice": 5500,
+      "maxPrice": 6500,
       "minPrice": 3500,
       "packages": [
         {
@@ -7694,7 +7694,7 @@
     "pitru-paksha-mahalaya-shradh-puja": {
       "model": "package-pricing",
       "category": "pitru-pujas",
-      "maxPrice": 3800,
+      "maxPrice": 2600,
       "minPrice": 1100,
       "packages": [
         {

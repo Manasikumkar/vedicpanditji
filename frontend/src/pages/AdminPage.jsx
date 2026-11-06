@@ -54,9 +54,25 @@ export default function AdminPage() {
       setMessage({ type: 'error', text: error.message });
       return;
     }
-    setDoc(data.data);
-    setSaved(data.data);
-    setSelectedId((id) => id || Object.keys(data.data.rateCards)[0]);
+    const docData = data.data;
+    if (docData?.rateCards) {
+      // Auto-reconcile services with defined prices and Option 1 maxPrice
+      Object.keys(docData.rateCards).forEach((id) => {
+        const c = docData.rateCards[id];
+        if (c.minPrice && c.minPrice > 0) {
+          if (!c.isBusinessApproved) {
+            c.isBusinessApproved = true;
+            c.approvalStatus = 'approved';
+          }
+          if (c.packages && c.packages[1]?.indicativePrice && c.maxPrice !== c.packages[1].indicativePrice) {
+            c.maxPrice = c.packages[1].indicativePrice;
+          }
+        }
+      });
+    }
+    setDoc(docData);
+    setSaved(docData);
+    setSelectedId((id) => id || Object.keys(docData.rateCards)[0]);
   }, []);
 
   const userId = session?.user?.id;
@@ -148,8 +164,10 @@ export default function AdminPage() {
 
       if (packagesChanged) {
         rateCardsChanged = true;
+        const newMaxPrice = nextPackages[1]?.indicativePrice ?? card.maxPrice;
         updatedRateCards[serviceId] = {
           ...card,
+          maxPrice: newMaxPrice,
           packages: nextPackages
         };
       }
@@ -407,7 +425,7 @@ export default function AdminPage() {
                       </div>
 
                       <div className="service-card-right">
-                        {svc.isBusinessApproved ? (
+                        {svc.isBusinessApproved || svc.approvalStatus === 'approved' ? (
                           <span className="status-badge published">Published</span>
                         ) : (
                           <span className="status-badge draft">Review</span>

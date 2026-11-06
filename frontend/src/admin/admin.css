@@ -349,6 +349,13 @@
   max-width: 60%;
 }
 
+.field-sub-hint {
+  display: block;
+  font-size: 11px;
+  color: var(--adm-text-muted);
+  margin-top: 4px;
+}
+
 .btn-save-changes {
   display: inline-flex;
   align-items: center;

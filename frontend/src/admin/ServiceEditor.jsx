@@ -59,11 +59,22 @@ export default function ServiceEditor({
   const set = (path, value) => onChange(setIn(card, path, value));
   const setPkg = (i, key, value) => set(['packages', i, key], value);
 
-  // Auto-propagate base ceremony price changes to Package A and Package B
+  // Auto-propagate base ceremony price changes to Package A, Package B and Maximum Price
   const handleMinPriceChange = (newMinPrice) => {
     let nextCard = setIn(card, ['minPrice'], newMinPrice);
 
+    // Auto-approve and publish when valid price is entered
+    if (typeof newMinPrice === 'number' && newMinPrice > 0) {
+      nextCard = {
+        ...nextCard,
+        isBusinessApproved: true,
+        approvalStatus: 'approved',
+        startingPriceDisplay: `From ₹${newMinPrice.toLocaleString('en-IN')}*`
+      };
+    }
+
     if (nextCard.packages && nextCard.packages.length > 0) {
+      let maxPriceCalc = newMinPrice;
       const nextPackages = nextCard.packages.map((pkg) => {
         const samagriCost = (pkg.includedSamagriIds || []).reduce((sum, id) => {
           const s = samagri.find((x) => x.id === id);
@@ -74,6 +85,10 @@ export default function ServiceEditor({
           ? newMinPrice + samagriCost
           : null;
 
+        if (typeof newPackagePrice === 'number' && (maxPriceCalc === null || newPackagePrice > maxPriceCalc)) {
+          maxPriceCalc = newPackagePrice;
+        }
+
         return {
           ...pkg,
           indicativePrice: newPackagePrice,
@@ -83,6 +98,7 @@ export default function ServiceEditor({
 
       nextCard = {
         ...nextCard,
+        maxPrice: maxPriceCalc,
         packages: nextPackages
       };
     }
@@ -93,7 +109,12 @@ export default function ServiceEditor({
     const currentPkg = card.packages[i];
     const nextPkg = { ...currentPkg, ...updates };
     const nextPackages = card.packages.map((p, idx) => (idx === i ? nextPkg : p));
-    set(['packages'], nextPackages);
+    const nextMaxPrice = nextPackages[1]?.indicativePrice ?? card.maxPrice;
+    onChange({
+      ...card,
+      maxPrice: nextMaxPrice,
+      packages: nextPackages
+    });
   };
 
   // Derive starting price
@@ -180,21 +201,41 @@ export default function ServiceEditor({
             <TextField label="Service Name" value={card.serviceName} lang={lang} onChange={(v) => set(['serviceName'], v)} />
 
             <div className="grid-2-col">
+              <Select
+                label="Approval Status"
+                value={card.approvalStatus}
+                options={STATUSES}
+                onChange={(v) => {
+                  onChange({
+                    ...card,
+                    approvalStatus: v,
+                    isBusinessApproved: v === 'approved'
+                  });
+                }}
+              />
               <Select label="Pricing Model" value={card.model} options={MODELS} onChange={(v) => set(['model'], v)} />
-              <Select label="Approval Status" value={card.approvalStatus} options={STATUSES} onChange={(v) => set(['approvalStatus'], v)} />
             </div>
 
             <div className="approval-toggle-box">
               <label className="check-box-control">
                 <input
                   type="checkbox"
-                  checked={card.isBusinessApproved}
-                  onChange={(e) => set(['isBusinessApproved'], e.target.checked)}
+                  checked={Boolean(card.isBusinessApproved)}
+                  onChange={(e) => {
+                    const checked = e.target.checked;
+                    onChange({
+                      ...card,
+                      isBusinessApproved: checked,
+                      approvalStatus: checked ? 'approved' : 'needs-business-confirmation'
+                    });
+                  }}
                 />
                 <span className="font-semibold">Publish this ceremony on live website</span>
               </label>
               <p className="field-hint">
-                When enabled, the ceremony packages and rates are visible to devotees across website cards and search.
+                {card.isBusinessApproved
+                  ? '✓ Published: Packages and rates are live and visible to devotees across website cards and search.'
+                  : '⏳ In Review: Ceremony is marked as in-review and displayed as Custom Quote until published.'}
               </p>
             </div>
           </div>
@@ -237,12 +278,41 @@ export default function ServiceEditor({
             <p className="section-desc">Defines the indicative price range displayed on service and locality cards</p>
 
             <div className="grid-2-col">
-              <NumberField label="Minimum Price (INR)" value={card.minPrice} onChange={handleMinPriceChange} />
-              <NumberField label="Maximum Price (INR)" value={card.maxPrice} onChange={(v) => set(['maxPrice'], v)} />
+              <div className="price-boundary-field">
+                <NumberField label="Minimum Price (INR) — Package A (Ritual Only)" value={card.minPrice} onChange={handleMinPriceChange} />
+                <span className="field-sub-hint">Base dakshina for devotee-arranged samagri</span>
+              </div>
+              <div className="price-boundary-field">
+                <NumberField label="Maximum Price (INR) — Package B (Ritual + Samagri)" value={card.maxPrice} onChange={(v) => set(['maxPrice'], v)} />
+                <span className="field-sub-hint">Auto-tied to Package B (Complete Purohit + Samagri Kit)</span>
+              </div>
             </div>
 
             <TextField label="Pricing Note (devotee facing)" multiline value={card.pricingNote} lang={lang} onChange={(v) => set(['pricingNote'], v)} />
             <TextField label="Pricing Rationale (inclusions breakdown)" multiline value={card.pricingRationale} lang={lang} onChange={(v) => set(['pricingRationale'], v)} />
+
+            <div className="approval-toggle-box" style={{ marginTop: '16px' }}>
+              <label className="check-box-control">
+                <input
+                  type="checkbox"
+                  checked={Boolean(card.isBusinessApproved)}
+                  onChange={(e) => {
+                    const checked = e.target.checked;
+                    onChange({
+                      ...card,
+                      isBusinessApproved: checked,
+                      approvalStatus: checked ? 'approved' : 'needs-business-confirmation'
+                    });
+                  }}
+                />
+                <span className="font-semibold">Publish this ceremony on live website</span>
+              </label>
+              <p className="field-hint">
+                {card.isBusinessApproved
+                  ? '✓ Published: Packages and rates are live and visible to devotees across website cards and search.'
+                  : '⏳ In Review: Ceremony is marked as in-review and displayed as Custom Quote until published.'}
+              </p>
+            </div>
           </div>
 
           <div className="step-navigation-footer dual">
