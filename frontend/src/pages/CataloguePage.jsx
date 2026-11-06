@@ -34,7 +34,7 @@ export default function CataloguePage() {
     selectedCategory,
     setSelectedCategory
   } = useApp();
-  const { t, lang } = useI18n();
+  const { t, lang, locCatName, locServiceName, locServiceDesc } = useI18n();
 
   const [searchTerm, setSearchTerm] = useState('');
   const initialCityName = typeof selectedCity === 'object' && selectedCity !== null ? selectedCity.name : (selectedCity || 'All Cities');
@@ -48,9 +48,9 @@ export default function CataloguePage() {
     const matchesCategory = selectedCategory === 'all' || s.category === selectedCategory;
 
     const matchesSearch = !searchTerm ||
-                          s.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          s.shortDescription.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          s.category.toLowerCase().includes(searchTerm.toLowerCase());
+                          s.name.toLowerCase().includes(searchTerm.toLowerCase()) || locServiceName(s).toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          s.shortDescription.toLowerCase().includes(searchTerm.toLowerCase()) || locServiceDesc(s).toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          s.category.toLowerCase().includes(searchTerm.toLowerCase()) || locCatName(s.category).toLowerCase().includes(searchTerm.toLowerCase());
 
     return matchesCategory && matchesSearch;
   }).sort((a, b) => {
@@ -234,7 +234,7 @@ export default function CataloguePage() {
                     border: 'none'
                   }}
                 >
-                  <span>{cat.name}</span>
+                  <span>{locCatName(cat)}</span>
                   {count > 0 && (
                     <span style={{
                       fontSize: '11px',
@@ -311,7 +311,7 @@ export default function CataloguePage() {
                 >
                   <img
                     src={service.image || getServiceImage(service)}
-                    alt={service.name}
+                    alt={locServiceName(service)}
                     loading="lazy"
                     decoding="async"
                     style={{
@@ -386,9 +386,7 @@ export default function CataloguePage() {
                   >
                     {service.name}
                   </h3>
-                  <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.55, marginBottom: '16px', flex: 1 }}>
-                    {service.shortDescription}
-                  </p>
+                  <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.55, marginBottom: '16px', flex: 1 }}>{locServiceDesc(service)}</p>
 
                   <div style={{ marginBottom: '16px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
                     {service.keyInsights?.slice(0, 2).map((ins, i) => (

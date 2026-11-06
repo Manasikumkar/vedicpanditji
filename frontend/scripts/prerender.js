@@ -494,6 +494,8 @@ function buildSemanticBody(route, params, data, meta, lang = 'en') {
   if (route === 'service-detail') {
     const service = SERVICES.find(s => s.id === params.serviceId) || SERVICES[0];
     const pricing = getPricingDisplay ? getPricingDisplay(service.id) : null;
+    const serviceName = data.getLocalizedServiceName ? data.getLocalizedServiceName(service, lang) : service.name;
+    const serviceDesc = data.getLocalizedServiceDesc ? data.getLocalizedServiceDesc(service, lang) : (service.shortDescription || service.description || '');
 
     return `
       ${headerHtml}
@@ -501,7 +503,7 @@ function buildSemanticBody(route, params, data, meta, lang = 'en') {
         <nav aria-label="${escapeHtml(t('service.breadcrumb.label'))}" style="font-size:13px;color:#6B6355;margin-bottom:24px;">
           <a href="${lp('/')}" style="color:#6B6355;text-decoration:none;">${escapeHtml(t('service.breadcrumb.home'))}</a> &gt;
           <a href="${lp('/services')}" style="color:#6B6355;text-decoration:none;">${escapeHtml(t('service.breadcrumb.ceremonies'))}</a> &gt;
-          <span style="color:#BD4B23;font-weight:600;">${service.name}</span>
+          <span style="color:#BD4B23;font-weight:600;">${serviceName}</span>
         </nav>
 
         <section style="display:grid;grid-template-columns:1fr 340px;gap:36px;margin-bottom:48px;">
@@ -532,7 +534,7 @@ function buildSemanticBody(route, params, data, meta, lang = 'en') {
           </div>
 
           <aside style="background:#FFFFFF;border:1px solid #EAE5D9;border-radius:16px;padding:24px;height:fit-content;">
-            <h3 style="font-size:18px;font-weight:700;margin-bottom:12px;">${escapeHtml(t('ssr.book-pandit-for', { name: service.name }))}</h3>
+            <h3 style="font-size:18px;font-weight:700;margin-bottom:12px;">${escapeHtml(t('ssr.book-pandit-for', { name: serviceName }))}</h3>
             <p style="font-size:13px;color:#6B6355;margin-bottom:18px;line-height:1.6;">
               ${escapeHtml(t('ssr.connect-acharya'))}
             </p>
@@ -548,7 +550,7 @@ function buildSemanticBody(route, params, data, meta, lang = 'en') {
             <a href="tel:+919766880979" style="background:#BD4B23;color:#FFFFFF;display:block;text-align:center;padding:12px;border-radius:10px;text-decoration:none;font-weight:600;margin-bottom:10px;">
               📞 ${escapeHtml(t('nav.call-phone', { phone: '+91 97668 80979' }))}
             </a>
-            <a href="https://wa.me/919766880979?text=Namaste%2C+I+would+like+to+inquire+about+${encodeURIComponent(service.name)}" target="_blank" rel="noopener noreferrer" style="background:#25D366;color:#FFFFFF;display:block;text-align:center;padding:12px;border-radius:10px;text-decoration:none;font-weight:600;">
+            <a href="https://wa.me/919766880979?text=Namaste%2C+I+would+like+to+inquire+about+${encodeURIComponent(serviceName)}" target="_blank" rel="noopener noreferrer" style="background:#25D366;color:#FFFFFF;display:block;text-align:center;padding:12px;border-radius:10px;text-decoration:none;font-weight:600;">
               💬 ${escapeHtml(t('ssr.whatsapp-enquiry'))}
             </a>
           </aside>
@@ -580,6 +582,8 @@ function buildSemanticBody(route, params, data, meta, lang = 'en') {
         <section style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:24px;">
           ${SERVICES.map(s => {
             const pricing = getPricingDisplay ? getPricingDisplay(s.id) : null;
+            const sName = data.getLocalizedServiceName ? data.getLocalizedServiceName(s, lang) : s.name;
+            const sDesc = data.getLocalizedServiceDesc ? data.getLocalizedServiceDesc(s, lang) : (s.shortDescription || '');
             return `
             <div style="background:#FFFFFF;border:1px solid #EAE5D9;border-radius:16px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;">
               <div>
@@ -587,7 +591,7 @@ function buildSemanticBody(route, params, data, meta, lang = 'en') {
                   ${escapeHtml(s.category?.toUpperCase() || t('ssr.vedic'))} &bull; ${escapeHtml(s.duration || t('ssr.default-duration'))}
                 </span>
                 <h2 style="font-size:18px;font-weight:700;margin-bottom:10px;">
-                  <a href="${lp(`/services/${s.id}`)}" style="color:#1A1613;text-decoration:none;">${escapeHtml(s.name)}</a>
+                  <a href="${lp(`/services/${s.id}`)}" style="color:#1A1613;text-decoration:none;">${escapeHtml(sName)}</a>
                 </h2>
                 <p style="font-size:13px;color:#6B6355;line-height:1.6;margin-bottom:12px;">
                   ${escapeHtml(s.shortDescription || '')}
@@ -718,9 +722,9 @@ async function run() {
   const { PUJA_GUIDES_DATA } = await vite.ssrLoadModule('./src/data/guides/pujaGuidesData.js');
   const { getSeoMetadata } = await vite.ssrLoadModule('./src/utils/seoMetadata.js');
   const { getPricingDisplay } = await vite.ssrLoadModule('./src/data/pujaPricing.js');
-  const { translate, LANGUAGES, localizePath, isTranslatedRoute } = await vite.ssrLoadModule('./src/i18n/index.js');
+  const { translate, LANGUAGES, localizePath, isTranslatedRoute, getLocalizedServiceName, getLocalizedServiceDesc, getLocalizedCategoryName } = await vite.ssrLoadModule('./src/i18n/index.js');
 
-  const sharedData = { BRAND_INFO, SERVICES, MULTI_CITY_SEO_PAGES, ALL_LOCATIONS, PUJA_GUIDES_DATA, getPricingDisplay, translate, localizePath };
+  const sharedData = { BRAND_INFO, SERVICES, MULTI_CITY_SEO_PAGES, ALL_LOCATIONS, PUJA_GUIDES_DATA, getPricingDisplay, translate, localizePath, getLocalizedServiceName, getLocalizedServiceDesc, getLocalizedCategoryName };
 
   // Define full public route inventory
   const pages = [

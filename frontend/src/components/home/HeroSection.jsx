@@ -30,7 +30,7 @@ export default function HeroSection() {
     openBookingModal,
     navigateTo
   } = useApp();
-  const { t } = useI18n();
+  const { t, locServiceName } = useI18n();
 
   const [selectedPujaId, setSelectedPujaId] = useState('');
   const [selectedCity, setSelectedCity] = useState('');
@@ -369,7 +369,7 @@ export default function HeroSection() {
                 >
                   <option value="">{t('home.hero.select-pooja-placeholder')}</option>
                   {SERVICES.map(s => (
-                    <option key={s.id} value={s.id}>{s.name}</option>
+                    <option key={s.id} value={s.id}>{locServiceName(s)}</option>
                   ))}
                 </select>
               </div>

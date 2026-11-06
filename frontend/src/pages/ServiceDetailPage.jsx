@@ -17,7 +17,7 @@ import {
 
 export default function ServiceDetailPage() {
   const { routeParams, navigateTo, openBookingModal, showToast, selectedCity } = useApp();
-  const { t, lp, lang } = useI18n();
+  const { t, lp, lang, locServiceName, locServiceDesc } = useI18n();
 
   // Find service from params or fallback
   const serviceId = routeParams?.serviceId || 'satyanarayan-puja';
@@ -114,7 +114,7 @@ export default function ServiceDetailPage() {
             {t('service.breadcrumb.ceremonies')}
           </a>
           {' / '}
-          <span style={{ color: 'var(--accent-saffron)', fontWeight: 600 }}>{service.name}</span>
+          <span style={{ color: 'var(--accent-saffron)', fontWeight: 600 }}>{locServiceName(service)}</span>
         </nav>
 
         {/* ======================================================== */}
@@ -426,7 +426,7 @@ export default function ServiceDetailPage() {
             {activeTab === 'significance' && (
               <div>
                 <h3 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '14px', color: 'var(--text-main)' }}>
-                  {t('service.significance.title-before')}{service.name}
+                  {t('service.significance.title-before')}{locServiceName(service)}
                 </h3>
                 <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: '24px', whiteSpace: 'pre-line' }}>
                   {service.longDescription || service.shortDescription}
@@ -500,7 +500,7 @@ export default function ServiceDetailPage() {
             {activeTab === 'timing' && (
               <div>
                 <h3 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '14px', color: 'var(--text-main)' }}>
-                  {t('service.when.title-before')}{service.name}{t('service.when.title-after')}
+                  {t('service.when.title-before')}{locServiceName(service)}{t('service.when.title-after')}
                 </h3>
                 <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: '24px' }}>
                   {t('service.when.intro')}
@@ -759,7 +759,7 @@ export default function ServiceDetailPage() {
             {activeTab === 'faqs' && (
               <div>
                 <h3 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '20px' }}>
-                  {t('service.faqs.title-before')}{service.name}
+                  {t('service.faqs.title-before')}{locServiceName(service)}
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {(service.faqs || [
@@ -814,7 +814,7 @@ export default function ServiceDetailPage() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '14px' }}>
             <MapPin size={18} color="var(--accent-saffron)" />
             <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--text-main)', margin: 0 }}>
-              {t('service.coverage.title-before')}{service.name}{t('service.coverage.title-after')}
+              {t('service.coverage.title-before')}{locServiceName(service)}{t('service.coverage.title-after')}
             </h3>
           </div>
           <p style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '18px', lineHeight: 1.6 }}>

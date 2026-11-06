@@ -33,7 +33,7 @@ export default function BookingModal() {
     pricingVersion,
     user
   } = useApp();
-  const { t, lang } = useI18n();
+  const { t, lang, locServiceName } = useI18n();
   const samagriOptions = getOptionalSamagriOptions(lang);
 
   // Step names: 'puja' (1) | 'city' (2) | 'packages' (3) | 'samagri' (4) | 'details' (5) | 'confirmation' (6)
@@ -639,7 +639,7 @@ export default function BookingModal() {
               >
                 <Sparkles size={14} color="#BD4B23" />
                 <span style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
-                  {t('booking.selected-ceremony')}<strong style={{ color: '#BD4B23' }}>{activeService.name}</strong>
+                  {t('booking.selected-ceremony')}<strong style={{ color: '#BD4B23' }}>{locServiceName(activeService)}</strong>
                 </span>
               </div>
 
@@ -763,7 +763,7 @@ export default function BookingModal() {
                 }}
               >
                 <div>
-                  <strong style={{ color: '#BD4B23' }}>{activeService.name}</strong>{t('booking.location-sep')}<strong>{city} {locality ? `(${locality})` : ''}</strong>
+                  <strong style={{ color: '#BD4B23' }}>{locServiceName(activeService)}</strong>{t('booking.location-sep')}<strong>{city} {locality ? `(${locality})` : ''}</strong>
                 </div>
                 <div style={{ display: 'flex', gap: '10px' }}>
                   <button
@@ -1136,7 +1136,7 @@ export default function BookingModal() {
                 }}
               >
                 <div>
-                  <strong style={{ color: '#BD4B23' }}>{activeService.name}</strong> • {city} • {livePkg?.name || t('booking.selected-package')}
+                  <strong style={{ color: '#BD4B23' }}>{locServiceName(activeService)}</strong> • {city} • {livePkg?.name || t('booking.selected-package')}
                 </div>
                 <div style={{ fontWeight: 800, color: '#BD4B23' }}>
                   {pricingSummary.displayString}

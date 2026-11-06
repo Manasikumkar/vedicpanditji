@@ -13,7 +13,7 @@ import {
 
 export default function FeaturedPujas() {
   const { navigateTo, openBookingModal } = useApp();
-  const { t, lang } = useI18n();
+  const { t, lang, locCatName, locServiceName, locServiceDesc } = useI18n();
 
   return (
     <section style={{ padding: '85px 0', background: '#FFFFFF', borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)' }}>
@@ -97,7 +97,7 @@ export default function FeaturedPujas() {
                         boxShadow: '0 2px 4px rgba(0,0,0,0.15)'
                       }}
                     >
-                      {service.category}
+                      {locCatName(service.category)}
                     </span>
                   </div>
 
@@ -163,9 +163,7 @@ export default function FeaturedPujas() {
                       marginBottom: '16px',
                       flex: 1
                     }}
-                  >
-                    {service.shortDescription}
-                  </p>
+                  >{locServiceDesc(service)}</p>
 
                   {/* Pricing / Starting Dakshina row */}
                   <div

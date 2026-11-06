@@ -29,7 +29,7 @@ const iconMap = {
 
 export default function ServiceCategories() {
   const { navigateTo, setSelectedCategory } = useApp();
-  const { t } = useI18n();
+  const { t, locCatName, locCatTagline, locCatCount } = useI18n();
 
   const handleCategoryClick = (catId) => {
     setSelectedCategory(catId);
@@ -101,7 +101,7 @@ export default function ServiceCategories() {
                       boxShadow: '0 2px 6px rgba(0,0,0,0.15)'
                     }}
                   >
-                    {cat.count}
+                    {locCatCount(cat) || cat.count}
                   </div>
                   {/* Icon floating */}
                   <div
@@ -136,9 +136,7 @@ export default function ServiceCategories() {
                       marginBottom: '8px',
                       color: 'var(--text-main)'
                     }}
-                  >
-                    {cat.name}
-                  </h3>
+                  >{locCatName(cat)}</h3>
                   <p
                     style={{
                       fontSize: '13px',
@@ -147,9 +145,7 @@ export default function ServiceCategories() {
                       marginBottom: '16px',
                       flex: 1
                     }}
-                  >
-                    {cat.tagline}
-                  </p>
+                  >{locCatTagline(cat)}</p>
 
                   {/* Bottom Action Link */}
                   <div
@@ -163,7 +159,7 @@ export default function ServiceCategories() {
                       marginTop: 'auto'
                     }}
                   >
-                    <span>{`${t('home.categories.view-all')} `}{cat.name}</span>
+                    <span>{`${t('home.categories.view-all')} `}{locCatName(cat)}</span>
                     <ArrowRight size={14} />
                   </div>
                 </div>
