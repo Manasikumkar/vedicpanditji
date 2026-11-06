@@ -32,8 +32,8 @@ export default function HeroSection() {
   } = useApp();
   const { t } = useI18n();
 
-  const [selectedPujaId, setSelectedPujaId] = useState(SERVICES[0].id);
-  const [selectedCity, setSelectedCity] = useState('Bangalore');
+  const [selectedPujaId, setSelectedPujaId] = useState('');
+  const [selectedCity, setSelectedCity] = useState('');
   const heroRef = useRef(null);
 
   // Rotating Keyword Animation State
@@ -79,8 +79,11 @@ export default function HeroSection() {
 
   const handleDiscoverySearch = (e) => {
     e.preventDefault();
-    // Route directly to relevant pricing and packages page for selected puja & city
-    navigateTo('service-detail', { serviceId: selectedPujaId, city: selectedCity });
+    if (selectedPujaId) {
+      navigateTo('service-detail', { serviceId: selectedPujaId, city: selectedCity || 'Pune' });
+    } else {
+      navigateTo('services');
+    }
   };
 
   const currentKeyword = t(ROTATING_KEYWORDS[keywordIndex]);
@@ -364,6 +367,7 @@ export default function HeroSection() {
                     cursor: 'pointer'
                   }}
                 >
+                  <option value="">{t('home.hero.select-pooja-placeholder')}</option>
                   {SERVICES.map(s => (
                     <option key={s.id} value={s.id}>{s.name}</option>
                   ))}
@@ -393,6 +397,7 @@ export default function HeroSection() {
                       cursor: 'pointer'
                     }}
                   >
+                    <option value="">{t('home.hero.select-city-placeholder')}</option>
                     <option value="Bangalore">{t('home.hero.city-bangalore')}</option>
                     <option value="Pune">{t('home.hero.city-pune')}</option>
                     <option value="Mumbai">{t('home.hero.city-mumbai')}</option>
