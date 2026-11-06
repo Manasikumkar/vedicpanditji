@@ -232,7 +232,188 @@
   border-color: var(--adm-primary);
 }
 
-/* Segmented Language View Switcher */
+/* Language View Dropdown Selector in Admin Navbar */
+.admin-lang-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.admin-lang-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: var(--adm-radius-sm);
+  background: var(--adm-bg);
+  border: 1px solid var(--adm-border);
+  color: var(--adm-text-main);
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.admin-lang-dropdown-trigger:hover,
+.admin-lang-dropdown-trigger.open {
+  background: #FFFFFF;
+  border-color: var(--adm-primary);
+  color: var(--adm-primary);
+  box-shadow: 0 1px 4px rgba(189, 75, 35, 0.12);
+}
+
+.lang-icon {
+  color: var(--adm-primary);
+  flex-shrink: 0;
+}
+
+.lang-trigger-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lang-name-text {
+  font-weight: 600;
+  color: var(--adm-text-main);
+}
+
+.admin-lang-dropdown-trigger:hover .lang-name-text,
+.admin-lang-dropdown-trigger.open .lang-name-text {
+  color: var(--adm-primary);
+}
+
+.lang-code-pill {
+  display: inline-block;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 4px;
+  background: #FFF1EB;
+  color: var(--adm-primary);
+  letter-spacing: 0.5px;
+}
+
+.lang-chevron {
+  color: var(--adm-text-muted);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.lang-chevron.rotated {
+  transform: rotate(180deg);
+  color: var(--adm-primary);
+}
+
+.admin-lang-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 250px;
+  background: #FFFFFF;
+  border: 1px solid var(--adm-border);
+  border-radius: var(--adm-radius);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.06);
+  padding: 6px;
+  z-index: 1050;
+  animation: dropdownFadeIn 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-menu-header {
+  padding: 6px 10px 4px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--adm-text-muted);
+}
+
+.admin-lang-dropdown-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: var(--adm-radius-sm);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.12s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.admin-lang-dropdown-item:hover {
+  background: #FFF7ED;
+}
+
+.admin-lang-dropdown-item.active {
+  background: #FFF1EB;
+}
+
+.admin-lang-dropdown-item .item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.admin-lang-dropdown-item .item-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--adm-text-main);
+}
+
+.admin-lang-dropdown-item.active .item-title {
+  color: var(--adm-primary);
+  font-weight: 700;
+}
+
+.admin-lang-dropdown-item .item-code-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: #F1F5F9;
+  color: #475569;
+}
+
+.admin-lang-dropdown-item.active .item-code-badge {
+  background: #FDE8DE;
+  color: var(--adm-primary);
+}
+
+.admin-lang-dropdown-item .item-desc {
+  font-size: 11px;
+  color: var(--adm-text-secondary);
+}
+
+.admin-lang-dropdown-item.active .item-desc {
+  color: var(--adm-primary);
+  opacity: 0.85;
+}
+
+.item-check-icon {
+  color: var(--adm-primary);
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+/* Legacy Segmented Language Switcher Fallback */
 .admin-lang-segmented {
   display: inline-flex;
   align-items: center;
@@ -1037,6 +1218,39 @@
 .btn-step-save.dirty:hover:not(:disabled) {
   background: var(--adm-primary-hover);
   box-shadow: 0 4px 12px var(--adm-primary-glow);
+}
+
+/* Save & Next — combined action button (steps 1–4) */
+.btn-step-save-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--adm-primary);
+  color: #FFFFFF;
+  border: none;
+  padding: 9px 20px;
+  border-radius: var(--adm-radius-sm);
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-step-save-next:hover:not(:disabled) {
+  background: var(--adm-primary-hover);
+  box-shadow: 0 4px 12px var(--adm-primary-glow);
+  transform: translateX(2px);
+}
+
+.btn-step-save-next:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* When dirty (has unsaved changes) — pulse to draw attention */
+.btn-step-save-next.dirty {
+  animation: pulseSave 2s infinite;
 }
 
 /* ==========================================================================

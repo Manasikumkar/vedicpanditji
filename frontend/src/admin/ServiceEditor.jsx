@@ -47,6 +47,7 @@ export default function ServiceEditor({
   activeSection = 'details',
   onSectionChange,
   onSave,
+  onSaveAndGoTo,
   isDirty = false,
   isSaving = false
 }) {
@@ -243,29 +244,19 @@ export default function ServiceEditor({
           <div className="step-navigation-footer dual">
             <span className="step-indicator">Step 1 of 5: Service Identity</span>
 
-            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-              {onSave && (
-                <button
-                  type="button"
-                  className={`btn-step-save ${isDirty ? 'dirty' : ''}`}
-                  onClick={onSave}
-                  disabled={isSaving}
-                  title={isDirty ? "Save ceremony changes to live website" : "Ceremony rate card is up to date and live. Click to confirm."}
-                >
-                  <Save size={15} />
-                  <span>{isSaving ? 'Saving…' : isDirty ? 'Save & Confirm' : '✓ Saved & Confirmed'}</span>
-                </button>
-              )}
-
+            {onSaveAndGoTo && onSave && (
               <button
                 type="button"
-                className="btn-step-next"
-                onClick={() => setTab('pricing')}
+                className={`btn-step-save-next ${isDirty ? 'dirty' : ''}`}
+                onClick={() => onSaveAndGoTo('pricing')}
+                disabled={isSaving}
+                title="Save changes and continue to Rates & Range"
               >
-                <span>Next: Rates &amp; Range</span>
+                <Save size={15} />
+                <span>{isSaving ? 'Saving…' : 'Save & Next →'}</span>
                 <ArrowRight size={15} />
               </button>
-            </div>
+            )}
           </div>
         </div>
       )}
@@ -327,29 +318,19 @@ export default function ServiceEditor({
 
             <span className="step-indicator">Step 2 of 5: Rates &amp; Range</span>
 
-            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-              {onSave && (
-                <button
-                  type="button"
-                  className={`btn-step-save ${isDirty ? 'dirty' : ''}`}
-                  onClick={onSave}
-                  disabled={isSaving}
-                  title={isDirty ? "Save ceremony changes to live website" : "Ceremony rate card is up to date and live. Click to confirm."}
-                >
-                  <Save size={15} />
-                  <span>{isSaving ? 'Saving…' : isDirty ? 'Save & Confirm' : '✓ Saved & Confirmed'}</span>
-                </button>
-              )}
-
+            {onSaveAndGoTo && onSave && (
               <button
                 type="button"
-                className="btn-step-next"
-                onClick={() => setTab('packages')}
+                className={`btn-step-save-next ${isDirty ? 'dirty' : ''}`}
+                onClick={() => onSaveAndGoTo('packages')}
+                disabled={isSaving}
+                title="Save changes and continue to Packages"
               >
-                <span>Next: Packages ({card.packages.length})</span>
+                <Save size={15} />
+                <span>{isSaving ? 'Saving…' : 'Save & Next →'}</span>
                 <ArrowRight size={15} />
               </button>
-            </div>
+            )}
           </div>
         </div>
       )}
@@ -606,30 +587,19 @@ export default function ServiceEditor({
 
             <span className="step-indicator">Step 3 of 5: Packages</span>
 
-            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-              {onSave && (
-                <button
-                  type="button"
-                  className={`btn-step-save ${isDirty ? 'dirty' : ''}`}
-                  onClick={onSave}
-                  disabled={isSaving}
-                  title={isDirty ? "Save ceremony packages to live website" : "Packages are up to date and live. Click to confirm."}
-                >
-                  <Save size={15} />
-                  <span>{isSaving ? 'Saving…' : isDirty ? 'Save & Confirm' : '✓ Saved & Confirmed'}</span>
-                </button>
-              )}
-
+            {onSaveAndGoTo && onSave && (
               <button
                 type="button"
-                className="btn-step-next"
-                onClick={() => setTab('preview')}
-                title="Preview packages as devotees see them"
+                className={`btn-step-save-next ${isDirty ? 'dirty' : ''}`}
+                onClick={() => onSaveAndGoTo('notes')}
+                disabled={isSaving}
+                title="Save packages and continue to Internal Notes"
               >
-                <span>View Preview</span>
-                <Eye size={15} />
+                <Save size={15} />
+                <span>{isSaving ? 'Saving…' : 'Save & Next →'}</span>
+                <ArrowRight size={15} />
               </button>
-            </div>
+            )}
           </div>
         </div>
       )}
@@ -657,29 +627,19 @@ export default function ServiceEditor({
 
             <span className="step-indicator">Step 4 of 5: Internal Notes</span>
 
-            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-              {onSave && (
-                <button
-                  type="button"
-                  className={`btn-step-save ${isDirty ? 'dirty' : ''}`}
-                  onClick={onSave}
-                  disabled={isSaving}
-                  title={isDirty ? "Save ceremony changes to live website" : "Ceremony rate card is up to date and live. Click to confirm."}
-                >
-                  <Save size={15} />
-                  <span>{isSaving ? 'Saving…' : isDirty ? 'Save & Confirm' : '✓ Saved & Confirmed'}</span>
-                </button>
-              )}
-
+            {onSaveAndGoTo && onSave && (
               <button
                 type="button"
-                className="btn-step-next"
-                onClick={() => setTab('preview')}
+                className={`btn-step-save-next ${isDirty ? 'dirty' : ''}`}
+                onClick={() => onSaveAndGoTo('preview')}
+                disabled={isSaving}
+                title="Save notes and continue to Devotee Preview"
               >
-                <span>Next: Devotee Preview</span>
+                <Save size={15} />
+                <span>{isSaving ? 'Saving…' : 'Save & Next →'}</span>
                 <ArrowRight size={15} />
               </button>
-            </div>
+            )}
           </div>
         </div>
       )}

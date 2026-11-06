@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState, useRef } from 'react';
 import {
   Flame,
   Layers,
@@ -13,7 +13,9 @@ import {
   AlertCircle,
   CheckCircle2,
   Loader2,
-  ChevronRight
+  ChevronRight,
+  ChevronDown,
+  Check
 } from 'lucide-react';
 import { supabase } from '../admin/supabaseClient';
 import LoginForm from '../admin/LoginForm';
@@ -30,6 +32,8 @@ export default function AdminPage() {
   const [message, setMessage] = useState(null); // { type: 'ok' | 'error', text }
   const [busy, setBusy] = useState(false);
   const [lang, setLang] = useState('en');
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
+  const langDropdownRef = useRef(null);
   const [tab, setTab] = useState('services'); // 'services' | 'samagri' | 'history'
   const [serviceSubTab, setServiceSubTab] = useState('details');
   const [selectedId, setSelectedId] = useState(null);
@@ -83,6 +87,27 @@ export default function AdminPage() {
   const dirty = useMemo(() => (doc && saved ? JSON.stringify(doc) !== JSON.stringify(saved) : false), [doc, saved]);
   const missing = useMemo(() => (doc ? countMissingTranslations(doc) : { hi: 0, mr: 0 }), [doc]);
 
+  // Language selector options for the admin navigation
+  const LANG_OPTIONS = [
+    { id: 'en', label: 'English', code: 'EN', desc: 'Default active website language' },
+    { id: 'hi', label: 'हिन्दी', code: 'HI', desc: 'Edit Hindi translations' },
+    { id: 'mr', label: 'मराठी', code: 'MR', desc: 'Edit Marathi translations' },
+    { id: 'all', label: 'All 3 Languages', code: 'ALL', desc: 'View all 3 side-by-side' }
+  ];
+  const currentLangOption = LANG_OPTIONS.find((o) => o.id === lang) || LANG_OPTIONS[0];
+
+  // Close language dropdown on outside click
+  useEffect(() => {
+    if (!langDropdownOpen) return;
+    const handleClickOutside = (e) => {
+      if (langDropdownRef.current && !langDropdownRef.current.contains(e.target)) {
+        setLangDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [langDropdownOpen]);
+
   const login = async (email, password) => {
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     return error ? error.message : '';
@@ -102,11 +127,18 @@ export default function AdminPage() {
         setTab(target.tab);
         if (target.serviceId) setSelectedId(target.serviceId);
       }
-      return;
+      return false; // signal failure
     }
     setDoc(data.data);
     setSaved(data.data);
     setMessage({ type: 'ok', text: 'Saved. The live site shows it now; the rebuild finishes in a few minutes.' });
+    return true; // signal success
+  };
+
+  // Save then automatically advance to the next editor step (used by Save & Next button)
+  const saveAndGoTo = async (nextSubTab) => {
+    const ok = await save();
+    if (ok) setServiceSubTab(nextSubTab);
   };
 
   const revert = async () => {
@@ -273,40 +305,54 @@ export default function AdminPage() {
             <span>View Website</span>
           </a>
 
-          {/* Segmented Language View Switcher */}
-          <div className="admin-lang-segmented" role="tablist" aria-label="Language view">
+          {/* Language View Dropdown Selector */}
+          <div className="admin-lang-dropdown-wrapper" ref={langDropdownRef}>
             <button
               type="button"
-              className={`lang-segment-btn ${lang === 'en' ? 'active' : ''}`}
-              onClick={() => setLang('en')}
-              title="Edit in English (default active website language)"
+              className={`admin-lang-dropdown-trigger ${langDropdownOpen ? 'open' : ''}`}
+              onClick={() => setLangDropdownOpen((prev) => !prev)}
+              aria-expanded={langDropdownOpen}
+              aria-haspopup="listbox"
+              title="Select language editing mode"
             >
-              English (EN)
+              <Languages size={15} className="lang-icon" />
+              <span className="lang-trigger-label">
+                <span className="lang-name-text">{currentLangOption.label}</span>
+                <span className="lang-code-pill">{currentLangOption.code}</span>
+              </span>
+              <ChevronDown size={14} className={`lang-chevron ${langDropdownOpen ? 'rotated' : ''}`} />
             </button>
-            <button
-              type="button"
-              className={`lang-segment-btn ${lang === 'hi' ? 'active' : ''}`}
-              onClick={() => setLang('hi')}
-              title="Edit Hindi translations (falls back to English when empty)"
-            >
-              हिन्दी (HI)
-            </button>
-            <button
-              type="button"
-              className={`lang-segment-btn ${lang === 'mr' ? 'active' : ''}`}
-              onClick={() => setLang('mr')}
-              title="Edit Marathi translations (falls back to English when empty)"
-            >
-              मराठी (MR)
-            </button>
-            <button
-              type="button"
-              className={`lang-segment-btn ${lang === 'all' ? 'active' : ''}`}
-              onClick={() => setLang('all')}
-              title="View all 3 languages simultaneously"
-            >
-              All 3 Langs
-            </button>
+
+            {langDropdownOpen && (
+              <div className="admin-lang-dropdown-menu" role="listbox" aria-label="Language options">
+                <div className="dropdown-menu-header">Select Language View</div>
+                {LANG_OPTIONS.map((opt) => {
+                  const isSelected = opt.id === lang;
+                  return (
+                    <button
+                      key={opt.id}
+                      type="button"
+                      className={`admin-lang-dropdown-item ${isSelected ? 'active' : ''}`}
+                      onClick={() => {
+                        setLang(opt.id);
+                        setLangDropdownOpen(false);
+                      }}
+                      role="option"
+                      aria-selected={isSelected}
+                    >
+                      <div className="item-text">
+                        <div className="item-title">
+                          <span>{opt.label}</span>
+                          <span className="item-code-badge">{opt.code}</span>
+                        </div>
+                        <span className="item-desc">{opt.desc}</span>
+                      </div>
+                      {isSelected && <Check size={14} className="item-check-icon" />}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           {/* Professional Translation Status Pill */}
@@ -451,6 +497,7 @@ export default function AdminPage() {
                   activeSection={serviceSubTab}
                   onSectionChange={setServiceSubTab}
                   onSave={save}
+                  onSaveAndGoTo={saveAndGoTo}
                   isDirty={dirty}
                   isSaving={busy}
                   onChange={(next) => edit(setIn(doc, ['rateCards', selectedId], next))}
