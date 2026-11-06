@@ -2424,10 +2424,9 @@
   font-weight: 700;
   color: var(--adm-text-main);
   letter-spacing: -0.01em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  min-width: 0;
+  white-space: normal;
+  line-height: 1.35;
+  flex: 1;
 }
 
 .samagri-id-code {

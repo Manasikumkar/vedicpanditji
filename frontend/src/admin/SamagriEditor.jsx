@@ -29,32 +29,11 @@ export default function SamagriEditor({ items, lang, onChange, onSave, isDirty =
               <div className="samagri-header-bar">
                 <div className="samagri-header-left">
                   <span className="samagri-idx">#{i + 1}</span>
-                  <span className="samagri-title-text" title={item.name?.en || item.id}>
-                    {item.name?.en || '(Unnamed Item)'}
+                  <span className="samagri-title-text" title={item.name?.[lang === 'all' ? 'en' : lang] || item.name?.en || item.id}>
+                    {item.name?.[lang === 'all' ? 'en' : lang] || item.name?.en || '(Unnamed Item)'}
                   </span>
-                  <code className="samagri-id-code">{item.id}</code>
                 </div>
                 <div className="samagri-header-right">
-                  {isVerified ? (
-                    <span className="samagri-status-pill verified" title="Purohit Price Verified">
-                      ✓ Verified
-                    </span>
-                  ) : (
-                    <span className="samagri-status-pill pending" title="Pending Verification">
-                      ⏳ Pending
-                    </span>
-                  )}
-
-                  {isActive ? (
-                    <span className="samagri-status-pill active" title="Active in Devotee Catalog">
-                      ● Live
-                    </span>
-                  ) : (
-                    <span className="samagri-status-pill inactive" title="Hidden from Catalog">
-                      ○ Inactive
-                    </span>
-                  )}
-
                   <span className="samagri-live-price" title="Current catalog price">
                     ₹{item.price ? Number(item.price).toLocaleString('en-IN') : '0'}
                   </span>
