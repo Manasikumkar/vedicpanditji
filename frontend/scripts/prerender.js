@@ -50,9 +50,8 @@ function buildSemanticBody(route, params, data, meta, lang = 'en') {
 
   const headerHtml = `
     <header class="navbar" style="background:#FFFFFF;border-bottom:1px solid #EAE5D9;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;">
-      <a href="${lp('/')}" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#1A1613;">
-        <span style="font-size:24px;">🕉️</span>
-        <span style="font-weight:700;font-size:20px;color:#BD4B23;">Vedic<span style="color:#C98A2C;">Panditji</span></span>
+      <a href="${lp('/')}" style="display:flex;align-items:center;text-decoration:none;">
+        <img src="/images/vedicpanditji-logo.png" alt="VedicPanditji" width="180" height="46" style="height:46px;width:auto;max-width:190px;object-fit:contain;display:block;" />
       </a>
       <nav style="display:flex;gap:20px;font-size:14px;font-weight:500;">
         <a href="${lp('/')}" style="text-decoration:none;color:#1A1613;">${escapeHtml(t('nav.home'))}</a>
