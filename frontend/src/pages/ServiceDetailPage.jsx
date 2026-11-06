@@ -786,10 +786,10 @@ export default function ServiceDetailPage() {
                       }}
                     >
                       <h4 style={{ fontSize: '15px', fontWeight: 700, marginBottom: '8px', color: 'var(--text-main)' }}>
-                        {faq.q}
+                        {faq.question || faq.q}
                       </h4>
                       <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                        {faq.a}
+                        {faq.answer || faq.a}
                       </p>
                     </div>
                   ))}
