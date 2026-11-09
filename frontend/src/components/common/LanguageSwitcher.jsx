@@ -286,6 +286,37 @@ export default function LanguageSwitcher({ inDrawer = false }) {
           border-color: var(--accent-saffron, #BD4B23);
           box-shadow: 0 2px 8px rgba(189, 75, 35, 0.25);
         }
+
+        @media (max-width: 640px) {
+          .vp-lang-btn {
+            padding: 5px 9px;
+            font-size: 12px;
+            gap: 4px;
+          }
+          .vp-lang-icon {
+            width: 13px;
+            height: 13px;
+          }
+          .vp-lang-chevron {
+            width: 11px;
+            height: 11px;
+          }
+        }
+
+        @media (max-width: 400px) {
+          .vp-lang-btn {
+            padding: 4px 7px;
+            font-size: 11px;
+            gap: 3px;
+          }
+          .vp-lang-icon {
+            width: 12px;
+            height: 12px;
+          }
+          .vp-lang-chevron {
+            display: none;
+          }
+        }
       `}</style>
     </div>
   );

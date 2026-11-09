@@ -508,13 +508,23 @@ export default function Navbar() {
           display: none;
           align-items: center;
           justify-content: center;
-          background: none;
-          border: none;
-          color: var(--text-main);
+          background: #FFFFFF;
+          border: 1px solid var(--border-subtle, #EAE5D9);
+          border-radius: 10px;
+          color: var(--text-main, #1A1613);
           padding: 6px;
-          min-width: 44px;
-          min-height: 44px;
+          min-width: 40px;
+          min-height: 40px;
           cursor: pointer;
+          flex-shrink: 0;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+          transition: all 0.2s ease;
+        }
+
+        .vp-mobile-toggle:hover {
+          background: #FAF8F4;
+          border-color: var(--accent-saffron);
+          color: var(--accent-saffron);
         }
 
         /* Drawer Overlay */
@@ -650,24 +660,134 @@ export default function Navbar() {
         }
 
         @media (max-width: 960px) {
+          .vp-navbar-root {
+            height: 68px;
+          }
+          .vp-navbar-scrolled {
+            height: 62px;
+          }
+          .vp-navbar-container {
+            padding: 0 16px;
+            gap: 10px;
+          }
           .vp-center-nav {
+            display: none;
+          }
+          .vp-phone-link {
             display: none;
           }
           .vp-mobile-toggle {
             display: flex;
           }
-        }
-
-        @media (max-width: 480px) {
-          .vp-phone-link {
-            display: none;
-          }
-          .vp-auth-btn {
-            display: none;
+          .vp-brand-logo-img {
+            height: 38px;
+            max-width: 155px;
           }
           .vp-book-cta {
-            padding: 9px 16px;
-            font-size: 12.5px;
+            padding: 8px 16px;
+            font-size: 13px;
+            gap: 6px;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .vp-navbar-root {
+            height: 62px;
+          }
+          .vp-navbar-scrolled {
+            height: 58px;
+          }
+          .vp-navbar-container {
+            padding: 0 12px;
+            gap: 8px;
+          }
+          .vp-brand {
+            flex-shrink: 1;
+            min-width: 0;
+          }
+          .vp-brand-logo-img {
+            height: 32px;
+            max-width: 130px;
+          }
+          .vp-right-actions {
+            gap: 6px;
+            flex-shrink: 0;
+          }
+          .vp-book-cta {
+            padding: 7px 12px;
+            font-size: 12px;
+            gap: 5px;
+            box-shadow: 0 2px 10px rgba(217, 79, 30, 0.25);
+          }
+          .vp-book-cta svg {
+            width: 13px;
+            height: 13px;
+          }
+          .vp-mobile-toggle {
+            width: 38px;
+            height: 38px;
+            min-width: 38px;
+            min-height: 38px;
+            padding: 4px;
+            border-radius: 8px;
+          }
+          .vp-mobile-toggle svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        @media (max-width: 420px) {
+          .vp-navbar-container {
+            padding: 0 8px;
+            gap: 5px;
+          }
+          .vp-brand-logo-img {
+            height: 29px;
+            max-width: 115px;
+          }
+          .vp-right-actions {
+            gap: 4px;
+          }
+          .vp-book-cta {
+            padding: 6px 9px;
+            font-size: 11px;
+            gap: 4px;
+          }
+          .vp-book-cta svg {
+            width: 12px;
+            height: 12px;
+          }
+          .vp-mobile-toggle {
+            width: 35px;
+            height: 35px;
+            min-width: 35px;
+            min-height: 35px;
+            padding: 3px;
+          }
+          .vp-mobile-toggle svg {
+            width: 18px;
+            height: 18px;
+          }
+        }
+
+        @media (max-width: 350px) {
+          .vp-brand-logo-img {
+            height: 26px;
+            max-width: 100px;
+          }
+          .vp-book-cta {
+            padding: 5px 7px;
+            font-size: 10.5px;
+          }
+          .vp-book-cta svg {
+            display: none;
+          }
+          .vp-mobile-toggle {
+            width: 33px;
+            height: 33px;
+            min-width: 33px;
+            min-height: 33px;
           }
         }
       `}</style>

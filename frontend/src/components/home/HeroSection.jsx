@@ -589,6 +589,9 @@ export default function HeroSection() {
         }
 
         @media (max-width: 600px) {
+          .hero-section-root {
+            padding-top: 80px !important;
+          }
           .hero-main-title {
             font-size: clamp(26px, 7vw, 34px) !important;
             line-height: 1.2 !important;
