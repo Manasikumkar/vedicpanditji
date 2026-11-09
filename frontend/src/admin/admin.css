@@ -2882,22 +2882,22 @@
 }
 
 .admin-login-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   margin-bottom: 28px;
 }
 
 .admin-login-logo {
-  display: inline-flex;
-  padding: 8px 16px;
-  background: #FFFFFF;
-  border: 1px solid var(--adm-border);
-  border-radius: 12px;
-  margin-bottom: 16px;
-  box-shadow: var(--adm-shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
 }
 
 .admin-login-logo img {
-  height: 32px;
+  height: 40px;
   width: auto;
   display: block;
 }
@@ -2912,9 +2912,10 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 20px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(189, 75, 35, 0.15);
 }
 
 .admin-login-header h2 {
