@@ -149,17 +149,21 @@ function buildSemanticBody(route, params, data, meta, lang = 'en') {
   // 1. Location Landing Pages
   if (route === 'location-detail') {
     const loc = ALL_LOCATIONS.find(l => l.slug === params.slug) || ALL_LOCATIONS[0];
-    const parentCityName = loc.parentCity === 'PCMC' || loc.parentCity === 'pcmc' ? 'Pimpri-Chinchwad (PCMC)' : 'Pune';
-    const zoneBadge = loc.badge || (loc.isParentHub ? 'PRIMARY CITY HUB' : `${loc.zone || 'LOCALITY'} HUB`);
+    const locContent = data.getLocalizedLocationContent ? data.getLocalizedLocationContent(loc.slug, lang) : null;
+    const locName = data.getLocalizedLocationName ? data.getLocalizedLocationName(loc, lang) : loc.name;
+    const parentCityName = loc.parentCity === 'PCMC' || loc.parentCity === 'pcmc' ? (lang === 'mr' || lang === 'hi' ? 'पिंपरी-चिंचवड (PCMC)' : 'Pimpri-Chinchwad (PCMC)') : (lang === 'mr' || lang === 'hi' ? 'पुणे' : 'Pune');
+    const zoneBadge = lang === 'mr' ? `${locName} • पडताळलेले घरपोच वैदिक पुरोहित` : lang === 'hi' ? `${locName} • सत्यापित वैदिक पंडित सेवा` : (loc.badge || 'Verified Doorstep Vedic Priests');
+    const h1Text = locContent?.h1 || loc.h1 || loc.title;
+    const introText = locContent?.intro || loc.intro;
     const servicesList = loc.topServices || loc.primaryServices || [];
 
     return `
       ${headerHtml}
       <main style="max-width:1200px;margin:0 auto;padding:40px 24px;">
         <nav aria-label="Breadcrumb" style="font-size:13px;color:#6B6355;margin-bottom:24px;">
-          <a href="/" style="color:#6B6355;text-decoration:none;">Home</a> &gt;
-          <a href="/locations/${loc.parentCity === 'PCMC' || loc.parentCity === 'pcmc' ? 'pandit-in-pcmc' : 'pandit-in-pune'}" style="color:#6B6355;text-decoration:none;">${parentCityName}</a> &gt;
-          <span style="color:#BD4B23;font-weight:600;">${loc.name}</span>
+          <a href="${lp('/')}" style="color:#6B6355;text-decoration:none;">${escapeHtml(t('nav.home'))}</a> &gt;
+          <a href="${lp('/locations/' + (loc.parentCity === 'PCMC' || loc.parentCity === 'pcmc' ? 'pandit-in-pcmc' : 'pandit-in-pune'))}" style="color:#6B6355;text-decoration:none;">${escapeHtml(parentCityName)}</a> &gt;
+          <span style="color:#BD4B23;font-weight:600;">${escapeHtml(locName)}</span>
         </nav>
 
         <section style="margin-bottom:40px;">
@@ -167,10 +171,10 @@ function buildSemanticBody(route, params, data, meta, lang = 'en') {
             ${escapeHtml(zoneBadge)}
           </span>
           <h1 style="font-size:32px;font-weight:700;color:#1A1613;margin-bottom:16px;line-height:1.2;">
-            ${escapeHtml(loc.h1 || loc.title)}
+            ${escapeHtml(h1Text)}
           </h1>
-          <p style="font-size:16px;color:#4A4438;line-height:1.7;max-width:900px;margin-bottom:24px;">
-            ${escapeHtml(loc.intro)}
+          <p style="font-size:16px;color:#4A4438;line-height:1.7;max-width:900px;margin-bottom:24px;white-space:pre-line;">
+            ${escapeHtml(introText)}
           </p>
           <div style="background:#FBF9F5;border:1px solid #EAE5D9;border-radius:12px;padding:20px;display:flex;flex-wrap:wrap;gap:24px;font-size:13px;">
             <div><strong>Ritual Languages:</strong> Hindi &amp; Sanskrit</div>
@@ -246,28 +250,34 @@ function buildSemanticBody(route, params, data, meta, lang = 'en') {
     const pageData = (MULTI_CITY_SEO_PAGES || []).find(p => p.slug === params.slug) || (MULTI_CITY_SEO_PAGES && MULTI_CITY_SEO_PAGES[0]) || {};
     const relatedCityPages = (MULTI_CITY_SEO_PAGES || []).filter(p => p.city === pageData.city && p.slug !== pageData.slug);
 
+    const pageH1 = data.getLocalizedCityPageH1 ? data.getLocalizedCityPageH1(pageData, lang) : (pageData.h1 || pageData.title);
+    const pageTagline = data.getLocalizedCityPageTagline ? data.getLocalizedCityPageTagline(pageData, lang) : (pageData.tagline || '');
+    const pageOverview = data.getLocalizedCityPageOverview ? data.getLocalizedCityPageOverview(pageData, lang) : (pageData.sections?.[0]?.content || pageData.metaDescription || '');
+    const pageCity = data.getLocalizedLocationName ? data.getLocalizedLocationName(pageData.city, lang) : pageData.city;
+    const pageState = data.getLocalizedLocationName ? data.getLocalizedLocationName(pageData.state, lang) : pageData.state;
+
     return `
       ${headerHtml}
       <main style="max-width:1200px;margin:0 auto;padding:40px 24px;">
         <nav aria-label="Breadcrumb" style="font-size:13px;color:#6B6355;margin-bottom:24px;">
-          <a href="/" style="color:#6B6355;text-decoration:none;">Home</a> &gt;
-          <a href="/services" style="color:#6B6355;text-decoration:none;">Ceremonies</a> &gt;
-          <span style="color:#BD4B23;font-weight:600;">${escapeHtml(pageData.title || pageData.h1)}</span>
+          <a href="${lp('/')}" style="color:#6B6355;text-decoration:none;">${escapeHtml(t('catalogue.breadcrumb.home'))}</a> &gt;
+          <a href="${lp('/services')}" style="color:#6B6355;text-decoration:none;">${escapeHtml(t('nav.ceremonies'))}</a> &gt;
+          <span style="color:#BD4B23;font-weight:600;">${escapeHtml(pageH1)}</span>
         </nav>
 
         <section style="margin-bottom:40px;">
           <span style="background:#FFF3E0;color:#BD4B23;padding:4px 12px;border-radius:12px;font-size:12px;font-weight:600;display:inline-block;margin-bottom:12px;">
-            ${escapeHtml(pageData.heroBadge || `${pageData.city?.toUpperCase() || 'VEDIC'} SERVICES`)}
+            ${escapeHtml(pageData.heroBadge || `${pageCity} SERVICES`)}
           </span>
           <h1 style="font-size:32px;font-weight:700;color:#1A1613;margin-bottom:16px;line-height:1.2;">
-            ${escapeHtml(pageData.h1 || pageData.title)}
+            ${escapeHtml(pageH1)}
           </h1>
           <p style="font-size:16px;color:#4A4438;line-height:1.7;max-width:900px;margin-bottom:24px;">
-            ${escapeHtml(pageData.sections?.[0]?.content || pageData.metaDescription || '')}
+            ${escapeHtml(pageOverview)}
           </p>
           <div style="background:#FBF9F5;border:1px solid #EAE5D9;border-radius:12px;padding:20px;display:flex;flex-wrap:wrap;gap:24px;font-size:13px;">
-            <div><strong>Location:</strong> ${escapeHtml(pageData.city || 'India')}, ${escapeHtml(pageData.state || '')}</div>
-            <div><strong>Ritual Languages:</strong> Hindi &amp; Sanskrit</div>
+            <div><strong>Location:</strong> ${escapeHtml(pageCity || 'India')}, ${escapeHtml(pageState || '')}</div>
+            <div><strong>Ritual Languages:</strong> ${lang === 'mr' ? 'हिंदी व संस्कृत' : lang === 'hi' ? 'हिंदी एवं संस्कृत' : 'Hindi & Sanskrit'}</div>
             <div><strong>Verification:</strong> ${escapeHtml(pageData.verificationBadge || 'Confirmed Service Coverage')}</div>
             <div><strong>Direct Consultation:</strong> <a href="tel:+919766880979" style="color:#BD4B23;font-weight:600;">+91 97668 80979</a></div>
           </div>
@@ -366,14 +376,18 @@ function buildSemanticBody(route, params, data, meta, lang = 'en') {
   // 2. Individual Puja Guide Detail
   if (route === 'puja-guide-detail') {
     const guide = PUJA_GUIDES_DATA.find(g => g.slug === params.slug) || PUJA_GUIDES_DATA[0];
+    const guideTitle = data.getLocalizedGuideTitle ? data.getLocalizedGuideTitle(guide, lang) : guide.title;
+    const guideSummary = data.getLocalizedGuideSummary ? data.getLocalizedGuideSummary(guide, lang) : guide.summary;
+    const guideSections = data.getLocalizedGuideSections ? data.getLocalizedGuideSections(guide, lang) : guide.sections;
+    const guideFaqs = data.getLocalizedGuideFaqs ? data.getLocalizedGuideFaqs(guide, lang) : guide.faqs;
 
     return `
       ${headerHtml}
       <main style="max-width:960px;margin:0 auto;padding:40px 24px;">
         <nav aria-label="Breadcrumb" style="font-size:13px;color:#6B6355;margin-bottom:24px;">
-          <a href="/" style="color:#6B6355;text-decoration:none;">Home</a> &gt;
-          <a href="/puja-guides" style="color:#6B6355;text-decoration:none;">Puja Guides</a> &gt;
-          <span style="color:#BD4B23;font-weight:600;">${guide.title}</span>
+          <a href="${lp('/')}" style="color:#6B6355;text-decoration:none;">${escapeHtml(t('nav.home'))}</a> &gt;
+          <a href="${lp('/puja-guides')}" style="color:#6B6355;text-decoration:none;">${lang === 'mr' ? 'पूजा मार्गदर्शिका' : lang === 'hi' ? 'पूजा मार्गदर्शिकाएँ' : 'Puja Guides'}</a> &gt;
+          <span style="color:#BD4B23;font-weight:600;">${escapeHtml(guideTitle)}</span>
         </nav>
 
         <article>
@@ -382,10 +396,10 @@ function buildSemanticBody(route, params, data, meta, lang = 'en') {
               ${escapeHtml((guide.category || "vedic").toUpperCase())} GUIDE &bull; ${escapeHtml(guide.readTime || guide.readingTime || "8 min read")}
             </span>
             <h1 style="font-size:32px;font-weight:700;color:#1A1613;margin-bottom:16px;line-height:1.2;">
-              ${escapeHtml(guide.title)}
+              ${escapeHtml(guideTitle)}
             </h1>
             <p style="font-size:16px;color:#4A4438;line-height:1.7;margin-bottom:16px;">
-              ${escapeHtml(guide.summary)}
+              ${escapeHtml(guideSummary)}
             </p>
             <div style="font-size:13px;color:#6B6355;border-bottom:1px solid #EAE5D9;padding-bottom:16px;">
               By <strong>${escapeHtml(guide.author || "VedicPanditji Editorial Desk")}</strong> &bull; Published: ${escapeHtml(guide.publishedDate ? guide.publishedDate.split("T")[0] : "2026-10-31")}
@@ -393,16 +407,16 @@ function buildSemanticBody(route, params, data, meta, lang = 'en') {
           </header>
 
           <nav style="background:#FBF9F5;border:1px solid #EAE5D9;border-radius:12px;padding:20px;margin-bottom:36px;">
-            <h2 style="font-size:16px;font-weight:700;margin-bottom:12px;">Table of Contents</h2>
+            <h2 style="font-size:16px;font-weight:700;margin-bottom:12px;">${lang === 'mr' ? 'अनुक्रमणिका' : lang === 'hi' ? 'विषय सूची' : 'Table of Contents'}</h2>
             <ul style="margin:0;padding-left:20px;font-size:14px;line-height:1.8;">
-              ${(guide.sections || []).map(sec => `
+              ${(guideSections || []).map(sec => `
                 <li><a href="#${sec.id}" style="color:#BD4B23;text-decoration:none;">${escapeHtml(sec.heading || sec.title)}</a></li>
               `).join('')}
             </ul>
           </nav>
 
           <div style="font-size:15px;color:#2B261F;line-height:1.8;">
-            ${(guide.sections || []).map(sec => `
+            ${(guideSections || []).map(sec => `
               <section id="${sec.id}" style="margin-bottom:36px;">
                 <h2 style="font-size:22px;font-weight:700;color:#1A1613;margin-bottom:14px;">${escapeHtml(sec.heading || sec.title)}</h2>
                 <div style="white-space:pre-line;">${escapeHtml(sec.content)}</div>
@@ -493,7 +507,7 @@ function buildSemanticBody(route, params, data, meta, lang = 'en') {
   // 4. Individual Service Detail (/services/:id)
   if (route === 'service-detail') {
     const service = SERVICES.find(s => s.id === params.serviceId) || SERVICES[0];
-    const pricing = getPricingDisplay ? getPricingDisplay(service.id) : null;
+    const pricing = getPricingDisplay ? getPricingDisplay(service.id, lang) : null;
     const serviceName = data.getLocalizedServiceName ? data.getLocalizedServiceName(service, lang) : service.name;
     const serviceDesc = data.getLocalizedServiceDesc ? data.getLocalizedServiceDesc(service, lang) : (service.shortDescription || service.description || '');
 
@@ -512,10 +526,10 @@ function buildSemanticBody(route, params, data, meta, lang = 'en') {
               ${escapeHtml(service.category?.toUpperCase() || t('ssr.vedic-ceremony'))} &bull; ${escapeHtml(service.duration || t('ssr.default-duration'))}
             </span>
             <h1 style="font-size:32px;font-weight:700;color:#1A1613;margin-bottom:16px;">
-              ${escapeHtml(service.name)}
+              ${escapeHtml(serviceName)}
             </h1>
             <p style="font-size:16px;color:#4A4438;line-height:1.7;margin-bottom:24px;">
-              ${escapeHtml(service.shortDescription || service.description || '')}
+              ${escapeHtml(serviceDesc)}
             </p>
 
             <div style="background:#FBF9F5;border:1px solid #EAE5D9;border-radius:12px;padding:24px;margin-bottom:32px;">
@@ -581,7 +595,7 @@ function buildSemanticBody(route, params, data, meta, lang = 'en') {
 
         <section style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:24px;">
           ${SERVICES.map(s => {
-            const pricing = getPricingDisplay ? getPricingDisplay(s.id) : null;
+            const pricing = getPricingDisplay ? getPricingDisplay(s.id, lang) : null;
             const sName = data.getLocalizedServiceName ? data.getLocalizedServiceName(s, lang) : s.name;
             const sDesc = data.getLocalizedServiceDesc ? data.getLocalizedServiceDesc(s, lang) : (s.shortDescription || '');
             return `
@@ -594,7 +608,7 @@ function buildSemanticBody(route, params, data, meta, lang = 'en') {
                   <a href="${lp(`/services/${s.id}`)}" style="color:#1A1613;text-decoration:none;">${escapeHtml(sName)}</a>
                 </h2>
                 <p style="font-size:13px;color:#6B6355;line-height:1.6;margin-bottom:12px;">
-                  ${escapeHtml(s.shortDescription || '')}
+                  ${escapeHtml(sDesc)}
                 </p>
                 ${pricing ? `<div style="font-size:13px;font-weight:700;color:#BD4B23;margin-bottom:14px;">${escapeHtml(t('service.dakshina.label'))} ${escapeHtml(pricing.displayPrice)}</div>` : ''}
               </div>
@@ -638,9 +652,9 @@ function buildSemanticBody(route, params, data, meta, lang = 'en') {
             ${SERVICES.slice(0, 8).map(s => `
               <div style="background:#FFFFFF;border:1px solid #EAE5D9;border-radius:12px;padding:20px;">
                 <h3 style="font-size:16px;font-weight:700;color:#BD4B23;margin-bottom:8px;">
-                  <a href="${lp(`/services/${s.id}`)}" style="color:#BD4B23;text-decoration:none;">${escapeHtml(s.name)}</a>
+                  <a href="${lp(`/services/${s.id}`)}" style="color:#BD4B23;text-decoration:none;">${escapeHtml(data.getLocalizedServiceName ? data.getLocalizedServiceName(s, lang) : s.name)}</a>
                 </h3>
-                <p style="font-size:13px;color:#6B6355;line-height:1.6;margin-bottom:12px;">${escapeHtml(s.shortDescription || '')}</p>
+                <p style="font-size:13px;color:#6B6355;line-height:1.6;margin-bottom:12px;">${escapeHtml(data.getLocalizedServiceDesc ? data.getLocalizedServiceDesc(s, lang) : (s.shortDescription || ''))}</p>
                 <a href="${lp(`/services/${s.id}`)}" style="font-size:13px;font-weight:600;color:#C98A2C;text-decoration:none;">${escapeHtml(t('ssr.vidhi-samagri'))} &rarr;</a>
               </div>
             `).join('')}
@@ -666,12 +680,60 @@ function buildSemanticBody(route, params, data, meta, lang = 'en') {
     `;
   }
 
+  // 6b. Legal & Policies
+  if (route === 'legal') {
+    const legalTitle = lang === 'mr' ? 'वैदिकपंडितजी ग्राहक धोरणे आणि सेवा अटी' : lang === 'hi' ? 'वैदिकपंडितजी ग्राहक नीतियाँ एवं सेवा शर्तें' : 'VedicPanditji Customer Policies & Service Terms';
+    const cancelTitle = lang === 'mr' ? 'रद्द करणे आणि वेळ बदलणे संबंधी मार्गदर्शक तत्त्वे' : lang === 'hi' ? 'रद्दीकरण एवं पुनर्निर्धारण संबंधी दिशानिर्देश' : 'Cancellation & Rescheduling Guidelines';
+    const cancelIntro = lang === 'mr' ? 'वैदिकपंडितजी येथे, आम्ही समजतो की शुभ तिथी आणि कौटुंबिक विधींमध्ये ज्योतिषीय कारणे किंवा वैयक्तिक तातडीच्या परिस्थितीमुळे वेळेत बदल करावा लागू शकतो.' : lang === 'hi' ? 'वैदिकपंडितजी में, हम समझते हैं कि शुभ तिथियों और पारिवारिक अनुष्ठानों में ज्योतिषीय गणनाओं या व्यक्तिगत अपरिहार्य कारणों से समय में बदलाव की आवश्यकता हो सकती है।' : 'At VedicPanditji, we understand that auspicious dates and family ceremonies may occasionally require adjustment due to astrological considerations or personal emergencies.';
+    return `
+      ${headerHtml}
+      <main style="max-width:840px;margin:0 auto;padding:40px 24px;">
+        <nav aria-label="Breadcrumb" style="font-size:13px;color:#6B6355;margin-bottom:24px;">
+          <a href="${lp('/')}" style="color:#6B6355;text-decoration:none;">${escapeHtml(t('catalogue.breadcrumb.home'))}</a> &gt;
+          <span style="color:#BD4B23;font-weight:600;">${escapeHtml(legalTitle)}</span>
+        </nav>
+        <h1 style="font-size:32px;font-weight:700;color:#1A1613;margin-bottom:24px;">
+          ${escapeHtml(legalTitle)}
+        </h1>
+        <div style="background:#FFFFFF;border:1px solid #EAE5D9;border-radius:20px;padding:36px;font-size:14px;line-height:1.7;color:#4A4438;">
+          <h2 style="font-size:22px;color:#1A1613;margin-bottom:16px;">${escapeHtml(cancelTitle)}</h2>
+          <p style="margin-bottom:14px;">${escapeHtml(cancelIntro)}</p>
+        </div>
+      </main>
+      ${footerHtml}
+    `;
+  }
+
+  // 6c. Temple Services (/temple-services)
+  if (route === 'temple-services') {
+    const templeTitle = lang === 'mr' ? 'तीर्थक्षेत्र पूजा सेवा आणि थेट ई-संकल्प' : lang === 'hi' ? 'तीर्थ यात्रा पूजा सेवाएँ एवं ई-संकल्प' : 'Temple Pilgrimage Services & Remote Sevas';
+    const templeIntro = lang === 'mr' ? 'वैदिकपंडितजी काशी, गया, त्र्यंबकेश्वर आणि रामेश्वरम येथे प्रमाणित तीर्थ पुरोहितांद्वारे शास्त्रोक्त विधी आयोजित करतात, ज्यात प्रत्यक्ष तीर्थदर्शन आणि घरबसल्या संकल्प व जगभरात प्रसाद कुरिअर सुविधेचा समावेश आहे.' : lang === 'hi' ? 'वैदिकपंडितजी काशी, गया, त्र्यंबकेश्वर और रामेश्वरम में प्रमाणित तीर्थ पुरोहितों के माध्यम से प्रामाणिक अनुष्ठानों की व्यवस्था करते हैं, जिसमें प्रत्यक्ष तीर्थ यात्रा एवं दूरस्थ संकल्प व विश्व भर में प्रसाद कूरियर सुविधा शामिल है।' : 'VedicPanditji coordinates authentic sacred Kshetra rituals at Kashi, Gaya, Trimbakeshwar, and Rameshwaram through verified Tirtha Purohits, supporting both in-person pilgrimage visits and remote sankalpam with consecrated Prasad courier worldwide.';
+    return `
+      ${headerHtml}
+      <main style="max-width:1200px;margin:0 auto;padding:40px 24px;">
+        <nav aria-label="Breadcrumb" style="font-size:13px;color:#6B6355;margin-bottom:24px;">
+          <a href="${lp('/')}" style="color:#6B6355;text-decoration:none;">${escapeHtml(t('catalogue.breadcrumb.home'))}</a> &gt;
+          <span style="color:#BD4B23;font-weight:600;">${escapeHtml(templeTitle)}</span>
+        </nav>
+        <section style="margin-bottom:40px;">
+          <h1 style="font-size:32px;font-weight:700;color:#1A1613;margin-bottom:14px;">
+            ${escapeHtml(templeTitle)}
+          </h1>
+          <p style="font-size:16px;color:#4A4438;line-height:1.7;max-width:900px;">
+            ${escapeHtml(templeIntro)}
+          </p>
+        </section>
+      </main>
+      ${footerHtml}
+    `;
+  }
+
   // 7. General Core Pages (About, Contact, FAQs, etc.)
   return `
     ${headerHtml}
     <main style="max-width:960px;margin:0 auto;padding:40px 24px;">
       <nav aria-label="Breadcrumb" style="font-size:13px;color:#6B6355;margin-bottom:24px;">
-        <a href="/" style="color:#6B6355;text-decoration:none;">Home</a> &gt;
+        <a href="${lp('/')}" style="color:#6B6355;text-decoration:none;">${escapeHtml(t('catalogue.breadcrumb.home'))}</a> &gt;
         <span style="color:#BD4B23;font-weight:600;">${escapeHtml(meta.title.split('|')[0].trim())}</span>
       </nav>
       <h1 style="font-size:32px;font-weight:700;color:#1A1613;margin-bottom:16px;">
@@ -722,9 +784,49 @@ async function run() {
   const { PUJA_GUIDES_DATA } = await vite.ssrLoadModule('./src/data/guides/pujaGuidesData.js');
   const { getSeoMetadata } = await vite.ssrLoadModule('./src/utils/seoMetadata.js');
   const { getPricingDisplay } = await vite.ssrLoadModule('./src/data/pujaPricing.js');
-  const { translate, LANGUAGES, localizePath, isTranslatedRoute, getLocalizedServiceName, getLocalizedServiceDesc, getLocalizedCategoryName } = await vite.ssrLoadModule('./src/i18n/index.js');
+  const {
+    translate,
+    LANGUAGES,
+    localizePath,
+    isTranslatedRoute,
+    getLocalizedServiceName,
+    getLocalizedServiceDesc,
+    getLocalizedCategoryName,
+    getLocalizedLocationContent,
+    getLocalizedLocationName,
+    getLocalizedGuideTitle,
+    getLocalizedGuideSummary,
+    getLocalizedGuideSections,
+    getLocalizedGuideFaqs,
+    getLocalizedCityPageTitle,
+    getLocalizedCityPageH1,
+    getLocalizedCityPageTagline,
+    getLocalizedCityPageOverview
+  } = await vite.ssrLoadModule('./src/i18n/index.js');
 
-  const sharedData = { BRAND_INFO, SERVICES, MULTI_CITY_SEO_PAGES, ALL_LOCATIONS, PUJA_GUIDES_DATA, getPricingDisplay, translate, localizePath, getLocalizedServiceName, getLocalizedServiceDesc, getLocalizedCategoryName };
+  const sharedData = {
+    BRAND_INFO,
+    SERVICES,
+    MULTI_CITY_SEO_PAGES,
+    ALL_LOCATIONS,
+    PUJA_GUIDES_DATA,
+    getPricingDisplay,
+    translate,
+    localizePath,
+    getLocalizedServiceName,
+    getLocalizedServiceDesc,
+    getLocalizedCategoryName,
+    getLocalizedLocationContent,
+    getLocalizedLocationName,
+    getLocalizedGuideTitle,
+    getLocalizedGuideSummary,
+    getLocalizedGuideSections,
+    getLocalizedGuideFaqs,
+    getLocalizedCityPageTitle,
+    getLocalizedCityPageH1,
+    getLocalizedCityPageTagline,
+    getLocalizedCityPageOverview
+  };
 
   // Define full public route inventory
   const pages = [

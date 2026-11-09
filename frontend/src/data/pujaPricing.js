@@ -3,6 +3,7 @@
 // this file only adds lookup, localization and booking-total logic on top.
 import pricingSeed from './pricing.json' with { type: 'json' };
 import { localize } from '../utils/localize.js';
+import packageInclusionTranslations from '../i18n/packageInclusionTranslations.json' with { type: 'json' };
 //
 // APPROVAL STATUSES:
 // - 'approved': Formally verified by business owner (Sir)
@@ -38,11 +39,39 @@ export function setPricingData(next) {
   views = new Map();
 }
 
+function localizeRateCards(cards, lang) {
+  const localized = localize(cards, lang);
+  if (lang === 'en') return localized;
+  for (const card of Object.values(localized)) {
+    if (card && Array.isArray(card.packages)) {
+      for (const pkg of card.packages) {
+        if (Array.isArray(pkg.inclusions)) {
+          pkg.inclusions = pkg.inclusions.map(inc => {
+            if (typeof inc === 'string' && packageInclusionTranslations[inc]?.[lang]) {
+              return packageInclusionTranslations[inc][lang];
+            }
+            return inc;
+          });
+        }
+        if (Array.isArray(pkg.exclusions)) {
+          pkg.exclusions = pkg.exclusions.map(exc => {
+            if (typeof exc === 'string' && packageInclusionTranslations[exc]?.[lang]) {
+              return packageInclusionTranslations[exc][lang];
+            }
+            return exc;
+          });
+        }
+      }
+    }
+  }
+  return localized;
+}
+
 // Localized, cached view of the pricing data for one language.
 function viewFor(lang) {
   if (!views.has(lang)) {
     views.set(lang, {
-      rateCards: localize(pricingData.rateCards, lang),
+      rateCards: localizeRateCards(pricingData.rateCards, lang),
       samagri: localize(pricingData.samagriOptions, lang)
     });
   }
@@ -85,6 +114,54 @@ export function getAllPujaRateCards(lang = 'en') {
  *   unapproved ceremonies return structured proposed packages with explicit
  *   approval-pending disclaimer or Custom Quote.
  */
+
+function localizeDisplayPrice(priceStr, lang) {
+  if (!priceStr || lang === 'en') return priceStr;
+  if (/^Custom Quote$/i.test(priceStr)) return 'कस्टम कोटेशन';
+  if (lang === 'mr') {
+    if (/^From\s+/i.test(priceStr)) {
+      return priceStr.replace(/^From\s+/i, '') + ' पासून';
+    }
+  }
+  if (lang === 'hi') {
+    if (/^From\s+/i.test(priceStr)) {
+      return priceStr.replace(/^From\s+/i, '') + ' से शुरू';
+    }
+  }
+  return priceStr;
+}
+
+function getPricingLabels(isFixed, pkgCount, isCustom, lang = 'en') {
+  if (lang === 'mr') {
+    if (isCustom) return { badgeText: 'कस्टम कोटेशन', priceLabel: 'दक्षिणा' };
+    let badgeText = '';
+    if (isFixed) badgeText = 'निश्चित दक्षिणा';
+    else if (pkgCount === 3) badgeText = '३ पॅकेज पर्याय';
+    else if (pkgCount === 2) badgeText = 'पॅकेज A व B उपलब्ध';
+    else if (pkgCount > 0) badgeText = pkgCount + ' पॅकेजेस उपलब्ध';
+    const priceLabel = isFixed ? 'निश्चित दक्षिणा' : (pkgCount > 0 ? 'सुरुवातीची दक्षिणा' : 'दक्षिणा');
+    return { badgeText, priceLabel };
+  }
+  if (lang === 'hi') {
+    if (isCustom) return { badgeText: 'कस्टम कोटेशन', priceLabel: 'दक्षिणा' };
+    let badgeText = '';
+    if (isFixed) badgeText = 'निश्चित दक्षिणा';
+    else if (pkgCount === 3) badgeText = '3 पैकेज विकल्प';
+    else if (pkgCount === 2) badgeText = 'पैकेज A एवं B उपलब्ध';
+    else if (pkgCount > 0) badgeText = pkgCount + ' पैकेज उपलब्ध';
+    const priceLabel = isFixed ? 'निश्चित दक्षिणा' : (pkgCount > 0 ? 'प्रारंभिक दक्षिणा' : 'दक्षिणा');
+    return { badgeText, priceLabel };
+  }
+  if (isCustom) return { badgeText: 'Custom Quote', priceLabel: 'Dakshina' };
+  let badgeText = '';
+  if (isFixed) badgeText = 'Fixed Dakshina';
+  else if (pkgCount === 3) badgeText = '3 Package Options';
+  else if (pkgCount === 2) badgeText = 'Package A & B Available';
+  else if (pkgCount > 0) badgeText = pkgCount + ' Packages Available';
+  const priceLabel = isFixed ? 'Fixed Dakshina' : (pkgCount > 0 ? 'Starting Dakshina' : 'Dakshina');
+  return { badgeText, priceLabel };
+}
+
 export function getPujaPricing(serviceOrId, city = 'Pune', lang = 'en') {
   const serviceId = getServiceId(serviceOrId);
   const rateCard = viewFor(lang).rateCards[serviceId];
@@ -116,23 +193,7 @@ export function getPujaPricing(serviceOrId, city = 'Pune', lang = 'en') {
     const isFixed = rateCard.model === PRICING_MODELS.MODEL_A_FIXED;
     const isLocalProject = rateCard.approvalStatus === VERIFICATION_STATUS.LOCAL_PROJECT_DATA;
 
-    let badgeText = '';
-    if (isFixed) {
-      badgeText = 'Fixed Dakshina';
-    } else if (pkgCount === 3) {
-      badgeText = '3 Package Options';
-    } else if (pkgCount === 2) {
-      badgeText = 'Package A & B Available';
-    } else if (pkgCount > 0) {
-      badgeText = `${pkgCount} Packages Available`;
-    }
-
-    let priceLabel = 'Dakshina';
-    if (isFixed) {
-      priceLabel = 'Fixed Dakshina';
-    } else if (pkgCount > 0) {
-      priceLabel = 'Starting Dakshina';
-    }
+    const { badgeText, priceLabel } = getPricingLabels(isFixed, pkgCount, false, lang);
 
     return {
       serviceId,
@@ -220,7 +281,7 @@ export function getPricingDisplay(serviceOrId, lang = 'en') {
       model: PRICING_MODELS.MODEL_C_CUSTOM,
       minPrice: null,
       maxPrice: null,
-      displayPrice: 'Custom Quote',
+      displayPrice: localizeDisplayPrice('Custom Quote', lang),
       isCustomQuote: true,
       hasPackages: false,
       packageCount: 0,
@@ -230,8 +291,7 @@ export function getPricingDisplay(serviceOrId, lang = 'en') {
       isProposed: true,
       isLocalProjectData: false,
       pricingNote: 'Pricing determined based on requirements and location',
-      badgeText: 'Custom Quote',
-      priceLabel: 'Dakshina'
+      ...getPricingLabels(false, 0, true, lang)
     };
   }
 
@@ -246,29 +306,13 @@ export function getPricingDisplay(serviceOrId, lang = 'en') {
     const isFixed = rateCard.model === PRICING_MODELS.MODEL_A_FIXED;
     const isLocalProject = rateCard.approvalStatus === VERIFICATION_STATUS.LOCAL_PROJECT_DATA;
 
-    let badgeText = '';
-    if (isFixed) {
-      badgeText = 'Fixed Dakshina';
-    } else if (pkgCount === 3) {
-      badgeText = '3 Package Options';
-    } else if (pkgCount === 2) {
-      badgeText = 'Package A & B Available';
-    } else if (pkgCount > 0) {
-      badgeText = `${pkgCount} Packages Available`;
-    }
-
-    let priceLabel = 'Dakshina';
-    if (isFixed) {
-      priceLabel = 'Fixed Dakshina';
-    } else if (pkgCount > 0) {
-      priceLabel = 'Starting Dakshina';
-    }
+    const { badgeText, priceLabel } = getPricingLabels(isFixed, pkgCount, false, lang);
 
     return {
       model: rateCard.model,
       minPrice: rateCard.minPrice,
       maxPrice: rateCard.maxPrice,
-      displayPrice: rateCard.startingPriceDisplay,
+      displayPrice: localizeDisplayPrice(rateCard.startingPriceDisplay, lang),
       isCustomQuote: false,
       hasPackages: pkgCount > 0,
       packageCount: pkgCount,
@@ -287,7 +331,7 @@ export function getPricingDisplay(serviceOrId, lang = 'en') {
     model: PRICING_MODELS.MODEL_C_CUSTOM,
     minPrice: null,
     maxPrice: null,
-    displayPrice: 'Custom Quote',
+    displayPrice: localizeDisplayPrice('Custom Quote', lang),
     isCustomQuote: true,
     hasPackages: false,
     packageCount: 0,

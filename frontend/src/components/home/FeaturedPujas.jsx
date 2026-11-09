@@ -13,7 +13,7 @@ import {
 
 export default function FeaturedPujas() {
   const { navigateTo, openBookingModal } = useApp();
-  const { t, lang, locCatName, locServiceName, locServiceDesc } = useI18n();
+  const { t, lang, locCatName, locServiceName, locServiceDesc, locDuration } = useI18n();
 
   return (
     <section style={{ padding: '85px 0', background: '#FFFFFF', borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)' }}>
@@ -56,7 +56,7 @@ export default function FeaturedPujas() {
                 >
                   <img
                     src={service.image || getServiceImage(service)}
-                    alt={service.name}
+                    alt={locServiceName(service)}
                     loading="lazy"
                     decoding="async"
                     style={{
@@ -122,7 +122,7 @@ export default function FeaturedPujas() {
                         cursor: 'pointer'
                       }}
                     >
-                      {service.name}
+                      {locServiceName(service)}
                     </h3>
                     <div
                       style={{
@@ -135,7 +135,7 @@ export default function FeaturedPujas() {
                     >
                       <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                         <Clock size={12} color="#FCD34D" />
-                        {service.duration}
+                        {locDuration(service.duration)}
                       </span>
                       <span>&bull;</span>
                       <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>

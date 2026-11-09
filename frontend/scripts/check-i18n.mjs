@@ -37,9 +37,9 @@ try {
     ok(graph.some((n) => n.inLanguage === `${lang}-IN`), `${lang} schema has inLanguage`);
 
     // An untranslated route keeps the English canonical and is never indexed
-    const about = getSeoMetadata('about-us', {}, lang);
-    ok(about.canonical === getSeoMetadata('about-us', {}).canonical, `${lang} about canonical stays English`);
-    ok(about.robots.startsWith('noindex'), `${lang} about is noindex`);
+    const admin = getSeoMetadata('admin', {}, lang);
+    ok(admin.canonical === getSeoMetadata('admin', {}).canonical, `${lang} admin canonical stays English`);
+    ok(admin.robots.startsWith('noindex'), `${lang} admin is noindex`);
 
     // Missing dictionary entries fall back to English text
     ok(home.title.length > 0 && home.description.length > 0, `${lang} home has title and description`);

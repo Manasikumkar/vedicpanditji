@@ -12,5 +12,26 @@ export const LANG_CODES = Object.keys(LANGUAGES);
 export const NON_DEFAULT_LANGS = LANG_CODES.filter((code) => code !== DEFAULT_LANG);
 
 // Route types whose chrome and template text are translated in this phase.
-export const TRANSLATED_ROUTES = ['home', 'catalogue', 'services', 'service-detail'];
+export const TRANSLATED_ROUTES = [
+  'home',
+  'catalogue',
+  'services',
+  'service-detail',
+  'location-detail',
+  'puja-guides-hub',
+  'puja-guides',
+  'puja-guide-detail',
+  'seo-landing',
+  'sitemap',
+  'about-us',
+  'about',
+  'contact',
+  'faqs',
+  'how-it-works',
+  'puja-materials',
+  'temple-services',
+  'policies',
+  'legal'
+];
 export const isTranslatedRoute = (route) => TRANSLATED_ROUTES.includes(route);
+

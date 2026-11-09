@@ -1,6 +1,6 @@
 import React from 'react';
 import { Plus, ArrowUp, ArrowDown, Trash2 } from 'lucide-react';
-import { emptyText, moveItem } from './pricingDoc';
+import { emptyText, moveItem, lookupAdminTranslation } from './pricingDoc';
 
 const LANGS = ['en', 'hi', 'mr'];
 
@@ -32,7 +32,9 @@ export function TextField({ label, value = emptyText(), onChange, lang = 'en', m
     const langCode = lang.toUpperCase();
     const langNative = lang === 'hi' ? 'हिन्दी' : 'मराठी';
     const originalEn = safeValue.en || '';
-    const hasVal = Boolean(safeValue[lang]?.trim());
+    const autoVal = lookupAdminTranslation(originalEn, lang);
+    const hasVal = Boolean(safeValue[lang]?.trim() || autoVal);
+    const displayVal = (safeValue[lang] && safeValue[lang].trim()) ? safeValue[lang] : autoVal;
 
     return (
       <div className="field">
@@ -52,7 +54,7 @@ export function TextField({ label, value = emptyText(), onChange, lang = 'en', m
           </span>
           <Tag
             className="adm-input"
-            value={safeValue[lang] || ''}
+            value={displayVal || ''}
             rows={multiline ? 2 : undefined}
             placeholder={originalEn ? `Original EN: "${originalEn}" → Enter ${langNative} translation...` : `Enter ${langNative} translation...`}
             onChange={(e) => onChange({ ...safeValue, [lang]: e.target.value })}
@@ -68,7 +70,9 @@ export function TextField({ label, value = emptyText(), onChange, lang = 'en', m
       {label && <label className="field-label">{label}</label>}
       <div className="field-inputs-stack">
         {LANGS.map((l) => {
-          const isFilled = Boolean(safeValue[l]?.trim());
+          const autoVal = l !== 'en' ? lookupAdminTranslation(safeValue.en, l) : '';
+          const displayVal = (safeValue[l] && safeValue[l].trim()) ? safeValue[l] : autoVal;
+          const isFilled = Boolean(displayVal?.trim());
           const tagLabel = l === 'en' ? 'EN' : l === 'hi' ? 'HI' : 'MR';
           return (
             <div className="lang-row" key={l}>
@@ -77,7 +81,7 @@ export function TextField({ label, value = emptyText(), onChange, lang = 'en', m
               </span>
               <Tag
                 className="adm-input"
-                value={safeValue[l] || ''}
+                value={displayVal || ''}
                 rows={multiline ? 2 : undefined}
                 placeholder={`${label || 'Text'} in ${tagLabel}${l !== 'en' && !isFilled ? ' (optional, falls back to EN)' : ''}`}
                 onChange={(e) => onChange({ ...safeValue, [l]: e.target.value })}

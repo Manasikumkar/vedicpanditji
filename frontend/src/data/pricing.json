@@ -29,25 +29,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Ayush Homa & Markandeya invocation",
-              "hi": "",
-              "mr": ""
+              "hi": "आयुष्य होम एवं मार्कंडेय आवाहन हेतु पंडित दक्षिणा",
+              "mr": "आयुष्य होम व मार्कंडेय आवाहनासाठी पंडित दक्षिणा"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Ghee, payasam, flowers",
-              "hi": "",
-              "mr": ""
+              "hi": "Ghee, payasam, flowers",
+              "mr": "Ghee, payasam, flowers"
             }
           ],
           "includedSamagriIds": []
@@ -75,25 +75,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "शुद्ध हवन सामग्री किट एवं गोघृत सम्मिलित",
+              "mr": "शुद्ध हवन साहित्य किट व गोघृत समाविष्ट"
             },
             {
               "en": "Mango wood, camphor, roli, moli",
-              "hi": "",
-              "mr": ""
+              "hi": "सूखी आम की समिधा, कपूर, रोली एवं कलावा",
+              "mr": "सुकी आंब्याची समिधा, कापूर, रोळी आणि मौली"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh fruits & birthday payasam/kheer",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh fruits & birthday payasam/kheer",
+              "mr": "Fresh fruits & birthday payasam/kheer"
             }
           ],
           "includedSamagriIds": [
@@ -106,13 +106,13 @@
       "serviceId": "ayush-havan",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Ayush Havan (Birthday & Long Life)",
         "hi": "जन्मदिन पूजा ",
-        "mr": ""
+        "mr": "आयुष्य हवन (वाढदिवस व दीर्घायुष्य विधी)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -154,35 +154,35 @@
           "inclusions": [
             {
               "en": "Senior Vedic Acharya for Bhoomi Pujan & Sankalp",
-              "hi": "",
-              "mr": ""
+              "hi": "भूमि पूजन एवं संकल्प हेतु वरिष्ठ वैदिक आचार्य",
+              "mr": "भूमी पूजन व संकल्पासाठी वरिष्ठ वैदिक आचार्य"
             },
             {
               "en": "Dikpal & Vastu Purush invocation on plot",
-              "hi": "",
-              "mr": ""
+              "hi": "भूखंड पर दिक्पाल एवं वास्तु पुरुष आवाहन",
+              "mr": "भूखंडावर दिक्पाल व वास्तु पुरुष आवाहन"
             },
             {
               "en": "Detailed foundation samagri checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "नींव पूजन सामग्री की विस्तृत सूची प्रदान की जाती है",
+              "mr": "पायाभरणी पूजेच्या साहित्याची सविस्तर यादी दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Fresh flowers, fruits, coconuts",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh flowers, fruits, coconuts",
+              "mr": "Fresh flowers, fruits, coconuts"
             },
             {
               "en": "Foundation digging tools",
-              "hi": "",
-              "mr": ""
+              "hi": "Foundation digging tools",
+              "mr": "Foundation digging tools"
             }
           ],
           "includedSamagriIds": []
@@ -210,35 +210,35 @@
           "inclusions": [
             {
               "en": "Senior Vedic Acharya for Bhoomi Pujan",
-              "hi": "",
-              "mr": ""
+              "hi": "भूमि पूजन हेतु वरिष्ठ वैदिक आचार्य",
+              "mr": "भूमी पूजनासाठी वरिष्ठ वैदिक आचार्य"
             },
             {
               "en": "Essential Hawan Samagri kit, Navadhanya & Copper Kalash included",
-              "hi": "",
-              "mr": ""
+              "hi": "आवश्यक हवन सामग्री किट, नवधान्य एवं तांबे का कलश सम्मिलित",
+              "mr": "आवश्यक हवन साहित्य किट, नवधान्य व तांब्याचा कलश समाविष्ट"
             },
             {
               "en": "Desi cow ghee & sacred mango wood included",
-              "hi": "",
-              "mr": ""
+              "hi": "देशी गोघृत एवं पवित्र आम की समिधा सम्मिलित",
+              "mr": "देशी गोघृत आणि पवित्र आंब्याची समिधा समाविष्ट"
             },
             {
               "en": "Full ground sanctification vidhi",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण भूमि शुद्धिकरण विधि",
+              "mr": "संपूर्ण भूमी शुद्धीकरण विधी"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh fruits, loose marigold garlands",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh fruits, loose marigold garlands",
+              "mr": "Fresh fruits, loose marigold garlands"
             },
             {
               "en": "Household thali & digging shovel",
-              "hi": "",
-              "mr": ""
+              "hi": "Household thali & digging shovel",
+              "mr": "Household thali & digging shovel"
             }
           ],
           "includedSamagriIds": [
@@ -251,13 +251,13 @@
       "serviceId": "bhoomi-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Bhoomi Puja (Plot Groundbreaking)",
-        "hi": "",
-        "mr": ""
+        "hi": "भूमि पूजन एवं शिलान्यास",
+        "mr": "भूमी पूजन व शिलान्यास"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -299,30 +299,30 @@
           "inclusions": [
             {
               "en": "5-Member All-Night Devotional Troupe (9 PM to 5 AM)",
-              "hi": "",
-              "mr": ""
+              "hi": "५-सदस्यीय रात्रि जागरण मंडली (रात ९ से सुबह ५ बजे तक)",
+              "mr": "५-सदस्यीय रात्रौ जागरण मंडळ (रात्री ९ ते पहाटे ५ पर्यंत)"
             },
             {
               "en": "High-power sound system and stage microphones",
-              "hi": "",
-              "mr": ""
+              "hi": "उच्च गुणवत्ता साउंड सिस्टम एवं स्टेज माइक",
+              "mr": "उत्कृष्ट दर्जाची साऊंड सिस्टिम व स्टेज माईक"
             },
             {
               "en": "Akhand Jyot, Ganesh Pujan, Tara Rani Katha & morning Aarti",
-              "hi": "",
-              "mr": ""
+              "hi": "अखंड ज्योत, गणेश पूजन, तारा रानी कथा एवं प्रातः कालीन आरती",
+              "mr": "अखंड ज्योत, गणेश पूजन, तारा राणी कथा आणि सकाळची आरती"
             }
           ],
           "exclusions": [
             {
               "en": "Jhanki stage actors",
-              "hi": "",
-              "mr": ""
+              "hi": "Jhanki stage actors",
+              "mr": "Jhanki stage actors"
             },
             {
               "en": "Midnight tea/snacks for devotees",
-              "hi": "",
-              "mr": ""
+              "hi": "Midnight tea/snacks for devotees",
+              "mr": "Midnight tea/snacks for devotees"
             }
           ],
           "includedSamagriIds": []
@@ -350,25 +350,25 @@
           "inclusions": [
             {
               "en": "Full 7-Artist Orchestra with dynamic sound system",
-              "hi": "",
-              "mr": ""
+              "hi": "७ कलाकारों का पूर्ण आर्केस्ट्रा एवं डायनेमिक साउंड सिस्टम",
+              "mr": "७ कलाकारांचे पूर्ण ऑर्केस्ट्रा व दर्जेदार साऊंड सिस्टिम"
             },
             {
               "en": "Live mythological Jhanki performances (Radha Krishna, Shiva Tandav)",
-              "hi": "",
-              "mr": ""
+              "hi": "सजीव पौराणिक झांकी प्रस्तुति (राधा कृष्ण, शिव तांडव)",
+              "mr": "थेट पौराणिक देखावे सादरीकरण (राधा कृष्ण, शिव तांडव)"
             },
             {
               "en": "Akhand Jyot setup, Hawan Samagri & morning Aarti with conch",
-              "hi": "",
-              "mr": ""
+              "hi": "अखंड ज्योत स्थापना, हवन सामग्री एवं शंख ध्वनि सहित प्रातः आरती",
+              "mr": "अखंड ज्योत स्थापना, हवन साहित्य आणि शंखनादासह सकाळची आरती"
             }
           ],
           "exclusions": [
             {
               "en": "Large public tent setup",
-              "hi": "",
-              "mr": ""
+              "hi": "Large public tent setup",
+              "mr": "Large public tent setup"
             }
           ],
           "includedSamagriIds": [
@@ -379,13 +379,13 @@
       "serviceId": "jagran-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Raat Ka Jagran & Bhajan Sandhya",
-        "hi": "",
-        "mr": ""
+        "hi": "रात का जागरण एवं भजन संध्या",
+        "mr": "रात्रीचे जागरण व भजन संध्या"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -427,25 +427,25 @@
           "inclusions": [
             {
               "en": "Senior Acharya Dakshina for Rudra Path & Havan",
-              "hi": "",
-              "mr": ""
+              "hi": "रुद्र पाठ एवं हवन हेतु वरिष्ठ आचार्य दक्षिणा",
+              "mr": "रुद्र पाठ व हवनासाठी वरिष्ठ आचार्य दक्षिणा"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Belpatra, ghee, dravyas",
-              "hi": "",
-              "mr": ""
+              "hi": "Belpatra, ghee, dravyas",
+              "mr": "Belpatra, ghee, dravyas"
             }
           ],
           "includedSamagriIds": []
@@ -473,25 +473,25 @@
           "inclusions": [
             {
               "en": "Senior Acharya for complete ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु वरिष्ठ आचार्य",
+              "mr": "संपूर्ण विधीसाठी वरिष्ठ आचार्य"
             },
             {
               "en": "Essential Hawan kit & pure cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "आवश्यक हवन किट एवं शुद्ध गोघृत सम्मिलित",
+              "mr": "आवश्यक हवन किट व शुद्ध गोघृत समाविष्ट"
             },
             {
               "en": "Sacred Bhasma, Chandan, Janeu, Bilva ahutis",
-              "hi": "",
-              "mr": ""
+              "hi": "पवित्र भस्म, चंदन, जनेऊ एवं बिल्व पत्र आहुति",
+              "mr": "पवित्र भस्म, चंदन, जानवे व बेलपत्र आहुती"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh milk, curd, honey & belpatra",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh milk, curd, honey & belpatra",
+              "mr": "Fresh milk, curd, honey & belpatra"
             }
           ],
           "includedSamagriIds": [
@@ -504,13 +504,13 @@
       "serviceId": "rudra-havan",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Rudra Havan (Shiva Fire Ceremony)",
-        "hi": "",
-        "mr": ""
+        "hi": "रुद्र हवन (शिव अग्नि पूजा)",
+        "mr": "रुद्र हवन (शिव अग्नी विधी)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -552,25 +552,25 @@
           "inclusions": [
             {
               "en": "Senior Vedic Acharyas for complete Durga Saptashati recitation & concluding Homa",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण दुर्गा सप्तशती पाठ एवं पूर्णाहुति होम हेतु वरिष्ठ वैदिक आचार्य",
+              "mr": "संपूर्ण दुर्गा सप्तशती पाठ व पूर्णाहुती होमासाठी वरिष्ठ वैदिक आचार्य"
             },
             {
               "en": "Detailed checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "विस्तृत सामग्री सूची पूर्व में प्रदान की जाती है",
+              "mr": "सविस्तर साहित्य यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh flowers, Kanya pujan dakshina",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh flowers, Kanya पूजाn dakshina",
+              "mr": "Fresh flowers, Kanya पूजाn dakshina"
             },
             {
               "en": "Brahmin feast",
-              "hi": "",
-              "mr": ""
+              "hi": "Brahmin feast",
+              "mr": "Brahmin feast"
             }
           ],
           "includedSamagriIds": []
@@ -598,25 +598,25 @@
           "inclusions": [
             {
               "en": "3 Senior Vedic Acharyas for synchronized recitation & grand Maha Havan",
-              "hi": "",
-              "mr": ""
+              "hi": "सस्वर पाठ एवं भव्य महाहवन हेतु ३ वरिष्ठ वैदिक आचार्य",
+              "mr": "सस्वर पाठ व भव्य महाहवनासाठी ३ वरिष्ठ वैदिक आचार्य"
             },
             {
               "en": "Complete Chandi Hawan Samagri kit with pure cow ghee & sacred herbs",
-              "hi": "",
-              "mr": ""
+              "hi": "Complete Chandi Hawan Samagri kit with शुद्ध गोघृत & sacred herbs",
+              "mr": "Complete Chandi Hawan Samagri kit with शुद्ध गोघृत & sacred herbs"
             },
             {
               "en": "Full Kanya Puja coordination",
-              "hi": "",
-              "mr": ""
+              "hi": "Full Kanya पूजा coordination",
+              "mr": "Full Kanya पूजा coordination"
             }
           ],
           "exclusions": [
             {
               "en": "Brahmin bhojan feast",
-              "hi": "",
-              "mr": ""
+              "hi": "Brahmin bhojan feast",
+              "mr": "Brahmin bhojan feast"
             }
           ],
           "includedSamagriIds": [
@@ -629,13 +629,13 @@
       "serviceId": "chandi-havan",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Maha Chandi Havan & Durga Saptashati",
-        "hi": "",
-        "mr": ""
+        "hi": "महा चंडी हवन एवं दुर्गा सप्तशती",
+        "mr": "महा चंडी हवन व दुर्गा सप्तशती"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -677,25 +677,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Gayatri Japa & Havan",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Gayatri Japa & हवन",
+              "mr": "साठी पंडित दक्षिणा: Gayatri Japa & हवन"
             },
             {
               "en": "Surya Aradhana & Checklist",
-              "hi": "",
-              "mr": ""
+              "hi": "Surya Aradhana & Checklist",
+              "mr": "Surya Aradhana & Checklist"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Ghee & wood",
-              "hi": "",
-              "mr": ""
+              "hi": "Ghee & wood",
+              "mr": "Ghee & wood"
             }
           ],
           "includedSamagriIds": []
@@ -723,25 +723,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "शुद्ध हवन सामग्री किट एवं गोघृत सम्मिलित",
+              "mr": "शुद्ध हवन साहित्य किट व गोघृत समाविष्ट"
             },
             {
               "en": "Sacred wood, camphor, roli, moli",
-              "hi": "",
-              "mr": ""
+              "hi": "Sacred wood, camphor, roli, moli",
+              "mr": "Sacred wood, camphor, roli, moli"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh flowers & prasad",
-              "hi": "",
-              "mr": ""
+              "hi": "ताजे फूल एवं प्रसाद",
+              "mr": "ताजी फुले व प्रसाद"
             }
           ],
           "includedSamagriIds": [
@@ -754,13 +754,13 @@
       "serviceId": "gayatri-havan",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Gayatri Havan (Solar Vedic Purification)",
-        "hi": "",
-        "mr": ""
+        "hi": "गायत्री हवन (वैदिक सूर्य शुद्धि)",
+        "mr": "गायत्री हवन (वैदिक सूर्य शुद्धिकरण)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -802,35 +802,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for complete ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: संपूर्ण अनुष्ठान",
+              "mr": "साठी पंडित दक्षिणा: संपूर्ण विधी"
             },
             {
               "en": "Puja performed as per agreed Shastra vidhi",
-              "hi": "",
-              "mr": ""
+              "hi": "शास्त्रसम्मत विधि अनुसार पूजा संपन्न",
+              "mr": "शास्त्रोक्त विधीनुसार पूजा संपन्न"
             },
             {
               "en": "Detailed Samagri checklist provided in advance",
-              "hi": "",
-              "mr": ""
+              "hi": "Detailed Samagri सामग्री सूची पूर्व में प्रदान की जाती है",
+              "mr": "Detailed Samagri साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Devotee arranges pure Hawan Samagri and cow ghee",
-              "hi": "",
-              "mr": ""
+              "hi": "यजमान व्यवस्था करते हैं pure Hawan Samagri and गोघृत",
+              "mr": "यजमान आणतात pure Hawan Samagri and गोघृत"
             },
             {
               "en": "Devotee arranges fresh flowers, fruits, milk & prasad",
-              "hi": "",
-              "mr": ""
+              "hi": "यजमान व्यवस्था करते हैं fresh flowers, fruits, milk & prasad",
+              "mr": "यजमान आणतात fresh flowers, fruits, milk & prasad"
             },
             {
               "en": "Devotee provides household puja thali & vessels",
-              "hi": "",
-              "mr": ""
+              "hi": "यजमान उपलब्ध कराते हैं household पूजा thali & vessels",
+              "mr": "यजमान उपलब्ध करतात household पूजा thali & vessels"
             }
           ],
           "includedSamagriIds": []
@@ -858,35 +858,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for complete ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: संपूर्ण अनुष्ठान",
+              "mr": "साठी पंडित दक्षिणा: संपूर्ण विधी"
             },
             {
               "en": "Essential pure Hawan Samagri kit included",
-              "hi": "",
-              "mr": ""
+              "hi": "आवश्यक शुद्ध हवन सामग्री किट सम्मिलित",
+              "mr": "आवश्यक शुद्ध हवन साहित्य किट समाविष्ट"
             },
             {
               "en": "Pure desi cow ghee & sacred hawan wood included",
-              "hi": "",
-              "mr": ""
+              "hi": "Pure desi गोघृत & sacred hawan wood सम्मिलित",
+              "mr": "Pure desi गोघृत & sacred hawan wood समाविष्ट"
             },
             {
               "en": "Puja performed as per agreed Shastra vidhi",
-              "hi": "",
-              "mr": ""
+              "hi": "शास्त्रसम्मत विधि अनुसार पूजा संपन्न",
+              "mr": "शास्त्रोक्त विधीनुसार पूजा संपन्न"
             }
           ],
           "exclusions": [
             {
               "en": "Devotee only prepares fresh flowers & seasonal fruits",
-              "hi": "",
-              "mr": ""
+              "hi": "Devotee only prepares fresh flowers & seasonal fruits",
+              "mr": "Devotee only prepares fresh flowers & seasonal fruits"
             },
             {
               "en": "Devotee arranges fresh milk, curd & household utensils",
-              "hi": "",
-              "mr": ""
+              "hi": "यजमान व्यवस्था करते हैं fresh milk, curd & household utensils",
+              "mr": "यजमान आणतात fresh milk, curd & household utensils"
             }
           ],
           "includedSamagriIds": [
@@ -899,13 +899,13 @@
       "serviceId": "griha-pravesh",
       "pricingNote": {
         "en": "Indicative starting dakshina (Preserved local project data)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Griha Pravesh Puja",
-        "hi": "",
-        "mr": ""
+        "hi": "गृह प्रवेश पूजा",
+        "mr": "गृहप्रवेश पूजा"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -947,35 +947,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Namkaran Sanskar",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Namkaran Sanskar",
+              "mr": "साठी पंडित दक्षिणा: Namkaran Sanskar"
             },
             {
               "en": "Nakshatra name selection guidance",
-              "hi": "",
-              "mr": ""
+              "hi": "Nakshatra name selection guidance",
+              "mr": "Nakshatra name selection guidance"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Bronze plate & raw rice",
-              "hi": "",
-              "mr": ""
+              "hi": "Bronze plate & raw rice",
+              "mr": "Bronze plate & raw rice"
             },
             {
               "en": "Sweets",
-              "hi": "",
-              "mr": ""
+              "hi": "Sweets",
+              "mr": "Sweets"
             }
           ],
           "includedSamagriIds": []
@@ -1003,25 +1003,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Essential Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "Essential Hawan Samagri kit & गोघृत सम्मिलित",
+              "mr": "Essential Hawan Samagri kit & गोघृत समाविष्ट"
             },
             {
               "en": "Sacred honey for ear-whisper ritual, roli, moli",
-              "hi": "",
-              "mr": ""
+              "hi": "Sacred honey for ear-whisper ritual, roli, moli",
+              "mr": "Sacred honey for ear-whisper ritual, roli, moli"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh fruits, sweets & baby cradle decoration",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh fruits, sweets & baby cradle decoration",
+              "mr": "Fresh fruits, sweets & baby cradle decoration"
             }
           ],
           "includedSamagriIds": [
@@ -1034,13 +1034,13 @@
       "serviceId": "namkaran-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Namkaran Puja (Vedic Naming Ceremony)",
-        "hi": "",
-        "mr": ""
+        "hi": "नामकरण संस्कार (वैदिक नामकरण विधि)",
+        "mr": "बारसे / नामकरण विधी (वैदिक नामकरण संस्कार)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -1082,25 +1082,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Gauri-Ganesh Pujan & Tilak",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Gauri-Ganesh पूजाn & Tilak",
+              "mr": "साठी पंडित दक्षिणा: Gauri-Ganesh पूजाn & Tilak"
             },
             {
               "en": "Roka Sankalp & Checklist",
-              "hi": "",
-              "mr": ""
+              "hi": "Roka संकल्प & Checklist",
+              "mr": "Roka संकल्प & Checklist"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Dry fruits, sweets, shagun",
-              "hi": "",
-              "mr": ""
+              "hi": "सूखे मेवे, sweets, shagun",
+              "mr": "सुका मेवा, sweets, shagun"
             }
           ],
           "includedSamagriIds": []
@@ -1128,25 +1128,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Essential Puja Samagri kit included",
-              "hi": "",
-              "mr": ""
+              "hi": "Essential पूजा Samagri kit सम्मिलित",
+              "mr": "Essential पूजा Samagri kit समाविष्ट"
             },
             {
               "en": "Roli, Akshat, Chandan, Moli & Dhoop",
-              "hi": "",
-              "mr": ""
+              "hi": "Roli, Akshat, Chandan, Moli & Dhoop",
+              "mr": "Roli, Akshat, Chandan, Moli & Dhoop"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh fruits, mithai & shagun gifts",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh fruits, mithai & shagun gifts",
+              "mr": "Fresh fruits, mithai & shagun gifts"
             }
           ],
           "includedSamagriIds": [
@@ -1157,13 +1157,13 @@
       "serviceId": "roka-ceremony",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Roka Ceremony & Pre-Vivah Sankalp",
-        "hi": "",
-        "mr": ""
+        "hi": "रोका संस्कार एवं प्री-विवाह संकल्प",
+        "mr": "रोका विधी व विवाह पूर्व संकल्प"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -1205,30 +1205,30 @@
           "inclusions": [
             {
               "en": "Senior Purohit Dakshina for Barsi Shradh & Pinda Daan",
-              "hi": "",
-              "mr": ""
+              "hi": "Senior Purohit Dakshina for Barsi Shradh & Pinda Daan",
+              "mr": "Senior Purohit Dakshina for Barsi Shradh & Pinda Daan"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Pinda flour, sesame, milk",
-              "hi": "",
-              "mr": ""
+              "hi": "Pinda flour, sesame, milk",
+              "mr": "Pinda flour, sesame, milk"
             },
             {
               "en": "Brahmin bhojan",
-              "hi": "",
-              "mr": ""
+              "hi": "Brahmin bhojan",
+              "mr": "Brahmin bhojan"
             }
           ],
           "includedSamagriIds": []
@@ -1256,25 +1256,25 @@
           "inclusions": [
             {
               "en": "Senior Purohit for complete ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "Senior Purohit for संपूर्ण अनुष्ठान",
+              "mr": "Senior Purohit for संपूर्ण विधी"
             },
             {
               "en": "Black sesame (Kala Til), Kusha grass, Pinda flour & Gangajal included",
-              "hi": "",
-              "mr": ""
+              "hi": "Black sesame (Kala Til), Kusha grass, Pinda flour & Gangajal सम्मिलित",
+              "mr": "Black sesame (Kala Til), Kusha grass, Pinda flour & Gangajal समाविष्ट"
             },
             {
               "en": "Vastram token for Brahmin & incense included",
-              "hi": "",
-              "mr": ""
+              "hi": "Vastram token for Brahmin & incense सम्मिलित",
+              "mr": "Vastram token for Brahmin & incense समाविष्ट"
             }
           ],
           "exclusions": [
             {
               "en": "Cooked pinda kheer & family feast",
-              "hi": "",
-              "mr": ""
+              "hi": "Cooked pinda kheer & family feast",
+              "mr": "Cooked pinda kheer & family feast"
             }
           ],
           "includedSamagriIds": [
@@ -1285,13 +1285,13 @@
       "serviceId": "barsi-ceremony",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Barsi Ceremony (Annual Shradh)",
-        "hi": "",
-        "mr": ""
+        "hi": "वार्षिक श्राद्ध (बरसी संस्कार)",
+        "mr": "वार्षिक श्राद्ध (बरसी विधी)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -1333,25 +1333,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Gauri-Ganesh & Haldi sanctification",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Gauri-Ganesh & Haldi sanctification",
+              "mr": "साठी पंडित दक्षिणा: Gauri-Ganesh & Haldi sanctification"
             },
             {
               "en": "Raksha Sutra & Checklist",
-              "hi": "",
-              "mr": ""
+              "hi": "Raksha Sutra & Checklist",
+              "mr": "Raksha Sutra & Checklist"
             }
           ],
           "exclusions": [
             {
               "en": "Turmeric roots / paste",
-              "hi": "",
-              "mr": ""
+              "hi": "Turmeric roots / paste",
+              "mr": "Turmeric roots / paste"
             },
             {
               "en": "Fresh yellow marigolds",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh yellow marigolds",
+              "mr": "Fresh yellow marigolds"
             }
           ],
           "includedSamagriIds": []
@@ -1379,25 +1379,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Essential Puja Samagri kit & pure Kasturi turmeric powder included",
-              "hi": "",
-              "mr": ""
+              "hi": "Essential पूजा Samagri kit & pure Kasturi turmeric powder सम्मिलित",
+              "mr": "Essential पूजा Samagri kit & pure Kasturi turmeric powder समाविष्ट"
             },
             {
               "en": "Roli, Chandan, sacred thread",
-              "hi": "",
-              "mr": ""
+              "hi": "Roli, Chandan, sacred thread",
+              "mr": "Roli, Chandan, sacred thread"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh yellow flowers & sweets",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh yellow flowers & sweets",
+              "mr": "Fresh yellow flowers & sweets"
             }
           ],
           "includedSamagriIds": [
@@ -1408,13 +1408,13 @@
       "serviceId": "haldi-ceremony",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Traditional Haldi Ceremony Vidhi",
-        "hi": "",
-        "mr": ""
+        "hi": "पारंपरिक हल्दी रस्म एवं तेल पूजन",
+        "mr": "पारंपरिक हळद समारंभ व तेल पूजन विधी"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -1456,35 +1456,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Mahalaxmi Pujan & Kanakdhara Path",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Mahalaxmi पूजाn & Kanakdhara Path",
+              "mr": "साठी पंडित दक्षिणा: Mahalaxmi पूजाn & Kanakdhara Path"
             },
             {
               "en": "Ashtalakshmi invocation",
-              "hi": "",
-              "mr": ""
+              "hi": "Ashtalakshmi invocation",
+              "mr": "Ashtalakshmi invocation"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Lotus flowers & fresh sweets",
-              "hi": "",
-              "mr": ""
+              "hi": "Lotus flowers & fresh sweets",
+              "mr": "Lotus flowers & fresh sweets"
             },
             {
               "en": "Utensils",
-              "hi": "",
-              "mr": ""
+              "hi": "Utensils",
+              "mr": "Utensils"
             }
           ],
           "includedSamagriIds": []
@@ -1512,25 +1512,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Pure cow ghee & Hawan Samagri kit included",
-              "hi": "",
-              "mr": ""
+              "hi": "शुद्ध गोघृत & Hawan Samagri kit सम्मिलित",
+              "mr": "शुद्ध गोघृत & Hawan Samagri kit समाविष्ट"
             },
             {
               "en": "Kamalgatta (lotus seeds) & sacred herbs included",
-              "hi": "",
-              "mr": ""
+              "hi": "Kamalgatta (lotus seeds) & sacred herbs सम्मिलित",
+              "mr": "Kamalgatta (lotus seeds) & sacred herbs समाविष्ट"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh lotus flowers & sweets",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh lotus flowers & sweets",
+              "mr": "Fresh lotus flowers & sweets"
             }
           ],
           "includedSamagriIds": [
@@ -1543,13 +1543,13 @@
       "serviceId": "mahalaxmi-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Mahalaxmi Puja & Kanakdhara Vidhi",
-        "hi": "",
-        "mr": ""
+        "hi": "महालक्ष्मी पूजा एवं कनकधारा विधि",
+        "mr": "महालक्ष्मी पूजा व कनकधारा विधी"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -1591,30 +1591,30 @@
           "inclusions": [
             {
               "en": "Lead Bhajan Singer + Harmonium + Dholak Player",
-              "hi": "",
-              "mr": ""
+              "hi": "Lead Bhajan Singer + Harmonium + Dholak Player",
+              "mr": "Lead Bhajan Singer + Harmonium + Dholak Player"
             },
             {
               "en": "Chowki Sthapana & Akhand Jyot blessing",
-              "hi": "",
-              "mr": ""
+              "hi": "Chowki Sthapana & Akhand Jyot blessing",
+              "mr": "Chowki Sthapana & Akhand Jyot blessing"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "External sound system",
-              "hi": "",
-              "mr": ""
+              "hi": "External sound system",
+              "mr": "External sound system"
             },
             {
               "en": "Bhog & dry fruit distribution",
-              "hi": "",
-              "mr": ""
+              "hi": "Bhog & dry fruit distribution",
+              "mr": "Bhog & dry fruit distribution"
             }
           ],
           "includedSamagriIds": []
@@ -1642,30 +1642,30 @@
           "inclusions": [
             {
               "en": "Lead Singer + Female Co-Singer + Dholak + Octapad + Harmonium",
-              "hi": "",
-              "mr": ""
+              "hi": "Lead Singer + Female Co-Singer + Dholak + Octapad + Harmonium",
+              "mr": "Lead Singer + Female Co-Singer + Dholak + Octapad + Harmonium"
             },
             {
               "en": "Apartment/Hall Sound System & Microphones included",
-              "hi": "",
-              "mr": ""
+              "hi": "Apartment/Hall Sound System & Microphones सम्मिलित",
+              "mr": "Apartment/Hall Sound System & Microphones समाविष्ट"
             },
             {
               "en": "Chowki Pujan Samagri, Chunri & Akhand Jyot setup included",
-              "hi": "",
-              "mr": ""
+              "hi": "Chowki पूजाn Samagri, Chunri & Akhand Jyot setup सम्मिलित",
+              "mr": "Chowki पूजाn Samagri, Chunri & Akhand Jyot setup समाविष्ट"
             },
             {
               "en": "Tara Rani Katha & Maha Aarti",
-              "hi": "",
-              "mr": ""
+              "hi": "Tara Rani Katha & Maha Aarti",
+              "mr": "Tara Rani Katha & Maha Aarti"
             }
           ],
           "exclusions": [
             {
               "en": "Prasad & 56 Bhog catering",
-              "hi": "",
-              "mr": ""
+              "hi": "Prasad & 56 Bhog catering",
+              "mr": "Prasad & 56 Bhog catering"
             }
           ],
           "includedSamagriIds": [
@@ -1676,13 +1676,13 @@
       "serviceId": "mata-ki-chowki",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Mata Ki Chowki & Akhand Jyot",
-        "hi": "",
-        "mr": ""
+        "hi": "माता की चौकी एवं अखंड ज्योत",
+        "mr": "माता की चौकी व अखंड ज्योत"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -1724,30 +1724,30 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Saraswati Aradhana & Medha Sukta",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Saraswati Aradhana & Medha Sukta",
+              "mr": "साठी पंडित दक्षिणा: Saraswati Aradhana & Medha Sukta"
             },
             {
               "en": "Vidya Aarambh blessing",
-              "hi": "",
-              "mr": ""
+              "hi": "Vidya Aarambh blessing",
+              "mr": "Vidya Aarambh blessing"
             },
             {
               "en": "Samagri checklist",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri checklist",
+              "mr": "Samagri checklist"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "White flowers & sweets",
-              "hi": "",
-              "mr": ""
+              "hi": "White flowers & sweets",
+              "mr": "White flowers & sweets"
             }
           ],
           "includedSamagriIds": []
@@ -1775,25 +1775,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for complete ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: संपूर्ण अनुष्ठान",
+              "mr": "साठी पंडित दक्षिणा: संपूर्ण विधी"
             },
             {
               "en": "Essential Saraswati hawan kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "Essential Saraswati hawan kit & गोघृत सम्मिलित",
+              "mr": "Essential Saraswati hawan kit & गोघृत समाविष्ट"
             },
             {
               "en": "Chandan & yellow akshat",
-              "hi": "",
-              "mr": ""
+              "hi": "Chandan & yellow akshat",
+              "mr": "Chandan & yellow akshat"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh white flowers, pens, notebooks",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh white flowers, pens, notebooks",
+              "mr": "Fresh white flowers, pens, notebooks"
             }
           ],
           "includedSamagriIds": [
@@ -1806,13 +1806,13 @@
       "serviceId": "saraswati-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Saraswati Puja for Education & Wisdom",
-        "hi": "",
-        "mr": ""
+        "hi": "सरस्वती पूजा (विद्या एवं बुद्धि लाभ)",
+        "mr": "सरस्वती पूजा (विद्या व बुद्धी लाभ)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -1854,30 +1854,30 @@
           "inclusions": [
             {
               "en": "Senior North Indian Acharya conducting complete Vivah Sanskar & Saptapadi",
-              "hi": "",
-              "mr": ""
+              "hi": "Senior North Indian Acharya conducting complete Vivah Sanskar & Saptapadi",
+              "mr": "Senior North Indian Acharya conducting complete Vivah Sanskar & Saptapadi"
             },
             {
               "en": "Muhurat coordination & Vivah checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "मुहूर्त coordination & Vivah checklist provided",
+              "mr": "मुहूर्त coordination & Vivah checklist provided"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Dry fruits, puffed rice (Laja)",
-              "hi": "",
-              "mr": ""
+              "hi": "सूखे मेवे, puffed rice (Laja)",
+              "mr": "सुका मेवा, puffed rice (Laja)"
             },
             {
               "en": "Mandap setup",
-              "hi": "",
-              "mr": ""
+              "hi": "Mandap setup",
+              "mr": "Mandap setup"
             }
           ],
           "includedSamagriIds": []
@@ -1905,25 +1905,25 @@
           "inclusions": [
             {
               "en": "Senior North Indian Acharya conducting complete ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "Senior North Indian Acharya conducting संपूर्ण अनुष्ठान",
+              "mr": "Senior North Indian Acharya conducting संपूर्ण विधी"
             },
             {
               "en": "Complete Vivah Hawan Samagri kit, Laja (kheel) & pure cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "Complete Vivah Hawan Samagri kit, Laja (kheel) & शुद्ध गोघृत सम्मिलित",
+              "mr": "Complete Vivah Hawan Samagri kit, Laja (kheel) & शुद्ध गोघृत समाविष्ट"
             },
             {
               "en": "Sindoor, Roli, Akshat, Janeu, Kalash vastram & sacred Gathbandhan cloth",
-              "hi": "",
-              "mr": ""
+              "hi": "Sindoor, Roli, Akshat, Janeu, Kalash vastram & sacred Gathbandhan cloth",
+              "mr": "Sindoor, Roli, Akshat, Janeu, Kalash vastram & sacred Gathbandhan cloth"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh garlands (Jaimala), fruits, sweets, mandap brassware",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh garlands (Jaimala), fruits, sweets, mandap brassware",
+              "mr": "Fresh garlands (Jaimala), fruits, sweets, mandap brassware"
             }
           ],
           "includedSamagriIds": [
@@ -1936,13 +1936,13 @@
       "serviceId": "vivah-marriage",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Vivah (Complete Hindu Wedding Sanskar)",
-        "hi": "",
-        "mr": ""
+        "hi": "विवाह संस्कार (संपूर्ण वैदिक विवाह विधि)",
+        "mr": "विवाह संस्कार (संपूर्ण वैदिक विवाह विधी)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -1984,18 +1984,18 @@
           "inclusions": [
             {
               "en": "Purohit Dakshina for 3-generation Pitru Tarpan",
-              "hi": "",
-              "mr": ""
+              "hi": "Purohit Dakshina for 3-generation Pitru Tarpan",
+              "mr": "Purohit Dakshina for 3-generation Pitru Tarpan"
             },
             {
               "en": "Gotra & Nakshatra sankalp",
-              "hi": "",
-              "mr": ""
+              "hi": "Gotra & Nakshatra संकल्प",
+              "mr": "Gotra & Nakshatra संकल्प"
             },
             {
               "en": "Sacred Kusha grass & Black sesame included",
-              "hi": "",
-              "mr": ""
+              "hi": "Sacred Kusha grass & Black sesame सम्मिलित",
+              "mr": "Sacred Kusha grass & Black sesame समाविष्ट"
             }
           ],
           "exclusions": [
@@ -2040,25 +2040,25 @@
           "inclusions": [
             {
               "en": "Purohit Dakshina for complete Tarpan",
-              "hi": "",
-              "mr": ""
+              "hi": "Purohit Dakshina for complete Tarpan",
+              "mr": "Purohit Dakshina for complete Tarpan"
             },
             {
               "en": "Kusha grass, Til & Gangajal included",
-              "hi": "",
-              "mr": ""
+              "hi": "Kusha grass, Til & Gangajal सम्मिलित",
+              "mr": "Kusha grass, Til & Gangajal समाविष्ट"
             },
             {
               "en": "Token grass donation consecrated in ancestor name for cow feed",
-              "hi": "",
-              "mr": ""
+              "hi": "Token grass donation consecrated in ancestor name for cow feed",
+              "mr": "Token grass donation consecrated in ancestor name for cow feed"
             }
           ],
           "exclusions": [
             {
               "en": "Household vessels",
-              "hi": "",
-              "mr": ""
+              "hi": "Household vessels",
+              "mr": "Household vessels"
             }
           ],
           "includedSamagriIds": [
@@ -2069,13 +2069,13 @@
       "serviceId": "amavasya-tarpan",
       "pricingNote": {
         "en": "Proposed fixed dakshina (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Amavasya Tarpan & Gau Daan",
-        "hi": "",
-        "mr": ""
+        "hi": "अमावस्या तर्पण एवं गो दान",
+        "mr": "अमावस्या तर्पण आणि गो दान"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -2117,35 +2117,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Ganapathi Homam & 108 Ahutis",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Ganapathi होमm & 108 Ahutis",
+              "mr": "साठी पंडित दक्षिणा: Ganapathi होमm & 108 Ahutis"
             },
             {
               "en": "Shodashopachara Pujan",
-              "hi": "",
-              "mr": ""
+              "hi": "Shodashopachara पूजाn",
+              "mr": "Shodashopachara पूजाn"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Modaks, fresh flowers, cow ghee",
-              "hi": "",
-              "mr": ""
+              "hi": "Modaks, fresh flowers, गोघृत",
+              "mr": "Modaks, fresh flowers, गोघृत"
             },
             {
               "en": "Hawan kund",
-              "hi": "",
-              "mr": ""
+              "hi": "Hawan kund",
+              "mr": "Hawan kund"
             }
           ],
           "includedSamagriIds": []
@@ -2173,25 +2173,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Essential herbal Hawan Samagri kit & pure cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "Essential herbal Hawan Samagri kit & शुद्ध गोघृत सम्मिलित",
+              "mr": "Essential herbal Hawan Samagri kit & शुद्ध गोघृत समाविष्ट"
             },
             {
               "en": "Sacred mango wood (kashtha) & camphor included",
-              "hi": "",
-              "mr": ""
+              "hi": "Sacred mango wood (kashtha) & camphor सम्मिलित",
+              "mr": "Sacred mango wood (kashtha) & camphor समाविष्ट"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh fruits, modaks & loose flowers",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh fruits, modaks & loose flowers",
+              "mr": "Fresh fruits, modaks & loose flowers"
             }
           ],
           "includedSamagriIds": [
@@ -2204,13 +2204,13 @@
       "serviceId": "ganapathi-havan",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Maha Ganapathi Havan",
-        "hi": "",
-        "mr": ""
+        "hi": "महा गणपति हवन",
+        "mr": "महा गणपती हवन"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -2252,35 +2252,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for 9-graha invocation & Havan",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: 9-graha invocation & हवन",
+              "mr": "साठी पंडित दक्षिणा: 9-graha invocation & हवन"
             },
             {
               "en": "Navagraha Mandala Pujan",
-              "hi": "",
-              "mr": ""
+              "hi": "Navagraha Mandala पूजाn",
+              "mr": "Navagraha Mandala पूजाn"
             },
             {
               "en": "Samagri checklist",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri checklist",
+              "mr": "Samagri checklist"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "9 graha cloths & samidha wood",
-              "hi": "",
-              "mr": ""
+              "hi": "9 graha cloths & samidha wood",
+              "mr": "9 graha cloths & samidha wood"
             },
             {
               "en": "Utensils",
-              "hi": "",
-              "mr": ""
+              "hi": "Utensils",
+              "mr": "Utensils"
             }
           ],
           "includedSamagriIds": []
@@ -2308,30 +2308,30 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for complete ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: संपूर्ण अनुष्ठान",
+              "mr": "साठी पंडित दक्षिणा: संपूर्ण विधी"
             },
             {
               "en": "Pure Hawan Samagri kit & pure cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "शुद्ध हवन सामग्री किट & शुद्ध गोघृत सम्मिलित",
+              "mr": "शुद्ध हवन साहित्य किट & शुद्ध गोघृत समाविष्ट"
             },
             {
               "en": "9 Navagraha Samidha woods (Arka to Kusha) & 9 colored cloths included",
-              "hi": "",
-              "mr": ""
+              "hi": "9 Navagraha Samidha woods (Arka to Kusha) & 9 colored cloths सम्मिलित",
+              "mr": "9 Navagraha Samidha woods (Arka to Kusha) & 9 colored cloths समाविष्ट"
             },
             {
               "en": "Navadhanya & Purna Kalash vastram",
-              "hi": "",
-              "mr": ""
+              "hi": "Navadhanya & Purna Kalash vastram",
+              "mr": "Navadhanya & Purna Kalash vastram"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh flowers, fruits, milk",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh flowers, fruits, milk",
+              "mr": "Fresh flowers, fruits, milk"
             }
           ],
           "includedSamagriIds": [
@@ -2344,13 +2344,13 @@
       "serviceId": "navagraha-havan",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Navagraha Shanti Havan",
-        "hi": "",
-        "mr": ""
+        "hi": "नवग्रह शांति हवन",
+        "mr": "नवग्रह शांती हवन"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -2392,25 +2392,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Sri Suktam Path & Havan",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Sri Suktam Path & हवन",
+              "mr": "साठी पंडित दक्षिणा: Sri Suktam Path & हवन"
             },
             {
               "en": "Devi Mahalakshmi archana & Checklist",
-              "hi": "",
-              "mr": ""
+              "hi": "Devi Mahalakshmi archana & Checklist",
+              "mr": "Devi Mahalakshmi archana & Checklist"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Ghee, lotus seeds, sweets",
-              "hi": "",
-              "mr": ""
+              "hi": "Ghee, lotus seeds, sweets",
+              "mr": "Ghee, lotus seeds, sweets"
             }
           ],
           "includedSamagriIds": []
@@ -2438,25 +2438,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "शुद्ध हवन सामग्री किट एवं गोघृत सम्मिलित",
+              "mr": "शुद्ध हवन साहित्य किट व गोघृत समाविष्ट"
             },
             {
               "en": "Kamalgatta, sacred wood, roli, moli",
-              "hi": "",
-              "mr": ""
+              "hi": "Kamalgatta, sacred wood, roli, moli",
+              "mr": "Kamalgatta, sacred wood, roli, moli"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh lotus flowers & kheer",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh lotus flowers & kheer",
+              "mr": "Fresh lotus flowers & kheer"
             }
           ],
           "includedSamagriIds": [
@@ -2469,13 +2469,13 @@
       "serviceId": "sri-sukta-havan",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Sri Sukta Havan (Rigvedic Devi Invocation)",
-        "hi": "",
-        "mr": ""
+        "hi": "श्री सूक्त हवन (ऋग्वेदीय देवी अनुष्ठान)",
+        "mr": "श्री सूक्त हवन (ऋग्वेदीय देवी अनुष्ठान)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -2517,25 +2517,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Sudarshan Chakra invocation",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Sudarshan Chakra invocation",
+              "mr": "साठी पंडित दक्षिणा: Sudarshan Chakra invocation"
             },
             {
               "en": "Raksha Kavach chanting & Checklist",
-              "hi": "",
-              "mr": ""
+              "hi": "Raksha Kavach chanting & Checklist",
+              "mr": "Raksha Kavach chanting & Checklist"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Ghee, wood, flowers",
-              "hi": "",
-              "mr": ""
+              "hi": "Ghee, wood, flowers",
+              "mr": "Ghee, wood, flowers"
             }
           ],
           "includedSamagriIds": []
@@ -2563,25 +2563,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "शुद्ध हवन सामग्री किट एवं गोघृत सम्मिलित",
+              "mr": "शुद्ध हवन साहित्य किट व गोघृत समाविष्ट"
             },
             {
               "en": "Consecrated Sudarshan Yantra, sacred wood, camphor",
-              "hi": "",
-              "mr": ""
+              "hi": "Consecrated Sudarshan Yantra, sacred wood, camphor",
+              "mr": "Consecrated Sudarshan Yantra, sacred wood, camphor"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh flowers & prasad",
-              "hi": "",
-              "mr": ""
+              "hi": "ताजे फूल एवं प्रसाद",
+              "mr": "ताजी फुले व प्रसाद"
             }
           ],
           "includedSamagriIds": [
@@ -2594,13 +2594,13 @@
       "serviceId": "sudarshan-havan",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Sudarshan Havan for Supreme Protection",
-        "hi": "",
-        "mr": ""
+        "hi": "सुदर्शन हवन (शत्रु व नकारात्मकता निवारण)",
+        "mr": "सुदर्शन हवन (नकारात्मकता व बाधा निवारण)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -2642,35 +2642,35 @@
           "inclusions": [
             {
               "en": "Experienced Pandit for complete Sunderkand Recitation",
-              "hi": "",
-              "mr": ""
+              "hi": "Experienced Pandit for complete Sunderkand Recitation",
+              "mr": "Experienced Pandit for complete Sunderkand Recitation"
             },
             {
               "en": "Hanuman Chalisa, Sankat Mochan & Aarti",
-              "hi": "",
-              "mr": ""
+              "hi": "Hanuman Chalisa, Sankat Mochan & Aarti",
+              "mr": "Hanuman Chalisa, Sankat Mochan & Aarti"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Musical instruments / Dholak",
-              "hi": "",
-              "mr": ""
+              "hi": "Musical instruments / Dholak",
+              "mr": "Musical instruments / Dholak"
             },
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Prasad",
-              "hi": "",
-              "mr": ""
+              "hi": "Prasad",
+              "mr": "Prasad"
             }
           ],
           "includedSamagriIds": []
@@ -2698,25 +2698,25 @@
           "inclusions": [
             {
               "en": "Lead Pandit Reciter + Dholak/Harmonium Musician",
-              "hi": "",
-              "mr": ""
+              "hi": "Lead Pandit Reciter + Dholak/Harmonium Musician",
+              "mr": "Lead Pandit Reciter + Dholak/Harmonium Musician"
             },
             {
               "en": "Complete Sunderkand Samagri kit & Sindoor included",
-              "hi": "",
-              "mr": ""
+              "hi": "Complete Sunderkand Samagri kit & Sindoor सम्मिलित",
+              "mr": "Complete Sunderkand Samagri kit & Sindoor समाविष्ट"
             },
             {
               "en": "Hanuman Bahuk, Bajrang Baan & Maha Aarti with Dholak",
-              "hi": "",
-              "mr": ""
+              "hi": "Hanuman Bahuk, Bajrang Baan & Maha Aarti with Dholak",
+              "mr": "Hanuman Bahuk, Bajrang Baan & Maha Aarti with Dholak"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh fruits, boondi / laddu prasad",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh fruits, boondi / laddu prasad",
+              "mr": "Fresh fruits, boondi / laddu prasad"
             }
           ],
           "includedSamagriIds": [
@@ -2727,13 +2727,13 @@
       "serviceId": "sunderkand-path",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Sunderkand Path Recitation with Music",
-        "hi": "",
-        "mr": ""
+        "hi": "सुंदरकांड पाठ संगीतमय गायन",
+        "mr": "सुंदरकांड पाठ संगीतमय गायन"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -2775,35 +2775,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Annaprashan Vidhi & Ayush blessings",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Annaprashan Vidhi & Ayush blessings",
+              "mr": "साठी पंडित दक्षिणा: Annaprashan Vidhi & Ayush blessings"
             },
             {
               "en": "Tray-testing ritual guidance",
-              "hi": "",
-              "mr": ""
+              "hi": "Tray-testing ritual guidance",
+              "mr": "Tray-testing ritual guidance"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Cooked Kheer/Payasam",
-              "hi": "",
-              "mr": ""
+              "hi": "Cooked Kheer/Payasam",
+              "mr": "Cooked Kheer/Payasam"
             },
             {
               "en": "Utensils",
-              "hi": "",
-              "mr": ""
+              "hi": "Utensils",
+              "mr": "Utensils"
             }
           ],
           "includedSamagriIds": []
@@ -2831,25 +2831,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Essential pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "आवश्यक शुद्ध हवन सामग्री किट & गोघृत सम्मिलित",
+              "mr": "आवश्यक शुद्ध हवन साहित्य किट & गोघृत समाविष्ट"
             },
             {
               "en": "Kalash, gangajal, roli, moli",
-              "hi": "",
-              "mr": ""
+              "hi": "Kalash, gangajal, roli, moli",
+              "mr": "Kalash, gangajal, roli, moli"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh fruits, kheer, baby silver katori",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh fruits, kheer, baby silver katori",
+              "mr": "Fresh fruits, kheer, baby silver katori"
             }
           ],
           "includedSamagriIds": [
@@ -2862,13 +2862,13 @@
       "serviceId": "annaprashan-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Annaprashan Puja (First Rice Feeding)",
-        "hi": "",
-        "mr": ""
+        "hi": "अन्नप्राशन संस्कार (शिशु प्रथम आहार)",
+        "mr": "अन्नप्राशन संस्कार (बाळाचा पहिला भात विधी)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -2910,30 +2910,30 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Dhanvantri invocation & Arogya Sankalp",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Dhanvantri invocation & Arogya संकल्प",
+              "mr": "साठी पंडित दक्षिणा: Dhanvantri invocation & Arogya संकल्प"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Medicinal herbs",
-              "hi": "",
-              "mr": ""
+              "hi": "Medicinal herbs",
+              "mr": "Medicinal herbs"
             },
             {
               "en": "Ghee",
-              "hi": "",
-              "mr": ""
+              "hi": "Ghee",
+              "mr": "Ghee"
             }
           ],
           "includedSamagriIds": []
@@ -2961,25 +2961,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Essential Hawan Samagri kit with 54 Ayurvedic herbs included",
-              "hi": "",
-              "mr": ""
+              "hi": "Essential Hawan Samagri kit with 54 Ayurvedic herbs सम्मिलित",
+              "mr": "Essential Hawan Samagri kit with 54 Ayurvedic herbs समाविष्ट"
             },
             {
               "en": "Pure cow ghee & sacred wood",
-              "hi": "",
-              "mr": ""
+              "hi": "शुद्ध गोघृत & sacred wood",
+              "mr": "शुद्ध गोघृत & sacred wood"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh fruits, milk, flowers",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh fruits, milk, flowers",
+              "mr": "Fresh fruits, milk, flowers"
             }
           ],
           "includedSamagriIds": [
@@ -2992,13 +2992,13 @@
       "serviceId": "dhanvantri-havan",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Dhanvantri Havan for Chronic Healing",
-        "hi": "",
-        "mr": ""
+        "hi": "धन्वंतरि हवन (आरोग्य व व्याधि निवारण)",
+        "mr": "धन्वंतरी हवन (आरोग्य व व्याधी निवारण)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -3040,30 +3040,30 @@
           "inclusions": [
             {
               "en": "Senior Acharya for condensed 3-day Saroddhara recitation",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु वरिष्ठ आचार्य: condensed 3-day Saroddhara recitation",
+              "mr": "साठी वरिष्ठ आचार्य: condensed 3-day Saroddhara recitation"
             },
             {
               "en": "Daily Pitru Tarpan & Shanti prayer",
-              "hi": "",
-              "mr": ""
+              "hi": "Daily Pitru Tarpan & Shanti prayer",
+              "mr": "Daily Pitru Tarpan & Shanti prayer"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Daily oil lamps & sesame seeds",
-              "hi": "",
-              "mr": ""
+              "hi": "Daily oil lamps & sesame seeds",
+              "mr": "Daily oil lamps & sesame seeds"
             },
             {
               "en": "Brahmin bhojan",
-              "hi": "",
-              "mr": ""
+              "hi": "Brahmin bhojan",
+              "mr": "Brahmin bhojan"
             }
           ],
           "includedSamagriIds": []
@@ -3091,25 +3091,25 @@
           "inclusions": [
             {
               "en": "Senior Acharya visiting daily for full Garud Puran chapters",
-              "hi": "",
-              "mr": ""
+              "hi": "Senior Acharya visiting daily for full Garud Puran chapters",
+              "mr": "Senior Acharya visiting daily for full Garud Puran chapters"
             },
             {
               "en": "Complete Pitru Shanti hawan on concluding day with Hawan Samagri kit included",
-              "hi": "",
-              "mr": ""
+              "hi": "Complete Pitru Shanti hawan on concluding day with Hawan Samagri kit सम्मिलित",
+              "mr": "Complete Pitru Shanti hawan on concluding day with Hawan Samagri kit समाविष्ट"
             },
             {
               "en": "Gau Daan & Pinda Daan guidance",
-              "hi": "",
-              "mr": ""
+              "hi": "Gau Daan & Pinda Daan guidance",
+              "mr": "Gau Daan & Pinda Daan guidance"
             }
           ],
           "exclusions": [
             {
               "en": "Daily household oil, sesame, and Brahmin bhojan",
-              "hi": "",
-              "mr": ""
+              "hi": "Daily household oil, sesame, and Brahmin bhojan",
+              "mr": "Daily household oil, sesame, and Brahmin bhojan"
             }
           ],
           "includedSamagriIds": [
@@ -3122,13 +3122,13 @@
       "serviceId": "garud-puran-path",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Garud Puran Path (For Departed Souls)",
-        "hi": "",
-        "mr": ""
+        "hi": "गरुड़ पुराण पाठ (सद्गति हेतु)",
+        "mr": "गरुड पुराण पाठ (सद्गतीसाठी)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -3170,23 +3170,23 @@
           "inclusions": [
             {
               "en": "Experienced Pandit arriving at your doorstep or apartment parking",
-              "hi": "",
-              "mr": ""
+              "hi": "Experienced Pandit arriving at your doorstep or apartment parking",
+              "mr": "Experienced Pandit arriving at your doorstep or apartment parking"
             },
             {
               "en": "Complete Gauri-Ganesh Pujan & Swastika consecration",
-              "hi": "",
-              "mr": ""
+              "hi": "Complete Gauri-Ganesh पूजाn & Swastika consecration",
+              "mr": "Complete Gauri-Ganesh पूजाn & Swastika consecration"
             },
             {
               "en": "Coconut breaking (Balidana) & 4-tyre lemon crushing vidhi",
-              "hi": "",
-              "mr": ""
+              "hi": "Coconut breaking (Balidana) & 4-tyre lemon crushing vidhi",
+              "mr": "Coconut breaking (Balidana) & 4-tyre lemon crushing vidhi"
             },
             {
               "en": "Sacred protective thread (Moli) tied to steering wheel",
-              "hi": "",
-              "mr": ""
+              "hi": "Sacred protective thread (Moli) tied to steering wheel",
+              "mr": "Sacred protective thread (Moli) tied to steering wheel"
             }
           ],
           "exclusions": [
@@ -3231,25 +3231,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for complete vehicle blessing",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: complete vehicle blessing",
+              "mr": "साठी पंडित दक्षिणा: complete vehicle blessing"
             },
             {
               "en": "Fresh lemons, sacred coconut, camphor, roli, and moli provided by Panditji",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh lemons, sacred coconut, camphor, roli, and moli provided by Panditji",
+              "mr": "Fresh lemons, sacred coconut, camphor, roli, and moli provided by Panditji"
             },
             {
               "en": "Auspicious copper Kalash water sanctification",
-              "hi": "",
-              "mr": ""
+              "hi": "Auspicious copper Kalash water sanctification",
+              "mr": "Auspicious copper Kalash water sanctification"
             }
           ],
           "exclusions": [
             {
               "en": "Sweets / Prasad distribution",
-              "hi": "",
-              "mr": ""
+              "hi": "Sweets / Prasad distribution",
+              "mr": "Sweets / Prasad distribution"
             }
           ],
           "includedSamagriIds": [
@@ -3260,13 +3260,13 @@
       "serviceId": "new-vehicle-puja",
       "pricingNote": {
         "en": "Proposed fixed dakshina (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "New Vehicle Puja (Vahan Puja)",
-        "hi": "",
-        "mr": ""
+        "hi": "नवीन वाहन पूजा (कार/बाइक पूजन)",
+        "mr": "नवीन वाहन पूजा (कार/बाईक पूजन)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -3308,30 +3308,30 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Tulsi-Shaligram Vivah Vidhi & Katha",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Tulsi-Shaligram Vivah Vidhi & Katha",
+              "mr": "साठी पंडित दक्षिणा: Tulsi-Shaligram Vivah Vidhi & Katha"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Red chunri & sugarcane stalks",
-              "hi": "",
-              "mr": ""
+              "hi": "Red chunri & sugarcane stalks",
+              "mr": "Red chunri & sugarcane stalks"
             },
             {
               "en": "Prasad",
-              "hi": "",
-              "mr": ""
+              "hi": "Prasad",
+              "mr": "Prasad"
             }
           ],
           "includedSamagriIds": []
@@ -3359,25 +3359,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "शुद्ध हवन सामग्री किट एवं गोघृत सम्मिलित",
+              "mr": "शुद्ध हवन साहित्य किट व गोघृत समाविष्ट"
             },
             {
               "en": "Tulsi Red Chunri, Shaligram vastram, Roli, Akshat",
-              "hi": "",
-              "mr": ""
+              "hi": "Tulsi Red Chunri, Shaligram vastram, Roli, Akshat",
+              "mr": "Tulsi Red Chunri, Shaligram vastram, Roli, Akshat"
             }
           ],
           "exclusions": [
             {
               "en": "Sugarcane stalks (for mandap), fresh sweets, fruits",
-              "hi": "",
-              "mr": ""
+              "hi": "Sugarcane stalks (for mandap), fresh sweets, fruits",
+              "mr": "Sugarcane stalks (for mandap), fresh sweets, fruits"
             }
           ],
           "includedSamagriIds": [
@@ -3390,13 +3390,13 @@
       "serviceId": "tulsi-vivah-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Tulsi Vivah Puja & Dev Uthani Ekadashi",
-        "hi": "",
-        "mr": ""
+        "hi": "तुलसी विवाह पूजा एवं देवउठनी एकादशी",
+        "mr": "तुलसी विवाह पूजा व देवउठणी एकादशी"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -3438,35 +3438,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Vishwakarma Pujan",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Vishwakarma पूजाn",
+              "mr": "साठी पंडित दक्षिणा: Vishwakarma पूजाn"
             },
             {
               "en": "Machinery & tool blessing",
-              "hi": "",
-              "mr": ""
+              "hi": "Machinery & tool blessing",
+              "mr": "Machinery & tool blessing"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Red cloths, sweets for workers",
-              "hi": "",
-              "mr": ""
+              "hi": "Red cloths, sweets for workers",
+              "mr": "Red cloths, sweets for workers"
             },
             {
               "en": "Utensils",
-              "hi": "",
-              "mr": ""
+              "hi": "Utensils",
+              "mr": "Utensils"
             }
           ],
           "includedSamagriIds": []
@@ -3494,25 +3494,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Essential Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "Essential Hawan Samagri kit & गोघृत सम्मिलित",
+              "mr": "Essential Hawan Samagri kit & गोघृत समाविष्ट"
             },
             {
               "en": "Roli, Moli, Janeu, Kalash items",
-              "hi": "",
-              "mr": ""
+              "hi": "Roli, Moli, Janeu, Kalash items",
+              "mr": "Roli, Moli, Janeu, Kalash items"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh marigold garlands & sweets",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh marigold garlands & sweets",
+              "mr": "Fresh marigold garlands & sweets"
             }
           ],
           "includedSamagriIds": [
@@ -3525,13 +3525,13 @@
       "serviceId": "vishwakarma-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Vishwakarma Puja (Machinery & Tools)",
-        "hi": "",
-        "mr": ""
+        "hi": "विश्वकर्मा पूजा (यंत्र एवं औजार पूजन)",
+        "mr": "विश्वकर्मा पूजा (यंत्र व अवजारे पूजन)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -3573,30 +3573,30 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Graha Shanti Vidhi & Homa",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Graha Shanti Vidhi & होम",
+              "mr": "साठी पंडित दक्षिणा: Graha Shanti Vidhi & होम"
             },
             {
               "en": "9-graha pujan & Checklist",
-              "hi": "",
-              "mr": ""
+              "hi": "9-graha पूजाn & Checklist",
+              "mr": "9-graha पूजाn & Checklist"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "9 grains & cloths",
-              "hi": "",
-              "mr": ""
+              "hi": "9 grains & cloths",
+              "mr": "9 grains & cloths"
             },
             {
               "en": "Ghee",
-              "hi": "",
-              "mr": ""
+              "hi": "Ghee",
+              "mr": "Ghee"
             }
           ],
           "includedSamagriIds": []
@@ -3624,25 +3624,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Essential pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "आवश्यक शुद्ध हवन सामग्री किट & गोघृत सम्मिलित",
+              "mr": "आवश्यक शुद्ध हवन साहित्य किट & गोघृत समाविष्ट"
             },
             {
               "en": "9 Navadhanya grains, 9 cloths & sacred wood",
-              "hi": "",
-              "mr": ""
+              "hi": "9 Navadhanya grains, 9 cloths & sacred wood",
+              "mr": "9 Navadhanya grains, 9 cloths & sacred wood"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh fruits, milk, flowers",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh fruits, milk, flowers",
+              "mr": "Fresh fruits, milk, flowers"
             }
           ],
           "includedSamagriIds": [
@@ -3655,13 +3655,13 @@
       "serviceId": "graha-shanti-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Graha Shanti Puja & Navagraha Homa",
-        "hi": "",
-        "mr": ""
+        "hi": "ग्रह शांति पूजा एवं नवग्रह होम",
+        "mr": "ग्रह शांती पूजा व नवग्रह होम"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -3703,30 +3703,30 @@
           "inclusions": [
             {
               "en": "Senior Acharya Dakshina for Mrityunjaya Havan & 1008 Ahutis",
-              "hi": "",
-              "mr": ""
+              "hi": "Senior Acharya Dakshina for Mrityunjaya हवन & 1008 Ahutis",
+              "mr": "Senior Acharya Dakshina for Mrityunjaya हवन & 1008 Ahutis"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Giloy / Amrita herbs",
-              "hi": "",
-              "mr": ""
+              "hi": "Giloy / Amrita herbs",
+              "mr": "Giloy / Amrita herbs"
             },
             {
               "en": "Ghee",
-              "hi": "",
-              "mr": ""
+              "hi": "Ghee",
+              "mr": "Ghee"
             }
           ],
           "includedSamagriIds": []
@@ -3754,25 +3754,25 @@
           "inclusions": [
             {
               "en": "Senior Acharya for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु वरिष्ठ आचार्य: ceremony",
+              "mr": "साठी वरिष्ठ आचार्य: ceremony"
             },
             {
               "en": "Essential pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "आवश्यक शुद्ध हवन सामग्री किट & गोघृत सम्मिलित",
+              "mr": "आवश्यक शुद्ध हवन साहित्य किट & गोघृत समाविष्ट"
             },
             {
               "en": "Medicinal herbs (Giloy, Durva, Guggul) & wood",
-              "hi": "",
-              "mr": ""
+              "hi": "Medicinal herbs (Giloy, Durva, Guggul) & wood",
+              "mr": "Medicinal herbs (Giloy, Durva, Guggul) & wood"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh fruits, milk & flowers",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh fruits, milk & flowers",
+              "mr": "Fresh fruits, milk & flowers"
             }
           ],
           "includedSamagriIds": [
@@ -3790,8 +3790,8 @@
       },
       "serviceName": {
         "en": "Maha Mrityunjaya Havan for Longevity",
-        "hi": "",
-        "mr": ""
+        "hi": "महा मृत्युंजय हवन (आरोग्य एवं दीर्घायु)",
+        "mr": "महा मृत्युंजय हवन (आरोग्य व दीर्घायुष्य)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -3833,35 +3833,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Rudri Path & Abhishek",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Rudri Path & Abhishek",
+              "mr": "साठी पंडित दक्षिणा: Rudri Path & Abhishek"
             },
             {
               "en": "Puja performed as per agreed Shastra vidhi",
-              "hi": "",
-              "mr": ""
+              "hi": "शास्त्रसम्मत विधि अनुसार पूजा संपन्न",
+              "mr": "शास्त्रोक्त विधीनुसार पूजा संपन्न"
             },
             {
               "en": "Samagri checklist provided in advance (devotee arranges materials)",
-              "hi": "",
-              "mr": ""
+              "hi": "पूजा सामग्री सूची पूर्व में उपलब्ध कराई जाती है (यजमान सामग्री लाते हैं)",
+              "mr": "पूजा साहित्याची यादी अगोदर दिली जाते (यजमान साहित्य आणतात)"
             }
           ],
           "exclusions": [
             {
               "en": "Devotee arranges fresh raw milk, gangajal, honey, curd & sugarcane juice",
-              "hi": "",
-              "mr": ""
+              "hi": "यजमान व्यवस्था करते हैं fresh raw milk, gangajal, honey, curd & sugarcane juice",
+              "mr": "यजमान आणतात fresh raw milk, gangajal, honey, curd & sugarcane juice"
             },
             {
               "en": "Devotee arranges fresh Belpatra, Dhatura, flowers & prasad",
-              "hi": "",
-              "mr": ""
+              "hi": "यजमान व्यवस्था करते हैं fresh Belpatra, Dhatura, flowers & prasad",
+              "mr": "यजमान आणतात fresh Belpatra, Dhatura, flowers & prasad"
             },
             {
               "en": "Devotee arranges Shivling & abhishek patra",
-              "hi": "",
-              "mr": ""
+              "hi": "यजमान व्यवस्था करते हैं Shivling & abhishek patra",
+              "mr": "यजमान आणतात Shivling & abhishek patra"
             }
           ],
           "includedSamagriIds": []
@@ -3889,35 +3889,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Rudri Path & Abhishek",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Rudri Path & Abhishek",
+              "mr": "साठी पंडित दक्षिणा: Rudri Path & Abhishek"
             },
             {
               "en": "Essential pure Hawan & Abhishek dry samagri kit included",
-              "hi": "",
-              "mr": ""
+              "hi": "Essential pure Hawan & Abhishek dry samagri kit सम्मिलित",
+              "mr": "Essential pure Hawan & Abhishek dry samagri kit समाविष्ट"
             },
             {
               "en": "Sacred Bhasma, Chandan, Janeu & Havan wood included",
-              "hi": "",
-              "mr": ""
+              "hi": "Sacred Bhasma, Chandan, Janeu & हवन wood सम्मिलित",
+              "mr": "Sacred Bhasma, Chandan, Janeu & हवन wood समाविष्ट"
             },
             {
               "en": "Puja performed as per agreed Shastra vidhi",
-              "hi": "",
-              "mr": ""
+              "hi": "शास्त्रसम्मत विधि अनुसार पूजा संपन्न",
+              "mr": "शास्त्रोक्त विधीनुसार पूजा संपन्न"
             }
           ],
           "exclusions": [
             {
               "en": "Devotee arranges fresh milk, curd, honey & panchamrit liquids",
-              "hi": "",
-              "mr": ""
+              "hi": "यजमान व्यवस्था करते हैं fresh milk, curd, honey & panchamrit liquids",
+              "mr": "यजमान आणतात fresh milk, curd, honey & panchamrit liquids"
             },
             {
               "en": "Devotee arranges fresh Belpatra, Dhatura & flowers",
-              "hi": "",
-              "mr": ""
+              "hi": "यजमान व्यवस्था करते हैं fresh Belpatra, Dhatura & flowers",
+              "mr": "यजमान आणतात fresh Belpatra, Dhatura & flowers"
             }
           ],
           "includedSamagriIds": [
@@ -3930,13 +3930,13 @@
       "serviceId": "rudrabhishek-puja",
       "pricingNote": {
         "en": "Indicative starting dakshina (Preserved local project data)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Rudrabhishek Puja & Shivling Abhishek",
-        "hi": "",
-        "mr": ""
+        "hi": "रुद्राभिषेक पूजा एवं शिवलिंग अभिषेक",
+        "mr": "रुद्राभिषेक पूजा व शिवलिंग अभिषेक"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -3978,35 +3978,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for 5-chapter Katha & Havan",
-              "hi": "",
-              "mr": ""
+              "hi": "५-अध्यायी कथा एवं हवन हेतु पंडित दक्षिणा",
+              "mr": "५ अध्यायी कथा व हवनासाठी पंडित दक्षिणा"
             },
             {
               "en": "Puja performed as per agreed Shastra vidhi",
-              "hi": "",
-              "mr": ""
+              "hi": "शास्त्रसम्मत विधि अनुसार पूजा संपन्न",
+              "mr": "शास्त्रोक्त विधीनुसार पूजा संपन्न"
             },
             {
               "en": "Samagri checklist provided in advance (devotee arranges materials)",
-              "hi": "",
-              "mr": ""
+              "hi": "पूजा सामग्री सूची पूर्व में उपलब्ध कराई जाती है (यजमान सामग्री लाते हैं)",
+              "mr": "पूजा साहित्याची यादी अगोदर दिली जाते (यजमान साहित्य आणतात)"
             }
           ],
           "exclusions": [
             {
               "en": "Devotee arranges hawan samagri, cow ghee & dry fruits",
-              "hi": "",
-              "mr": ""
+              "hi": "यजमान हवन सामग्री, गोघृत एवं सूखे मेवे की व्यवस्था करते हैं",
+              "mr": "यजमान हवन साहित्य, गोघृत व सुका मेवा आणतात"
             },
             {
               "en": "Devotee prepares Panchamrit, bananas, fresh flowers & prasad",
-              "hi": "",
-              "mr": ""
+              "hi": "यजमान पंचामृत, केले, ताजे फूल एवं प्रसाद तैयार करते हैं",
+              "mr": "यजमान पंचामृत, केळी, ताजी फुले व प्रसाद तयार करतात"
             },
             {
               "en": "Devotee provides household chowki & thalis",
-              "hi": "",
-              "mr": ""
+              "hi": "यजमान घर की पूजा चौकी एवं थालियां प्रदान करते हैं",
+              "mr": "यजमान घरातील चौरंग/पाट व पूजेची ताटे देतात"
             }
           ],
           "includedSamagriIds": []
@@ -4034,35 +4034,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for 5-chapter Katha & Havan",
-              "hi": "",
-              "mr": ""
+              "hi": "५-अध्यायी कथा एवं हवन हेतु पंडित दक्षिणा",
+              "mr": "५ अध्यायी कथा व हवनासाठी पंडित दक्षिणा"
             },
             {
               "en": "Essential pure Hawan Samagri kit included",
-              "hi": "",
-              "mr": ""
+              "hi": "आवश्यक शुद्ध हवन सामग्री किट सम्मिलित",
+              "mr": "आवश्यक शुद्ध हवन साहित्य किट समाविष्ट"
             },
             {
               "en": "Pure cow ghee & dry ritual samagri included",
-              "hi": "",
-              "mr": ""
+              "hi": "शुद्ध देशी गोघृत एवं सूखा अनुष्ठान साहित्य सम्मिलित",
+              "mr": "शुद्ध देशी गोघृत आणि सुके विधी साहित्य समाविष्ट"
             },
             {
               "en": "Puja performed as per agreed Shastra vidhi",
-              "hi": "",
-              "mr": ""
+              "hi": "शास्त्रसम्मत विधि अनुसार पूजा संपन्न",
+              "mr": "शास्त्रोक्त विधीनुसार पूजा संपन्न"
             }
           ],
           "exclusions": [
             {
               "en": "Devotee prepares fresh flowers, bananas & Sheera (Prasad)",
-              "hi": "",
-              "mr": ""
+              "hi": "यजमान तैयार करते हैं fresh flowers, bananas & Sheera (Prasad)",
+              "mr": "यजमान तयार करतात fresh flowers, bananas & Sheera (Prasad)"
             },
             {
               "en": "Devotee prepares fresh Panchamrit (milk, curd, honey, sugar, tulsi)",
-              "hi": "",
-              "mr": ""
+              "hi": "यजमान तैयार करते हैं fresh Panchamrit (milk, curd, honey, sugar, tulsi)",
+              "mr": "यजमान तयार करतात fresh Panchamrit (milk, curd, honey, sugar, tulsi)"
             }
           ],
           "includedSamagriIds": [
@@ -4075,13 +4075,13 @@
       "serviceId": "satyanarayan-puja",
       "pricingNote": {
         "en": "Indicative starting dakshina (Preserved local project data)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Satyanarayan Puja & Katha",
-        "hi": "",
-        "mr": ""
+        "hi": "सत्यनारायण पूजा एवं कथा",
+        "mr": "सत्यनारायण पूजा व कथा"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -4123,35 +4123,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Shuddhi Sankalp & Chanting",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Shuddhi संकल्प & Chanting",
+              "mr": "साठी पंडित दक्षिणा: Shuddhi संकल्प & Chanting"
             },
             {
               "en": "Panchagavya purification sprinklings",
-              "hi": "",
-              "mr": ""
+              "hi": "Panchagavya purification sprinklings",
+              "mr": "Panchagavya purification sprinklings"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Fresh cow milk, curd, gangajal",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh cow milk, curd, gangajal",
+              "mr": "Fresh cow milk, curd, gangajal"
             },
             {
               "en": "Utensils",
-              "hi": "",
-              "mr": ""
+              "hi": "Utensils",
+              "mr": "Utensils"
             }
           ],
           "includedSamagriIds": []
@@ -4179,25 +4179,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Essential herbal purification hawan kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "Essential herbal purification hawan kit & गोघृत सम्मिलित",
+              "mr": "Essential herbal purification hawan kit & गोघृत समाविष्ट"
             },
             {
               "en": "Gomutra & Gangajal included",
-              "hi": "",
-              "mr": ""
+              "hi": "Gomutra & Gangajal सम्मिलित",
+              "mr": "Gomutra & Gangajal समाविष्ट"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh flowers & prasad",
-              "hi": "",
-              "mr": ""
+              "hi": "ताजे फूल एवं प्रसाद",
+              "mr": "ताजी फुले व प्रसाद"
             }
           ],
           "includedSamagriIds": [
@@ -4210,13 +4210,13 @@
       "serviceId": "shuddhikaran-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Shuddhikaran Puja (House Purification)",
-        "hi": "",
-        "mr": ""
+        "hi": "शुद्धिकरण पूजा एवं गृह शुद्धि हवन",
+        "mr": "शुद्धिकरण पूजा व वास्तु शुद्धि हवन"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -4258,35 +4258,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Vastu Shanti Vidhi & Havan",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Vastu Shanti Vidhi & हवन",
+              "mr": "साठी पंडित दक्षिणा: Vastu Shanti Vidhi & हवन"
             },
             {
               "en": "Puja performed as per agreed Shastra vidhi",
-              "hi": "",
-              "mr": ""
+              "hi": "शास्त्रसम्मत विधि अनुसार पूजा संपन्न",
+              "mr": "शास्त्रोक्त विधीनुसार पूजा संपन्न"
             },
             {
               "en": "Samagri checklist provided in advance (devotee arranges materials)",
-              "hi": "",
-              "mr": ""
+              "hi": "पूजा सामग्री सूची पूर्व में उपलब्ध कराई जाती है (यजमान सामग्री लाते हैं)",
+              "mr": "पूजा साहित्याची यादी अगोदर दिली जाते (यजमान साहित्य आणतात)"
             }
           ],
           "exclusions": [
             {
               "en": "Devotee arranges hawan samagri and cow ghee",
-              "hi": "",
-              "mr": ""
+              "hi": "यजमान व्यवस्था करते हैं hawan samagri and गोघृत",
+              "mr": "यजमान आणतात hawan samagri and गोघृत"
             },
             {
               "en": "Devotee arranges fresh flowers, fruits & prasad",
-              "hi": "",
-              "mr": ""
+              "hi": "यजमान व्यवस्था करते हैं fresh flowers, fruits & prasad",
+              "mr": "यजमान आणतात fresh flowers, fruits & prasad"
             },
             {
               "en": "Devotee provides copper kalash & household utensils",
-              "hi": "",
-              "mr": ""
+              "hi": "यजमान उपलब्ध कराते हैं copper kalash & household utensils",
+              "mr": "यजमान उपलब्ध करतात copper kalash & household utensils"
             }
           ],
           "includedSamagriIds": []
@@ -4314,35 +4314,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Vastu Shanti Vidhi & Havan",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Vastu Shanti Vidhi & हवन",
+              "mr": "साठी पंडित दक्षिणा: Vastu Shanti Vidhi & हवन"
             },
             {
               "en": "Essential pure Hawan Samagri kit included",
-              "hi": "",
-              "mr": ""
+              "hi": "आवश्यक शुद्ध हवन सामग्री किट सम्मिलित",
+              "mr": "आवश्यक शुद्ध हवन साहित्य किट समाविष्ट"
             },
             {
               "en": "Pure desi cow ghee & hawan kashtha included",
-              "hi": "",
-              "mr": ""
+              "hi": "Pure desi गोघृत & hawan kashtha सम्मिलित",
+              "mr": "Pure desi गोघृत & hawan kashtha समाविष्ट"
             },
             {
               "en": "Puja performed as per agreed Shastra vidhi",
-              "hi": "",
-              "mr": ""
+              "hi": "शास्त्रसम्मत विधि अनुसार पूजा संपन्न",
+              "mr": "शास्त्रोक्त विधीनुसार पूजा संपन्न"
             }
           ],
           "exclusions": [
             {
               "en": "Devotee prepares fresh flowers, water coconut & seasonal fruits",
-              "hi": "",
-              "mr": ""
+              "hi": "यजमान तैयार करते हैं fresh flowers, water coconut & seasonal fruits",
+              "mr": "यजमान तयार करतात fresh flowers, water coconut & seasonal fruits"
             },
             {
               "en": "Devotee arranges fresh milk & curd",
-              "hi": "",
-              "mr": ""
+              "hi": "यजमान व्यवस्था करते हैं fresh milk & curd",
+              "mr": "यजमान आणतात fresh milk & curd"
             }
           ],
           "includedSamagriIds": [
@@ -4355,13 +4355,13 @@
       "serviceId": "vastu-shanti-puja",
       "pricingNote": {
         "en": "Indicative starting dakshina (Preserved local project data)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Vastu Shanti Puja & Havan",
-        "hi": "",
-        "mr": ""
+        "hi": "वास्तु शांति पूजा एवं हवन",
+        "mr": "वास्तु शांती पूजा व हवन"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -4403,30 +4403,30 @@
           "inclusions": [
             {
               "en": "Senior Pandit Dakshina for Ark Vivah Vidhi & Manglik Shanti",
-              "hi": "",
-              "mr": ""
+              "hi": "Senior हेतु पंडित दक्षिणा: Ark Vivah Vidhi & Manglik Shanti",
+              "mr": "Senior साठी पंडित दक्षिणा: Ark Vivah Vidhi & Manglik Shanti"
             },
             {
               "en": "Surya Pujan & Checklist",
-              "hi": "",
-              "mr": ""
+              "hi": "Surya पूजाn & Checklist",
+              "mr": "Surya पूजाn & Checklist"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Ark plant",
-              "hi": "",
-              "mr": ""
+              "hi": "Ark plant",
+              "mr": "Ark plant"
             },
             {
               "en": "Ghee",
-              "hi": "",
-              "mr": ""
+              "hi": "Ghee",
+              "mr": "Ghee"
             }
           ],
           "includedSamagriIds": []
@@ -4454,25 +4454,25 @@
           "inclusions": [
             {
               "en": "Senior Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "Senior हेतु पंडित दक्षिणा: ceremony",
+              "mr": "Senior साठी पंडित दक्षिणा: ceremony"
             },
             {
               "en": "Pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "शुद्ध हवन सामग्री किट एवं गोघृत सम्मिलित",
+              "mr": "शुद्ध हवन साहित्य किट व गोघृत समाविष्ट"
             },
             {
               "en": "Ark Vivah cloths, sacred thread & Mangal samidha included",
-              "hi": "",
-              "mr": ""
+              "hi": "Ark Vivah cloths, sacred thread & Mangal samidha सम्मिलित",
+              "mr": "Ark Vivah cloths, sacred thread & Mangal samidha समाविष्ट"
             }
           ],
           "exclusions": [
             {
               "en": "Live Ark / Madar plant (arranged at venue), fresh flowers",
-              "hi": "",
-              "mr": ""
+              "hi": "Live Ark / Madar plant (arranged at venue), fresh flowers",
+              "mr": "Live Ark / Madar plant (arranged at venue), fresh flowers"
             }
           ],
           "includedSamagriIds": [
@@ -4485,13 +4485,13 @@
       "serviceId": "ark-vivah-for-male",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Ark Vivah (Manglik Shanti for Groom)",
-        "hi": "",
-        "mr": ""
+        "hi": "अर्क विवाह (वर मांगलिक दोष निवारण)",
+        "mr": "अर्क विवाह (वर मांगलिक दोष निवारण)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -4533,35 +4533,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Kuber Pujan & Dhana Akarshana Mantras",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Kuber पूजाn & Dhana Akarshana Mantras",
+              "mr": "साठी पंडित दक्षिणा: Kuber पूजाn & Dhana Akarshana Mantras"
             },
             {
               "en": "Locker & Cashbox blessing",
-              "hi": "",
-              "mr": ""
+              "hi": "Locker & Cashbox blessing",
+              "mr": "Locker & Cashbox blessing"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Dry fruits, sweets, coins",
-              "hi": "",
-              "mr": ""
+              "hi": "सूखे मेवे, sweets, coins",
+              "mr": "सुका मेवा, sweets, coins"
             },
             {
               "en": "Utensils",
-              "hi": "",
-              "mr": ""
+              "hi": "Utensils",
+              "mr": "Utensils"
             }
           ],
           "includedSamagriIds": []
@@ -4589,25 +4589,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for complete ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: संपूर्ण अनुष्ठान",
+              "mr": "साठी पंडित दक्षिणा: संपूर्ण विधी"
             },
             {
               "en": "Essential pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "आवश्यक शुद्ध हवन सामग्री किट & गोघृत सम्मिलित",
+              "mr": "आवश्यक शुद्ध हवन साहित्य किट & गोघृत समाविष्ट"
             },
             {
               "en": "Lotus seeds (Kamalgatta) & sacred herbs included",
-              "hi": "",
-              "mr": ""
+              "hi": "Lotus seeds (Kamalgatta) & sacred herbs सम्मिलित",
+              "mr": "Lotus seeds (Kamalgatta) & sacred herbs समाविष्ट"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh flowers and sweets",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh flowers and sweets",
+              "mr": "Fresh flowers and sweets"
             }
           ],
           "includedSamagriIds": [
@@ -4625,8 +4625,8 @@
       },
       "serviceName": {
         "en": "Kuber Upasana Puja for Wealth & Trade",
-        "hi": "",
-        "mr": ""
+        "hi": "कुबेर उपासना पूजा एवं धन समृद्धि विधि",
+        "mr": "कुबेर उपासना पूजा व धन समृद्धी विधी"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -4668,25 +4668,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Laxmi Kubera Havan",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Laxmi Kubera हवन",
+              "mr": "साठी पंडित दक्षिणा: Laxmi Kubera हवन"
             },
             {
               "en": "Ashtalakshmi Pujan & Checklist",
-              "hi": "",
-              "mr": ""
+              "hi": "Ashtalakshmi पूजाn & Checklist",
+              "mr": "Ashtalakshmi पूजाn & Checklist"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Kamalgatta, ghee, flowers",
-              "hi": "",
-              "mr": ""
+              "hi": "Kamalgatta, ghee, flowers",
+              "mr": "Kamalgatta, ghee, flowers"
             }
           ],
           "includedSamagriIds": []
@@ -4714,25 +4714,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "शुद्ध हवन सामग्री किट एवं गोघृत सम्मिलित",
+              "mr": "शुद्ध हवन साहित्य किट व गोघृत समाविष्ट"
             },
             {
               "en": "Kamalgatta, Bilva fruits & sacred wood",
-              "hi": "",
-              "mr": ""
+              "hi": "Kamalgatta, Bilva fruits & sacred wood",
+              "mr": "Kamalgatta, Bilva fruits & sacred wood"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh lotus flowers & sweets",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh lotus flowers & sweets",
+              "mr": "Fresh lotus flowers & sweets"
             }
           ],
           "includedSamagriIds": [
@@ -4745,13 +4745,13 @@
       "serviceId": "laxmi-kubera-havan",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Laxmi Kubera Havan for Prosperity",
-        "hi": "",
-        "mr": ""
+        "hi": "लक्ष्मी कुबेर हवन (ऐश्वर्य व समृद्धि)",
+        "mr": "लक्ष्मी कुबेर हवन (ऐश्वर्य व समृद्धी)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -4793,35 +4793,35 @@
           "inclusions": [
             {
               "en": "Senior Vedic Acharya for complete Upanayan & Gayatri Diksha",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु वरिष्ठ वैदिक आचार्य: complete Upanayan & Gayatri Diksha",
+              "mr": "साठी वरिष्ठ वैदिक आचार्य: complete Upanayan & Gayatri Diksha"
             },
             {
               "en": "Bhiksha ceremony guidance",
-              "hi": "",
-              "mr": ""
+              "hi": "Bhiksha ceremony guidance",
+              "mr": "Bhiksha ceremony guidance"
             },
             {
               "en": "Detailed Janeu checklist",
-              "hi": "",
-              "mr": ""
+              "hi": "Detailed Janeu checklist",
+              "mr": "Detailed Janeu checklist"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Yagnopaveetam thread sets",
-              "hi": "",
-              "mr": ""
+              "hi": "Yagnopaveetam thread sets",
+              "mr": "Yagnopaveetam thread sets"
             },
             {
               "en": "Brahmachari danda & vastram",
-              "hi": "",
-              "mr": ""
+              "hi": "Brahmachari danda & vastram",
+              "mr": "Brahmachari danda & vastram"
             }
           ],
           "includedSamagriIds": []
@@ -4849,30 +4849,30 @@
           "inclusions": [
             {
               "en": "Senior Vedic Acharya for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु वरिष्ठ वैदिक आचार्य: ceremony",
+              "mr": "साठी वरिष्ठ वैदिक आचार्य: ceremony"
             },
             {
               "en": "Complete Upanayan Hawan kit & pure cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "Complete Upanayan Hawan kit & शुद्ध गोघृत सम्मिलित",
+              "mr": "Complete Upanayan Hawan kit & शुद्ध गोघृत समाविष्ट"
             },
             {
               "en": "Consecrated Yagnopaveetam (Janeu) sets & sacred thread included",
-              "hi": "",
-              "mr": ""
+              "hi": "Consecrated Yagnopaveetam (Janeu) sets & sacred thread सम्मिलित",
+              "mr": "Consecrated Yagnopaveetam (Janeu) sets & sacred thread समाविष्ट"
             },
             {
               "en": "Munj grass belt (Mekhala) & Palash danda blessing",
-              "hi": "",
-              "mr": ""
+              "hi": "Munj grass belt (Mekhala) & Palash danda blessing",
+              "mr": "Munj grass belt (Mekhala) & Palash danda blessing"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh fruits, dhoti for boy, maternal uncle gifts",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh fruits, dhoti for boy, maternal uncle gifts",
+              "mr": "Fresh fruits, dhoti for boy, maternal uncle gifts"
             }
           ],
           "includedSamagriIds": [
@@ -4885,13 +4885,13 @@
       "serviceId": "yagnopavit-sanskar",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Yagnopavit Sanskar (Upanayan / Janeu)",
-        "hi": "",
-        "mr": ""
+        "hi": "यज्ञोपवीत संस्कार (उपनयन / जनेऊ)",
+        "mr": "उपनयन / मुंज संस्कार (यज्ञोपवीत विधी)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -4933,35 +4933,35 @@
           "inclusions": [
             {
               "en": "Team of 4 Pandits reciting 24-hr continuous Ramcharitmanas",
-              "hi": "",
-              "mr": ""
+              "hi": "Team of 4 Pandits reciting 24-hr continuous Ramcharitmanas",
+              "mr": "Team of 4 Pandits reciting 24-hr continuous Ramcharitmanas"
             },
             {
               "en": "Opening & Closing Havan guidance",
-              "hi": "",
-              "mr": ""
+              "hi": "Opening & Closing हवन guidance",
+              "mr": "Opening & Closing हवन guidance"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Akhand Jyot oil/ghee",
-              "hi": "",
-              "mr": ""
+              "hi": "Akhand Jyot oil/ghee",
+              "mr": "Akhand Jyot oil/ghee"
             },
             {
               "en": "Food & tea for priests",
-              "hi": "",
-              "mr": ""
+              "hi": "Food & tea for priests",
+              "mr": "Food & tea for priests"
             }
           ],
           "includedSamagriIds": []
@@ -4989,25 +4989,25 @@
           "inclusions": [
             {
               "en": "Team of 4 Pandits reciting 24-hr continuous Ramcharitmanas",
-              "hi": "",
-              "mr": ""
+              "hi": "Team of 4 Pandits reciting 24-hr continuous Ramcharitmanas",
+              "mr": "Team of 4 Pandits reciting 24-hr continuous Ramcharitmanas"
             },
             {
               "en": "Complete pure Hawan Samagri, 24-hr Akhand Jyot setup & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "Complete pure Hawan Samagri, 24-hr Akhand Jyot setup & गोघृत सम्मिलित",
+              "mr": "Complete pure Hawan Samagri, 24-hr Akhand Jyot setup & गोघृत समाविष्ट"
             },
             {
               "en": "Ram Darbar sthapana, Roli, Akshat, Janeu, Dhoop & Aarti items",
-              "hi": "",
-              "mr": ""
+              "hi": "Ram Darbar sthapana, Roli, Akshat, Janeu, Dhoop & Aarti items",
+              "mr": "Ram Darbar sthapana, Roli, Akshat, Janeu, Dhoop & Aarti items"
             }
           ],
           "exclusions": [
             {
               "en": "Meals & sleeping space for resting priests during shifts",
-              "hi": "",
-              "mr": ""
+              "hi": "Meals & sleeping space for resting priests during shifts",
+              "mr": "Meals & sleeping space for resting priests during shifts"
             }
           ],
           "includedSamagriIds": [
@@ -5018,13 +5018,13 @@
       "serviceId": "akhand-ramayan-path",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Akhand Ramayan Path (24-Hour Continuous)",
-        "hi": "",
-        "mr": ""
+        "hi": "अखंड रामायण पाठ (२४ घंटे निरंतर)",
+        "mr": "अखंड रामायण पाठ (२४ तास सलग)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -5066,25 +5066,25 @@
           "inclusions": [
             {
               "en": "2 Pandits for 24,000 Gayatri counts + concluding Homa",
-              "hi": "",
-              "mr": ""
+              "hi": "2 Pandits for 24,000 Gayatri counts + concluding होम",
+              "mr": "2 Pandits for 24,000 Gayatri counts + concluding होम"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Brahmin bhojan",
-              "hi": "",
-              "mr": ""
+              "hi": "Brahmin bhojan",
+              "mr": "Brahmin bhojan"
             }
           ],
           "includedSamagriIds": []
@@ -5112,25 +5112,25 @@
           "inclusions": [
             {
               "en": "3 Pandits for 51,000 counts",
-              "hi": "",
-              "mr": ""
+              "hi": "3 Pandits for 51,000 counts",
+              "mr": "3 Pandits for 51,000 counts"
             },
             {
               "en": "Concluding Hawan kit & pure cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "Concluding Hawan kit & शुद्ध गोघृत सम्मिलित",
+              "mr": "Concluding Hawan kit & शुद्ध गोघृत समाविष्ट"
             },
             {
               "en": "Surya Yantra blessing",
-              "hi": "",
-              "mr": ""
+              "hi": "Surya Yantra blessing",
+              "mr": "Surya Yantra blessing"
             }
           ],
           "exclusions": [
             {
               "en": "Brahmin bhojan",
-              "hi": "",
-              "mr": ""
+              "hi": "Brahmin bhojan",
+              "mr": "Brahmin bhojan"
             }
           ],
           "includedSamagriIds": [
@@ -5143,13 +5143,13 @@
       "serviceId": "gayatri-mantra-jaap",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Gayatri Mantra Anushthan & Jaap",
-        "hi": "",
-        "mr": ""
+        "hi": "गायत्री मंत्र अनुष्ठान एवं जप",
+        "mr": "गायत्री मंत्र अनुष्ठान व जप"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -5191,30 +5191,30 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Kaal Sarp Shanti & Rahu-Ketu Japa",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Kaal Sarp Shanti & Rahu-Ketu Japa",
+              "mr": "साठी पंडित दक्षिणा: Kaal Sarp Shanti & Rahu-Ketu Japa"
             },
             {
               "en": "Rudra Abhishek & Checklist",
-              "hi": "",
-              "mr": ""
+              "hi": "Rudra Abhishek & Checklist",
+              "mr": "Rudra Abhishek & Checklist"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Silver Nag-Nagin pair",
-              "hi": "",
-              "mr": ""
+              "hi": "Silver Nag-Nagin pair",
+              "mr": "Silver Nag-Nagin pair"
             },
             {
               "en": "Black/Blue cloth",
-              "hi": "",
-              "mr": ""
+              "hi": "Black/Blue cloth",
+              "mr": "Black/Blue cloth"
             }
           ],
           "includedSamagriIds": []
@@ -5242,25 +5242,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "शुद्ध हवन सामग्री किट एवं गोघृत सम्मिलित",
+              "mr": "शुद्ध हवन साहित्य किट व गोघृत समाविष्ट"
             },
             {
               "en": "Consecrated Silver Nag-Nagin pair & Rahu-Ketu samidhas included",
-              "hi": "",
-              "mr": ""
+              "hi": "Consecrated Silver Nag-Nagin pair & Rahu-Ketu samidhas सम्मिलित",
+              "mr": "Consecrated Silver Nag-Nagin pair & Rahu-Ketu samidhas समाविष्ट"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh flowers, milk, lead/urad daal for donation",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh flowers, milk, lead/urad daal for donation",
+              "mr": "Fresh flowers, milk, lead/urad daal for donation"
             }
           ],
           "includedSamagriIds": [
@@ -5273,13 +5273,13 @@
       "serviceId": "kaal-sarp-dosh-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Kaal Sarp Dosh Nivaran Puja",
-        "hi": "",
-        "mr": ""
+        "hi": "कालसर्प दोष निवारण पूजा",
+        "mr": "कालसर्प दोष निवारण पूजा"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -5321,35 +5321,35 @@
           "inclusions": [
             {
               "en": "Experienced Pandit for Office Opening Vidhi",
-              "hi": "",
-              "mr": ""
+              "hi": "Experienced Pandit for Office Opening Vidhi",
+              "mr": "Experienced Pandit for Office Opening Vidhi"
             },
             {
               "en": "Gauri-Ganesh, Navagraha & Vyapar Vriddhi Pujan",
-              "hi": "",
-              "mr": ""
+              "hi": "Gauri-Ganesh, Navagraha & Vyapar Vriddhi पूजाn",
+              "mr": "Gauri-Ganesh, Navagraha & Vyapar Vriddhi पूजाn"
             },
             {
               "en": "Office samagri checklist provided in advance",
-              "hi": "",
-              "mr": ""
+              "hi": "Office samagri सामग्री सूची पूर्व में प्रदान की जाती है",
+              "mr": "Office samagri साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Hawan samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Hawan samagri kit",
+              "mr": "Hawan samagri kit"
             },
             {
               "en": "Cash counter toran & fresh flowers",
-              "hi": "",
-              "mr": ""
+              "hi": "Cash counter toran & fresh flowers",
+              "mr": "Cash counter toran & fresh flowers"
             },
             {
               "en": "Puja utensils",
-              "hi": "",
-              "mr": ""
+              "hi": "पूजा utensils",
+              "mr": "पूजा utensils"
             }
           ],
           "includedSamagriIds": []
@@ -5377,30 +5377,30 @@
           "inclusions": [
             {
               "en": "Experienced Pandit for complete ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "Experienced Pandit for संपूर्ण अनुष्ठान",
+              "mr": "Experienced Pandit for संपूर्ण विधी"
             },
             {
               "en": "Essential Hawan Samagri kit & pure cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "Essential Hawan Samagri kit & शुद्ध गोघृत सम्मिलित",
+              "mr": "Essential Hawan Samagri kit & शुद्ध गोघृत समाविष्ट"
             },
             {
               "en": "Toran, Roli, Akshat, Janeu, Dhoop & Camphor included",
-              "hi": "",
-              "mr": ""
+              "hi": "Toran, Roli, Akshat, Janeu, Dhoop & Camphor सम्मिलित",
+              "mr": "Toran, Roli, Akshat, Janeu, Dhoop & Camphor समाविष्ट"
             },
             {
               "en": "Smoke-conscious Agnihotra vidhi for commercial premises",
-              "hi": "",
-              "mr": ""
+              "hi": "Smoke-conscious Agnihotra vidhi for commercial premises",
+              "mr": "Smoke-conscious Agnihotra vidhi for commercial premises"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh flowers, coconut, sweets (Mithai) for staff",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh flowers, coconut, sweets (Mithai) for staff",
+              "mr": "Fresh flowers, coconut, sweets (Mithai) for staff"
             }
           ],
           "includedSamagriIds": [
@@ -5413,13 +5413,13 @@
       "serviceId": "office-opening-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Office Opening & Vyapar Vriddhi Puja",
-        "hi": "",
-        "mr": ""
+        "hi": "कार्यालय उद्घाटन एवं व्यापार वृद्धि पूजा",
+        "mr": "कार्यालय उद्घाटन व व्यापार वृद्धी पूजा"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -5461,30 +5461,30 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Gauri-Ganesh Pujan & Ring blessing",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Gauri-Ganesh पूजाn & Ring blessing",
+              "mr": "साठी पंडित दक्षिणा: Gauri-Ganesh पूजाn & Ring blessing"
             },
             {
               "en": "Vagdan Sankalp between families & Checklist",
-              "hi": "",
-              "mr": ""
+              "hi": "Vagdan संकल्प between families & Checklist",
+              "mr": "Vagdan संकल्प between families & Checklist"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Shagun thali items",
-              "hi": "",
-              "mr": ""
+              "hi": "Shagun thali items",
+              "mr": "Shagun thali items"
             },
             {
               "en": "Sweets",
-              "hi": "",
-              "mr": ""
+              "hi": "Sweets",
+              "mr": "Sweets"
             }
           ],
           "includedSamagriIds": []
@@ -5512,25 +5512,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Essential Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "Essential Hawan Samagri kit & गोघृत सम्मिलित",
+              "mr": "Essential Hawan Samagri kit & गोघृत समाविष्ट"
             },
             {
               "en": "Roli, Chandan, Janeu, Kalash items & sacred thread",
-              "hi": "",
-              "mr": ""
+              "hi": "Roli, Chandan, Janeu, Kalash items & sacred thread",
+              "mr": "Roli, Chandan, Janeu, Kalash items & sacred thread"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh flowers, dry fruits & sweets",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh flowers, सूखे मेवे & sweets",
+              "mr": "Fresh flowers, सुका मेवा & sweets"
             }
           ],
           "includedSamagriIds": [
@@ -5543,13 +5543,13 @@
       "serviceId": "engagement-puja-sagai",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Engagement Puja (Sagai & Ring Ceremony)",
-        "hi": "",
-        "mr": ""
+        "hi": "सगाई एवं अंगूठी रस्म पूजा",
+        "mr": "साखरपुडा / वाङ्निश्चय व अंगठी विधी"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -5591,23 +5591,23 @@
           "inclusions": [
             {
               "en": "Team of 5-7 Senior Vedic Acharyas conducting 1,25,000 synchronized recitations across multiple days",
-              "hi": "",
-              "mr": ""
+              "hi": "Team of 5-7 Senior Vedic Acharyas conducting 1,25,000 synchronized recitations across multiple days",
+              "mr": "Team of 5-7 Senior Vedic Acharyas conducting 1,25,000 synchronized recitations across multiple days"
             },
             {
               "en": "Daily Sankalp with devotee Gotra, Kavach & Mahamrityunjay Stotra",
-              "hi": "",
-              "mr": ""
+              "hi": "Daily संकल्प with devotee Gotra, Kavach & Mahamrityunjay Stotra",
+              "mr": "Daily संकल्प with devotee Gotra, Kavach & Mahamrityunjay Stotra"
             },
             {
               "en": "Concluding Dashansh Maha Havan with Amrita herbs, pure cow ghee, Tarpan & Marjan",
-              "hi": "",
-              "mr": ""
+              "hi": "Concluding Dashansh Maha हवन with Amrita herbs, शुद्ध गोघृत, Tarpan & Marjan",
+              "mr": "Concluding Dashansh Maha हवन with Amrita herbs, शुद्ध गोघृत, Tarpan & Marjan"
             },
             {
               "en": "Brahmin Bhojan coordination & consecrated prasad",
-              "hi": "",
-              "mr": ""
+              "hi": "Brahmin Bhojan coordination & consecrated prasad",
+              "mr": "Brahmin Bhojan coordination & consecrated prasad"
             }
           ],
           "exclusions": [
@@ -5693,13 +5693,13 @@
       "serviceId": "maha-mrityunjaya-jaap",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Maha Mrityunjaya Jaap",
-        "hi": "",
-        "mr": ""
+        "hi": "महा मृत्युंजय जप अनुष्ठान",
+        "mr": "महा मृत्युंजय जप अनुष्ठान"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -5741,30 +5741,30 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Surya/Chandra & Rahu Japa + Havan",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Surya/Chandra & Rahu Japa + हवन",
+              "mr": "साठी पंडित दक्षिणा: Surya/Chandra & Rahu Japa + हवन"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Silver shadow-vision plate",
-              "hi": "",
-              "mr": ""
+              "hi": "Silver shadow-vision plate",
+              "mr": "Silver shadow-vision plate"
             },
             {
               "en": "Ghee",
-              "hi": "",
-              "mr": ""
+              "hi": "Ghee",
+              "mr": "Ghee"
             }
           ],
           "includedSamagriIds": []
@@ -5792,25 +5792,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Essential Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "Essential Hawan Samagri kit & गोघृत सम्मिलित",
+              "mr": "Essential Hawan Samagri kit & गोघृत समाविष्ट"
             },
             {
               "en": "Grahan Shanti samidhas & cloths",
-              "hi": "",
-              "mr": ""
+              "hi": "Grahan Shanti samidhas & cloths",
+              "mr": "Grahan Shanti samidhas & cloths"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh flowers & milk",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh flowers & milk",
+              "mr": "Fresh flowers & milk"
             }
           ],
           "includedSamagriIds": [
@@ -5823,13 +5823,13 @@
       "serviceId": "grahan-yog-shanti-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Grahan Yog Shanti Puja (Surya/Chandra Rahu)",
-        "hi": "",
-        "mr": ""
+        "hi": "ग्रहण योग शांति पूजा (सूर्य/चंद्र राहु)",
+        "mr": "ग्रहण योग शांती पूजा (सूर्य/चंद्र राहू)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -5871,30 +5871,30 @@
           "inclusions": [
             {
               "en": "Senior Pandit Dakshina for complete Kumbh Vivah Vidhi",
-              "hi": "",
-              "mr": ""
+              "hi": "Senior हेतु पंडित दक्षिणा: complete Kumbh Vivah Vidhi",
+              "mr": "Senior साठी पंडित दक्षिणा: complete Kumbh Vivah Vidhi"
             },
             {
               "en": "Manglik dosha nivaran chanting & Checklist",
-              "hi": "",
-              "mr": ""
+              "hi": "Manglik dosha nivaran chanting & Checklist",
+              "mr": "Manglik dosha nivaran chanting & Checklist"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Clay Kumbh pot & Vishnu idol",
-              "hi": "",
-              "mr": ""
+              "hi": "Clay Kumbh pot & Vishnu idol",
+              "mr": "Clay Kumbh pot & Vishnu idol"
             },
             {
               "en": "Ghee",
-              "hi": "",
-              "mr": ""
+              "hi": "Ghee",
+              "mr": "Ghee"
             }
           ],
           "includedSamagriIds": []
@@ -5922,25 +5922,25 @@
           "inclusions": [
             {
               "en": "Senior Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "Senior हेतु पंडित दक्षिणा: ceremony",
+              "mr": "Senior साठी पंडित दक्षिणा: ceremony"
             },
             {
               "en": "Pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "शुद्ध हवन सामग्री किट एवं गोघृत सम्मिलित",
+              "mr": "शुद्ध हवन साहित्य किट व गोघृत समाविष्ट"
             },
             {
               "en": "Consecrated earthen Kumbh pot, yellow cloth, Janeu, Mangal samidha included",
-              "hi": "",
-              "mr": ""
+              "hi": "Consecrated earthen Kumbh pot, yellow cloth, Janeu, Mangal samidha सम्मिलित",
+              "mr": "Consecrated earthen Kumbh pot, yellow cloth, Janeu, Mangal samidha समाविष्ट"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh flowers, coconuts & milk",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh flowers, coconuts & milk",
+              "mr": "Fresh flowers, coconuts & milk"
             }
           ],
           "includedSamagriIds": [
@@ -5953,13 +5953,13 @@
       "serviceId": "kumbh-vivah-for-female",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Kumbh Vivah (Manglik Shanti for Bride)",
-        "hi": "",
-        "mr": ""
+        "hi": "कुंभ विवाह (कन्या मांगलिक दोष निवारण)",
+        "mr": "कुंभ विवाह (कन्या मांगलिक दोष निवारण)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -6001,25 +6001,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for 1000 Holy Names Recitation",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: 1000 Holy Names Recitation",
+              "mr": "साठी पंडित दक्षिणा: 1000 Holy Names Recitation"
             },
             {
               "en": "Purusha Suktam chanting & Checklist",
-              "hi": "",
-              "mr": ""
+              "hi": "Purusha Suktam chanting & Checklist",
+              "mr": "Purusha Suktam chanting & Checklist"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Tulsi leaves & dry fruits",
-              "hi": "",
-              "mr": ""
+              "hi": "Tulsi leaves & सूखे मेवे",
+              "mr": "Tulsi leaves & सुका मेवा"
             }
           ],
           "includedSamagriIds": []
@@ -6047,25 +6047,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Essential Puja Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "Essential पूजा Samagri kit & गोघृत सम्मिलित",
+              "mr": "Essential पूजा Samagri kit & गोघृत समाविष्ट"
             },
             {
               "en": "Chandan, Roli, Akshat, Janeu & Dhoop",
-              "hi": "",
-              "mr": ""
+              "hi": "Chandan, Roli, Akshat, Janeu & Dhoop",
+              "mr": "Chandan, Roli, Akshat, Janeu & Dhoop"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh Tulsi leaves & fruits",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh Tulsi leaves & fruits",
+              "mr": "Fresh Tulsi leaves & fruits"
             }
           ],
           "includedSamagriIds": [
@@ -6077,13 +6077,13 @@
       "serviceId": "vishnu-sahasranam-path",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Vishnu Sahasranam Path (1000 Holy Names)",
-        "hi": "",
-        "mr": ""
+        "hi": "विष्णु सहस्रनाम पाठ (१००० पवित्र नाम)",
+        "mr": "विष्णू सहस्रनाम पाठ (१००० पवित्र नामे)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -6125,30 +6125,30 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Lalitha Sahasranam & Kumkumarchana",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Lalitha Sahasranam & Kumkumarchana",
+              "mr": "साठी पंडित दक्षिणा: Lalitha Sahasranam & Kumkumarchana"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Pure Kumkum box & Sri Yantra",
-              "hi": "",
-              "mr": ""
+              "hi": "Pure Kumkum box & Sri Yantra",
+              "mr": "Pure Kumkum box & Sri Yantra"
             },
             {
               "en": "Flowers",
-              "hi": "",
-              "mr": ""
+              "hi": "Flowers",
+              "mr": "Flowers"
             }
           ],
           "includedSamagriIds": []
@@ -6176,25 +6176,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Pure natural Kumkum for 1,000 name archana included",
-              "hi": "",
-              "mr": ""
+              "hi": "Pure natural Kumkum for 1,000 name archana सम्मिलित",
+              "mr": "Pure natural Kumkum for 1,000 name archana समाविष्ट"
             },
             {
               "en": "Hawan samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "Hawan samagri kit & गोघृत सम्मिलित",
+              "mr": "Hawan samagri kit & गोघृत समाविष्ट"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh red hibiscus flowers & sweets",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh red hibiscus flowers & sweets",
+              "mr": "Fresh red hibiscus flowers & sweets"
             }
           ],
           "includedSamagriIds": [
@@ -6207,13 +6207,13 @@
       "serviceId": "lalitha-sahasranam-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Lalitha Sahasranam Puja & Kumkumarchana",
-        "hi": "",
-        "mr": ""
+        "hi": "ललिता सहस्रनाम पूजा एवं कुमकुमार्चना",
+        "mr": "ललिता सहस्रनाम पूजा व कुमकुमार्चना"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -6255,35 +6255,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Praan Pratishtha & Ganesh Sthapana",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Praan Pratishtha & Ganesh Sthapana",
+              "mr": "साठी पंडित दक्षिणा: Praan Pratishtha & Ganesh Sthapana"
             },
             {
               "en": "108 Durva Archana",
-              "hi": "",
-              "mr": ""
+              "hi": "108 Durva Archana",
+              "mr": "108 Durva Archana"
             },
             {
               "en": "Samagri checklist",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri checklist",
+              "mr": "Samagri checklist"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Fresh Modaks & flowers",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh Modaks & flowers",
+              "mr": "Fresh Modaks & flowers"
             },
             {
               "en": "Visarjan visit",
-              "hi": "",
-              "mr": ""
+              "hi": "Visarjan visit",
+              "mr": "Visarjan visit"
             }
           ],
           "includedSamagriIds": []
@@ -6311,25 +6311,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Sthapana & Hawan",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Sthapana & Hawan",
+              "mr": "साठी पंडित दक्षिणा: Sthapana & Hawan"
             },
             {
               "en": "Essential pure Hawan Samagri kit & ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "आवश्यक शुद्ध हवन सामग्री किट & ghee सम्मिलित",
+              "mr": "आवश्यक शुद्ध हवन साहित्य किट & ghee समाविष्ट"
             },
             {
               "en": "Roli, Moli, Janeu, Kalash vastram included",
-              "hi": "",
-              "mr": ""
+              "hi": "Roli, Moli, Janeu, Kalash vastram सम्मिलित",
+              "mr": "Roli, Moli, Janeu, Kalash vastram समाविष्ट"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh modaks and red hibiscus flowers",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh modaks and red hibiscus flowers",
+              "mr": "Fresh modaks and red hibiscus flowers"
             }
           ],
           "includedSamagriIds": [
@@ -6342,13 +6342,13 @@
       "serviceId": "ganesh-sthapana-visarjan",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Ganesh Sthapana & Visarjan Puja",
-        "hi": "",
-        "mr": ""
+        "hi": "गणेश स्थापना एवं विसर्जन पूजा",
+        "mr": "गणेश स्थापना व विसर्जन पूजा"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -6390,30 +6390,30 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Brihaspati & Rahu Japa + Havan",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Brihaspati & Rahu Japa + हवन",
+              "mr": "साठी पंडित दक्षिणा: Brihaspati & Rahu Japa + हवन"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Yellow cloth, chana dal, urad dal",
-              "hi": "",
-              "mr": ""
+              "hi": "Yellow cloth, chana dal, urad dal",
+              "mr": "Yellow cloth, chana dal, urad dal"
             },
             {
               "en": "Utensils",
-              "hi": "",
-              "mr": ""
+              "hi": "Utensils",
+              "mr": "Utensils"
             }
           ],
           "includedSamagriIds": []
@@ -6441,25 +6441,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Essential Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "Essential Hawan Samagri kit & गोघृत सम्मिलित",
+              "mr": "Essential Hawan Samagri kit & गोघृत समाविष्ट"
             },
             {
               "en": "Guru-Rahu specific samidhas & cloths",
-              "hi": "",
-              "mr": ""
+              "hi": "Guru-Rahu specific samidhas & cloths",
+              "mr": "Guru-Rahu specific samidhas & cloths"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh fruits & sweets",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh fruits & sweets",
+              "mr": "Fresh fruits & sweets"
             }
           ],
           "includedSamagriIds": [
@@ -6472,13 +6472,13 @@
       "serviceId": "guru-chandal-yoga-shanti",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Guru Chandal Yoga Shanti Puja",
-        "hi": "",
-        "mr": ""
+        "hi": "गुरु चांडाल योग शांति पूजा",
+        "mr": "गुरु चांडाळ योग शांती पूजा"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -6520,25 +6520,25 @@
           "inclusions": [
             {
               "en": "2 Pandits for 11,000 chants + concluding Homa",
-              "hi": "",
-              "mr": ""
+              "hi": "2 Pandits for 11,000 chants + concluding होम",
+              "mr": "2 Pandits for 11,000 chants + concluding होम"
             },
             {
               "en": "Bal Gopal Pujan & Checklist",
-              "hi": "",
-              "mr": ""
+              "hi": "Bal Gopal पूजाn & Checklist",
+              "mr": "Bal Gopal पूजाn & Checklist"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Butter/Misri & fruits",
-              "hi": "",
-              "mr": ""
+              "hi": "Butter/Misri & fruits",
+              "mr": "Butter/Misri & fruits"
             }
           ],
           "includedSamagriIds": []
@@ -6566,25 +6566,25 @@
           "inclusions": [
             {
               "en": "3 Pandits for 21,000 chants over 3 days",
-              "hi": "",
-              "mr": ""
+              "hi": "3 Pandits for 21,000 chants over 3 days",
+              "mr": "3 Pandits for 21,000 chants over 3 days"
             },
             {
               "en": "Hawan kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "Hawan kit & गोघृत सम्मिलित",
+              "mr": "Hawan kit & गोघृत समाविष्ट"
             },
             {
               "en": "Maha Abhishek & Gopal Yantra",
-              "hi": "",
-              "mr": ""
+              "hi": "Maha Abhishek & Gopal Yantra",
+              "mr": "Maha Abhishek & Gopal Yantra"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh fruits & sweets",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh fruits & sweets",
+              "mr": "Fresh fruits & sweets"
             }
           ],
           "includedSamagriIds": [
@@ -6597,13 +6597,13 @@
       "serviceId": "santan-gopal-mantra-jaap",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Santan Gopal Mantra Jaap for Child Blessings",
-        "hi": "",
-        "mr": ""
+        "hi": "संतान गोपाल मंत्र जप (संतान प्राप्ति हेतु)",
+        "mr": "संतान गोपाळ मंत्र जप (संतान प्राप्तीसाठी)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -6645,35 +6645,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Somvar Katha & Abhishek",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Somvar Katha & Abhishek",
+              "mr": "साठी पंडित दक्षिणा: Somvar Katha & Abhishek"
             },
             {
               "en": "Lord Shiva archana",
-              "hi": "",
-              "mr": ""
+              "hi": "Lord Shiva archana",
+              "mr": "Lord Shiva archana"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Belpatra, raw milk, prasad",
-              "hi": "",
-              "mr": ""
+              "hi": "Belpatra, raw milk, prasad",
+              "mr": "Belpatra, raw milk, prasad"
             },
             {
               "en": "Utensils",
-              "hi": "",
-              "mr": ""
+              "hi": "Utensils",
+              "mr": "Utensils"
             }
           ],
           "includedSamagriIds": []
@@ -6701,25 +6701,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Essential pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "आवश्यक शुद्ध हवन सामग्री किट & गोघृत सम्मिलित",
+              "mr": "आवश्यक शुद्ध हवन साहित्य किट & गोघृत समाविष्ट"
             },
             {
               "en": "Bhasma, Chandan, Janeu, Dhoop & Camphor",
-              "hi": "",
-              "mr": ""
+              "hi": "Bhasma, Chandan, Janeu, Dhoop & Camphor",
+              "mr": "Bhasma, Chandan, Janeu, Dhoop & Camphor"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh milk, curd, honey & Churma prasad",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh milk, curd, honey & Churma prasad",
+              "mr": "Fresh milk, curd, honey & Churma prasad"
             }
           ],
           "includedSamagriIds": [
@@ -6732,13 +6732,13 @@
       "serviceId": "solah-somvar-udyapan-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Solah Somvar Udyapan Puja",
-        "hi": "",
-        "mr": ""
+        "hi": "सोलह सोमवार व्रत उद्यापन पूजा",
+        "mr": "सोळा सोमवार व्रत उद्यापन पूजा"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -6780,35 +6780,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Ekadashi Mahatmya Katha",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Ekadashi Mahatmya Katha",
+              "mr": "साठी पंडित दक्षिणा: Ekadashi Mahatmya Katha"
             },
             {
               "en": "Vishnu Sahasranam Path & Havan",
-              "hi": "",
-              "mr": ""
+              "hi": "Vishnu Sahasranam Path & हवन",
+              "mr": "Vishnu Sahasranam Path & हवन"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Tulsi dal, fresh fruits, prasad",
-              "hi": "",
-              "mr": ""
+              "hi": "Tulsi dal, fresh fruits, prasad",
+              "mr": "Tulsi dal, fresh fruits, prasad"
             },
             {
               "en": "Utensils",
-              "hi": "",
-              "mr": ""
+              "hi": "Utensils",
+              "mr": "Utensils"
             }
           ],
           "includedSamagriIds": []
@@ -6836,25 +6836,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Essential pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "आवश्यक शुद्ध हवन सामग्री किट & गोघृत सम्मिलित",
+              "mr": "आवश्यक शुद्ध हवन साहित्य किट & गोघृत समाविष्ट"
             },
             {
               "en": "Purna Kalash items, Roli, Akshat, Janeu",
-              "hi": "",
-              "mr": ""
+              "hi": "Purna Kalash items, Roli, Akshat, Janeu",
+              "mr": "Purna Kalash items, Roli, Akshat, Janeu"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh fruits, Tulsi leaves, prasad",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh fruits, Tulsi leaves, prasad",
+              "mr": "Fresh fruits, Tulsi leaves, prasad"
             }
           ],
           "includedSamagriIds": [
@@ -6867,13 +6867,13 @@
       "serviceId": "ekadashi-vrat-udyapan-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Ekadashi Vrat Udyapan Puja",
-        "hi": "",
-        "mr": ""
+        "hi": "एकादशी व्रत उद्यापन पूजा",
+        "mr": "एकादशी व्रत उद्यापन पूजा"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -6915,25 +6915,25 @@
           "inclusions": [
             {
               "en": "2 Pandits chanting 7,000 to 10,000 counts on afflicted planets + Homa",
-              "hi": "",
-              "mr": ""
+              "hi": "2 Pandits chanting 7,000 to 10,000 counts on afflicted planets + होम",
+              "mr": "2 Pandits chanting 7,000 to 10,000 counts on afflicted planets + होम"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "9 graha cloths & grains",
-              "hi": "",
-              "mr": ""
+              "hi": "9 graha cloths & grains",
+              "mr": "9 graha cloths & grains"
             }
           ],
           "includedSamagriIds": []
@@ -6961,25 +6961,25 @@
           "inclusions": [
             {
               "en": "3 Pandits completing 19,000+ chants across all 9 grahas",
-              "hi": "",
-              "mr": ""
+              "hi": "3 Pandits completing 19,000+ chants across all 9 grahas",
+              "mr": "3 Pandits completing 19,000+ chants across all 9 grahas"
             },
             {
               "en": "Complete Hawan kit & 9 samidhas included",
-              "hi": "",
-              "mr": ""
+              "hi": "Complete Hawan kit & 9 samidhas सम्मिलित",
+              "mr": "Complete Hawan kit & 9 samidhas समाविष्ट"
             },
             {
               "en": "Graha Daan guidance",
-              "hi": "",
-              "mr": ""
+              "hi": "Graha Daan guidance",
+              "mr": "Graha Daan guidance"
             }
           ],
           "exclusions": [
             {
               "en": "Brahmin bhojan",
-              "hi": "",
-              "mr": ""
+              "hi": "Brahmin bhojan",
+              "mr": "Brahmin bhojan"
             }
           ],
           "includedSamagriIds": [
@@ -6992,13 +6992,13 @@
       "serviceId": "navagraha-graha-shanti-jaap",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Navagraha Shanti",
-        "hi": "",
-        "mr": ""
+        "hi": "नवग्रह ग्रह शांति जप (सूर्य से केतु)",
+        "mr": "नवग्रह शांती जप (सूर्य ते केतू)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -7040,35 +7040,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Udyapan Katha & Pujan",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Udyapan Katha & पूजाn",
+              "mr": "साठी पंडित दक्षिणा: Udyapan Katha & पूजाn"
             },
             {
               "en": "Guru Yantra invocation",
-              "hi": "",
-              "mr": ""
+              "hi": "Guru Yantra invocation",
+              "mr": "Guru Yantra invocation"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Yellow cloth, chana dal, bananas",
-              "hi": "",
-              "mr": ""
+              "hi": "Yellow cloth, chana dal, bananas",
+              "mr": "Yellow cloth, chana dal, bananas"
             },
             {
               "en": "Utensils",
-              "hi": "",
-              "mr": ""
+              "hi": "Utensils",
+              "mr": "Utensils"
             }
           ],
           "includedSamagriIds": []
@@ -7096,25 +7096,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for complete ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: संपूर्ण अनुष्ठान",
+              "mr": "साठी पंडित दक्षिणा: संपूर्ण विधी"
             },
             {
               "en": "Essential pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "आवश्यक शुद्ध हवन सामग्री किट & गोघृत सम्मिलित",
+              "mr": "आवश्यक शुद्ध हवन साहित्य किट & गोघृत समाविष्ट"
             },
             {
               "en": "Yellow cloth, turmeric root & sacred threads",
-              "hi": "",
-              "mr": ""
+              "hi": "Yellow cloth, turmeric root & sacred threads",
+              "mr": "Yellow cloth, turmeric root & sacred threads"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh bananas and yellow gram sweets",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh bananas and yellow gram sweets",
+              "mr": "Fresh bananas and yellow gram sweets"
             }
           ],
           "includedSamagriIds": [
@@ -7127,13 +7127,13 @@
       "serviceId": "brihaspati-vrat-udyapan-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Brihaspati Vrat Udyapan Puja",
-        "hi": "",
-        "mr": ""
+        "hi": "बृहस्पतिवार व्रत उद्यापन पूजा",
+        "mr": "गुरुवार व्रत उद्यापन पूजा"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -7175,35 +7175,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Punsavan / Simantonayana Vidhi",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Punsavan / Simantonayana Vidhi",
+              "mr": "साठी पंडित दक्षिणा: Punsavan / Simantonayana Vidhi"
             },
             {
               "en": "Gauri Pujan & Mother Blessing",
-              "hi": "",
-              "mr": ""
+              "hi": "Gauri पूजाn & Mother Blessing",
+              "mr": "Gauri पूजाn & Mother Blessing"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Lap-filling dry fruits & sari",
-              "hi": "",
-              "mr": ""
+              "hi": "Lap-filling सूखे मेवे & sari",
+              "mr": "Lap-filling सुका मेवा & sari"
             },
             {
               "en": "Utensils",
-              "hi": "",
-              "mr": ""
+              "hi": "Utensils",
+              "mr": "Utensils"
             }
           ],
           "includedSamagriIds": []
@@ -7231,25 +7231,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Essential Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "Essential Hawan Samagri kit & गोघृत सम्मिलित",
+              "mr": "Essential Hawan Samagri kit & गोघृत समाविष्ट"
             },
             {
               "en": "Roli, Chandan, Kalash vastram & sacred thread",
-              "hi": "",
-              "mr": ""
+              "hi": "Roli, Chandan, Kalash vastram & sacred thread",
+              "mr": "Roli, Chandan, Kalash vastram & sacred thread"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh green bangles, fruits, coconuts",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh green bangles, fruits, coconuts",
+              "mr": "Fresh green bangles, fruits, coconuts"
             }
           ],
           "includedSamagriIds": [
@@ -7262,13 +7262,13 @@
       "serviceId": "godh-bharai-puja-baby-shower",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Godh Bharai & Punsavan Sanskar",
-        "hi": "",
-        "mr": ""
+        "hi": "गोद भराई एवं पुंसवन संस्कार",
+        "mr": "डोहाळे जेवण व पुंसवन संस्कार"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -7310,35 +7310,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Chudakarana Vidhi",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Chudakarana Vidhi",
+              "mr": "साठी पंडित दक्षिणा: Chudakarana Vidhi"
             },
             {
               "en": "Kusha grass cutting ritual",
-              "hi": "",
-              "mr": ""
+              "hi": "Kusha grass cutting ritual",
+              "mr": "Kusha grass cutting ritual"
             },
             {
               "en": "Ayush hawan vidhi & checklist",
-              "hi": "",
-              "mr": ""
+              "hi": "Ayush hawan vidhi & checklist",
+              "mr": "Ayush hawan vidhi & checklist"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "Barber services",
-              "hi": "",
-              "mr": ""
+              "hi": "Barber services",
+              "mr": "Barber services"
             },
             {
               "en": "Fresh items",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh items",
+              "mr": "Fresh items"
             }
           ],
           "includedSamagriIds": []
@@ -7366,30 +7366,30 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for complete ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: संपूर्ण अनुष्ठान",
+              "mr": "साठी पंडित दक्षिणा: संपूर्ण विधी"
             },
             {
               "en": "Essential Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "Essential Hawan Samagri kit & गोघृत सम्मिलित",
+              "mr": "Essential Hawan Samagri kit & गोघृत समाविष्ट"
             },
             {
               "en": "Kusha grass, chandan, haldi paste for baby scalp",
-              "hi": "",
-              "mr": ""
+              "hi": "Kusha grass, chandan, haldi paste for baby scalp",
+              "mr": "Kusha grass, chandan, haldi paste for baby scalp"
             }
           ],
           "exclusions": [
             {
               "en": "Barber / Nai fees",
-              "hi": "",
-              "mr": ""
+              "hi": "Barber / Nai fees",
+              "mr": "Barber / Nai fees"
             },
             {
               "en": "Fresh flowers & sweets",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh flowers & sweets",
+              "mr": "Fresh flowers & sweets"
             }
           ],
           "includedSamagriIds": [
@@ -7402,13 +7402,13 @@
       "serviceId": "mundan-or-chudakarana-ceremony",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Mundan (Chudakarana) Sanskar",
-        "hi": "",
-        "mr": ""
+        "hi": "मुंडन (चूड़ाकरण) संस्कार",
+        "mr": "जावळ / मुंडन संस्कार (चूडाकरण विधी)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -7450,35 +7450,35 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for Gand Mool Shanti & Nakshatra Homa",
-              "hi": "",
-              "mr": ""
+              "hi": "हेतु पंडित दक्षिणा: Gand Mool Shanti & Nakshatra होम",
+              "mr": "साठी पंडित दक्षिणा: Gand Mool Shanti & Nakshatra होम"
             },
             {
               "en": "Father-Child shadow-seeing guidance",
-              "hi": "",
-              "mr": ""
+              "hi": "Father-Child shadow-seeing guidance",
+              "mr": "Father-Child shadow-seeing guidance"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Samagri kit",
+              "mr": "Samagri kit"
             },
             {
               "en": "27 leaves, 27 waters",
-              "hi": "",
-              "mr": ""
+              "hi": "27 leaves, 27 waters",
+              "mr": "27 leaves, 27 waters"
             },
             {
               "en": "Bronze thali",
-              "hi": "",
-              "mr": ""
+              "hi": "Bronze thali",
+              "mr": "Bronze thali"
             }
           ],
           "includedSamagriIds": []
@@ -7506,25 +7506,25 @@
           "inclusions": [
             {
               "en": "Pandit Dakshina for ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "संपूर्ण अनुष्ठान हेतु पंडित दक्षिणा",
+              "mr": "संपूर्ण विधीसाठी पंडित दक्षिणा"
             },
             {
               "en": "Pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "शुद्ध हवन सामग्री किट एवं गोघृत सम्मिलित",
+              "mr": "शुद्ध हवन साहित्य किट व गोघृत समाविष्ट"
             },
             {
               "en": "Mool Nakshatra herbs & sacred wood included",
-              "hi": "",
-              "mr": ""
+              "hi": "Mool Nakshatra herbs & sacred wood सम्मिलित",
+              "mr": "Mool Nakshatra herbs & sacred wood समाविष्ट"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh leaves, water samples, bronze thali with ghee for reflection",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh leaves, water samples, bronze thali with ghee for reflection",
+              "mr": "Fresh leaves, water samples, bronze thali with ghee for reflection"
             }
           ],
           "includedSamagriIds": [
@@ -7537,13 +7537,13 @@
       "serviceId": "gand-mool-nakshatra-shanti-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Gand Mool Nakshatra Shanti Puja",
-        "hi": "",
-        "mr": ""
+        "hi": "गंडमूल नक्षत्र शांति पूजा",
+        "mr": "गंडमूल नक्षत्र शांती पूजा"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -7585,35 +7585,35 @@
           "inclusions": [
             {
               "en": "Senior Pandit for complete 13 chapters of Durga Saptashati",
-              "hi": "",
-              "mr": ""
+              "hi": "Senior Pandit for complete 13 chapters of Durga Saptashati",
+              "mr": "Senior Pandit for complete 13 chapters of Durga Saptashati"
             },
             {
               "en": "Devi Kavach & Argala Stotra",
-              "hi": "",
-              "mr": ""
+              "hi": "Devi Kavach & Argala Stotra",
+              "mr": "Devi Kavach & Argala Stotra"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Hawan samagri kit",
-              "hi": "",
-              "mr": ""
+              "hi": "Hawan samagri kit",
+              "mr": "Hawan samagri kit"
             },
             {
               "en": "Red cloth & shringar",
-              "hi": "",
-              "mr": ""
+              "hi": "Red cloth & shringar",
+              "mr": "Red cloth & shringar"
             },
             {
               "en": "Utensils",
-              "hi": "",
-              "mr": ""
+              "hi": "Utensils",
+              "mr": "Utensils"
             }
           ],
           "includedSamagriIds": []
@@ -7641,25 +7641,25 @@
           "inclusions": [
             {
               "en": "Senior Pandit for complete Path & concluding Homa",
-              "hi": "",
-              "mr": ""
+              "hi": "Senior Pandit for complete Path & concluding होम",
+              "mr": "Senior Pandit for complete Path & concluding होम"
             },
             {
               "en": "Pure Hawan Samagri kit & cow ghee included",
-              "hi": "",
-              "mr": ""
+              "hi": "शुद्ध हवन सामग्री किट एवं गोघृत सम्मिलित",
+              "mr": "शुद्ध हवन साहित्य किट व गोघृत समाविष्ट"
             },
             {
               "en": "Devi Shringar kit & red cloth included",
-              "hi": "",
-              "mr": ""
+              "hi": "Devi Shringar kit & red cloth सम्मिलित",
+              "mr": "Devi Shringar kit & red cloth समाविष्ट"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh red flowers, coconuts & sweets",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh red flowers, coconuts & sweets",
+              "mr": "Fresh red flowers, coconuts & sweets"
             }
           ],
           "includedSamagriIds": [
@@ -7672,13 +7672,13 @@
       "serviceId": "chandi-path-durga-saptashati-path",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Chandi Path (Durga Saptashati 700 Verses)",
-        "hi": "",
-        "mr": ""
+        "hi": "चंडी पाठ (दुर्गा सप्तशती ७०० श्लोक)",
+        "mr": "चंडी पाठ (दुर्गा सप्तशती ७०० श्लोक)"
       },
       "researchBasis": "",
       "approvalStatus": "approved",
@@ -7720,35 +7720,35 @@
           "inclusions": [
             {
               "en": "Experienced Purohit for Pitru Tarpan & Pinda Daan",
-              "hi": "",
-              "mr": ""
+              "hi": "Experienced Purohit for Pitru Tarpan & Pinda Daan",
+              "mr": "Experienced Purohit for Pitru Tarpan & Pinda Daan"
             },
             {
               "en": "Gotra recitation for ancestors",
-              "hi": "",
-              "mr": ""
+              "hi": "Gotra recitation for ancestors",
+              "mr": "Gotra recitation for ancestors"
             },
             {
               "en": "Checklist provided",
-              "hi": "",
-              "mr": ""
+              "hi": "सामग्री सूची पूर्व में उपलब्ध कराई जाती है",
+              "mr": "साहित्याची यादी अगोदर दिली जाते"
             }
           ],
           "exclusions": [
             {
               "en": "Black sesame, Kusha grass, barley flour",
-              "hi": "",
-              "mr": ""
+              "hi": "Black sesame, Kusha grass, barley flour",
+              "mr": "Black sesame, Kusha grass, barley flour"
             },
             {
               "en": "Pinda kheer",
-              "hi": "",
-              "mr": ""
+              "hi": "Pinda kheer",
+              "mr": "Pinda kheer"
             },
             {
               "en": "Brahmin bhojan",
-              "hi": "",
-              "mr": ""
+              "hi": "Brahmin bhojan",
+              "mr": "Brahmin bhojan"
             }
           ],
           "includedSamagriIds": []
@@ -7776,25 +7776,25 @@
           "inclusions": [
             {
               "en": "Experienced Purohit for complete ceremony",
-              "hi": "",
-              "mr": ""
+              "hi": "Experienced Purohit for संपूर्ण अनुष्ठान",
+              "mr": "Experienced Purohit for संपूर्ण विधी"
             },
             {
               "en": "Black sesame (Kala Til), Kusha grass, Pinda Daan flour & Gangajal included",
-              "hi": "",
-              "mr": ""
+              "hi": "Black sesame (Kala Til), Kusha grass, Pinda Daan flour & Gangajal सम्मिलित",
+              "mr": "Black sesame (Kala Til), Kusha grass, Pinda Daan flour & Gangajal समाविष्ट"
             },
             {
               "en": "Sacred thread (Janeu) & camphor for Balidana",
-              "hi": "",
-              "mr": ""
+              "hi": "Sacred thread (Janeu) & camphor for Balidana",
+              "mr": "Sacred thread (Janeu) & camphor for Balidana"
             }
           ],
           "exclusions": [
             {
               "en": "Fresh cow milk for tarpan, cooked pinda kheer, Brahmin bhojan",
-              "hi": "",
-              "mr": ""
+              "hi": "Fresh cow milk for tarpan, cooked pinda kheer, Brahmin bhojan",
+              "mr": "Fresh cow milk for tarpan, cooked pinda kheer, Brahmin bhojan"
             }
           ],
           "includedSamagriIds": [
@@ -7805,13 +7805,13 @@
       "serviceId": "pitru-paksha-mahalaya-shradh-puja",
       "pricingNote": {
         "en": "Proposed rate card (Awaiting business confirmation)",
-        "hi": "",
-        "mr": ""
+        "hi": "प्रस्तावित दर सूची (व्यावसायिक पुष्टि प्रतीक्षित)",
+        "mr": "प्रस्तावित दर सूची (अधिकृत पुष्टी प्रलंबित)"
       },
       "serviceName": {
         "en": "Pitru Paksha Mahalaya Shradh Puja",
-        "hi": "",
-        "mr": ""
+        "hi": "पितृ पक्ष महालय श्राद्ध पूजा",
+        "mr": "पितृपक्ष महालय श्राद्ध पूजा"
       },
       "researchBasis": "",
       "approvalStatus": "approved",

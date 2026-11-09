@@ -21,7 +21,7 @@ import { supabase } from '../admin/supabaseClient';
 import LoginForm from '../admin/LoginForm';
 import ServiceEditor from '../admin/ServiceEditor';
 import SamagriEditor from '../admin/SamagriEditor';
-import { setIn, countMissingTranslations, errorTarget } from '../admin/pricingDoc';
+import { setIn, countMissingTranslations, errorTarget, enrichDocTranslations } from '../admin/pricingDoc';
 import '../admin/admin.css';
 
 export default function AdminPage() {
@@ -60,6 +60,7 @@ export default function AdminPage() {
     }
     const docData = data.data;
     if (docData?.rateCards) {
+      enrichDocTranslations(docData);
       // Auto-reconcile services with defined prices and Option 1 maxPrice
       Object.keys(docData.rateCards).forEach((id) => {
         const c = docData.rateCards[id];
@@ -273,7 +274,7 @@ export default function AdminPage() {
 
   const q = query.trim().toLowerCase();
   const ids = Object.keys(doc.rateCards).filter(
-    (id) => !q || id.includes(q) || doc.rateCards[id].serviceName.en.toLowerCase().includes(q)
+    (id) => !q || id.includes(q) || doc.rateCards[id].serviceName.en.toLowerCase().includes(q) || (doc.rateCards[id].serviceName[lang]?.toLowerCase().includes(q))
   );
   const card = doc.rateCards[selectedId];
 
@@ -463,7 +464,7 @@ export default function AdminPage() {
                           <Flame size={15} />
                         </div>
                         <div className="service-card-text">
-                          <div className="service-card-title">{svc.serviceName.en}</div>
+                          <div className="service-card-title">{svc.serviceName[lang === 'all' ? 'en' : lang] || svc.serviceName.en}</div>
                           <div className="service-card-sub">
                             {svc.packages && svc.packages.length > 0 ? `${svc.packages.length} Packages` : svc.model}
                           </div>

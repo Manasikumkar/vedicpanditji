@@ -1,3 +1,7 @@
+import insightsTranslations from './insightsTranslations.json' with { type: 'json' };
+import guideTranslations from './guideTranslations.json' with { type: 'json' };
+import cityPageTranslations from './cityPageTranslations.json' with { type: 'json' };
+import locationContentTranslations from './locationContentTranslations.json' with { type: 'json' };
 // Content Translations for Puja Services, Categories and Localities
 // Complete multilingual dictionary covering all 59 ceremonies, 6 categories, and 37 locations
 
@@ -696,6 +700,40 @@ export const CATEGORY_TRANSLATIONS = {
       "hi": "७ संस्कार",
       "mr": "७ संस्कार"
     }
+  },
+  "bhajans-chowki": {
+    "name": {
+      "en": "Bhajans & Chowki",
+      "hi": "भजन एवं चौकी",
+      "mr": "भजन व चौकी"
+    },
+    "tagline": {
+      "en": "Mata Ki Chowki, Jagran, and devotional bhajan sandhyas",
+      "hi": "माता की चौकी, जागरण एवं भक्तिमय भजन संध्या",
+      "mr": "माता की चौकी, जागरण आणि भावपूर्ण भजन संध्या"
+    },
+    "count": {
+      "en": "2 Ceremonies",
+      "hi": "२ अनुष्ठान",
+      "mr": "२ विधी"
+    }
+  },
+  "pitru-pujas": {
+    "name": {
+      "en": "Pitru Pujas",
+      "hi": "पितृ पूजा एवं श्राद्ध",
+      "mr": "पितृ पूजा व श्राद्ध"
+    },
+    "tagline": {
+      "en": "Shradh karma, Tarpan, and ancestral peace rituals",
+      "hi": "श्राद्ध कर्म, तर्पण एवं पितृ शांति अनुष्ठान",
+      "mr": "श्राद्ध कर्म, तर्पण आणि पितृ शांती विधी"
+    },
+    "count": {
+      "en": "3 Ceremonies",
+      "hi": "३ अनुष्ठान",
+      "mr": "३ विधी"
+    }
   }
 };
 
@@ -884,6 +922,1221 @@ export const LOCATION_NAMES = {
     "en": "Akurdi",
     "hi": "आकुर्डी",
     "mr": "आकुर्डी"
+  },
+  "Hyderabad": {
+    "en": "Hyderabad",
+    "hi": "हैदराबाद",
+    "mr": "हैदराबाद"
+  },
+  "hyderabad": {
+    "en": "Hyderabad",
+    "hi": "हैदराबाद",
+    "mr": "हैदराबाद"
+  },
+  "pandit-in-hyderabad": {
+    "en": "Hyderabad",
+    "hi": "हैदराबाद",
+    "mr": "हैदराबाद"
+  },
+  "Nashik / Trimbakeshwar": {
+    "en": "Nashik / Trimbakeshwar",
+    "hi": "नासिक / त्र्यंबकेश्वर",
+    "mr": "नाशिक / त्र्यंबकेश्वर"
+  },
+  "nashik / trimbakeshwar": {
+    "en": "Nashik / Trimbakeshwar",
+    "hi": "नासिक / त्र्यंबकेश्वर",
+    "mr": "नाशिक / त्र्यंबकेश्वर"
+  },
+  "Mumbai & MMR": {
+    "en": "Mumbai & MMR",
+    "hi": "मुंबई एवं MMR",
+    "mr": "मुंबई आणि MMR"
+  },
+  "mumbai & mmr": {
+    "en": "Mumbai & MMR",
+    "hi": "मुंबई एवं MMR",
+    "mr": "मुंबई आणि MMR"
+  },
+  "Bangalore": {
+    "en": "Bangalore",
+    "hi": "बैंगलोर",
+    "mr": "बंगळुरू"
+  },
+  "bangalore": {
+    "en": "Bangalore",
+    "hi": "बैंगलोर",
+    "mr": "बंगळुरू"
+  },
+  "Delhi & NCR": {
+    "en": "Delhi & NCR",
+    "hi": "दिल्ली एवं NCR",
+    "mr": "दिल्ली व NCR"
+  },
+  "delhi & ncr": {
+    "en": "Delhi & NCR",
+    "hi": "दिल्ली एवं NCR",
+    "mr": "दिल्ली व NCR"
+  },
+  "Chennai": {
+    "en": "Chennai",
+    "hi": "चेन्नई",
+    "mr": "चेन्नई"
+  },
+  "chennai": {
+    "en": "Chennai",
+    "hi": "चेन्नई",
+    "mr": "चेन्नई"
+  },
+  "Ahmedabad": {
+    "en": "Ahmedabad",
+    "hi": "अहमदाबाद",
+    "mr": "अहमदाबाद"
+  },
+  "ahmedabad": {
+    "en": "Ahmedabad",
+    "hi": "अहमदाबाद",
+    "mr": "अहमदाबाद"
+  },
+  "Kolkata": {
+    "en": "Kolkata",
+    "hi": "कोलकाता",
+    "mr": "कोलकाता"
+  },
+  "kolkata": {
+    "en": "Kolkata",
+    "hi": "कोलकाता",
+    "mr": "कोलकाता"
+  },
+  "Pune": {
+    "en": "Pune",
+    "hi": "पुणे",
+    "mr": "पुणे"
+  },
+  "pune": {
+    "en": "Pune",
+    "hi": "पुणे",
+    "mr": "पुणे"
+  },
+  "Online E-Puja (Pan-India & Global)": {
+    "en": "Online E-Puja (Pan-India & Global)",
+    "hi": "ऑनलाइन ई-पूजा (अखिल भारतीय एवं वैश्विक)",
+    "mr": "ऑनलाइन ई-पूजा (भारत व जगभरात)"
+  },
+  "online e-puja (pan-india & global)": {
+    "en": "Online E-Puja (Pan-India & Global)",
+    "hi": "ऑनलाइन ई-पूजा (अखिल भारतीय एवं वैश्विक)",
+    "mr": "ऑनलाइन ई-पूजा (भारत व जगभरात)"
+  },
+  "Uttar Pradesh": {
+    "en": "Uttar Pradesh",
+    "hi": "उत्तर प्रदेश",
+    "mr": "उत्तर प्रदेश"
+  },
+  "uttar pradesh": {
+    "en": "Uttar Pradesh",
+    "hi": "उत्तर प्रदेश",
+    "mr": "उत्तर प्रदेश"
+  },
+  "Bihar": {
+    "en": "Bihar",
+    "hi": "बिहार",
+    "mr": "बिहार"
+  },
+  "bihar": {
+    "en": "Bihar",
+    "hi": "बिहार",
+    "mr": "बिहार"
+  },
+  "Maharashtra": {
+    "en": "Maharashtra",
+    "hi": "महाराष्ट्र",
+    "mr": "महाराष्ट्र"
+  },
+  "maharashtra": {
+    "en": "Maharashtra",
+    "hi": "महाराष्ट्र",
+    "mr": "महाराष्ट्र"
+  },
+  "Tamil Nadu": {
+    "en": "Tamil Nadu",
+    "hi": "तमिलनाडु",
+    "mr": "तमिळनाडू"
+  },
+  "tamil nadu": {
+    "en": "Tamil Nadu",
+    "hi": "तमिलनाडु",
+    "mr": "तमिळनाडू"
+  },
+  "Telangana": {
+    "en": "Telangana",
+    "hi": "तेलंगाना",
+    "mr": "तेलंगणा"
+  },
+  "telangana": {
+    "en": "Telangana",
+    "hi": "तेलंगाना",
+    "mr": "तेलंगणा"
+  },
+  "Karnataka": {
+    "en": "Karnataka",
+    "hi": "कर्नाटक",
+    "mr": "कर्नाटक"
+  },
+  "karnataka": {
+    "en": "Karnataka",
+    "hi": "कर्नाटक",
+    "mr": "कर्नाटक"
+  },
+  "Gujarat": {
+    "en": "Gujarat",
+    "hi": "गुजरात",
+    "mr": "गुजरात"
+  },
+  "gujarat": {
+    "en": "Gujarat",
+    "hi": "गुजरात",
+    "mr": "गुजरात"
+  },
+  "West Bengal": {
+    "en": "West Bengal",
+    "hi": "पश्चिम बंगाल",
+    "mr": "पश्चिम बंगाल"
+  },
+  "west bengal": {
+    "en": "West Bengal",
+    "hi": "पश्चिम बंगाल",
+    "mr": "पश्चिम बंगाल"
+  },
+  "Hinjewadi": {
+      "en": "Hinjewadi",
+      "mr": "हिंजवडी",
+      "hi": "हिंजवड़ी"
+  },
+  "hinjewadi": {
+      "en": "Hinjewadi",
+      "mr": "हिंजवडी",
+      "hi": "हिंजवड़ी"
+  },
+  "Viman Nagar": {
+      "en": "Viman Nagar",
+      "mr": "विमान नगर",
+      "hi": "विमान नगर"
+  },
+  "viman nagar": {
+      "en": "Viman Nagar",
+      "mr": "विमान नगर",
+      "hi": "विमान नगर"
+  },
+  "Pimple Saudagar": {
+      "en": "Pimple Saudagar",
+      "mr": "पिंपळे सौदागर",
+      "hi": "पिंपले सौदागर"
+  },
+  "pimple saudagar": {
+      "en": "Pimple Saudagar",
+      "mr": "पिंपळे सौदागर",
+      "hi": "पिंपले सौदागर"
+  },
+  "Magarpatta City": {
+      "en": "Magarpatta City",
+      "mr": "मगरपट्टा सिटी",
+      "hi": "मगरपट्टा सिटी"
+  },
+  "magarpatta city": {
+      "en": "Magarpatta City",
+      "mr": "मगरपट्टा सिटी",
+      "hi": "मगरपट्टा सिटी"
+  },
+  "Kalyani Nagar": {
+      "en": "Kalyani Nagar",
+      "mr": "कल्याणी नगर",
+      "hi": "कल्याणी नगर"
+  },
+  "kalyani nagar": {
+      "en": "Kalyani Nagar",
+      "mr": "कल्याणी नगर",
+      "hi": "कल्याणी नगर"
+  },
+  "Hinjewadi Phase 1-3": {
+      "en": "Hinjewadi Phase 1-3",
+      "mr": "हिंजवडी फेज १-३",
+      "hi": "हिंजवड़ी फेज 1-3"
+  },
+  "hinjewadi phase 1-3": {
+      "en": "Hinjewadi Phase 1-3",
+      "mr": "हिंजवडी फेज १-३",
+      "hi": "हिंजवड़ी फेज 1-3"
+  },
+  "Magarpatta": {
+      "en": "Magarpatta",
+      "mr": "मगरपट्टा",
+      "hi": "मगरपट्टा"
+  },
+  "magarpatta": {
+      "en": "Magarpatta",
+      "mr": "मगरपट्टा",
+      "hi": "मगरपट्टा"
+  },
+  "Shivajinagar": {
+      "en": "Shivajinagar",
+      "mr": "शिवाजीनगर",
+      "hi": "शिवाजीनगर"
+  },
+  "shivajinagar": {
+      "en": "Shivajinagar",
+      "mr": "शिवाजीनगर",
+      "hi": "शिवाजीनगर"
+  },
+  "Hadapsar (Destination Resorts)": {
+      "en": "Hadapsar (Destination Resorts)",
+      "mr": "हडपसर (रिसॉर्ट्स परिसर)",
+      "hi": "हड़पसर (रिसॉर्ट्स क्षेत्र)"
+  },
+  "hadapsar (destination resorts)": {
+      "en": "Hadapsar (Destination Resorts)",
+      "mr": "हडपसर (रिसॉर्ट्स परिसर)",
+      "hi": "हड़पसर (रिसॉर्ट्स क्षेत्र)"
+  },
+  "Camp": {
+      "en": "Camp",
+      "mr": "कॅम्प",
+      "hi": "कैम्प"
+  },
+  "camp": {
+      "en": "Camp",
+      "mr": "कॅम्प",
+      "hi": "कैम्प"
+  },
+  "Lonavala / Pune Outskirts": {
+      "en": "Lonavala / Pune Outskirts",
+      "mr": "लोणावळा / पुणे उपनगरे",
+      "hi": "लोनावाला / पुणे उपनगर"
+  },
+  "lonavala / pune outskirts": {
+      "en": "Lonavala / Pune Outskirts",
+      "mr": "लोणावळा / पुणे उपनगरे",
+      "hi": "लोनावाला / पुणे उपनगर"
+  },
+  "Andheri": {
+      "en": "Andheri",
+      "mr": "अंधेरी",
+      "hi": "अंधेरी"
+  },
+  "andheri": {
+      "en": "Andheri",
+      "mr": "अंधेरी",
+      "hi": "अंधेरी"
+  },
+  "Powai": {
+      "en": "Powai",
+      "mr": "पवई",
+      "hi": "पवई"
+  },
+  "powai": {
+      "en": "Powai",
+      "mr": "पवई",
+      "hi": "पवई"
+  },
+  "Goregaon": {
+      "en": "Goregaon",
+      "mr": "गोरेगाव",
+      "hi": "गोरेगांव"
+  },
+  "goregaon": {
+      "en": "Goregaon",
+      "mr": "गोरेगाव",
+      "hi": "गोरेगांव"
+  },
+  "Bandra": {
+      "en": "Bandra",
+      "mr": "वांद्रे (बांद्रा)",
+      "hi": "बांद्रा"
+  },
+  "bandra": {
+      "en": "Bandra",
+      "mr": "वांद्रे (बांद्रा)",
+      "hi": "बांद्रा"
+  },
+  "Borivali": {
+      "en": "Borivali",
+      "mr": "बोरिवली",
+      "hi": "बोरीवली"
+  },
+  "borivali": {
+      "en": "Borivali",
+      "mr": "बोरिवली",
+      "hi": "बोरीवली"
+  },
+  "Thane West": {
+      "en": "Thane West",
+      "mr": "ठाणे पश्चिम",
+      "hi": "ठाणे पश्चिम"
+  },
+  "thane west": {
+      "en": "Thane West",
+      "mr": "ठाणे पश्चिम",
+      "hi": "ठाणे पश्चिम"
+  },
+  "Vashi": {
+      "en": "Vashi",
+      "mr": "वाशी",
+      "hi": "वाशी"
+  },
+  "vashi": {
+      "en": "Vashi",
+      "mr": "वाशी",
+      "hi": "वाशी"
+  },
+  "Kharghar": {
+      "en": "Kharghar",
+      "mr": "खारघर",
+      "hi": "खारघर"
+  },
+  "kharghar": {
+      "en": "Kharghar",
+      "mr": "खारघर",
+      "hi": "खारघर"
+  },
+  "Mulund": {
+      "en": "Mulund",
+      "mr": "मुलुंड",
+      "hi": "मुलुंड"
+  },
+  "mulund": {
+      "en": "Mulund",
+      "mr": "मुलुंड",
+      "hi": "मुलुंड"
+  },
+  "Malad": {
+      "en": "Malad",
+      "mr": "मालाड",
+      "hi": "मालाड"
+  },
+  "malad": {
+      "en": "Malad",
+      "mr": "मालाड",
+      "hi": "मालाड"
+  },
+  "Andheri East & West": {
+      "en": "Andheri East & West",
+      "mr": "अंधेरी पूर्व व पश्चिम",
+      "hi": "अंधेरी पूर्व एवं पश्चिम"
+  },
+  "andheri east & west": {
+      "en": "Andheri East & West",
+      "mr": "अंधेरी पूर्व व पश्चिम",
+      "hi": "अंधेरी पूर्व एवं पश्चिम"
+  },
+  "Kandivali": {
+      "en": "Kandivali",
+      "mr": "कांदिवली",
+      "hi": "कांदिवली"
+  },
+  "kandivali": {
+      "en": "Kandivali",
+      "mr": "कांदिवली",
+      "hi": "कांदिवली"
+  },
+  "Chembur": {
+      "en": "Chembur",
+      "mr": "चेंबूर",
+      "hi": "चेंबूर"
+  },
+  "chembur": {
+      "en": "Chembur",
+      "mr": "चेंबूर",
+      "hi": "चेंबूर"
+  },
+  "Thane": {
+      "en": "Thane",
+      "mr": "ठाणे",
+      "hi": "ठाणे"
+  },
+  "thane": {
+      "en": "Thane",
+      "mr": "ठाणे",
+      "hi": "ठाणे"
+  },
+  "Dombivli": {
+      "en": "Dombivli",
+      "mr": "डोंबिवली",
+      "hi": "डोंबिवली"
+  },
+  "dombivli": {
+      "en": "Dombivli",
+      "mr": "डोंबिवली",
+      "hi": "डोंबिवली"
+  },
+  "Navi Mumbai": {
+      "en": "Navi Mumbai",
+      "mr": "नवी मुंबई",
+      "hi": "नवी मुंबई"
+  },
+  "navi mumbai": {
+      "en": "Navi Mumbai",
+      "mr": "नवी मुंबई",
+      "hi": "नवी मुंबई"
+  },
+  "Kurla": {
+      "en": "Kurla",
+      "mr": "कुर्ला",
+      "hi": "कुर्ला"
+  },
+  "kurla": {
+      "en": "Kurla",
+      "mr": "कुर्ला",
+      "hi": "कुर्ला"
+  },
+  "Whitefield": {
+      "en": "Whitefield",
+      "mr": "व्हाईटफील्ड",
+      "hi": "व्हाइटफील्ड"
+  },
+  "whitefield": {
+      "en": "Whitefield",
+      "mr": "व्हाईटफील्ड",
+      "hi": "व्हाइटफील्ड"
+  },
+  "Bellandur": {
+      "en": "Bellandur",
+      "mr": "बेल्लंदूर",
+      "hi": "बेलंदूर"
+  },
+  "bellandur": {
+      "en": "Bellandur",
+      "mr": "बेल्लंदूर",
+      "hi": "बेलंदूर"
+  },
+  "HSR Layout": {
+      "en": "HSR Layout",
+      "mr": "एचएसआर लेआउट",
+      "hi": "एचएसआर लेआउट"
+  },
+  "hsr layout": {
+      "en": "HSR Layout",
+      "mr": "एचएसआर लेआउट",
+      "hi": "एचएसआर लेआउट"
+  },
+  "Electronic City Phase 1 & 2": {
+      "en": "Electronic City Phase 1 & 2",
+      "mr": "इलेक्ट्रॉनिक सिटी फेज १ व २",
+      "hi": "इलेक्ट्रॉनिक सिटी फेज 1 एवं 2"
+  },
+  "electronic city phase 1 & 2": {
+      "en": "Electronic City Phase 1 & 2",
+      "mr": "इलेक्ट्रॉनिक सिटी फेज १ व २",
+      "hi": "इलेक्ट्रॉनिक सिटी फेज 1 एवं 2"
+  },
+  "Sarjapur Road": {
+      "en": "Sarjapur Road",
+      "mr": "सरजापूर रोड",
+      "hi": "सरजापुर रोड"
+  },
+  "sarjapur road": {
+      "en": "Sarjapur Road",
+      "mr": "सरजापूर रोड",
+      "hi": "सरजापुर रोड"
+  },
+  "Marathahalli": {
+      "en": "Marathahalli",
+      "mr": "मराठहल्ली",
+      "hi": "मराठाहल्ली"
+  },
+  "marathahalli": {
+      "en": "Marathahalli",
+      "mr": "मराठहल्ली",
+      "hi": "मराठाहल्ली"
+  },
+  "Indiranagar": {
+      "en": "Indiranagar",
+      "mr": "इंदिरानगर",
+      "hi": "इंदिरानगर"
+  },
+  "indiranagar": {
+      "en": "Indiranagar",
+      "mr": "इंदिरानगर",
+      "hi": "इंदिरानगर"
+  },
+  "Koramangala": {
+      "en": "Koramangala",
+      "mr": "कोरमंगला",
+      "hi": "कोरमंगला"
+  },
+  "koramangala": {
+      "en": "Koramangala",
+      "mr": "कोरमंगला",
+      "hi": "कोरमंगला"
+  },
+  "Hebbal": {
+      "en": "Hebbal",
+      "mr": "हेब्बाल",
+      "hi": "हेब्बल"
+  },
+  "hebbal": {
+      "en": "Hebbal",
+      "mr": "हेब्बाल",
+      "hi": "हेब्बल"
+  },
+  "Yelahanka": {
+      "en": "Yelahanka",
+      "mr": "येलाहंका",
+      "hi": "येलाहंका"
+  },
+  "yelahanka": {
+      "en": "Yelahanka",
+      "mr": "येलाहंका",
+      "hi": "येलाहंका"
+  },
+  "Electronic City": {
+      "en": "Electronic City",
+      "mr": "इलेक्ट्रॉनिक सिटी",
+      "hi": "इलेक्ट्रॉनिक सिटी"
+  },
+  "electronic city": {
+      "en": "Electronic City",
+      "mr": "इलेक्ट्रॉनिक सिटी",
+      "hi": "इलेक्ट्रॉनिक सिटी"
+  },
+  "Kanaka Pura Road": {
+      "en": "Kanaka Pura Road",
+      "mr": "कनकपुरा रोड",
+      "hi": "कनकपुरा रोड"
+  },
+  "kanaka pura road": {
+      "en": "Kanaka Pura Road",
+      "mr": "कनकपुरा रोड",
+      "hi": "कनकपुरा रोड"
+  },
+  "Kanakapura Road": {
+      "en": "Kanakapura Road",
+      "mr": "कनकपुरा रोड",
+      "hi": "कनकपुरा रोड"
+  },
+  "kanakapura road": {
+      "en": "Kanakapura Road",
+      "mr": "कनकपुरा रोड",
+      "hi": "कनकपुरा रोड"
+  },
+  "Hennur": {
+      "en": "Hennur",
+      "mr": "हेन्नूर",
+      "hi": "हेन्नूर"
+  },
+  "hennur": {
+      "en": "Hennur",
+      "mr": "हेन्नूर",
+      "hi": "हेन्नूर"
+  },
+  "Thanisandra": {
+      "en": "Thanisandra",
+      "mr": "थानिसांद्रा",
+      "hi": "थानीसांद्रा"
+  },
+  "thanisandra": {
+      "en": "Thanisandra",
+      "mr": "थानिसांद्रा",
+      "hi": "थानीसांद्रा"
+  },
+  "BTM Layout": {
+      "en": "BTM Layout",
+      "mr": "बीटीएम लेआउट",
+      "hi": "बीटीएम लेआउट"
+  },
+  "btm layout": {
+      "en": "BTM Layout",
+      "mr": "बीटीएम लेआउट",
+      "hi": "बीटीएम लेआउट"
+  },
+  "Sarjapur": {
+      "en": "Sarjapur",
+      "mr": "सरजापूर",
+      "hi": "सरजापुर"
+  },
+  "sarjapur": {
+      "en": "Sarjapur",
+      "mr": "सरजापूर",
+      "hi": "सरजापुर"
+  },
+  "Palace Grounds": {
+      "en": "Palace Grounds",
+      "mr": "पॅलेस ग्राउंड्स",
+      "hi": "पैलेस ग्राउंड्स"
+  },
+  "palace grounds": {
+      "en": "Palace Grounds",
+      "mr": "पॅलेस ग्राउंड्स",
+      "hi": "पैलेस ग्राउंड्स"
+  },
+  "Kanakapura Road Resorts": {
+      "en": "Kanakapura Road Resorts",
+      "mr": "कनकपुरा रोड रिसॉर्ट्स",
+      "hi": "कनकपुरा रोड रिसॉर्ट्स"
+  },
+  "kanakapura road resorts": {
+      "en": "Kanakapura Road Resorts",
+      "mr": "कनकपुरा रोड रिसॉर्ट्स",
+      "hi": "कनकपुरा रोड रिसॉर्ट्स"
+  },
+  "Yelahanka Banquets": {
+      "en": "Yelahanka Banquets",
+      "mr": "येलाहंका बँक्वेट्स",
+      "hi": "येलाहंका बैंक्वेट्स"
+  },
+  "yelahanka banquets": {
+      "en": "Yelahanka Banquets",
+      "mr": "येलाहंका बँक्वेट्स",
+      "hi": "येलाहंका बैंक्वेट्स"
+  },
+  "Whitefield Convention Centers": {
+      "en": "Whitefield Convention Centers",
+      "mr": "व्हाईटफील्ड कन्व्हेन्शन सेंटर्स",
+      "hi": "व्हाइटफील्ड कन्वेंशन सेंटर्स"
+  },
+  "whitefield convention centers": {
+      "en": "Whitefield Convention Centers",
+      "mr": "व्हाईटफील्ड कन्व्हेन्शन सेंटर्स",
+      "hi": "व्हाइटफील्ड कन्वेंशन सेंटर्स"
+  },
+  "Gachibowli": {
+      "en": "Gachibowli",
+      "mr": "गाचीबोवली",
+      "hi": "गाचीबोवली"
+  },
+  "gachibowli": {
+      "en": "Gachibowli",
+      "mr": "गाचीबोवली",
+      "hi": "गाचीबोवली"
+  },
+  "Hitec City": {
+      "en": "Hitec City",
+      "mr": "हायटेक सिटी",
+      "hi": "हाईटेक सिटी"
+  },
+  "hitec city": {
+      "en": "Hitec City",
+      "mr": "हायटेक सिटी",
+      "hi": "हाईटेक सिटी"
+  },
+  "Kondapur": {
+      "en": "Kondapur",
+      "mr": "कोंडापूर",
+      "hi": "कोंडापुर"
+  },
+  "kondapur": {
+      "en": "Kondapur",
+      "mr": "कोंडापूर",
+      "hi": "कोंडापुर"
+  },
+  "Madhapur": {
+      "en": "Madhapur",
+      "mr": "माधापूर",
+      "hi": "माधापुर"
+  },
+  "madhapur": {
+      "en": "Madhapur",
+      "mr": "माधापूर",
+      "hi": "माधापुर"
+  },
+  "Kukatpally": {
+      "en": "Kukatpally",
+      "mr": "कुकाटपल्ली",
+      "hi": "कुकाटपल्ली"
+  },
+  "kukatpally": {
+      "en": "Kukatpally",
+      "mr": "कुकाटपल्ली",
+      "hi": "कुकाटपल्ली"
+  },
+  "Manikonda": {
+      "en": "Manikonda",
+      "mr": "मणिकोंडा",
+      "hi": "मणिकोंडा"
+  },
+  "manikonda": {
+      "en": "Manikonda",
+      "mr": "मणिकोंडा",
+      "hi": "मणिकोंडा"
+  },
+  "Banjara Hills": {
+      "en": "Banjara Hills",
+      "mr": "बंजारा हिल्स",
+      "hi": "बंजारा हिल्स"
+  },
+  "banjara hills": {
+      "en": "Banjara Hills",
+      "mr": "बंजारा हिल्स",
+      "hi": "बंजारा हिल्स"
+  },
+  "Jubilee Hills": {
+      "en": "Jubilee Hills",
+      "mr": "ज्युबिली हिल्स",
+      "hi": "जुबली हिल्स"
+  },
+  "jubilee hills": {
+      "en": "Jubilee Hills",
+      "mr": "ज्युबिली हिल्स",
+      "hi": "जुबली हिल्स"
+  },
+  "Nallagandla": {
+      "en": "Nallagandla",
+      "mr": "नल्लागंदला",
+      "hi": "नल्लागंदला"
+  },
+  "nallagandla": {
+      "en": "Nallagandla",
+      "mr": "नल्लागंदला",
+      "hi": "नल्लागंदला"
+  },
+  "Miyapur": {
+      "en": "Miyapur",
+      "mr": "मियापूर",
+      "hi": "मियापुर"
+  },
+  "miyapur": {
+      "en": "Miyapur",
+      "mr": "मियापूर",
+      "hi": "मियापुर"
+  },
+  "Tellapur": {
+      "en": "Tellapur",
+      "mr": "तेल्लापूर",
+      "hi": "तेल्लापुर"
+  },
+  "tellapur": {
+      "en": "Tellapur",
+      "mr": "तेल्लापूर",
+      "hi": "तेल्लापुर"
+  },
+  "Trimbakeshwar Temple Kshetra": {
+      "en": "Trimbakeshwar Temple Kshetra",
+      "mr": "त्र्यंबकेश्वर मंदिर क्षेत्र",
+      "hi": "त्र्यंबकेश्वर मंदिर क्षेत्र"
+  },
+  "trimbakeshwar temple kshetra": {
+      "en": "Trimbakeshwar Temple Kshetra",
+      "mr": "त्र्यंबकेश्वर मंदिर क्षेत्र",
+      "hi": "त्र्यंबकेश्वर मंदिर क्षेत्र"
+  },
+  "Kushavarta Kund": {
+      "en": "Kushavarta Kund",
+      "mr": "कुशावर्त कुंड",
+      "hi": "कुशावर्त कुंड"
+  },
+  "kushavarta kund": {
+      "en": "Kushavarta Kund",
+      "mr": "कुशावर्त कुंड",
+      "hi": "कुशावर्त कुंड"
+  },
+  "Godavari Ghats": {
+      "en": "Godavari Ghats",
+      "mr": "गोदावरी घाट",
+      "hi": "गोदावरी घाट"
+  },
+  "godavari ghats": {
+      "en": "Godavari Ghats",
+      "mr": "गोदावरी घाट",
+      "hi": "गोदावरी घाट"
+  },
+  "Ramkund Nashik": {
+      "en": "Ramkund Nashik",
+      "mr": "रामकुंड नाशिक",
+      "hi": "रामकुंड नासिक"
+  },
+  "ramkund nashik": {
+      "en": "Ramkund Nashik",
+      "mr": "रामकुंड नाशिक",
+      "hi": "रामकुंड नासिक"
+  },
+  "Panchavati": {
+      "en": "Panchavati",
+      "mr": "पंचवटी",
+      "hi": "पंचवटी"
+  },
+  "panchavati": {
+      "en": "Panchavati",
+      "mr": "पंचवटी",
+      "hi": "पंचवटी"
+  },
+  "Pan-India": {
+      "en": "Pan-India",
+      "mr": "अखिल भारत",
+      "hi": "संपूर्ण भारत"
+  },
+  "pan-india": {
+      "en": "Pan-India",
+      "mr": "अखिल भारत",
+      "hi": "संपूर्ण भारत"
+  },
+  "USA & Canada": {
+      "en": "USA & Canada",
+      "mr": "अमेरिका व कॅनडा",
+      "hi": "अमेरिका एवं कनाडा"
+  },
+  "usa & canada": {
+      "en": "USA & Canada",
+      "mr": "अमेरिका व कॅनडा",
+      "hi": "अमेरिका एवं कनाडा"
+  },
+  "UK & Europe": {
+      "en": "UK & Europe",
+      "mr": "युके व युरोप",
+      "hi": "यूके एवं यूरोप"
+  },
+  "uk & europe": {
+      "en": "UK & Europe",
+      "mr": "युके व युरोप",
+      "hi": "यूके एवं यूरोप"
+  },
+  "UAE & Gulf": {
+      "en": "UAE & Gulf",
+      "mr": "युएई व आखाती देश",
+      "hi": "यूएई एवं खाड़ी देश"
+  },
+  "uae & gulf": {
+      "en": "UAE & Gulf",
+      "mr": "युएई व आखाती देश",
+      "hi": "यूएई एवं खाड़ी देश"
+  },
+  "Australia & Singapore": {
+      "en": "Australia & Singapore",
+      "mr": "ऑस्ट्रेलिया व सिंगापूर",
+      "hi": "ऑस्ट्रेलिया एवं सिंगापुर"
+  },
+  "australia & singapore": {
+      "en": "Australia & Singapore",
+      "mr": "ऑस्ट्रेलिया व सिंगापूर",
+      "hi": "ऑस्ट्रेलिया एवं सिंगापुर"
+  },
+  "Worldwide Devotees": {
+      "en": "Worldwide Devotees",
+      "mr": "जगभरातील भाविक",
+      "hi": "विश्वभर के श्रद्धालु"
+  },
+  "worldwide devotees": {
+      "en": "Worldwide Devotees",
+      "mr": "जगभरातील भाविक",
+      "hi": "विश्वभर के श्रद्धालु"
+  },
+  "South Delhi": {
+      "en": "South Delhi",
+      "mr": "दक्षिण दिल्ली",
+      "hi": "दक्षिण दिल्ली"
+  },
+  "south delhi": {
+      "en": "South Delhi",
+      "mr": "दक्षिण दिल्ली",
+      "hi": "दक्षिण दिल्ली"
+  },
+  "Dwarka": {
+      "en": "Dwarka",
+      "mr": "द्वारका",
+      "hi": "द्वारका"
+  },
+  "dwarka": {
+      "en": "Dwarka",
+      "mr": "द्वारका",
+      "hi": "द्वारका"
+  },
+  "Noida": {
+      "en": "Noida",
+      "mr": "नोएडा",
+      "hi": "नोएडा"
+  },
+  "noida": {
+      "en": "Noida",
+      "mr": "नोएडा",
+      "hi": "नोएडा"
+  },
+  "Gurugram": {
+      "en": "Gurugram",
+      "mr": "गुरुग्राम",
+      "hi": "गुरुग्राम"
+  },
+  "gurugram": {
+      "en": "Gurugram",
+      "mr": "गुरुग्राम",
+      "hi": "गुरुग्राम"
+  },
+  "Rohini": {
+      "en": "Rohini",
+      "mr": "रोहिणी",
+      "hi": "रोहिणी"
+  },
+  "rohini": {
+      "en": "Rohini",
+      "mr": "रोहिणी",
+      "hi": "रोहिणी"
+  },
+  "Ghaziabad": {
+      "en": "Ghaziabad",
+      "mr": "गाझियाबाद",
+      "hi": "गाजियाबाद"
+  },
+  "ghaziabad": {
+      "en": "Ghaziabad",
+      "mr": "गाझियाबाद",
+      "hi": "गाजियाबाद"
+  },
+  "Janakpuri": {
+      "en": "Janakpuri",
+      "mr": "जनकपुरी",
+      "hi": "जनकपुरी"
+  },
+  "janakpuri": {
+      "en": "Janakpuri",
+      "mr": "जनकपुरी",
+      "hi": "जनकपुरी"
+  },
+  "Greater Noida": {
+      "en": "Greater Noida",
+      "mr": "ग्रेटर नोएडा",
+      "hi": "ग्रेटर नोएडा"
+  },
+  "greater noida": {
+      "en": "Greater Noida",
+      "mr": "ग्रेटर नोएडा",
+      "hi": "ग्रेटर नोएडा"
+  },
+  "OMR": {
+      "en": "OMR",
+      "mr": "ओएमआर (OMR)",
+      "hi": "ओएमआर (OMR)"
+  },
+  "omr": {
+      "en": "OMR",
+      "mr": "ओएमआर (OMR)",
+      "hi": "ओएमआर (OMR)"
+  },
+  "Velachery": {
+      "en": "Velachery",
+      "mr": "वेलाचेरी",
+      "hi": "वेलाचेरी"
+  },
+  "velachery": {
+      "en": "Velachery",
+      "mr": "वेलाचेरी",
+      "hi": "वेलाचेरी"
+  },
+  "Anna Nagar": {
+      "en": "Anna Nagar",
+      "mr": "अण्णा नगर",
+      "hi": "अन्ना नगर"
+  },
+  "anna nagar": {
+      "en": "Anna Nagar",
+      "mr": "अण्णा नगर",
+      "hi": "अन्ना नगर"
+  },
+  "T Nagar": {
+      "en": "T Nagar",
+      "mr": "टी नगर",
+      "hi": "टी नगर"
+  },
+  "t nagar": {
+      "en": "T Nagar",
+      "mr": "टी नगर",
+      "hi": "टी नगर"
+  },
+  "Adyar": {
+      "en": "Adyar",
+      "mr": "अड्यार",
+      "hi": "अड्यार"
+  },
+  "adyar": {
+      "en": "Adyar",
+      "mr": "अड्यार",
+      "hi": "अड्यार"
+  },
+  "Sholinganallur": {
+      "en": "Sholinganallur",
+      "mr": "शोलिंगनल्लूर",
+      "hi": "शोलिंगनल्लूर"
+  },
+  "sholinganallur": {
+      "en": "Sholinganallur",
+      "mr": "शोलिंगनल्लूर",
+      "hi": "शोलिंगनल्लूर"
+  },
+  "Porur": {
+      "en": "Porur",
+      "mr": "पोरूर",
+      "hi": "पोरूर"
+  },
+  "porur": {
+      "en": "Porur",
+      "mr": "पोरूर",
+      "hi": "पोरूर"
+  },
+  "Thiruvanmiyur": {
+      "en": "Thiruvanmiyur",
+      "mr": "तिरुवान्मियुर",
+      "hi": "तिरुवान्मियुर"
+  },
+  "thiruvanmiyur": {
+      "en": "Thiruvanmiyur",
+      "mr": "तिरुवान्मियुर",
+      "hi": "तिरुवान्मियुर"
+  },
+  "Satellite": {
+      "en": "Satellite",
+      "mr": "सॅटेलाइट",
+      "hi": "सैटेलाइट"
+  },
+  "satellite": {
+      "en": "Satellite",
+      "mr": "सॅटेलाइट",
+      "hi": "सैटेलाइट"
+  },
+  "Bodakdev": {
+      "en": "Bodakdev",
+      "mr": "बोडकदेव",
+      "hi": "बोड़कदेव"
+  },
+  "bodakdev": {
+      "en": "Bodakdev",
+      "mr": "बोडकदेव",
+      "hi": "बोड़कदेव"
+  },
+  "Bopal": {
+      "en": "Bopal",
+      "mr": "बोपल",
+      "hi": "बोपल"
+  },
+  "bopal": {
+      "en": "Bopal",
+      "mr": "बोपल",
+      "hi": "बोपल"
+  },
+  "Prahlad Nagar": {
+      "en": "Prahlad Nagar",
+      "mr": "प्रल्हाद नगर",
+      "hi": "प्रह्लाद नगर"
+  },
+  "prahlad nagar": {
+      "en": "Prahlad Nagar",
+      "mr": "प्रल्हाद नगर",
+      "hi": "प्रह्लाद नगर"
+  },
+  "Vastrapur": {
+      "en": "Vastrapur",
+      "mr": "वस्त्रापूर",
+      "hi": "वस्त्रापुर"
+  },
+  "vastrapur": {
+      "en": "Vastrapur",
+      "mr": "वस्त्रापूर",
+      "hi": "वस्त्रापुर"
+  },
+  "SG Highway": {
+      "en": "SG Highway",
+      "mr": "एसजी हायवे",
+      "hi": "एसजी हाईवे"
+  },
+  "sg highway": {
+      "en": "SG Highway",
+      "mr": "एसजी हायवे",
+      "hi": "एसजी हाईवे"
+  },
+  "Chandkheda": {
+      "en": "Chandkheda",
+      "mr": "चांदखेडा",
+      "hi": "चांदखेड़ा"
+  },
+  "chandkheda": {
+      "en": "Chandkheda",
+      "mr": "चांदखेडा",
+      "hi": "चांदखेड़ा"
+  },
+  "Navrangpura": {
+      "en": "Navrangpura",
+      "mr": "नवरंगपुरा",
+      "hi": "नवरंगपुरा"
+  },
+  "navrangpura": {
+      "en": "Navrangpura",
+      "mr": "नवरंगपुरा",
+      "hi": "नवरंगपुरा"
+  },
+  "Salt Lake": {
+      "en": "Salt Lake",
+      "mr": "सॉल्ट लेक",
+      "hi": "सॉल्ट लेक"
+  },
+  "salt lake": {
+      "en": "Salt Lake",
+      "mr": "सॉल्ट लेक",
+      "hi": "सॉल्ट लेक"
+  },
+  "New Town": {
+      "en": "New Town",
+      "mr": "न्यू टाउन",
+      "hi": "न्यू टाउन"
+  },
+  "new town": {
+      "en": "New Town",
+      "mr": "न्यू टाउन",
+      "hi": "न्यू टाउन"
+  },
+  "Rajarhat": {
+      "en": "Rajarhat",
+      "mr": "राजारहाट",
+      "hi": "राजारहाट"
+  },
+  "rajarhat": {
+      "en": "Rajarhat",
+      "mr": "राजारहाट",
+      "hi": "राजारहाट"
+  },
+  "Ballygunge": {
+      "en": "Ballygunge",
+      "mr": "बालीगंज",
+      "hi": "बालीगंज"
+  },
+  "ballygunge": {
+      "en": "Ballygunge",
+      "mr": "बालीगंज",
+      "hi": "बालीगंज"
+  },
+  "Alipore": {
+      "en": "Alipore",
+      "mr": "अलीपूर",
+      "hi": "अलीपुर"
+  },
+  "alipore": {
+      "en": "Alipore",
+      "mr": "अलीपूर",
+      "hi": "अलीपुर"
+  },
+  "Howrah": {
+      "en": "Howrah",
+      "mr": "हावडा",
+      "hi": "हावड़ा"
+  },
+  "howrah": {
+      "en": "Howrah",
+      "mr": "हावडा",
+      "hi": "हावड़ा"
+  },
+  "Kankurgachi": {
+      "en": "Kankurgachi",
+      "mr": "कांकुरगाछी",
+      "hi": "कांकुरगाछी"
+  },
+  "kankurgachi": {
+      "en": "Kankurgachi",
+      "mr": "कांकुरगाछी",
+      "hi": "कांकुरगाछी"
+  },
+  "Garia": {
+      "en": "Garia",
+      "mr": "गारिया",
+      "hi": "गड़िया"
+  },
+  "garia": {
+      "en": "Garia",
+      "mr": "गारिया",
+      "hi": "गड़िया"
   }
 };
 
@@ -954,13 +2207,164 @@ export function getLocalizedServiceDesc(serviceOrId, lang = 'en') {
 
 export function getLocalizedLocationName(locationOrSlug, lang = 'en') {
   if (!locationOrSlug) return '';
-  const slug = typeof locationOrSlug === 'string' ? locationOrSlug : locationOrSlug.slug;
-  const match = LOCATION_NAMES[slug];
-  if (match && match[lang]) {
-    return match[lang];
+  if (lang === 'en') {
+    return typeof locationOrSlug === 'object' ? (locationOrSlug.name || locationOrSlug.slug || '') : locationOrSlug;
+  }
+  const key = typeof locationOrSlug === 'string'
+    ? locationOrSlug
+    : (locationOrSlug.slug || locationOrSlug.name || locationOrSlug.id || '');
+
+  if (LOCATION_NAMES[key] && LOCATION_NAMES[key][lang]) {
+    return LOCATION_NAMES[key][lang];
+  }
+  const normalized = String(key).toLowerCase().trim();
+  if (LOCATION_NAMES[normalized] && LOCATION_NAMES[normalized][lang]) {
+    return LOCATION_NAMES[normalized][lang];
+  }
+  if (LOCATION_NAMES[`pandit-in-${normalized}`] && LOCATION_NAMES[`pandit-in-${normalized}`][lang]) {
+    return LOCATION_NAMES[`pandit-in-${normalized}`][lang];
   }
   if (typeof locationOrSlug === 'object' && locationOrSlug.name) {
+    const byName = LOCATION_NAMES[locationOrSlug.name];
+    if (byName && byName[lang]) return byName[lang];
     return locationOrSlug.name;
   }
-  return slug;
+  return key;
+}
+
+
+
+export function getLocalizedLocationContent(locationOrSlug, lang = 'en') {
+  if (!locationOrSlug || lang === 'en') return null;
+  const raw = typeof locationOrSlug === 'string' ? locationOrSlug : locationOrSlug.slug;
+  if (!raw) return null;
+  let decoded = raw;
+  try {
+    decoded = decodeURIComponent(raw);
+  } catch {
+    decoded = raw;
+  }
+  const slug = decoded.trim().toLowerCase().replace(/^\/locations\//, '').replace(/\/$/, '').replace(/[\s_]+/g, '-');
+  if (!locationContentTranslations[slug]) return null;
+  return locationContentTranslations[slug][lang] || null;
+}
+
+export function getLocalizedDuration(duration, lang = 'en') {
+  if (!duration || lang === 'en') return duration;
+  const d = String(duration).trim();
+  const map = {
+    '1 Hour': { mr: '१ तास', hi: '1 घंटा' },
+    '1.5 Hours': { mr: '१.५ तास', hi: '1.5 घंटे' },
+    '2 Hours': { mr: '२ तास', hi: '2 घंटे' },
+    '2.5 Hours': { mr: '२.५ तास', hi: '2.5 घंटे' },
+    '3 Hours': { mr: '३ तास', hi: '3 घंटे' },
+    '3-4 Hours': { mr: '३-४ तास', hi: '3-4 घंटे' },
+    '4 Hours': { mr: '४ तास', hi: '4 घंटे' },
+    '4-5 Hours': { mr: '४-५ तास', hi: '4-5 घंटे' },
+    '5 Hours': { mr: '५ तास', hi: '5 घंटे' },
+    '5-6 Hours': { mr: '५-६ तास', hi: '5-6 घंटे' },
+    '6 Hours': { mr: '६ तास', hi: '6 घंटे' },
+    'Full Day': { mr: 'संपूर्ण दिवस', hi: 'पूरा दिन' },
+    '24-Hour Continuous': { mr: '२४ तास अखंड', hi: '24 घंटे अखंड' },
+    '2 Days': { mr: '२ दिवस', hi: '2 दिन' },
+    '3 Days': { mr: '३ दिवस', hi: '3 दिन' },
+    'Custom': { mr: 'सानुकूल कालावधी', hi: 'कस्टम अवधि' }
+  };
+  return map[d]?.[lang] || d.replace(/Hours?/i, lang === 'mr' ? 'तास' : 'घंटे');
+}
+
+export function getLocalizedGuideTitle(guideOrSlug, lang = 'en') {
+  if (!guideOrSlug) return '';
+  const slug = typeof guideOrSlug === 'string' ? guideOrSlug : guideOrSlug.slug;
+  if (!slug || lang === 'en') return typeof guideOrSlug === 'object' ? guideOrSlug.title : '';
+  return guideTranslations[slug]?.[lang]?.title || (typeof guideOrSlug === 'object' ? guideOrSlug.title : '');
+}
+
+export function getLocalizedGuideSummary(guideOrSlug, lang = 'en') {
+  if (!guideOrSlug) return '';
+  const slug = typeof guideOrSlug === 'string' ? guideOrSlug : guideOrSlug.slug;
+  if (!slug || lang === 'en') return typeof guideOrSlug === 'object' ? guideOrSlug.summary : '';
+  return guideTranslations[slug]?.[lang]?.summary || (typeof guideOrSlug === 'object' ? guideOrSlug.summary : '');
+}
+
+export function getLocalizedGuideContent(guideOrSlug, lang = 'en') {
+  if (!guideOrSlug || lang === 'en') return null;
+  const slug = typeof guideOrSlug === 'string' ? guideOrSlug : guideOrSlug.slug;
+  if (!slug) return null;
+  return guideTranslations[slug]?.[lang] || null;
+}
+
+export function getLocalizedGuideSections(guideOrSlug, lang = 'en') {
+  if (!guideOrSlug) return [];
+  const slug = typeof guideOrSlug === 'string' ? guideOrSlug : guideOrSlug.slug;
+  if (lang !== 'en' && guideTranslations[slug]?.[lang]?.sections) {
+    return guideTranslations[slug][lang].sections;
+  }
+  return typeof guideOrSlug === 'object' && guideOrSlug.sections ? guideOrSlug.sections : [];
+}
+
+export function getLocalizedGuideFaqs(guideOrSlug, lang = 'en') {
+  if (!guideOrSlug) return [];
+  const slug = typeof guideOrSlug === 'string' ? guideOrSlug : guideOrSlug.slug;
+  if (lang !== 'en' && guideTranslations[slug]?.[lang]?.faqs) {
+    return guideTranslations[slug][lang].faqs;
+  }
+  return typeof guideOrSlug === 'object' && guideOrSlug.faqs ? guideOrSlug.faqs : [];
+}
+
+export function getLocalizedCityPageTitle(pageOrSlug, lang = 'en') {
+  if (!pageOrSlug) return '';
+  const slug = typeof pageOrSlug === 'string' ? pageOrSlug : pageOrSlug.slug;
+  if (!slug || lang === 'en') {
+    const raw = typeof pageOrSlug === 'object' ? (pageOrSlug.title || pageOrSlug.h1) : '';
+    return raw ? raw.split('|')[0].trim() : '';
+  }
+  return cityPageTranslations[slug]?.[lang]?.title || (typeof pageOrSlug === 'object' ? (pageOrSlug.title || pageOrSlug.h1).split('|')[0].trim() : '');
+}
+
+export function getLocalizedCityPageH1(pageOrSlug, lang = 'en') {
+  if (!pageOrSlug) return '';
+  const slug = typeof pageOrSlug === 'string' ? pageOrSlug : pageOrSlug.slug;
+  if (!slug || lang === 'en') return typeof pageOrSlug === 'object' ? pageOrSlug.h1 : '';
+  return cityPageTranslations[slug]?.[lang]?.h1 || (typeof pageOrSlug === 'object' ? pageOrSlug.h1 : '');
+}
+
+export function getLocalizedCityPageTagline(pageOrSlug, lang = 'en') {
+  if (!pageOrSlug) return '';
+  const slug = typeof pageOrSlug === 'string' ? pageOrSlug : pageOrSlug.slug;
+  if (!slug || lang === 'en') return typeof pageOrSlug === 'object' ? pageOrSlug.tagline : '';
+  return cityPageTranslations[slug]?.[lang]?.tagline || (typeof pageOrSlug === 'object' ? pageOrSlug.tagline : '');
+}
+
+export function getLocalizedCityPageOverview(pageOrSlug, lang = 'en') {
+  if (!pageOrSlug || lang === 'en') return null;
+  const slug = typeof pageOrSlug === 'string' ? pageOrSlug : pageOrSlug.slug;
+  return cityPageTranslations[slug]?.[lang]?.overview || null;
+}
+
+export function getLocalizedCityPageHighlights(pageOrSlug, lang = 'en') {
+  if (!pageOrSlug || lang === 'en') return null;
+  const slug = typeof pageOrSlug === 'string' ? pageOrSlug : pageOrSlug.slug;
+  return cityPageTranslations[slug]?.[lang]?.highlights || null;
+}
+
+export function getLocalizedCityPageFaqs(pageOrSlug, lang = 'en') {
+  if (!pageOrSlug || lang === 'en') return null;
+  const slug = typeof pageOrSlug === 'string' ? pageOrSlug : pageOrSlug.slug;
+  return cityPageTranslations[slug]?.[lang]?.faqs || null;
+}
+
+
+export function getLocalizedInsight(text, lang = 'en') {
+  if (!text || lang === 'en') return text;
+  const match = insightsTranslations[text];
+  if (match && match[lang]) return match[lang];
+  return text;
+}
+
+export function getLocalizedPromise(text, lang = 'en') {
+  if (!text || lang === 'en') return text;
+  const match = insightsTranslations[text];
+  if (match && match[lang]) return match[lang];
+  return text;
 }

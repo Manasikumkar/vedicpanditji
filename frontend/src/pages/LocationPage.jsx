@@ -20,10 +20,18 @@ import {
 
 export default function LocationPage({ slug: propSlug }) {
   const { routeParams, navigateTo, openBookingModal, openWhatsAppEnquiry, callHelpline, BRAND_INFO } = useApp();
-  const { lang, locServiceName, locServiceDesc, locLocationName } = useI18n();
+  const { lang, locServiceName, locServiceDesc, locLocationName, locLocationContent, locGuideTitle, locGuideSummary } = useI18n();
   
-  const activeSlug = propSlug || routeParams?.slug || 'pandit-in-pune';
+  const rawSlug = propSlug || routeParams?.slug || 'pandit-in-pune';
+  let decodedSlug = rawSlug;
+  try {
+    decodedSlug = decodeURIComponent(rawSlug);
+  } catch {
+    decodedSlug = rawSlug;
+  }
+  const activeSlug = decodedSlug.trim().toLowerCase().replace(/^\/locations\//, '').replace(/\/$/, '').replace(/[\s_]+/g, '-');
   const location = getLocationBySlug(activeSlug) || getLocationBySlug('pandit-in-pune');
+  const locContent = locLocationContent(location?.slug || activeSlug);
 
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
@@ -52,55 +60,10 @@ export default function LocationPage({ slug: propSlug }) {
   const nearbyLocations = getNearbyLocations(location);
   const relatedGuides = getRelatedGuidesForService('griha-pravesh');
 
-  // Localized intro paragraph
-  const getIntroText = () => {
-    if (lang === 'mr') {
-      return `${locName} आणि परिसरातील सर्व सोसायट्यांमध्ये राहणाऱ्या कुटुंबांसाठी वैदिक पंडित जी द्वारे अस्सल उत्तर भारतीय व बिहारी वैदिक पूजा सेवा थेट घरी पुरवली जाते. गृहप्रवेश, सत्यनारायण कथा, वास्तुशांती, रुद्राभिषेक आणि सर्व प्रकारच्या पवित्र हवनासाठी अनुभवी पुरोहित उपलब्ध आहेत.\n\nसर्व विधी अस्सल संस्कृत मंत्रोच्चार आणि प्रत्येक विधीचे अर्थपूर्ण स्पष्टीकरण देऊन शास्त्रोक्त पद्धतीने संपन्न केले जातात. पूजेसाठी लागणारी १००% शुद्ध वैदिक सामग्री आणि हवन साहित्य पंडितजी स्वतः सोबत आणतात.`;
-    }
-    if (lang === 'hi') {
-      return `${locName} एवं आसपास के सभी क्षेत्रों व सोसायटियों में रहने वाले परिवारों के लिए वैदिक पंडित जी द्वारा प्रामाणिक उत्तर भारतीय एवं बिहारी वैदिक पूजा सेवाएँ सीधे आपके घर पर प्रदान की जाती हैं। गृह प्रवेश, सत्यनारायण कथा, वास्तु शांति, रुद्राभिषेक एवं समस्त प्रकार के वैदिक हवनों हेतु अनुभवी आचार्य उपलब्ध हैं।\n\nसमस्त धार्मिक अनुष्ठान शुद्ध संस्कृत मंत्रोच्चार एवं सुबोध हिंदी कथा वाचन के साथ शास्त्रसम्मत विधि से संपन्न कराए जाते हैं। पूजन के लिए आवश्यक शत-प्रतिशत शुद्ध वैदिक सामग्री एवं हवन कुंड पंडित जी स्वयं साथ लेकर आते हैं।`;
-    }
-    return location.intro;
-  };
-
-  // Localized FAQs
-  const getFaqs = () => {
-    if (lang === 'mr') {
-      return [
-        {
-          q: `पंडितजी ${locName} मधील आमच्या सोसायटीत येतात का?`,
-          a: `होय, आमचे अनुभवी पुरोहित ${locName} आणि परिसरातील सर्व सोसायट्या व घरांमध्ये थेट उपस्थित राहून पूजा संपन्न करतात.`
-        },
-        {
-          q: `फ्लॅट किंवा अपार्टमेंटमध्ये हवन सुरक्षितपणे करता येते का?`,
-          a: `होय. आमचे पंडितजी विशेष तांब्याचे हवन कुंड, सुका आंबा लाकूड आणि गाईचे शुद्ध तूप वापरतात, ज्यामुळे धूर अतिशय कमी होतो आणि विधी पूर्णपणे शास्त्रोक्त होतो.`
-        },
-        {
-          q: `हिंदी व संस्कृत जाणणारे पंडित कसे बुक करावे?`,
-          a: `तुम्ही वेबसाईटवरून थेट चौकशी करू शकता किंवा आमच्या हेल्पलाइनवर कॉल करू शकता. आम्ही तुमच्या गरजेनुसार शुभ मुहूर्त व पुरोहितांचे नियोजन करू.`
-        }
-      ];
-    }
-    if (lang === 'hi') {
-      return [
-        {
-          q: `क्या पंडित जी ${locName} में हमारी सोसायटी में आते हैं?`,
-          a: `हाँ, हमारे अनुभवी पुरोहित ${locName} एवं आसपास की सभी सोसायटियों व घरों में सीधे पहुँचकर पूजा संपन्न कराते हैं।`
-        },
-        {
-          q: `क्या फ्लैट या अपार्टमेंट में हवन सुरक्षित रूप से किया जा सकता है?`,
-          a: `हाँ। हमारे पंडित जी विशेष ताम्र हवन कुंड, सूखी आम की समिधा और शुद्ध गोघृत का उपयोग करते हैं, जिससे धुआँ न्यूनतम रहता है और अनुष्ठान १००% शास्त्रसम्मत होता है।`
-        },
-        {
-          q: `हिंदी एवं संस्कृत भाषी पंडित कैसे बुक करें?`,
-          a: `आप वेबसाइट पर ऑनलाइन पूछताछ भेज सकते हैं या सीधे हमारे हेल्पलाइन नंबर पर संपर्क कर सकते हैं। हम आपकी तिथि अनुसार शुभ मुहूर्त एवं पंडित जी की व्यवस्था करेंगे।`
-        }
-      ];
-    }
-    return location.localFaqs || [];
-  };
-
-  const faqsList = getFaqs();
+  // Bespoke FAQs for this specific locality (translated from English original)
+  const faqsList = (locContent?.localFaqs && locContent.localFaqs.length > 0)
+    ? locContent.localFaqs
+    : (location.localFaqs || []);
 
   return (
     <div style={{ paddingTop: '95px', paddingBottom: '90px', background: 'var(--bg-primary)', minHeight: '100vh' }}>
@@ -156,11 +119,11 @@ export default function LocationPage({ slug: propSlug }) {
             </div>
 
             <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 800, color: 'var(--text-main)', lineHeight: 1.25, marginBottom: '16px' }}>
-              {lang === 'mr' ? `${locName} मध्ये वैदिक पूजा व हवनासाठी अनुभवी पंडित` : lang === 'hi' ? `${locName} में वैदिक पूजा एवं हवन हेतु अनुभवी पंडित` : location.h1}
+              {locContent?.h1 || location.h1}
             </h1>
 
             <p style={{ fontSize: '17px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '28px', fontWeight: 500 }}>
-              {lang === 'mr' ? `${locName} मधील सोसायट्या व कुटुंबांसाठी अस्सल हिंदी व संस्कृत जाणणारे अनुभवी वैदिक पुरोहित.` : lang === 'hi' ? `${locName} की सोसायटियों एवं परिवारों के लिए हिंदी व संस्कृत भाषी वैदिक पुरोहित।` : location.tagline}
+              {locContent?.tagline || location.tagline}
             </p>
 
             {/* Quick Actions */}
@@ -249,7 +212,7 @@ export default function LocationPage({ slug: propSlug }) {
             </div>
 
             <div style={{ fontSize: '15.5px', color: 'var(--text-secondary)', lineHeight: 1.75, whiteSpace: 'pre-line', marginBottom: '30px' }}>
-              {getIntroText()}
+              {locContent?.intro || location.intro}
             </div>
 
             {/* Service Pillars Grid */}
@@ -464,7 +427,7 @@ export default function LocationPage({ slug: propSlug }) {
         </section>
 
         {/* ======================================================== */}
-        {/* 6. VERIFIED LOCAL FAQS */}
+        {/* 6. VERIFIED LOCAL FAQS (BESPOKE TO EACH LOCATION) */}
         {/* ======================================================== */}
         {faqsList && faqsList.length > 0 && (
           <section style={{ marginBottom: '52px' }}>
@@ -588,10 +551,10 @@ export default function LocationPage({ slug: propSlug }) {
                     {guide.categoryName}
                   </span>
                   <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-main)', marginTop: '6px', marginBottom: '10px', lineHeight: 1.4 }}>
-                    {guide.title}
+                    {locGuideTitle(guide) || guide.title}
                   </h3>
                   <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    {guide.summary}
+                    {locGuideSummary(guide) || guide.summary}
                   </p>
                 </div>
 

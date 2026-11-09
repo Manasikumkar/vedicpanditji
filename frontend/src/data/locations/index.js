@@ -18,7 +18,13 @@ export const ALL_LOCATIONS = [
  */
 export function getLocationBySlug(rawSlug) {
   if (!rawSlug) return null;
-  const clean = rawSlug.toLowerCase().trim().replace(/^\/locations\//, '').replace(/\/$/, '');
+  let decoded = rawSlug;
+  try {
+    decoded = decodeURIComponent(rawSlug);
+  } catch {
+    decoded = rawSlug;
+  }
+  const clean = decoded.toLowerCase().trim().replace(/^\/locations\//, '').replace(/\/$/, '').replace(/[\s_]+/g, '-');
   
   // Exact match on slug
   const matched = ALL_LOCATIONS.find(loc => loc.slug === clean || loc.aliasSlug === clean);

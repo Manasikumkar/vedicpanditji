@@ -2,10 +2,10 @@
 // Enforces unique, high-intent titles, meta descriptions, canonical URLs,
 // Open Graph, Twitter cards, and structured data across all indexable routes.
 
-import { ALL_POOJA_SERVICES } from '../data/allPoojaServices';
-import { MULTI_CITY_SEO_PAGES } from '../data/multiCitySeoData';
-import { getLocationBySlug } from '../data/locations';
-import { getGuideBySlug } from '../data/guides/pujaGuidesData';
+import { ALL_POOJA_SERVICES } from '../data/allPoojaServices.js';
+import { MULTI_CITY_SEO_PAGES } from '../data/multiCitySeoData.js';
+import { getLocationBySlug } from '../data/locations/index.js';
+import { getGuideBySlug } from '../data/guides/pujaGuidesData.js';
 import {
   getOrganizationSchema,
   getWebSiteSchema,
@@ -16,9 +16,17 @@ import {
   getBreadcrumbSchema,
   getFaqPageSchema,
   buildSchemaGraph
-} from './schemaGenerator';
-import { generateBreadcrumbs } from './internalLinks';
-import { translate } from '../i18n/index.js';
+} from './schemaGenerator.js';
+import { generateBreadcrumbs } from './internalLinks.js';
+import {
+  translate,
+  getLocalizedLocationContent,
+  getLocalizedLocationName,
+  getLocalizedGuideTitle,
+  getLocalizedGuideSummary,
+  getLocalizedCityPageTitle,
+  getLocalizedCityPageTagline
+} from '../i18n/index.js';
 import { LANGUAGES, DEFAULT_LANG, isTranslatedRoute } from '../i18n/languages.js';
 import { localizePath } from '../i18n/paths.js';
 
@@ -465,13 +473,38 @@ export function getSeoMetadata(route, params = {}, lang = DEFAULT_LANG) {
   if (lang === DEFAULT_LANG) return meta;
   if (!isTranslatedRoute(route)) return { ...meta, robots: 'noindex, follow' };
 
-  const key = route === 'home' ? 'home' : route === 'service-detail' ? 'service' : 'catalogue';
-  const vars = { name: params.serviceId ? serviceNameFor(params.serviceId) : '' };
-  const title = translate(lang, `meta.${key}.title`, vars);
-  const description = translate(lang, `meta.${key}.description`, vars);
-  // translate() returns the key itself when no dictionary has it; use the English page text then
-  const finalTitle = title !== `meta.${key}.title` ? title : meta.title;
-  const finalDescription = description !== `meta.${key}.description` ? description : meta.description;
+  let finalTitle = meta.title;
+  let finalDescription = meta.description;
+
+  if (route === 'location-detail') {
+    const locContent = getLocalizedLocationContent(params.slug, lang);
+    const locName = getLocalizedLocationName(params.slug, lang);
+    if (locContent?.h1) {
+      finalTitle = `${locContent.h1} | ${locName} | VedicPanditji`;
+      finalDescription = locContent.tagline || (locContent.intro ? locContent.intro.slice(0, 155) + '...' : meta.description);
+    }
+  } else if (route === 'puja-guide-detail') {
+    const guideTitle = getLocalizedGuideTitle(params.slug, lang);
+    const guideSummary = getLocalizedGuideSummary(params.slug, lang);
+    if (guideTitle) {
+      finalTitle = `${guideTitle} | VedicPanditji`;
+      finalDescription = guideSummary || meta.description;
+    }
+  } else if (route === 'seo-landing') {
+    const cityTitle = getLocalizedCityPageTitle(params.slug, lang);
+    const cityTagline = getLocalizedCityPageTagline(params.slug, lang);
+    if (cityTitle) {
+      finalTitle = `${cityTitle} | VedicPanditji`;
+      finalDescription = cityTagline || meta.description;
+    }
+  } else {
+    const key = route === 'home' ? 'home' : route === 'service-detail' ? 'service' : (route === 'catalogue' || route === 'services') ? 'catalogue' : route;
+    const vars = { name: params.serviceId ? serviceNameFor(params.serviceId) : '' };
+    const title = translate(lang, `meta.${key}.title`, vars);
+    const description = translate(lang, `meta.${key}.description`, vars);
+    if (title && title !== `meta.${key}.title`) finalTitle = title;
+    if (description && description !== `meta.${key}.description`) finalDescription = description;
+  }
 
   return {
     ...meta,

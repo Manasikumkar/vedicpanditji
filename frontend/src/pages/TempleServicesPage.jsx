@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
+import { useI18n } from '../i18n/useI18n';
 import { TEMPLE_SERVICES } from '../data/vedicPanditData';
 import { submitEnquiryToWebhook, generateSubmissionId } from '../services/webhookService';
 import EnquiryConfirmationView from '../components/common/EnquiryConfirmationView';
@@ -10,8 +11,99 @@ import {
   X
 } from 'lucide-react';
 
+const TEMPLE_TRANSLATIONS = {
+  kashi: {
+    title: {
+      en: 'Kashi / Varanasi Kshetra',
+      hi: 'काशी / वाराणसी क्षेत्र',
+      mr: 'काशी / वाराणसी क्षेत्र'
+    },
+    description: {
+      en: 'The eternal City of Light ruled by Lord Vishwanath on the holy Ganga.',
+      hi: 'पवित्र गंगा तट पर स्थित और भगवान विश्वनाथ के आधिपत्य वाली शाश्वत प्रकाश नगरी।',
+      mr: 'पवित्र गंगेच्या तीरावर वसलेली आणि भगवान विश्वनाथांचे अधिष्ठान असलेली शाश्वत प्रकाशभूमी.'
+    }
+  },
+  gaya: {
+    title: {
+      en: 'Gaya Vishnupad Kshetra',
+      hi: 'गया विष्णुपद क्षेत्र',
+      mr: 'गया विष्णुपद क्षेत्र'
+    },
+    description: {
+      en: 'The supreme place on earth for ancestral redemption where Lord Vishnu personally left his divine footprints.',
+      hi: 'पितरों के उद्धार हेतु पृथ्वी पर सर्वोच्च तीर्थ, जहाँ भगवान विष्णु के चरणचिह्न विद्यमान हैं।',
+      mr: 'पितरांच्या मुक्तीसाठी पृथ्वीवरील सर्वोच्च तीर्थक्षेत्र, जेथे भगवान विष्णूंचे चरणकमल उमटलेले आहेत.'
+    }
+  },
+  trimbakeshwar: {
+    title: {
+      en: 'Trimbakeshwar Jyotirlinga',
+      hi: 'त्र्यंबकेश्वर ज्योतिर्लिंग',
+      mr: 'त्र्यंबकेश्वर ज्योतिर्लिंग'
+    },
+    description: {
+      en: 'Revered source of river Godavari and three-faced Jyotirlinga representing Brahma, Vishnu, and Mahesh.',
+      hi: 'गोदावरी नदी का उद्गम स्थल और ब्रह्मा, विष्णु एवं महेश के त्रिमुख स्वरूप का प्रतिष्ठित ज्योतिर्लिंग।',
+      mr: 'गोदावरी नदीचे उगमस्थान आणि ब्रह्मा, विष्णू, महेश अशा त्रिमुखांचे अधिष्ठान असलेले आदरणीय ज्योतिर्लिंग.'
+    }
+  },
+  rameshwaram: {
+    title: {
+      en: 'Rameswaram Jyotirlinga Kshetra',
+      hi: 'रामेश्वरम ज्योतिर्लिंग क्षेत्र',
+      mr: 'रामेश्वरम ज्योतिर्लिंग क्षेत्र'
+    },
+    description: {
+      en: 'Sacred southern Jyotirlinga consecrated by Lord Rama himself on the Indian Ocean.',
+      hi: 'प्रभु श्रीराम द्वारा स्थापित दक्षिण भारत का परम पावन ज्योतिर्लिंग धाम।',
+      mr: 'प्रभू श्रीरामांनी स्थापित केलेले दक्षिण भारतातील पवित्र ज्योतिर्लिंग धाम.'
+    }
+  }
+};
+
+const RITUAL_TRANSLATIONS = {
+  'Asthi Visarjan at Manikarnika Ghat': {
+    hi: 'मणिकर्णिका घाट पर अस्थि विसर्जन',
+    mr: 'मणिकर्णिका घाटावर अस्थि विसर्जन'
+  },
+  'Kashi Rudrabhishek at Ganga Ghat': {
+    hi: 'गंगा घाट पर काशी रुद्राभिषेक',
+    mr: 'गंगा घाटावर काशी रुद्राभिषेक'
+  },
+  'Gaya Pinda Daan (Vishnupada, Falgu, Akshaya Vata)': {
+    hi: 'गया पिंडदान (विष्णुपद, फल्गु, अक्षय वट)',
+    mr: 'गया पिंडदान (विष्णुपद, फल्गु, अक्षयवट)'
+  },
+  'Kaal Sarp Dosh Nivarana Pooja': {
+    hi: 'कालसर्प दोष निवारण पूजा',
+    mr: 'कालसर्प दोष निवारण पूजा'
+  },
+  'Narayan Nagbali Puja': {
+    hi: 'नारायण नागबली पूजा',
+    mr: 'नारायण नागबली पूजा'
+  },
+  'Tripindi Shradh': {
+    hi: 'त्रिपिंडी श्राद्ध',
+    mr: 'त्रिपिंडी श्राद्ध'
+  },
+  'Asthi Visarjan at Agni Theertham': {
+    hi: 'अग्नि तीर्थम पर अस्थि विसर्जन',
+    mr: 'अग्नि तीर्थम येथे अस्थि विसर्जन'
+  },
+  'Rameswaram Navagraha & Linga Pooja': {
+    hi: 'रामेश्वरम नवग्रह एवं लिंग पूजा',
+    mr: 'रामेश्वरम नवग्रह व लिंग पूजा'
+  },
+  'Kshetra Sankalpam': {
+    hi: 'क्षेत्र संकल्प',
+    mr: 'क्षेत्र संकल्प'
+  }
+};
+
 export default function TempleServicesPage() {
   const { navigateTo, openBookingModal, showToast, user } = useApp();
+  const { lang, t, locLocationName } = useI18n();
 
   const [selectedTempleForSeva, setSelectedTempleForSeva] = useState(null);
   const [selectedRitualName, setSelectedRitualName] = useState('');
@@ -54,7 +146,14 @@ export default function TempleServicesPage() {
     if (isSubmitting) return;
 
     if (!devoteeName.trim() || !devoteePhone.trim()) {
-      showToast('Please enter your name and contact phone number', 'error');
+      showToast(
+        lang === 'mr'
+          ? 'कृपया आपले नाव आणि मोबाईल क्रमांक प्रविष्ट करा'
+          : lang === 'hi'
+            ? 'कृपया अपना नाम एवं फोन नंबर दर्ज करें'
+            : 'Please enter your name and contact phone number',
+        'error'
+      );
       return;
     }
 
@@ -97,14 +196,6 @@ export default function TempleServicesPage() {
 
     setIsSubmitting(false);
     setSubmissionResult(result);
-
-    if (result.success) {
-      showToast('Temple Seva enquiry submitted successfully!');
-    } else if (result.status === 'unavailable' || !result.isConfigured) {
-      showToast('Online enquiry could not be sent. Please contact Panditji via WhatsApp or Phone.', 'warning');
-    } else {
-      showToast(result.message || 'Could not submit enquiry. Please call or WhatsApp Panditji directly.', 'error');
-    }
   };
 
   return (
@@ -113,16 +204,26 @@ export default function TempleServicesPage() {
         {/* Header */}
         <div style={{ maxWidth: '800px', marginBottom: '40px' }}>
           <div style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '10px' }}>
-            <span onClick={() => navigateTo('home')} style={{ cursor: 'pointer' }} className="hover:text-amber-800">Home</span>
+            <span onClick={() => navigateTo('home')} style={{ cursor: 'pointer' }} className="hover:text-amber-800">
+              {lang === 'mr' ? 'मुख्यपृष्ठ' : lang === 'hi' ? 'होम' : 'Home'}
+            </span>
             {' / '}
-            <span style={{ color: 'var(--accent-saffron)', fontWeight: 600 }}>Temple Services & Pilgrimage</span>
+            <span style={{ color: 'var(--accent-saffron)', fontWeight: 600 }}>
+              {lang === 'mr' ? 'तीर्थक्षेत्र पूजा व यात्रा सेवा' : lang === 'hi' ? 'तीर्थ पूजा एवं यात्रा सेवाएँ' : 'Temple Services & Pilgrimage'}
+            </span>
           </div>
-          <span className="section-tag">Sacred Kshetras</span>
+          <span className="section-tag">
+            {lang === 'mr' ? 'पवित्र तीर्थक्षेत्र' : lang === 'hi' ? 'पवित्र तीर्थक्षेत्र' : 'Sacred Kshetras'}
+          </span>
           <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '36px', fontWeight: 800, marginBottom: '14px' }}>
-            Temple Pilgrimage Services &amp; Remote Sevas
+            {lang === 'mr' ? 'तीर्थक्षेत्र पूजा सेवा आणि थेट ई-संकल्प' : lang === 'hi' ? 'तीर्थ यात्रा पूजा सेवाएँ एवं ई-संकल्प' : 'Temple Pilgrimage Services & Remote Sevas'}
           </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '16px', lineHeight: 1.6 }}>
-            VedicPanditji coordinates authentic sacred Kshetra rituals at Kashi, Gaya, Trimbakeshwar, and Rameshwaram through verified Tirtha Purohits, supporting both in-person pilgrimage visits and remote sankalpam with consecrated Prasad courier worldwide.
+            {lang === 'mr'
+              ? 'वैदिकपंडितजी काशी, गया, त्र्यंबकेश्वर आणि रामेश्वरम येथे प्रमाणित तीर्थ पुरोहितांद्वारे शास्त्रोक्त विधी आयोजित करतात, ज्यात प्रत्यक्ष तीर्थदर्शन आणि घरबसल्या संकल्प व जगभरात प्रसाद कुरिअर सुविधेचा समावेश आहे.'
+              : lang === 'hi'
+                ? 'वैदिकपंडितजी काशी, गया, त्र्यंबकेश्वर और रामेश्वरम में प्रमाणित तीर्थ पुरोहितों के माध्यम से प्रामाणिक अनुष्ठानों की व्यवस्था करते हैं, जिसमें प्रत्यक्ष तीर्थ यात्रा एवं दूरस्थ संकल्प व विश्व भर में प्रसाद कूरियर सुविधा शामिल है।'
+                : 'VedicPanditji coordinates authentic sacred Kshetra rituals at Kashi, Gaya, Trimbakeshwar, and Rameshwaram through verified Tirtha Purohits, supporting both in-person pilgrimage visits and remote sankalpam with consecrated Prasad courier worldwide.'}
           </p>
         </div>
 
@@ -159,10 +260,18 @@ export default function TempleServicesPage() {
             </div>
             <div>
               <h3 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '4px' }}>
-                Cannot travel in person? Book an Online E-Puja via Live Zoom
+                {lang === 'mr'
+                  ? 'प्रत्यक्ष प्रवास करणे शक्य नाही? थेट Zoom द्वारे ऑनलाइन ई-पूजा बुक करा'
+                  : lang === 'hi'
+                    ? 'व्यक्तिगत रूप से यात्रा संभव नहीं? लाइव Zoom द्वारा ऑनलाइन ई-पूजा बुक करें'
+                    : 'Cannot travel in person? Book an Online E-Puja via Live Zoom'}
               </h3>
               <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
-                Perform regular home pujas and havans online anywhere in the world. Priests conduct the full sankalpam in your Gotra and Nakshatra.
+                {lang === 'mr'
+                  ? 'जगातील कुठूनही ऑनलाइन घरगुती पूजा व हवन संपन्न करा. पुरोहित आपल्या गोत्र व नक्षत्रात संपूर्ण संकल्प करतात.'
+                  : lang === 'hi'
+                    ? 'विश्व में कहीं भी ऑनलाइन घरेलू पूजा एवं हवन संपन्न करें। पुरोहित आपके गोत्र एवं नक्षत्र में संपूर्ण संकल्प कराते हैं।'
+                    : 'Perform regular home pujas and havans online anywhere in the world. Priests conduct the full sankalpam in your Gotra and Nakshatra.'}
               </p>
             </div>
           </div>
@@ -171,7 +280,7 @@ export default function TempleServicesPage() {
             className="btn-primary"
             style={{ padding: '12px 24px', fontSize: '13px', cursor: 'pointer' }}
           >
-            Book Online E-Puja
+            {lang === 'mr' ? 'ऑनलाइन ई-पूजा बुक करा' : lang === 'hi' ? 'ऑनलाइन ई-पूजा बुक करें' : 'Book Online E-Puja'}
           </button>
         </div>
 
@@ -233,28 +342,28 @@ export default function TempleServicesPage() {
                   }}
                 >
                   <MapPin size={14} color="var(--accent-gold)" />
-                  <span>{temple.location || temple.state}</span>
+                  <span>{locLocationName(temple.location || temple.state)}</span>
                 </div>
               </div>
 
               <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flex: 1 }}>
                 <h3 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '8px' }}>
-                  {temple.title || temple.name}
+                  {TEMPLE_TRANSLATIONS[temple.id]?.title[lang] || temple.title || temple.name}
                 </h3>
                 <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '16px', flex: 1 }}>
-                  {temple.description}
+                  {TEMPLE_TRANSLATIONS[temple.id]?.description[lang] || temple.description}
                 </p>
 
                 {/* Key Rituals Preview */}
                 {temple.rituals && temple.rituals.length > 0 && (
                   <div style={{ marginBottom: '16px', padding: '10px 12px', background: '#FDFBF7', borderRadius: '10px', border: '1px solid #EAE5D9' }}>
                     <div style={{ fontSize: '11px', fontWeight: 700, color: '#BD4B23', textTransform: 'uppercase', marginBottom: '6px' }}>
-                      Available Rituals:
+                      {lang === 'mr' ? 'उपलब्ध विधी:' : lang === 'hi' ? 'उपलब्ध अनुष्ठान:' : 'Available Rituals:'}
                     </div>
                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '12px', color: 'var(--text-secondary)', display: 'flex', flexDirection: 'column', gap: '4px' }}>
                       {temple.rituals.slice(0, 3).map((r, i) => (
                         <li key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                          <span>• {r.name}</span>
+                          <span>• {RITUAL_TRANSLATIONS[r.name]?.[lang] || r.name}</span>
                           <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>₹{r.price.toLocaleString('en-IN')}</span>
                         </li>
                       ))}
@@ -273,7 +382,7 @@ export default function TempleServicesPage() {
                 >
                   <div>
                     <div style={{ fontSize: '11px', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-                      Dakshina &amp; Seva From
+                      {lang === 'mr' ? 'दक्षिणा व सेवा' : lang === 'hi' ? 'दक्षिणा एवं सेवा' : 'Dakshina & Seva From'}
                     </div>
                     <div style={{ fontSize: '18px', fontWeight: 800, color: 'var(--accent-saffron)' }}>
                       ₹{(temple.startingPrice ?? temple.rituals?.[0]?.price ?? 4200)?.toLocaleString('en-IN')}
@@ -284,7 +393,7 @@ export default function TempleServicesPage() {
                     className="btn-primary"
                     style={{ padding: '8px 18px', fontSize: '12px', cursor: 'pointer' }}
                   >
-                    <span>Book Seva</span>
+                    <span>{lang === 'mr' ? 'सेवा बुक करा' : lang === 'hi' ? 'सेवा बुक करें' : 'Book Seva'}</span>
                     <ArrowRight size={13} />
                   </button>
                 </div>
@@ -336,14 +445,14 @@ export default function TempleServicesPage() {
               >
                 <div>
                   <div style={{ fontSize: '11px', fontWeight: 700, color: '#BD4B23', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '2px' }}>
-                    Sacred Pilgrimage Kshetra Seva
+                    {lang === 'mr' ? 'पवित्र तीर्थक्षेत्र सेवा' : lang === 'hi' ? 'पवित्र तीर्थक्षेत्र सेवा' : 'Sacred Pilgrimage Kshetra Seva'}
                   </div>
                   <h3 style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text-main)' }}>
-                    {selectedTempleForSeva.title || selectedTempleForSeva.name}
+                    {TEMPLE_TRANSLATIONS[selectedTempleForSeva.id]?.title[lang] || selectedTempleForSeva.title || selectedTempleForSeva.name}
                   </h3>
                   <div style={{ fontSize: '12px', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '4px', marginTop: '2px' }}>
                     <MapPin size={12} color="var(--accent-gold)" />
-                    <span>{selectedTempleForSeva.location || selectedTempleForSeva.state}</span>
+                    <span>{locLocationName(selectedTempleForSeva.location || selectedTempleForSeva.state)}</span>
                   </div>
                 </div>
                 <button
@@ -384,7 +493,7 @@ export default function TempleServicesPage() {
                     {/* Ritual Select */}
                     <div>
                       <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, marginBottom: '6px', color: 'var(--text-main)' }}>
-                        Select Sacred Ritual *
+                        {lang === 'mr' ? 'पवित्र विधी निवडा *' : lang === 'hi' ? 'पवित्र अनुष्ठान चुनें *' : 'Select Sacred Ritual *'}
                       </label>
                       <select
                         value={selectedRitualName}
@@ -401,7 +510,7 @@ export default function TempleServicesPage() {
                       >
                         {selectedTempleForSeva.rituals?.map((r, i) => (
                           <option key={i} value={r.name}>
-                            {r.name} — ₹{r.price.toLocaleString('en-IN')}
+                            {(RITUAL_TRANSLATIONS[r.name]?.[lang] || r.name)} — ₹{r.price.toLocaleString('en-IN')}
                           </option>
                         ))}
                       </select>
@@ -410,7 +519,7 @@ export default function TempleServicesPage() {
                     {/* Pilgrimage Mode */}
                     <div>
                       <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, marginBottom: '8px', color: 'var(--text-main)' }}>
-                        Participation Mode *
+                        {lang === 'mr' ? 'सहभाग पद्धत *' : lang === 'hi' ? 'सहभागिता का प्रकार *' : 'Participation Mode *'}
                       </label>
                       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
                         <button
@@ -430,10 +539,10 @@ export default function TempleServicesPage() {
                           }}
                         >
                           <span style={{ fontWeight: 700, color: sevaMode === 'Remote Sankalpam & Courier Prasad' ? '#BD4B23' : 'var(--text-main)' }}>
-                            Remote Sankalpam
+                            {lang === 'mr' ? 'दूरस्थ संकल्प' : lang === 'hi' ? 'दूरस्थ संकल्प' : 'Remote Sankalpam'}
                           </span>
                           <span style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
-                            Live video + Prasad courier
+                            {lang === 'mr' ? 'थेट व्हिडिओ + प्रसाद कुरिअर' : lang === 'hi' ? 'लाइव वीडियो + प्रसाद कूरियर' : 'Live video + Prasad courier'}
                           </span>
                         </button>
 
@@ -454,10 +563,10 @@ export default function TempleServicesPage() {
                           }}
                         >
                           <span style={{ fontWeight: 700, color: sevaMode === 'In-Person Pilgrimage Visit' ? '#BD4B23' : 'var(--text-main)' }}>
-                            In-Person Pilgrimage
+                            {lang === 'mr' ? 'प्रत्यक्ष तीर्थदर्शन' : lang === 'hi' ? 'प्रत्यक्ष तीर्थदर्शन' : 'In-Person Pilgrimage'}
                           </span>
                           <span style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
-                            Attend at the Ghat / Kshetra
+                            {lang === 'mr' ? 'घाटावर / क्षेत्रात उपस्थित राहा' : lang === 'hi' ? 'घाट / क्षेत्र में उपस्थित हों' : 'Attend at the Ghat / Kshetra'}
                           </span>
                         </button>
                       </div>
@@ -467,14 +576,14 @@ export default function TempleServicesPage() {
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
                       <div>
                         <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>
-                          Devotee / Yajman Name *
+                          {lang === 'mr' ? 'भक्त / यजमानांचे नाव *' : lang === 'hi' ? 'भक्त / यजमान का नाम *' : 'Devotee / Yajman Name *'}
                         </label>
                         <input
                           type="text"
                           required
                           value={devoteeName}
                           onChange={e => setDevoteeName(e.target.value)}
-                          placeholder="e.g. Ramesh Sharma"
+                          placeholder={lang === 'mr' ? 'उदा. रमेश शर्मा' : lang === 'hi' ? 'उदा. रमेश शर्मा' : 'e.g. Ramesh Sharma'}
                           style={{
                             width: '100%',
                             padding: '10px 12px',
@@ -489,7 +598,7 @@ export default function TempleServicesPage() {
 
                       <div>
                         <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>
-                          Phone Number *
+                          {lang === 'mr' ? 'मोबाईल क्रमांक *' : lang === 'hi' ? 'फोन नंबर *' : 'Phone Number *'}
                         </label>
                         <input
                           type="tel"
@@ -514,13 +623,13 @@ export default function TempleServicesPage() {
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
                       <div>
                         <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>
-                          Gotra / Nakshatra (Optional)
+                          {lang === 'mr' ? 'गोत्र / नक्षत्र (ऐच्छिक)' : lang === 'hi' ? 'गोत्र / नक्षत्र (वैकल्पिक)' : 'Gotra / Nakshatra (Optional)'}
                         </label>
                         <input
                           type="text"
                           value={gotra}
                           onChange={e => setGotra(e.target.value)}
-                          placeholder="e.g. Kashyap / Rohini"
+                          placeholder={lang === 'mr' ? 'उदा. कश्यप / रोहिणी' : lang === 'hi' ? 'उदा. कश्यप / रोहिणी' : 'e.g. Kashyap / Rohini'}
                           style={{
                             width: '100%',
                             padding: '10px 12px',
@@ -535,7 +644,7 @@ export default function TempleServicesPage() {
 
                       <div>
                         <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>
-                          Preferred Date / Tithi
+                          {lang === 'mr' ? 'अपेक्षित तारीख / तिथी' : lang === 'hi' ? 'इच्छित तिथि / दिनांक' : 'Preferred Date / Tithi'}
                         </label>
                         <input
                           type="date"
@@ -557,13 +666,19 @@ export default function TempleServicesPage() {
                     {/* Special Ancestor / Pitru Notes */}
                     <div>
                       <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>
-                        Ancestor / Family Details or Special Instructions
+                        {lang === 'mr' ? 'पितर / कुटुंबाचे नाव किंवा विशेष सूचना' : lang === 'hi' ? 'पितर / परिवार विवरण या विशेष निर्देश' : 'Ancestor / Family Details or Special Instructions'}
                       </label>
                       <textarea
                         rows={2}
                         value={ancestorNotes}
                         onChange={e => setAncestorNotes(e.target.value)}
-                        placeholder="For Pinda Daan / Shradh, mention ancestors names or your travel itinerary."
+                        placeholder={
+                          lang === 'mr'
+                            ? 'पिंडदान / श्राद्धासाठी पितरांची नावे किंवा आपल्या प्रवासाचे नियोजन नमूद करा.'
+                            : lang === 'hi'
+                              ? 'पिंडदान / श्राद्ध हेतु पितरों के नाम अथवा अपनी यात्रा का कार्यक्रम दर्ज करें।'
+                              : 'For Pinda Daan / Shradh, mention ancestors names or your travel itinerary.'
+                        }
                         style={{
                           width: '100%',
                           padding: '10px 12px',
@@ -584,7 +699,9 @@ export default function TempleServicesPage() {
                         className="btn-primary"
                         style={{ flex: 1, padding: '12px 20px', fontSize: '14px', cursor: 'pointer' }}
                       >
-                        <span>Submit Sacred Seva Request</span>
+                        <span>
+                          {lang === 'mr' ? 'पवित्र सेवा विनंती पाठवा' : lang === 'hi' ? 'पवित्र सेवा अनुरोध भेजें' : 'Submit Sacred Seva Request'}
+                        </span>
                         <ArrowRight size={15} />
                       </button>
                       <button
@@ -593,7 +710,7 @@ export default function TempleServicesPage() {
                         className="btn-secondary"
                         style={{ padding: '12px 20px', fontSize: '14px', cursor: 'pointer' }}
                       >
-                        Cancel
+                        {lang === 'mr' ? 'रद्द करा' : lang === 'hi' ? 'रद्द करें' : 'Cancel'}
                       </button>
                     </div>
                   </form>
@@ -616,16 +733,9 @@ export default function TempleServicesPage() {
                       ritualName: selectedRitualName,
                       sevaMode: sevaMode,
                       gotra: gotra,
-                      preferredDate: preferredDate,
-                      ancestorNotes: ancestorNotes
+                      notes: ancestorNotes
                     }}
-                    result={submissionResult}
-                    onRetry={handleSevaSubmit}
-                    onClose={handleCloseSevaModal}
-                    onEdit={() => {
-                      setSevaSubmitted(false);
-                      setSubmissionResult(null);
-                    }}
+                    onReset={handleCloseSevaModal}
                   />
                 )}
               </div>

@@ -52,7 +52,14 @@ export function AppProvider({ children }) {
 
     // 4. Programmatic Location Pages (/locations/:slug)
     if (path.startsWith('/locations/')) {
-      const slug = path.replace('/locations/', '');
+      const rawSlug = path.replace('/locations/', '');
+      let decoded = rawSlug;
+      try {
+        decoded = decodeURIComponent(rawSlug);
+      } catch {
+        decoded = rawSlug;
+      }
+      const slug = decoded.trim().replace(/[\s_]+/g, '-');
       return { route: 'location-detail', params: { slug } };
     }
 

@@ -17,7 +17,7 @@ import {
 
 export default function ServiceDetailPage() {
   const { routeParams, navigateTo, openBookingModal, showToast, selectedCity } = useApp();
-  const { t, lp, lang, locServiceName, locServiceDesc } = useI18n();
+  const { t, lp, lang, locServiceName, locServiceDesc, locCatName, locInsight, locPromise } = useI18n();
 
   // Find service from params or fallback
   const serviceId = routeParams?.serviceId || 'satyanarayan-puja';
@@ -235,11 +235,11 @@ export default function ServiceDetailPage() {
           <div>
             <div className="badge-saffron" style={{ marginBottom: '10px' }}>
               <Sparkles size={12} />
-              <span>{t('service.badge.authentic-ritual')}{service.category?.toUpperCase() || t('service.badge.ceremony')}</span>
+              <span>{t('service.badge.authentic-ritual')}{locCatName(service.category)?.toUpperCase() || t('service.badge.ceremony')}</span>
             </div>
 
             <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '32px', fontWeight: 800, marginBottom: '14px', color: 'var(--text-main)' }}>
-              {service.name}
+              {locServiceName(service)}
             </h1>
 
             {/* Dakshina Range / Custom Quote Display */}
@@ -271,7 +271,7 @@ export default function ServiceDetailPage() {
 
             {/* Short Description */}
             <p style={{ fontSize: '14.5px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
-              {service.shortDescription}
+              {locServiceDesc(service)}
             </p>
 
             {/* Key Insights & Our Promise */}
@@ -284,7 +284,7 @@ export default function ServiceDetailPage() {
                   {service.keyInsights?.slice(0, 3).map((ins, i) => (
                     <li key={i} style={{ display: 'flex', gap: '6px' }}>
                       <span style={{ color: 'var(--accent-saffron)' }}>•</span>
-                      <span>{ins}</span>
+                      <span>{locInsight(ins)}</span>
                     </li>
                   ))}
                 </ul>
@@ -298,7 +298,7 @@ export default function ServiceDetailPage() {
                   {service.ourPromise?.slice(0, 3).map((prom, i) => (
                     <li key={i} style={{ display: 'flex', gap: '6px' }}>
                       <span style={{ color: 'var(--accent-gold)' }}>✓</span>
-                      <span>{prom}</span>
+                      <span>{locPromise(prom)}</span>
                     </li>
                   ))}
                 </ul>
@@ -429,7 +429,7 @@ export default function ServiceDetailPage() {
                   {t('service.significance.title-before')}{locServiceName(service)}
                 </h3>
                 <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: '24px', whiteSpace: 'pre-line' }}>
-                  {service.longDescription || service.shortDescription}
+                  {locServiceDesc(service) || service.longDescription || service.shortDescription}
                 </p>
 
                 <h4 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '12px', color: 'var(--text-main)' }}>
@@ -457,7 +457,7 @@ export default function ServiceDetailPage() {
                       }}
                     >
                       <Sparkles size={16} color="var(--accent-saffron)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                      <span>{benefit}</span>
+                      <span>{locInsight(benefit) || benefit}</span>
                     </div>
                   ))}
                 </div>

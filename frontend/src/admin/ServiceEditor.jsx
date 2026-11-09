@@ -20,7 +20,7 @@ import {
   X
 } from 'lucide-react';
 import { TextField, TextList, NumberField, PlainField } from './Fields';
-import { setIn, moveItem, newPackage } from './pricingDoc';
+import { setIn, moveItem, newPackage, lookupAdminTranslation } from './pricingDoc';
 
 const MODELS = ['fixed-price', 'package-pricing', 'custom-quote'];
 const STATUSES = ['approved', 'local-project-data', 'proposed', 'needs-business-confirmation'];
@@ -134,7 +134,7 @@ export default function ServiceEditor({
             <Flame size={24} color="#BD4B23" />
           </div>
           <div>
-            <h2 className="service-heading">{card.serviceName.en}</h2>
+            <h2 className="service-heading">{card.serviceName[lang === 'all' ? 'en' : lang] || lookupAdminTranslation(card.serviceName?.en, lang) || card.serviceName.en}</h2>
           </div>
         </div>
 
@@ -392,10 +392,16 @@ export default function ServiceEditor({
                     <div className="package-card-header" onClick={() => togglePkg(pkg.id)}>
                       <div className="pkg-header-left">
                         <span className="pkg-index-badge">#{i + 1}</span>
-                        <span className="pkg-title-text">{pkg.name.en || '(Unnamed Package)'}</span>
+                        <span className="pkg-title-text">
+                          {(lang !== 'en' && lang !== 'all' ? (pkg.name[lang] || lookupAdminTranslation(pkg.name?.en, lang)) : null) || pkg.name.en || '(Unnamed Package)'}
+                        </span>
                         <code className="pkg-id-tag">{pkg.id}</code>
                         <span className={`tier-badge tier-${pkg.tier}`}>{pkg.tier}</span>
-                        {pkg.badge?.en && <span className="pkg-badge-pill">{pkg.badge.en}</span>}
+                        {((lang !== 'en' && lang !== 'all' ? (pkg.badge?.[lang] || lookupAdminTranslation(pkg.badge?.en, lang)) : null) || pkg.badge?.en) && (
+                          <span className="pkg-badge-pill">
+                            {(lang !== 'en' && lang !== 'all' ? (pkg.badge?.[lang] || lookupAdminTranslation(pkg.badge?.en, lang)) : null) || pkg.badge?.en}
+                          </span>
+                        )}
                         <span className={`pkg-price-pill ${pkg.indicativePrice === null ? 'quote' : isInverted ? 'error' : 'live'}`}>
                           {pkg.indicativePrice === null
                             ? 'Custom Quote'
@@ -557,7 +563,7 @@ export default function ServiceEditor({
                                       checked={isChecked}
                                       onChange={() => handleToggleSamagri(s)}
                                     />
-                                    <span className="chip-name">{s.name.en}</span>
+                                    <span className="chip-name">{s.name[lang === 'all' ? 'en' : lang] || s.name.en}</span>
                                   </div>
                                   <span className="chip-price-badge">
                                     {s.price ? `+₹${s.price.toLocaleString('en-IN')}` : '(₹0 / not set)'}
@@ -672,32 +678,34 @@ export default function ServiceEditor({
                 <div className="mock-top">
                   <div className="mock-icon-title">
                     <Flame size={20} color="#BD4B23" />
-                    <h4>{card.serviceName[lang === 'all' ? 'en' : lang] || card.serviceName.en}</h4>
+                    <h4>{card.serviceName[lang === 'all' ? 'en' : lang] || lookupAdminTranslation(card.serviceName?.en, lang) || card.serviceName.en}</h4>
                   </div>
                   <span className="mock-price-badge">{startingPrice}</span>
                 </div>
 
                 <p className="mock-desc">
-                  {card.pricingNote[lang === 'all' ? 'en' : lang] || card.pricingNote.en || 'Authentic Vedic rituals performed by experienced North Indian purohits.'}
+                  {card.pricingNote[lang === 'all' ? 'en' : lang] || lookupAdminTranslation(card.pricingNote?.en, lang) || card.pricingNote.en || 'Authentic Vedic rituals performed by experienced North Indian purohits.'}
                 </p>
 
                 <div className="mock-packages-preview">
-                  <h5>Available Ceremony Packages:</h5>
+                  <h5>{lang === 'mr' ? 'उपलब्ध पूजा पॅकेजेस:' : lang === 'hi' ? 'उपलब्ध अनुष्ठान पैकेज:' : 'Available Ceremony Packages:'}</h5>
                   <div className="mock-pkg-grid">
                     {card.packages.map((pkg) => (
                       <div className="mock-pkg-card" key={pkg.id}>
                         <div className="mock-pkg-head">
-                          <strong>{pkg.name[lang === 'all' ? 'en' : lang] || pkg.name.en}</strong>
+                          <strong>{pkg.name[lang === 'all' ? 'en' : lang] || lookupAdminTranslation(pkg.name?.en, lang) || pkg.name.en}</strong>
                           <span className="mock-pkg-price">
-                            {pkg.indicativePrice ? `₹${pkg.indicativePrice.toLocaleString('en-IN')}` : 'Custom Quote'}
+                            {pkg.indicativePrice ? `₹${pkg.indicativePrice.toLocaleString('en-IN')}` : (lang === 'mr' ? 'कस्टम कोटेशन' : lang === 'hi' ? 'कस्टम कोटेशन' : 'Custom Quote')}
                           </span>
                         </div>
-                        {pkg.badge && pkg.badge.en && (
-                          <span className="mock-badge">{pkg.badge[lang === 'all' ? 'en' : lang] || pkg.badge.en}</span>
+                        {((lang !== 'en' && lang !== 'all' ? (pkg.badge?.[lang] || lookupAdminTranslation(pkg.badge?.en, lang)) : null) || pkg.badge?.en) && (
+                          <span className="mock-badge">
+                            {(lang !== 'en' && lang !== 'all' ? (pkg.badge?.[lang] || lookupAdminTranslation(pkg.badge?.en, lang)) : null) || pkg.badge?.en}
+                          </span>
                         )}
                         <ul className="mock-inclusions">
                           {(pkg.inclusions || []).slice(0, 3).map((inc, idx) => (
-                            <li key={idx}>✓ {inc[lang === 'all' ? 'en' : lang] || inc.en}</li>
+                            <li key={idx}>✓ {inc[lang === 'all' ? 'en' : lang] || lookupAdminTranslation(inc.en, lang) || inc.en}</li>
                           ))}
                         </ul>
                       </div>
@@ -706,7 +714,9 @@ export default function ServiceEditor({
                 </div>
 
                 <div className="mock-btn-row">
-                  <button type="button" className="mock-cta-btn">Book Ceremony &rarr;</button>
+                  <button type="button" className="mock-cta-btn">
+                    {lang === 'mr' ? 'पंडित बुक करा →' : lang === 'hi' ? 'पंडित बुक करें →' : 'Book Ceremony →'}
+                  </button>
                 </div>
               </div>
             </div>

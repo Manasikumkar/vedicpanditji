@@ -23,14 +23,14 @@ test('homepage links use the bare prefix', () => {
 });
 
 test('untranslated route offers English only and flags the note', () => {
-  const { options, englishOnly } = switcherOptions({ pathname: '/hi/about-us', route: 'about-us', languages });
-  assert.deepEqual(options.map((o) => [o.code, o.href]), [['en', '/about-us']]);
+  const { options, englishOnly } = switcherOptions({ pathname: '/hi/admin', route: 'admin', languages });
+  assert.deepEqual(options.map((o) => [o.code, o.href]), [['en', '/admin']]);
   assert.equal(englishOnly, true);
 });
 
 test('no note when no other language is enabled', () => {
   const onlyEnglish = { ...languages, hi: { ...languages.hi, enabled: false } };
-  const { options, englishOnly } = switcherOptions({ pathname: '/about-us', route: 'about-us', languages: onlyEnglish });
+  const { options, englishOnly } = switcherOptions({ pathname: '/admin', route: 'admin', languages: onlyEnglish });
   assert.equal(options.length, 1);
   assert.equal(englishOnly, false);
 });

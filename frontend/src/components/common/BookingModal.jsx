@@ -21,6 +21,20 @@ import {
   Search
 } from 'lucide-react';
 
+function formatIndicativePrice(priceStr, lang) {
+  if (!priceStr || lang === 'en') return priceStr;
+  if (priceStr.includes('Custom Quote')) {
+    return lang === 'mr' ? 'कस्टम कोटेशन — विधी, तारीख व ठिकाणानुसार' : 'कस्टम कोटेशन — अनुष्ठान, तिथि एवं स्थान अनुसार';
+  }
+  if (lang === 'mr') {
+    return priceStr.replace(/From\s+(₹[\d,]+)\*\s+\(Indicative Starting Dakshina\)/i, '$1* पासून (अंदाजे सुरुवातीची दक्षिणा)');
+  }
+  if (lang === 'hi') {
+    return priceStr.replace(/From\s+(₹[\d,]+)\*\s+\(Indicative Starting Dakshina\)/i, '$1* से शुरू (प्रारंभिक सांकेतिक दक्षिणा)');
+  }
+  return priceStr;
+}
+
 export default function BookingModal() {
   const {
     bookingModalOpen,
@@ -33,7 +47,7 @@ export default function BookingModal() {
     pricingVersion,
     user
   } = useApp();
-  const { t, lang, locServiceName } = useI18n();
+  const { t, lang, locServiceName, locLocationName } = useI18n();
   const samagriOptions = getOptionalSamagriOptions(lang);
 
   // Step names: 'puja' (1) | 'city' (2) | 'packages' (3) | 'samagri' (4) | 'details' (5) | 'confirmation' (6)
@@ -364,10 +378,10 @@ export default function BookingModal() {
                   marginTop: '2px'
                 }}
               >
-                {step === 'puja' && (city ? t('booking.title.puja-for-city', { city }) : t('booking.title.puja'))}
-                {step === 'city' && (currentService ? t('booking.title.city-for-service', { name: currentService.name }) : t('booking.title.city'))}
-                {step === 'packages' && t('booking.title.packages', { name: activeService.name })}
-                {step === 'samagri' && t('booking.title.samagri', { name: activeService.name })}
+                {step === 'puja' && (city ? t('booking.title.puja-for-city', { city: locLocationName(city) }) : t('booking.title.puja'))}
+                {step === 'city' && (currentService ? t('booking.title.city-for-service', { name: locServiceName(currentService) }) : t('booking.title.city'))}
+                {step === 'packages' && t('booking.title.packages', { name: locServiceName(activeService) })}
+                {step === 'samagri' && t('booking.title.samagri', { name: locServiceName(activeService) })}
                 {step === 'details' && t('booking.title.details')}
                 {step === 'confirmation' && t('booking.title.confirmation')}
               </h2>
@@ -497,7 +511,7 @@ export default function BookingModal() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <MapPin size={14} color="#BD4B23" />
                   <span>
-                    {t('booking.service-location')}<strong style={{ color: '#BD4B23' }}>{city}</strong>
+                    {t('booking.service-location')}<strong style={{ color: '#BD4B23' }}>{locLocationName(city)}</strong>
                   </span>
                 </div>
                 <button
@@ -518,7 +532,7 @@ export default function BookingModal() {
               </div>
 
               <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '14px' }}>
-                {t('booking.puja-intro.before')}<strong>{city}</strong>{t('booking.puja-intro.after')}
+                {t('booking.puja-intro.before')}<strong>{locLocationName(city)}</strong>{t('booking.puja-intro.after')}
               </p>
 
               {/* Search Bar */}
@@ -593,10 +607,10 @@ export default function BookingModal() {
                   >
                     <div>
                       <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-main)', marginBottom: '4px' }}>
-                        {svc.name}
+                        {locServiceName(svc)}
                       </div>
                       <div style={{ fontSize: '11px', color: 'var(--text-muted)', lineHeight: 1.4 }}>
-                        {svc.indicativePrice || t('booking.starting-quote')}
+                        {formatIndicativePrice(svc.indicativePrice, lang) || t('booking.starting-quote')}
                       </div>
                     </div>
 
@@ -674,7 +688,7 @@ export default function BookingModal() {
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
                         <MapPin size={14} color={isSelected ? '#BD4B23' : '#78716C'} />
                         <span style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-main)' }}>
-                          {c.name}
+                          {locLocationName(c.name)}
                         </span>
                       </div>
                       <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
@@ -688,7 +702,7 @@ export default function BookingModal() {
               {/* Optional Locality Specification */}
               <div style={{ marginTop: '14px' }}>
                 <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, color: 'var(--text-secondary)', marginBottom: '6px' }}>
-                  {t('booking.locality-label.before')}{city}{t('booking.locality-label.after')}
+                  {t('booking.locality-label.before')}{locLocationName(city)}{t('booking.locality-label.after')}
                 </label>
                 <input
                   type="text"
@@ -763,7 +777,7 @@ export default function BookingModal() {
                 }}
               >
                 <div>
-                  <strong style={{ color: '#BD4B23' }}>{locServiceName(activeService)}</strong>{t('booking.location-sep')}<strong>{city} {locality ? `(${locality})` : ''}</strong>
+                  <strong style={{ color: '#BD4B23' }}>{locServiceName(activeService)}</strong>{t('booking.location-sep')}<strong>{locLocationName(city)} {locality ? `(${locLocationName(locality)})` : ''}</strong>
                 </div>
                 <div style={{ display: 'flex', gap: '10px' }}>
                   <button

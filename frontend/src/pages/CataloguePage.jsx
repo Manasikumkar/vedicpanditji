@@ -34,7 +34,7 @@ export default function CataloguePage() {
     selectedCategory,
     setSelectedCategory
   } = useApp();
-  const { t, lang, locCatName, locServiceName, locServiceDesc } = useI18n();
+  const { t, lang, locCatName, locServiceName, locServiceDesc, locDuration, locInsight } = useI18n();
 
   const [searchTerm, setSearchTerm] = useState('');
   const initialCityName = typeof selectedCity === 'object' && selectedCity !== null ? selectedCity.name : (selectedCity || 'All Cities');
@@ -369,7 +369,7 @@ export default function CataloguePage() {
                     }}
                   >
                     <Clock size={13} />
-                    <span>{service.duration}</span>
+                    <span>{locDuration(service.duration)}</span>
                   </div>
                 </div>
 
@@ -384,7 +384,7 @@ export default function CataloguePage() {
                       cursor: 'pointer'
                     }}
                   >
-                    {service.name}
+                    {locServiceName(service)}
                   </h3>
                   <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.55, marginBottom: '16px', flex: 1 }}>{locServiceDesc(service)}</p>
 
@@ -401,7 +401,7 @@ export default function CataloguePage() {
                         }}
                       >
                         <CheckCircle2 size={13} color="var(--accent-saffron)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                        <span>{ins}</span>
+                        <span>{locInsight(ins)}</span>
                       </div>
                     ))}
                   </div>
