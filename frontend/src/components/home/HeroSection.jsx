@@ -208,7 +208,7 @@ export default function HeroSection() {
               fontFamily: 'var(--font-primary)',
               fontSize: 'clamp(30px, 4.8vw, 50px)',
               fontWeight: 800,
-              lineHeight: 1.16,
+              lineHeight: 1.28,
               color: 'var(--text-main)',
               letterSpacing: '-0.025em',
               marginBottom: '18px'
@@ -506,6 +506,7 @@ export default function HeroSection() {
 
         .hero-title-line-1 {
           display: block;
+          margin-bottom: 4px;
         }
 
         .hero-title-line-2 {
@@ -513,8 +514,10 @@ export default function HeroSection() {
           align-items: baseline;
           flex-wrap: nowrap;
           gap: 10px;
-          min-height: 1.2em;
+          min-height: 1.25em;
           white-space: nowrap;
+          margin-top: 2px;
+          margin-bottom: 8px;
         }
 
         .hero-heading-and {
@@ -594,11 +597,13 @@ export default function HeroSection() {
           }
           .hero-main-title {
             font-size: clamp(26px, 7vw, 34px) !important;
-            line-height: 1.2 !important;
+            line-height: 1.28 !important;
           }
           .hero-title-line-2 {
             flex-wrap: nowrap !important;
             gap: 8px !important;
+            margin-top: 2px !important;
+            margin-bottom: 6px !important;
           }
           .hero-title-line-3 {
             white-space: normal !important;
