@@ -13,6 +13,7 @@ import {
   Sun,
   ArrowRight
 } from 'lucide-react';
+import { useI18n } from '../../i18n/useI18n';
 
 const iconMap = {
   Flame,
@@ -28,6 +29,7 @@ const iconMap = {
 
 export default function ServiceCategories() {
   const { navigateTo, setSelectedCategory } = useApp();
+  const { t, locCatName, locCatTagline, locCatCount } = useI18n();
 
   const handleCategoryClick = (catId) => {
     setSelectedCategory(catId);
@@ -39,10 +41,10 @@ export default function ServiceCategories() {
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <span className="section-tag">Authentic Vedic Offerings</span>
-          <h2 className="section-title">Explore by Puja Categories</h2>
+          <span className="section-tag">{t('home.categories.tag')}</span>
+          <h2 className="section-title">{t('home.categories.title')}</h2>
           <p className="section-desc">
-            Explore authentic Vedic rituals, Havans, and ceremonies conducted by experienced North Indian &amp; Bihari pandits across Pune.
+            {t('home.categories.desc')}
           </p>
         </div>
 
@@ -99,7 +101,7 @@ export default function ServiceCategories() {
                       boxShadow: '0 2px 6px rgba(0,0,0,0.15)'
                     }}
                   >
-                    {cat.count}
+                    {locCatCount(cat) || cat.count}
                   </div>
                   {/* Icon floating */}
                   <div
@@ -134,9 +136,7 @@ export default function ServiceCategories() {
                       marginBottom: '8px',
                       color: 'var(--text-main)'
                     }}
-                  >
-                    {cat.name}
-                  </h3>
+                  >{locCatName(cat)}</h3>
                   <p
                     style={{
                       fontSize: '13px',
@@ -145,9 +145,7 @@ export default function ServiceCategories() {
                       marginBottom: '16px',
                       flex: 1
                     }}
-                  >
-                    {cat.tagline}
-                  </p>
+                  >{locCatTagline(cat)}</p>
 
                   {/* Bottom Action Link */}
                   <div
@@ -161,7 +159,7 @@ export default function ServiceCategories() {
                       marginTop: 'auto'
                     }}
                   >
-                    <span>View All {cat.name}</span>
+                    <span>{`${t('home.categories.view-all')} `}{locCatName(cat)}</span>
                     <ArrowRight size={14} />
                   </div>
                 </div>

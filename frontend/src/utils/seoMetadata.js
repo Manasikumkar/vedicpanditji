@@ -2,10 +2,10 @@
 // Enforces unique, high-intent titles, meta descriptions, canonical URLs,
 // Open Graph, Twitter cards, and structured data across all indexable routes.
 
-import { ALL_POOJA_SERVICES } from '../data/allPoojaServices';
-import { MULTI_CITY_SEO_PAGES } from '../data/multiCitySeoData';
-import { getLocationBySlug } from '../data/locations';
-import { getGuideBySlug } from '../data/guides/pujaGuidesData';
+import { ALL_POOJA_SERVICES } from '../data/allPoojaServices.js';
+import { MULTI_CITY_SEO_PAGES } from '../data/multiCitySeoData.js';
+import { getLocationBySlug } from '../data/locations/index.js';
+import { getGuideBySlug } from '../data/guides/pujaGuidesData.js';
 import {
   getOrganizationSchema,
   getWebSiteSchema,
@@ -16,16 +16,27 @@ import {
   getBreadcrumbSchema,
   getFaqPageSchema,
   buildSchemaGraph
-} from './schemaGenerator';
-import { generateBreadcrumbs } from './internalLinks';
+} from './schemaGenerator.js';
+import { generateBreadcrumbs } from './internalLinks.js';
+import {
+  translate,
+  getLocalizedLocationContent,
+  getLocalizedLocationName,
+  getLocalizedGuideTitle,
+  getLocalizedGuideSummary,
+  getLocalizedCityPageTitle,
+  getLocalizedCityPageTagline
+} from '../i18n/index.js';
+import { LANGUAGES, DEFAULT_LANG, isTranslatedRoute } from '../i18n/languages.js';
+import { localizePath } from '../i18n/paths.js';
 
 const DOMAIN = 'https://vedicpanditji.com';
 const DEFAULT_IMAGE = `${DOMAIN}/images/vedicpanditji-logo.png`;
 
 /**
- * Returns complete SEO metadata object for a given route and parameters
+ * Returns complete English SEO metadata object for a given route and parameters
  */
-export function getSeoMetadata(route, params = {}) {
+function getEnglishSeoMetadata(route, params = {}) {
   // 1. Homepage
   if (route === 'home' || route === '/') {
     const title = 'VedicPanditji | North Indian Pandit Booking & Vedic Puja Services Across India';
@@ -413,6 +424,20 @@ export function getSeoMetadata(route, params = {}) {
     };
   }
 
+  if (route === 'admin') {
+    return {
+      title: 'Admin | VedicPanditji',
+      description: 'Pricing administration.',
+      canonical: `${DOMAIN}/admin`,
+      ogTitle: 'Admin',
+      ogDescription: 'Pricing administration.',
+      ogImage: DEFAULT_IMAGE,
+      ogType: 'website',
+      robots: 'noindex, nofollow',
+      schema: null
+    };
+  }
+
   // 8. 404 Not Found Page
   return {
     title: 'Page Not Found (404) | VedicPanditji',
@@ -424,6 +449,72 @@ export function getSeoMetadata(route, params = {}) {
     ogType: 'website',
     robots: 'noindex, nofollow',
     schema: null
+  };
+}
+
+const IN_LANGUAGE = { en: 'en-IN', hi: 'hi-IN', mr: 'mr-IN' };
+
+const serviceNameFor = (serviceId) => ALL_POOJA_SERVICES.find((s) => s.id === serviceId)?.name || '';
+
+function withInLanguage(schema, lang) {
+  if (!schema?.['@graph']) return schema;
+  return {
+    ...schema,
+    '@graph': schema['@graph'].map((node) =>
+      ['WebPage', 'WebSite', 'Service', 'CollectionPage'].includes(node['@type']) ? { ...node, inLanguage: IN_LANGUAGE[lang] } : node
+    )
+  };
+}
+
+// Metadata for a route in a language. English is unchanged; translated route types get text from the
+// dictionaries and a language-prefixed canonical; every other route keeps its English canonical and is noindex.
+export function getSeoMetadata(route, params = {}, lang = DEFAULT_LANG) {
+  const meta = getEnglishSeoMetadata(route, params);
+  if (lang === DEFAULT_LANG) return meta;
+  if (!isTranslatedRoute(route)) return { ...meta, robots: 'noindex, follow' };
+
+  let finalTitle = meta.title;
+  let finalDescription = meta.description;
+
+  if (route === 'location-detail') {
+    const locContent = getLocalizedLocationContent(params.slug, lang);
+    const locName = getLocalizedLocationName(params.slug, lang);
+    if (locContent?.h1) {
+      finalTitle = `${locContent.h1} | ${locName} | VedicPanditji`;
+      finalDescription = locContent.tagline || (locContent.intro ? locContent.intro.slice(0, 155) + '...' : meta.description);
+    }
+  } else if (route === 'puja-guide-detail') {
+    const guideTitle = getLocalizedGuideTitle(params.slug, lang);
+    const guideSummary = getLocalizedGuideSummary(params.slug, lang);
+    if (guideTitle) {
+      finalTitle = `${guideTitle} | VedicPanditji`;
+      finalDescription = guideSummary || meta.description;
+    }
+  } else if (route === 'seo-landing') {
+    const cityTitle = getLocalizedCityPageTitle(params.slug, lang);
+    const cityTagline = getLocalizedCityPageTagline(params.slug, lang);
+    if (cityTitle) {
+      finalTitle = `${cityTitle} | VedicPanditji`;
+      finalDescription = cityTagline || meta.description;
+    }
+  } else {
+    const key = route === 'home' ? 'home' : route === 'service-detail' ? 'service' : (route === 'catalogue' || route === 'services') ? 'catalogue' : route;
+    const vars = { name: params.serviceId ? serviceNameFor(params.serviceId) : '' };
+    const title = translate(lang, `meta.${key}.title`, vars);
+    const description = translate(lang, `meta.${key}.description`, vars);
+    if (title && title !== `meta.${key}.title`) finalTitle = title;
+    if (description && description !== `meta.${key}.description`) finalDescription = description;
+  }
+
+  return {
+    ...meta,
+    title: finalTitle,
+    description: finalDescription,
+    ogTitle: finalTitle,
+    ogDescription: finalDescription,
+    canonical: `${DOMAIN}${localizePath(new URL(meta.canonical).pathname, lang)}`,
+    robots: LANGUAGES[lang].indexable ? meta.robots : 'noindex, follow',
+    schema: withInLanguage(meta.schema, lang)
   };
 }
 

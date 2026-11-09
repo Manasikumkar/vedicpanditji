@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
 import { getLocationBySlug, getNearbyLocations } from '../data/locations';
 import { getRelatedGuidesForService } from '../utils/internalLinks';
+import { useI18n } from '../i18n/useI18n';
 import {
   MapPin,
   Sparkles,
@@ -19,9 +20,18 @@ import {
 
 export default function LocationPage({ slug: propSlug }) {
   const { routeParams, navigateTo, openBookingModal, openWhatsAppEnquiry, callHelpline, BRAND_INFO } = useApp();
+  const { lang, locServiceName, locServiceDesc, locLocationName, locLocationContent, locGuideTitle, locGuideSummary } = useI18n();
   
-  const activeSlug = propSlug || routeParams?.slug || 'pandit-in-pune';
+  const rawSlug = propSlug || routeParams?.slug || 'pandit-in-pune';
+  let decodedSlug = rawSlug;
+  try {
+    decodedSlug = decodeURIComponent(rawSlug);
+  } catch {
+    decodedSlug = rawSlug;
+  }
+  const activeSlug = decodedSlug.trim().toLowerCase().replace(/^\/locations\//, '').replace(/\/$/, '').replace(/[\s_]+/g, '-');
   const location = getLocationBySlug(activeSlug) || getLocationBySlug('pandit-in-pune');
+  const locContent = locLocationContent(location?.slug || activeSlug);
 
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
@@ -32,16 +42,28 @@ export default function LocationPage({ slug: propSlug }) {
   if (!location) {
     return (
       <div style={{ paddingTop: '120px', paddingBottom: '90px', textAlign: 'center' }}>
-        <h2>Locality Information Not Found</h2>
+        <h2>{lang === 'mr' ? 'ठिकाणाची माहिती आढळली नाही' : lang === 'hi' ? 'स्थान की जानकारी नहीं मिली' : 'Locality Information Not Found'}</h2>
         <button onClick={() => navigateTo('home')} className="btn-primary" style={{ marginTop: '20px' }}>
-          Return to Homepage
+          {lang === 'mr' ? 'मुख्यपृष्ठावर परत जा' : lang === 'hi' ? 'मुखपृष्ठ पर लौटें' : 'Return to Homepage'}
         </button>
       </div>
     );
   }
 
+  const locName = locLocationName(location, lang);
+  const locParentCity = location.parentCity
+    ? (location.parentCity.includes('PCMC')
+        ? (lang === 'mr' ? 'पिंपरी-चिंचवड (PCMC)' : lang === 'hi' ? 'पिंपरी-चिंचवड (PCMC)' : location.parentCity)
+        : (lang === 'mr' ? 'पुणे' : lang === 'hi' ? 'पुणे' : location.parentCity))
+    : '';
+
   const nearbyLocations = getNearbyLocations(location);
   const relatedGuides = getRelatedGuidesForService('griha-pravesh');
+
+  // Bespoke FAQs for this specific locality (translated from English original)
+  const faqsList = (locContent?.localFaqs && locContent.localFaqs.length > 0)
+    ? locContent.localFaqs
+    : (location.localFaqs || []);
 
   return (
     <div style={{ paddingTop: '95px', paddingBottom: '90px', background: 'var(--bg-primary)', minHeight: '100vh' }}>
@@ -53,11 +75,11 @@ export default function LocationPage({ slug: propSlug }) {
         <nav aria-label="Breadcrumb" style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
           <span onClick={() => navigateTo('home')} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px' }} className="hover:text-amber-800">
             <Home size={13} />
-            <span>Home</span>
+            <span>{lang === 'mr' ? 'मुख्यपृष्ठ' : lang === 'hi' ? 'होम' : 'Home'}</span>
           </span>
           <span>/</span>
           <span onClick={() => navigateTo('location-detail', { slug: 'pandit-in-pune' })} style={{ cursor: 'pointer' }} className="hover:text-amber-800">
-            Locations
+            {lang === 'mr' ? 'ठिकाणे' : lang === 'hi' ? 'स्थान' : 'Locations'}
           </span>
           {!location.isParentHub && location.parentCity && (
             <>
@@ -67,12 +89,12 @@ export default function LocationPage({ slug: propSlug }) {
                 style={{ cursor: 'pointer' }}
                 className="hover:text-amber-800"
               >
-                {location.parentCity}
+                {locParentCity || location.parentCity}
               </span>
             </>
           )}
           <span>/</span>
-          <span style={{ color: 'var(--accent-saffron)', fontWeight: 600 }}>{location.name}</span>
+          <span style={{ color: 'var(--accent-saffron)', fontWeight: 600 }}>{locName}</span>
         </nav>
 
         {/* ======================================================== */}
@@ -93,15 +115,15 @@ export default function LocationPage({ slug: propSlug }) {
           <div style={{ maxWidth: '880px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', borderRadius: '9999px', background: 'var(--accent-saffron-light)', color: 'var(--accent-saffron)', fontSize: '12px', fontWeight: 700, marginBottom: '16px', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
               <Sparkles size={14} />
-              <span>{location.badge || 'Verified Doorstep Vedic Priests'}</span>
+              <span>{lang === 'mr' ? `${locName} • पडताळलेले घरपोच वैदिक पुरोहित` : lang === 'hi' ? `${locName} • सत्यापित वैदिक पंडित सेवा` : (location.badge || 'Verified Doorstep Vedic Priests')}</span>
             </div>
 
             <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 800, color: 'var(--text-main)', lineHeight: 1.25, marginBottom: '16px' }}>
-              {location.h1}
+              {locContent?.h1 || location.h1}
             </h1>
 
             <p style={{ fontSize: '17px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '28px', fontWeight: 500 }}>
-              {location.tagline}
+              {locContent?.tagline || location.tagline}
             </p>
 
             {/* Quick Actions */}
@@ -121,7 +143,7 @@ export default function LocationPage({ slug: propSlug }) {
                 }}
               >
                 <CalendarCheck size={18} />
-                <span>Book Pandit in {location.name}</span>
+                <span>{lang === 'mr' ? `${locName} मध्ये पंडित बुक करा` : lang === 'hi' ? `${locName} में पंडित बुक करें` : `Book Pandit in ${location.name}`}</span>
               </button>
 
               <button
@@ -142,7 +164,7 @@ export default function LocationPage({ slug: propSlug }) {
                 }}
               >
                 <MessageCircle size={17} />
-                <span>WhatsApp Panditji</span>
+                <span>{lang === 'mr' ? 'व्हॉट्सअ‍ॅपवर संपर्क करा' : lang === 'hi' ? 'व्हाट्सएप पर संपर्क करें' : 'WhatsApp Panditji'}</span>
               </button>
 
               <button
@@ -185,12 +207,12 @@ export default function LocationPage({ slug: propSlug }) {
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '18px' }}>
               <MapPin size={22} color="var(--accent-saffron)" />
               <h2 style={{ fontSize: '24px', fontWeight: 800, color: 'var(--text-main)' }}>
-                Vedic Pandit Services in {location.name}
+                {lang === 'mr' ? `${locName} मध्ये वैदिक पंडित सेवा` : lang === 'hi' ? `${locName} में वैदिक पंडित सेवाएँ` : `Vedic Pandit Services in ${location.name}`}
               </h2>
             </div>
 
             <div style={{ fontSize: '15.5px', color: 'var(--text-secondary)', lineHeight: 1.75, whiteSpace: 'pre-line', marginBottom: '30px' }}>
-              {location.intro}
+              {locContent?.intro || location.intro}
             </div>
 
             {/* Service Pillars Grid */}
@@ -208,8 +230,12 @@ export default function LocationPage({ slug: propSlug }) {
                   <ShieldCheck size={20} />
                 </div>
                 <div>
-                  <h3 style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-main)', marginBottom: '4px' }}>Native Hindi &amp; Sanskrit</h3>
-                  <p style={{ fontSize: '12.5px', color: 'var(--text-muted)', lineHeight: 1.5 }}>Authentic mantra recitations with full Hindi Katha narration.</p>
+                  <h3 style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-main)', marginBottom: '4px' }}>
+                    {lang === 'mr' ? 'अस्सल हिंदी व संस्कृत' : lang === 'hi' ? 'प्रामाणिक हिंदी एवं संस्कृत' : 'Native Hindi & Sanskrit'}
+                  </h3>
+                  <p style={{ fontSize: '12.5px', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                    {lang === 'mr' ? 'संपूर्ण कथेचे स्पष्टीकरण व अस्सल वैदिक मंत्रोच्चारासह विधी.' : lang === 'hi' ? 'संपूर्ण हिंदी कथा एवं अर्थ सहित शुद्ध वैदिक मंत्रोच्चार।' : 'Authentic mantra recitations with full Hindi Katha narration.'}
+                  </p>
                 </div>
               </div>
 
@@ -218,8 +244,12 @@ export default function LocationPage({ slug: propSlug }) {
                   <Clock size={20} />
                 </div>
                 <div>
-                  <h3 style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-main)', marginBottom: '4px' }}>Strict Muhurat Adherence</h3>
-                  <p style={{ fontSize: '12.5px', color: 'var(--text-muted)', lineHeight: 1.5 }}>Calculated from Hindu Panchang and family Janma Nakshatra.</p>
+                  <h3 style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-main)', marginBottom: '4px' }}>
+                    {lang === 'mr' ? 'अचूक शुभ मुहूर्त' : lang === 'hi' ? 'अचूक शुभ मुहूर्त' : 'Strict Muhurat Adherence'}
+                  </h3>
+                  <p style={{ fontSize: '12.5px', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                    {lang === 'mr' ? 'हिंदू पंचांग व कुटुंबियांच्या जन्म नक्षत्रावर आधारित अचूक वेळ.' : lang === 'hi' ? 'पारंपरिक हिंदू पंचांग एवं जन्म नक्षत्र के आधार पर निर्धारित।' : 'Calculated from Hindu Panchang and family Janma Nakshatra.'}
+                  </p>
                 </div>
               </div>
 
@@ -228,8 +258,12 @@ export default function LocationPage({ slug: propSlug }) {
                   <Sparkles size={20} />
                 </div>
                 <div>
-                  <h3 style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-main)', marginBottom: '4px' }}>100% Pure Samagri</h3>
-                  <p style={{ fontSize: '12.5px', color: 'var(--text-muted)', lineHeight: 1.5 }}>Pure Desi cow ghee, dry mango wood, and herbal havan herbs.</p>
+                  <h3 style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text-main)', marginBottom: '4px' }}>
+                    {lang === 'mr' ? '१००% शुद्ध सामग्री' : lang === 'hi' ? '१००% शुद्ध वैदिक सामग्री' : '100% Pure Samagri'}
+                  </h3>
+                  <p style={{ fontSize: '12.5px', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                    {lang === 'mr' ? 'शुद्ध देशी गायीचे तूप, वाळलेली आंब्याची समिधा व शुद्ध साहित्य.' : lang === 'hi' ? 'शुद्ध देशी गोघृत, सूखी आम की समिधा एवं दुर्लभ जड़ी-बूटियाँ।' : 'Pure Desi cow ghee, dry mango wood, and herbal havan herbs.'}
+                  </p>
                 </div>
               </div>
             </div>
@@ -242,10 +276,10 @@ export default function LocationPage({ slug: propSlug }) {
         <section style={{ marginBottom: '52px' }}>
           <div style={{ marginBottom: '24px' }}>
             <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--accent-saffron)' }}>
-              Sacred Rituals
+              {lang === 'mr' ? 'पवित्र वैदिक विधी' : lang === 'hi' ? 'पवित्र वैदिक अनुष्ठान' : 'Sacred Rituals'}
             </span>
             <h2 style={{ fontSize: '26px', fontWeight: 800, color: 'var(--text-main)', marginTop: '4px' }}>
-              Popular Vedic Pujas Performed in {location.name}
+              {lang === 'mr' ? `${locName} मध्ये केल्या जाणाऱ्या प्रमुख वैदिक पूजा` : lang === 'hi' ? `${locName} में संपन्न होने वाली प्रमुख पूजाएँ` : `Popular Vedic Pujas Performed in ${location.name}`}
             </h2>
           </div>
 
@@ -275,11 +309,11 @@ export default function LocationPage({ slug: propSlug }) {
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
                     <Flame size={18} color="var(--accent-saffron)" />
                     <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--text-main)' }}>
-                      {svc.name}
+                      {locServiceName(svc)}
                     </h3>
                   </div>
                   <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '18px' }}>
-                    {svc.desc}
+                    {locServiceDesc(svc) || svc.desc}
                   </p>
                 </div>
 
@@ -296,7 +330,7 @@ export default function LocationPage({ slug: propSlug }) {
                       cursor: 'pointer'
                     }}
                   >
-                    Enquire for {location.name}
+                    {lang === 'mr' ? `${locName} साठी चौकशी करा` : lang === 'hi' ? `${locName} हेतु पूछताछ करें` : `Enquire for ${location.name}`}
                   </button>
 
                   <button
@@ -314,7 +348,7 @@ export default function LocationPage({ slug: propSlug }) {
                     }}
                     title="View ceremony details"
                   >
-                    View Vidhi
+                    {lang === 'mr' ? 'विधी तपशील' : lang === 'hi' ? 'विधि देखें' : 'View Vidhi'}
                   </button>
                 </div>
               </div>
@@ -336,10 +370,10 @@ export default function LocationPage({ slug: propSlug }) {
         >
           <div style={{ maxWidth: '700px', marginBottom: '28px' }}>
             <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--accent-saffron)' }}>
-              Simple 4-Step Process
+              {lang === 'mr' ? 'सोपी ४-टप्प्यांची पद्धत' : lang === 'hi' ? 'सरल ४-चरणीय प्रक्रिया' : 'Simple 4-Step Process'}
             </span>
             <h2 style={{ fontSize: '24px', fontWeight: 800, color: 'var(--text-main)', marginTop: '4px' }}>
-              How to Arrange a Vedic Pandit in {location.name}
+              {lang === 'mr' ? `${locName} मध्ये वैदिक पंडित कसे बुक करावे` : lang === 'hi' ? `${locName} में वैदिक पंडित कैसे बुक करें` : `How to Arrange a Vedic Pandit in ${location.name}`}
             </h2>
           </div>
 
@@ -352,54 +386,62 @@ export default function LocationPage({ slug: propSlug }) {
           >
             <div style={{ background: '#FFFFFF', padding: '22px', borderRadius: '14px', border: '1px solid var(--border-subtle)' }}>
               <div style={{ fontSize: '20px', fontWeight: 800, color: 'var(--accent-saffron)', marginBottom: '8px' }}>01</div>
-              <h3 style={{ fontSize: '15px', fontWeight: 700, marginBottom: '6px' }}>Enquiry &amp; Gotra Details</h3>
+              <h3 style={{ fontSize: '15px', fontWeight: 700, marginBottom: '6px' }}>
+                {lang === 'mr' ? 'चौकशी व गोत्र माहिती' : lang === 'hi' ? 'पूछताछ एवं गोत्र विवरण' : 'Enquiry & Gotra Details'}
+              </h3>
               <p style={{ fontSize: '12.5px', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
-                Share your ceremony requirement, preferred dates, family Gotra, and apartment locality in {location.name}.
+                {lang === 'mr' ? `तुमची पूजेची गरज, अपेक्षित तारीख, गोत्र आणि ${locName} मधील पत्ता सांगा.` : lang === 'hi' ? `अपनी पूजा आवश्यकता, पसंदीदा तारीख, परिवार का गोत्र और ${locName} का पता साझा करें।` : `Share your ceremony requirement, preferred dates, family Gotra, and apartment locality in ${location.name}.`}
               </p>
             </div>
 
             <div style={{ background: '#FFFFFF', padding: '22px', borderRadius: '14px', border: '1px solid var(--border-subtle)' }}>
               <div style={{ fontSize: '20px', fontWeight: 800, color: 'var(--accent-saffron)', marginBottom: '8px' }}>02</div>
-              <h3 style={{ fontSize: '15px', fontWeight: 700, marginBottom: '6px' }}>Shubh Muhurat Calculation</h3>
+              <h3 style={{ fontSize: '15px', fontWeight: 700, marginBottom: '6px' }}>
+                {lang === 'mr' ? 'मुहूर्त व पंडित नियोजन' : lang === 'hi' ? 'मुहूर्त एवं पंडित निर्धारण' : 'Shubh Muhurat Calculation'}
+              </h3>
               <p style={{ fontSize: '12.5px', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
-                Senior Vedic Acharyas calculate the auspicious Lagna and Tithi matching your family birth stars.
+                {lang === 'mr' ? 'वरिष्ठ आचार्य शुभ मुहूर्त निश्चित करतात आणि अनुभवी उत्तर भारतीय पुरोहितांचे नियोजन करतात.' : lang === 'hi' ? 'वरिष्ठ आचार्य शुभ लग्न मुहूर्त निकालते हैं और योग्य उत्तर भारतीय पंडित नियुक्त करते हैं।' : 'Senior Vedic Acharyas calculate the auspicious Lagna and Tithi matching your family birth stars.'}
               </p>
             </div>
 
             <div style={{ background: '#FFFFFF', padding: '22px', borderRadius: '14px', border: '1px solid var(--border-subtle)' }}>
               <div style={{ fontSize: '20px', fontWeight: 800, color: 'var(--accent-saffron)', marginBottom: '8px' }}>03</div>
-              <h3 style={{ fontSize: '15px', fontWeight: 700, marginBottom: '6px' }}>Samagri Alignment</h3>
+              <h3 style={{ fontSize: '15px', fontWeight: 700, marginBottom: '6px' }}>
+                {lang === 'mr' ? 'शुद्ध साहित्याची तयारी' : lang === 'hi' ? 'शुद्ध सामग्री व्यवस्था' : 'Samagri Alignment'}
+              </h3>
               <p style={{ fontSize: '12.5px', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
-                Panditji coordinates all dry herbs, havan wood, and pure cow ghee. You only keep basic fresh flowers and fruits ready.
+                {lang === 'mr' ? 'पंडितजी संपूर्ण आवश्यक हवन सामग्री, हवन कुंड व पूजेचे साहित्य घेऊन येतात. तुम्ही फक्त ताजी फुले व फळे तयार ठेवा.' : lang === 'hi' ? 'पंडित जी सभी आवश्यक हवन सामग्री, हवन कुंड एवं पूजन द्रव्य साथ लेकर आते हैं। आपको केवल ताजे फूल व फल रखने होते हैं।' : 'Panditji coordinates all dry herbs, havan wood, and pure cow ghee. You only keep basic fresh flowers and fruits ready.'}
               </p>
             </div>
 
             <div style={{ background: '#FFFFFF', padding: '22px', borderRadius: '14px', border: '1px solid var(--border-subtle)' }}>
               <div style={{ fontSize: '20px', fontWeight: 800, color: 'var(--accent-saffron)', marginBottom: '8px' }}>04</div>
-              <h3 style={{ fontSize: '15px', fontWeight: 700, marginBottom: '6px' }}>Auspicious Conduction</h3>
+              <h3 style={{ fontSize: '15px', fontWeight: 700, marginBottom: '6px' }}>
+                {lang === 'mr' ? 'घरी विधी व आशीर्वाद' : lang === 'hi' ? 'गृह अनुष्ठान एवं आशीर्वाद' : 'Auspicious Conduction'}
+              </h3>
               <p style={{ fontSize: '12.5px', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
-                Panditji arrives punctually at your residence to conduct the ritual with authentic Sanskrit chanting and Hindi Katha.
+                {lang === 'mr' ? 'मंत्रोच्चार, हवन, आरती व आदरपूर्वक आशीर्वादाने संपूर्ण विधी संपन्न होतो.' : lang === 'hi' ? 'पंडित जी आपके निवास पर पहुँचकर शुद्ध संस्कृत मंत्रोच्चार एवं हिंदी कथा के साथ अनुष्ठान संपन्न कराते हैं।' : 'Panditji arrives punctually at your residence to conduct the ritual with authentic Sanskrit chanting and Hindi Katha.'}
               </p>
             </div>
           </div>
         </section>
 
         {/* ======================================================== */}
-        {/* 6. VERIFIED LOCAL FAQS */}
+        {/* 6. VERIFIED LOCAL FAQS (BESPOKE TO EACH LOCATION) */}
         {/* ======================================================== */}
-        {location.localFaqs && location.localFaqs.length > 0 && (
+        {faqsList && faqsList.length > 0 && (
           <section style={{ marginBottom: '52px' }}>
             <div style={{ marginBottom: '24px' }}>
               <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--accent-saffron)' }}>
-                Devotee Questions
+                {lang === 'mr' ? 'भक्तांचे प्रश्न' : lang === 'hi' ? 'भक्तों के प्रश्न' : 'Devotee Questions'}
               </span>
               <h2 style={{ fontSize: '26px', fontWeight: 800, color: 'var(--text-main)', marginTop: '4px' }}>
-                Frequently Asked Questions for {location.name}
+                {lang === 'mr' ? `${locName} मध्ये पंडित बुकिंगबाबत वारंवार विचारले जाणारे प्रश्न` : lang === 'hi' ? `${locName} में पंडित बुकिंग संबंधी अक्सर पूछे जाने वाले प्रश्न` : `Frequently Asked Questions for ${location.name}`}
               </h2>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {location.localFaqs.map((faq, index) => {
+              {faqsList.map((faq, index) => {
                 const isOpen = openFaqIndex === index;
                 return (
                   <div
@@ -453,10 +495,10 @@ export default function LocationPage({ slug: propSlug }) {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '22px' }}>
             <div>
               <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--accent-saffron)' }}>
-                Educational Resources
+                {lang === 'mr' ? 'माहितीपूर्ण मार्गदर्शन' : lang === 'hi' ? 'मार्गदर्शक लेख' : 'Educational Resources'}
               </span>
               <h2 style={{ fontSize: '24px', fontWeight: 800, color: 'var(--text-main)', marginTop: '4px' }}>
-                Vedic Puja Guides for Devotees
+                {lang === 'mr' ? 'वैदिक पूजा मार्गदर्शिका' : lang === 'hi' ? 'वैदिक पूजा मार्गदर्शिकाएँ' : 'Vedic Puja Guides for Devotees'}
               </h2>
             </div>
 
@@ -475,7 +517,7 @@ export default function LocationPage({ slug: propSlug }) {
                 cursor: 'pointer'
               }}
             >
-              <span>View All Guides</span>
+              <span>{lang === 'mr' ? 'सर्व मार्गदर्शक पहा' : lang === 'hi' ? 'सभी मार्गदर्शिकाएँ देखें' : 'View All Guides'}</span>
               <ArrowRight size={14} />
             </button>
           </div>
@@ -509,15 +551,15 @@ export default function LocationPage({ slug: propSlug }) {
                     {guide.categoryName}
                   </span>
                   <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-main)', marginTop: '6px', marginBottom: '10px', lineHeight: 1.4 }}>
-                    {guide.title}
+                    {locGuideTitle(guide) || guide.title}
                   </h3>
                   <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    {guide.summary}
+                    {locGuideSummary(guide) || guide.summary}
                   </p>
                 </div>
 
                 <div style={{ marginTop: '16px', display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--accent-saffron)', fontSize: '12.5px', fontWeight: 700 }}>
-                  <span>Read Guide</span>
+                  <span>{lang === 'mr' ? 'पूर्ण वाचा' : lang === 'hi' ? 'पूरा पढ़ें' : 'Read Guide'}</span>
                   <ArrowRight size={14} />
                 </div>
               </div>
@@ -540,10 +582,10 @@ export default function LocationPage({ slug: propSlug }) {
           >
             <div style={{ marginBottom: '18px' }}>
               <h3 style={{ fontSize: '18px', fontWeight: 800, color: 'var(--text-main)' }}>
-                Explore Nearby Localities in {location.parentCity || 'Pune & PCMC'}
+                {lang === 'mr' ? `${locParentCity || 'पुणे व पिंपरी-चिंचवड'} मधील जवळपासचे परिसर` : lang === 'hi' ? `${locParentCity || 'पुणे एवं पिंपरी-चिंचवड'} के आसपास के क्षेत्र` : `Explore Nearby Localities in ${location.parentCity || 'Pune & PCMC'}`}
               </h3>
               <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-                Doorstep North Indian Vedic pandit services available across neighboring areas:
+                {lang === 'mr' ? 'जवळपासच्या सर्व भागांमध्ये उत्तर भारतीय वैदिक पंडित सेवा उपलब्ध आहे:' : lang === 'hi' ? 'आसपास के सभी प्रमुख क्षेत्रों में उत्तर भारतीय वैदिक पंडित सेवा उपलब्ध है:' : 'Doorstep North Indian Vedic pandit services available across neighboring areas:'}
               </p>
             </div>
 
@@ -570,7 +612,7 @@ export default function LocationPage({ slug: propSlug }) {
                   className="hover:border-amber-600 hover:text-amber-800"
                 >
                   <MapPin size={13} color="var(--accent-saffron)" />
-                  <span>Pandit in {nearLoc.name}</span>
+                  <span>{lang === 'mr' ? `${locLocationName(nearLoc, 'mr')} मध्ये पंडित` : lang === 'hi' ? `${locLocationName(nearLoc, 'hi')} में पंडित` : `Pandit in ${nearLoc.name}`}</span>
                 </button>
               ))}
             </div>

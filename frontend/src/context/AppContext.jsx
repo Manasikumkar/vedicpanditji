@@ -5,6 +5,11 @@ import { getLocationBySlug } from '../data/locations';
 import { submitEnquiryToWebhook } from '../services/webhookService';
 import { getSeoMetadata, applySeoMetadataToDom } from '../utils/seoMetadata';
 import { Analytics } from '../utils/analytics';
+import { loadLivePricing } from '../services/pricingService';
+import { prefetchRoute } from '../utils/prefetch';
+import { splitLangPrefix, localizePath } from '../i18n/paths';
+import { DEFAULT_LANG } from '../i18n/languages';
+import { translate } from '../i18n';
 
 const AppContext = createContext();
 
@@ -14,7 +19,7 @@ export function AppProvider({ children }) {
     if (typeof window === 'undefined') return { route: 'home', params: {} };
     
     // Normalize path by removing trailing slash except root
-    const path = window.location.pathname.replace(/\/$/, '') || '/';
+    const path = splitLangPrefix(window.location.pathname).path.replace(/\/$/, '') || '/';
 
     // 1. Root Homepage
     if (path === '/') return { route: 'home', params: {} };
@@ -47,7 +52,14 @@ export function AppProvider({ children }) {
 
     // 4. Programmatic Location Pages (/locations/:slug)
     if (path.startsWith('/locations/')) {
-      const slug = path.replace('/locations/', '');
+      const rawSlug = path.replace('/locations/', '');
+      let decoded = rawSlug;
+      try {
+        decoded = decodeURIComponent(rawSlug);
+      } catch {
+        decoded = rawSlug;
+      }
+      const slug = decoded.trim().replace(/[\s_]+/g, '-');
       return { route: 'location-detail', params: { slug } };
     }
 
@@ -67,6 +79,7 @@ export function AppProvider({ children }) {
     if (path === '/temple-services') return { route: 'temple-services', params: {} };
     if (path === '/legal' || path === '/policies') return { route: 'policies', params: {} };
     if (path === '/sitemap' || path === '/sitemap.html') return { route: 'sitemap', params: {} };
+    if (path === '/admin') return { route: 'admin', params: {} };
     if (path === '/404' || path === '/404.html') return { route: 'not-found', params: {} };
 
     // 7. Any other unknown route triggers dedicated 404 page (no soft-404)
@@ -74,10 +87,12 @@ export function AppProvider({ children }) {
   };
 
   const initialRoute = parseRouteFromLocation();
+  const parseLang = () => (typeof window === 'undefined' ? DEFAULT_LANG : splitLangPrefix(window.location.pathname).lang);
 
   // Navigation State
   const [currentRoute, setCurrentRoute] = useState(initialRoute.route);
   const [routeParams, setRouteParams] = useState(initialRoute.params);
+  const [lang, setLang] = useState(parseLang);
 
   // Synchronize browser history popstate (Back / Forward buttons)
   useEffect(() => {
@@ -85,17 +100,30 @@ export function AppProvider({ children }) {
       const parsed = parseRouteFromLocation();
       setCurrentRoute(parsed.route);
       setRouteParams(parsed.params);
+      setLang(parseLang());
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
+  // Keep <html lang> in step with the URL language and load Devanagari glyphs for hi and mr
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    if (lang !== DEFAULT_LANG && !document.getElementById('vp-devanagari-font')) {
+      const link = document.createElement('link');
+      link.id = 'vp-devanagari-font';
+      link.rel = 'stylesheet';
+      link.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600&display=swap';
+      document.head.appendChild(link);
+    }
+  }, [lang]);
+
   // Update Dynamic SEO Head Tags & Trigger Analytics Pageview on Route Change
   useEffect(() => {
-    const meta = getSeoMetadata(currentRoute, routeParams);
+    const meta = getSeoMetadata(currentRoute, routeParams, lang);
     applySeoMetadataToDom(meta);
-    Analytics.trackPageView(meta.title, window.location.pathname);
-  }, [currentRoute, routeParams]);
+    if (currentRoute !== 'admin') Analytics.trackPageView(meta.title, window.location.pathname);
+  }, [currentRoute, routeParams, lang]);
 
   // Location & Tradition Preferences
   const [selectedCity, setSelectedCity] = useState(CITIES[0]); // Pune
@@ -120,6 +148,14 @@ export function AppProvider({ children }) {
     address: ''
   });
 
+  // Live pricing: bumping the version re-renders every useApp consumer with the new prices
+  const [pricingVersion, setPricingVersion] = useState(0);
+  useEffect(() => {
+    loadLivePricing().then((applied) => {
+      if (applied) setPricingVersion((v) => v + 1);
+    });
+  }, []);
+
   // Toast System
   const [toast, setToast] = useState(null);
 
@@ -132,6 +168,7 @@ export function AppProvider({ children }) {
 
   // Route Navigation Helper with History PushState
   const navigateTo = (route, params = {}) => {
+    try { prefetchRoute(route); } catch {}
     setCurrentRoute(route);
     setRouteParams(params);
     
@@ -153,8 +190,9 @@ export function AppProvider({ children }) {
       else if (route === 'not-found') targetPath = '/404';
       else if (route === 'seo-landing') targetPath = `/services/${params.slug || 'north-indian-pandit-in-pune'}`;
 
-      if (window.location.pathname !== targetPath) {
-        window.history.pushState({ route, params }, '', targetPath);
+      const localizedPath = localizePath(targetPath, lang);
+      if (window.location.pathname !== localizedPath) {
+        window.history.pushState({ route, params }, '', localizedPath);
       }
     }
 
@@ -222,11 +260,11 @@ export function AppProvider({ children }) {
 
     if (result.success) {
       Analytics.trackFormSubmitted('booking_enquiry', enquiryData);
-      showToast('Enquiry received! Senior Vedic Acharyas will review your Shubh Muhurat.');
+      showToast(translate(lang, 'toast.enquiry-received'));
     } else if (result.status === 'unavailable' || !result.isConfigured) {
-      showToast('Online enquiry could not be sent. Please contact Panditji via WhatsApp or Phone.', 'warning');
+      showToast(translate(lang, 'toast.enquiry-not-sent'), 'warning');
     } else {
-      showToast(result.message || 'Could not submit enquiry. Please call or WhatsApp Panditji directly.', 'error');
+      showToast(result.message || translate(lang, 'toast.enquiry-failed'), 'error');
     }
 
     return result;
@@ -235,6 +273,8 @@ export function AppProvider({ children }) {
   return (
     <AppContext.Provider
       value={{
+        pricingVersion,
+        lang,
         BRAND_INFO,
         currentRoute,
         setCurrentRoute,

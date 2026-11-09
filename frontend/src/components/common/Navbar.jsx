@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useApp } from '../../context/AppContext';
 import { BRAND_INFO } from '../../data/vedicPanditData';
 import { animateNavbarEntrance } from '../../utils/gsapAnimations';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useI18n } from '../../i18n/useI18n';
+import { prefetchRoute } from '../../utils/prefetch';
 import {
   Menu,
   X,
@@ -15,6 +18,7 @@ export default function Navbar() {
     navigateTo,
     openBookingModal,
   } = useApp();
+  const { t } = useI18n();
 
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -93,59 +97,63 @@ export default function Navbar() {
             className="vp-brand"
             role="button"
             tabIndex={0}
-            title="VedicPanditji - Authentic Vedic Pujas Across Major Cities"
+            title={t('nav.brand-title')}
           >
             <img
               src="/images/vedicpanditji-logo.png"
-              alt="VedicPanditji logo"
+              alt={t('nav.logo-alt')}
               className="vp-brand-logo-img"
             />
           </div>
 
           {/* 2. CENTER — MAIN NAVIGATION */}
-          <nav className="vp-center-nav" aria-label="Main Navigation">
+          <nav className="vp-center-nav" aria-label={t('nav.main-navigation')}>
             <button
               type="button"
               onClick={() => handleNavClick('home')}
               className={`vp-nav-link ${isNavActive('home') ? 'active' : ''}`}
             >
-              <span>Home</span>
+              <span>{t('nav.home')}</span>
               <span className="vp-nav-indicator" />
             </button>
 
             <button
               type="button"
               onClick={() => handleNavClick('about-us')}
+              onMouseEnter={() => prefetchRoute('about-us')}
               className={`vp-nav-link ${isNavActive('about-us') ? 'active' : ''}`}
             >
-              <span>About Us</span>
+              <span>{t('nav.about-us')}</span>
               <span className="vp-nav-indicator" />
             </button>
 
             <button
               type="button"
               onClick={() => handleNavClick('catalogue')}
+              onMouseEnter={() => prefetchRoute('catalogue')}
               className={`vp-nav-link ${isNavActive('catalogue') ? 'active' : ''}`}
             >
-              <span>Ceremonies</span>
+              <span>{t('nav.ceremonies')}</span>
               <span className="vp-nav-indicator" />
             </button>
 
             <button
               type="button"
               onClick={() => handleNavClick('location-detail', { slug: 'pandit-in-pune' })}
+              onMouseEnter={() => prefetchRoute('location-detail')}
               className={`vp-nav-link ${isNavActive('locations') ? 'active' : ''}`}
             >
-              <span>Locations</span>
+              <span>{t('nav.locations')}</span>
               <span className="vp-nav-indicator" />
             </button>
 
             <button
               type="button"
               onClick={() => handleNavClick('contact')}
+              onMouseEnter={() => prefetchRoute('contact')}
               className={`vp-nav-link ${isNavActive('contact') ? 'active' : ''}`}
             >
-              <span>Contact</span>
+              <span>{t('nav.contact')}</span>
               <span className="vp-nav-indicator" />
             </button>
           </nav>
@@ -157,11 +165,13 @@ export default function Navbar() {
             <a
               href={`tel:${BRAND_INFO.phoneClean}`}
               className="vp-phone-link"
-              title={`Call Vedic Panditji Helpline: ${BRAND_INFO.phone}`}
+              title={t('nav.helpline-title', { phone: BRAND_INFO.phone })}
             >
               <PhoneCall size={13} color="var(--accent-saffron)" />
               <span className="vp-phone-text">{BRAND_INFO.phone}</span>
             </a>
+
+            <LanguageSwitcher />
 
             {/* Primary Action CTA — Book a Pandit */}
             <button
@@ -170,7 +180,7 @@ export default function Navbar() {
               className="vp-book-cta"
             >
               <CalendarCheck size={15} />
-              <span>Book a Pandit</span>
+              <span>{t('nav.book-a-pandit')}</span>
             </button>
 
             {/* Mobile Hamburger Toggle */}
@@ -178,7 +188,7 @@ export default function Navbar() {
               type="button"
               onClick={() => setMobileMenuOpen(true)}
               className="vp-mobile-toggle"
-              aria-label="Open Navigation Menu"
+              aria-label={t('nav.open-menu')}
             >
               <Menu size={22} />
             </button>
@@ -195,14 +205,14 @@ export default function Navbar() {
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
-            aria-label="Mobile Navigation Drawer"
+            aria-label={t('nav.mobile-drawer')}
           >
             {/* Drawer Header */}
             <div className="vp-drawer-header">
               <div className="vp-brand" onClick={() => handleNavClick('home')}>
                 <img
                   src="/images/vedicpanditji-logo.png"
-                  alt="VedicPanditji logo"
+                  alt={t('nav.logo-alt')}
                   className="vp-brand-logo-img-drawer"
                 />
               </div>
@@ -210,11 +220,13 @@ export default function Navbar() {
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
                 className="vp-drawer-close"
-                aria-label="Close menu"
+                aria-label={t('nav.close-menu')}
               >
                 <X size={20} />
               </button>
             </div>
+
+            <LanguageSwitcher inDrawer />
 
             {/* Navigation Links */}
             <nav className="vp-drawer-nav">
@@ -223,7 +235,7 @@ export default function Navbar() {
                 onClick={() => handleNavClick('home')}
                 className={`vp-drawer-link ${isNavActive('home') ? 'active' : ''}`}
               >
-                <span>🏠 Home</span>
+                <span>🏠 {t('nav.home')}</span>
               </button>
 
               <button
@@ -231,7 +243,7 @@ export default function Navbar() {
                 onClick={() => handleNavClick('about-us')}
                 className={`vp-drawer-link ${isNavActive('about-us') ? 'active' : ''}`}
               >
-                <span>✨ About Us</span>
+                <span>✨ {t('nav.about-us')}</span>
               </button>
 
               <button
@@ -239,7 +251,7 @@ export default function Navbar() {
                 onClick={() => handleNavClick('catalogue')}
                 className={`vp-drawer-link ${isNavActive('catalogue') ? 'active' : ''}`}
               >
-                <span>🪔 Ceremonies</span>
+                <span>🪔 {t('nav.ceremonies')}</span>
               </button>
 
               <button
@@ -247,7 +259,7 @@ export default function Navbar() {
                 onClick={() => handleNavClick('location-detail', { slug: 'pandit-in-pune' })}
                 className={`vp-drawer-link ${isNavActive('locations') ? 'active' : ''}`}
               >
-                <span>📍 Pune &amp; PCMC Locations</span>
+                <span>📍 {t('nav.pune-pcmc-locations')}</span>
               </button>
 
               <button
@@ -255,7 +267,7 @@ export default function Navbar() {
                 onClick={() => handleNavClick('faqs')}
                 className={`vp-drawer-link ${isNavActive('faqs') ? 'active' : ''}`}
               >
-                <span>❓ FAQs</span>
+                <span>❓ {t('nav.faqs')}</span>
               </button>
 
               <button
@@ -263,7 +275,7 @@ export default function Navbar() {
                 onClick={() => handleNavClick('contact')}
                 className={`vp-drawer-link ${isNavActive('contact') ? 'active' : ''}`}
               >
-                <span>📞 Contact</span>
+                <span>📞 {t('nav.contact')}</span>
               </button>
             </nav>
 
@@ -278,7 +290,7 @@ export default function Navbar() {
                 className="vp-drawer-book-btn"
               >
                 <CalendarCheck size={16} />
-                <span>Book a Pandit</span>
+                <span>{t('nav.book-a-pandit')}</span>
               </button>
 
               <div className="vp-drawer-contact-row">
@@ -287,7 +299,7 @@ export default function Navbar() {
                   className="vp-drawer-contact-link"
                 >
                   <PhoneCall size={14} color="var(--accent-saffron)" />
-                  <span>Call {BRAND_INFO.phone}</span>
+                  <span>{t('nav.call-phone', { phone: BRAND_INFO.phone })}</span>
                 </a>
               </div>
             </div>
@@ -496,13 +508,23 @@ export default function Navbar() {
           display: none;
           align-items: center;
           justify-content: center;
-          background: none;
-          border: none;
-          color: var(--text-main);
+          background: #FFFFFF;
+          border: 1px solid var(--border-subtle, #EAE5D9);
+          border-radius: 10px;
+          color: var(--text-main, #1A1613);
           padding: 6px;
-          min-width: 44px;
-          min-height: 44px;
+          min-width: 40px;
+          min-height: 40px;
           cursor: pointer;
+          flex-shrink: 0;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+          transition: all 0.2s ease;
+        }
+
+        .vp-mobile-toggle:hover {
+          background: #FAF8F4;
+          border-color: var(--accent-saffron);
+          color: var(--accent-saffron);
         }
 
         /* Drawer Overlay */
@@ -638,24 +660,134 @@ export default function Navbar() {
         }
 
         @media (max-width: 960px) {
+          .vp-navbar-root {
+            height: 68px;
+          }
+          .vp-navbar-scrolled {
+            height: 62px;
+          }
+          .vp-navbar-container {
+            padding: 0 16px;
+            gap: 10px;
+          }
           .vp-center-nav {
+            display: none;
+          }
+          .vp-phone-link {
             display: none;
           }
           .vp-mobile-toggle {
             display: flex;
           }
-        }
-
-        @media (max-width: 480px) {
-          .vp-phone-link {
-            display: none;
-          }
-          .vp-auth-btn {
-            display: none;
+          .vp-brand-logo-img {
+            height: 38px;
+            max-width: 155px;
           }
           .vp-book-cta {
-            padding: 9px 16px;
-            font-size: 12.5px;
+            padding: 8px 16px;
+            font-size: 13px;
+            gap: 6px;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .vp-navbar-root {
+            height: 62px;
+          }
+          .vp-navbar-scrolled {
+            height: 58px;
+          }
+          .vp-navbar-container {
+            padding: 0 12px;
+            gap: 8px;
+          }
+          .vp-brand {
+            flex-shrink: 1;
+            min-width: 0;
+          }
+          .vp-brand-logo-img {
+            height: 32px;
+            max-width: 130px;
+          }
+          .vp-right-actions {
+            gap: 6px;
+            flex-shrink: 0;
+          }
+          .vp-book-cta {
+            padding: 7px 12px;
+            font-size: 12px;
+            gap: 5px;
+            box-shadow: 0 2px 10px rgba(217, 79, 30, 0.25);
+          }
+          .vp-book-cta svg {
+            width: 13px;
+            height: 13px;
+          }
+          .vp-mobile-toggle {
+            width: 38px;
+            height: 38px;
+            min-width: 38px;
+            min-height: 38px;
+            padding: 4px;
+            border-radius: 8px;
+          }
+          .vp-mobile-toggle svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        @media (max-width: 420px) {
+          .vp-navbar-container {
+            padding: 0 8px;
+            gap: 5px;
+          }
+          .vp-brand-logo-img {
+            height: 29px;
+            max-width: 115px;
+          }
+          .vp-right-actions {
+            gap: 4px;
+          }
+          .vp-book-cta {
+            padding: 6px 9px;
+            font-size: 11px;
+            gap: 4px;
+          }
+          .vp-book-cta svg {
+            width: 12px;
+            height: 12px;
+          }
+          .vp-mobile-toggle {
+            width: 35px;
+            height: 35px;
+            min-width: 35px;
+            min-height: 35px;
+            padding: 3px;
+          }
+          .vp-mobile-toggle svg {
+            width: 18px;
+            height: 18px;
+          }
+        }
+
+        @media (max-width: 350px) {
+          .vp-brand-logo-img {
+            height: 26px;
+            max-width: 100px;
+          }
+          .vp-book-cta {
+            padding: 5px 7px;
+            font-size: 10.5px;
+          }
+          .vp-book-cta svg {
+            display: none;
+          }
+          .vp-mobile-toggle {
+            width: 33px;
+            height: 33px;
+            min-width: 33px;
+            min-height: 33px;
           }
         }
       `}</style>

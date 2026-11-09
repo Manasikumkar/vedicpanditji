@@ -3,9 +3,9 @@
 // Services <-> Locations <-> Puja Guides <-> Core Hubs
 // Prevents orphan pages and enforces clean site architecture
 
-import { ALL_LOCATIONS, getLocationBySlug, getParentLocations } from '../data/locations';
-import { PUJA_GUIDES_DATA, getGuideBySlug } from '../data/guides/pujaGuidesData';
-import { ALL_POOJA_SERVICES } from '../data/allPoojaServices';
+import { ALL_LOCATIONS, getLocationBySlug, getParentLocations } from '../data/locations/index.js';
+import { PUJA_GUIDES_DATA, getGuideBySlug } from '../data/guides/pujaGuidesData.js';
+import { ALL_POOJA_SERVICES } from '../data/allPoojaServices.js';
 
 /**
  * Returns related educational guides for a specific service

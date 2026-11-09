@@ -1,17 +1,19 @@
 import React from 'react';
 import { CUSTOMER_REVIEWS, BRAND_INFO } from '../../data/vedicPanditData';
 import { Star, Quote, CheckCircle2 } from 'lucide-react';
+import { useI18n } from '../../i18n/useI18n';
 
 export default function ReviewsSection() {
+  const { t } = useI18n();
   return (
     <section style={{ padding: '85px 0', background: 'var(--bg-primary)', borderTop: '1px solid var(--border-subtle)' }}>
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <span className="section-tag">Devotee Feedback</span>
-          <h2 className="section-title">Ceremony Experiences &amp; Feedback</h2>
+          <span className="section-tag">{t('home.reviews.devotee-feedback')}</span>
+          <h2 className="section-title">{t('home.reviews.title')}</h2>
           <p className="section-desc">
-            Experiences shared by families who conducted Griha Pravesh, Satyanarayan Katha, Vastu Shanti, and Vedic Havans with VedicPanditji.
+            {t('home.reviews.desc')}
           </p>
         </div>
 
@@ -67,7 +69,7 @@ export default function ReviewsSection() {
                   }}
                 >
                   <CheckCircle2 size={11} />
-                  <span>Devotee Feedback</span>
+                  <span>{t('home.reviews.devotee-feedback')}</span>
                 </span>
               </div>
 
@@ -115,10 +117,10 @@ export default function ReviewsSection() {
                   }}
                 >
                   <div style={{ fontSize: '9px', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 700 }}>
-                    Conducted By
+                    {t('home.reviews.conducted-by')}
                   </div>
                   <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--accent-saffron)' }}>
-                    Senior Vedic Panditji
+                    {t('home.reviews.senior-vedic-panditji')}
                   </div>
                 </div>
               </div>

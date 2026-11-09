@@ -144,16 +144,29 @@ export function getServiceSchema(service, area = 'Pune & All India') {
   // Excludes unapproved/proposed ceremonies to comply with Google Rich Results guidelines
   const isApprovedPrice = pricing && (pricing.approvalStatus === 'approved' || pricing.approvalStatus === 'local-project-data' || pricing.isBusinessApproved) && pricing.minPrice;
   if (isApprovedPrice) {
-    schema.offers = {
-      '@type': 'Offer',
-      price: String(pricing.minPrice),
-      priceCurrency: 'INR',
-      availability: 'https://schema.org/InStock',
-      url: serviceUrl,
-      description: pricing.model === PRICING_MODELS.MODEL_A_FIXED
-        ? `Fixed dakshina for ${service.name}`
-        : `Starting dakshina for ${service.name}`
-    };
+    if (pricing.maxPrice && pricing.maxPrice > pricing.minPrice) {
+      schema.offers = {
+        '@type': 'AggregateOffer',
+        lowPrice: String(pricing.minPrice),
+        highPrice: String(pricing.maxPrice),
+        priceCurrency: 'INR',
+        offerCount: String(pricing.packages?.length || 2),
+        availability: 'https://schema.org/InStock',
+        url: serviceUrl,
+        description: `Ceremony packages for ${service.name} from ₹${Number(pricing.minPrice).toLocaleString('en-IN')} (Ritual Only) to ₹${Number(pricing.maxPrice).toLocaleString('en-IN')} (with Samagri)`
+      };
+    } else {
+      schema.offers = {
+        '@type': 'Offer',
+        price: String(pricing.minPrice),
+        priceCurrency: 'INR',
+        availability: 'https://schema.org/InStock',
+        url: serviceUrl,
+        description: pricing.model === PRICING_MODELS.MODEL_A_FIXED
+          ? `Fixed dakshina for ${service.name}`
+          : `Starting dakshina for ${service.name}`
+      };
+    }
   }
 
   return schema;

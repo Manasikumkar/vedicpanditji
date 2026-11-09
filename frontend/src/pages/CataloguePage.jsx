@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { SERVICES, SERVICE_CATEGORIES, CITIES, BRAND_INFO, getServiceImage } from '../data/vedicPanditData';
 import { getPricingDisplay } from '../data/pujaPricing';
+import { useI18n } from '../i18n/useI18n';
 import {
   Search,
   Clock,
@@ -10,6 +11,19 @@ import {
   CheckCircle2,
   Package
 } from 'lucide-react';
+
+// City filter options: value matches CITIES names; labelKey is translated, name is a location name kept as data.
+const CITY_OPTIONS = [
+  { value: 'All Cities', labelKey: 'catalogue.city.all' },
+  { value: 'Pune', labelKey: 'catalogue.city.pune' },
+  { value: 'Mumbai', labelKey: 'catalogue.city.mumbai' },
+  { value: 'Bangalore', name: 'Bangalore' },
+  { value: 'Delhi', name: 'Delhi NCR' },
+  { value: 'Hyderabad', name: 'Hyderabad' },
+  { value: 'Chennai', name: 'Chennai' },
+  { value: 'Nashik', name: 'Nashik / Trimbakeshwar' },
+  { value: 'Online', labelKey: 'catalogue.city.online' }
+];
 
 export default function CataloguePage() {
   const {
@@ -20,6 +34,7 @@ export default function CataloguePage() {
     selectedCategory,
     setSelectedCategory
   } = useApp();
+  const { t, lang, locCatName, locServiceName, locServiceDesc, locDuration, locInsight } = useI18n();
 
   const [searchTerm, setSearchTerm] = useState('');
   const initialCityName = typeof selectedCity === 'object' && selectedCity !== null ? selectedCity.name : (selectedCity || 'All Cities');
@@ -33,14 +48,14 @@ export default function CataloguePage() {
     const matchesCategory = selectedCategory === 'all' || s.category === selectedCategory;
 
     const matchesSearch = !searchTerm ||
-                          s.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          s.shortDescription.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          s.category.toLowerCase().includes(searchTerm.toLowerCase());
+                          s.name.toLowerCase().includes(searchTerm.toLowerCase()) || locServiceName(s).toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          s.shortDescription.toLowerCase().includes(searchTerm.toLowerCase()) || locServiceDesc(s).toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          s.category.toLowerCase().includes(searchTerm.toLowerCase()) || locCatName(s.category).toLowerCase().includes(searchTerm.toLowerCase());
 
     return matchesCategory && matchesSearch;
   }).sort((a, b) => {
-    const pricingA = getPricingDisplay(a.id);
-    const pricingB = getPricingDisplay(b.id);
+    const pricingA = getPricingDisplay(a.id, lang);
+    const pricingB = getPricingDisplay(b.id, lang);
     if (sortBy === 'price-low') return (pricingA.minPrice || 999999) - (pricingB.minPrice || 999999);
     if (sortBy === 'price-high') return (pricingB.minPrice || 0) - (pricingA.minPrice || 0);
     return (a.name || '').localeCompare(b.name || '');
@@ -57,22 +72,22 @@ export default function CataloguePage() {
         {/* Breadcrumb & Header */}
         <div style={{ marginBottom: '32px' }}>
           <div style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '10px' }}>
-            <span onClick={() => navigateTo('home')} style={{ cursor: 'pointer' }} className="hover:text-amber-800">Home</span>
+            <span onClick={() => navigateTo('home')} style={{ cursor: 'pointer' }} className="hover:text-amber-800">{t('catalogue.breadcrumb.home')}</span>
             {' / '}
-            <span style={{ color: 'var(--accent-saffron)', fontWeight: 600 }}>Catalogue &amp; Pujas</span>
+            <span style={{ color: 'var(--accent-saffron)', fontWeight: 600 }}>{t('catalogue.breadcrumb.current')}</span>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '16px' }}>
             <div>
               <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '36px', fontWeight: 800, marginBottom: '8px' }}>
-                Vedic Pooja &amp; Ceremony Catalogue
+                {t('catalogue.title')}
               </h1>
               <p style={{ color: 'var(--text-secondary)', fontSize: '16px' }}>
-                Book verified North Indian Pandits for authentic rituals across {displayCity === 'All Cities' ? 'Pune, Mumbai, Bangalore, Hyderabad, Delhi, Chennai & all over India' : displayCity} with pure Vedic Samagri.
+                {t('catalogue.subtitle.before')}{displayCity === 'All Cities' ? t('catalogue.subtitle.all-cities') : displayCity}{t('catalogue.subtitle.after')}
               </p>
             </div>
             <div style={{ display: 'flex', gap: '8px', alignItems: 'center', background: '#FFFFFF', padding: '6px 14px', borderRadius: '30px', border: '1px solid #EAE5D9', fontSize: '12px', fontWeight: 600, color: 'var(--accent-gold)' }}>
               <Sparkles size={14} />
-              <span>59 Vedic Ceremonies &bull; {displayCity}</span>
+              <span>{t('catalogue.ceremony-count')}{displayCity}</span>
             </div>
           </div>
         </div>
@@ -108,7 +123,7 @@ export default function CataloguePage() {
                 type="text"
                 value={searchTerm}
                 onChange={e => setSearchTerm(e.target.value)}
-                placeholder="Search pujas (e.g., Satyanarayan, Griha Pravesh, Vastu, Rudrabhishek, Havans)..."
+                placeholder={t('catalogue.search-placeholder')}
                 style={{
                   width: '100%',
                   padding: '12px 14px 12px 42px',
@@ -140,15 +155,9 @@ export default function CataloguePage() {
                   fontWeight: 600
                 }}
               >
-                <option value="All Cities">📍 All Cities (Pan-India)</option>
-                <option value="Pune">📍 Pune &amp; PCMC (HQ)</option>
-                <option value="Mumbai">📍 Mumbai &amp; Thane (MMR)</option>
-                <option value="Bangalore">📍 Bangalore</option>
-                <option value="Delhi">📍 Delhi NCR</option>
-                <option value="Hyderabad">📍 Hyderabad</option>
-                <option value="Chennai">📍 Chennai</option>
-                <option value="Nashik">📍 Nashik / Trimbakeshwar</option>
-                <option value="Online">📍 Online Live E-Puja (Pan-India)</option>
+                {CITY_OPTIONS.map(o => (
+                  <option key={o.value} value={o.value}>{`📍 ${o.labelKey ? t(o.labelKey) : o.name}`}</option>
+                ))}
               </select>
             </div>
 
@@ -166,9 +175,9 @@ export default function CataloguePage() {
                   fontWeight: 600
                 }}
               >
-                <option value="popularity">All Ceremonies (A-Z)</option>
-                <option value="price-low">Indicative Dakshina: Low to High</option>
-                <option value="price-high">Indicative Dakshina: High to Low</option>
+                <option value="popularity">{t('catalogue.sort.a-z')}</option>
+                <option value="price-low">{t('catalogue.sort.price-low')}</option>
+                <option value="price-high">{t('catalogue.sort.price-high')}</option>
               </select>
             </div>
           </div>
@@ -193,7 +202,7 @@ export default function CataloguePage() {
                 border: 'none'
               }}
             >
-              <span>All Ceremonies</span>
+              <span>{t('catalogue.category.all')}</span>
               <span style={{
                 fontSize: '11px',
                 padding: '1px 6px',
@@ -225,7 +234,7 @@ export default function CataloguePage() {
                     border: 'none'
                   }}
                 >
-                  <span>{cat.name}</span>
+                  <span>{locCatName(cat)}</span>
                   {count > 0 && (
                     <span style={{
                       fontSize: '11px',
@@ -245,7 +254,7 @@ export default function CataloguePage() {
         {/* Results Counter */}
         <div style={{ marginBottom: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>
-            Showing <strong>{filteredServices.length}</strong> ceremonies for <strong>{displayCity}</strong>
+            {t('catalogue.results.showing')}<strong>{filteredServices.length}</strong>{t('catalogue.results.ceremonies-for')}<strong>{displayCity}</strong>
           </span>
           {selectedCategory !== 'all' && (
             <button
@@ -260,7 +269,7 @@ export default function CataloguePage() {
                 textDecoration: 'underline'
               }}
             >
-              Clear category filter
+              {t('catalogue.clear-category-filter')}
             </button>
           )}
         </div>
@@ -268,7 +277,7 @@ export default function CataloguePage() {
         {/* Services Grid */}
         <div className="grid-3" style={{ gap: '28px' }}>
           {filteredServices.map(service => {
-            const pricing = getPricingDisplay(service.id);
+            const pricing = getPricingDisplay(service.id, lang);
 
             // Determine badge style
             let badgeBg = 'rgba(4, 120, 87, 0.92)'; // Green for 2-pkg
@@ -296,11 +305,23 @@ export default function CataloguePage() {
                   style={{
                     position: 'relative',
                     height: '210px',
-                    backgroundImage: `url(${service.image || getServiceImage(service)})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center'
+                    overflow: 'hidden',
+                    backgroundColor: '#FAF8F5'
                   }}
                 >
+                  <img
+                    src={service.image || getServiceImage(service)}
+                    alt={locServiceName(service)}
+                    loading="lazy"
+                    decoding="async"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center',
+                      display: 'block'
+                    }}
+                  />
                   <div
                     style={{
                       position: 'absolute',
@@ -348,7 +369,7 @@ export default function CataloguePage() {
                     }}
                   >
                     <Clock size={13} />
-                    <span>{service.duration}</span>
+                    <span>{locDuration(service.duration)}</span>
                   </div>
                 </div>
 
@@ -363,11 +384,9 @@ export default function CataloguePage() {
                       cursor: 'pointer'
                     }}
                   >
-                    {service.name}
+                    {locServiceName(service)}
                   </h3>
-                  <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.55, marginBottom: '16px', flex: 1 }}>
-                    {service.shortDescription}
-                  </p>
+                  <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.55, marginBottom: '16px', flex: 1 }}>{locServiceDesc(service)}</p>
 
                   <div style={{ marginBottom: '16px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
                     {service.keyInsights?.slice(0, 2).map((ins, i) => (
@@ -382,7 +401,7 @@ export default function CataloguePage() {
                         }}
                       >
                         <CheckCircle2 size={13} color="var(--accent-saffron)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                        <span>{ins}</span>
+                        <span>{locInsight(ins)}</span>
                       </div>
                     ))}
                   </div>
@@ -399,7 +418,7 @@ export default function CataloguePage() {
                   >
                     <div>
                       <div style={{ fontSize: '11px', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600 }}>
-                        {pricing.priceLabel || (pricing.hasPackages ? 'Starting Dakshina' : 'Dakshina')}
+                        {pricing.priceLabel || (pricing.hasPackages ? t('catalogue.starting-dakshina') : t('catalogue.dakshina'))}
                       </div>
                       <div style={{ fontSize: '18px', fontWeight: 800, color: 'var(--accent-saffron)', marginTop: '2px' }}>
                         {pricing.displayPrice}
@@ -412,14 +431,14 @@ export default function CataloguePage() {
                         className="btn-secondary"
                         style={{ padding: '8px 14px', fontSize: '12px', cursor: 'pointer' }}
                       >
-                        Details
+                        {t('catalogue.details')}
                       </button>
                       <button
                         onClick={() => openBookingModal(service.name)}
                         className="btn-primary"
                         style={{ padding: '8px 16px', fontSize: '12px', cursor: 'pointer' }}
                       >
-                        <span>Enquire</span>
+                        <span>{t('catalogue.enquire')}</span>
                         <ArrowRight size={13} />
                       </button>
                     </div>

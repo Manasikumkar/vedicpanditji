@@ -24,6 +24,9 @@ const AboutUsPage = lazy(() => import('./pages/AboutUsPage'));
 const LegalPage = lazy(() => import('./pages/LegalPage'));
 const SitemapPage = lazy(() => import('./pages/SitemapPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+const AdminPage = lazy(() => import('./pages/AdminPage'));
+
+import { initIdlePrefetch } from './utils/prefetch';
 
 // GSAP
 import gsap from 'gsap';
@@ -60,7 +63,13 @@ function RouteLoadingFallback() {
 
 export default function App() {
   const { currentRoute } = useApp();
+  const isAdmin = currentRoute === 'admin';
   const mainRef = useRef(null);
+
+  // Idle prefetch core pages for instant transitions
+  useEffect(() => {
+    initIdlePrefetch();
+  }, []);
 
   // Trigger smooth GSAP animations on page transition
   useEffect(() => {
@@ -118,6 +127,8 @@ export default function App() {
         return <LegalPage />;
       case 'sitemap':
         return <SitemapPage />;
+      case 'admin':
+        return <AdminPage />;
       case 'not-found':
         return <NotFoundPage />;
       default:
@@ -127,7 +138,7 @@ export default function App() {
 
   return (
     <div className="app-container" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Navbar />
+      {!isAdmin && <Navbar />}
 
       <main ref={mainRef} style={{ flex: 1 }}>
         <Suspense fallback={<RouteLoadingFallback />}>
@@ -135,10 +146,10 @@ export default function App() {
         </Suspense>
       </main>
 
-      <Footer />
+      {!isAdmin && <Footer />}
 
       {/* Global Interactive Elements */}
-      <BookingModal />
+      {!isAdmin && <BookingModal />}
       <Toast />
     </div>
   );

@@ -8,48 +8,51 @@ import {
   HeartHandshake,
   Building2
 } from 'lucide-react';
+import { useI18n } from '../../i18n/useI18n';
 
+// Display text fields hold keys, translated at render time
 const SPECIAL_OFFERINGS = [
   {
     id: 'hindu-wedding',
     serviceId: 'vivah-marriage',
-    tag: 'Vivah Sanskar',
-    title: 'Hindu Wedding Ceremony & Vivah Sanskar',
-    location: 'Pune & Destination Weddings',
+    tagKey: 'home.temple.wedding-tag',
+    titleKey: 'home.temple.wedding-title',
+    locationKey: 'home.temple.wedding-location',
     image: '/images/special-vivah.jpg',
-    description: 'Complete Vedic wedding ceremonies conducted according to North Indian, Bihari, Marwari, or Arya Samaj traditions. Includes Lagna Patrika, Tilak, Mandap Puja, Jai Mala, and Saptapadi.',
-    badge: 'Lead Acharya Conduction',
+    descriptionKey: 'home.temple.wedding-description',
+    badgeKey: 'home.temple.wedding-badge',
     icon: HeartHandshake,
-    actionText: 'Plan Vivah Puja'
+    actionTextKey: 'home.temple.wedding-action'
   },
   {
     id: 'online-e-puja',
     serviceId: 'online-e-puja',
-    tag: 'Worldwide Devotees',
-    title: 'Online E-Puja & Live Video Call Hawan',
-    location: 'Global / Virtual via Zoom',
+    tagKey: 'home.temple.epuja-tag',
+    titleKey: 'home.temple.epuja-title',
+    locationKey: 'home.temple.epuja-location',
     image: '/images/special-epuja.jpg',
-    description: 'Perform authentic Vedic Havans, Rudrabhishek, and Dosha Nivarana rituals from the comfort of your home anywhere in the world. Live sankalp taken with your Gotra and Nakshatra.',
-    badge: 'Live Virtual Conduction',
+    descriptionKey: 'home.temple.epuja-description',
+    badgeKey: 'home.temple.epuja-badge',
     icon: Video,
-    actionText: 'Book Online E-Puja'
+    actionTextKey: 'home.temple.epuja-action'
   },
   {
     id: 'corporate-vastu',
     serviceId: 'office-opening-puja',
-    tag: 'Workplace & Business',
-    title: 'Office, Shop & Factory Opening Puja',
-    location: 'Pune, PCMC & Industrial Belts',
+    tagKey: 'home.temple.corporate-tag',
+    titleKey: 'home.temple.corporate-title',
+    locationKey: 'home.temple.corporate-location',
     image: '/images/special-corporate.jpg',
-    description: 'Auspicious Muhurat inauguration rituals for shops, business establishments, workplaces, and commercial ventures to invoke blessings for prosperity and success.',
-    badge: 'Custom Corporate Muhurat',
+    descriptionKey: 'home.temple.corporate-description',
+    badgeKey: 'home.temple.corporate-badge',
     icon: Building2,
-    actionText: 'Enquire for Workplace Puja'
+    actionTextKey: 'home.temple.corporate-action'
   }
 ];
 
 export default function TempleServicesSection() {
   const { navigateTo, openBookingModal } = useApp();
+  const { t } = useI18n();
 
   const handleCardAction = (item) => {
     if (item.id === 'hindu-wedding') {
@@ -81,10 +84,10 @@ export default function TempleServicesSection() {
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <span className="section-tag">Specialized Vidhis</span>
-          <h2 className="section-title">Grand Vivah, E-Puja &amp; Corporate Ceremonies</h2>
+          <span className="section-tag">{t('home.temple.tag')}</span>
+          <h2 className="section-title">{t('home.temple.title')}</h2>
           <p className="section-desc">
-            From royal Vivah Sanskars across destination venues to Live E-Pujas for NRI devotees worldwide and corporate vastu blessings.
+            {t('home.temple.desc')}
           </p>
         </div>
 
@@ -137,7 +140,7 @@ export default function TempleServicesSection() {
                       letterSpacing: '0.04em'
                     }}
                   >
-                    {item.tag}
+                    {t(item.tagKey)}
                   </div>
                   <div
                     style={{
@@ -154,7 +157,7 @@ export default function TempleServicesSection() {
                     }}
                   >
                     <MapPin size={13} color="var(--accent-gold)" />
-                    <span>{item.location}</span>
+                    <span>{t(item.locationKey)}</span>
                   </div>
                 </div>
 
@@ -165,10 +168,10 @@ export default function TempleServicesSection() {
                     style={{ fontSize: '18px', fontWeight: 700, marginBottom: '8px', cursor: 'pointer', color: 'var(--text-main)' }}
                     className="hover:text-amber-800"
                   >
-                    {item.title}
+                    {t(item.titleKey)}
                   </h3>
                   <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '20px', flex: 1 }}>
-                    {item.description}
+                    {t(item.descriptionKey)}
                   </p>
 
                   <div
@@ -183,14 +186,14 @@ export default function TempleServicesSection() {
                   >
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--accent-saffron)', fontSize: '12px', fontWeight: 600 }}>
                       <Icon size={16} />
-                      <span>{item.badge}</span>
+                      <span>{t(item.badgeKey)}</span>
                     </div>
                     <button
                       onClick={() => handleCardAction(item)}
                       className="btn-outline"
                       style={{ padding: '8px 16px', fontSize: '12.5px', cursor: 'pointer', whiteSpace: 'nowrap' }}
                     >
-                      <span>{item.actionText}</span>
+                      <span>{t(item.actionTextKey)}</span>
                       <ArrowRight size={13} />
                     </button>
                   </div>
@@ -207,7 +210,7 @@ export default function TempleServicesSection() {
             className="btn-secondary"
             style={{ padding: '13px 28px', cursor: 'pointer', borderRadius: 'var(--radius-full)' }}
           >
-            <span>Explore Pilgrimage &amp; Remote Temple Sevas</span>
+            <span>{t('home.temple.explore-pilgrimage')}</span>
             <ArrowRight size={15} />
           </button>
         </div>

@@ -35,13 +35,13 @@ export const animatePageEntrance = (target) => {
 
   return gsap.fromTo(
     target,
-    { opacity: 0, y: ANIM_CONFIG.smallY },
+    { opacity: 0.85, y: 6 },
     {
       opacity: 1,
       y: 0,
-      duration: 0.45,
-      ease: ANIM_CONFIG.ease,
-      clearProps: 'transform'
+      duration: 0.18,
+      ease: 'power2.out',
+      clearProps: 'opacity,transform'
     }
   );
 };

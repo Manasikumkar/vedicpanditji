@@ -1,33 +1,35 @@
 import React from 'react';
 import { Flame, Users, BookOpenCheck, Star } from 'lucide-react';
+import { useI18n } from '../../i18n/useI18n';
 
 export default function CounterSection() {
+  const { t } = useI18n();
   const stats = [
     {
-      number: 'Hindi & Sanskrit',
-      label: 'Ritual Languages',
-      subtext: 'Sanskrit Vedic chanting with fluent Hindi Katha',
+      number: t('home.counter.languages-number'),
+      label: t('home.counter.languages-label'),
+      subtext: t('home.counter.languages-subtext'),
       icon: BookOpenCheck,
       color: 'var(--accent-saffron)'
     },
     {
-      number: 'Pune & PCMC',
-      label: 'Pune & PCMC Hub',
-      subtext: 'Doorstep visits in Pune & PCMC and E-Pujas nationwide',
+      number: t('home.counter.pune-number'),
+      label: t('home.counter.pune-label'),
+      subtext: t('home.counter.pune-subtext'),
       icon: Users,
       color: 'var(--accent-gold)'
     },
     {
-      number: 'Pure Samagri',
-      label: 'Vedic Havan Materials',
-      subtext: 'Pure cow ghee, mango wood & sacred Ayurvedic herbs',
+      number: t('home.counter.samagri-number'),
+      label: t('home.counter.samagri-label'),
+      subtext: t('home.counter.samagri-subtext'),
       icon: Flame,
       color: 'var(--accent-saffron)'
     },
     {
-      number: 'Panchang Guidance',
-      label: 'Shubh Muhurat',
-      subtext: 'Calculations based on family Gotra, Nakshatra & Tithi',
+      number: t('home.counter.muhurat-number'),
+      label: t('home.counter.muhurat-label'),
+      subtext: t('home.counter.muhurat-subtext'),
       icon: Star,
       color: '#EAB308'
     }

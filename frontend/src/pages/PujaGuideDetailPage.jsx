@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
+import { useI18n } from '../i18n/useI18n';
 import { getGuideBySlug } from '../data/guides/pujaGuidesData';
 import { getRelatedGuidesForGuide, getRelatedServiceForGuide, getTopLocationsForService } from '../utils/internalLinks';
 import {
@@ -21,6 +22,18 @@ import {
 
 export default function PujaGuideDetailPage({ slug: propSlug }) {
   const { routeParams, navigateTo, openBookingModal, showToast } = useApp();
+  const {
+    lang,
+    t,
+    lp,
+    locGuideTitle,
+    locGuideSummary,
+    locGuideSections,
+    locGuideFaqs,
+    locServiceName,
+    locServiceDesc,
+    locLocationName
+  } = useI18n();
 
   const activeSlug = propSlug || routeParams?.slug || 'griha-pravesh-puja-vidhi-guide';
   const guide = getGuideBySlug(activeSlug) || getGuideBySlug('griha-pravesh-puja-vidhi-guide');
@@ -34,13 +47,18 @@ export default function PujaGuideDetailPage({ slug: propSlug }) {
   if (!guide) {
     return (
       <div style={{ paddingTop: '120px', paddingBottom: '90px', textAlign: 'center' }}>
-        <h2>Guide Not Found</h2>
+        <h2>{lang === 'mr' ? 'मार्गदर्शिका आढळली नाही' : lang === 'hi' ? 'मार्गदर्शिका नहीं मिली' : 'Guide Not Found'}</h2>
         <button onClick={() => navigateTo('puja-guides')} className="btn-primary" style={{ marginTop: '20px' }}>
-          Browse All Puja Guides
+          {lang === 'mr' ? 'सर्व पूजा मार्गदर्शिका पहा' : lang === 'hi' ? 'सभी पूजा मार्गदर्शिकाएँ देखें' : 'Browse All Puja Guides'}
         </button>
       </div>
     );
   }
+
+  const sections = locGuideSections(guide);
+  const faqs = locGuideFaqs(guide);
+  const displayTitle = locGuideTitle(guide) || guide.h1 || guide.title;
+  const displaySummary = locGuideSummary(guide) || guide.summary;
 
   const relatedGuides = getRelatedGuidesForGuide(guide.slug);
   const relatedService = getRelatedServiceForGuide(guide);
@@ -63,14 +81,14 @@ export default function PujaGuideDetailPage({ slug: propSlug }) {
         <nav aria-label="Breadcrumb" style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
           <span onClick={() => navigateTo('home')} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px' }} className="hover:text-amber-800">
             <Home size={13} />
-            <span>Home</span>
+            <span>{lang === 'mr' ? 'मुख्यपृष्ठ' : lang === 'hi' ? 'होम' : 'Home'}</span>
           </span>
           <span>/</span>
           <span onClick={() => navigateTo('puja-guides')} style={{ cursor: 'pointer' }} className="hover:text-amber-800">
-            Puja Guides
+            {lang === 'mr' ? 'पूजा मार्गदर्शिका' : lang === 'hi' ? 'पूजा मार्गदर्शिकाएँ' : 'Puja Guides'}
           </span>
           <span>/</span>
-          <span style={{ color: 'var(--accent-saffron)', fontWeight: 600 }}>{guide.title}</span>
+          <span style={{ color: 'var(--accent-saffron)', fontWeight: 600 }}>{displayTitle}</span>
         </nav>
 
         {/* ======================================================== */}
@@ -97,16 +115,16 @@ export default function PujaGuideDetailPage({ slug: propSlug }) {
             <span style={{ color: 'var(--border-medium)' }}>•</span>
             <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '12.5px', color: 'var(--text-muted)' }}>
               <Calendar size={13} />
-              <span>Updated October 2026</span>
+              <span>{lang === 'mr' ? 'अद्यतन: ऑक्टोबर २०२६' : lang === 'hi' ? 'अद्यतित: अक्टूबर २०२६' : 'Updated October 2026'}</span>
             </div>
           </div>
 
           <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(26px, 3.5vw, 38px)', fontWeight: 800, color: 'var(--text-main)', lineHeight: 1.28, marginBottom: '16px' }}>
-            {guide.h1 || guide.title}
+            {displayTitle}
           </h1>
 
           <p style={{ fontSize: '16.5px', color: 'var(--text-secondary)', lineHeight: 1.65, marginBottom: '22px' }}>
-            {guide.summary}
+            {displaySummary}
           </p>
 
           {/* Author & Editorial Metadata */}
@@ -115,7 +133,7 @@ export default function PujaGuideDetailPage({ slug: propSlug }) {
               <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'var(--accent-gold-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)' }}>
                 <User size={14} />
               </div>
-              <span>Published by <strong>VedicPanditji Editorial Desk</strong></span>
+              <span>{lang === 'mr' ? 'वैदिकपंडितजी संपादकीय कक्ष' : lang === 'hi' ? 'वैदिकपंडितजी संपादकीय मंडल' : 'Published by VedicPanditji Editorial Desk'}</span>
             </div>
 
             <button
@@ -136,7 +154,7 @@ export default function PujaGuideDetailPage({ slug: propSlug }) {
               }}
             >
               <Share2 size={13} />
-              <span>Share Guide</span>
+              <span>{lang === 'mr' ? 'मार्गदर्शिका शेअर करा' : lang === 'hi' ? 'शेयर करें' : 'Share Guide'}</span>
             </button>
           </div>
         </header>
@@ -150,7 +168,7 @@ export default function PujaGuideDetailPage({ slug: propSlug }) {
           <main style={{ background: '#FFFFFF', borderRadius: '24px', border: '1px solid var(--border-subtle)', padding: '36px', boxShadow: 'var(--shadow-sm)' }}>
             
             {/* Table of Contents */}
-            {guide.sections && guide.sections.length > 0 && (
+            {sections && sections.length > 0 && (
               <div
                 style={{
                   background: '#FDFBF7',
@@ -161,10 +179,10 @@ export default function PujaGuideDetailPage({ slug: propSlug }) {
                 }}
               >
                 <div style={{ fontSize: '13px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--accent-saffron)', marginBottom: '10px' }}>
-                  Table of Contents
+                  {lang === 'mr' ? 'अनुक्रमणिका' : lang === 'hi' ? 'विषय सूची' : 'Table of Contents'}
                 </div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  {guide.sections.map((sec, idx) => (
+                  {sections.map((sec, idx) => (
                     <li key={sec.id || idx}>
                       <a
                         href={`#${sec.id}`}
@@ -184,7 +202,7 @@ export default function PujaGuideDetailPage({ slug: propSlug }) {
                       </a>
                     </li>
                   ))}
-                  {guide.faqs && guide.faqs.length > 0 && (
+                  {faqs && faqs.length > 0 && (
                     <li>
                       <a
                         href="#faqs-section"
@@ -200,7 +218,7 @@ export default function PujaGuideDetailPage({ slug: propSlug }) {
                         className="hover:text-amber-800"
                       >
                         <span style={{ color: 'var(--accent-gold)', fontSize: '12px' }}>•</span>
-                        <span>Frequently Asked Questions</span>
+                        <span>{lang === 'mr' ? 'वारंवार विचारले जाणारे प्रश्न' : lang === 'hi' ? 'अक्सर पूछे जाने वाले प्रश्न' : 'Frequently Asked Questions'}</span>
                       </a>
                     </li>
                   )}
@@ -209,7 +227,7 @@ export default function PujaGuideDetailPage({ slug: propSlug }) {
             )}
 
             {/* Sections */}
-            {(guide.sections || []).map((sec, idx) => (
+            {(sections || []).map((sec, idx) => (
               <section key={sec.id || idx} id={sec.id} style={{ marginBottom: '36px' }}>
                 <h2 style={{ fontSize: '22px', fontWeight: 800, color: 'var(--text-main)', marginBottom: '14px', lineHeight: 1.35, paddingTop: '10px' }}>
                   {sec.title}
@@ -238,14 +256,14 @@ export default function PujaGuideDetailPage({ slug: propSlug }) {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <Flame size={18} color="var(--accent-saffron)" />
                   <span style={{ fontSize: '13px', fontWeight: 800, textTransform: 'uppercase', color: 'var(--accent-saffron)' }}>
-                    Book Ceremony with Experienced Pandits
+                    {lang === 'mr' ? 'अनुभवी वैदिक पुरोहितांसह विधी' : lang === 'hi' ? 'अनुभवी वैदिक आचार्यों द्वारा अनुष्ठान' : 'Book Ceremony with Experienced Pandits'}
                   </span>
                 </div>
                 <h3 style={{ fontSize: '19px', fontWeight: 800, color: 'var(--text-main)' }}>
-                  Arrange a Vedic {relatedService.name} with VedicPanditji
+                  {lang === 'mr' ? `${locServiceName(relatedService)} विधीचे आयोजन करा` : lang === 'hi' ? `${locServiceName(relatedService)} हेतु वैदिक पुरोहित बुक करें` : `Arrange a Vedic ${relatedService.name} with VedicPanditji`}
                 </h3>
                 <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  Our experienced North Indian purohits arrive punctually with pure Vedic samagri to conduct your ceremony with authentic Sanskrit mantras and fluent Hindi narration.
+                  {lang === 'mr' ? 'आमचे प्रमाणित उत्तर भारतीय व वैदिक पुरोहित संपूर्ण शुद्ध साहित्यासह तुमच्या घरी येतात आणि अस्सल संस्कृत मंत्रोच्चार व सुबोध कथेसह विधी संपन्न करतात.' : lang === 'hi' ? 'हमारे अनुभवी उत्तर भारतीय एवं वैदिक पुरोहित १००% शुद्ध सामग्री किट के साथ आपके घर पधारकर शुद्ध संस्कृत मंत्रोच्चार एवं सरल हिंदी कथा के साथ अनुष्ठान कराते हैं।' : 'Our experienced North Indian purohits arrive punctually with pure Vedic samagri to conduct your ceremony with authentic Sanskrit mantras and fluent Hindi narration.'}
                 </p>
                 <div>
                   <button
@@ -263,21 +281,21 @@ export default function PujaGuideDetailPage({ slug: propSlug }) {
                     }}
                   >
                     <CalendarCheck size={16} />
-                    <span>Enquire for {relatedService.name}</span>
+                    <span>{lang === 'mr' ? `${locServiceName(relatedService)} साठी चौकशी करा` : lang === 'hi' ? `${locServiceName(relatedService)} हेतु पूछताछ करें` : `Enquire for ${relatedService.name}`}</span>
                   </button>
                 </div>
               </div>
             )}
 
             {/* FAQs Accordion */}
-            {guide.faqs && guide.faqs.length > 0 && (
+            {faqs && faqs.length > 0 && (
               <section id="faqs-section" style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid #FAF7F0' }}>
                 <h2 style={{ fontSize: '22px', fontWeight: 800, color: 'var(--text-main)', marginBottom: '18px' }}>
-                  Frequently Asked Questions
+                  {lang === 'mr' ? 'वारंवार विचारले जाणारे प्रश्न' : lang === 'hi' ? 'अक्सर पूछे जाने वाले प्रश्न' : 'Frequently Asked Questions'}
                 </h2>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  {guide.faqs.map((faq, idx) => {
+                  {faqs.map((faq, idx) => {
                     const isOpen = openFaqIndex === idx;
                     return (
                       <div
@@ -306,13 +324,13 @@ export default function PujaGuideDetailPage({ slug: propSlug }) {
                             color: 'var(--text-main)'
                           }}
                         >
-                          <span>{faq.question || faq.q}</span>
+                          <span>{faq.q || faq.question}</span>
                           {isOpen ? <ChevronUp size={16} color="var(--accent-saffron)" /> : <ChevronDown size={16} color="var(--text-muted)" />}
                         </button>
 
                         {isOpen && (
                           <div style={{ padding: '16px 20px', fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.7, background: '#FFFFFF' }}>
-                            {faq.answer || faq.a}
+                            {faq.a || faq.answer}
                           </div>
                         )}
                       </div>
@@ -339,13 +357,13 @@ export default function PujaGuideDetailPage({ slug: propSlug }) {
                 }}
               >
                 <div style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: 'var(--accent-saffron)', letterSpacing: '0.04em', marginBottom: '8px' }}>
-                  Associated Ceremony
+                  {lang === 'mr' ? 'संबंधित वैदिक पूजा' : lang === 'hi' ? 'संबंधित वैदिक अनुष्ठान' : 'Associated Ceremony'}
                 </div>
                 <h3 style={{ fontSize: '17px', fontWeight: 800, color: 'var(--text-main)', marginBottom: '8px' }}>
-                  {relatedService.name}
+                  {locServiceName(relatedService)}
                 </h3>
                 <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: '16px' }}>
-                  {relatedService.shortDescription || 'Authentic Vedic ceremony with complete pure samagri.'}
+                  {locServiceDesc(relatedService) || relatedService.shortDescription || 'Authentic Vedic ceremony with complete pure samagri.'}
                 </p>
                 <button
                   type="button"
@@ -364,7 +382,7 @@ export default function PujaGuideDetailPage({ slug: propSlug }) {
                   }}
                 >
                   <CalendarCheck size={15} />
-                  <span>Check Muhurat &amp; Book</span>
+                  <span>{lang === 'mr' ? 'मुहूर्त तपासा व बुक करा' : lang === 'hi' ? 'मुहूर्त देखें एवं बुक करें' : 'Check Muhurat & Book'}</span>
                 </button>
               </div>
             )}
@@ -380,7 +398,7 @@ export default function PujaGuideDetailPage({ slug: propSlug }) {
               }}
             >
               <h3 style={{ fontSize: '15px', fontWeight: 800, color: 'var(--text-main)', marginBottom: '14px' }}>
-                Related Puja Guides
+                {lang === 'mr' ? 'इतर वैदिक पूजा मार्गदर्शिका' : lang === 'hi' ? 'अन्य वैदिक पूजा मार्गदर्शिकाएँ' : 'Related Puja Guides'}
               </h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {relatedGuides.map((relGuide) => (
@@ -397,7 +415,7 @@ export default function PujaGuideDetailPage({ slug: propSlug }) {
                       {relGuide.categoryName}
                     </span>
                     <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-main)', marginTop: '2px', lineHeight: 1.4 }} className="hover:text-amber-800">
-                      {relGuide.title}
+                      {locGuideTitle(relGuide) || relGuide.title}
                     </div>
                   </div>
                 ))}
@@ -415,10 +433,10 @@ export default function PujaGuideDetailPage({ slug: propSlug }) {
               }}
             >
               <h3 style={{ fontSize: '15px', fontWeight: 800, color: 'var(--text-main)', marginBottom: '10px' }}>
-                Book Pandit in Pune &amp; PCMC
+                {lang === 'mr' ? 'पुणे व पिंपरी-चिंचवडमध्ये पंडित बुक करा' : lang === 'hi' ? 'पुणे एवं पिंपरी-चिंचवड में पंडित बुक करें' : 'Book Pandit in Pune & PCMC'}
               </h3>
               <p style={{ fontSize: '12.5px', color: 'var(--text-muted)', marginBottom: '12px' }}>
-                Verified doorstep service across prominent localities:
+                {lang === 'mr' ? 'प्रमुख परिसरांमध्ये घरपोच वैदिक पुरोहित सेवा:' : lang === 'hi' ? 'प्रमुख क्षेत्रों में घरपोच वैदिक पंडित सेवा उपलब्ध:' : 'Verified doorstep service across prominent localities:'}
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {topLocations.map((loc) => (
@@ -437,7 +455,7 @@ export default function PujaGuideDetailPage({ slug: propSlug }) {
                       cursor: 'pointer'
                     }}
                   >
-                    {loc.name}
+                    {locLocationName(loc, lang)}
                   </button>
                 ))}
               </div>

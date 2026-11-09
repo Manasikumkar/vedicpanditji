@@ -1,5 +1,6 @@
 import React from 'react';
 import { BRAND_INFO } from '../../data/vedicPanditData';
+import { useI18n } from '../../i18n/useI18n';
 import { maskPhoneNumber, buildWhatsAppEnquiryUrl } from '../../services/webhookService';
 import {
   CheckCircle2,
@@ -13,6 +14,16 @@ import {
   ShieldCheck,
   Check
 } from 'lucide-react';
+
+// BookingModal sends these English fallbacks so the record and WhatsApp body stay English; show them translated.
+// The last one arrives via result.payload.data (BookingModal's submitted `date`).
+const FALLBACK_KEYS = {
+  Devotee: 'enquiry.devotee',
+  'Vedic Vidhi': 'enquiry.vedic-vidhi',
+  'Auspicious Muhurat Consultation': 'enquiry.muhurat-consultation',
+  'Date to be confirmed': 'enquiry.date-to-be-confirmed',
+  'Auspicious Muhurat to be calculated with Panditji': 'enquiry.muhurat-to-be-calculated'
+};
 
 /**
  * Polished, accessible post-submission confirmation view for all VedicPanditji enquiry forms.
@@ -31,7 +42,9 @@ export default function EnquiryConfirmationView({
   onClose = null,
   onEdit = null
 }) {
+  const { t } = useI18n();
   const data = result?.payload?.data || enquiryData || {};
+  const show = (value) => (FALLBACK_KEYS[value] ? t(FALLBACK_KEYS[value]) : value);
   const genuineRef = result?.referenceId || null;
 
   // Masked phone for devotee privacy
@@ -92,7 +105,7 @@ export default function EnquiryConfirmationView({
               marginBottom: '6px'
             }}
           >
-            Submitting Your Enquiry...
+            {t('enquiry.loading.heading')}
           </h3>
           <p
             style={{
@@ -103,7 +116,7 @@ export default function EnquiryConfirmationView({
               margin: '0 auto'
             }}
           >
-            Connecting to VedicPanditji's Acharya coordination desk. Please do not refresh the page.
+            {t('enquiry.loading.message')}
           </p>
         </div>
 
@@ -124,7 +137,7 @@ export default function EnquiryConfirmationView({
     return (
       <div
         role="region"
-        aria-label="Enquiry submission confirmation"
+        aria-label={t('enquiry.confirmation-label')}
         style={{
           padding: '8px 4px',
           textAlign: 'center'
@@ -166,7 +179,7 @@ export default function EnquiryConfirmationView({
             }}
           >
             <ShieldCheck size={13} />
-            <span>Reference ID: {genuineRef}</span>
+            <span>{t('enquiry.reference-id')}{genuineRef}</span>
           </div>
         )}
 
@@ -180,7 +193,7 @@ export default function EnquiryConfirmationView({
             letterSpacing: '-0.01em'
           }}
         >
-          {result?.heading || 'Your Enquiry Has Been Received!'}
+          {result?.heading || t('enquiry.success.heading')}
         </h3>
 
         <p
@@ -192,7 +205,7 @@ export default function EnquiryConfirmationView({
             margin: '0 auto 16px auto'
           }}
         >
-          {result?.message || 'Thank you for contacting VedicPanditji. Your enquiry has been sent successfully. Our team will follow up using the contact details you provided.'}
+          {result?.message || t('enquiry.success.message')}
         </p>
 
         {/* Honest Operational Notice */}
@@ -210,8 +223,8 @@ export default function EnquiryConfirmationView({
             marginBottom: '18px'
           }}
         >
-          <strong style={{ color: '#BD4B23' }}>Next Step: </strong>
-          Our senior Vedic Acharyas review your Shubh Muhurat window, gotra sankalp, and priest schedule before calling to finalize ceremony details.
+          <strong style={{ color: '#BD4B23' }}>{t('enquiry.next-step')}</strong>
+          {t('enquiry.next-step-text')}
         </div>
 
         {/* Adapted Summary Card */}
@@ -244,12 +257,12 @@ export default function EnquiryConfirmationView({
           >
             <span>
               {enquiryType === 'temple_seva_enquiry'
-                ? 'Temple Seva Summary'
+                ? t('enquiry.summary.temple')
                 : enquiryType === 'contact_enquiry'
-                  ? 'Consultation Enquiry Summary'
-                  : 'Ceremony Booking Summary'}
+                  ? t('enquiry.summary.contact')
+                  : t('enquiry.summary.booking')}
             </span>
-            <span style={{ color: '#15803D', fontWeight: 600 }}>● Received</span>
+            <span style={{ color: '#15803D', fontWeight: 600 }}>{t('enquiry.received')}</span>
           </div>
 
           <div
@@ -261,13 +274,13 @@ export default function EnquiryConfirmationView({
           >
             {/* Devotee / Contact Name */}
             <div>
-              <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Devotee Name:</span>
-              <strong style={{ color: 'var(--text-main)' }}>{data.customerName || 'Devotee'}</strong>
+              <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>{t('enquiry.devotee-name')}</span>
+              <strong style={{ color: 'var(--text-main)' }}>{show(data.customerName) || t('enquiry.devotee')}</strong>
             </div>
 
             {/* Masked Phone */}
             <div>
-              <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Contact Phone:</span>
+              <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>{t('enquiry.contact-phone')}</span>
               <span style={{ color: 'var(--text-main)', fontFamily: 'monospace', fontSize: '12.5px' }}>{displayedPhone}</span>
             </div>
 
@@ -275,20 +288,20 @@ export default function EnquiryConfirmationView({
             {enquiryType === 'temple_seva_enquiry' ? (
               <>
                 <div>
-                  <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Kshetra Shrine:</span>
-                  <strong>{data.templeName || data.serviceName || 'Sacred Pilgrimage Kshetra'}</strong>
+                  <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>{t('enquiry.kshetra-shrine')}</span>
+                  <strong>{data.templeName || data.serviceName || t('enquiry.sacred-kshetra')}</strong>
                 </div>
                 <div>
-                  <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Seva Ritual:</span>
-                  <strong>{data.ritualName || data.selectedPackage || 'Sacred Sankalpam'}</strong>
+                  <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>{t('enquiry.seva-ritual')}</span>
+                  <strong>{data.ritualName || data.selectedPackage || t('enquiry.sacred-sankalpam')}</strong>
                 </div>
                 <div>
-                  <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Participation Mode:</span>
-                  <span>{data.sevaMode || 'Remote Sankalpam'}</span>
+                  <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>{t('enquiry.participation-mode')}</span>
+                  <span>{data.sevaMode || t('enquiry.remote-sankalpam')}</span>
                 </div>
                 {data.gotra && (
                   <div>
-                    <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Gotra / Nakshatra:</span>
+                    <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>{t('enquiry.gotra-nakshatra')}</span>
                     <span>{data.gotra}</span>
                   </div>
                 )}
@@ -296,23 +309,23 @@ export default function EnquiryConfirmationView({
             ) : enquiryType === 'contact_enquiry' ? (
               <>
                 <div>
-                  <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Ceremony / Inquired Service:</span>
-                  <strong>{data.serviceName || 'Vedic Consultation'}</strong>
+                  <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>{t('enquiry.ceremony-or-service')}</span>
+                  <strong>{data.serviceName || t('enquiry.vedic-consultation')}</strong>
                 </div>
                 <div>
-                  <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Location:</span>
+                  <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>{t('enquiry.location')}</span>
                   <strong>{data.city || 'Pune'}{data.locality ? ` (${data.locality})` : ''}</strong>
                 </div>
                 {data.email && (
                   <div>
-                    <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Email:</span>
+                    <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>{t('enquiry.email')}</span>
                     <span>{data.email}</span>
                   </div>
                 )}
                 {data.preferredDate && (
                   <div>
-                    <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Preferred Date:</span>
-                    <span>{data.preferredDate}</span>
+                    <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>{t('enquiry.preferred-date')}</span>
+                    <span>{show(data.preferredDate)}</span>
                   </div>
                 )}
               </>
@@ -320,22 +333,22 @@ export default function EnquiryConfirmationView({
               /* booking_enquiry */
               <>
                 <div>
-                  <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Ceremony &amp; City:</span>
-                  <strong>{data.serviceName || 'Vedic Ceremony'} ({data.city || 'Pune'})</strong>
+                  <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>{t('enquiry.ceremony-and-city')}</span>
+                  <strong>{data.serviceName || t('enquiry.vedic-ceremony')} ({data.city || 'Pune'})</strong>
                 </div>
                 <div>
-                  <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Selected Package:</span>
-                  <strong>{data.selectedPackage || 'Vedic Vidhi'}</strong>
+                  <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>{t('enquiry.selected-package')}</span>
+                  <strong>{show(data.selectedPackage) || t('enquiry.vedic-vidhi')}</strong>
                 </div>
                 {data.preferredDate && (
                   <div>
-                    <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Preferred Date &amp; Time:</span>
-                    <span>{data.preferredDate}{data.preferredTimeSlot ? ` • ${data.preferredTimeSlot}` : ''}</span>
+                    <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>{t('enquiry.preferred-date-time')}</span>
+                    <span>{show(data.preferredDate)}{data.preferredTimeSlot ? ` • ${data.preferredTimeSlot}` : ''}</span>
                   </div>
                 )}
                 {data.packagePrice && (
                   <div>
-                    <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Estimated Dakshina:</span>
+                    <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>{t('enquiry.estimated-dakshina')}</span>
                     <strong style={{ color: '#BD4B23' }}>{data.packagePrice}</strong>
                   </div>
                 )}
@@ -371,7 +384,7 @@ export default function EnquiryConfirmationView({
             }}
           >
             <MessageCircle size={18} />
-            <span>Connect with Panditji on WhatsApp</span>
+            <span>{t('enquiry.connect-whatsapp')}</span>
           </a>
 
           {/* Secondary Actions: Call & Done */}
@@ -396,7 +409,7 @@ export default function EnquiryConfirmationView({
               }}
             >
               <PhoneCall size={15} color="#BD4B23" />
-              <span>Call Helpline</span>
+              <span>{t('enquiry.call-helpline')}</span>
             </button>
 
             {onClose && (
@@ -420,7 +433,7 @@ export default function EnquiryConfirmationView({
                 }}
               >
                 <Check size={15} />
-                <span>Done • Close</span>
+                <span>{t('enquiry.done-close')}</span>
               </button>
             )}
           </div>
@@ -467,7 +480,7 @@ export default function EnquiryConfirmationView({
             marginBottom: '8px'
           }}
         >
-          {result?.heading || 'Online Enquiry Submission Unavailable'}
+          {result?.heading || t('enquiry.unavailable.heading')}
         </h3>
 
         <p
@@ -479,7 +492,7 @@ export default function EnquiryConfirmationView({
             margin: '0 auto 16px auto'
           }}
         >
-          {result?.message || 'Your enquiry could not be sent online at this moment. Please contact VedicPanditji directly through WhatsApp or phone.'}
+          {result?.message || t('enquiry.unavailable.message')}
         </p>
 
         {/* Summary Card so user knows their inputs are preserved */}
@@ -495,16 +508,16 @@ export default function EnquiryConfirmationView({
           }}
         >
           <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '8px' }}>
-            Prepared Enquiry Information:
+            {t('enquiry.prepared-info')}
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '8px' }}>
             <div>
-              <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Devotee:</span>
-              <strong>{data.customerName || 'Devotee'}</strong> ({displayedPhone})
+              <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>{t('enquiry.devotee-label')}</span>
+              <strong>{show(data.customerName) || t('enquiry.devotee')}</strong> ({displayedPhone})
             </div>
             <div>
-              <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Service &amp; City:</span>
-              <strong>{data.serviceName || data.templeName || 'Vedic Ceremony'} ({data.city || 'Pune'})</strong>
+              <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>{t('enquiry.service-and-city')}</span>
+              <strong>{data.serviceName || data.templeName || t('enquiry.vedic-ceremony')} ({data.city || 'Pune'})</strong>
             </div>
           </div>
         </div>
@@ -533,7 +546,7 @@ export default function EnquiryConfirmationView({
             }}
           >
             <MessageCircle size={18} />
-            <span>Send Enquiry via WhatsApp Now</span>
+            <span>{t('enquiry.send-whatsapp-now')}</span>
           </a>
 
           <div style={{ display: 'flex', gap: '10px' }}>
@@ -557,7 +570,7 @@ export default function EnquiryConfirmationView({
               }}
             >
               <PhoneCall size={15} color="#BD4B23" />
-              <span>Call Helpline</span>
+              <span>{t('enquiry.call-helpline')}</span>
             </button>
 
             {onRetry && (
@@ -581,7 +594,7 @@ export default function EnquiryConfirmationView({
                 }}
               >
                 <RotateCw size={14} />
-                <span>Retry Online</span>
+                <span>{t('enquiry.retry-online')}</span>
               </button>
             )}
           </div>
@@ -605,7 +618,7 @@ export default function EnquiryConfirmationView({
               }}
             >
               <Edit3 size={13} />
-              <span>Edit Form Details</span>
+              <span>{t('enquiry.edit-form-details')}</span>
             </button>
           )}
         </div>
@@ -650,7 +663,7 @@ export default function EnquiryConfirmationView({
           marginBottom: '8px'
         }}
       >
-        {result?.heading || "We Couldn't Submit Your Enquiry"}
+        {result?.heading || t('enquiry.error.heading')}
       </h3>
 
       <p
@@ -662,7 +675,7 @@ export default function EnquiryConfirmationView({
           margin: '0 auto 16px auto'
         }}
       >
-        {result?.message || 'Something went wrong while sending your enquiry. Your request has not been confirmed. Please retry or contact us directly.'}
+        {result?.message || t('enquiry.error.message')}
       </p>
 
       {/* Summary of preserved inputs */}
@@ -678,16 +691,16 @@ export default function EnquiryConfirmationView({
         }}
       >
         <div style={{ fontSize: '11px', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '8px' }}>
-          Preserved Form Data:
+          {t('enquiry.preserved-data')}
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '8px' }}>
           <div>
-            <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Devotee:</span>
-            <strong>{data.customerName || 'Devotee'}</strong> ({displayedPhone})
+            <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>{t('enquiry.devotee-label')}</span>
+            <strong>{show(data.customerName) || t('enquiry.devotee')}</strong> ({displayedPhone})
           </div>
           <div>
-            <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>Ceremony:</span>
-            <strong>{data.serviceName || data.templeName || 'Vedic Ceremony'}</strong>
+            <span style={{ color: 'var(--text-muted)', fontSize: '11px', display: 'block' }}>{t('enquiry.ceremony')}</span>
+            <strong>{data.serviceName || data.templeName || t('enquiry.vedic-ceremony')}</strong>
           </div>
         </div>
       </div>
@@ -715,7 +728,7 @@ export default function EnquiryConfirmationView({
             }}
           >
             <RotateCw size={16} />
-            <span>Retry Submission</span>
+            <span>{t('enquiry.retry-submission')}</span>
           </button>
         )}
 
@@ -741,7 +754,7 @@ export default function EnquiryConfirmationView({
           }}
         >
           <MessageCircle size={18} />
-          <span>Send via WhatsApp Instead</span>
+          <span>{t('enquiry.send-via-whatsapp')}</span>
         </a>
 
         <div style={{ display: 'flex', gap: '10px' }}>
@@ -765,7 +778,7 @@ export default function EnquiryConfirmationView({
             }}
           >
             <PhoneCall size={15} color="#BD4B23" />
-            <span>Call Helpline</span>
+            <span>{t('enquiry.call-helpline')}</span>
           </button>
 
           {onEdit && (
@@ -789,7 +802,7 @@ export default function EnquiryConfirmationView({
               }}
             >
               <Edit3 size={14} />
-              <span>Edit Details</span>
+              <span>{t('enquiry.edit-details')}</span>
             </button>
           )}
         </div>

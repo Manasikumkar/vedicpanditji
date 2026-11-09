@@ -3,6 +3,7 @@ import { useApp } from '../context/AppContext';
 import { SERVICES, getServiceImage } from '../data/vedicPanditData';
 import { getPricingDisplay } from '../data/pujaPricing';
 import PricingPackagesSection from '../components/pricing/PricingPackagesSection';
+import { useI18n } from '../i18n/useI18n';
 import {
   Clock,
   MapPin,
@@ -16,6 +17,7 @@ import {
 
 export default function ServiceDetailPage() {
   const { routeParams, navigateTo, openBookingModal, showToast, selectedCity } = useApp();
+  const { t, lp, lang, locServiceName, locServiceDesc, locCatName, locInsight, locPromise } = useI18n();
 
   // Find service from params or fallback
   const serviceId = routeParams?.serviceId || 'satyanarayan-puja';
@@ -26,12 +28,12 @@ export default function ServiceDetailPage() {
     routeParams?.city || (typeof selectedCity === 'string' ? selectedCity : selectedCity?.name || 'Pune')
   );
 
-  const pricingDisplay = getPricingDisplay(service.id);
+  const pricingDisplay = getPricingDisplay(service.id, lang);
 
   const handleShare = () => {
     if (navigator.clipboard) {
       navigator.clipboard.writeText(window.location.href);
-      showToast('Ceremony link copied to clipboard!');
+      showToast(t('toast.ceremony-link-copied'));
     }
   };
 
@@ -40,50 +42,50 @@ export default function ServiceDetailPage() {
     const sId = service.id || '';
     if (sId.includes('griha-pravesh')) {
       return {
-        bestDays: 'Auspicious Shubh Muhurat determined from Panchang (Vrishabha, Mithuna, Kanya, Dhanu Lagna)',
-        timing: 'Morning hours during Shukla Paksha before shifting belongings or staying overnight',
-        notes: 'Both husband and wife participate as Yajamans. Auspicious nakshatras like Rohini, Mrigashira, Uttara Phalguni, Chitra, and Anuradha are preferred.'
+        bestDays: t('service.timing-context.griha-pravesh.best-days'),
+        timing: t('service.timing-context.griha-pravesh.time'),
+        notes: t('service.timing-context.griha-pravesh.notes')
       };
     }
     if (sId.includes('satyanarayan')) {
       return {
-        bestDays: 'Purnima (Full Moon Day), Ekadashi, Sankranti, Thursdays, or Saturdays',
-        timing: 'Predominantly conducted during evening Pradosh time or auspicious morning hours',
-        notes: 'Ideal for celebrating new beginnings, housewarmings, weddings, birthdays, anniversaries, and fulfilling vows (Manokamna).'
+        bestDays: t('service.timing-context.satyanarayan.best-days'),
+        timing: t('service.timing-context.satyanarayan.time'),
+        notes: t('service.timing-context.satyanarayan.notes')
       };
     }
     if (sId.includes('vastu-shanti')) {
       return {
-        bestDays: 'Shubh Tithi prior to moving or during auspicious solar transits',
-        timing: 'Morning hours during favorable planetary Lagna',
-        notes: 'Recommended whenever moving into a new flat/plot, undertaking renovations, or to pacify directional energies.'
+        bestDays: t('service.timing-context.vastu-shanti.best-days'),
+        timing: t('service.timing-context.vastu-shanti.time'),
+        notes: t('service.timing-context.vastu-shanti.notes')
       };
     }
     if (sId.includes('rudrabhishek')) {
       return {
-        bestDays: 'Mondays, Pradosh Vrat days, Masa Shivratri, Maha Shivratri, or any day in Shravan Maas',
-        timing: 'Morning Brahma Muhurat or Pradosh Kaal (evening)',
-        notes: 'Lord Shiva is pleased with Abhishek offerings of raw milk, gangajal, honey, belpatra, and sacred bhasma.'
+        bestDays: t('service.timing-context.rudrabhishek.best-days'),
+        timing: t('service.timing-context.rudrabhishek.time'),
+        notes: t('service.timing-context.rudrabhishek.notes')
       };
     }
     if (service.category === 'havans') {
       return {
-        bestDays: 'Shukla Paksha mornings, Sundays/Tuesdays for Ganapathi/Navagraha, or festival periods',
-        timing: 'Morning hours (Surya Udaya Kaal) for optimal Agnihotra purification',
-        notes: 'Conducted with sacred mango wood and pure herbal hawan samagri to disperse positive spiritual vibrations.'
+        bestDays: t('service.timing-context.havans.best-days'),
+        timing: t('service.timing-context.havans.time'),
+        notes: t('service.timing-context.havans.notes')
       };
     }
     if (service.category === 'pitru-pujas') {
       return {
-        bestDays: 'Pitru Paksha (Mahalaya), Amavasya, or Annual Death Anniversary (Barsi)',
-        timing: 'Aparahna Kaal (afternoon 11:30 AM to 02:30 PM)',
-        notes: 'Performed with black sesame (Kala Til), Kusha grass, and pure water for ancestral peace and pitru tripti.'
+        bestDays: t('service.timing-context.pitru-pujas.best-days'),
+        timing: t('service.timing-context.pitru-pujas.time'),
+        notes: t('service.timing-context.pitru-pujas.notes')
       };
     }
     return {
-      bestDays: 'Auspicious days based on family Nakshatra and Gotra',
-      timing: 'Morning or Evening Sandhya Muhurat',
-      notes: 'Our senior Acharyas review your family Janma Kundali to recommend the optimal date and Lagna.'
+      bestDays: t('service.timing-context.default.best-days'),
+      timing: t('service.timing-context.default.time'),
+      notes: t('service.timing-context.default.notes')
     };
   };
 
@@ -93,26 +95,26 @@ export default function ServiceDetailPage() {
     <div style={{ paddingTop: '100px', paddingBottom: '90px', background: 'var(--bg-primary)', minHeight: '100vh' }}>
       <div className="container">
         {/* Breadcrumb */}
-        <nav aria-label="Breadcrumb" style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '24px' }}>
+        <nav aria-label={t('service.breadcrumb.label')} style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '24px' }}>
           <a
-            href="/"
+            href={lp('/')}
             onClick={(e) => { e.preventDefault(); navigateTo('home'); }}
             style={{ color: 'inherit', textDecoration: 'none' }}
             className="hover:text-amber-800"
           >
-            Home
+            {t('service.breadcrumb.home')}
           </a>
           {' / '}
           <a
-            href="/services"
+            href={lp('/services')}
             onClick={(e) => { e.preventDefault(); navigateTo('catalogue'); }}
             style={{ color: 'inherit', textDecoration: 'none' }}
             className="hover:text-amber-800"
           >
-            Ceremonies
+            {t('service.breadcrumb.ceremonies')}
           </a>
           {' / '}
-          <span style={{ color: 'var(--accent-saffron)', fontWeight: 600 }}>{service.name}</span>
+          <span style={{ color: 'var(--accent-saffron)', fontWeight: 600 }}>{locServiceName(service)}</span>
         </nav>
 
         {/* ======================================================== */}
@@ -140,14 +142,26 @@ export default function ServiceDetailPage() {
                 width: '100%',
                 height: '380px',
                 borderRadius: '16px',
-                backgroundImage: `url(${service.image || getServiceImage(service)})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
                 boxShadow: 'var(--shadow-md)',
                 position: 'relative',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                backgroundColor: '#FAF8F5'
               }}
             >
+              <img
+                src={service.image || getServiceImage(service)}
+                alt={service.name}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center',
+                  display: 'block'
+                }}
+              />
               <div
                 style={{
                   position: 'absolute',
@@ -170,7 +184,7 @@ export default function ServiceDetailPage() {
                   cursor: 'pointer'
                 }}
                 onClick={handleShare}
-                title="Share this service"
+                title={t('service.share-title')}
               >
                 <Share2 size={16} />
               </div>
@@ -184,7 +198,7 @@ export default function ServiceDetailPage() {
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', fontWeight: 600 }}>
                   <MapPin size={15} color="var(--accent-gold)" />
-                  <span>Doorstep Service across {selectedCityName} &amp; Metro Hubs</span>
+                  <span>{t('service.doorstep-across.before')}{selectedCityName}{t('service.doorstep-across.after')}</span>
                 </div>
               </div>
             </div>
@@ -204,15 +218,15 @@ export default function ServiceDetailPage() {
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--text-secondary)' }}>
                 <ShieldCheck size={16} color="var(--accent-saffron)" style={{ flexShrink: 0 }} />
-                <span>Experienced North Indian &amp; Bihari Pandits under Senior Vedic Acharyas</span>
+                <span>{t('service.guarantee.pandits')}</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--text-secondary)' }}>
                 <Package size={16} color="var(--accent-saffron)" style={{ flexShrink: 0 }} />
-                <span>100% pure Vedic Hawan Samagri &amp; cow ghee options included</span>
+                <span>{t('service.guarantee.samagri')}</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--text-secondary)' }}>
                 <Clock size={16} color="var(--accent-saffron)" style={{ flexShrink: 0 }} />
-                <span>Personalized Shubh Muhurat consultation by horoscope &amp; Nakshatra</span>
+                <span>{t('service.guarantee.muhurat')}</span>
               </div>
             </div>
           </div>
@@ -221,11 +235,11 @@ export default function ServiceDetailPage() {
           <div>
             <div className="badge-saffron" style={{ marginBottom: '10px' }}>
               <Sparkles size={12} />
-              <span>Authentic Vedic Ritual &bull; {service.category?.toUpperCase() || 'CEREMONY'}</span>
+              <span>{t('service.badge.authentic-ritual')}{locCatName(service.category)?.toUpperCase() || t('service.badge.ceremony')}</span>
             </div>
 
             <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '32px', fontWeight: 800, marginBottom: '14px', color: 'var(--text-main)' }}>
-              {service.name}
+              {locServiceName(service)}
             </h1>
 
             {/* Dakshina Range / Custom Quote Display */}
@@ -243,34 +257,34 @@ export default function ServiceDetailPage() {
               }}
             >
               <span style={{ fontSize: '13px', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600 }}>
-                Dakshina:
+                {t('service.dakshina.label')}
               </span>
               <span style={{ fontSize: '24px', fontWeight: 800, color: 'var(--accent-saffron)' }}>
                 {pricingDisplay.displayPrice}
               </span>
               <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
                 {pricingDisplay.hasPackages
-                  ? '(Indicative starting dakshina • Confirmed on Muhurat review)'
-                  : '(Based on requirements, duration, pandits & location)'}
+                  ? t('service.dakshina.indicative')
+                  : t('service.dakshina.custom')}
               </span>
             </div>
 
             {/* Short Description */}
             <p style={{ fontSize: '14.5px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
-              {service.shortDescription}
+              {locServiceDesc(service)}
             </p>
 
             {/* Key Insights & Our Promise */}
             <div className="grid-2" style={{ gap: '16px', marginBottom: '24px' }}>
               <div style={{ background: '#FDFCF9', padding: '14px', borderRadius: '10px', border: '1px solid #EAE5D9' }}>
                 <h4 style={{ fontSize: '13.5px', fontWeight: 700, marginBottom: '8px', color: 'var(--accent-saffron)' }}>
-                  Key Ritual Insights:
+                  {t('service.key-insights')}
                 </h4>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '12px', color: 'var(--text-secondary)', padding: 0, margin: 0 }}>
                   {service.keyInsights?.slice(0, 3).map((ins, i) => (
                     <li key={i} style={{ display: 'flex', gap: '6px' }}>
                       <span style={{ color: 'var(--accent-saffron)' }}>•</span>
-                      <span>{ins}</span>
+                      <span>{locInsight(ins)}</span>
                     </li>
                   ))}
                 </ul>
@@ -278,13 +292,13 @@ export default function ServiceDetailPage() {
 
               <div style={{ background: '#FDFCF9', padding: '14px', borderRadius: '10px', border: '1px solid #EAE5D9' }}>
                 <h4 style={{ fontSize: '13.5px', fontWeight: 700, marginBottom: '8px', color: 'var(--accent-gold)' }}>
-                  Our Vedic Promise:
+                  {t('service.our-promise')}
                 </h4>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '12px', color: 'var(--text-secondary)', padding: 0, margin: 0 }}>
                   {service.ourPromise?.slice(0, 3).map((prom, i) => (
                     <li key={i} style={{ display: 'flex', gap: '6px' }}>
                       <span style={{ color: 'var(--accent-gold)' }}>✓</span>
-                      <span>{prom}</span>
+                      <span>{locPromise(prom)}</span>
                     </li>
                   ))}
                 </ul>
@@ -301,7 +315,7 @@ export default function ServiceDetailPage() {
                   style={{ flex: 1, minWidth: '220px', padding: '14px', fontSize: '15px', cursor: 'pointer' }}
                 >
                   <Sparkles size={16} />
-                  <span>Book Pandit &amp; Check Muhurat</span>
+                  <span>{t('service.cta.book')}</span>
                 </button>
 
                 <a
@@ -318,7 +332,7 @@ export default function ServiceDetailPage() {
                   }}
                 >
                   <Package size={16} color="#BD4B23" />
-                  <span>View Pricing &amp; Packages</span>
+                  <span>{t('service.cta.view-pricing')}</span>
                 </a>
               </div>
 
@@ -337,7 +351,7 @@ export default function ServiceDetailPage() {
                 }}
               >
                 <Sparkles size={14} color="var(--accent-saffron)" />
-                <span>Custom Muhurat &amp; Samagri guidance included with every ceremony</span>
+                <span>{t('service.cta.guidance-included')}</span>
               </div>
             </div>
           </div>
@@ -355,7 +369,7 @@ export default function ServiceDetailPage() {
         />
 
         {/* ======================================================== */}
-        {/* 3. STRUCTURED HARIVARA CONTENT HIERARCHY TABS */}
+        {/* 3. STRUCTURED CEREMONY CONTENT HIERARCHY TABS */}
         {/* (Significance, When to Perform, Vidhi, Samagri, FAQs) */}
         {/* ======================================================== */}
         <div
@@ -380,11 +394,11 @@ export default function ServiceDetailPage() {
             }}
           >
             {[
-              { id: 'significance', label: 'Significance & Benefits' },
-              { id: 'timing', label: 'When to Perform' },
-              { id: 'vidhi', label: 'Procedure & Vidhi Sequence' },
-              { id: 'samagri', label: 'Samagri Checklist' },
-              { id: 'faqs', label: `FAQs (${service.faqs?.length || 3})` }
+              { id: 'significance', label: t('service.tab.significance') },
+              { id: 'timing', label: t('service.tab.timing') },
+              { id: 'vidhi', label: t('service.tab.vidhi') },
+              { id: 'samagri', label: t('service.tab.samagri') },
+              { id: 'faqs', label: t('service.tab.faqs', { count: service.faqs?.length || 3 }) }
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -412,21 +426,21 @@ export default function ServiceDetailPage() {
             {activeTab === 'significance' && (
               <div>
                 <h3 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '14px', color: 'var(--text-main)' }}>
-                  Significance &amp; Spiritual Importance of {service.name}
+                  {t('service.significance.title-before')}{locServiceName(service)}
                 </h3>
                 <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: '24px', whiteSpace: 'pre-line' }}>
-                  {service.longDescription || service.shortDescription}
+                  {locServiceDesc(service) || service.longDescription || service.shortDescription}
                 </p>
 
                 <h4 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '12px', color: 'var(--text-main)' }}>
-                  Spiritual Benefits of Conducting This Ceremony:
+                  {t('service.significance.benefits-title')}
                 </h4>
                 <div className="grid-2" style={{ gap: '14px', marginBottom: '24px' }}>
                   {(service.keyInsights || [
-                    'Brings divine peace, positivity, and harmony to the household',
-                    'Purifies the living environment and eliminates negative energies',
-                    'Blesses the family with health, wealth, and long-term prosperity',
-                    'Fulfills sacred Shastra obligations with authentic Vedic mantras'
+                    t('service.significance.benefit-1'),
+                    t('service.significance.benefit-2'),
+                    t('service.significance.benefit-3'),
+                    t('service.significance.benefit-4')
                   ]).map((benefit, i) => (
                     <div
                       key={i}
@@ -443,7 +457,7 @@ export default function ServiceDetailPage() {
                       }}
                     >
                       <Sparkles size={16} color="var(--accent-saffron)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                      <span>{benefit}</span>
+                      <span>{locInsight(benefit) || benefit}</span>
                     </div>
                   ))}
                 </div>
@@ -464,10 +478,10 @@ export default function ServiceDetailPage() {
                 >
                   <div>
                     <h5 style={{ fontSize: '15px', fontWeight: 700, color: 'var(--accent-saffron)' }}>
-                      Have specific family traditions or Gotra considerations?
+                      {t('service.significance.traditions-title')}
                     </h5>
                     <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
-                      Our senior Acharyas customize rituals according to North Indian (UP, Bihar, MP, Rajasthan) and Vedic traditions.
+                      {t('service.significance.traditions-text')}
                     </p>
                   </div>
                   <button
@@ -476,7 +490,7 @@ export default function ServiceDetailPage() {
                     className="btn-primary"
                     style={{ padding: '10px 20px', fontSize: '13px', cursor: 'pointer' }}
                   >
-                    Speak with Senior Pandit
+                    {t('service.significance.speak-cta')}
                   </button>
                 </div>
               </div>
@@ -486,10 +500,10 @@ export default function ServiceDetailPage() {
             {activeTab === 'timing' && (
               <div>
                 <h3 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '14px', color: 'var(--text-main)' }}>
-                  When to Perform {service.name} (Auspicious Timing &amp; Muhurat)
+                  {t('service.when.title-before')}{locServiceName(service)}{t('service.when.title-after')}
                 </h3>
                 <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: '24px' }}>
-                  In Vedic tradition, performing ceremonies during favorable planetary Lagnas, Tithis, and Nakshatras amplifies the spiritual blessings for all family members.
+                  {t('service.when.intro')}
                 </p>
 
                 <div
@@ -503,7 +517,7 @@ export default function ServiceDetailPage() {
                   <div style={{ background: '#FDFBF7', padding: '18px', borderRadius: '12px', border: '1px solid #EAE5D9' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: 'var(--accent-saffron)', fontWeight: 700 }}>
                       <CalendarCheck size={18} />
-                      <span>Recommended Days &amp; Tithis</span>
+                      <span>{t('service.when.recommended-days')}</span>
                     </div>
                     <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
                       {timingInfo.bestDays}
@@ -513,7 +527,7 @@ export default function ServiceDetailPage() {
                   <div style={{ background: '#FDFBF7', padding: '18px', borderRadius: '12px', border: '1px solid #EAE5D9' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: 'var(--accent-gold)', fontWeight: 700 }}>
                       <Clock size={18} />
-                      <span>Auspicious Time of Day</span>
+                      <span>{t('service.when.time-of-day')}</span>
                     </div>
                     <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
                       {timingInfo.timing}
@@ -523,7 +537,7 @@ export default function ServiceDetailPage() {
                   <div style={{ background: '#FDFBF7', padding: '18px', borderRadius: '12px', border: '1px solid #EAE5D9' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: '#047857', fontWeight: 700 }}>
                       <Check size={18} />
-                      <span>Shastra Guidance</span>
+                      <span>{t('service.when.shastra-guidance')}</span>
                     </div>
                     <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
                       {timingInfo.notes}
@@ -546,10 +560,10 @@ export default function ServiceDetailPage() {
                 >
                   <div>
                     <h4 style={{ fontSize: '16px', fontWeight: 800, color: '#BD4B23', marginBottom: '4px' }}>
-                      Get a Free Muhurat Calculation for Your Family
+                      {t('service.when.muhurat-title')}
                     </h4>
                     <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
-                      Share your Gotra and birth Nakshatra; our senior Acharyas will calculate the most auspicious Lagna.
+                      {t('service.when.muhurat-text')}
                     </p>
                   </div>
                   <button
@@ -558,7 +572,7 @@ export default function ServiceDetailPage() {
                     className="btn-primary"
                     style={{ padding: '11px 22px', fontSize: '13.5px', cursor: 'pointer' }}
                   >
-                    Calculate Shubh Muhurat
+                    {t('service.when.muhurat-cta')}
                   </button>
                 </div>
               </div>
@@ -568,22 +582,22 @@ export default function ServiceDetailPage() {
             {activeTab === 'vidhi' && (
               <div>
                 <h3 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '14px', color: 'var(--text-main)' }}>
-                  Scriptural Procedure &amp; Vidhi Sequence
+                  {t('service.vidhi.title')}
                 </h3>
                 <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: '24px' }}>
-                  Conducted strictly in authentic Sanskrit mantras with clear, step-by-step Hindi explanations by our North Indian and Bihari Purohits:
+                  {t('service.vidhi.intro')}
                 </p>
 
                 <div className="grid-2" style={{ gap: '16px', marginBottom: '28px' }}>
                   {[
-                    { step: 'Swasti Vachan & Shanti Path', desc: 'Invocation of cosmic peace and purification of the sacred premises.' },
-                    { step: 'Sankalpam with Gotra & Nakshatra', desc: 'Formal vow taken by the Yajaman reciting family lineage, gotra, and spiritual purpose.' },
-                    { step: 'Gauri-Ganesh Sthapana & Kalash Pujan', desc: 'Worship of Vignaharta Lord Ganesha and invocation of sacred Varuna deities into the Kalash.' },
-                    { step: 'Navagraha Aradhana & Dikpal Pujan', desc: 'Pacification of nine celestial grahas and ten directional guardians for complete protection.' },
-                    { step: 'Main Deity Abhishekam & Archana', desc: 'Consecration, mantra chanting, and sacred offerings specific to this ceremony.' },
-                    { step: 'Katha Pathan & Spiritual Explanation', desc: 'Recitation of sacred Shastra stories with meaningful lessons explained clearly in fluent Hindi.' },
-                    { step: 'Hawan / Agnihotra with Pure Ghee', desc: 'Sacred fire offerings with pure cow ghee and herbal samagri for spiritual cleansing.' },
-                    { step: 'Maha Mangala Aarti & Prasad Vitaran', desc: 'Concluding Aarti, Pushpanjali, Panditji blessings, and distribution of sanctified Prasad.' }
+                    { step: t('service.vidhi.swasti-vachan.step'), desc: t('service.vidhi.swasti-vachan.desc') },
+                    { step: t('service.vidhi.sankalpam.step'), desc: t('service.vidhi.sankalpam.desc') },
+                    { step: t('service.vidhi.ganesh-sthapana.step'), desc: t('service.vidhi.ganesh-sthapana.desc') },
+                    { step: t('service.vidhi.navagraha.step'), desc: t('service.vidhi.navagraha.desc') },
+                    { step: t('service.vidhi.abhishekam.step'), desc: t('service.vidhi.abhishekam.desc') },
+                    { step: t('service.vidhi.katha.step'), desc: t('service.vidhi.katha.desc') },
+                    { step: t('service.vidhi.hawan.step'), desc: t('service.vidhi.hawan.desc') },
+                    { step: t('service.vidhi.aarti.step'), desc: t('service.vidhi.aarti.desc') }
                   ].map((s, i) => (
                     <div
                       key={i}
@@ -632,10 +646,10 @@ export default function ServiceDetailPage() {
             {activeTab === 'samagri' && (
               <div>
                 <h3 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '14px', color: 'var(--text-main)' }}>
-                  Ceremony Samagri Checklist (Pandit vs Devotee)
+                  {t('service.samagri.title')}
                 </h3>
                 <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: '24px' }}>
-                  We ensure absolute transparency regarding what is included in our samagri kits versus what the family needs to prepare:
+                  {t('service.samagri.intro')}
                 </p>
 
                 <div
@@ -658,7 +672,7 @@ export default function ServiceDetailPage() {
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', color: '#047857' }}>
                       <Package size={20} />
                       <h4 style={{ fontSize: '16px', fontWeight: 800, margin: 0 }}>
-                        Provided by Panditji (Package B or Kit)
+                        {t('service.samagri.provided-title')}
                       </h4>
                     </div>
                     <ul
@@ -674,13 +688,13 @@ export default function ServiceDetailPage() {
                       }}
                     >
                       {[
-                        'Pure Herbal Hawan Samagri with 54 Ayurvedic herbs',
-                        'Sacred Mango Hawan Wood (Kashtha) & Camphor (Kapoor)',
-                        'Pure Desi Cow Ghee for Agnihotra offerings (in Samagri package)',
-                        'Roli, Kumkum, Chandan, Haldi, Akshat & Sacred Moli',
-                        'Navadhanya (9 sacred grains) & Supari',
-                        'Purna Kalash Vastram & Janeu (Yagnopaveetam)',
-                        'Dhoop sticks, Guggul, Loban & Gangajal'
+                        t('service.samagri.provided-1'),
+                        t('service.samagri.provided-2'),
+                        t('service.samagri.provided-3'),
+                        t('service.samagri.provided-4'),
+                        t('service.samagri.provided-5'),
+                        t('service.samagri.provided-6'),
+                        t('service.samagri.provided-7')
                       ].map((item, idx) => (
                         <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                           <Check size={14} color="#047857" style={{ flexShrink: 0 }} />
@@ -702,7 +716,7 @@ export default function ServiceDetailPage() {
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', color: '#BD4B23' }}>
                       <Check size={20} />
                       <h4 style={{ fontSize: '16px', fontWeight: 800, margin: 0 }}>
-                        Arranged by Devotee (Yajaman) at Home
+                        {t('service.samagri.arranged-title')}
                       </h4>
                     </div>
                     <ul
@@ -718,13 +732,13 @@ export default function ServiceDetailPage() {
                       }}
                     >
                       {[
-                        'Fresh marigold flower garlands and loose puja flowers',
-                        '5 varieties of fresh seasonal fruits (Pancha-Phala)',
-                        'Fresh cow milk, curd, honey & sugar for Panchamrit',
-                        'Water coconuts (Purna Shrifal) with intact husk',
-                        'Household brass/copper thalis, small bowls, and spoons',
-                        'Wooden chowki or bajot for deity sthapana',
-                        'Clean sitting asanas (mats) for family members'
+                        t('service.samagri.arranged-1'),
+                        t('service.samagri.arranged-2'),
+                        t('service.samagri.arranged-3'),
+                        t('service.samagri.arranged-4'),
+                        t('service.samagri.arranged-5'),
+                        t('service.samagri.arranged-6'),
+                        t('service.samagri.arranged-7')
                       ].map((item, idx) => (
                         <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                           <span style={{ color: '#BD4B23', fontWeight: 700, fontSize: '13px' }}>•</span>
@@ -736,7 +750,7 @@ export default function ServiceDetailPage() {
                 </div>
 
                 <div style={{ fontSize: '12px', color: 'var(--text-muted)', lineHeight: 1.5 }}>
-                  *Our coordination team shares a detailed checklist via WhatsApp immediately upon booking confirmation so your family is fully prepared.
+                  {t('service.samagri.footnote')}
                 </div>
               </div>
             )}
@@ -745,21 +759,21 @@ export default function ServiceDetailPage() {
             {activeTab === 'faqs' && (
               <div>
                 <h3 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '20px' }}>
-                  Frequently Asked Questions about {service.name}
+                  {t('service.faqs.title-before')}{locServiceName(service)}
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {(service.faqs || [
                     {
-                      q: 'What materials (samagri) are provided by VedicPanditji?',
-                      a: 'We bring complete hawan kashtha, pure desi cow ghee, navagraha samidha, kumkum, chandan, kalash items, and sacred dry herbs. You only need to provide household items like fresh flowers, fruits, and milk.'
+                      q: t('service.faqs.materials-q'),
+                      a: t('service.faqs.materials-a')
                     },
                     {
-                      q: 'Which languages are supported for the ceremony?',
-                      a: 'VedicPanditji officially supports Hindi and Sanskrit. All Vedic mantras, stotras, and hawan ahutis are chanted in authentic Sanskrit, while the Katha, Sankalpam, and step-by-step vidhi instructions are explained in fluent Hindi.'
+                      q: t('service.faqs.languages-q'),
+                      a: t('service.faqs.languages-a')
                     },
                     {
-                      q: 'How is Shubh Muhurat determined?',
-                      a: 'Our senior Acharyas examine your birth Nakshatra, Gotra, and local Panchang sunrise/sunset timings to advise the most auspicious hour.'
+                      q: t('service.faqs.muhurat-q'),
+                      a: t('service.faqs.muhurat-a')
                     }
                   ]).map((faq, i) => (
                     <div
@@ -772,10 +786,10 @@ export default function ServiceDetailPage() {
                       }}
                     >
                       <h4 style={{ fontSize: '15px', fontWeight: 700, marginBottom: '8px', color: 'var(--text-main)' }}>
-                        {faq.q}
+                        {faq.question || faq.q}
                       </h4>
                       <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                        {faq.a}
+                        {faq.answer || faq.a}
                       </p>
                     </div>
                   ))}
@@ -800,11 +814,11 @@ export default function ServiceDetailPage() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '14px' }}>
             <MapPin size={18} color="var(--accent-saffron)" />
             <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--text-main)', margin: 0 }}>
-              Doorstep {service.name} Coverage across Pune &amp; PCMC
+              {t('service.coverage.title-before')}{locServiceName(service)}{t('service.coverage.title-after')}
             </h3>
           </div>
           <p style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '18px', lineHeight: 1.6 }}>
-            Our verified North Indian and Bihari Pandits provide authentic doorstep ceremonies across Pune and Pimpri-Chinchwad (PCMC), as well as interactive E-Pujas nationwide:
+            {t('service.coverage.intro')}
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
             {[
@@ -823,7 +837,7 @@ export default function ServiceDetailPage() {
             ].map((locItem, idx) => (
               <a
                 key={idx}
-                href={`/locations/${locItem.slug}`}
+                href={lp(`/locations/${locItem.slug}`)}
                 onClick={(e) => {
                   e.preventDefault();
                   navigateTo('location-detail', { slug: locItem.slug });
@@ -851,17 +865,17 @@ export default function ServiceDetailPage() {
                   e.currentTarget.style.color = 'var(--text-main)';
                 }}
               >
-                📍 Pandit in {locItem.name}
+                {`📍 ${t('service.coverage.pandit-in')}`}{locItem.name}
               </a>
             ))}
           </div>
 
           <div style={{ marginTop: '24px', paddingTop: '18px', borderTop: '1px solid #F3EFE6', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
             <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-              Need in-depth vidhi details, auspicious Muhurat calculations, or samagri checklists?
+              {t('service.coverage.guides-prompt')}
             </span>
             <a
-              href="/puja-guides"
+              href={lp('/puja-guides')}
               onClick={(e) => {
                 e.preventDefault();
                 navigateTo('puja-guides');
@@ -876,7 +890,7 @@ export default function ServiceDetailPage() {
                 gap: '6px'
               }}
             >
-              📖 Explore Hindu Puja Educational Guides &rarr;
+              {`📖 ${t('service.coverage.guides-link')} →`}
             </a>
           </div>
         </div>

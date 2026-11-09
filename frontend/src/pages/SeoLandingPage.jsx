@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useApp } from '../context/AppContext';
+import { useI18n } from '../i18n/useI18n';
 import { SEO_LANDING_PAGES, CITIES, SERVICES } from '../data/vedicPanditData';
 import {
   Sparkles,
@@ -14,6 +15,20 @@ import {
 
 export default function SeoLandingPage({ slug: propSlug }) {
   const { routeParams, navigateTo, openBookingModal } = useApp();
+  const {
+    lang,
+    t,
+    lp,
+    locServiceName,
+    locServiceDesc,
+    locCityH1,
+    locCityTagline,
+    locCityOverview,
+    locCityHighlights,
+    locCityFaqs,
+    locLocationName,
+    locDuration
+  } = useI18n();
   const activeSlug = propSlug || routeParams?.slug || 'north-indian-pandit-in-pune';
 
   // Find matching page specification
@@ -41,37 +56,38 @@ export default function SeoLandingPage({ slug: propSlug }) {
 
   // Verification Badge Configuration
   const getVerificationDetails = () => {
+    const locCity = locLocationName(pageData.city);
     switch (pageData.verificationStatus) {
       case 'in-person-confirmed':
         return {
           badgeClass: 'badge-confirmed',
           icon: <ShieldCheck size={14} color="#15803D" />,
-          title: pageData.verificationBadge || `Verified In-Person Service in ${pageData.city}`,
-          note: `VedicPanditji provides verified doorstep Vedic purohits in ${pageData.city} with complete pure Samagri kits.`,
+          title: lang === 'mr' ? `पडताळणी केलेले प्रत्यक्ष घरपोच पुरोहित: ${locCity}` : lang === 'hi' ? `सत्यापित प्रत्यक्ष वैदिक पुरोहित: ${locCity}` : `Verified In-Person Service in ${pageData.city}`,
+          note: lang === 'mr' ? `वैदिकपंडितजी ${locCity} मध्ये संपूर्ण शुद्ध सामग्री किटसह पडताळणी केलेले घरपोच वैदिक पुरोहित उपलब्ध करतात.` : lang === 'hi' ? `वैदिकपंडितजी ${locCity} में संपूर्ण शुद्ध सामग्री किट के साथ सत्यापित वैदिक पुरोहित उपलब्ध कराते हैं।` : `VedicPanditji provides verified doorstep Vedic purohits in ${pageData.city} with complete pure Samagri kits.`,
           isFullyInPerson: true
         };
       case 'hybrid-online-travelling':
         return {
           badgeClass: 'badge-hybrid',
           icon: <Globe size={14} color="#B45309" />,
-          title: pageData.verificationBadge || `Verified E-Puja & Visiting Acharyas for ${pageData.city}`,
-          note: `Household pujas are performed via interactive two-way live HD video with personal Gotra Sankalp. Senior Acharyas travel for major scheduled weddings and ceremonies.`,
+          title: lang === 'mr' ? `थेट ई-पूजा आणि प्रवास करणारे वरिष्ठ आचार्य: ${locCity}` : lang === 'hi' ? `सत्यापित लाइव ई-पूजा एवं आगंतुक आचार्य: ${locCity}` : `Verified Live E-Puja & Visiting Acharyas for ${pageData.city}`,
+          note: lang === 'mr' ? `कौटुंबिक पूजा परस्पर थेट दोन-मार्गी HD व्हिडिओद्वारे वैयक्तिक गोत्र संकल्पासह संपन्न केल्या जातात. पूर्वनियोजित विवाहासाठी वरिष्ठ आचार्य प्रवास करतात.` : lang === 'hi' ? `पारिवारिक पूजाएं द्विपक्षीय लाइव HD वीडियो द्वारा व्यक्तिगत गोत्र संकल्प के साथ संपन्न कराई जाती हैं। पूर्व-नियोजित विवाह आयोजनों हेतु वरिष्ठ आचार्य यात्रा करते हैं।` : `Household pujas are performed via interactive two-way live HD video with personal Gotra Sankalp. Senior Acharyas travel for major scheduled weddings and ceremonies.`,
           isFullyInPerson: false
         };
       case 'pilgrimage-confirmed':
         return {
           badgeClass: 'badge-pilgrimage',
           icon: <Flame size={14} color="#7C2D12" />,
-          title: pageData.verificationBadge || `Verified Tirtha Purohits in ${pageData.city}`,
-          note: `Rituals are conducted directly at sacred Tirtha Kshetra with authorized local hereditary Purohits.`,
+          title: lang === 'mr' ? `पडताळणी केलेले स्थानिक तीर्थ पुरोहित: ${locCity}` : lang === 'hi' ? `सत्यापित स्थानीय तीर्थ पुरोहित: ${locCity}` : `Verified Tirtha Purohits in ${pageData.city}`,
+          note: lang === 'mr' ? `पवित्र तीर्थक्षेत्रात अधिकृत स्थानिक वंशपरंपरेने चालत आलेल्या पुरोहितांद्वारे विधी संपन्न केले जातात.` : lang === 'hi' ? `पवित्र तीर्थ क्षेत्र में अधिकृत स्थानीय वंशानुगत पुरोहितों द्वारा अनुष्ठान संपन्न कराए जाते हैं।` : `Rituals are conducted directly at sacred Tirtha Kshetra with authorized local hereditary Purohits.`,
           isFullyInPerson: true
         };
       default:
         return {
           badgeClass: 'badge-online',
           icon: <Globe size={14} color="#1D4ED8" />,
-          title: pageData.verificationBadge || '100% Verified Live Interactive E-Puja',
-          note: `Live two-way HD Zoom sessions with personalized Gotra Sankalp, live chanting, and consecrated Prasad courier.`,
+          title: lang === 'mr' ? '१००% पडताळणी केलेली थेट परस्परसंवादी ई-पूजा' : lang === 'hi' ? '100% सत्यापित लाइव इंटरैक्टिव ई-पूजा' : '100% Verified Live Interactive E-Puja',
+          note: lang === 'mr' ? 'वैयक्तिक गोत्र संकल्प, थेट मंत्रोच्चार आणि अभिमंत्रित प्रसाद कुरिअर सुविधेसह थेट दोन-मार्गी HD Zoom सत्र.' : lang === 'hi' ? 'व्यक्तिगत गोत्र संकल्प, लाइव मंत्रोच्चार और अभिमंत्रित प्रसाद कूरियर सुविधा सहित लाइव द्विपक्षीय HD Zoom सत्र।' : `Live two-way HD Zoom sessions with personalized Gotra Sankalp, live chanting, and consecrated Prasad courier.`,
           isFullyInPerson: false
         };
     }
@@ -80,15 +96,16 @@ export default function SeoLandingPage({ slug: propSlug }) {
   const verification = getVerificationDetails();
 
   // Summary explanation extracted from section 0 or tagline
-  const summaryExplanation = pageData.sections && pageData.sections[0]
+  const summaryExplanation = locCityOverview(pageData) || (pageData.sections && pageData.sections[0]
     ? pageData.sections[0].content.split('\n\n')[0]
-    : pageData.tagline;
+    : pageData.tagline);
 
   // Curate 6 top ceremonies relevant for this city
   const topServices = SERVICES.slice(0, 6);
 
-  // Take only 3-4 essential FAQs
-  const essentialFaqs = pageData.faqs ? pageData.faqs.slice(0, 4) : [];
+  // Highlights and FAQs
+  const cityHighlights = locCityHighlights(pageData) || pageData.highlights || [];
+  const essentialFaqs = locCityFaqs(pageData) || (pageData.faqs ? pageData.faqs.slice(0, 4) : []);
 
   // Contextual links to other individual puja services within the same city
   const relatedCityPages = SEO_LANDING_PAGES.filter(
@@ -101,11 +118,11 @@ export default function SeoLandingPage({ slug: propSlug }) {
       <div className="seo-breadcrumb-bar">
         <div className="container">
           <nav aria-label="Breadcrumb" className="seo-breadcrumb-nav">
-            <span onClick={() => navigateTo('home')} className="crumb-link">Home</span>
+            <span onClick={() => navigateTo('home')} className="crumb-link">{lang === 'mr' ? 'मुख्यपृष्ठ' : lang === 'hi' ? 'होम' : 'Home'}</span>
             <span className="crumb-sep">/</span>
-            <span onClick={() => navigateTo('catalogue')} className="crumb-link">Services</span>
+            <span onClick={() => navigateTo('catalogue')} className="crumb-link">{lang === 'mr' ? 'विधी सूची' : lang === 'hi' ? 'अनुष्ठान सूची' : 'Services'}</span>
             <span className="crumb-sep">/</span>
-            <span className="crumb-current">{pageData.city} • {pageData.primaryService || pageData.service}</span>
+            <span className="crumb-current">{locLocationName(pageData.city)} • {locServiceName(ceremonyService) || pageData.primaryService || pageData.service}</span>
           </nav>
         </div>
       </div>
@@ -123,18 +140,18 @@ export default function SeoLandingPage({ slug: propSlug }) {
               </span>
               <span className="seo-location-pill">
                 <MapPin size={13} color="var(--accent-gold)" />
-                <span>{pageData.city}, {pageData.state}</span>
+                <span>{locLocationName(pageData.city)}, {locLocationName(pageData.state)}</span>
               </span>
             </div>
 
             {/* Target Keyword H1 */}
             <h1 className="seo-hero-title">
-              {pageData.h1}
+              {locCityH1(pageData) || pageData.h1}
             </h1>
 
             {/* Essential Related Summary Explanation */}
             <p className="seo-hero-tagline">
-              {pageData.tagline || `Authentic Vedic rituals performed by experienced North Indian & Bihari Pandits with complete scriptural fidelity.`}
+              {locCityTagline(pageData) || pageData.tagline || `Authentic Vedic rituals performed by experienced North Indian & Bihari Pandits with complete scriptural fidelity.`}
             </p>
 
             {/* Primary Action Buttons */}
@@ -145,36 +162,41 @@ export default function SeoLandingPage({ slug: propSlug }) {
                 className="btn-primary seo-cta-primary"
               >
                 <CalendarCheck size={18} />
-                <span>Book a Pandit for {pageData.city}</span>
+                <span>{lang === 'mr' ? `${locLocationName(pageData.city)} साठी पंडित बुक करा` : lang === 'hi' ? `${locLocationName(pageData.city)} हेतु पंडित बुक करें` : `Book a Pandit for ${pageData.city}`}</span>
               </button>
 
               <a
                 href="#pricing-packages"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const target = document.getElementById('pricing-packages');
+                  if (target) target.scrollIntoView({ behavior: 'smooth' });
+                }}
                 className="btn-secondary seo-cta-call"
                 style={{ textDecoration: 'none' }}
               >
-                <Sparkles size={16} />
-                <span>View Puja Packages</span>
+                <Sparkles size={16} color="#BD4B23" />
+                <span>{lang === 'mr' ? 'पूजा पॅकेजेस पहा' : lang === 'hi' ? 'पूजा पैकेज देखें' : 'View Puja Packages'}</span>
               </a>
             </div>
 
             {/* Concise Trust Badges */}
             <div className="seo-trust-row">
               <div className="trust-col">
-                <span className="trust-number">Hindi &amp; Sanskrit</span>
-                <span className="trust-label">Ritual Languages</span>
+                <span className="trust-number">{lang === 'mr' ? 'हिंदी व संस्कृत' : lang === 'hi' ? 'हिंदी एवं संस्कृत' : 'Hindi & Sanskrit'}</span>
+                <span className="trust-label">{lang === 'mr' ? 'विधीच्या भाषा' : lang === 'hi' ? 'अनुष्ठान की भाषाएँ' : 'Ritual Languages'}</span>
               </div>
               <div className="trust-col">
-                <span className="trust-number">Panchang</span>
-                <span className="trust-label">Shubh Muhurat</span>
+                <span className="trust-number">{lang === 'mr' ? 'पंचांग' : lang === 'hi' ? 'पंचांग' : 'Panchang'}</span>
+                <span className="trust-label">{lang === 'mr' ? 'शुभ मुहूर्त' : lang === 'hi' ? 'शुभ मुहूर्त' : 'Shubh Muhurat'}</span>
               </div>
               <div className="trust-col">
-                <span className="trust-number">Hindi & Sanskrit</span>
-                <span className="trust-label">Authentic Vidhi</span>
+                <span className="trust-number">{lang === 'mr' ? 'हिंदी व संस्कृत' : lang === 'hi' ? 'हिंदी एवं संस्कृत' : 'Hindi & Sanskrit'}</span>
+                <span className="trust-label">{lang === 'mr' ? 'अस्सल विधी' : lang === 'hi' ? 'प्रामाणिक विधि' : 'Authentic Vidhi'}</span>
               </div>
               <div className="trust-col">
-                <span className="trust-number">100% Pure</span>
-                <span className="trust-label">Hawan Samagri Kits</span>
+                <span className="trust-number">{lang === 'mr' ? '१००% शुद्ध' : lang === 'hi' ? '100% शुद्ध' : '100% Pure'}</span>
+                <span className="trust-label">{lang === 'mr' ? 'हवन साहित्य किट' : lang === 'hi' ? 'हवन सामग्री किट' : 'Hawan Samagri Kits'}</span>
               </div>
             </div>
           </div>
@@ -187,7 +209,7 @@ export default function SeoLandingPage({ slug: propSlug }) {
           <div className="city-switcher-container">
             <span className="city-switcher-label">
               <MapPin size={14} color="var(--accent-saffron)" />
-              <span>Select Service City:</span>
+              <span>{lang === 'mr' ? 'सेवा शहर निवडा:' : lang === 'hi' ? 'सेवा शहर चुनें:' : 'Select Service City:'}</span>
             </span>
             <div className="city-tabs-scroll">
               {CITIES.map((c) => (
@@ -202,7 +224,7 @@ export default function SeoLandingPage({ slug: propSlug }) {
                   }}
                   className={`city-tab-btn ${pageData.city === c.id ? 'active' : ''}`}
                 >
-                  <span>{c.name}</span>
+                  <span>{locLocationName(c.name)}</span>
                   {c.verificationStatus === 'in-person-confirmed' ? (
                     <span className="tab-dot dot-green" title="In-Person Confirmed" />
                   ) : (
@@ -227,10 +249,18 @@ export default function SeoLandingPage({ slug: propSlug }) {
               </div>
               <div>
                 <h2 className="summary-title">
-                  Vedic Pandit Services in {pageData.city} — Overview & Summary
+                  {lang === 'mr'
+                    ? `${locLocationName(pageData.city)} मध्ये वैदिक पंडित सेवा — विहंगावलोकन आणि सारांश`
+                    : lang === 'hi'
+                      ? `${locLocationName(pageData.city)} में वैदिक पंडित सेवाएँ — विवरण एवं सारांश`
+                      : `Vedic Pandit Services in ${pageData.city} — Overview & Summary`}
                 </h2>
                 <p className="summary-subtitle">
-                  Authentic ritual conduction in Hindi and Sanskrit for North Indian &amp; Bihari families
+                  {lang === 'mr'
+                    ? 'उत्तर भारतीय व बिहारी कुटुंबांसाठी हिंदी व संस्कृतमध्ये अस्सल शास्त्रोक्त विधी'
+                    : lang === 'hi'
+                      ? 'उत्तर भारतीय एवं बिहारी परिवारों हेतु हिंदी व संस्कृत में प्रामाणिक शास्त्रसम्मत अनुष्ठान'
+                      : 'Authentic ritual conduction in Hindi and Sanskrit for North Indian & Bihari families'}
                 </p>
               </div>
             </div>
@@ -240,9 +270,9 @@ export default function SeoLandingPage({ slug: propSlug }) {
             </p>
 
             {/* Essential Highlights */}
-            {pageData.highlights && pageData.highlights.length > 0 && (
+            {cityHighlights && cityHighlights.length > 0 && (
               <div className="essential-highlights-grid">
-                {pageData.highlights.slice(0, 4).map((hl, idx) => (
+                {cityHighlights.slice(0, 4).map((hl, idx) => (
                   <div key={idx} className="highlight-pill-item">
                     <CheckCircle2 size={16} color="#15803D" style={{ flexShrink: 0 }} />
                     <span>{hl}</span>
@@ -266,14 +296,24 @@ export default function SeoLandingPage({ slug: propSlug }) {
           </section>
 
           {/* Card 2: Popular Ceremonies Available in This City */}
-          <section className="popular-ceremonies-section">
+          <section id="pricing-packages" className="popular-ceremonies-section">
             <div className="section-header" style={{ marginBottom: '32px' }}>
-              <span className="section-tag">Most Requested in {pageData.city}</span>
+              <span className="section-tag">
+                {lang === 'mr'
+                  ? `${locLocationName(pageData.city)} मध्ये सर्वाधिक मागणी असलेले विधी`
+                  : lang === 'hi'
+                    ? `${locLocationName(pageData.city)} में सर्वाधिक अनुष्ठित पूजाएँ`
+                    : `Most Requested in ${pageData.city}`}
+              </span>
               <h2 className="section-title" style={{ fontSize: '28px' }}>
-                Popular Vedic Pujas &amp; Havans
+                {lang === 'mr' ? 'लोकप्रिय वैदिक पूजा आणि हवन' : lang === 'hi' ? 'लोकप्रिय वैदिक पूजा एवं हवन' : 'Popular Vedic Pujas & Havans'}
               </h2>
               <p className="section-desc">
-                Select any ceremony below to check packages and book a verified pandit in {pageData.city}.
+                {lang === 'mr'
+                  ? `पॅकेज पाहण्यासाठी आणि ${locLocationName(pageData.city)} मध्ये पडताळणी केलेले पंडित बुक करण्यासाठी खालीलपैकी कोणताही विधी निवडा.`
+                  : lang === 'hi'
+                    ? `पैकेज देखने और ${locLocationName(pageData.city)} में सत्यापित पंडित बुक करने हेतु नीचे दिए गए किसी भी अनुष्ठान का चयन करें।`
+                    : `Select any ceremony below to check packages and book a verified pandit in ${pageData.city}.`}
               </p>
             </div>
 
@@ -283,13 +323,25 @@ export default function SeoLandingPage({ slug: propSlug }) {
                   <div
                     className="puja-quick-img"
                     style={{
-                      backgroundImage: `url(${svc.image || '/images/hero-puja.jpg'})`,
                       height: '140px',
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      position: 'relative'
+                      position: 'relative',
+                      overflow: 'hidden',
+                      backgroundColor: '#FAF8F5'
                     }}
                   >
+                    <img
+                      src={svc.image || '/images/hero-puja.jpg'}
+                      alt={svc.name}
+                      loading="lazy"
+                      decoding="async"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: 'center',
+                        display: 'block'
+                      }}
+                    />
                     <div
                       style={{
                         position: 'absolute',
@@ -300,17 +352,23 @@ export default function SeoLandingPage({ slug: propSlug }) {
                   </div>
 
                   <div className="puja-quick-body">
-                    <h3 className="puja-quick-name">{svc.name}</h3>
-                    <p className="puja-quick-desc">{svc.shortDescription}</p>
+                    <h3 className="puja-quick-name">{locServiceName(svc)}</h3>
+                    <p className="puja-quick-desc">{locServiceDesc(svc)}</p>
 
                     <div className="puja-quick-footer">
-                      <span className="puja-quick-dur">{svc.duration}</span>
+                      <span className="puja-quick-dur">{locDuration(svc.duration)}</span>
                       <button
                         type="button"
                         onClick={() => openBookingModal(svc, null, pageData.city)}
                         className="btn-primary puja-quick-btn"
                       >
-                        <span>Book in {pageData.city}</span>
+                        <span>
+                          {lang === 'mr'
+                            ? `${locLocationName(pageData.city)} मध्ये बुक करा`
+                            : lang === 'hi'
+                              ? `${locLocationName(pageData.city)} में बुक करें`
+                              : `Book in ${pageData.city}`}
+                        </span>
                         <ArrowRight size={13} />
                       </button>
                     </div>
@@ -326,17 +384,25 @@ export default function SeoLandingPage({ slug: propSlug }) {
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
                 <Sparkles size={18} color="var(--accent-saffron)" />
                 <h2 style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text-main)', margin: 0 }}>
-                  Specific Puja Ceremonies &amp; Vidhis in {pageData.city}
+                  {lang === 'mr'
+                    ? `${locLocationName(pageData.city)} मधील विशिष्ट पूजा विधी`
+                    : lang === 'hi'
+                      ? `${locLocationName(pageData.city)} में विशिष्ट पूजा अनुष्ठान`
+                      : `Specific Puja Ceremonies & Vidhis in ${pageData.city}`}
                 </h2>
               </div>
               <p style={{ fontSize: '13.5px', color: 'var(--text-secondary)', marginBottom: '18px', lineHeight: 1.6 }}>
-                Explore dedicated ceremony guidelines, samagri arrangements, and verified North Indian purohit booking for specific rituals in {pageData.city}:
+                {lang === 'mr'
+                  ? `${locLocationName(pageData.city)} मधील विधींसाठी पूजा मार्गदर्शन, साहित्य व्यवस्था आणि पडताळणी केलेल्या उत्तर भारतीय पुरोहितांचे बुकिंग:`
+                  : lang === 'hi'
+                    ? `${locLocationName(pageData.city)} में अनुष्ठानों हेतु पूजा मार्गदर्शन, सामग्री व्यवस्था एवं सत्यापित उत्तर भारतीय पुरोहित बुकिंग:`
+                    : `Explore dedicated ceremony guidelines, samagri arrangements, and verified North Indian purohit booking for specific rituals in ${pageData.city}:`}
               </p>
               <div className="city-pujas-grid">
                 {relatedCityPages.map((cp) => (
                   <a
                     key={cp.slug}
-                    href={`/services/${cp.slug}`}
+                    href={lp(`/services/${cp.slug}`)}
                     onClick={(e) => {
                       e.preventDefault();
                       navigateTo('seo-landing', { slug: cp.slug });
@@ -345,12 +411,12 @@ export default function SeoLandingPage({ slug: propSlug }) {
                   >
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', marginBottom: '6px' }}>
                       <span className="city-puja-name">
-                        {cp.primaryService || cp.service} in {pageData.city}
+                        {locServiceName(cp.primaryService || cp.service)} {lang === 'mr' ? `— ${locLocationName(pageData.city)}` : lang === 'hi' ? `— ${locLocationName(pageData.city)}` : `in ${pageData.city}`}
                       </span>
                       <ArrowRight size={14} color="var(--accent-gold)" style={{ flexShrink: 0 }} />
                     </div>
                     <p className="city-puja-desc">
-                      {cp.tagline || (cp.sections && cp.sections[0] ? cp.sections[0].heading : cp.metaDescription)}
+                      {locCityTagline(cp) || cp.tagline || (cp.sections && cp.sections[0] ? cp.sections[0].heading : cp.metaDescription)}
                     </p>
                   </a>
                 ))}
@@ -364,16 +430,24 @@ export default function SeoLandingPage({ slug: propSlug }) {
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
                 <MapPin size={17} color="var(--accent-saffron)" />
                 <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--text-main)', margin: 0 }}>
-                  Key Residential Areas Served Across {pageData.city}
+                  {lang === 'mr'
+                    ? `${locLocationName(pageData.city)} मधील प्रमुख निवासी भाग`
+                    : lang === 'hi'
+                      ? `${locLocationName(pageData.city)} के प्रमुख आवासीय क्षेत्र`
+                      : `Key Residential Areas Served Across ${pageData.city}`}
                 </h3>
               </div>
               <p style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '16px' }}>
-                Our Purohits provide punctual doorstep transit to apartments, gated societies, and independent homes across:
+                {lang === 'mr'
+                  ? 'आमचे पुरोहित खालील भागांमधील गृहसंकुले व स्वतंत्र घरांमध्ये वेळेवर घरपोच सेवा देतात:'
+                  : lang === 'hi'
+                    ? 'हमारे पुरोहित निम्नलिखित क्षेत्रों के अपार्टमेंट और स्वतंत्र घरों में समय पर पहुँचकर सेवा प्रदान करते हैं:'
+                    : 'Our Purohits provide punctual doorstep transit to apartments, gated societies, and independent homes across:'}
               </p>
               <div className="localities-tag-row">
                 {pageData.keyLocalities.map((loc, idx) => (
                   <span key={idx} className="locality-pill">
-                    📍 {loc}
+                    📍 {locLocationName(loc)}
                   </span>
                 ))}
               </div>
@@ -384,7 +458,11 @@ export default function SeoLandingPage({ slug: propSlug }) {
           {essentialFaqs.length > 0 && (
             <section className="seo-faq-card">
               <h3 style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text-main)', marginBottom: '16px' }}>
-                Frequently Asked Questions ({pageData.city})
+                {lang === 'mr'
+                  ? `वारंवार विचारले जाणारे प्रश्न (${locLocationName(pageData.city)})`
+                  : lang === 'hi'
+                    ? `अक्सर पूछे जाने वाले प्रश्न (${locLocationName(pageData.city)})`
+                    : `Frequently Asked Questions (${pageData.city})`}
               </h3>
               <div className="faq-accordion-clean">
                 {essentialFaqs.map((faq, idx) => {
@@ -578,16 +656,26 @@ export default function SeoLandingPage({ slug: propSlug }) {
         }
 
         .seo-cta-call {
-          padding: 13px 22px;
+          padding: 13px 24px;
           font-size: 14px;
-          background: rgba(255, 255, 255, 0.1);
-          color: #FFFFFF;
-          border-color: rgba(255, 255, 255, 0.25);
+          font-weight: 700;
+          background: #FFFFFF !important;
+          color: #BD4B23 !important;
+          border: 1px solid rgba(255, 255, 255, 0.95) !important;
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          border-radius: var(--radius-full);
+          transition: all 0.2s ease;
         }
 
         .seo-cta-call:hover {
-          background: #FFFFFF;
-          color: var(--accent-saffron);
+          background: #FFF7ED !important;
+          color: #9A3412 !important;
+          border-color: #FED7AA !important;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
         }
 
         .seo-trust-row {
