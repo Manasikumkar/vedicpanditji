@@ -998,6 +998,7 @@ async function run() {
   // 2. Generate XML Sitemap
   console.log(`🗺️ Generating sitemap.xml with ${sitemapUrls.length} sitemap URLs...`);
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"${sitemapUrls.some(u => u.alternates.length) ? ' xmlns:xhtml="http://www.w3.org/1999/xhtml"' : ''}>
 ${sitemapUrls.map(u => `  <url>
     <loc>${u.loc}</loc>
