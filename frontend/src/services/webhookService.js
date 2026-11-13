@@ -361,7 +361,7 @@ export async function submitEnquiryToWebhook(enquiryData) {
       ritualName: enquiryData.ritualName || null,
       sevaMode: enquiryData.sevaMode || null,
       ancestorNotes: enquiryData.ancestorNotes || null,
-      pageUrl: typeof window !== 'undefined' ? window.location.href : 'https://vedicpanditji.com/',
+      pageUrl: typeof window !== 'undefined' ? window.location.href : 'https://www.vedicpanditji.com/',
       referrer: typeof document !== 'undefined' ? document.referrer : null
     }
   };
