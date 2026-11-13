@@ -22,7 +22,7 @@ const rootDir = path.resolve(__dirname, '..');
 const distDir = path.resolve(rootDir, 'dist');
 const publicDir = path.resolve(rootDir, 'public');
 
-const DOMAIN = 'https://vedicpanditji.com';
+const DOMAIN = 'https://www.vedicpanditji.com';
 const TODAY = new Date().toISOString().split('T')[0];
 
 function escapeHtml(str) {
@@ -936,6 +936,7 @@ async function run() {
     // Remove existing generic meta description/canonical/og if present
     html = html.replace(/<meta\s+name="description"[^>]*>/gi, '');
     html = html.replace(/<link\s+rel="canonical"[^>]*>/gi, '');
+    html = html.replace(/<meta\s+name="robots"[^>]*>/gi, '');
     html = html.replace(/<meta\s+property="og:[^>]*>/gi, '');
     html = html.replace(/<meta\s+name="twitter:[^>]*>/gi, '');
 
@@ -1013,20 +1014,23 @@ ${sitemapUrls.map(u => `  <url>
 
   // 3. Generate robots.txt
   console.log('🤖 Generating robots.txt...');
-  const robotsTxt = `# Robots.txt for VedicPanditji (Static Lead-Generation Site)
-# Official Domain: https://vedicpanditji.com
+  const robotsTxt = `# Robots.txt for VedicPanditji (https://www.vedicpanditji.com)
+# Crawl directives for search engines
+
+User-agent: Googlebot
+Allow: /
+Allow: /assets/
+Allow: /images/
+
+User-agent: Bingbot
+Allow: /
+Allow: /assets/
+Allow: /images/
 
 User-agent: *
 Allow: /
 Allow: /assets/
 Allow: /images/
-
-# Disallow Private & Development Utility Endpoints
-Disallow: /admin
-Disallow: /auth/
-Disallow: /login
-Disallow: /account
-Disallow: /404
 
 # Canonical XML Sitemap
 Sitemap: ${DOMAIN}/sitemap.xml

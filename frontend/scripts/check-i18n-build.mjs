@@ -27,20 +27,20 @@ try {
     }
     const pages = [`${code}/index.html`, `${code}/services/index.html`, ...SERVICES.map((s) => `${code}/services/${s.id}/index.html`)];
     for (const rel of pages) ok(fs.existsSync(path.join(dist, rel)), `exists: ${rel}`);
-    ok(!fs.existsSync(path.join(dist, code, 'about-us')), `${code}: untranslated routes are not prerendered`);
+    ok(!fs.existsSync(path.join(dist, code, 'admin')), `${code}: untranslated admin route is not prerendered`);
 
     const home = read(`${code}/index.html`);
     ok(home.includes(`<html lang="${code}">`), `${code} html lang`);
-    ok(home.includes(`href="https://vedicpanditji.com/${code}"`) || home.includes(`href="https://vedicpanditji.com/${code}/"`), `${code} canonical`);
+    ok(home.includes(`href="https://www.vedicpanditji.com/${code}"`) || home.includes(`href="https://www.vedicpanditji.com/${code}/"`), `${code} canonical`);
     ok(home.includes('Noto+Sans+Devanagari'), `${code} font link`);
     ok(home.includes(lang.indexable ? 'content="index' : 'content="noindex'), `${code} robots matches indexable flag`);
 
     if (lang.indexable) {
       ok(home.includes(`hreflang="${code}"`) && home.includes('hreflang="x-default"'), `${code} hreflang alternates`);
-      ok(sitemap.includes(`https://vedicpanditji.com/${code}`), `${code} in sitemap`);
+      ok(sitemap.includes(`https://www.vedicpanditji.com/${code}`), `${code} in sitemap`);
       ok(sitemap.includes('xhtml:link'), 'sitemap has alternates');
     } else {
-      ok(!sitemap.includes(`https://vedicpanditji.com/${code}`), `${code} not indexable: not in sitemap`);
+      ok(!sitemap.includes(`https://www.vedicpanditji.com/${code}`), `${code} not indexable: not in sitemap`);
     }
   }
 

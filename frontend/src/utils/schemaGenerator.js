@@ -12,8 +12,8 @@
 
 import { getPujaPricing, PRICING_MODELS } from '../data/pujaPricing.js';
 
-const SITE_URL = 'https://vedicpanditji.com';
-const LOGO_URL = 'https://vedicpanditji.com/images/vedicpanditji-logo.png';
+const SITE_URL = 'https://www.vedicpanditji.com';
+const LOGO_URL = 'https://www.vedicpanditji.com/images/vedicpanditji-logo.png';
 
 /**
  * Base Organization Schema

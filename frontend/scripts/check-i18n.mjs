@@ -17,12 +17,12 @@ try {
 
   // English is unchanged
   const en = getSeoMetadata('home', {});
-  ok(en.canonical === 'https://vedicpanditji.com/', 'english home canonical');
+  ok(en.canonical === 'https://www.vedicpanditji.com/', 'english home canonical');
   ok(en.robots === 'index, follow', 'english home robots');
   ok(JSON.stringify(getSeoMetadata('home', {}, 'en')) === JSON.stringify(en), 'explicit en equals default');
 
   for (const lang of ['hi', 'mr']) {
-    const prefix = `https://vedicpanditji.com/${lang}`;
+    const prefix = `https://www.vedicpanditji.com/${lang}`;
     const home = getSeoMetadata('home', {}, lang);
     ok(home.canonical === prefix, `${lang} home canonical is ${prefix}, got ${home.canonical}`);
     ok(getSeoMetadata('catalogue', {}, lang).canonical === `${prefix}/services`, `${lang} catalogue canonical`);

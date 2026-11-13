@@ -30,7 +30,7 @@ import {
 import { LANGUAGES, DEFAULT_LANG, isTranslatedRoute } from '../i18n/languages.js';
 import { localizePath } from '../i18n/paths.js';
 
-const DOMAIN = 'https://vedicpanditji.com';
+const DOMAIN = 'https://www.vedicpanditji.com';
 const DEFAULT_IMAGE = `${DOMAIN}/images/vedicpanditji-logo.png`;
 
 /**
