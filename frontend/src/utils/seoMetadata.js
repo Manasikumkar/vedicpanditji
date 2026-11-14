@@ -39,8 +39,8 @@ const DEFAULT_IMAGE = `${DOMAIN}/images/vedicpanditji-logo.png`;
 function getEnglishSeoMetadata(route, params = {}) {
   // 1. Homepage
   if (route === 'home' || route === '/') {
-    const title = 'VedicPanditji | North Indian Pandit Booking & Vedic Puja Services Across India';
-    const description = 'Book experienced North Indian Vedic Pandits across Pune, PCMC and all over India. Authentic Hindi & Sanskrit mantras for Griha Pravesh, Satyanarayan, Vastu Shanti & Havans.';
+    const title = 'VedicPanditji | North Indian Pandit & Vedic Puja Booking';
+    const description = 'Book certified North Indian Vedic Pandits for Griha Pravesh, Satyanarayan Katha, Vastu Shanti & Havans across India. Pure Vedic rituals & transparent dakshina.';
     const canonical = `${DOMAIN}/`;
 
     return {
@@ -498,7 +498,20 @@ export function getSeoMetadata(route, params = {}, lang = DEFAULT_LANG) {
       finalDescription = cityTagline || meta.description;
     }
   } else {
-    const key = route === 'home' ? 'home' : route === 'service-detail' ? 'service' : (route === 'catalogue' || route === 'services') ? 'catalogue' : route;
+    const key =
+      route === 'home'
+        ? 'home'
+        : route === 'service-detail'
+        ? 'service'
+        : (route === 'catalogue' || route === 'services')
+        ? 'catalogue'
+        : (route === 'puja-guides-hub' || route === 'puja-guides')
+        ? 'puja-guides'
+        : (route === 'about-us' || route === 'about')
+        ? 'about-us'
+        : (route === 'legal' || route === 'policies')
+        ? 'legal'
+        : route;
     const vars = { name: params.serviceId ? serviceNameFor(params.serviceId) : '' };
     const title = translate(lang, `meta.${key}.title`, vars);
     const description = translate(lang, `meta.${key}.description`, vars);

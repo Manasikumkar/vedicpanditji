@@ -11,6 +11,22 @@ Allow: /
 Allow: /assets/
 Allow: /images/
 
+# OpenAI / ChatGPT Search Crawlers
+User-agent: OAI-SearchBot
+Allow: /
+Allow: /assets/
+Allow: /images/
+
+User-agent: ChatGPT-User
+Allow: /
+Allow: /assets/
+Allow: /images/
+
+User-agent: GPTBot
+Allow: /
+Allow: /assets/
+Allow: /images/
+
 User-agent: *
 Allow: /
 Allow: /assets/
