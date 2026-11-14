@@ -2,6 +2,23 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "cleanUrls": true,
+  "redirects": [
+    { "source": "/pujas/havan/mrityunjaya-havan", "destination": "/services/mrityunjaya-havan", "permanent": true },
+    { "source": "/pujas/havan/sri-sukta-havan", "destination": "/services/sri-sukta-havan", "permanent": true },
+    { "source": "/pujas/paths/akhand-ramayan-path", "destination": "/services/akhand-ramayan-path", "permanent": true },
+    { "source": "/pujas/paths/sunderkand-path", "destination": "/services/sunderkand-path", "permanent": true },
+    { "source": "/pujas/paths/vishnu-sahasranam-path", "destination": "/services/vishnu-sahasranam-path", "permanent": true },
+    { "source": "/pujas/pitru-pujas/swayampaka-seedha-daan-for-brahmins", "destination": "/services/pitru-paksha-mahalaya-shradh-puja", "permanent": true },
+    { "source": "/pujas/pujas/engagement-puja-sagai", "destination": "/services/engagement-puja-sagai", "permanent": true },
+    { "source": "/pujas/pujas/gand-mool-nakshatra-shanti-puja", "destination": "/services/gand-mool-nakshatra-shanti-puja", "permanent": true },
+    { "source": "/pujas/pujas/haldi-ceremony", "destination": "/services/haldi-ceremony", "permanent": true },
+    { "source": "/pujas/pujas/lalitha-sahasranam-puja", "destination": "/services/lalitha-sahasranam-puja", "permanent": true },
+    { "source": "/pujas/shanti-pujas/kumbh-vivah-for-female", "destination": "/services/kumbh-vivah-for-female", "permanent": true },
+    { "source": "/pujas/shanti-pujas/vishnu-vivah-for-female", "destination": "/services/kumbh-vivah-for-female", "permanent": true },
+    { "source": "/pujas/shanti-pujas/vishti-karan-bhadra-shanti-puja", "destination": "/services/graha-shanti-puja", "permanent": true },
+    { "source": "/pujas-services/:path*", "destination": "/services", "permanent": true },
+    { "source": "/pujas/:path*", "destination": "/services", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/admin", "destination": "/" },
     { "source": "/:lang(hi|mr)/:path+", "destination": "/:path" }
