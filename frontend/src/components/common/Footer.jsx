@@ -67,7 +67,9 @@ export default function Footer() {
             >
               <img
                 src="/images/vedicpanditji-logo.png"
-                alt={t('footer.logo-alt')}
+                alt={t('footer.logo-alt') || 'VedicPanditji'}
+                width="165"
+                height="38"
                 style={{
                   height: '38px',
                   width: 'auto',

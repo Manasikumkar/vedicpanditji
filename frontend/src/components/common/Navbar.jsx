@@ -101,7 +101,9 @@ export default function Navbar() {
           >
             <img
               src="/images/vedicpanditji-logo.png"
-              alt={t('nav.logo-alt')}
+              alt={t('nav.logo-alt') || 'VedicPanditji'}
+              width="180"
+              height="46"
               className="vp-brand-logo-img"
             />
           </div>
@@ -212,7 +214,9 @@ export default function Navbar() {
               <div className="vp-brand" onClick={() => handleNavClick('home')}>
                 <img
                   src="/images/vedicpanditji-logo.png"
-                  alt={t('nav.logo-alt')}
+                  alt={t('nav.logo-alt') || 'VedicPanditji'}
+                  width="180"
+                  height="46"
                   className="vp-brand-logo-img-drawer"
                 />
               </div>

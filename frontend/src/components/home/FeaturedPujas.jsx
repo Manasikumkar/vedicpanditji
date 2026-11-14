@@ -56,7 +56,9 @@ export default function FeaturedPujas() {
                 >
                   <img
                     src={service.image || getServiceImage(service)}
-                    alt={locServiceName(service)}
+                    alt={locServiceName(service) || service.name || 'Vedic Puja Ceremony'}
+                    width="400"
+                    height="210"
                     loading="lazy"
                     decoding="async"
                     style={{
